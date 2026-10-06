@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-06",
+  "weeklyMaintenanceRequired": true,
+  "registries": [
+    {
+      "id": "commerce-platforms",
+      "path": "src/intelligence/commerce-platforms.ts",
+      "checks": [
+        "current platform operation",
+        "signature freshness",
+        "dropship/supplier integrations",
+        "false-positive risk"
+      ]
+    },
+    {
+      "id": "source-index",
+      "path": "src/intelligence/source-index.ts",
+      "checks": [
+        "domain operation",
+        "marketplace/source relevance",
+        "new source ecosystems",
+        "retired domains"
+      ]
+    },
+    {
+      "id": "merchant-networks",
+      "path": "src/intelligence/merchant-networks.ts",
+      "checks": [
+        "ownership/operator evidence",
+        "domain operation",
+        "network type",
+        "consumer-risk sources",
+        "freshness expiry",
+        "ownership changes"
+      ]
+    },
+    {
+      "id": "technology-signatures",
+      "path": "intelligence/technology-signatures.json",
+      "checks": [
+        "script/selector signature freshness",
+        "app rebrands",
+        "retired signatures",
+        "confidence"
+      ]
+    },
+    {
+      "id": "tool-signatures",
+      "path": "src/intelligence/tool-signatures.ts",
+      "checks": [
+        "tool operation",
+        "observable signatures",
+        "false positives"
+      ]
+    },
+    {
+      "id": "reputation-sources",
+      "path": "src/reputation/reputation-search.ts",
+      "checks": [
+        "source availability",
+        "public access behavior",
+        "query patterns",
+        "terms/privacy changes"
+      ]
+    },
+    {
+      "id": "amazon-clone-heuristics",
+      "path": "src/analysis/amazon-clone-clusters.ts",
+      "checks": [
+        "Amazon DOM/CDN changes",
+        "variant false positives",
+        "ASIN/brand extraction",
+        "clone thresholds"
+      ]
+    },
+    {
+      "id": "research-watchlist",
+      "path": "brain/research/COMPETITOR-ADJACENT-WATCHLIST.md",
+      "checks": [
+        "new competitors",
+        "extension updates",
+        "new defensive techniques"
+      ]
+    },
+    {
+      "id": "regression-fixtures",
+      "path": "tests/",
+      "checks": [
+        "new real-world fixtures",
+        "stale assumptions",
+        "false-positive regressions",
+        "new site/platform coverage"
+      ]
+    }
+  ]
+}
