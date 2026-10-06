@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06",
+  "policy": {
+    "toolPresenceDefaultWeight": 0,
+    "toolPresenceMaximumSeverityWithoutCorroboration": "weak",
+    "notes": "Legitimate merchants can use every tool in this registry. Entries exist to understand capabilities and observable context, not to blacklist users."
+  },
+  "families": [
+    {
+      "id": "sourcing-fulfillment",
+      "examples": ["DSers", "AutoDS", "CJdropshipping", "Zendrop", "Spocket", "Syncee"],
+      "capabilities": ["product import", "supplier sourcing", "order automation", "tracking sync", "inventory/price sync", "local warehouse fulfillment", "private labeling", "custom packaging"],
+      "detectionImplications": ["long shipping is no longer dependable", "brand packaging is not proof of original manufacture", "compare product invariants and provenance claims"]
+    },
+    {
+      "id": "ad-product-research",
+      "examples": ["Minea", "PiPiADS", "WinningHunter", "Dropship.io", "Sell The Trend"],
+      "capabilities": ["ad discovery", "competitor tracking", "product discovery", "sales/revenue estimation", "trend/saturation analysis"],
+      "detectionImplications": ["catalogs can clone trends rapidly", "prefer chronology and product fingerprints over marketing-copy similarity"]
+    },
+    {
+      "id": "review-import-syndication",
+      "examples": ["Ali Reviews", "Loox", "Judge.me Ali Reviews Importer"],
+      "capabilities": ["review import", "review transfer", "AI translation", "photo/video review display", "review syndication"],
+      "detectionImplications": ["review count does not imply listing-native provenance", "test product/review mismatch, chronology, duplication, and disclosure"]
+    },
+    {
+      "id": "tracking-branding",
+      "examples": ["Track123", "ParcelPanel"],
+      "capabilities": ["branded tracking pages", "carrier aggregation", "tracking emails", "tracking-number synchronization"],
+      "detectionImplications": ["branded tracking UI can mask underlying fulfillment chain", "compare carrier evidence with shipping-origin claims"]
+    },
+    {
+      "id": "scarcity-conversion",
+      "examples": ["Essential Countdown Timer Bar", "GSC Countdown Timer Bar", "VR Urgency Countdown Timer Bar", "Scarcity.AI"],
+      "capabilities": ["countdown timers", "low-stock counters", "cart timers", "urgency/FOMO banners"],
+      "detectionImplications": ["first-seen scarcity message is weak", "persistent/reset scarcity is stronger longitudinal evidence"]
+    }
+  ]
+}
