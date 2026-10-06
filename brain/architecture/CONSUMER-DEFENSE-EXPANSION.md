@@ -1,267 +1,187 @@
-# Consumer-defense expansion roadmap — imported/dropshipped goods
+# Consumer-defense scope — dropshipped and imported goods
 
 Updated: 2026-10-06
 
-Scope remains focused on dropshipping, private-label/resold imported goods, deceptive provenance, unsafe low-quality products, manipulative storefront tactics, and merchant risk.
+DropShredder is not a general cybersecurity, recall, reputation, or shopping-assistant platform. Its scope is tightly limited to consumer risks that materially improve the answer to:
 
-## Core principle
-A strong DropShredder verdict should answer separate questions:
-1. Is this likely mass-resold/dropshipped?
-2. Is the merchant misrepresenting provenance/origin/manufacture?
-3. Is the product associated with safety/recall/compliance risk?
-4. Is the merchant associated with substantial complaint/refund/quality problems?
-5. Is the storefront using manipulative/dark-pattern tactics?
-6. Is there security/phishing risk?
-7. Is this legitimate resale/POD/private-label activity that should NOT be framed as deception?
+> Is this product likely mass-resold/dropshipped, misrepresented, low-quality/risky, or sold by a merchant exhibiting relevant consumer-harm patterns?
 
-## Tier 0 — local/free forever
+If a feature does not materially improve that answer, it stays out.
 
-### Product identity graph
-Fingerprint:
+## Six maintainable core modules
+
+### 1. Product provenance — P0
+Purpose: recognize the same underlying commodity across rewritten listings, supplier switches, private labels, new packaging, and new photography.
+
+Core signals:
 - GTIN/UPC/EAN
 - MPN/model/SKU/ASIN
-- dimensions
-- wattage/capacity
+- dimensions/specifications
 - materials
+- wattage/capacity
 - variant topology
 - package contents
-- image hashes
-- product handles/vendor/product type
-- structured metadata
-- first/last seen
+- product handle/vendor/product type
+- exact/perceptual image hashes
+- first/last seen chronology
+- cross-market source matches
 
-Use to recognize one commodity after:
-- AI rewrite
-- private label
-- packaging change
-- supplier switch
-- new photography
-- new storefront
+Required false-positive controls:
+- wholesale/private-label/OEM can be legitimate
+- supplier images can be stolen from an original maker
+- chronology and multiple independent invariants matter more than one image match
 
-### Merchant relationship graph
-Collect only public storefront identifiers:
-- tracker/pixel IDs
-- favicon hash
-- policy text hash
-- support email/phone/address
+### 2. Merchant credibility — P1
+Purpose: identify materially inconsistent merchant identity and relevant cross-store relationships.
+
+Core signals:
+- domain age vs explicit business-age claims
+- business/support identity consistency
+- repeated uncommon tracker IDs
+- email/phone/address reuse
+- policy/favicon hashes
 - social links
-- theme/app signatures
-- uncommon campaign parameters
-- merchant/legal names
+- catalog overlap
 
-Require independent corroboration before inferring common operation.
+Rules:
+- Shopify, analytics tools, hosting/CDNs, country and ordinary SaaS use have zero accusation weight
+- merchant-network relationships require independent corroboration
 
-### Dark-pattern chronology
-Track:
-- countdown resets
-- persistent "today only"
-- fake low-stock counters
-- repeated reference/crossed-out prices
-- perpetual sales
-- fake visitor/purchase counters
-- forced urgency popups
+### 3. Manipulation detection — P0
+Purpose: detect seller tactics directly relevant to misleading dropshipped/imported goods.
 
-### Complaint taxonomy
-Classify complaints into:
+Core signals:
+- fake/resetting scarcity
+- perpetual sale/reference-price contradictions
+- misleading handmade/original/local/manufacturer claims
+- review provenance anomalies
+- recycled/listing-swapped products
+- undisclosed product identity mutation
+
+Longitudinal evidence is preferred over one-time page heuristics.
+
+### 4. Fulfillment reality — P1
+Purpose: separate what a seller claims from how the product actually reaches the customer.
+
+Core signals:
+- explicit ships-from claims
+- product-level fulfillment origin
+- carrier/route observations
+- return-location friction
+- third-party fulfillment disclosures
+- contradictions between in-house/local claims and observed fulfillment
+
+Do not infer manufacture country from carrier routing.
+
+### 5. Consumer complaint radar — P0/P1
+Purpose: warn about merchant/product harm patterns relevant to dropshipping/imported goods.
+
+Public sources:
+- Trustpilot
+- Sitejabber
+- ConsumerAffairs
+- BBB
+- Google reviews/search
+- Reddit
+
+Complaint taxonomy:
 - never arrived
 - fake/invalid tracking
 - wrong item
-- substantially-not-as-described
+- not as described
 - poor/unsafe quality
 - refund refusal
 - return-address friction
-- surprise overseas return
+- surprise international return
 - counterfeit allegation
-- dropshipping/resale allegation
+- explicit dropshipping/resale allegation
 - customer-service failure
 
-Complaint presence is merchant-quality evidence, not proof of dropshipping.
+Rules:
+- one review source is corroborative only
+- small samples do not trigger strong warnings
+- multiple independent sources are required for strong merchant-risk warnings
+- reputation risk never directly increases provenance/dropship likelihood
 
-### Return/refund friction detector
-Parse policies for:
-- customer-paid international returns
-- undisclosed restocking fees
-- short return windows
-- return address supplied only after contacting support
-- final-sale traps
-- merchant discretion language
-- refund only after warehouse receipt
-- inconsistent return locations
+### 6. Focused safety checks — P2
+Only activate for product categories where imported-product safety materially matters:
+- batteries/chargers/electrical goods
+- heaters
+- children's products
+- cosmetics
+- food-contact goods
+- protective equipment
+- dubious medical/wellness devices
 
-### Shipping-claim contradiction engine
-Separate:
-- business location
-- manufacture origin
-- fulfillment origin
-- last-mile carrier
-- warehouse location
+Potential public sources:
+- CPSC
+- Health Canada
+- EU Safety Gate
+- relevant openFDA data
+- FCC equipment authorization
+- Verified by GS1 manual lookup
 
-Never infer manufacture country from carrier routing alone.
+Safety findings stay separate from provenance and merchant scores.
 
-### Product identity mutation history
-Warn when a stable URL silently changes:
-- title
-- images
-- specs
-- variants
-- seller/manufacturer
-- SKU/GTIN
-- product category
+## Explicitly out of scope
+- general antivirus/malware scanning
+- generic phishing detection unrelated to merchant/product risk
+- universal business background checks
+- broad recall search for unrelated product categories
+- generic shopping recommendations
+- price-comparison engine unrelated to deception/provenance
+- financial-credit scoring
+- social-media moderation
+- general corporate intelligence
+- paid API dependencies required for core operation
 
-Useful for recycled high-review listings and supplier replacement.
+## Architecture rule
+Every external integration must be optional and replaceable.
 
-## Tier 1 — public government/safety data, no paid dependency
+Core operation remains:
+- local-first
+- zero-backend
+- no account required
+- no telemetry
+- no paid API requirement
 
-### CPSC recall matcher
-Use CPSC public Recall REST API (JSON/XML).
-Match by:
-- model
-- product name
-- UPC/identifiers
-- manufacturer/importer
-- image/spec clues
+External public services should plug into narrow adapters so removal of one provider does not break the extension.
 
-Safety recall should be displayed independently from dropship verdict.
+## Priority order
 
-### Health Canada recall matcher
-Canada publishes recall/safety-alert datasets in CSV/JSON updated daily.
-Useful for imported consumer goods that may not yet be in a U.S. alert.
+### P0
+- product provenance
+- source/index matching
+- image/spec fingerprints
+- review provenance
+- fake scarcity/price chronology
+- complaint radar
 
-### EU Safety Gate / public recall search
-Check dangerous/noncompliant product alerts for imported consumer goods.
-Prefer local cached feeds/official public datasets where available.
+### P1
+- merchant relationships
+- fulfillment contradictions
+- return-policy friction
+- catalog overlap
 
-### FDA/openFDA
-Free public API for relevant regulated products:
-- devices
-- cosmetics/foods where appropriate
-- enforcement/recalls
+### P2
+- focused recall/certification checks for relevant risky imported-product categories only
 
-API key is free and optional; unauthenticated access exists at lower limits.
-
-### FCC equipment authorization
-For electronics/radio products:
-- extract claimed FCC ID
-- verify ID exists in FCC equipment authorization data
-- compare grantee/model data
-- flag malformed/nonexistent IDs
-
-Absence of an FCC ID is only relevant where authorization/labeling is actually required.
-
-### GS1 GTIN verification
-If GTIN/UPC is present:
-- offer "Verify GTIN" action using Verified by GS1
-- free public service allows up to 30 single GTIN queries per 24h
-- compare assigned company/product metadata against storefront claims
-
-Do not automate beyond public limits.
-
-## Tier 2 — free-account optional
-
-### ImportYeti
-Use for human/user-triggered importer/supplier research.
-Current free tier:
-- $0
-- free forever
-- unlimited human search
-- U.S. import data
-- no credit card required for core search
-
-High value for:
-- importer/manufacturer relationships
-- claimed "we manufacture this" contradictions
-- supplier-network discovery
-- identifying repeated importers behind different brands
-
-Do not scrape/bypass page limits. API data beyond free search may require credits.
-
-### urlscan.io
-Optional free account/API key.
-Use only user-triggered domain intelligence:
-- historical page captures
-- redirects
-- contacted domains
-- certificates/hosting
-- storefront infrastructure changes
-
-Keep security risk separate from dropship/provenance scores.
-
-### openFDA API key
-Free, not a trial.
-Use if request volume eventually warrants it.
-Without a key openFDA still exposes public API access at lower daily limits.
-
-## Services NOT suitable as core dependencies
-
-### VirusTotal Public API
-Free account exists, but public API terms prohibit commercial-product use and impose strict quotas.
-Do not make this a required DropShredder dependency.
-Could remain a user-launched external lookup if legally appropriate.
-
-### Google Places/Reviews
-Useful review data but current API access is billing-account based.
-Do not require it for a zero-cost core.
-Use public Google review search launchers instead.
-
-### Paid reverse-image APIs / paid import databases
-Do not require:
-- TinEye API
-- commercial Google/Bing vision APIs
-- ImportGenius/Panjiva-style paid datasets
-Use user-triggered public search surfaces and local image fingerprints instead.
-
-## High-priority modules
-
-1. Safety Recall Radar
-   - CPSC + Health Canada + EU Safety Gate + openFDA
-2. Certification/Identifier Validator
-   - GS1 + FCC
-3. Import/Supplier Provenance
-   - ImportYeti human-search integration
-4. Return Policy Abuse Detector
-5. Merchant Complaint Radar
-6. Product Identity Mutation Watch
-7. Dark Pattern Recorder
-8. Cross-Market Product Equivalence
-9. Merchant Network Graph
-10. Review Provenance / Listing-Recycling Detector
-11. Fulfillment Claim Auditor
-12. Marketplace Saturation / Launch-Wave Detector
-13. Counterfeit/Certification Claim Checker
-14. Risky Product Category Rules
-   - chargers/batteries
-   - children's products
-   - cosmetics
-   - food-contact goods
-   - protective gear
-   - heaters/electrical goods
-   - medical/wellness devices
-
-## UI recommendation
-
-Keep separate status cards:
+## Verdict separation
+DropShredder must continue to expose separate dimensions rather than one opaque scam score:
 
 PROVENANCE
-- Original / legitimate resale / likely mass-resell / unknown
+- original / legitimate resale / likely mass-resell / unknown
 
-SAFETY
-- No known alert / recall match / certification concern / unknown
-
-MERCHANT REPUTATION
-- Normal / elevated complaints / severe multi-source complaints / unknown
+MERCHANT RISK
+- normal / elevated complaints / severe multi-source complaints / unknown
 
 MANIPULATION
-- None observed / urgency present / longitudinal contradiction / severe dark pattern
+- none observed / weak indicators / longitudinal contradiction / strong deception evidence
 
-SECURITY
-- Separate web-security/phishing risk
+FULFILLMENT
+- consistent / unclear / contradictory
 
-This prevents a bad Trustpilot rating from inflating a dropshipping accusation, and prevents a mass-resell match from being presented as a safety hazard.
+SAFETY
+- not checked / no known issue / concern / recall or certification conflict
 
-## Recommended free signups
-Only sign up if/when the module is implemented:
-- ImportYeti — free forever human search, no credit card for core search
-- urlscan.io — free account for API/search quotas
-- openFDA API key — free, optional for higher public API quota
-
-No signup needed for initial CPSC, Health Canada, FCC public data, RDAP, or manual Verified by GS1 lookups.
+This separation prevents a bad merchant reputation from masquerading as provenance evidence and prevents legitimate resale from being framed as fraud.
