@@ -5,6 +5,7 @@ const DB_NAME='dropshredder';
 const DB_VERSION=2;
 const STORE='observations';
 const MAX_OBSERVATIONS=2000;
+const MAX_IDENTITY_OBSERVATIONS=120;
 const MAX_AGE_MS=180*24*60*60*1000;
 
 export interface StoredObservation {
@@ -76,7 +77,7 @@ export function productIdentityKey(report: DropShredderReport): string {
         : `domain-title:${p.domain}|${(p.title ?? '').toLowerCase().slice(0,180)}`;
 }
 
-async function pruneHistory(db:IDBDatabase):Promise<void>{
+async function pruneHistory(db:IDBDatabase,identityKey:string):Promise<void>{
   const cutoff=new Date(Date.now()-MAX_AGE_MS).toISOString();
 
   await new Promise<void>((resolve,reject)=>{
@@ -87,6 +88,23 @@ async function pruneHistory(db:IDBDatabase):Promise<void>{
       const cursor=request.result;
       if(!cursor) return;
       cursor.delete();
+      cursor.continue();
+    };
+    tx.oncomplete=()=>resolve();
+    tx.onerror=()=>reject(tx.error);
+    tx.onabort=()=>reject(tx.error);
+  });
+
+  let identitySeen=0;
+  await new Promise<void>((resolve,reject)=>{
+    const tx=db.transaction(STORE,'readwrite');
+    const index=tx.objectStore(STORE).index('identityCapturedAt');
+    const request=index.openCursor(IDBKeyRange.bound([identityKey,''],[identityKey,'\uffff']),'prev');
+    request.onsuccess=()=>{
+      const cursor=request.result;
+      if(!cursor) return;
+      identitySeen++;
+      if(identitySeen>MAX_IDENTITY_OBSERVATIONS) cursor.delete();
       cursor.continue();
     };
     tx.oncomplete=()=>resolve();
@@ -141,7 +159,7 @@ export async function saveObservation(report: DropShredderReport): Promise<Store
     tx.onerror=()=>reject(tx.error);
     tx.onabort=()=>reject(tx.error);
   });
-  await pruneHistory(db);
+  await pruneHistory(db,observation.identityKey);
   db.close();
   return observation;
 }
