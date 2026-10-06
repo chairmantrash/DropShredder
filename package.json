@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.323",
     "typescript": "^5.9.0",
     "wxt": "0.21.4"
   }
