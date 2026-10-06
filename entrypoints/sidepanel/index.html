@@ -13,6 +13,12 @@
         <p>Local-first. No account. No telemetry. Show the receipts.</p>
       </header>
       <button id="scan" type="button">HUNT THIS SHIT</button>
+      <section class="feature-toggles">
+        <label class="toggle-row">
+          <span><strong>Auto Source Hunt</strong><small>Check DropShredder's indexed supplier/marketplace history on every scan.</small></span>
+          <input id="auto-source-hunt" type="checkbox" />
+        </label>
+      </section>
       <p id="status" class="status">Ready to inspect the active page.</p>
       <section id="summary" class="summary"></section>
       <section id="hunt-actions" class="hunt-actions" hidden>
@@ -20,6 +26,7 @@
         <button id="hunt-image" class="secondary" type="button">HUNT IMAGE</button>
         <button id="hunt-store" class="secondary" type="button">HUNT STORE</button>
         <button id="check-domain" class="secondary" type="button">CHECK DOMAIN AGE</button>
+        <button id="reputation-sweep" class="secondary" type="button">REPUTATION SWEEP</button>
       </section>
       <section>
         <h2>THE RECEIPTS</h2>
