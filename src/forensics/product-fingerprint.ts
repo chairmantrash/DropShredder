@@ -32,6 +32,7 @@ export interface ProductFingerprintInput {
   sku?:string;
   mpn?:string;
   gtin?:string;
+  asin?:string;
   specifications?:Record<string,string>;
 }
 
@@ -49,7 +50,7 @@ export function buildProductFingerprint(input:ProductFingerprintInput):ProductFi
     .join(' ');
   const source=normalizeText([input.title,input.description,specText].filter(Boolean).join(' '));
 
-  const identifiers=unique([input.gtin ?? '',input.mpn ?? '',input.sku ?? '',...(source.match(MODEL_PATTERN) ?? [])]);
+  const identifiers=unique([input.asin ?? '',input.gtin ?? '',input.mpn ?? '',input.sku ?? '',...(source.match(MODEL_PATTERN) ?? [])]);
   const units=unique(source.match(UNIT_PATTERN) ?? []);
   const materials=unique(MATERIALS.filter(material=>source.includes(material)));
 
