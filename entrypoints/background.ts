@@ -11,8 +11,9 @@ function createMenus():void {
   });
 }
 
-async function openMany(urls:Record<string,string>):Promise<void> {
-  for(const url of Object.values(urls)) {
+async function openMany(urls:Record<string,string>,maxTabs=8):Promise<void> {
+  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
+  for(const url of unique) {
     await chrome.tabs.create({url,active:false});
   }
 }
