@@ -52,6 +52,7 @@ const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-swe
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
 const clearHistory=document.querySelector<HTMLButtonElement>('#clear-history');
+const revokeOptionalAccess=document.querySelector<HTMLButtonElement>('#revoke-optional-access');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
@@ -81,6 +82,9 @@ autoReputationSweep?.addEventListener('change',()=>{
         autoReputationSweep.checked=false;
         if(status) status.textContent='Auto Reputation Sweep needs optional Trustpilot access.';
       }
+    }
+    if(!autoReputationSweep.checked){
+      try{await chrome.permissions.remove({origins:['https://www.trustpilot.com/*']});}catch{}
     }
     const settings=await loadFeatureSettings();
     await saveFeatureSettings({...settings,autoReputationSweep:autoReputationSweep.checked});
@@ -955,6 +959,31 @@ clearHistory?.addEventListener('click',()=>{
       status.textContent=error instanceof Error?error.message:String(error);
     }finally{
       clearHistory.disabled=false;
+    }
+  })();
+});
+
+
+revokeOptionalAccess?.addEventListener('click',()=>{
+  if(!status) return;
+  void (async()=>{
+    revokeOptionalAccess.disabled=true;
+    try{
+      const granted=await chrome.permissions.getAll();
+      const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
+      if(origins.length) await chrome.permissions.remove({origins});
+      if(autoReputationSweep?.checked){
+        autoReputationSweep.checked=false;
+        const settings=await loadFeatureSettings();
+        await saveFeatureSettings({...settings,autoReputationSweep:false});
+      }
+      status.textContent=origins.length
+        ? 'Optional site access revoked.'
+        : 'No optional site access was currently granted.';
+    }catch(error){
+      status.textContent=error instanceof Error?error.message:String(error);
+    }finally{
+      revokeOptionalAccess.disabled=false;
     }
   })();
 });
