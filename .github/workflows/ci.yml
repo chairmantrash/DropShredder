@@ -23,6 +23,8 @@ jobs:
         run: npm install
       - name: Typecheck
         run: npm run typecheck
+      - name: Test forensic core
+        run: npm test
       - name: Build extension
         run: npm run build
       - name: Package unpacked build
