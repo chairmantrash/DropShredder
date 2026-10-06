@@ -20,4 +20,5 @@ export interface ProductSnapshot {
   pageSignals: string[];
   technicalFingerprint?: string;
   specifications?: Record<string,string>;
+  imageFingerprints?: Array<{url:string;sha256:string;ahash:string;dhash:string;width:number;height:number;capturedAt:string}>;
 }
