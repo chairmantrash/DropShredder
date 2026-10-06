@@ -105,6 +105,17 @@ async function scanActivePage(): Promise<void> {
           || ''
         ).replace(/\s+/g,' ').trim() || undefined;
 
+        const additionalProperties=Array.isArray(product?.additionalProperty)
+          ? product?.additionalProperty
+          : product?.additionalProperty ? [product.additionalProperty] : [];
+        const specifications:Record<string,string>={};
+        for(const entry of additionalProperties){
+          const record=asRecord(entry);
+          const name=first(record?.name);
+          const value=first(record?.value);
+          if(name && value && Object.keys(specifications).length<40) specifications[name]=value;
+        }
+
         const pageText=(document.body?.innerText || '').slice(0,120000);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
@@ -151,6 +162,7 @@ async function scanActivePage(): Promise<void> {
             capturedAt:new Date().toISOString(),
             shippingText:shippingMatch?.[0],
             claims:[],
+            specifications,
             pageSignals:[
               ...(('Shopify' in window || [...document.scripts].some(s=>s.src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
                 ? ['platform:shopify'] : []),
