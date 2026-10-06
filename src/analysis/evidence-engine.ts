@@ -31,16 +31,21 @@ export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
 
 export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
   const unique = dedupeEvidence(signals);
-  const weighted = unique.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
+  // Merchant complaints, identity checks, and policy friction must not inflate
+  // product provenance or dropshipping likelihood.
   const scored = unique.filter(signal => effectiveWeight(signal) > 0);
-  const likelihood = Math.max(0, Math.min(99, Math.round(weighted)));
+  const provenance = scored.filter(signal => signal.family === 'provenance' || signal.family === 'fulfillment');
+  const provenanceWeight = provenance.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
+  const likelihood = Math.max(0, Math.min(99, Math.round(provenanceWeight)));
+  const riskWeight = scored.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
+  const riskScore = Math.max(0, Math.min(99, Math.round(riskWeight)));
 
-  const directKeys = new Set(unique.filter(s => s.severity === 'direct').map(s => s.independentKey));
+  const directKeys = new Set(provenance.filter(s => s.severity === 'direct').map(s => s.independentKey));
   const corroboratingKeys = new Set(
-    unique.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
+    provenance.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
   );
   const strongFamilies = new Set(
-    unique.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
+    provenance.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
   );
 
   const directWithIndependentCorroboration =
@@ -52,12 +57,12 @@ export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
 
   let deceptionRisk: Verdict['deceptionRisk'] = 'unknown';
   if (scored.length >= 1) {
-    deceptionRisk = likelihood >= 65 ? 'high' : likelihood >= 35 ? 'moderate' : 'low';
+    deceptionRisk = riskScore >= 65 ? 'high' : riskScore >= 35 ? 'moderate' : 'low';
   }
 
   return {
-    massResellLikelihood: scored.length ? likelihood : null,
-    dropshipLikelihood: scored.length ? Math.max(0, likelihood - 8) : null,
+    massResellLikelihood: provenance.length ? likelihood : null,
+    dropshipLikelihood: provenance.length ? Math.max(0, likelihood - 8) : null,
     deceptionRisk,
     severeWarningAllowed,
     reason: severeWarningAllowed
