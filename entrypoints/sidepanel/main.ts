@@ -526,18 +526,19 @@ policyCheck?.addEventListener('click',()=>{
         return;
       }
 
-      const granted=await chrome.permissions.contains({origins:[new URL(policyUrl).origin+'/*']})
-        || await chrome.permissions.request({origins:[new URL(policyUrl).origin+'/*']});
-      if(!granted){
-        status.textContent='Policy check cancelled because site access was not granted.';
-        return;
-      }
-
-      const response=await fetch(policyUrl,{credentials:'omit',cache:'no-store'});
-      if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
-      const html=await response.text();
-      const doc=new DOMParser().parseFromString(html,'text/html');
-      const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
+      const [policyResult]=await chrome.scripting.executeScript({
+        target:{tabId:tab.id},
+        args:[policyUrl],
+        func:async(url:string)=>{
+          const response=await fetch(url,{credentials:'same-origin',cache:'no-store'});
+          if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
+          const html=await response.text();
+          const doc=new DOMParser().parseFromString(html,'text/html');
+          return (doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
+        },
+      });
+      const text=policyResult?.result as string|undefined;
+      if(!text) throw new Error('Return/refund policy page did not return readable text.');
       const findings=analyzeReturnPolicy(text);
 
       if(!findings.length){
