@@ -32,6 +32,7 @@ import { detectCommercePlatforms } from '../../src/intelligence/commerce-platfor
 import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/analysis/supply-chain-profile';
 import { merchantNetworkEvidence, merchantNetworkForDomain } from '../../src/intelligence/merchant-networks';
 import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../../src/analysis/merchant-network';
+import { amazonCloneClusterEvidence, type AmazonSearchCard } from '../../src/analysis/amazon-clone-clusters';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -238,6 +239,23 @@ async function scanActivePage(): Promise<void> {
         );
         const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
+        const amazonSearchCards:AmazonSearchCard[]=[...document.querySelectorAll<HTMLElement>('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')]
+          .slice(0,160)
+          .map(card=>{
+            const asin=(card.dataset.asin || '').trim().toUpperCase();
+            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim();
+            const image=card.querySelector<HTMLImageElement>('img.s-image, img[data-image-latency]');
+            const priceText=card.querySelector<HTMLElement>('.a-price .a-offscreen')?.innerText || '';
+            const price=Number(priceText.replace(/[^0-9.]/g,'')) || undefined;
+            return {
+              asin,
+              title,
+              imageUrl:image?.currentSrc || image?.src,
+              price,
+            };
+          })
+          .filter(card=>/^[A-Z0-9]{10}$/.test(card.asin) && Boolean(card.title));
+
         const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
           .slice(0,80)
           .map((review,index)=>{
@@ -318,11 +336,12 @@ async function scanActivePage(): Promise<void> {
           } : undefined,
           scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
           htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
+          amazonSearchCards,
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary;scriptSources:string[];htmlSignature:string}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary;scriptSources:string[];htmlSignature:string;amazonSearchCards:AmazonSearchCard[]}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
     const platformMatches=detectCommercePlatforms({
@@ -355,6 +374,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    evidence.push(...amazonCloneClusterEvidence(result.amazonSearchCards));
     evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
     for(const platform of platformMatches){
