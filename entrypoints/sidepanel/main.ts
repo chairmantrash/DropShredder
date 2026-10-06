@@ -454,7 +454,7 @@ async function scanActivePage(): Promise<void> {
             const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
               try{
                 const response=await fetch(link.url,{
-                  credentials:'same-origin',
+                  credentials:'omit',
                   cache:'force-cache',
                   signal:AbortSignal.timeout(3500),
                 });
@@ -665,11 +665,19 @@ async function scanActivePage(): Promise<void> {
         const headlineEl=document.createElement('div');
         headlineEl.className='headline';
         headlineEl.textContent=headline;
+        const close=document.createElement('button');
+        close.type='button';
+        close.setAttribute('aria-label','Dismiss DropShredder warning');
+        close.textContent='×';
+        close.style.cssText='all:initial;position:absolute;right:8px;top:5px;color:#b9b9c0;font:700 18px system-ui;cursor:pointer;padding:4px';
+        close.addEventListener('click',()=>host.remove());
+
         const detail=document.createElement('div');
         detail.className='detail';
         const scoreText=score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`;
         detail.textContent=`${scoreText} • ${count} signal(s) • ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}`;
-        box.append(brand,headlineEl,detail);
+        box.style.position='relative';
+        box.append(close,brand,headlineEl,detail);
         shadow.append(style,box);
         document.documentElement.append(host);
       },
@@ -867,7 +875,7 @@ policyCheck?.addEventListener('click',()=>{
         target:{tabId:tab.id},
         args:[policyUrl],
         func:async(url:string)=>{
-          const response=await fetch(url,{credentials:'same-origin',cache:'no-store'});
+          const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
           if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
           const html=await response.text();
           const doc=new DOMParser().parseFromString(html,'text/html');
