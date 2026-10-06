@@ -11,6 +11,27 @@ const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–)\s*(?:1[5-9]|2\d|3\d)\s+(
 
 export function runPassiveRules(product: ProductSnapshot, pageText: string): EvidenceSignal[] {
   const out: EvidenceSignal[]=[];
+
+  for (const signal of product.pageSignals) {
+    if (signal === 'review-platform:loox') {
+      out.push({
+        id:'REVIEW_PLATFORM_LOOX', family:'reviews', severity:'info', confidence:.98, weight:0,
+        title:'Loox review platform detected',
+        explanation:'Loox review widgets are present. Review-platform presence is informational only and does not establish that reviews were imported or inauthentic.',
+        observedValue:'Loox storefront widget signature',
+        independentKey:'review-platform-loox',
+      });
+    }
+    if (signal === 'review-platform:judgeme') {
+      out.push({
+        id:'REVIEW_PLATFORM_JUDGEME', family:'reviews', severity:'info', confidence:.98, weight:0,
+        title:'Judge.me review platform detected',
+        explanation:'Judge.me review widgets are present. Judge.me can host legitimately collected reviews, so this carries zero accusation weight by itself.',
+        observedValue:'Judge.me storefront widget signature',
+        independentKey:'review-platform-judgeme',
+      });
+    }
+  }
   if (product.shippingText && longShipping.test(product.shippingText)) {
     out.push({
       id:'LONG_SHIPPING_WINDOW', family:'fulfillment', severity:'moderate', confidence:.75, weight:10,
