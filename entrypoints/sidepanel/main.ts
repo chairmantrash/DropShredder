@@ -4,6 +4,7 @@ import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
 import { saveObservation } from '../../src/storage/history';
+import { analyzeEtsyPage } from '../../src/adapters/etsy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -125,6 +126,11 @@ async function scanActivePage(): Promise<void> {
     if (!result) throw new Error('The page did not return a scan result.');
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    if (/(^|\\.)etsy\\.com$/i.test(result.product.domain)) {
+      const etsy=analyzeEtsyPage(result.pageText);
+      result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
+      evidence.push(...etsy.evidence);
+    }
     const report: DropShredderReport={
       version:1,
       product:result.product,
