@@ -188,3 +188,17 @@ export async function getObservations(identityKey:string,limit=100): Promise<Sto
   db.close();
   return rows;
 }
+
+
+export async function clearObservationHistory():Promise<void>{
+  const db=await openDb();
+  await new Promise<void>((resolve,reject)=>{
+    const tx=db.transaction(STORE,'readwrite');
+    const request=tx.objectStore(STORE).clear();
+    request.onsuccess=()=>undefined;
+    tx.oncomplete=()=>resolve();
+    tx.onerror=()=>reject(tx.error);
+    tx.onabort=()=>reject(tx.error);
+  });
+  db.close();
+}
