@@ -3,7 +3,7 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';
+import { getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
 import { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
 import type { ReviewSnapshot } from '../../src/types/review';
@@ -12,6 +12,7 @@ import { buildProductFingerprint } from '../../src/forensics/product-fingerprint
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
+import { imageHistoryEvidence } from '../../src/forensics/image-history';
 import { lookupDomainRdap } from '../../src/osint/rdap';
 import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
 
@@ -338,13 +339,30 @@ huntImage?.addEventListener('click',()=>{
           observedValue:`SHA-256 ${fingerprint.sha256.slice(0,16)}… • ${fingerprint.width}×${fingerprint.height}`,
           independentKey:`image-fingerprint:${fingerprint.sha256}`,
         };
+        const nextProduct={
+          ...lastReport.product,
+          imageFingerprints:[...existing.filter(item=>item.url!==image),fingerprint],
+        };
+        let nextEvidenceList=[...lastReport.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence];
+
+        try{
+          const allHistory=await getRecentObservationsAll(250);
+          const imageEvidence=imageHistoryEvidence(nextProduct,allHistory);
+          for(const item of imageEvidence){
+            nextEvidenceList=[
+              ...nextEvidenceList.filter(existingItem=>existingItem.independentKey!==item.independentKey),
+              item,
+            ];
+          }
+        }catch(historyError){
+          console.warn('DropShredder: cross-domain image history comparison failed',historyError);
+        }
+
         lastReport={
           ...lastReport,
-          product:{
-            ...lastReport.product,
-            imageFingerprints:[...existing.filter(item=>item.url!==image),fingerprint],
-          },
-          evidence:[...lastReport.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence],
+          product:nextProduct,
+          evidence:nextEvidenceList,
+          verdict:calculateVerdict(nextEvidenceList),
         };
         renderReport(lastReport);
         try { await saveObservation(lastReport); } catch {}
