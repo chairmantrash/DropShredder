@@ -1,4 +1,4 @@
-import type { EvidenceSignal, Verdict } from '../types/evidence';
+import type { EvidenceSignal, RiskLevel, Verdict } from '../types/evidence';
 
 const severityRank: Record<EvidenceSignal['severity'], number> = {
   info: 0,
@@ -11,6 +11,13 @@ const severityRank: Record<EvidenceSignal['severity'], number> = {
 function effectiveWeight(signal: EvidenceSignal): number {
   if (signal.severity === 'info') return 0;
   return Math.max(0, signal.weight * signal.confidence);
+}
+
+function riskLevel(signals: EvidenceSignal[]): RiskLevel {
+  const scored=signals.filter(signal=>effectiveWeight(signal)>0);
+  if(!scored.length) return 'unknown';
+  const score=Math.min(99,Math.round(scored.reduce((sum,signal)=>sum+effectiveWeight(signal),0)));
+  return score>=65?'high':score>=35?'moderate':'low';
 }
 
 export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
@@ -31,21 +38,37 @@ export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
 
 export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
   const unique = dedupeEvidence(signals);
-  // Merchant complaints, identity checks, and policy friction must not inflate
-  // product provenance or dropshipping likelihood.
   const scored = unique.filter(signal => effectiveWeight(signal) > 0);
-  const provenance = scored.filter(signal => signal.family === 'provenance' || signal.family === 'fulfillment');
-  const provenanceWeight = provenance.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
-  const likelihood = Math.max(0, Math.min(99, Math.round(provenanceWeight)));
-  const riskWeight = scored.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
-  const riskScore = Math.max(0, Math.min(99, Math.round(riskWeight)));
 
-  const directKeys = new Set(provenance.filter(s => s.severity === 'direct').map(s => s.independentKey));
+  const provenance = scored.filter(signal => signal.family === 'provenance');
+  const fulfillment = scored.filter(signal => signal.family === 'fulfillment');
+  const merchant = scored.filter(signal => signal.family === 'merchant' || signal.family === 'identity');
+  const manipulation = scored.filter(signal =>
+    signal.family === 'scarcity' ||
+    signal.family === 'pricing' ||
+    signal.family === 'reviews' ||
+    signal.family === 'claims'
+  );
+
+  const provenanceWeight = provenance.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
+  const dropshipWeight = provenanceWeight + fulfillment.reduce((sum,signal)=>sum+effectiveWeight(signal)*.65,0);
+  const massResellLikelihood = provenance.length
+    ? Math.max(0, Math.min(99, Math.round(provenanceWeight)))
+    : null;
+  const dropshipLikelihood = provenance.length || fulfillment.length
+    ? Math.max(0, Math.min(99, Math.round(dropshipWeight)))
+    : null;
+
+  // Severe automatic accusations remain restricted to product provenance and
+  // fulfillment evidence. Merchant reputation, reviews, policy friction,
+  // pricing and scarcity can never unlock this gate by themselves.
+  const severePool=[...provenance,...fulfillment];
+  const directKeys = new Set(severePool.filter(s => s.severity === 'direct').map(s => s.independentKey));
   const corroboratingKeys = new Set(
-    provenance.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
+    severePool.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
   );
   const strongFamilies = new Set(
-    provenance.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
+    severePool.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
   );
 
   const directWithIndependentCorroboration =
@@ -55,20 +78,27 @@ export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
   const severeWarningAllowed =
     directWithIndependentCorroboration || strongFamilies.size >= 2;
 
-  let deceptionRisk: Verdict['deceptionRisk'] = 'unknown';
-  if (scored.length >= 1) {
-    deceptionRisk = riskScore >= 65 ? 'high' : riskScore >= 35 ? 'moderate' : 'low';
-  }
+  const deceptionSignals=scored.filter(signal =>
+    signal.family==='provenance' ||
+    signal.family==='claims' ||
+    signal.family==='scarcity' ||
+    signal.family==='pricing'
+  );
 
   return {
-    massResellLikelihood: provenance.length ? likelihood : null,
-    dropshipLikelihood: provenance.length ? Math.max(0, likelihood - 8) : null,
-    deceptionRisk,
+    massResellLikelihood,
+    dropshipLikelihood,
+    deceptionRisk:riskLevel(deceptionSignals),
+    merchantRisk:riskLevel(merchant),
+    manipulationRisk:riskLevel(manipulation),
+    fulfillmentRisk:riskLevel(fulfillment),
     severeWarningAllowed,
     reason: severeWarningAllowed
-      ? 'Independent evidence families satisfy the severe-warning gate.'
-      : scored.length
-        ? 'Evidence is not yet independent/strong enough for a severe automatic accusation.'
-        : 'No accusation-weighted evidence is available yet.',
+      ? 'Independent provenance/fulfillment evidence satisfies the severe-warning gate.'
+      : severePool.length
+        ? 'Product evidence is not yet independent/strong enough for a severe automatic accusation.'
+        : scored.length
+          ? 'Risk signals exist, but none establish product provenance or dropshipping.'
+          : 'No accusation-weighted evidence is available yet.',
   };
 }
