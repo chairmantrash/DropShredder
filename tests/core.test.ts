@@ -30,7 +30,7 @@ test('weak signals alone cannot unlock severe warning', () => {
   assert.equal(verdict.severeWarningAllowed,false);
 });
 
-test('two independent strong families can unlock severe warning', () => {
+test('review anomalies cannot corroborate a severe dropshipping accusation', () => {
   const verdict=calculateVerdict([
     {
       id:'A',family:'reviews',severity:'strong',confidence:.9,weight:20,
@@ -41,7 +41,8 @@ test('two independent strong families can unlock severe warning', () => {
       title:'x',explanation:'x',independentKey:'upstream-id',
     },
   ]);
-  assert.equal(verdict.severeWarningAllowed,true);
+  assert.equal(verdict.severeWarningAllowed,false);
+  assert.equal(verdict.massResellLikelihood,18);
 });
 
 test('technical fingerprints retain invariant overlap after marketing rewrite', () => {
@@ -56,4 +57,22 @@ test('technical fingerprints retain invariant overlap after marketing rewrite', 
     mpn:'DL-4000-A',
   });
   assert(fingerprintSimilarity(a,b)>.5);
+});
+
+test('merchant complaints alone do not establish mass resale or dropshipping',()=>{
+  const verdict=calculateVerdict([{
+    id:'COMPLAINTS',family:'merchant',severity:'strong',confidence:1,weight:60,
+    title:'Complaints',explanation:'Public reputation concerns',independentKey:'reputation:multi-source',
+  }]);
+  assert.equal(verdict.massResellLikelihood,null);
+  assert.equal(verdict.dropshipLikelihood,null);
+  assert.equal(verdict.severeWarningAllowed,false);
+});
+
+test('two independent strong provenance and fulfillment families can pass the gate',()=>{
+  const verdict=calculateVerdict([
+    {id:'UPSTREAM',family:'provenance',severity:'strong',confidence:1,weight:24,title:'x',explanation:'x',independentKey:'upstream'},
+    {id:'FULFILLMENT',family:'fulfillment',severity:'strong',confidence:1,weight:24,title:'x',explanation:'x',independentKey:'route'},
+  ]);
+  assert.equal(verdict.severeWarningAllowed,true);
 });
