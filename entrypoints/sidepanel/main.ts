@@ -11,6 +11,7 @@ import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
+import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -312,7 +313,46 @@ huntSources?.addEventListener('click',()=>{
 });
 huntImage?.addEventListener('click',()=>{
   const image=lastReport?.product.imageUrls[0];
-  void openSearches(imageSearchUrls(image));
+  if(!image){
+    void openSearches(imageSearchUrls());
+    return;
+  }
+
+  void (async()=>{
+    if(status) status.textContent='Fingerprinting the selected image locally…';
+    try {
+      const fingerprint=await captureImageFingerprint(image);
+      if(fingerprint && lastReport){
+        const existing=lastReport.product.imageFingerprints ?? [];
+        const nextEvidence={
+          id:'LOCAL_IMAGE_FINGERPRINT',
+          family:'provenance' as const,
+          severity:'info' as const,
+          confidence:1,
+          weight:0,
+          title:'Local image fingerprint captured',
+          explanation:'DropShredder computed exact and perceptual hashes locally. A hash is not negative evidence by itself; it enables later duplicate/source chronology checks.',
+          observedValue:`SHA-256 ${fingerprint.sha256.slice(0,16)}… • ${fingerprint.width}×${fingerprint.height}`,
+          independentKey:`image-fingerprint:${fingerprint.sha256}`,
+        };
+        lastReport={
+          ...lastReport,
+          product:{
+            ...lastReport.product,
+            imageFingerprints:[...existing.filter(item=>item.url!==image),fingerprint],
+          },
+          evidence:[...lastReport.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence],
+        };
+        renderReport(lastReport);
+        try { await saveObservation(lastReport); } catch {}
+      }
+    } catch(error){
+      console.warn('DropShredder: image fingerprinting failed',error);
+    } finally {
+      if(status) status.textContent='Image hunt launched.';
+      await openSearches(imageSearchUrls(image));
+    }
+  })();
 });
 huntStore?.addEventListener('click',()=>{
   const domain=lastReport?.product.domain;
