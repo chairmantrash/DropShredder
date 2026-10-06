@@ -18,4 +18,6 @@ export interface ProductSnapshot {
   shippingText?: string;
   claims: string[];
   pageSignals: string[];
+  technicalFingerprint?: string;
+  specifications?: Record<string,string>;
 }
