@@ -18,7 +18,11 @@ When the user explicitly runs a scan or investigation action, DropShredder may p
 
 ## Local storage
 
-DropShredder stores investigation observations locally in the browser using Chrome storage and IndexedDB. This local history supports chronology, price/scarcity history, product-identity comparisons and source matching.
+DropShredder stores a bounded set of investigation observations locally in the browser using Chrome storage and IndexedDB. This local history supports chronology, price/scarcity history, product-identity comparisons and source matching.
+
+Before persistence, page and image URLs are stripped of query strings and fragments so tracking parameters, signed URL tokens, and other unnecessary URL data are not retained. History is capped at 2,000 observations globally and 120 observations per product identity.
+
+DropShredder does not store passwords, authentication tokens, cookies, payment-card details, form-field contents, or account credentials. It does not use the Chrome cookies API and does not inspect password fields.
 
 DropShredder does not operate a hosted user-data backend and does not upload browsing or investigation history to the DropShredder developer.
 
@@ -60,7 +64,7 @@ DropShredder's use of information received from Chrome APIs adheres to the Chrom
 
 ## Retention and deletion
 
-Investigation history is stored locally in the user's browser. Removing the extension or clearing the extension's site/storage data removes that local data. DropShredder does not maintain a separate cloud copy.
+Investigation history is stored locally in the user's browser with bounded retention. Removing the extension or clearing the extension's site/storage data removes that local data. DropShredder does not maintain a separate cloud copy.
 
 ## Changes
 
