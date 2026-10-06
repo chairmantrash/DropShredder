@@ -162,6 +162,22 @@ async function scanActivePage(): Promise<void> {
     const safety=pageSafety(tab.url);
     if(!safety.allowed) throw new Error(safety.reason ?? 'This page is not eligible for scanning.');
 
+    const [sensitiveSurface]=await chrome.scripting.executeScript({
+      target:{tabId:tab.id},
+      func:()=>Boolean(document.querySelector([
+        'input[type="password"]',
+        'input[autocomplete="cc-number"]',
+        'input[autocomplete="cc-csc"]',
+        'input[autocomplete="current-password"]',
+        'input[autocomplete="new-password"]',
+        'form[action*="checkout" i]',
+        'form[action*="payment" i]',
+      ].join(','))),
+    });
+    if(sensitiveSurface?.result){
+      throw new Error('DropShredder detected authentication/payment fields and will not scan this page.');
+    }
+
     const [execution]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
       func:()=>{
