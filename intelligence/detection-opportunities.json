@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06",
+  "rules": [
+    {
+      "id": "REVIEW_PRODUCT_MISMATCH",
+      "family": "reviews",
+      "candidateSeverity": "strong",
+      "requires": ["multiple reviews materially describe a different product or incompatible attributes"],
+      "falsePositiveRisks": ["variant merges", "legitimate product relaunch", "marketplace review aggregation"],
+      "status": "research"
+    },
+    {
+      "id": "REVIEW_PREDATES_LISTING",
+      "family": "reviews",
+      "candidateSeverity": "strong",
+      "requires": ["reliable listing/shop chronology", "review timestamp older than product/listing"],
+      "falsePositiveRisks": ["migrated product listings", "legitimate review syndication"],
+      "status": "research"
+    },
+    {
+      "id": "SCARCITY_TIMER_RESET",
+      "family": "scarcity",
+      "candidateSeverity": "strong",
+      "requires": ["same offer observed after claimed expiry", "timer resets or identical urgency returns"],
+      "falsePositiveRisks": ["genuine recurring promotions"],
+      "status": "planned"
+    },
+    {
+      "id": "LOCAL_ORIGIN_CARRIER_CONTRADICTION",
+      "family": "fulfillment",
+      "candidateSeverity": "strong",
+      "requires": ["explicit local/domestic fulfillment claim", "reliable carrier/tracking evidence inconsistent with claim"],
+      "falsePositiveRisks": ["international carrier operating domestic leg", "3PL routing"],
+      "status": "research"
+    },
+    {
+      "id": "PRIVATE_LABEL_UPSTREAM_MATCH",
+      "family": "provenance",
+      "candidateSeverity": "strong",
+      "requires": ["matching product invariants or imagery at older upstream source", "seller makes original-manufacture/proprietary claim"],
+      "falsePositiveRisks": ["supplier copied original seller", "OEM relationship"],
+      "status": "planned"
+    },
+    {
+      "id": "AI_REWRITE_INVARIANT_MATCH",
+      "family": "provenance",
+      "candidateSeverity": "strong",
+      "requires": ["high overlap in technical invariants despite substantially rewritten marketing copy"],
+      "falsePositiveRisks": ["standardized commodity specifications"],
+      "status": "planned"
+    }
+  ]
+}
