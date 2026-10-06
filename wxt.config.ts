@@ -4,6 +4,10 @@ export default defineConfig({
   manifest: {
     name: 'DropShredder',
     description: 'Local-first commerce forensics and product provenance analysis.',
+    minimum_chrome_version: '114',
+    content_security_policy: {
+      extension_pages: "script-src 'self'; object-src 'self';",
+    },
     permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', 'sidePanel'],
     optional_host_permissions: ['https://*/*'],
     icons: {
