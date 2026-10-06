@@ -87,7 +87,7 @@ function renderReport(report: DropShredderReport): void {
     <div class="metric"><span>Manipulation risk</span><strong>${report.verdict.manipulationRisk.toUpperCase()}</strong></div>
     <div class="metric"><span>Fulfillment risk</span><strong>${report.verdict.fulfillmentRisk.toUpperCase()}</strong></div>
     <div class="metric"><span>Supply chain</span><strong>${report.supplyChain?.label ?? 'UNKNOWN'}</strong></div>
-    <div class="metric"><span>Payment rails</span><strong>${report.supplyChain?.paymentProcessors.length ? report.supplyChain.paymentProcessors.join(', ') : 'UNKNOWN'}</strong></div>
+    <div class="metric"><span>Payment / banking chain</span><strong>${report.supplyChain?.paymentChainLabel ?? 'UNKNOWN'}</strong></div>
     <div class="gate">${report.supplyChain?.preferenceNote ?? ''}</div>
     <div class="gate">${report.verdict.reason}</div>`;
 
