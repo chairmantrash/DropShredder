@@ -21,6 +21,18 @@ function complaintTermHits(text:string):number{
   return DROPSHIP_COMPLAINT_TERMS.filter(term=>normalized.includes(term)).length;
 }
 
+function observationSummary(obs:ReputationObservation):string{
+  const parts=[
+    typeof obs.rating==='number'? `rating ${obs.rating}/5` : undefined,
+    typeof obs.reviewCount==='number'? `${obs.reviewCount} reviews` : undefined,
+    typeof obs.negativeShare==='number'? `${Math.round(obs.negativeShare*100)}% one-star/negative share` : undefined,
+  ].filter(Boolean);
+  if(obs.snippets?.length){
+    parts.push(...obs.snippets.slice(0,3).map(s=>`“${s.slice(0,180)}”`));
+  }
+  return parts.join(' • ');
+}
+
 export function analyzeReputationObservations(observations:ReputationObservation[]):EvidenceSignal[]{
   const out:EvidenceSignal[]=[];
   // Multiple pages on one review platform count as one source, not
@@ -38,7 +50,7 @@ export function analyzeReputationObservations(observations:ReputationObservation
     const text=(obs.snippets ?? []).join(' ');
     const termHits=complaintTermHits(text);
     return (typeof obs.rating==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.rating<=2.5)
-      || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.negativeShare>=.45)
+      || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=30 && obs.negativeShare>=.20)
       || (typeof obs.complaintCount==='number' && obs.complaintCount>=10)
       || (termHits>=3 && (obs.snippets?.length ?? 0)>=3);
   });
@@ -52,8 +64,8 @@ export function analyzeReputationObservations(observations:ReputationObservation
       confidence:.68,
       weight:8,
       title:'Public reputation source shows substantial complaints',
-      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
-      observedValue:source.source,
+      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback, low ratings, or a high one-star share. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
+      observedValue:[source.source,observationSummary(source)].filter(Boolean).join(' • '),
       independentKey:`reputation:${source.source}`,
     });
   }
@@ -67,7 +79,7 @@ export function analyzeReputationObservations(observations:ReputationObservation
       weight:20,
       title:'Multiple independent reputation sources show substantial complaints',
       explanation:'Two or more public review/complaint sources independently show elevated negative feedback. This is a merchant-quality/risk signal and does not by itself prove dropshipping or provenance deception.',
-      observedValue:negativeSources.map(s=>s.source).join(', '),
+      observedValue:negativeSources.map(s=>`${s.source}: ${observationSummary(s)}`).join(' | '),
       independentKey:'reputation:multi-source',
     });
   }
