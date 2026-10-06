@@ -20,6 +20,8 @@ export function merchantSearchUrls(domain:string):Record<string,string> {
     scam:`https://www.google.com/search?q=${q(quoted+' scam')}`,
     reddit:`https://www.google.com/search?q=${q(quoted+' reddit')}`,
     trustpilot:`https://www.google.com/search?q=${q(quoted+' site:trustpilot.com')}`,
+    rdap:`https://client.rdap.org/?object=${q(domain)}&type=domain`,
+    bbb:`https://www.google.com/search?q=${q(quoted+' site:bbb.org')}`,
   };
 }
 
