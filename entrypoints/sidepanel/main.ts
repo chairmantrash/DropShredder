@@ -123,9 +123,12 @@ function renderReport(report: DropShredderReport): void {
     summary.append(gate);
   }
 
-  evidenceList.innerHTML='';
+  evidenceList.replaceChildren();
   if (!report.evidence.length) {
-    evidenceList.innerHTML='<div class="empty">No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.</div>';
+    const empty=document.createElement('div');
+    empty.className='empty';
+    empty.textContent='No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.';
+    evidenceList.append(empty);
   } else {
     for (const item of report.evidence) {
       const row=document.createElement('article');
@@ -223,6 +226,17 @@ async function scanActivePage(): Promise<void> {
         const structuredImages=Array.isArray(imageValue)
           ? imageValue.filter((x):x is string=>typeof x==='string')
           : typeof imageValue==='string'?[imageValue]:[];
+        const pageImages:string[]=[];
+        for(let i=0;i<Math.min(document.images.length,200);i++){
+          const image=document.images.item(i);
+          const src=image?.currentSrc || image?.src;
+          if(src) pageImages.push(src);
+        }
+        const scriptSources:string[]=[];
+        for(let i=0;i<Math.min(document.scripts.length,300);i++){
+          const src=document.scripts.item(i)?.src;
+          if(src) scriptSources.push(src);
+        }
         const amazonAsin=/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})(?:[/?]|$)/i.exec(location.pathname)?.[1]?.toUpperCase();
         const amazonSeller=(
           document.querySelector<HTMLElement>('#sellerProfileTriggerId')?.innerText
@@ -330,7 +344,7 @@ async function scanActivePage(): Promise<void> {
             asin:amazonAsin,
             mpn:first(product?.mpn),
             gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
-            imageUrls:[...new Set([...structuredImages,...[...document.images].map(i=>i.currentSrc||i.src).filter(Boolean)])].slice(0,30),
+            imageUrls:[...new Set([...structuredImages,...pageImages])].slice(0,30),
             jsonLdProductCount:jsonNodes.filter(node=>{
               const t=node['@type'];
               return t==='Product' || (Array.isArray(t) && t.includes('Product'));
@@ -373,7 +387,7 @@ async function scanActivePage(): Promise<void> {
             reviewCount: hostedReviewCount,
             source:'Store-hosted structured reviews',
           } : undefined,
-          scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
+          scriptSources,
           htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
           amazonSearchCards,
         };
@@ -635,15 +649,28 @@ async function scanActivePage(): Promise<void> {
         const headline=severe
           ? '⚠ STRONG DROPSHIP / RESELL EVIDENCE'
           : count>0 ? '⚠ DROPSHREDDER SIGNALS FOUND' : 'DROPSHREDDER • NO VERDICT';
-        shadow.innerHTML=`<style>
+        const style=document.createElement('style');
+        style.textContent=`
           .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
             box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:system-ui,sans-serif;padding:14px}
           .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
           .headline{font-size:15px;font-weight:950;line-height:1.15}
           .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
-        </style><div class="box"><div class="brand">DROP SHREDDER</div><div class="headline">${headline}</div>
-        <div class="detail">${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${count} signal(s)<br>
-        ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}</div></div>`;
+        `;
+        const box=document.createElement('div');
+        box.className='box';
+        const brand=document.createElement('div');
+        brand.className='brand';
+        brand.textContent='DROP SHREDDER';
+        const headlineEl=document.createElement('div');
+        headlineEl.className='headline';
+        headlineEl.textContent=headline;
+        const detail=document.createElement('div');
+        detail.className='detail';
+        const scoreText=score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`;
+        detail.textContent=`${scoreText} • ${count} signal(s) • ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}`;
+        box.append(brand,headlineEl,detail);
+        shadow.append(style,box);
         document.documentElement.append(host);
       },
     });
@@ -658,8 +685,9 @@ async function scanActivePage(): Promise<void> {
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
 
-async function openSearches(urls:Record<string,string>):Promise<void>{
-  for(const url of Object.values(urls)) await chrome.tabs.create({url,active:false});
+async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
+  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
+  for(const url of unique) await chrome.tabs.create({url,active:false});
 }
 
 huntSources?.addEventListener('click',()=>{
