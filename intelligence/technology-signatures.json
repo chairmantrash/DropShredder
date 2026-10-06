@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06",
+  "signatures": [
+    {
+      "id": "track123-widget-script",
+      "technology": "Track123",
+      "category": "tracking",
+      "kind": "script",
+      "pattern": "track123.com/track123-widget.min.js",
+      "sourceUrl": "https://intercom.help/track123/en/articles/13303463-create-a-track123-tracking-page-in-a-headless-shopify-store",
+      "firstVerified": "2026-10-06",
+      "lastVerified": "2026-10-06",
+      "status": "active",
+      "confidence": 0.98,
+      "defaultWeight": 0,
+      "notes": "Presence is informational only."
+    },
+    {
+      "id": "track123-widget-selector",
+      "technology": "Track123",
+      "category": "tracking",
+      "kind": "selector",
+      "pattern": "#track123-tracking-widget, track123-tracking-widget",
+      "sourceUrl": "https://intercom.help/track123/en/articles/13303463-create-a-track123-tracking-page-in-a-headless-shopify-store",
+      "firstVerified": "2026-10-06",
+      "lastVerified": "2026-10-06",
+      "status": "active",
+      "confidence": 0.98,
+      "defaultWeight": 0
+    },
+    {
+      "id": "parcelpanel-tracking-script",
+      "technology": "ParcelPanel",
+      "category": "tracking",
+      "kind": "script",
+      "pattern": "parcelpanel.com/assets/tracking/track-page.js",
+      "sourceUrl": "https://parcelpanel.com/",
+      "firstVerified": "2026-10-06",
+      "lastVerified": "2026-10-06",
+      "status": "active",
+      "confidence": 0.9,
+      "defaultWeight": 0,
+      "notes": "Reverify against public documentation during weekly sweep."
+    },
+    {
+      "id": "loox-widget-script",
+      "technology": "Loox",
+      "category": "reviews",
+      "kind": "script",
+      "pattern": "loox.io/widget/loox.js",
+      "sourceUrl": "https://apps.shopify.com/loox",
+      "firstVerified": "2026-10-06",
+      "lastVerified": "2026-10-06",
+      "status": "active",
+      "confidence": 0.9,
+      "defaultWeight": 0
+    },
+    {
+      "id": "judgeme-widget-selector",
+      "technology": "Judge.me",
+      "category": "reviews",
+      "kind": "selector",
+      "pattern": "#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge",
+      "sourceUrl": "https://apps.shopify.com/judgeme",
+      "firstVerified": "2026-10-06",
+      "lastVerified": "2026-10-06",
+      "status": "active",
+      "confidence": 0.9,
+      "defaultWeight": 0
+    }
+  ]
+}
