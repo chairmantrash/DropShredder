@@ -25,6 +25,7 @@ for(const [name,pattern] of requiredMain){
 if(!/maxTabs=8/.test(bg)) failures.push('background: missing context-menu search-tab cap');
 if(/\.getAll\s*\(/.test(history)) failures.push('history: unbounded IndexedDB getAll() is forbidden');
 if(!/MAX_OBSERVATIONS=2000/.test(history)) failures.push('history: 2,000-record cap missing');
+if(!/MAX_IDENTITY_OBSERVATIONS=120/.test(history)) failures.push('history: per-product 120-record cap missing');
 if(!/MAX_AGE_MS=180\*24\*60\*60\*1000/.test(history)) failures.push('history: 180-day retention cap missing');
 if(!/openCursor\([^;]*['"]prev['"]/.test(history)) failures.push('history: bounded reverse-cursor reads missing');
 if(!/AbortSignal\.timeout\(5000\)/.test(trustpilot)) failures.push('Trustpilot timeout missing');
