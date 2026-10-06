@@ -34,6 +34,7 @@ import { merchantNetworkEvidence, merchantNetworkForDomain } from '../../src/int
 import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../../src/analysis/merchant-network';
 import { amazonCloneClusterEvidence, type AmazonSearchCard } from '../../src/analysis/amazon-clone-clusters';
 import { pageSafety } from '../../src/security/page-safety';
+import { toneCopy, type ToneMode } from '../../src/ui/tone';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -54,12 +55,23 @@ const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-c
 const clearHistory=document.querySelector<HTMLButtonElement>('#clear-history');
 const revokeOptionalAccess=document.querySelector<HTMLButtonElement>('#revoke-optional-access');
 const buildMeta=document.querySelector<HTMLElement>('#build-meta');
+const toneMode=document.querySelector<HTMLSelectElement>('#tone-mode');
+const evidenceHeading=document.querySelector<HTMLElement>('#evidence-heading');
 let lastReport:DropShredderReport|undefined;
+let currentTone:ToneMode='professional';
+function applyTone(mode:ToneMode):void{
+  currentTone=mode;
+  const copy=toneCopy(mode);
+  if(scanButton) scanButton.textContent=copy.scan;
+  if(evidenceHeading) evidenceHeading.textContent=copy.evidenceHeading;
+}
 if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • MV3 • local-first`;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
   if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
+  if(toneMode) toneMode.value=settings.toneMode;
+  applyTone(settings.toneMode);
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
@@ -72,6 +84,13 @@ preferMadeInUSA?.addEventListener('change',()=>{
   void loadFeatureSettings().then(settings=>
     saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
   );
+});
+
+toneMode?.addEventListener('change',()=>{
+  const next=(toneMode.value==='aggressive'||toneMode.value==='nuclear')?toneMode.value:'professional';
+  applyTone(next);
+  void loadFeatureSettings().then(settings=>saveFeatureSettings({...settings,toneMode:next}));
+  if(lastReport) renderReport(lastReport);
 });
 
 autoReputationSweep?.addEventListener('change',()=>{
@@ -129,7 +148,7 @@ function renderReport(report: DropShredderReport): void {
   if (!report.evidence.length) {
     const empty=document.createElement('div');
     empty.className='empty';
-    empty.textContent='No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.';
+    empty.textContent=toneCopy(currentTone).noEvidence;
     evidenceList.append(empty);
   } else {
     for (const item of report.evidence) {
@@ -641,16 +660,16 @@ async function scanActivePage(): Promise<void> {
 
     await chrome.scripting.executeScript({
       target:{tabId:tab.id},
-      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed],
-      func:(score:number|null,count:number,severe:boolean)=>{
+      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone)],
+      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string})=>{
         document.getElementById('dropshredder-stamp-host')?.remove();
         const host=document.createElement('div');
         host.id='dropshredder-stamp-host';
         host.style.cssText='all:initial;position:fixed;right:16px;top:96px;z-index:2147483647;';
         const shadow=host.attachShadow({mode:'open'});
         const headline=severe
-          ? '⚠ STRONG DROPSHIP / RESELL EVIDENCE'
-          : count>0 ? '⚠ DROPSHREDDER SIGNALS FOUND' : 'DROPSHREDDER • NO VERDICT';
+          ? `⚠ ${copy.severeWarning}`
+          : count>0 ? `⚠ ${copy.signalsFound}` : 'DROPSHREDDER • NO VERDICT';
         const style=document.createElement('style');
         style.textContent=`
           .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
