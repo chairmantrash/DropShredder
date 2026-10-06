@@ -3,7 +3,10 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';\nimport { analyzeHistory } from '../../src/analysis/history-signals';\nimport { analyzeReviewProvenance } from '../../src/analysis/review-provenance';\nimport type { ReviewSnapshot } from '../../src/types/review';
+import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';
+import { analyzeHistory } from '../../src/analysis/history-signals';
+import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
+import type { ReviewSnapshot } from '../../src/types/review';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
