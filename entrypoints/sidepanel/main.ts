@@ -69,9 +69,24 @@ function renderReport(report: DropShredderReport): void {
     for (const item of report.evidence) {
       const row=document.createElement('article');
       row.className='evidence-row';
-      row.innerHTML=`<div class="evidence-head"><span>${item.severity.toUpperCase()}</span><strong>${item.title}</strong></div>
-        <p>${item.explanation}</p>
-        ${item.observedValue?`<code>${item.observedValue.replaceAll('<','&lt;')}</code>`:''}`;
+
+      const head=document.createElement('div');
+      head.className='evidence-head';
+      const severity=document.createElement('span');
+      severity.textContent=item.severity.toUpperCase();
+      const title=document.createElement('strong');
+      title.textContent=item.title;
+      head.append(severity,title);
+
+      const explanation=document.createElement('p');
+      explanation.textContent=item.explanation;
+
+      row.append(head,explanation);
+      if(item.observedValue){
+        const observed=document.createElement('code');
+        observed.textContent=item.observedValue;
+        row.append(observed);
+      }
       evidenceList.append(row);
     }
   }
