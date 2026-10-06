@@ -21,3 +21,11 @@ test('does not invent an origin from generic shipping copy',()=>{
   assert.equal(result.origin,undefined);
   assert.equal(result.confidence,0);
 });
+
+
+test('explicit origin wording is bounded and does not require a carrier',()=>{
+  const result=parseFulfillmentObservation('Origin: Guangzhou, China. Package departed export facility.');
+  assert.match(result.origin ?? '',/Guangzhou/i);
+  assert.equal(result.carrier,undefined);
+  assert.ok(result.confidence>=.7);
+});

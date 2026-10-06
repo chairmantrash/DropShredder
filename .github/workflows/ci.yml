@@ -27,9 +27,19 @@ jobs:
         run: npm test
       - name: Build extension
         run: npm run build
+      - name: Build Chrome Store zip
+        run: npm run zip
+      - name: Package Chrome Store zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-chrome-store
+          path: .output/dropshredder-0.1.0-chrome.zip
+          include-hidden-files: true
+          if-no-files-found: error
       - name: Package unpacked build
         uses: actions/upload-artifact@v4
         with:
           name: dropshredder-chrome-mv3
           path: .output/chrome-mv3/**
+          include-hidden-files: true
           if-no-files-found: error

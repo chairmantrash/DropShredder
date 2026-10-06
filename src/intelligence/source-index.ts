@@ -19,8 +19,13 @@ export const SOURCE_INDEX:SourceIndexEntry[]=[
   {id:'amazon',name:'Amazon',domains:['amazon.com'],sourceClass:'retail',queryDomains:['amazon.com'],notes:'Retail-arbitrage/source candidate.'},
   {id:'ebay',name:'eBay',domains:['ebay.com'],sourceClass:'retail',queryDomains:['ebay.com'],notes:'Retail-resale/source candidate.'},
   {id:'walmart',name:'Walmart',domains:['walmart.com'],sourceClass:'retail',queryDomains:['walmart.com'],notes:'Retail-resale/source candidate.'},
+  {id:'cjdropshipping',name:'CJdropshipping',domains:['cjdropshipping.com'],sourceClass:'supplier-network',queryDomains:['cjdropshipping.com'],notes:'Supplier-network presence alone is informational.'},
   {id:'zendrop',name:'Zendrop',domains:['zendrop.com'],sourceClass:'supplier-network',queryDomains:['zendrop.com'],notes:'Supplier-network presence alone is informational.'},
   {id:'spocket',name:'Spocket',domains:['spocket.co'],sourceClass:'supplier-network',queryDomains:['spocket.co'],notes:'Supplier-network presence alone is informational.'},
+  {id:'doba',name:'Doba',domains:['doba.com'],sourceClass:'supplier-network',queryDomains:['doba.com'],notes:'Supplier-network presence alone is informational.'},
+  {id:'salehoo',name:'SaleHoo',domains:['salehoo.com'],sourceClass:'supplier-network',queryDomains:['salehoo.com'],notes:'Supplier-directory presence alone is informational.'},
+  {id:'wholesale2b',name:'Wholesale2B',domains:['wholesale2b.com'],sourceClass:'supplier-network',queryDomains:['wholesale2b.com'],notes:'Supplier-network presence alone is informational.'},
+  {id:'modalyst',name:'Modalyst',domains:['modalyst.co'],sourceClass:'supplier-network',queryDomains:['modalyst.co'],notes:'Supplier-network presence alone is informational.'},
   {id:'printify',name:'Printify',domains:['printify.com'],sourceClass:'pod',queryDomains:['printify.com'],notes:'POD provider; outsourcing alone is not negative evidence.'},
   {id:'printful',name:'Printful',domains:['printful.com'],sourceClass:'pod',queryDomains:['printful.com'],notes:'POD provider; outsourcing alone is not negative evidence.'},
   {id:'gelato',name:'Gelato',domains:['gelato.com'],sourceClass:'pod',queryDomains:['gelato.com'],notes:'POD provider; outsourcing alone is not negative evidence.'}
