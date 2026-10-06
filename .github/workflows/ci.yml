@@ -33,11 +33,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dropshredder-chrome-store
-          path: .output/*.zip
+          path: .output/dropshredder-0.1.0-chrome.zip
+          include-hidden-files: true
           if-no-files-found: error
       - name: Package unpacked build
         uses: actions/upload-artifact@v4
         with:
           name: dropshredder-chrome-mv3
           path: .output/chrome-mv3/**
+          include-hidden-files: true
           if-no-files-found: error
