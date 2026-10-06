@@ -11,7 +11,10 @@
     "prepare": "wxt prepare",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/**/*.test.ts",
-    "release:audit": "node scripts/release-audit.mjs"
+    "release:audit": "node scripts/release-audit.mjs",
+    "audit:security": "node scripts/security-audit.mjs",
+    "audit:performance": "node scripts/performance-audit.mjs",
+    "lint:data": "tsx scripts/data-lint.ts"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",
