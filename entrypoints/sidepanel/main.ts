@@ -356,7 +356,7 @@ async function scanActivePage(): Promise<void> {
             reviewCount: hostedReviewCount,
             source:'Store-hosted structured reviews',
           } : undefined,
-          scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
+          scriptSources:[...document.scripts].slice(0,300).map(s=>s.src).filter(Boolean),
           htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
           amazonSearchCards,
         };
@@ -421,15 +421,18 @@ async function scanActivePage(): Promise<void> {
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
             const pages:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}>=[];
-            for(const link of links.slice(0,4)){
-              try{
+            const results=await Promise.allSettled(
+              links.slice(0,4).map(async link=>{
                 const response=await fetch(link.url,{credentials:'same-origin',cache:'force-cache'});
-                if(!response.ok) continue;
+                if(!response.ok) return undefined;
                 const html=await response.text();
                 const doc=new DOMParser().parseFromString(html,'text/html');
                 const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
-                if(text) pages.push({...link,text});
-              }catch{}
+                return text ? {...link,text} : undefined;
+              })
+            );
+            for(const result of results){
+              if(result.status==='fulfilled' && result.value) pages.push(result.value);
             }
             return pages;
           },
@@ -645,8 +648,9 @@ async function scanActivePage(): Promise<void> {
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
 
-async function openSearches(urls:Record<string,string>):Promise<void>{
-  for(const url of Object.values(urls)) await chrome.tabs.create({url,active:false});
+async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
+  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
+  for(const url of unique) await chrome.tabs.create({url,active:false});
 }
 
 huntSources?.addEventListener('click',()=>{
