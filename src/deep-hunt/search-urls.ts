@@ -3,19 +3,19 @@ import { SOURCE_INDEX } from '../intelligence/source-index';
 function q(value:string):string { return encodeURIComponent(value.trim()); }
 
 function domainGroups():Array<{label:string;domains:string[]}>{
-  const classes=[
+  const classes:Array<[string,Set<string>]>= [
     ['wholesale',new Set(['wholesale'])],
     ['marketplaces',new Set(['marketplace'])],
     ['retail',new Set(['retail'])],
     ['supplier-networks',new Set(['supplier-network'])],
     ['pod',new Set(['pod'])],
-  ] as const;
+  ];
 
   const groups:Array<{label:string;domains:string[]}>= [];
   for(const [label,classesForGroup] of classes){
     const domains=[...new Set(
       SOURCE_INDEX
-        .filter(source=>classesForGroup.has(source.sourceClass as never))
+        .filter(source=>classesForGroup.has(source.sourceClass))
         .flatMap(source=>source.queryDomains)
     )];
     for(let i=0;i<domains.length;i+=6){
