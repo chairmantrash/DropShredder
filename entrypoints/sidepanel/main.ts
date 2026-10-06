@@ -28,6 +28,8 @@ import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
 import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
 import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
+import { detectCommercePlatforms } from '../../src/intelligence/commerce-platforms';
+import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/analysis/supply-chain-profile';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -41,6 +43,7 @@ const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
 const autoReputationSweep=document.querySelector<HTMLInputElement>('#auto-reputation-sweep');
+const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-usa');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
@@ -48,11 +51,18 @@ let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
+  if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
   void loadFeatureSettings().then(settings=>
     saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
+  );
+});
+
+preferMadeInUSA?.addEventListener('change',()=>{
+  void loadFeatureSettings().then(settings=>
+    saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
   );
 });
 
@@ -84,6 +94,9 @@ function renderReport(report: DropShredderReport): void {
     <div class="metric"><span>Merchant risk</span><strong>${report.verdict.merchantRisk.toUpperCase()}</strong></div>
     <div class="metric"><span>Manipulation risk</span><strong>${report.verdict.manipulationRisk.toUpperCase()}</strong></div>
     <div class="metric"><span>Fulfillment risk</span><strong>${report.verdict.fulfillmentRisk.toUpperCase()}</strong></div>
+    <div class="metric"><span>Supply chain</span><strong>${report.supplyChain?.label ?? 'UNKNOWN'}</strong></div>
+    <div class="metric"><span>Payment / banking chain</span><strong>${report.supplyChain?.paymentChainLabel ?? 'UNKNOWN'}</strong></div>
+    <div class="gate">${report.supplyChain?.preferenceNote ?? ''}</div>
     <div class="gate">${report.verdict.reason}</div>`;
 
   evidenceList.innerHTML='';
@@ -301,12 +314,26 @@ async function scanActivePage(): Promise<void> {
             reviewCount: hostedReviewCount,
             source:'Store-hosted structured reviews',
           } : undefined,
+          scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
+          htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary;scriptSources:string[];htmlSignature:string}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
+
+    const platformMatches=detectCommercePlatforms({
+      scripts:result.scriptSources,
+      html:result.htmlSignature,
+      imageUrls:result.product.imageUrls,
+    });
+    const platformSignals=platformMatches.map(platform=>`platform:${platform.id}`);
+    result.product={
+      ...result.product,
+      pageSignals:[...new Set([...(result.product.pageSignals ?? []),...platformSignals])],
+    };
+    const paymentProcessors=detectPaymentProcessors({scripts:result.scriptSources,html:result.htmlSignature});
 
     const extractedClaims=extractClaims(result.pageText);
     const fingerprint=buildProductFingerprint({
@@ -327,7 +354,21 @@ async function scanActivePage(): Promise<void> {
 
     const evidence=runPassiveRules(result.product,result.pageText);
     evidence.push(...catalogEvidence(result.catalog));
+    for(const platform of platformMatches){
+      evidence.push({
+        id:'COMMERCE_PLATFORM_CONTEXT',
+        family:'technology',
+        severity:'info',
+        confidence:.9,
+        weight:0,
+        title:`${platform.name} commerce stack detected`,
+        explanation:platform.dropshipContext,
+        observedValue:platform.name,
+        independentKey:`platform-context:${platform.id}`,
+      });
+    }
 
+    let sitePages:SiteTextPage[]=[];
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
@@ -348,7 +389,7 @@ async function scanActivePage(): Promise<void> {
             return pages;
           },
         });
-        const sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
+        sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
         const origin=analyzeMerchantOrigin(result.pageText,sitePages);
         evidence.push(...origin.evidence);
         const returns=sitePages.find(page=>page.kind==='returns');
@@ -377,6 +418,48 @@ async function scanActivePage(): Promise<void> {
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
     }
+    const supplyChain=buildSupplyChainProfile({
+      mainPageText:result.pageText,
+      pages:sitePages,
+      paymentProcessors,
+    });
+
+    evidence.push({
+      id:'SUPPLY_CHAIN_PROFILE',
+      family:'identity',
+      severity:'info',
+      confidence:.9,
+      weight:0,
+      title:supplyChain.label,
+      explanation:supplyChain.preferenceNote,
+      observedValue:[
+        ...supplyChain.nodes
+          .filter(node=>node.country||node.role==='payment')
+          .map(node=>`${node.role}: ${node.country ?? node.detail ?? 'unknown'}`),
+        supplyChain.paymentChainLabel,
+      ].join(' • '),
+      independentKey:'supply-chain-profile',
+    });
+
+    const currentSettings=await loadFeatureSettings();
+    if(currentSettings.preferMadeInUSA && (
+      supplyChain.classification==='predominantly-international' ||
+      supplyChain.classification==='known-chain-entirely-international' ||
+      supplyChain.classification==='mixed-us-international'
+    )){
+      evidence.push({
+        id:'MADE_IN_USA_PREFERENCE_MISMATCH',
+        family:'identity',
+        severity:'info',
+        confidence:.95,
+        weight:0,
+        title:'Does not appear to match Made in USA preference',
+        explanation:'The identified merchant/manufacturing/fulfillment/return chain includes material international components. This is a shopper preference notice, not evidence of wrongdoing.',
+        observedValue:supplyChain.label,
+        independentKey:'made-in-usa-preference',
+      });
+    }
+
     let report: DropShredderReport={
       version:1,
       product:result.product,
@@ -388,6 +471,7 @@ async function scanActivePage(): Promise<void> {
       evidence,
       contradictions:[],
       verdict:calculateVerdict(evidence),
+      supplyChain,
     };
 
     try {
@@ -409,7 +493,7 @@ async function scanActivePage(): Promise<void> {
         report={...report,evidence:combined,verdict:calculateVerdict(combined)};
       }
 
-      const settings=await loadFeatureSettings();
+      const settings=currentSettings;
       if(settings.autoSourceHunt){
         const sourceEvidence=indexedSourceEvidence(report.product,allHistory);
         if(sourceEvidence.length){

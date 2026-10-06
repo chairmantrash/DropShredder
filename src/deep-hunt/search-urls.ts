@@ -1,13 +1,12 @@
+import { sourceSearchUrls } from '../intelligence/source-index';
+
 function q(value:string):string { return encodeURIComponent(value.trim()); }
 
 export function productSearchUrls(title:string):Record<string,string> {
   const phrase=title ? `"${title.slice(0,180)}"` : '';
   return {
     web:`https://www.google.com/search?q=${q(phrase)}`,
-    aliexpress:`https://www.google.com/search?q=${q(phrase+' site:aliexpress.com')}`,
-    alibaba:`https://www.google.com/search?q=${q(phrase+' site:alibaba.com')}`,
-    temu:`https://www.google.com/search?q=${q(phrase+' site:temu.com')}`,
-    dhgate:`https://www.google.com/search?q=${q(phrase+' site:dhgate.com')}`,
+    ...sourceSearchUrls(title),
     reddit:`https://www.google.com/search?q=${q(phrase+' reddit')}`,
   };
 }
