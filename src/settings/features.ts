@@ -1,13 +1,17 @@
+import type { ToneMode } from '../ui/tone';
+
 export interface DropShredderFeatureSettings {
   autoSourceHunt:boolean;
   autoReputationSweep:boolean;
   preferMadeInUSA:boolean;
+  toneMode:ToneMode;
 }
 
 export const DEFAULT_FEATURE_SETTINGS:DropShredderFeatureSettings={
   autoSourceHunt:false,
   autoReputationSweep:false,
   preferMadeInUSA:false,
+  toneMode:'professional',
 };
 
 const KEY='dropshredder-feature-settings-v1';
