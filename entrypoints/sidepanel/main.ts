@@ -15,6 +15,9 @@ import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
 import { imageHistoryEvidence } from '../../src/forensics/image-history';
 import { lookupDomainRdap } from '../../src/osint/rdap';
 import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
+import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/features';
+import { indexedSourceEvidence } from '../../src/analysis/source-match';
+import { reputationSearchUrls } from '../../src/reputation/reputation-search';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -26,7 +29,18 @@ const huntSources=document.querySelector<HTMLButtonElement>('#hunt-sources');
 const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
+const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
+const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 let lastReport:DropShredderReport|undefined;
+void loadFeatureSettings().then(settings=>{
+  if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
+});
+
+autoSourceHunt?.addEventListener('change',()=>{
+  void loadFeatureSettings().then(settings=>
+    saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
+  );
+});
 
 function renderReport(report: DropShredderReport): void {
   if (!summary || !evidenceList || !raw) return;
@@ -254,14 +268,24 @@ async function scanActivePage(): Promise<void> {
       const previous=await getObservations(key,30);
       const historyEvidence=analyzeHistory(report,previous);
       if(historyEvidence.length){
-        report={
-          ...report,
-          evidence:[...report.evidence,...historyEvidence],
-          verdict:calculateVerdict([...report.evidence,...historyEvidence]),
-        };
+        const combined=[...report.evidence,...historyEvidence];
+        report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+      }
+
+      const settings=await loadFeatureSettings();
+      if(settings.autoSourceHunt){
+        const allHistory=await getRecentObservationsAll(250);
+        const sourceEvidence=indexedSourceEvidence(report.product,allHistory);
+        if(sourceEvidence.length){
+          const combined=[
+            ...report.evidence.filter(existing=>!sourceEvidence.some(item=>item.independentKey===existing.independentKey)),
+            ...sourceEvidence,
+          ];
+          report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+        }
       }
     } catch (historyError) {
-      console.warn('DropShredder: local history read failed', historyError);
+      console.warn('DropShredder: local history/source-index read failed', historyError);
     }
 
     renderReport(report);
@@ -438,4 +462,16 @@ checkDomain?.addEventListener('click',()=>{
       status.textContent=error instanceof Error ? error.message : String(error);
     }
   })();
+});
+
+
+reputationSweep?.addEventListener('click',()=>{
+  const report=lastReport;
+  if(!report) return;
+  const target={
+    merchantName:report.merchant.businessName || report.merchant.sellerName,
+    domain:report.merchant.domain,
+  };
+  void openSearches(reputationSearchUrls(target));
+  if(status) status.textContent='Public reputation searches launched across Trustpilot, Sitejabber, ConsumerAffairs, BBB, Google reviews, and Reddit.';
 });
