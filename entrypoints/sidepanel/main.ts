@@ -3,6 +3,7 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
+import { saveObservation } from '../../src/storage/history';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -134,6 +135,12 @@ async function scanActivePage(): Promise<void> {
     };
 
     renderReport(report);
+
+    try {
+      await saveObservation(report);
+    } catch (storageError) {
+      console.warn('DropShredder: local history write failed', storageError);
+    }
 
     await chrome.scripting.executeScript({
       target:{tabId:tab.id},
