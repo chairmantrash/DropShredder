@@ -4,7 +4,7 @@ export default defineConfig({
   manifest: {
     name: 'DropShredder Internal Diagnostics',
     version_name: '0.1.0-internal-diagnostics',
-    description: 'Internal DropShredder diagnostic build for local commerce-forensics testing.'
+    description: 'Internal DropShredder diagnostic build for local commerce-forensics testing.',
     permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', 'sidePanel'],
     optional_host_permissions: ['https://*/*'],
     icons: {
