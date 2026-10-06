@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06",
+  "policy": "Presence of a tool is never direct proof of dropshipping or deception. These records are capability intelligence and detection hypotheses.",
+  "providers": [
+    {
+      "id": "dsers",
+      "category": [
+        "supplier-import",
+        "supplier-mapping",
+        "image-search"
+      ],
+      "capabilities": [
+        "AliExpress/Alibaba supplier optimizer",
+        "image-based similar supplier search",
+        "bulk import",
+        "variant/supplier mapping",
+        "multi-supplier sourcing"
+      ],
+      "detection": [
+        "supplier mapping can change without storefront text/image changes",
+        "preserve historical product observations",
+        "use image/spec fingerprints"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "autods",
+      "category": [
+        "supplier-import",
+        "ai-copy",
+        "image-editing",
+        "automation"
+      ],
+      "capabilities": [
+        "AI product page generation",
+        "AI title/description rewriting",
+        "crop/flip/rotate/mask/text/watermark image editor",
+        "bulk import",
+        "pricing/stock/order automation"
+      ],
+      "detection": [
+        "exact text matching is brittle",
+        "use semantic/spec fingerprinting",
+        "use perceptual image hashes robust to edits",
+        "watch preserved variants/model identifiers"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "zendrop",
+      "category": [
+        "fulfillment",
+        "branding",
+        "private-label",
+        "tracking"
+      ],
+      "capabilities": [
+        "private labeling",
+        "custom packaging",
+        "US/China fulfillment",
+        "branded tracking",
+        "hide original shipping country in branded tracking",
+        "private listings"
+      ],
+      "detection": [
+        "do not infer manufacturer from packaging",
+        "separate shipping origin from manufacturing origin",
+        "prefer carrier-chain facts over branded tracking UI"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "cjdropshipping",
+      "category": [
+        "fulfillment",
+        "branding",
+        "custom-packaging"
+      ],
+      "capabilities": [
+        "custom packaging at low MOQ"
+      ],
+      "detection": [
+        "branded packaging has near-zero provenance weight"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "spocket",
+      "category": [
+        "fulfillment",
+        "branding"
+      ],
+      "capabilities": [
+        "branded invoices"
+      ],
+      "detection": [
+        "invoice branding is presentation-only evidence"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "ali-reviews",
+      "category": [
+        "reviews",
+        "ai-translation"
+      ],
+      "capabilities": [
+        "import from AliExpress/Amazon/Temu/Etsy/eBay",
+        "AI review translation",
+        "CSV transfers"
+      ],
+      "detection": [
+        "review counts are not proof of first-party sales",
+        "check content/product mismatch",
+        "check duplicate text/images and chronology"
+      ],
+      "severity": "weak"
+    },
+    {
+      "id": "judgeme-aliexpress-importer",
+      "category": [
+        "reviews"
+      ],
+      "capabilities": [
+        "bulk AliExpress review import"
+      ],
+      "detection": [
+        "tool presence only raises review-provenance uncertainty",
+        "require mismatch/duplication/chronology for stronger evidence"
+      ],
+      "severity": "weak"
+    },
+    {
+      "id": "vitals",
+      "category": [
+        "reviews",
+        "scarcity",
+        "page-builder",
+        "conversion"
+      ],
+      "capabilities": [
+        "AliExpress review import",
+        "countdown timer",
+        "trust badges",
+        "AI page builder",
+        "upsells/bundles"
+      ],
+      "detection": [
+        "countdown only becomes strong after observed resets",
+        "trust badges do not increase provenance trust",
+        "review importer is weak context"
+      ],
+      "severity": "weak"
+    },
+    {
+      "id": "dropship-io",
+      "category": [
+        "product-research",
+        "competitor-research",
+        "import"
+      ],
+      "capabilities": [
+        "competitor product database",
+        "filters by creation date/images/variants",
+        "Shopify/AutoDS import"
+      ],
+      "detection": [
+        "cross-store temporal clustering",
+        "same image/variant/spec matrices across unrelated stores"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "sell-the-trend",
+      "category": [
+        "product-research",
+        "ad-research",
+        "supplier-import"
+      ],
+      "capabilities": [
+        "product/ad/store intelligence",
+        "demand/saturation scoring",
+        "supplier push"
+      ],
+      "detection": [
+        "track first-seen chronology and rapid cross-store proliferation"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "minea",
+      "category": [
+        "ad-research",
+        "store-research",
+        "product-research"
+      ],
+      "capabilities": [
+        "ad/product/store intelligence"
+      ],
+      "detection": [
+        "track reuse of creatives/images across unrelated stores",
+        "chronology is context not direct evidence"
+      ],
+      "severity": "context"
+    }
+  ]
+}
