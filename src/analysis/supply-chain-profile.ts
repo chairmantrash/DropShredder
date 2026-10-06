@@ -18,6 +18,7 @@ export interface SupplyChainProfile {
   nodes:SupplyChainNode[];
   paymentProcessors:string[];
   paymentJurisdictionKnown:boolean;
+  paymentChainLabel:string;
 }
 
 const COUNTRY_ALIASES:Record<string,string[]>={
@@ -154,9 +155,19 @@ export function buildSupplyChainProfile(input:{
         ? 'For shoppers prioritizing Made in America products, the identified commerce chain is primarily or entirely outside the United States.'
         : 'There is not enough origin evidence to determine whether this product meets a Made in USA preference.';
 
+  const merchantNode=material.find(n=>n.role==='merchant');
+  const paymentChainLabel=merchantNode?.country
+    ? merchantNode.country==='United States'
+      ? 'U.S. MERCHANT ENTITY CLAIMED • BANK JURISDICTION UNVERIFIED'
+      : `INTERNATIONAL MERCHANT/PAYEE ENTITY: ${merchantNode.country} • BANK JURISDICTION UNVERIFIED`
+    : paymentProcessors.length
+      ? `PAYMENT PROCESSOR(S): ${paymentProcessors.join(', ')} • BANK JURISDICTION UNVERIFIED`
+      : 'PAYMENT / BANKING JURISDICTION: UNKNOWN';
+
   return {
     classification,label,preferenceNote,nodes,
     paymentProcessors,
     paymentJurisdictionKnown:false,
+    paymentChainLabel,
   };
 }
