@@ -12,10 +12,17 @@
         <h1>Commerce forensics</h1>
         <p>Local-first. No account. No telemetry. Show the receipts.</p>
       </header>
-
       <button id="scan" type="button">HUNT THIS SHIT</button>
       <p id="status" class="status">Ready to inspect the active page.</p>
-      <pre id="result" class="result" hidden></pre>
+      <section id="summary" class="summary"></section>
+      <section>
+        <h2>THE RECEIPTS</h2>
+        <div id="evidence" class="evidence"></div>
+      </section>
+      <details>
+        <summary>Raw evidence report</summary>
+        <pre id="raw" class="result" hidden></pre>
+      </details>
     </main>
     <script type="module" src="./main.ts"></script>
   </body>
