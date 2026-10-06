@@ -61,7 +61,24 @@ test('stale network records automatically downgrade',()=>{
   assert.match(evidence[0]?.explanation ?? '',/freshness/i);
 });
 
-test('GearLaunch stays watch-level instead of inheriting platform complaints',()=>{
+test('GearLaunch stays informational/watch-level instead of inheriting platform complaints',()=>{
   const evidence=merchantNetworkEvidence('gearlaunch.com',new Date('2026-10-06T00:00:00Z'));
-  assert.equal(evidence[0]?.severity,'moderate');
+  assert.equal(evidence[0]?.severity,'info');
+});
+
+
+test('large seed corpus ships dozens of consumer-facing domains',async()=>{
+  const {MERCHANT_NETWORKS}=await import('../src/intelligence/merchant-networks');
+  const domains=new Set(MERCHANT_NETWORKS.flatMap(network=>network.domains));
+  assert.ok(MERCHANT_NETWORKS.length>=15,`expected >=15 networks, got ${MERCHANT_NETWORKS.length}`);
+  assert.ok(domains.size>=60,`expected >=60 domains, got ${domains.size}`);
+});
+
+test('transparent corporate groups do not get sister-store strong weighting',()=>{
+  const wayfair=merchantNetworkEvidence('wayfair.com',new Date('2026-10-06T00:00:00Z'));
+  assert.equal(wayfair[0]?.severity,'moderate');
+  assert.match(wayfair[0]?.title ?? '',/Related commerce network/);
+  const chicv=merchantNetworkEvidence('noracora.com',new Date('2026-10-06T00:00:00Z'));
+  assert.equal(chicv[0]?.severity,'strong');
+  assert.match(chicv[0]?.title ?? '',/sister-store/i);
 });
