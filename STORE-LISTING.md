@@ -48,7 +48,7 @@ Required for explicit "Hunt product/image/store" investigation shortcuts.
 Required for the primary DropShredder evidence interface.
 
 ### optional host access
-Requested at runtime only for features that need access to a public resource chosen by the user, such as a same-site return/refund policy or RDAP lookup. It is not permanent broad host access.
+Declared as optional HTTPS access and requested at runtime only for the specific origin needed by a user-triggered image fingerprint or public lookup. Same-site return/refund policy checks use the already-authorized active tab instead of requesting additional site access. Optional host access is not granted permanently at install time.
 
 ## Privacy disclosure
 Privacy policy: use the public repository's `PRIVACY.md` URL in the Chrome Web Store developer dashboard.
