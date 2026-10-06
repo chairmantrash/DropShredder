@@ -28,6 +28,8 @@ import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
 import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
 import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
+import { detectCommercePlatforms } from '../../src/intelligence/commerce-platforms';
+import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/analysis/supply-chain-profile';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -301,12 +303,26 @@ async function scanActivePage(): Promise<void> {
             reviewCount: hostedReviewCount,
             source:'Store-hosted structured reviews',
           } : undefined,
+          scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
+          htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary;scriptSources:string[];htmlSignature:string}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
+
+    const platformMatches=detectCommercePlatforms({
+      scripts:result.scriptSources,
+      html:result.htmlSignature,
+      imageUrls:result.product.imageUrls,
+    });
+    const platformSignals=platformMatches.map(platform=>`platform:${platform.id}`);
+    result.product={
+      ...result.product,
+      pageSignals:[...new Set([...(result.product.pageSignals ?? []),...platformSignals])],
+    };
+    const paymentProcessors=detectPaymentProcessors({scripts:result.scriptSources,html:result.htmlSignature});
 
     const extractedClaims=extractClaims(result.pageText);
     const fingerprint=buildProductFingerprint({
@@ -328,6 +344,7 @@ async function scanActivePage(): Promise<void> {
     const evidence=runPassiveRules(result.product,result.pageText);
     evidence.push(...catalogEvidence(result.catalog));
 
+    let sitePages:SiteTextPage[]=[];
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
@@ -348,7 +365,7 @@ async function scanActivePage(): Promise<void> {
             return pages;
           },
         });
-        const sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
+        sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
         const origin=analyzeMerchantOrigin(result.pageText,sitePages);
         evidence.push(...origin.evidence);
         const returns=sitePages.find(page=>page.kind==='returns');
@@ -377,6 +394,12 @@ async function scanActivePage(): Promise<void> {
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
     }
+    const supplyChain=buildSupplyChainProfile({
+      mainPageText:result.pageText,
+      pages:sitePages,
+      paymentProcessors,
+    });
+
     let report: DropShredderReport={
       version:1,
       product:result.product,
@@ -388,6 +411,7 @@ async function scanActivePage(): Promise<void> {
       evidence,
       contradictions:[],
       verdict:calculateVerdict(evidence),
+      supplyChain,
     };
 
     try {
