@@ -41,6 +41,33 @@ function openDb(): Promise<IDBDatabase> {
   });
 }
 
+function stripUrlSecrets(value:string|undefined):string|undefined{
+  if(!value) return undefined;
+  try{
+    const url=new URL(value);
+    return url.origin+url.pathname;
+  }catch{
+    return value.split(/[?#]/,1)[0]?.slice(0,500);
+  }
+}
+
+function sanitizeReportForStorage(report:DropShredderReport):DropShredderReport{
+  const product={
+    ...report.product,
+    url:stripUrlSecrets(report.product.url) ?? report.product.domain,
+    canonicalUrl:stripUrlSecrets(report.product.canonicalUrl),
+    imageUrls:report.product.imageUrls
+      .map(url=>stripUrlSecrets(url))
+      .filter((url):url is string=>Boolean(url))
+      .slice(0,30),
+    imageFingerprints:report.product.imageFingerprints?.map(fingerprint=>({
+      ...fingerprint,
+      url:stripUrlSecrets(fingerprint.url) ?? '',
+    })),
+  };
+  return {...report,product};
+}
+
 export function productIdentityKey(report: DropShredderReport): string {
   const p=report.product;
   return p.gtin
@@ -92,16 +119,17 @@ async function pruneHistory(db:IDBDatabase,identityKey:string):Promise<void>{
 }
 
 export async function saveObservation(report: DropShredderReport): Promise<StoredObservation> {
+  const storedReport=sanitizeReportForStorage(report);
   const observation: StoredObservation={
     id:crypto.randomUUID(),
-    identityKey:productIdentityKey(report),
-    capturedAt:report.product.capturedAt,
-    domain:report.product.domain,
-    url:report.product.url,
-    title:report.product.title,
-    price:report.product.price,
-    currency:report.product.currency,
-    report,
+    identityKey:productIdentityKey(storedReport),
+    capturedAt:storedReport.product.capturedAt,
+    domain:storedReport.product.domain,
+    url:storedReport.product.url,
+    title:storedReport.product.title,
+    price:storedReport.product.price,
+    currency:storedReport.product.currency,
+    report:storedReport,
   };
   const db=await openDb();
   await new Promise<void>((resolve,reject)=>{
