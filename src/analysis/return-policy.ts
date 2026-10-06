@@ -33,7 +33,7 @@ const patterns=[
     id:'RESTOCKING_FEE',
     severity:'weak' as const,
     confidence:.7,
-    regex:/restocking fee.{0,20}(\d{1,2})\s*%/i,
+    regex:/(?:restocking fee.{0,20}(\d{1,2})\s*%|(\d{1,2})\s*%.{0,20}restocking fee)/i,
     title:'Restocking fee detected',
     explanation:'A restocking fee may materially reduce refund value. This is a policy-friction signal, not evidence of dropshipping by itself.',
     key:'return-restocking-fee',
@@ -78,7 +78,7 @@ export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
     let weight=severity==='moderate'?9:severity==='weak'?4:0;
 
     if(p.id==='RESTOCKING_FEE'){
-      const pct=Number(match[1]);
+      const pct=Number(match[1] ?? match[2]);
       if(Number.isFinite(pct) && pct>=20){
         severity='moderate';
         weight=8;
