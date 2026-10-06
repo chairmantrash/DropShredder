@@ -90,21 +90,43 @@ function renderReport(report: DropShredderReport): void {
   lastReport=report;
   if(huntActions) huntActions.hidden=false;
   const score=report.verdict.massResellLikelihood;
-  summary.innerHTML=`
-    <div class="metric"><span>Mass-resell likelihood</span><strong>${score===null?'UNKNOWN':score+'%'}</strong></div>
-    <div class="metric"><span>Dropship likelihood</span><strong>${report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%'}</strong></div>
-    <div class="metric"><span>Deception risk</span><strong>${report.verdict.deceptionRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Merchant risk</span><strong>${report.verdict.merchantRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Manipulation risk</span><strong>${report.verdict.manipulationRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Fulfillment risk</span><strong>${report.verdict.fulfillmentRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Supply chain</span><strong>${report.supplyChain?.label ?? 'UNKNOWN'}</strong></div>
-    <div class="metric"><span>Payment / banking chain</span><strong>${report.supplyChain?.paymentChainLabel ?? 'UNKNOWN'}</strong></div>
-    <div class="gate">${report.supplyChain?.preferenceNote ?? ''}</div>
-    <div class="gate">${report.verdict.reason}</div>`;
+  summary.replaceChildren();
 
-  evidenceList.innerHTML='';
+  const addMetric=(label:string,value:string):void=>{
+    const row=document.createElement('div');
+    row.className='metric';
+    const name=document.createElement('span');
+    name.textContent=label;
+    const strong=document.createElement('strong');
+    strong.textContent=value;
+    row.append(name,strong);
+    summary.append(row);
+  };
+  const addGate=(value:string):void=>{
+    if(!value) return;
+    const gate=document.createElement('div');
+    gate.className='gate';
+    gate.textContent=value;
+    summary.append(gate);
+  };
+
+  addMetric('Mass-resell likelihood',score===null?'UNKNOWN':score+'%');
+  addMetric('Dropship likelihood',report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%');
+  addMetric('Deception risk',report.verdict.deceptionRisk.toUpperCase());
+  addMetric('Merchant risk',report.verdict.merchantRisk.toUpperCase());
+  addMetric('Manipulation risk',report.verdict.manipulationRisk.toUpperCase());
+  addMetric('Fulfillment risk',report.verdict.fulfillmentRisk.toUpperCase());
+  addMetric('Supply chain',report.supplyChain?.label ?? 'UNKNOWN');
+  addMetric('Payment / banking chain',report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
+  addGate(report.supplyChain?.preferenceNote ?? '');
+  addGate(report.verdict.reason);
+
+  evidenceList.replaceChildren();
   if (!report.evidence.length) {
-    evidenceList.innerHTML='<div class="empty">No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.</div>';
+    const empty=document.createElement('div');
+    empty.className='empty';
+    empty.textContent='No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.';
+    evidenceList.append(empty);
   } else {
     for (const item of report.evidence) {
       const row=document.createElement('article');
@@ -587,15 +609,28 @@ async function scanActivePage(): Promise<void> {
         const headline=severe
           ? '⚠ STRONG DROPSHIP / RESELL EVIDENCE'
           : count>0 ? '⚠ DROPSHREDDER SIGNALS FOUND' : 'DROPSHREDDER • NO VERDICT';
-        shadow.innerHTML=`<style>
+        const style=document.createElement('style');
+        style.textContent=`
           .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
             box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:system-ui,sans-serif;padding:14px}
           .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
           .headline{font-size:15px;font-weight:950;line-height:1.15}
           .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
-        </style><div class="box"><div class="brand">DROP SHREDDER</div><div class="headline">${headline}</div>
-        <div class="detail">${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${count} signal(s)<br>
-        ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}</div></div>`;
+        `;
+        const box=document.createElement('div');
+        box.className='box';
+        const brand=document.createElement('div');
+        brand.className='brand';
+        brand.textContent='DROP SHREDDER';
+        const headlineEl=document.createElement('div');
+        headlineEl.className='headline';
+        headlineEl.textContent=headline;
+        const detail=document.createElement('div');
+        detail.className='detail';
+        const scoreText=score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`;
+        detail.textContent=`${scoreText} • ${count} signal(s) • ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}`;
+        box.append(brand,headlineEl,detail);
+        shadow.append(style,box);
         document.documentElement.append(host);
       },
     });
