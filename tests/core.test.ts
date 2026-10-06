@@ -76,3 +76,38 @@ test('two independent strong provenance and fulfillment families can pass the ga
   ]);
   assert.equal(verdict.severeWarningAllowed,true);
 });
+
+
+test('merchant complaints affect merchant risk but not deception or provenance',()=>{
+  const verdict=calculateVerdict([{
+    id:'COMPLAINTS',family:'merchant',severity:'strong',confidence:1,weight:60,
+    title:'Complaints',explanation:'Public reputation concerns',independentKey:'reputation:multi-source',
+  }]);
+  assert.equal(verdict.massResellLikelihood,null);
+  assert.equal(verdict.dropshipLikelihood,null);
+  assert.equal(verdict.deceptionRisk,'unknown');
+  assert.equal(verdict.merchantRisk,'moderate');
+  assert.equal(verdict.manipulationRisk,'unknown');
+  assert.equal(verdict.fulfillmentRisk,'unknown');
+});
+
+test('scarcity and review anomalies affect manipulation risk without proving dropshipping',()=>{
+  const verdict=calculateVerdict([
+    {id:'SCARCITY',family:'scarcity',severity:'moderate',confidence:1,weight:12,title:'x',explanation:'x',independentKey:'scarcity'},
+    {id:'REVIEWS',family:'reviews',severity:'strong',confidence:1,weight:25,title:'x',explanation:'x',independentKey:'reviews'},
+  ]);
+  assert.equal(verdict.massResellLikelihood,null);
+  assert.equal(verdict.dropshipLikelihood,null);
+  assert.equal(verdict.manipulationRisk,'moderate');
+  assert.equal(verdict.severeWarningAllowed,false);
+});
+
+test('fulfillment contradiction is visible separately from product provenance',()=>{
+  const verdict=calculateVerdict([
+    {id:'FULFILLMENT',family:'fulfillment',severity:'strong',confidence:1,weight:24,title:'x',explanation:'x',independentKey:'route'},
+  ]);
+  assert.equal(verdict.massResellLikelihood,null);
+  assert.equal(verdict.dropshipLikelihood,16);
+  assert.equal(verdict.fulfillmentRisk,'low');
+  assert.equal(verdict.severeWarningAllowed,false);
+});
