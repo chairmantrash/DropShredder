@@ -18,6 +18,7 @@ import { businessAgeContradictions, contradictionEvidence } from '../../src/anal
 import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/features';
 import { indexedSourceEvidence } from '../../src/analysis/source-match';
 import { reputationSearchUrls } from '../../src/reputation/reputation-search';
+import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -31,6 +32,7 @@ const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
+const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
@@ -474,4 +476,70 @@ reputationSweep?.addEventListener('click',()=>{
   };
   void openSearches(reputationSearchUrls(target));
   if(status) status.textContent='Public reputation searches launched across Trustpilot, Sitejabber, ConsumerAffairs, BBB, Google reviews, and Reddit.';
+});
+
+
+policyCheck?.addEventListener('click',()=>{
+  const report=lastReport;
+  if(!report || !status) return;
+  void (async()=>{
+    status.textContent='Looking for a same-site return/refund policy…';
+    try{
+      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
+      if(!tab?.id) throw new Error('No active tab is available.');
+
+      const [result]=await chrome.scripting.executeScript({
+        target:{tabId:tab.id},
+        func:()=>{
+          const policyLink=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
+            .map(a=>({href:a.href,text:(a.innerText||'').replace(/\s+/g,' ').trim()}))
+            .find(item=>{
+              try{
+                const url=new URL(item.href,location.href);
+                if(url.origin!==location.origin) return false;
+                return /return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+item.text);
+              }catch{return false;}
+            });
+          return policyLink?.href;
+        },
+      });
+
+      const policyUrl=result?.result as string|undefined;
+      if(!policyUrl){
+        status.textContent='No same-site return/refund policy link was found.';
+        return;
+      }
+
+      const granted=await chrome.permissions.contains({origins:[new URL(policyUrl).origin+'/*']})
+        || await chrome.permissions.request({origins:[new URL(policyUrl).origin+'/*']});
+      if(!granted){
+        status.textContent='Policy check cancelled because site access was not granted.';
+        return;
+      }
+
+      const response=await fetch(policyUrl,{credentials:'omit',cache:'no-store'});
+      if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
+      const html=await response.text();
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
+      const findings=analyzeReturnPolicy(text);
+
+      if(!findings.length){
+        status.textContent='Return/refund policy checked. No targeted friction patterns found.';
+        return;
+      }
+
+      const evidence=[
+        ...report.evidence.filter(existing=>!findings.some(item=>item.independentKey===existing.independentKey)),
+        ...findings,
+      ];
+      const next={...report,evidence,verdict:calculateVerdict(evidence)};
+      lastReport=next;
+      renderReport(next);
+      try{await saveObservation(next);}catch{}
+      status.textContent=`Return/refund policy checked: ${findings.length} relevant friction signal(s) found.`;
+    }catch(error){
+      status.textContent=error instanceof Error?error.message:String(error);
+    }
+  })();
 });
