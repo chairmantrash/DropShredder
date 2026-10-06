@@ -22,6 +22,8 @@ import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
 import { productMutationEvidence } from '../../src/analysis/product-mutation';
 import { parseFulfillmentObservation } from '../../src/analysis/fulfillment-observation';
 import { fulfillmentContradictions } from '../../src/analysis/contradictions';
+import { analyzeMerchantOrigin, type SiteTextPage } from '../../src/analysis/merchant-origin';
+import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalog-signals';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -162,6 +164,39 @@ async function scanActivePage(): Promise<void> {
         const pageText=(document.body?.innerText || '').slice(0,120000);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
+        const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
+          const haystack=(a.pathname+' '+(a.innerText||'')).toLowerCase();
+          if(/about|our story|who we are/.test(haystack)) return 'about';
+          if(/shipping|delivery/.test(haystack)) return 'shipping';
+          if(/return|refund|exchange/.test(haystack)) return 'returns';
+          if(/contact/.test(haystack)) return 'contact';
+          return undefined;
+        };
+        const siteLinks=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
+          .map(a=>{
+            try{
+              const url=new URL(a.href,location.href);
+              const kind=classifyLink(a);
+              return url.origin===location.origin && kind ? {kind,url:url.href} : undefined;
+            }catch{return undefined;}
+          })
+          .filter((v):v is {kind:'about'|'shipping'|'returns'|'contact';url:string}=>Boolean(v))
+          .filter((v,i,arr)=>arr.findIndex(x=>x.kind===v.kind)===i)
+          .slice(0,4);
+
+        const cardSelectors=[
+          '[class*="product-card"]','[class*="product_card"]','[class*="product-item"]',
+          '[class*="product_item"]','[data-product-id]','li[class*="product"]'
+        ];
+        const cards=[...new Set(cardSelectors.flatMap(selector=>[...document.querySelectorAll<HTMLElement>(selector)]))]
+          .filter(card=>card.innerText.trim().length>0)
+          .slice(0,200);
+        const saleCards=cards.filter(card=>
+          Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
+          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(card.innerText)
+        );
+        const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
+
         const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
           .slice(0,80)
           .map((review,index)=>{
@@ -215,6 +250,10 @@ async function scanActivePage(): Promise<void> {
                 ? ['platform:bigcommerce'] : []),
               ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
                 ? ['platform:magento'] : []),
+              ...(([...document.scripts].some(s=>/myshopline\.com|shoplineapp\.com/i.test(s.src))
+                || [...document.images].some(i=>/myshopline\.com/i.test(i.currentSrc||i.src))
+                || document.querySelector('link[href*="myshopline.com"], meta[content*="SHOPLINE"]'))
+                ? ['platform:shopline'] : []),
               ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
@@ -229,11 +268,13 @@ async function scanActivePage(): Promise<void> {
           },
           pageText,
           reviews,
+          siteLinks,
+          catalog,
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[]}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
     const extractedClaims=extractClaims(result.pageText);
@@ -254,6 +295,37 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    evidence.push(...catalogEvidence(result.catalog));
+
+    try{
+      if(result.siteLinks.length){
+        const [siteExecution]=await chrome.scripting.executeScript({
+          target:{tabId:tab.id},
+          args:[result.siteLinks],
+          func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
+            const pages:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}>=[];
+            for(const link of links.slice(0,4)){
+              try{
+                const response=await fetch(link.url,{credentials:'same-origin',cache:'force-cache'});
+                if(!response.ok) continue;
+                const html=await response.text();
+                const doc=new DOMParser().parseFromString(html,'text/html');
+                const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
+                if(text) pages.push({...link,text});
+              }catch{}
+            }
+            return pages;
+          },
+        });
+        const sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
+        const origin=analyzeMerchantOrigin(result.pageText,sitePages);
+        evidence.push(...origin.evidence);
+        const returns=sitePages.find(page=>page.kind==='returns');
+        if(returns) evidence.push(...analyzeReturnPolicy(returns.text));
+      }
+    }catch(siteIntelError){
+      console.warn('DropShredder: bounded same-site intelligence scan failed',siteIntelError);
+    }
     if(fingerprint.identifiers.length){
       evidence.push({
         id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
