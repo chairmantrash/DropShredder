@@ -8,31 +8,62 @@ const severityRank: Record<EvidenceSignal['severity'], number> = {
   direct: 4,
 };
 
+function effectiveWeight(signal: EvidenceSignal): number {
+  if (signal.severity === 'info') return 0;
+  return Math.max(0, signal.weight * signal.confidence);
+}
+
+export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
+  const byKey = new Map<string, EvidenceSignal>();
+  for (const signal of signals) {
+    const current = byKey.get(signal.independentKey);
+    if (!current) {
+      byKey.set(signal.independentKey, signal);
+      continue;
+    }
+
+    const currentScore = severityRank[current.severity] * 100 + effectiveWeight(current);
+    const nextScore = severityRank[signal.severity] * 100 + effectiveWeight(signal);
+    if (nextScore > currentScore) byKey.set(signal.independentKey, signal);
+  }
+  return [...byKey.values()];
+}
+
 export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
-  const weighted = signals.reduce((sum, signal) => sum + signal.weight * signal.confidence, 0);
+  const unique = dedupeEvidence(signals);
+  const weighted = unique.reduce((sum, signal) => sum + effectiveWeight(signal), 0);
+  const scored = unique.filter(signal => effectiveWeight(signal) > 0);
   const likelihood = Math.max(0, Math.min(99, Math.round(weighted)));
 
-  const direct = new Set(signals.filter(s => s.severity === 'direct').map(s => s.independentKey));
+  const directKeys = new Set(unique.filter(s => s.severity === 'direct').map(s => s.independentKey));
+  const corroboratingKeys = new Set(
+    unique.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
+  );
   const strongFamilies = new Set(
-    signals.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
+    unique.filter(s => severityRank[s.severity] >= severityRank.strong).map(s => s.family),
   );
-  const corroborating = new Set(
-    signals.filter(s => severityRank[s.severity] >= severityRank.moderate).map(s => s.independentKey),
-  );
+
+  const directWithIndependentCorroboration =
+    directKeys.size >= 1 &&
+    [...corroboratingKeys].some(key => !directKeys.has(key));
 
   const severeWarningAllowed =
-    (direct.size >= 1 && corroborating.size >= 2) || strongFamilies.size >= 2;
+    directWithIndependentCorroboration || strongFamilies.size >= 2;
 
   let deceptionRisk: Verdict['deceptionRisk'] = 'unknown';
-  if (signals.length >= 1) deceptionRisk = likelihood >= 65 ? 'high' : likelihood >= 35 ? 'moderate' : 'low';
+  if (scored.length >= 1) {
+    deceptionRisk = likelihood >= 65 ? 'high' : likelihood >= 35 ? 'moderate' : 'low';
+  }
 
   return {
-    massResellLikelihood: signals.length ? likelihood : null,
-    dropshipLikelihood: signals.length ? Math.max(0, likelihood - 8) : null,
+    massResellLikelihood: scored.length ? likelihood : null,
+    dropshipLikelihood: scored.length ? Math.max(0, likelihood - 8) : null,
     deceptionRisk,
     severeWarningAllowed,
     reason: severeWarningAllowed
       ? 'Independent evidence families satisfy the severe-warning gate.'
-      : 'Evidence is not yet independent/strong enough for a severe automatic accusation.',
+      : scored.length
+        ? 'Evidence is not yet independent/strong enough for a severe automatic accusation.'
+        : 'No accusation-weighted evidence is available yet.',
   };
 }
