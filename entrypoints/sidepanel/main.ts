@@ -108,7 +108,12 @@ async function scanActivePage(): Promise<void> {
             capturedAt:new Date().toISOString(),
             shippingText:shippingMatch?.[0],
             claims:[],
-            pageSignals:[],
+            pageSignals:[
+              ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
+                ? ['review-platform:loox'] : []),
+              ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
+                ? ['review-platform:judgeme'] : []),
+            ],
           },
           pageText,
         };
