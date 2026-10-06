@@ -12,7 +12,8 @@
         <h1>Commerce forensics</h1>
         <p>Local-first. No account. No telemetry. Show the receipts.</p>
       </header>
-      <button id="scan" type="button">HUNT THIS SHIT</button>
+      <button id="scan" type="button">SCAN THIS PRODUCT</button>
+      <p class="scan-disclosure">Scans only the page you choose. Account, checkout, payment, and credential pages are blocked.</p>
       <section class="feature-toggles">
         <label class="toggle-row">
           <span><strong>Auto Source Hunt</strong><small>Check DropShredder's indexed supplier/marketplace history on every scan.</small></span>
@@ -25,6 +26,14 @@
         <label class="toggle-row">
           <span><strong>Prefer Made in USA</strong><small>Show a separate origin-preference warning when the identified commerce chain is predominantly international.</small></span>
           <input id="prefer-made-in-usa" type="checkbox" />
+        </label>
+        <label class="toggle-row">
+          <span><strong>Language tone</strong><small>Changes wording only. Evidence thresholds and verdicts never change.</small></span>
+          <select id="tone-mode" aria-label="Language tone">
+            <option value="professional">Professional</option>
+            <option value="aggressive">Aggressive</option>
+            <option value="nuclear">Nuclear</option>
+          </select>
         </label>
       </section>
       <p id="status" class="status">Ready to inspect the active page.</p>
@@ -39,7 +48,7 @@
         <button id="fulfillment-check" class="secondary" type="button">CHECK TRACKING / FULFILLMENT</button>
       </section>
       <section>
-        <h2>THE RECEIPTS</h2>
+        <h2 id="evidence-heading">EVIDENCE</h2>
         <div id="evidence" class="evidence"></div>
       </section>
       <details>
