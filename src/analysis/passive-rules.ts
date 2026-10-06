@@ -5,7 +5,7 @@ const scarcityPatterns=[
   /only\s+\d+\s+(?:left|remaining)/i,
   /sale\s+ends\s+(?:today|tonight)/i,
   /limited\s+time/i,
-  /hurry/i,
+  /hurry(?:!+)?/i,
 ];
 const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–)\s*(?:1[5-9]|2\d|3\d)\s+(?:business\s+)?days\b/i;
 
@@ -31,7 +31,17 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
         independentKey:'review-platform-judgeme',
       });
     }
+    if (signal.startsWith('tracking-platform:')) {
+      out.push({
+        id:'TRACKING_PLATFORM_DETECTED', family:'technology', severity:'info', confidence:.96, weight:0,
+        title:'Branded tracking technology detected',
+        explanation:'Tracking-platform presence is informational. It becomes useful only when later fulfillment evidence contradicts explicit shipping-origin claims.',
+        observedValue:signal,
+        independentKey:signal,
+      });
+    }
   }
+
   if (product.shippingText && longShipping.test(product.shippingText)) {
     out.push({
       id:'LONG_SHIPPING_WINDOW', family:'fulfillment', severity:'moderate', confidence:.75, weight:10,
@@ -41,13 +51,15 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     });
   }
 
-  const scarcity=scarcityPatterns.find(p=>p.test(pageText));
+  const scarcity=scarcityPatterns
+    .map(pattern=>pageText.match(pattern)?.[0])
+    .find((value):value is string=>Boolean(value));
   if (scarcity) {
     out.push({
       id:'SCARCITY_LANGUAGE', family:'scarcity', severity:'weak', confidence:.55, weight:4,
       title:'Urgency/scarcity language detected',
       explanation:'Urgency language is common in legitimate commerce and is only a weak signal until repeated observations show it is false or resetting.',
-      observedValue:scarcity.source, independentKey:'scarcity-copy',
+      observedValue:scarcity.slice(0,180), independentKey:'scarcity-copy',
     });
   }
 
