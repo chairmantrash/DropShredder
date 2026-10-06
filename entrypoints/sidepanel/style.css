@@ -30,3 +30,6 @@ button.secondary:hover{border-color:#ff453a;filter:none}
 .toggle-row{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#151517;border:1px solid #2d2d31;border-radius:9px;padding:10px 12px}
 .toggle-row span{display:grid;gap:3px}.toggle-row strong{font-size:12px}.toggle-row small{font-size:10px;line-height:1.35;color:#8f8f98}
 .toggle-row input{width:18px;height:18px;accent-color:#ff453a}
+
+.diagnostic-tools{margin-top:18px;padding-top:14px;border-top:1px solid #2d2d31}
+.diagnostic-tools textarea{width:100%;box-sizing:border-box;resize:vertical;background:#101012;color:#f2f2f4;border:1px solid #34343a;border-radius:8px;padding:10px;font:12px/1.4 ui-monospace,monospace;margin:8px 0 10px}
