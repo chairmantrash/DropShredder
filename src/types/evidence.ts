@@ -32,10 +32,15 @@ export interface Contradiction {
   independentKey: string;
 }
 
+export type RiskLevel = 'unknown' | 'low' | 'moderate' | 'high';
+
 export interface Verdict {
   massResellLikelihood: number | null;
   dropshipLikelihood: number | null;
-  deceptionRisk: 'unknown' | 'low' | 'moderate' | 'high';
+  deceptionRisk: RiskLevel;
+  merchantRisk: RiskLevel;
+  manipulationRisk: RiskLevel;
+  fulfillmentRisk: RiskLevel;
   severeWarningAllowed: boolean;
   reason: string;
 }
