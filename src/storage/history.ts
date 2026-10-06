@@ -68,6 +68,20 @@ export async function saveObservation(report: DropShredderReport): Promise<Store
   return observation;
 }
 
+export async function getRecentObservationsAll(limit=250): Promise<StoredObservation[]> {
+  const db=await openDb();
+  const rows=await new Promise<StoredObservation[]>((resolve,reject)=>{
+    const tx=db.transaction(STORE,'readonly');
+    const request=tx.objectStore(STORE).getAll();
+    request.onsuccess=()=>resolve((request.result as StoredObservation[])
+      .sort((a,b)=>b.capturedAt.localeCompare(a.capturedAt))
+      .slice(0,limit));
+    request.onerror=()=>reject(request.error);
+  });
+  db.close();
+  return rows;
+}
+
 export async function getObservations(identityKey:string,limit=100): Promise<StoredObservation[]> {
   const db=await openDb();
   const rows=await new Promise<StoredObservation[]>((resolve,reject)=>{
