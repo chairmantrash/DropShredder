@@ -1,0 +1,21 @@
+{
+  "id": "suspicious-duplicate-burst",
+  "productTitle": "Portable LED Lantern",
+  "reviews": [
+    {"rating":5,"body":"Amazing quality and perfect product. Highly recommend to everyone.","date":"2026-09-01","verified":false},
+    {"rating":5,"body":"Amazing quality perfect product highly recommend to everyone.","date":"2026-09-01","verified":false},
+    {"rating":5,"body":"Amazing quality and perfect product. Highly recommend to everyone!","date":"2026-09-01","verified":false},
+    {"rating":5,"body":"Perfect product amazing quality, highly recommend to everyone.","date":"2026-09-02","verified":false},
+    {"rating":5,"body":"Amazing quality and perfect product. Highly recommend to everyone.","date":"2026-09-02","verified":false},
+    {"rating":5,"body":"Great product, works as expected.","date":"2026-09-02","verified":false},
+    {"rating":5,"body":"Great product, works as expected.","date":"2026-09-03","verified":false},
+    {"rating":5,"body":"Great product, works as expected.","date":"2026-09-03","verified":false},
+    {"rating":5,"body":"Very good.","date":"2026-09-03","verified":false},
+    {"rating":5,"body":"Very good.","date":"2026-09-03","verified":false},
+    {"rating":5,"body":"Very good.","date":"2026-09-03","verified":false},
+    {"rating":5,"body":"Excellent.","date":"2026-09-03","verified":false}
+  ],
+  "expected": {
+    "signals": ["LOW_VERIFIED_PURCHASE_SHARE","REVIEW_DATE_BURST","REVIEW_TEXT_DUPLICATION"]
+  }
+}
