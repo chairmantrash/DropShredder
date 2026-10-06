@@ -7,6 +7,8 @@ import { getObservations, productIdentityKey, saveObservation } from '../../src/
 import { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
 import type { ReviewSnapshot } from '../../src/types/review';
+import { extractClaims } from '../../src/analysis/claims';
+import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -155,7 +157,32 @@ async function scanActivePage(): Promise<void> {
     const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[]}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
+    const extractedClaims=extractClaims(result.pageText);
+    const fingerprint=buildProductFingerprint({
+      title:result.product.title,
+      description:result.product.description,
+      brand:result.product.brand,
+      sku:result.product.sku,
+      mpn:result.product.mpn,
+      gtin:result.product.gtin,
+      specifications:result.product.specifications,
+    });
+    result.product={
+      ...result.product,
+      claims:[...new Set([...(result.product.claims ?? []),...extractedClaims.map(claim=>claim.text)])],
+      technicalFingerprint:fingerprint.canonical || undefined,
+    };
+
     const evidence=runPassiveRules(result.product,result.pageText);
+    if(fingerprint.identifiers.length){
+      evidence.push({
+        id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
+        title:'Stable product identifiers recovered',
+        explanation:'Stable identifiers improve upstream matching and chronology checks. Their presence is informational, not negative evidence.',
+        observedValue:fingerprint.identifiers.slice(0,6).join(', '),
+        independentKey:'product-identifiers',
+      });
+    }
     if(result.reviews.length>=5){
       evidence.push(...analyzeReviewProvenance({
         reviews:result.reviews,
