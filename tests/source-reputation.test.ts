@@ -95,3 +95,19 @@ test('small review samples do not trigger rating warning',()=>{
   }]);
   assert.equal(evidence.length,0);
 });
+
+test('duplicate pages from one review platform do not count as independent sources',()=>{
+  const evidence=analyzeReputationObservations([
+    {source:'Trustpilot',rating:1.7,reviewCount:200,url:'https://example.invalid/a'},
+    {source:'trustpilot',rating:1.8,reviewCount:100,url:'https://example.invalid/b'},
+  ]);
+  assert.equal(evidence.length,1);
+  assert.equal(evidence[0]?.severity,'moderate');
+});
+
+test('one snippet containing multiple keywords is not treated as substantial complaints',()=>{
+  const evidence=analyzeReputationObservations([{
+    source:'Forums',snippets:['refund wrong item never arrived'],url:'https://example.invalid/post',
+  }]);
+  assert.equal(evidence.length,0);
+});
