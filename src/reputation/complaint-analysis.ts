@@ -38,7 +38,7 @@ export function analyzeReputationObservations(observations:ReputationObservation
     const text=(obs.snippets ?? []).join(' ');
     const termHits=complaintTermHits(text);
     return (typeof obs.rating==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.rating<=2.5)
-      || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.negativeShare>=.45)
+      || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=30 && obs.negativeShare>=.20)
       || (typeof obs.complaintCount==='number' && obs.complaintCount>=10)
       || (termHits>=3 && (obs.snippets?.length ?? 0)>=3);
   });
@@ -52,7 +52,7 @@ export function analyzeReputationObservations(observations:ReputationObservation
       confidence:.68,
       weight:8,
       title:'Public reputation source shows substantial complaints',
-      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
+      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback, low ratings, or a high one-star share. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
       observedValue:source.source,
       independentKey:`reputation:${source.source}`,
     });
