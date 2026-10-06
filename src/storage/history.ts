@@ -1,8 +1,10 @@
 import type { DropShredderReport } from '../types/report';
 
 const DB_NAME='dropshredder';
-const DB_VERSION=1;
+const DB_VERSION=2;
 const STORE='observations';
+const MAX_TOTAL_OBSERVATIONS=2000;
+const MAX_IDENTITY_OBSERVATIONS=120;
 
 export interface StoredObservation {
   id: string;
@@ -21,11 +23,17 @@ function openDb(): Promise<IDBDatabase> {
     const request=indexedDB.open(DB_NAME,DB_VERSION);
     request.onupgradeneeded=()=>{
       const db=request.result;
+      let store:IDBObjectStore;
       if (!db.objectStoreNames.contains(STORE)) {
-        const store=db.createObjectStore(STORE,{keyPath:'id'});
+        store=db.createObjectStore(STORE,{keyPath:'id'});
         store.createIndex('identityKey','identityKey',{unique:false});
         store.createIndex('capturedAt','capturedAt',{unique:false});
         store.createIndex('domain','domain',{unique:false});
+      }else{
+        store=request.transaction!.objectStore(STORE);
+      }
+      if(!store.indexNames.contains('identityCapturedAt')){
+        store.createIndex('identityCapturedAt',['identityKey','capturedAt'],{unique:false});
       }
     };
     request.onsuccess=()=>resolve(request.result);
@@ -42,6 +50,45 @@ export function productIdentityKey(report: DropShredderReport): string {
       : p.canonicalUrl
         ? `url:${p.canonicalUrl}`
         : `domain-title:${p.domain}|${(p.title ?? '').toLowerCase().slice(0,180)}`;
+}
+
+async function pruneHistory(db:IDBDatabase,identityKey:string):Promise<void>{
+  await new Promise<void>((resolve,reject)=>{
+    const tx=db.transaction(STORE,'readwrite');
+    const store=tx.objectStore(STORE);
+    const total=store.count();
+
+    total.onsuccess=()=>{
+      const excess=Math.max(0,total.result-MAX_TOTAL_OBSERVATIONS);
+      if(excess>0){
+        let removed=0;
+        const cursor=store.index('capturedAt').openCursor();
+        cursor.onsuccess=()=>{
+          const row=cursor.result;
+          if(!row || removed>=excess) return;
+          row.delete();
+          removed++;
+          row.continue();
+        };
+      }
+
+      const lower=[identityKey,''];
+      const upper=[identityKey,'\uffff'];
+      let seen=0;
+      const perIdentity=store.index('identityCapturedAt').openCursor(IDBKeyRange.bound(lower,upper),'prev');
+      perIdentity.onsuccess=()=>{
+        const row=perIdentity.result;
+        if(!row) return;
+        seen++;
+        if(seen>MAX_IDENTITY_OBSERVATIONS) row.delete();
+        row.continue();
+      };
+    };
+
+    tx.oncomplete=()=>resolve();
+    tx.onerror=()=>reject(tx.error);
+    tx.onabort=()=>reject(tx.error);
+  });
 }
 
 export async function saveObservation(report: DropShredderReport): Promise<StoredObservation> {
@@ -64,6 +111,7 @@ export async function saveObservation(report: DropShredderReport): Promise<Store
     tx.onerror=()=>reject(tx.error);
     tx.onabort=()=>reject(tx.error);
   });
+  await pruneHistory(db,observation.identityKey);
   db.close();
   return observation;
 }
@@ -71,11 +119,18 @@ export async function saveObservation(report: DropShredderReport): Promise<Store
 export async function getRecentObservationsAll(limit=250): Promise<StoredObservation[]> {
   const db=await openDb();
   const rows=await new Promise<StoredObservation[]>((resolve,reject)=>{
+    const out:StoredObservation[]=[];
     const tx=db.transaction(STORE,'readonly');
-    const request=tx.objectStore(STORE).getAll();
-    request.onsuccess=()=>resolve((request.result as StoredObservation[])
-      .sort((a,b)=>b.capturedAt.localeCompare(a.capturedAt))
-      .slice(0,limit));
+    const request=tx.objectStore(STORE).index('capturedAt').openCursor(null,'prev');
+    request.onsuccess=()=>{
+      const cursor=request.result;
+      if(!cursor || out.length>=limit){
+        resolve(out);
+        return;
+      }
+      out.push(cursor.value as StoredObservation);
+      cursor.continue();
+    };
     request.onerror=()=>reject(request.error);
   });
   db.close();
@@ -85,12 +140,22 @@ export async function getRecentObservationsAll(limit=250): Promise<StoredObserva
 export async function getObservations(identityKey:string,limit=100): Promise<StoredObservation[]> {
   const db=await openDb();
   const rows=await new Promise<StoredObservation[]>((resolve,reject)=>{
+    const out:StoredObservation[]=[];
     const tx=db.transaction(STORE,'readonly');
-    const index=tx.objectStore(STORE).index('identityKey');
-    const request=index.getAll(IDBKeyRange.only(identityKey));
-    request.onsuccess=()=>resolve((request.result as StoredObservation[])
-      .sort((a,b)=>b.capturedAt.localeCompare(a.capturedAt))
-      .slice(0,limit));
+    const lower=[identityKey,''];
+    const upper=[identityKey,'\uffff'];
+    const request=tx.objectStore(STORE)
+      .index('identityCapturedAt')
+      .openCursor(IDBKeyRange.bound(lower,upper),'prev');
+    request.onsuccess=()=>{
+      const cursor=request.result;
+      if(!cursor || out.length>=limit){
+        resolve(out);
+        return;
+      }
+      out.push(cursor.value as StoredObservation);
+      cursor.continue();
+    };
     request.onerror=()=>reject(request.error);
   });
   db.close();
