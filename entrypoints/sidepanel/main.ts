@@ -27,6 +27,7 @@ import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalo
 import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
 import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
 import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
+import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -159,6 +160,10 @@ async function scanActivePage(): Promise<void> {
         const offer=asRecord(Array.isArray(product?.offers)?product?.offers[0]:product?.offers);
         const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
+        const aggregateNode=asRecord(product?.aggregateRating)
+          ?? asRecord(jsonNodes.find(node=>Boolean(node.aggregateRating))?.aggregateRating);
+        const hostedRating=Number(aggregateNode?.ratingValue) || undefined;
+        const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
         const imageValue=product?.image;
         const structuredImages=Array.isArray(imageValue)
           ? imageValue.filter((x):x is string=>typeof x==='string')
@@ -291,11 +296,16 @@ async function scanActivePage(): Promise<void> {
           reviews,
           siteLinks,
           catalog,
+          hostedReviews: hostedRating ? {
+            rating: hostedRating,
+            reviewCount: hostedReviewCount,
+            source:'Store-hosted structured reviews',
+          } : undefined,
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
     const extractedClaims=extractClaims(result.pageText);
@@ -418,6 +428,7 @@ async function scanActivePage(): Promise<void> {
             const reputationEvidence=[
               ...analyzeReputationObservations([observation]),
               ...qualityClaimEvidence(result.pageText,[observation]),
+              ...reviewDiscrepancyEvidence(result.hostedReviews,observation),
             ];
             if(reputationEvidence.length){
               const combined=[
