@@ -203,6 +203,81 @@
         "chronology is context not direct evidence"
       ],
       "severity": "context"
+    },
+    {
+      "id": "productupload-ai",
+      "category": [
+        "product-cloning",
+        "ai-copy",
+        "import"
+      ],
+      "capabilities": [
+        "copy products from arbitrary websites",
+        "clone and rewrite product content with AI",
+        "import variants"
+      ],
+      "detection": [
+        "expect rewritten titles/descriptions with preserved structured attributes",
+        "compare variant matrices/specifications/images rather than exact copy"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "reputon-amazon-importer",
+      "category": [
+        "amazon-import",
+        "product-sync",
+        "affiliate"
+      ],
+      "capabilities": [
+        "one-click/bulk Amazon product import",
+        "variant import",
+        "price/stock sync",
+        "import by seller"
+      ],
+      "detection": [
+        "Amazon-origin product structures may propagate into independent Shopify stores",
+        "ASIN/model/variant/spec correlation can be strong provenance evidence"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "buckydrop",
+      "category": [
+        "supplier-import",
+        "private-label",
+        "branding",
+        "fulfillment"
+      ],
+      "capabilities": [
+        "1688/Taobao/Alibaba/AliExpress sourcing",
+        "private label",
+        "white label",
+        "custom packaging",
+        "no-MOQ branding",
+        "supplier mapping",
+        "auto fulfillment"
+      ],
+      "detection": [
+        "branding/packaging cannot establish original manufacture",
+        "supplier/product mapping and identifiers are higher-value",
+        "YunExpress/other carrier context is fulfillment evidence only"
+      ],
+      "severity": "context"
+    },
+    {
+      "id": "shopify-dropshipping-directory",
+      "category": [
+        "ecosystem-watch"
+      ],
+      "capabilities": [
+        "hundreds of dropshipping/sourcing apps",
+        "new AI clone/rewrite, branded fulfillment, and supplier apps appear continuously"
+      ],
+      "detection": [
+        "weekly monitor newly promoted/recommended apps and feature descriptions for new concealment/provenance-changing capabilities"
+      ],
+      "severity": "context"
     }
   ]
 }
