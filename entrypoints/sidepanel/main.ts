@@ -12,6 +12,8 @@ import { buildProductFingerprint } from '../../src/forensics/product-fingerprint
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
+import { lookupDomainRdap } from '../../src/osint/rdap';
+import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -22,6 +24,7 @@ const huntActions=document.querySelector<HTMLElement>('#hunt-actions');
 const huntSources=document.querySelector<HTMLButtonElement>('#hunt-sources');
 const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
+const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 let lastReport:DropShredderReport|undefined;
 
 function renderReport(report: DropShredderReport): void {
@@ -357,4 +360,64 @@ huntImage?.addEventListener('click',()=>{
 huntStore?.addEventListener('click',()=>{
   const domain=lastReport?.product.domain;
   if(domain) void openSearches(merchantSearchUrls(domain));
+});
+
+
+checkDomain?.addEventListener('click',()=>{
+  const report=lastReport;
+  if(!report || !status) return;
+  void (async()=>{
+    status.textContent='Checking public RDAP registration data…';
+    try{
+      const rdap=await lookupDomainRdap(report.product.domain);
+      if(!rdap){
+        status.textContent='RDAP check cancelled or unavailable.';
+        return;
+      }
+
+      const claims=extractClaims(report.product.claims.join(' '));
+      const contradictions=businessAgeContradictions(claims,{
+        registeredAt:rdap.registeredAt,
+        source:'RDAP',
+      });
+      const added=contradictionEvidence(contradictions);
+      const rdapInfo={
+        id:'RDAP_DOMAIN_OBSERVATION',
+        family:'identity' as const,
+        severity:'info' as const,
+        confidence:.98,
+        weight:0,
+        title:'Domain registration chronology retrieved',
+        explanation:'Public RDAP domain chronology is informational by itself. It becomes relevant when it conflicts with an explicit seller business-age claim.',
+        observedValue:[
+          rdap.registeredAt ? `registered ${rdap.registeredAt.slice(0,10)}` : undefined,
+          rdap.registrar ? `registrar ${rdap.registrar}` : undefined,
+        ].filter(Boolean).join(' • ') || 'RDAP record retrieved',
+        independentKey:'rdap-domain-chronology',
+      };
+
+      const evidence=[
+        ...report.evidence.filter(e=>e.independentKey!=='rdap-domain-chronology'),
+        rdapInfo,
+        ...added.filter(newItem=>!report.evidence.some(old=>old.independentKey===newItem.independentKey)),
+      ];
+      const next:DropShredderReport={
+        ...report,
+        evidence,
+        contradictions:[
+          ...report.contradictions.filter(c=>!contradictions.some(n=>n.independentKey===c.independentKey)),
+          ...contradictions,
+        ],
+        verdict:calculateVerdict(evidence),
+      };
+      lastReport=next;
+      renderReport(next);
+      try{ await saveObservation(next); }catch{}
+      status.textContent=contradictions.length
+        ? 'Domain chronology conflicts with a seller claim. Review the evidence.'
+        : 'Domain chronology checked. No business-age contradiction found.';
+    }catch(error){
+      status.textContent=error instanceof Error ? error.message : String(error);
+    }
+  })();
 });
