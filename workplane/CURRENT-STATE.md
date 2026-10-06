@@ -25,6 +25,12 @@
 - Weekly dropshipper-enablement intelligence watch
 - Clean-room competitor/adjacent extension analysis
 
+## Recently green
+- Auto Source Hunt toggle + indexed-source matching
+- Reputation Sweep launchers + complaint warning gates
+- Same-site return/refund policy analyzer + regression tests
+- Fulfillment observation parser + regression tests
+
 ## In progress
 - DS-003 extraction hardening and marketplace fallbacks
 - DS-004/005 browser UX verification
