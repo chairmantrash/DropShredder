@@ -78,7 +78,7 @@ export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
     let weight=severity==='moderate'?9:severity==='weak'?4:0;
 
     if(p.id==='RESTOCKING_FEE'){
-      const pct=Number(match[0].match(/(\\d{1,2})\\s*%/)?.[1]);
+      const pct=Number(match[0].match(/(\d{1,2})\s*%/)?.[1]);
       if(Number.isFinite(pct) && pct>=20){
         severity='moderate';
         weight=8;
