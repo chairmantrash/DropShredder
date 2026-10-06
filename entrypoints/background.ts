@@ -19,6 +19,10 @@ async function openMany(urls:Record<string,string>,maxTabs=8):Promise<void> {
 }
 
 export default defineBackground(() => {
+  if(chrome.storage?.local?.setAccessLevel){
+    void chrome.storage.local.setAccessLevel({accessLevel:'TRUSTED_CONTEXTS'});
+  }
+
   if (chrome.sidePanel?.setPanelBehavior) {
     void chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
   }
