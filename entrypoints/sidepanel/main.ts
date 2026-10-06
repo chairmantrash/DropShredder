@@ -43,6 +43,7 @@ const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
 const autoReputationSweep=document.querySelector<HTMLInputElement>('#auto-reputation-sweep');
+const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-usa');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
@@ -50,11 +51,18 @@ let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
+  if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
   void loadFeatureSettings().then(settings=>
     saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
+  );
+});
+
+preferMadeInUSA?.addEventListener('change',()=>{
+  void loadFeatureSettings().then(settings=>
+    saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
   );
 });
 
@@ -403,6 +411,25 @@ async function scanActivePage(): Promise<void> {
       paymentProcessors,
     });
 
+    const currentSettings=await loadFeatureSettings();
+    if(currentSettings.preferMadeInUSA && (
+      supplyChain.classification==='predominantly-international' ||
+      supplyChain.classification==='known-chain-entirely-international' ||
+      supplyChain.classification==='mixed-us-international'
+    )){
+      evidence.push({
+        id:'MADE_IN_USA_PREFERENCE_MISMATCH',
+        family:'identity',
+        severity:'info',
+        confidence:.95,
+        weight:0,
+        title:'Does not appear to match Made in USA preference',
+        explanation:'The identified merchant/manufacturing/fulfillment/return chain includes material international components. This is a shopper preference notice, not evidence of wrongdoing.',
+        observedValue:supplyChain.label,
+        independentKey:'made-in-usa-preference',
+      });
+    }
+
     let report: DropShredderReport={
       version:1,
       product:result.product,
@@ -436,7 +463,7 @@ async function scanActivePage(): Promise<void> {
         report={...report,evidence:combined,verdict:calculateVerdict(combined)};
       }
 
-      const settings=await loadFeatureSettings();
+      const settings=currentSettings;
       if(settings.autoSourceHunt){
         const sourceEvidence=indexedSourceEvidence(report.product,allHistory);
         if(sourceEvidence.length){
