@@ -1,0 +1,59 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { analyzeReviewProvenance } from '../src/analysis/review-provenance';
+import { calculateVerdict } from '../src/analysis/evidence-engine';
+import { buildProductFingerprint, fingerprintSimilarity } from '../src/forensics/product-fingerprint';
+
+test('duplicate burst reviews emit expected anomaly signals', () => {
+  const reviews = [
+    ...Array.from({length:5},()=>({rating:5,body:'Amazing quality and perfect product. Highly recommend to everyone.',date:'2026-09-01',verified:false})),
+    ...Array.from({length:7},()=>({rating:5,body:'Great product, works as expected.',date:'2026-09-03',verified:false})),
+  ];
+  const signals=analyzeReviewProvenance({reviews,productTitle:'Portable LED Lantern'});
+  const ids=new Set(signals.map(s=>s.id));
+  assert(ids.has('LOW_VERIFIED_PURCHASE_SHARE'));
+  assert(ids.has('REVIEW_DATE_BURST'));
+  assert(ids.has('REVIEW_TEXT_DUPLICATION'));
+});
+
+test('weak signals alone cannot unlock severe warning', () => {
+  const verdict=calculateVerdict([
+    {
+      id:'A',family:'scarcity',severity:'weak',confidence:1,weight:4,
+      title:'x',explanation:'x',independentKey:'a',
+    },
+    {
+      id:'B',family:'technology',severity:'info',confidence:1,weight:0,
+      title:'x',explanation:'x',independentKey:'b',
+    },
+  ]);
+  assert.equal(verdict.severeWarningAllowed,false);
+});
+
+test('two independent strong families can unlock severe warning', () => {
+  const verdict=calculateVerdict([
+    {
+      id:'A',family:'reviews',severity:'strong',confidence:.9,weight:20,
+      title:'x',explanation:'x',independentKey:'review-dup',
+    },
+    {
+      id:'B',family:'provenance',severity:'strong',confidence:.9,weight:20,
+      title:'x',explanation:'x',independentKey:'upstream-id',
+    },
+  ]);
+  assert.equal(verdict.severeWarningAllowed,true);
+});
+
+test('technical fingerprints retain invariant overlap after marketing rewrite', () => {
+  const a=buildProductFingerprint({
+    title:'Premium Revolutionary USB-C Desk Lamp 4000mAh',
+    description:'Aluminum body, 3W LED, 2700K light',
+    mpn:'DL-4000-A',
+  });
+  const b=buildProductFingerprint({
+    title:'Exclusive Luxury Portable Reading Light',
+    description:'3W LED reading lamp with aluminum housing, 4000mAh battery, 2700K',
+    mpn:'DL-4000-A',
+  });
+  assert(fingerprintSimilarity(a,b)>.5);
+});
