@@ -140,18 +140,28 @@ export function merchantNetworkForDomain(domain:string):MerchantNetworkDefinitio
   );
 }
 
-export function merchantNetworkEvidence(domain:string):EvidenceSignal[]{
+export function merchantNetworkIsFresh(network:MerchantNetworkDefinition,now=new Date()):boolean{
+  const reviewed=Date.parse(network.reviewedAt+'T00:00:00Z');
+  if(!Number.isFinite(reviewed)) return false;
+  return now.getTime()-reviewed <= network.freshnessDays*86_400_000;
+}
+
+export function merchantNetworkEvidence(domain:string,now=new Date()):EvidenceSignal[]{
   const network=merchantNetworkForDomain(domain);
   if(!network) return [];
+  const fresh=merchantNetworkIsFresh(network,now);
+  const activeAndFresh=network.status==='active' && fresh;
 
   return [{
     id:'KNOWN_AFFILIATED_MERCHANT_NETWORK',
     family:'identity',
-    severity:network.status==='active'?'strong':'moderate',
-    confidence:network.status==='active'?.95:.78,
-    weight:network.status==='active'?24:10,
+    severity:activeAndFresh?'strong':'moderate',
+    confidence:activeAndFresh?.95:.72,
+    weight:activeAndFresh?24:8,
     title:'Affiliated merchant network detected',
-    explanation:'DropShredder has multiple independent public linkage families connecting this storefront to other merchant domains. Affiliation itself is not fraud, and complaint evidence from one network member is never inherited by another without its own corroboration.',
+    explanation:fresh
+      ? 'DropShredder has multiple independent public linkage families connecting this storefront to other merchant domains. Affiliation itself is not fraud, and complaint evidence from one network member is never inherited by another without its own corroboration.'
+      : 'This merchant-network record has exceeded its freshness window and requires re-verification. It is shown as historical/contextual identity evidence only until refreshed.',
     observedValue:`${network.name} • ${network.domains.join(', ')} • status: ${network.status} • reviewed ${network.reviewedAt} • evidence: ${network.evidenceFamilies.join(', ')}`,
     independentKey:`merchant-network:${network.id}`,
   }];
