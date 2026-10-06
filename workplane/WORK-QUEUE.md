@@ -27,5 +27,5 @@
 | DS-023 | P1 | Fulfillment-claim vs carrier contradiction engine | RUNNING | forensics | DS-007,DS-021 |
 | DS-024 | P0 | Auto Source Hunt toggle + indexed-source matching | VERIFYING | forensics | DS-007,DS-012,DS-013 |
 | DS-025 | P0 | Merchant complaint / reputation sweep | RUNNING | forensics | DS-006 |
-| DS-026 | P1 | Return/refund friction detector | READY | — | DS-006 |
+| DS-026 | P1 | Return/refund friction detector | VERIFYING | forensics | DS-006 |
 | DS-027 | P2 | Focused imported-product safety checks | READY | — | DS-003,DS-006 |
