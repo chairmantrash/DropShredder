@@ -354,6 +354,19 @@ async function scanActivePage(): Promise<void> {
 
     const evidence=runPassiveRules(result.product,result.pageText);
     evidence.push(...catalogEvidence(result.catalog));
+    for(const platform of platformMatches){
+      evidence.push({
+        id:'COMMERCE_PLATFORM_CONTEXT',
+        family:'technology',
+        severity:'info',
+        confidence:.9,
+        weight:0,
+        title:`${platform.name} commerce stack detected`,
+        explanation:platform.dropshipContext,
+        observedValue:platform.name,
+        independentKey:`platform-context:${platform.id}`,
+      });
+    }
 
     let sitePages:SiteTextPage[]=[];
     try{
@@ -409,6 +422,23 @@ async function scanActivePage(): Promise<void> {
       mainPageText:result.pageText,
       pages:sitePages,
       paymentProcessors,
+    });
+
+    evidence.push({
+      id:'SUPPLY_CHAIN_PROFILE',
+      family:'identity',
+      severity:'info',
+      confidence:.9,
+      weight:0,
+      title:supplyChain.label,
+      explanation:supplyChain.preferenceNote,
+      observedValue:[
+        ...supplyChain.nodes
+          .filter(node=>node.country||node.role==='payment')
+          .map(node=>`${node.role}: ${node.country ?? node.detail ?? 'unknown'}`),
+        supplyChain.paymentChainLabel,
+      ].join(' • '),
+      independentKey:'supply-chain-profile',
     });
 
     const currentSettings=await loadFeatureSettings();
