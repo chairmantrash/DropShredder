@@ -44,17 +44,29 @@ async function ensureRdapPermission():Promise<boolean> {
   return chrome.permissions.request({origins:[origin]});
 }
 
+const CACHE_MS=6*60*60*1000;
+
 export async function lookupDomainRdap(input:string):Promise<RdapDomainObservation|undefined> {
   const domain=normalizeDomain(input);
   if(!domain || !domain.includes('.')) return undefined;
+  const cacheKey=`rdap:${domain}`;
+  try{
+    const cached=(await chrome.storage.session.get(cacheKey))[cacheKey] as {at:number;value:RdapDomainObservation}|undefined;
+    if(cached && Date.now()-cached.at<CACHE_MS) return cached.value;
+  }catch{}
   if(!(await ensureRdapPermission())) return undefined;
 
   const url=`https://rdap.org/domain/${encodeURIComponent(domain)}`;
-  const response=await fetch(url,{headers:{accept:'application/rdap+json, application/json'}});
+  const response=await fetch(url,{
+    headers:{accept:'application/rdap+json, application/json'},
+    signal:AbortSignal.timeout(5000),
+  });
   if(!response.ok) throw new Error(`RDAP lookup failed: HTTP ${response.status}`);
+  const length=Number(response.headers.get('content-length') || 0);
+  if(length>2_000_000) throw new Error('RDAP response exceeded the safety limit.');
   const data=await response.json() as RdapResponse;
 
-  return {
+  const value:RdapDomainObservation={
     domain,
     registeredAt:eventDate(data.events,'registration'),
     updatedAt:eventDate(data.events,'last changed') ?? eventDate(data.events,'last update of RDAP database'),
@@ -65,4 +77,6 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
     source:url,
     retrievedAt:new Date().toISOString(),
   };
+  try{await chrome.storage.session.set({[cacheKey]:{at:Date.now(),value}});}catch{}
+  return value;
 }
