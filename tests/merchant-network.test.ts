@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { merchantNetworkEvidence, merchantNetworkForDomain } from '../src/intelligence/merchant-networks';
+import { merchantNetworkEvidence, merchantNetworkForDomain, merchantNetworkIsFresh } from '../src/intelligence/merchant-networks';
 import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../src/analysis/merchant-network';
 import type { DropShredderReport } from '../src/types/report';
 import type { StoredObservation } from '../src/storage/history';
@@ -37,5 +37,31 @@ test('explicit cross-domain merchant reference is moderate evidence',()=>{
     'Free International Shipping at HaremPants.com',
     ['harempants.com','suredesigntshirts.com']
   );
+  assert.equal(evidence[0]?.severity,'moderate');
+});
+
+
+test('seed registry recognizes current active networks',()=>{
+  for(const domain of [
+    'justfashionnow.com','noracora.com','stylewe.com',
+    'modlily.com','rotita.com','rosewe.com',
+    'lightinthebox.com','ador.com','ezbuy.sg'
+  ]){
+    assert.ok(merchantNetworkForDomain(domain),`missing network for ${domain}`);
+  }
+});
+
+test('stale network records automatically downgrade',()=>{
+  const network=merchantNetworkForDomain('justfashionnow.com');
+  assert.ok(network);
+  assert.equal(merchantNetworkIsFresh(network!,new Date('2026-10-20T00:00:00Z')),true);
+  assert.equal(merchantNetworkIsFresh(network!,new Date('2027-03-01T00:00:00Z')),false);
+  const evidence=merchantNetworkEvidence('justfashionnow.com',new Date('2027-03-01T00:00:00Z'));
+  assert.equal(evidence[0]?.severity,'moderate');
+  assert.match(evidence[0]?.explanation ?? '',/freshness/i);
+});
+
+test('GearLaunch stays watch-level instead of inheriting platform complaints',()=>{
+  const evidence=merchantNetworkEvidence('gearlaunch.com',new Date('2026-10-06T00:00:00Z'));
   assert.equal(evidence[0]?.severity,'moderate');
 });
