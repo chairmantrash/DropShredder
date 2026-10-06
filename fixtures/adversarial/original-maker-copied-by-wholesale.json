@@ -1,0 +1,23 @@
+{
+  "id": "original-maker-copied-by-wholesale",
+  "purpose": "Prevent reverse-image matches from automatically accusing an original creator.",
+  "listing": {
+    "platform": "etsy",
+    "claims": ["handmade", "designed by seller"],
+    "firstObserved": "2025-01-10",
+    "images": ["fixture://maker-original-a"]
+  },
+  "laterWholesaleMatch": {
+    "firstObserved": "2025-06-20",
+    "images": ["fixture://maker-original-a"],
+    "identifiers": []
+  },
+  "expected": {
+    "severeWarningAllowed": false,
+    "requiredReasoning": [
+      "image identity alone does not establish chronology",
+      "older maker observation is evidence against assuming the wholesale listing is upstream",
+      "seek identifiers, manufacturer evidence, or independent chronology"
+    ]
+  }
+}
