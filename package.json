@@ -9,7 +9,9 @@
     "zip": "wxt zip",
     "prepare": "wxt prepare",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/**/*.test.ts"
+    "test": "tsx --test tests/**/*.test.ts",
+    "audit:security": "node scripts/security-audit.mjs",
+    "audit:performance": "node scripts/performance-audit.mjs"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.323",
