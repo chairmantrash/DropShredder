@@ -19,6 +19,9 @@ import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/fea
 import { indexedSourceEvidence } from '../../src/analysis/source-match';
 import { reputationSearchUrls } from '../../src/reputation/reputation-search';
 import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
+import { productMutationEvidence } from '../../src/analysis/product-mutation';
+import { parseFulfillmentObservation } from '../../src/analysis/fulfillment-observation';
+import { fulfillmentContradictions } from '../../src/analysis/contradictions';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -33,6 +36,7 @@ const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
+const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
@@ -277,9 +281,18 @@ async function scanActivePage(): Promise<void> {
         report={...report,evidence:combined,verdict:calculateVerdict(combined)};
       }
 
+      const allHistory=await getRecentObservationsAll(250);
+      const mutationEvidence=productMutationEvidence(report.product,allHistory);
+      if(mutationEvidence.length){
+        const combined=[
+          ...report.evidence.filter(existing=>!mutationEvidence.some(item=>item.independentKey===existing.independentKey)),
+          ...mutationEvidence,
+        ];
+        report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+      }
+
       const settings=await loadFeatureSettings();
       if(settings.autoSourceHunt){
-        const allHistory=await getRecentObservationsAll(250);
         const sourceEvidence=indexedSourceEvidence(report.product,allHistory);
         if(sourceEvidence.length){
           const combined=[
@@ -541,6 +554,83 @@ policyCheck?.addEventListener('click',()=>{
       renderReport(next);
       try{await saveObservation(next);}catch{}
       status.textContent=`Return/refund policy checked: ${findings.length} relevant friction signal(s) found.`;
+    }catch(error){
+      status.textContent=error instanceof Error?error.message:String(error);
+    }
+  })();
+});
+
+
+fulfillmentCheck?.addEventListener('click',()=>{
+  const report=lastReport;
+  if(!report || !status) return;
+  void (async()=>{
+    status.textContent='Reading explicit fulfillment evidence from the active page…';
+    try{
+      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
+      if(!tab?.id) throw new Error('No active tab is available.');
+
+      const [result]=await chrome.scripting.executeScript({
+        target:{tabId:tab.id},
+        func:()=>({
+          text:(document.body?.innerText || '').replace(/\s+/g,' ').slice(0,50000),
+          url:location.href,
+        }),
+      });
+      const page=result?.result as {text:string;url:string}|undefined;
+      if(!page?.text) throw new Error('No readable tracking/fulfillment text was found.');
+
+      const observation=parseFulfillmentObservation(page.text);
+      if(!observation.origin){
+        status.textContent=observation.carrier
+          ? `Carrier ${observation.carrier} detected, but no explicit shipment origin was found. No contradiction scored.`
+          : 'No explicit shipment origin was found. No contradiction scored.';
+        return;
+      }
+
+      const claims=extractClaims(report.product.claims.join(' '));
+      const contradictions=fulfillmentContradictions(claims,{
+        origin:observation.origin,
+        carrier:observation.carrier,
+        routeText:observation.routeText,
+        source:page.url,
+      });
+      const added=contradictionEvidence(contradictions);
+      const originInfo={
+        id:'FULFILLMENT_ORIGIN_OBSERVATION',
+        family:'fulfillment' as const,
+        severity:'info' as const,
+        confidence:observation.confidence,
+        weight:0,
+        title:'Explicit shipment-origin evidence captured',
+        explanation:'The active tracking/fulfillment page explicitly exposed a shipment origin. This is informational unless it conflicts with a seller claim.',
+        observedValue:[observation.origin,observation.carrier].filter(Boolean).join(' • '),
+        independentKey:'fulfillment-origin-observation',
+      };
+
+      const evidence=[
+        ...report.evidence.filter(e=>
+          e.independentKey!=='fulfillment-origin-observation' &&
+          !added.some(item=>item.independentKey===e.independentKey)
+        ),
+        originInfo,
+        ...added,
+      ];
+      const next:DropShredderReport={
+        ...report,
+        evidence,
+        contradictions:[
+          ...report.contradictions.filter(c=>!contradictions.some(n=>n.independentKey===c.independentKey)),
+          ...contradictions,
+        ],
+        verdict:calculateVerdict(evidence),
+      };
+      lastReport=next;
+      renderReport(next);
+      try{await saveObservation(next);}catch{}
+      status.textContent=contradictions.length
+        ? 'Fulfillment evidence conflicts with an explicit seller shipping-origin claim.'
+        : 'Fulfillment origin recorded. No seller-origin contradiction found.';
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
     }
