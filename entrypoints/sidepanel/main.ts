@@ -53,7 +53,9 @@ const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
 const clearHistory=document.querySelector<HTMLButtonElement>('#clear-history');
 const revokeOptionalAccess=document.querySelector<HTMLButtonElement>('#revoke-optional-access');
+const buildMeta=document.querySelector<HTMLElement>('#build-meta');
 let lastReport:DropShredderReport|undefined;
+if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • MV3 • local-first`;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
