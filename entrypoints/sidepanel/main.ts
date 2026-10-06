@@ -3,7 +3,7 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { saveObservation } from '../../src/storage/history';
+import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';\nimport { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -115,6 +115,12 @@ async function scanActivePage(): Promise<void> {
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
                 ? ['review-platform:judgeme'] : []),
+              ...([...document.scripts].some(s=>s.src.includes('track123.com/track123-widget.min.js') || s.src.includes('shp.track123.com/tracking-page/build/widget.min.js'))
+                || document.querySelector('#track123-tracking-widget, track123-tracking-widget')
+                ? ['tracking-platform:track123'] : []),
+              ...([...document.scripts].some(s=>s.src.includes('parcelpanel.com/assets/tracking/track-page.js') || s.src.includes('shopify-edd.parcelpanel.com/loader.js'))
+                || document.querySelector('#pp-tracking-page-app, #pp-tracking-shop, parcelpanel-edd')
+                ? ['tracking-platform:parcelpanel'] : []),
             ],
           },
           pageText,
@@ -131,7 +137,7 @@ async function scanActivePage(): Promise<void> {
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
     }
-    const report: DropShredderReport={
+    let report: DropShredderReport={
       version:1,
       product:result.product,
       merchant:{domain:result.product.domain,sellerName:result.product.seller},
@@ -139,6 +145,21 @@ async function scanActivePage(): Promise<void> {
       contradictions:[],
       verdict:calculateVerdict(evidence),
     };
+
+    try {
+      const key=productIdentityKey(report);
+      const previous=await getObservations(key,30);
+      const historyEvidence=analyzeHistory(report,previous);
+      if(historyEvidence.length){
+        report={
+          ...report,
+          evidence:[...report.evidence,...historyEvidence],
+          verdict:calculateVerdict([...report.evidence,...historyEvidence]),
+        };
+      }
+    } catch (historyError) {
+      console.warn('DropShredder: local history read failed', historyError);
+    }
 
     renderReport(report);
 
