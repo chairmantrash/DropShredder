@@ -23,13 +23,24 @@ function complaintTermHits(text:string):number{
 
 export function analyzeReputationObservations(observations:ReputationObservation[]):EvidenceSignal[]{
   const out:EvidenceSignal[]=[];
-  const negativeSources=observations.filter(obs=>{
+  // Multiple pages on one review platform count as one source, not
+  // independent corroboration. Prefer the observation with more reviews.
+  const perSource=new Map<string,ReputationObservation>();
+  for(const observation of observations){
+    const key=observation.source.trim().toLowerCase();
+    if(!key) continue;
+    const old=perSource.get(key);
+    if(!old || (observation.reviewCount ?? 0)>(old.reviewCount ?? 0)){
+      perSource.set(key,observation);
+    }
+  }
+  const negativeSources=[...perSource.values()].filter(obs=>{
     const text=(obs.snippets ?? []).join(' ');
     const termHits=complaintTermHits(text);
     return (typeof obs.rating==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.rating<=2.5)
       || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.negativeShare>=.45)
       || (typeof obs.complaintCount==='number' && obs.complaintCount>=10)
-      || termHits>=3;
+      || (termHits>=3 && (obs.snippets?.length ?? 0)>=3);
   });
 
   if(negativeSources.length===1){
