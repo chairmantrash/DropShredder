@@ -57,7 +57,7 @@ test('stale network records automatically downgrade',()=>{
   assert.equal(merchantNetworkIsFresh(network!,new Date('2026-10-20T00:00:00Z')),true);
   assert.equal(merchantNetworkIsFresh(network!,new Date('2027-03-01T00:00:00Z')),false);
   const evidence=merchantNetworkEvidence('justfashionnow.com',new Date('2027-03-01T00:00:00Z'));
-  assert.equal(evidence[0]?.severity,'moderate');
+  assert.equal(evidence[0]?.severity,'info');
   assert.match(evidence[0]?.explanation ?? '',/freshness/i);
 });
 
