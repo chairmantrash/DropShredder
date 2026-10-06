@@ -42,7 +42,7 @@ export function differenceHash(data:ImageData,width=8,height=8):PerceptualHash {
   let bits='';
   for(let y=0;y<height;y++){
     const row=y*(width+1);
-    for(let x=0;x<width;x++) bits+=values[row+x]!>=values[row+x+1]!'1':'0';
+    for(let x=0;x<width;x++) bits+=(values[row+x]! >= values[row+x+1]! ? '1' : '0');
   }
   return {kind:'dhash',bits,width,height};
 }
