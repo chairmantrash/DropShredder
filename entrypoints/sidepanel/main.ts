@@ -33,6 +33,7 @@ import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/anal
 import { merchantNetworkEvidence, merchantNetworkForDomain } from '../../src/intelligence/merchant-networks';
 import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../../src/analysis/merchant-network';
 import { amazonCloneClusterEvidence, type AmazonSearchCard } from '../../src/analysis/amazon-clone-clusters';
+import { pageSafety } from '../../src/security/page-safety';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -90,17 +91,32 @@ function renderReport(report: DropShredderReport): void {
   lastReport=report;
   if(huntActions) huntActions.hidden=false;
   const score=report.verdict.massResellLikelihood;
-  summary.innerHTML=`
-    <div class="metric"><span>Mass-resell likelihood</span><strong>${score===null?'UNKNOWN':score+'%'}</strong></div>
-    <div class="metric"><span>Dropship likelihood</span><strong>${report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%'}</strong></div>
-    <div class="metric"><span>Deception risk</span><strong>${report.verdict.deceptionRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Merchant risk</span><strong>${report.verdict.merchantRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Manipulation risk</span><strong>${report.verdict.manipulationRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Fulfillment risk</span><strong>${report.verdict.fulfillmentRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Supply chain</span><strong>${report.supplyChain?.label ?? 'UNKNOWN'}</strong></div>
-    <div class="metric"><span>Payment / banking chain</span><strong>${report.supplyChain?.paymentChainLabel ?? 'UNKNOWN'}</strong></div>
-    <div class="gate">${report.supplyChain?.preferenceNote ?? ''}</div>
-    <div class="gate">${report.verdict.reason}</div>`;
+  summary.replaceChildren();
+  const metric=(label:string,value:string)=>{
+    const row=document.createElement('div');
+    row.className='metric';
+    const name=document.createElement('span');
+    name.textContent=label;
+    const result=document.createElement('strong');
+    result.textContent=value;
+    row.append(name,result);
+    summary.append(row);
+  };
+  metric('Mass-resell likelihood',score===null?'UNKNOWN':score+'%');
+  metric('Dropship likelihood',report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%');
+  metric('Deception risk',report.verdict.deceptionRisk.toUpperCase());
+  metric('Merchant risk',report.verdict.merchantRisk.toUpperCase());
+  metric('Manipulation risk',report.verdict.manipulationRisk.toUpperCase());
+  metric('Fulfillment risk',report.verdict.fulfillmentRisk.toUpperCase());
+  metric('Supply chain',report.supplyChain?.label ?? 'UNKNOWN');
+  metric('Payment / banking chain',report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
+  for(const message of [report.supplyChain?.preferenceNote,report.verdict.reason]){
+    if(!message) continue;
+    const gate=document.createElement('div');
+    gate.className='gate';
+    gate.textContent=message;
+    summary.append(gate);
+  }
 
   evidenceList.innerHTML='';
   if (!report.evidence.length) {
@@ -143,6 +159,8 @@ async function scanActivePage(): Promise<void> {
   try {
     const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
     if (!tab?.id) throw new Error('No active tab is available.');
+    const safety=pageSafety(tab.url);
+    if(!safety.allowed) throw new Error(safety.reason ?? 'This page is not eligible for scanning.');
 
     const [execution]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
@@ -398,18 +416,27 @@ async function scanActivePage(): Promise<void> {
           target:{tabId:tab.id},
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
-            const pages:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}>=[];
-            for(const link of links.slice(0,4)){
+            const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
               try{
-                const response=await fetch(link.url,{credentials:'same-origin',cache:'force-cache'});
-                if(!response.ok) continue;
+                const response=await fetch(link.url,{
+                  credentials:'same-origin',
+                  cache:'force-cache',
+                  signal:AbortSignal.timeout(3500),
+                });
+                if(!response.ok) return undefined;
+                const length=Number(response.headers.get('content-length') || 0);
+                if(length>2_000_000) return undefined;
                 const html=await response.text();
+                if(html.length>2_000_000) return undefined;
                 const doc=new DOMParser().parseFromString(html,'text/html');
                 const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
-                if(text) pages.push({...link,text});
-              }catch{}
-            }
-            return pages;
+                return text ? {...link,text} : undefined;
+              }catch{
+                return undefined;
+              }
+            };
+            const results=await Promise.all(links.slice(0,4).map(fetchPage));
+            return results.filter((page):page is {kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}=>Boolean(page));
           },
         });
         sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
