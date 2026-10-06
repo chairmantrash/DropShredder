@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/**/*.test.ts",
     "audit:security": "node scripts/security-audit.mjs",
-    "audit:performance": "node scripts/performance-audit.mjs"
+    "audit:performance": "node scripts/performance-audit.mjs",
+    "lint:data": "tsx scripts/data-lint.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.323",
