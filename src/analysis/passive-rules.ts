@@ -13,6 +13,15 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
   const out: EvidenceSignal[]=[];
 
   for (const signal of product.pageSignals) {
+    if (signal.startsWith('platform:')) {
+      out.push({
+        id:'COMMERCE_PLATFORM_DETECTED', family:'technology', severity:'info', confidence:.97, weight:0,
+        title:'Commerce platform detected',
+        explanation:'Commerce-platform presence is context only and carries zero accusation weight.',
+        observedValue:signal,
+        independentKey:signal,
+      });
+    }
     if (signal === 'review-platform:loox') {
       out.push({
         id:'REVIEW_PLATFORM_LOOX', family:'reviews', severity:'info', confidence:.98, weight:0,
