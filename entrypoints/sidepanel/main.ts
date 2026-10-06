@@ -97,6 +97,13 @@ async function scanActivePage(): Promise<void> {
         const structuredImages=Array.isArray(imageValue)
           ? imageValue.filter((x):x is string=>typeof x==='string')
           : typeof imageValue==='string'?[imageValue]:[];
+        const amazonAsin=/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})(?:[/?]|$)/i.exec(location.pathname)?.[1]?.toUpperCase();
+        const amazonSeller=(
+          document.querySelector<HTMLElement>('#sellerProfileTriggerId')?.innerText
+          || document.querySelector<HTMLElement>('#merchant-info a')?.innerText
+          || document.querySelector<HTMLElement>('#tabular-buybox-truncate-1 .a-truncate-full')?.innerText
+          || ''
+        ).replace(/\s+/g,' ').trim() || undefined;
 
         const pageText=(document.body?.innerText || '').slice(0,120000);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
@@ -131,8 +138,9 @@ async function scanActivePage(): Promise<void> {
             price:Number(offer?.price) || undefined,
             currency:first(offer?.priceCurrency),
             brand:first(brand?.name ?? product?.brand),
-            seller:first(seller?.name ?? offer?.seller ?? product?.seller),
+            seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
             sku:first(product?.sku),
+            asin:amazonAsin,
             mpn:first(product?.mpn),
             gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
             imageUrls:[...new Set([...structuredImages,...[...document.images].map(i=>i.currentSrc||i.src).filter(Boolean)])].slice(0,30),
@@ -181,6 +189,7 @@ async function scanActivePage(): Promise<void> {
       sku:result.product.sku,
       mpn:result.product.mpn,
       gtin:result.product.gtin,
+      asin:result.product.asin,
       specifications:result.product.specifications,
     });
     result.product={
