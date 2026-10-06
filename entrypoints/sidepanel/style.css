@@ -20,3 +20,8 @@ button:hover{filter:brightness(1.08)} button:disabled{opacity:.55;cursor:wait}.s
 details{margin-top:18px;color:#a1a1aa}details summary{cursor:pointer;font-size:12px}
 .result{white-space:pre-wrap;overflow-wrap:anywhere;background:#151517;border:1px solid #2d2d31;border-radius:10px;
   padding:12px;color:#d4d4d8;font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+
+.hunt-actions{display:grid;grid-template-columns:1fr;gap:8px;margin:12px 0 4px}
+.hunt-actions[hidden]{display:none}
+button.secondary{background:#151517;color:#f4f4f5;border-color:#3f3f46;padding:11px 12px;font-size:11px}
+button.secondary:hover{border-color:#ff453a;filter:none}
