@@ -27,6 +27,8 @@ jobs:
         run: npm test
       - name: Security audit
         run: npm run audit:security
+      - name: Intelligence data lint
+        run: npm run lint:data
       - name: Build extension
         run: npm run build
       - name: Performance audit
