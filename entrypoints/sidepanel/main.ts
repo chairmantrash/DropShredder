@@ -30,6 +30,7 @@ import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
 import { detectCommercePlatforms } from '../../src/intelligence/commerce-platforms';
 import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/analysis/supply-chain-profile';
+import { buildDiagnosticBundle, diagnosticFilename, type DiagnosticBundle } from '../../src/diagnostics/bundle';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -47,7 +48,10 @@ const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
+const exportDiagnostic=document.querySelector<HTMLButtonElement>('#export-diagnostic');
+const diagnosticNote=document.querySelector<HTMLTextAreaElement>('#diagnostic-note');
 let lastReport:DropShredderReport|undefined;
+let lastDiagnostic:DiagnosticBundle|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
@@ -134,6 +138,7 @@ function renderReport(report: DropShredderReport): void {
 
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
+  const scanStartedAt=performance.now();
   scanButton.disabled=true;
   status.textContent='Inspecting this page locally…';
 
@@ -530,6 +535,28 @@ async function scanActivePage(): Promise<void> {
       console.warn('DropShredder: local history/source-index read failed', historyError);
     }
 
+    lastDiagnostic=buildDiagnosticBundle({
+      report,
+      page:{
+        url:result.product.url,
+        scriptSources:result.scriptSources,
+        imageUrls:result.product.imageUrls,
+        siteLinkKinds:result.siteLinks.map(link=>link.kind),
+        catalog:result.catalog,
+        hostedReviewCount:result.hostedReviews?.reviewCount,
+        visibleReviewCount:result.reviews.length,
+        jsonLdProductCount:result.product.jsonLdProductCount,
+      },
+      settings:currentSettings,
+      detectedPlatforms:platformMatches.map(platform=>platform.id),
+      paymentProcessors,
+      durationMs:performance.now()-scanStartedAt,
+      extensionVersion:chrome.runtime.getManifest().version,
+      userAgent:navigator.userAgent,
+      language:navigator.language,
+    });
+    if(exportDiagnostic) exportDiagnostic.disabled=false;
+
     renderReport(report);
 
     try {
@@ -860,4 +887,21 @@ fulfillmentCheck?.addEventListener('click',()=>{
       status.textContent=error instanceof Error?error.message:String(error);
     }
   })();
+});
+
+
+exportDiagnostic?.addEventListener('click',()=>{
+  if(!lastDiagnostic || !status) return;
+  const payload={
+    ...lastDiagnostic,
+    developerNote:diagnosticNote?.value.trim() || undefined,
+  };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const anchor=document.createElement('a');
+  anchor.href=url;
+  anchor.download=diagnosticFilename(lastDiagnostic.scan.domain,lastDiagnostic.generatedAt);
+  anchor.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  status.textContent='Sanitized diagnostic case exported locally. Nothing was uploaded.';
 });
