@@ -10,15 +10,23 @@ import type { ReviewSnapshot } from '../../src/types/review';
 import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
+import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
 const summary=document.querySelector<HTMLElement>('#summary');
 const evidenceList=document.querySelector<HTMLElement>('#evidence');
 const raw=document.querySelector<HTMLElement>('#raw');
+const huntActions=document.querySelector<HTMLElement>('#hunt-actions');
+const huntSources=document.querySelector<HTMLButtonElement>('#hunt-sources');
+const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
+const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
+let lastReport:DropShredderReport|undefined;
 
 function renderReport(report: DropShredderReport): void {
   if (!summary || !evidenceList || !raw) return;
+  lastReport=report;
+  if(huntActions) huntActions.hidden=false;
   const score=report.verdict.massResellLikelihood;
   summary.innerHTML=`
     <div class="metric"><span>Mass-resell likelihood</span><strong>${score===null?'UNKNOWN':score+'%'}</strong></div>
@@ -260,3 +268,20 @@ async function scanActivePage(): Promise<void> {
 }
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
+
+async function openSearches(urls:Record<string,string>):Promise<void>{
+  for(const url of Object.values(urls)) await chrome.tabs.create({url,active:false});
+}
+
+huntSources?.addEventListener('click',()=>{
+  const title=lastReport?.product.title;
+  if(title) void openSearches(productSearchUrls(title));
+});
+huntImage?.addEventListener('click',()=>{
+  const image=lastReport?.product.imageUrls[0];
+  void openSearches(imageSearchUrls(image));
+});
+huntStore?.addEventListener('click',()=>{
+  const domain=lastReport?.product.domain;
+  if(domain) void openSearches(merchantSearchUrls(domain));
+});
