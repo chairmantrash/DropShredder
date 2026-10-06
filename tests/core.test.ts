@@ -108,6 +108,6 @@ test('fulfillment contradiction is visible separately from product provenance',(
   ]);
   assert.equal(verdict.massResellLikelihood,null);
   assert.equal(verdict.dropshipLikelihood,16);
-  assert.equal(verdict.fulfillmentRisk,'low');
+  assert.equal(verdict.fulfillmentRisk,'moderate');
   assert.equal(verdict.severeWarningAllowed,false);
 });

@@ -16,8 +16,14 @@ function effectiveWeight(signal: EvidenceSignal): number {
 function riskLevel(signals: EvidenceSignal[]): RiskLevel {
   const scored=signals.filter(signal=>effectiveWeight(signal)>0);
   if(!scored.length) return 'unknown';
-  const score=Math.min(99,Math.round(scored.reduce((sum,signal)=>sum+effectiveWeight(signal),0)));
-  return score>=65?'high':score>=35?'moderate':'low';
+
+  const direct=scored.filter(signal=>signal.severity==='direct').length;
+  const strong=scored.filter(signal=>signal.severity==='strong').length;
+  const moderate=scored.filter(signal=>signal.severity==='moderate').length;
+
+  if(direct>=1 || strong>=2) return 'high';
+  if(strong>=1 || moderate>=2) return 'moderate';
+  return 'low';
 }
 
 export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {

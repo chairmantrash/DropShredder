@@ -22,6 +22,12 @@ import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
 import { productMutationEvidence } from '../../src/analysis/product-mutation';
 import { parseFulfillmentObservation } from '../../src/analysis/fulfillment-observation';
 import { fulfillmentContradictions } from '../../src/analysis/contradictions';
+import { analyzeMerchantOrigin, type SiteTextPage } from '../../src/analysis/merchant-origin';
+import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalog-signals';
+import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
+import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
+import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
+import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -34,18 +40,36 @@ const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
+const autoReputationSweep=document.querySelector<HTMLInputElement>('#auto-reputation-sweep');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
+  if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
   void loadFeatureSettings().then(settings=>
     saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
   );
+});
+
+autoReputationSweep?.addEventListener('change',()=>{
+  void (async()=>{
+    if(autoReputationSweep.checked){
+      const origin='https://www.trustpilot.com/*';
+      const granted=await chrome.permissions.contains({origins:[origin]})
+        || await chrome.permissions.request({origins:[origin]});
+      if(!granted){
+        autoReputationSweep.checked=false;
+        if(status) status.textContent='Auto Reputation Sweep needs optional Trustpilot access.';
+      }
+    }
+    const settings=await loadFeatureSettings();
+    await saveFeatureSettings({...settings,autoReputationSweep:autoReputationSweep.checked});
+  })();
 });
 
 function renderReport(report: DropShredderReport): void {
@@ -136,6 +160,10 @@ async function scanActivePage(): Promise<void> {
         const offer=asRecord(Array.isArray(product?.offers)?product?.offers[0]:product?.offers);
         const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
+        const aggregateNode=asRecord(product?.aggregateRating)
+          ?? asRecord(jsonNodes.find(node=>Boolean(node.aggregateRating))?.aggregateRating);
+        const hostedRating=Number(aggregateNode?.ratingValue) || undefined;
+        const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
         const imageValue=product?.image;
         const structuredImages=Array.isArray(imageValue)
           ? imageValue.filter((x):x is string=>typeof x==='string')
@@ -161,6 +189,39 @@ async function scanActivePage(): Promise<void> {
 
         const pageText=(document.body?.innerText || '').slice(0,120000);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
+
+        const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
+          const haystack=(a.pathname+' '+(a.innerText||'')).toLowerCase();
+          if(/about|our story|who we are/.test(haystack)) return 'about';
+          if(/shipping|delivery/.test(haystack)) return 'shipping';
+          if(/return|refund|exchange/.test(haystack)) return 'returns';
+          if(/contact/.test(haystack)) return 'contact';
+          return undefined;
+        };
+        const siteLinks=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
+          .map(a=>{
+            try{
+              const url=new URL(a.href,location.href);
+              const kind=classifyLink(a);
+              return url.origin===location.origin && kind ? {kind,url:url.href} : undefined;
+            }catch{return undefined;}
+          })
+          .filter((v):v is {kind:'about'|'shipping'|'returns'|'contact';url:string}=>Boolean(v))
+          .filter((v,i,arr)=>arr.findIndex(x=>x.kind===v.kind)===i)
+          .slice(0,4);
+
+        const cardSelectors=[
+          '[class*="product-card"]','[class*="product_card"]','[class*="product-item"]',
+          '[class*="product_item"]','[data-product-id]','li[class*="product"]'
+        ];
+        const cards=[...new Set(cardSelectors.flatMap(selector=>[...document.querySelectorAll<HTMLElement>(selector)]))]
+          .filter(card=>card.innerText.trim().length>0)
+          .slice(0,200);
+        const saleCards=cards.filter(card=>
+          Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
+          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(card.innerText)
+        );
+        const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
         const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
           .slice(0,80)
@@ -215,6 +276,10 @@ async function scanActivePage(): Promise<void> {
                 ? ['platform:bigcommerce'] : []),
               ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
                 ? ['platform:magento'] : []),
+              ...(([...document.scripts].some(s=>/myshopline\.com|shoplineapp\.com/i.test(s.src))
+                || [...document.images].some(i=>/myshopline\.com/i.test(i.currentSrc||i.src))
+                || document.querySelector('link[href*="myshopline.com"], meta[content*="SHOPLINE"]'))
+                ? ['platform:shopline'] : []),
               ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
@@ -229,11 +294,18 @@ async function scanActivePage(): Promise<void> {
           },
           pageText,
           reviews,
+          siteLinks,
+          catalog,
+          hostedReviews: hostedRating ? {
+            rating: hostedRating,
+            reviewCount: hostedReviewCount,
+            source:'Store-hosted structured reviews',
+          } : undefined,
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[]}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
     const extractedClaims=extractClaims(result.pageText);
@@ -254,6 +326,37 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    evidence.push(...catalogEvidence(result.catalog));
+
+    try{
+      if(result.siteLinks.length){
+        const [siteExecution]=await chrome.scripting.executeScript({
+          target:{tabId:tab.id},
+          args:[result.siteLinks],
+          func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
+            const pages:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}>=[];
+            for(const link of links.slice(0,4)){
+              try{
+                const response=await fetch(link.url,{credentials:'same-origin',cache:'force-cache'});
+                if(!response.ok) continue;
+                const html=await response.text();
+                const doc=new DOMParser().parseFromString(html,'text/html');
+                const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
+                if(text) pages.push({...link,text});
+              }catch{}
+            }
+            return pages;
+          },
+        });
+        const sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
+        const origin=analyzeMerchantOrigin(result.pageText,sitePages);
+        evidence.push(...origin.evidence);
+        const returns=sitePages.find(page=>page.kind==='returns');
+        if(returns) evidence.push(...analyzeReturnPolicy(returns.text));
+      }
+    }catch(siteIntelError){
+      console.warn('DropShredder: bounded same-site intelligence scan failed',siteIntelError);
+    }
     if(fingerprint.identifiers.length){
       evidence.push({
         id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
@@ -315,6 +418,28 @@ async function scanActivePage(): Promise<void> {
             ...sourceEvidence,
           ];
           report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+        }
+      }
+
+      if(settings.autoReputationSweep){
+        try{
+          const observation=await fetchTrustpilotObservation(report.product.domain);
+          if(observation){
+            const reputationEvidence=[
+              ...analyzeReputationObservations([observation]),
+              ...qualityClaimEvidence(result.pageText,[observation]),
+              ...reviewDiscrepancyEvidence(result.hostedReviews,observation),
+            ];
+            if(reputationEvidence.length){
+              const combined=[
+                ...report.evidence.filter(existing=>!reputationEvidence.some(item=>item.independentKey===existing.independentKey)),
+                ...reputationEvidence,
+              ];
+              report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+            }
+          }
+        }catch(reputationError){
+          console.warn('DropShredder: automatic Trustpilot sweep failed',reputationError);
         }
       }
     } catch (historyError) {
