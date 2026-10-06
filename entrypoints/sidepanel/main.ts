@@ -26,6 +26,7 @@ import { analyzeMerchantOrigin, type SiteTextPage } from '../../src/analysis/mer
 import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalog-signals';
 import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
 import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
+import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -414,7 +415,10 @@ async function scanActivePage(): Promise<void> {
         try{
           const observation=await fetchTrustpilotObservation(report.product.domain);
           if(observation){
-            const reputationEvidence=analyzeReputationObservations([observation]);
+            const reputationEvidence=[
+              ...analyzeReputationObservations([observation]),
+              ...qualityClaimEvidence(result.pageText,[observation]),
+            ];
             if(reputationEvidence.length){
               const combined=[
                 ...report.evidence.filter(existing=>!reputationEvidence.some(item=>item.independentKey===existing.independentKey)),
