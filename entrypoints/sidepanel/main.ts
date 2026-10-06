@@ -3,7 +3,7 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
+import { clearObservationHistory, getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
 import { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
 import type { ReviewSnapshot } from '../../src/types/review';
@@ -51,6 +51,7 @@ const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
+const clearHistory=document.querySelector<HTMLButtonElement>('#clear-history');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
@@ -938,6 +939,22 @@ fulfillmentCheck?.addEventListener('click',()=>{
         : 'Fulfillment origin recorded. No seller-origin contradiction found.';
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
+    }
+  })();
+});
+
+
+clearHistory?.addEventListener('click',()=>{
+  if(!status) return;
+  void (async()=>{
+    clearHistory.disabled=true;
+    try{
+      await clearObservationHistory();
+      status.textContent='Local DropShredder history cleared from this browser.';
+    }catch(error){
+      status.textContent=error instanceof Error?error.message:String(error);
+    }finally{
+      clearHistory.disabled=false;
     }
   })();
 });
