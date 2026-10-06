@@ -30,6 +30,8 @@ import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
 import { detectCommercePlatforms } from '../../src/intelligence/commerce-platforms';
 import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/analysis/supply-chain-profile';
+import { merchantNetworkEvidence, merchantNetworkForDomain } from '../../src/intelligence/merchant-networks';
+import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../../src/analysis/merchant-network';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -353,6 +355,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
     for(const platform of platformMatches){
       evidence.push({
@@ -392,6 +395,11 @@ async function scanActivePage(): Promise<void> {
         sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
         const origin=analyzeMerchantOrigin(result.pageText,sitePages);
         evidence.push(...origin.evidence);
+        const network=merchantNetworkForDomain(result.product.domain);
+        if(network){
+          const networkText=[result.pageText,...sitePages.map(page=>page.text)].join(' ');
+          evidence.push(...crossDomainReferenceEvidence(result.product.domain,networkText,network.domains));
+        }
         const returns=sitePages.find(page=>page.kind==='returns');
         if(returns) evidence.push(...analyzeReturnPolicy(returns.text));
       }
@@ -484,6 +492,15 @@ async function scanActivePage(): Promise<void> {
       }
 
       const allHistory=await getRecentObservationsAll(250);
+      const merchantLinkEvidence=localMerchantNetworkEvidence(report.product,allHistory);
+      if(merchantLinkEvidence.length){
+        const combined=[
+          ...report.evidence.filter(existing=>!merchantLinkEvidence.some(item=>item.independentKey===existing.independentKey)),
+          ...merchantLinkEvidence,
+        ];
+        report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+      }
+
       const mutationEvidence=productMutationEvidence(report.product,allHistory);
       if(mutationEvidence.length){
         const combined=[
