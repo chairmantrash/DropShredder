@@ -30,20 +30,40 @@ export function renderStamp(report: DropShredderReport): void {
   const shadow=host.attachShadow({mode:'open'});
   const state=label(report);
   const score=report.verdict.massResellLikelihood;
-  shadow.innerHTML=`
-    <style>
-      .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
-        box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:Inter,system-ui,sans-serif;padding:14px}
-      .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
-      .headline{font-size:15px;font-weight:950;line-height:1.15}
-      .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
-      .score{font-size:12px;margin-top:10px;color:#ededf0}
-    </style>
-    <div class="box">
-      <div class="brand">DROP SHREDDER</div>
-      <div class="headline">${state.headline}</div>
-      <div class="detail">${state.detail}</div>
-      <div class="score">${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${report.evidence.length} signal(s)</div>
-    </div>`;
+
+  const style=document.createElement('style');
+  style.textContent=`
+    .box{position:relative;width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
+      box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:Inter,system-ui,sans-serif;padding:14px}
+    .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
+    .headline{font-size:15px;font-weight:950;line-height:1.15}
+    .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
+    .score{font-size:12px;margin-top:10px;color:#ededf0}
+    button{all:initial;position:absolute;right:8px;top:5px;color:#b9b9c0;font:700 18px system-ui;cursor:pointer;padding:4px}
+  `;
+
+  const box=document.createElement('div');
+  box.className='box';
+  const close=document.createElement('button');
+  close.type='button';
+  close.setAttribute('aria-label','Dismiss DropShredder warning');
+  close.textContent='×';
+  close.addEventListener('click',()=>host.remove());
+
+  const brand=document.createElement('div');
+  brand.className='brand';
+  brand.textContent='DROP SHREDDER';
+  const headline=document.createElement('div');
+  headline.className='headline';
+  headline.textContent=state.headline;
+  const detail=document.createElement('div');
+  detail.className='detail';
+  detail.textContent=state.detail;
+  const scoreNode=document.createElement('div');
+  scoreNode.className='score';
+  scoreNode.textContent=`${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${report.evidence.length} signal(s)`;
+
+  box.append(close,brand,headline,detail,scoreNode);
+  shadow.append(style,box);
   document.documentElement.append(host);
 }
