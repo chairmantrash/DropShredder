@@ -1,25 +1,44 @@
 # Current state
 
-**Phase:** Implementation begun  
+**Phase:** Active implementation  
 **Product:** DropShredder  
 **Primary constraint:** zero-backend, zero-subscription, local-first  
-**Current milestone:** DS-001 repository/runtime scaffold seeded in GitHub.
+**Latest green build:** 6edcb48e56ff28181e153e2733cee5f06d03c6aa
 
-## Done
-- Product doctrine established
-- Evidence/verdict gate established
-- Agent/workplane structure established
-- Research-backed context/memory/retrieval strategy established
-- DS-001 source scaffold created
-- Side-panel scan + Shadow-DOM stamp seeded
-- Canonical GitHub repository created and seeded
+## Done / green
+- Product doctrine and evidence/verdict gate
+- Agent/workplane context, memory and retrieval architecture
+- Canonical GitHub repository and CI
+- WXT/TypeScript Manifest V3 runtime
+- Side-panel active-tab scanner
+- Shadow-DOM page verdict stamp
+- Typed Product/Merchant/Evidence/Review/Report contracts
+- JSON-LD/OpenGraph product extraction foundation
+- Evidence independence/deduplication gate
+- Native IndexedDB observation history
+- Etsy claim/disclosure groundwork
+- Deep Hunt context menus for product/image/store pivots
+- Local review-provenance/anomaly engine
+- Amazon visible-review extraction path
+- Longitudinal scarcity and price-history evidence
+- Informational tracking/review technology signatures
+- Weekly dropshipper-enablement intelligence watch
+- Clean-room competitor/adjacent extension analysis
 
 ## In progress
-- DS-001 dependency/build/browser verification
-- DS-002 typed Product/Merchant/Evidence contracts
-- DS-003 structured JSON-LD/OpenGraph extraction
-- DS-004 production right-side verdict/stamp component
-- DS-005 side-panel evidence viewer
+- DS-003 extraction hardening and marketplace fallbacks
+- DS-004/005 browser UX verification
+- DS-006 evidence-fusion calibration and contradiction model
+- DS-007/011 longitudinal observation calibration
+- DS-008 Etsy adapter fixtures
+- DS-009 Amazon adapter hardening
+- DS-012 image hashing/similarity
+- DS-013 reverse-image/supplier search validation
+- DS-015 review provenance fixtures and scoring calibration
+- DS-022 technology signature registry provenance/versioning
+- DS-023 fulfillment-claim vs carrier contradiction design
 
 ## Current blockers
-- Runtime browser verification requires a generated unpacked extension build or local Chrome load.
+- No code/build blocker.
+- Final browser interaction verification still requires loading a generated unpacked build in Chrome.
+- Some reverse-image providers do not expose stable documented direct-URL endpoints; keep fallbacks/user-triggered flows.
