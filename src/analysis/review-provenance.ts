@@ -49,21 +49,23 @@ function maxWindowShare(reviews:ReviewSnapshot[],days:number):number {
   return max/dates.length;
 }
 
-function wrongProductHints(input:ReviewAnalysisInput): number {
-  if(!input.productTitle) return 0;
-  const product=tokens(input.productTitle);
-  if(product.size<2) return 0;
+function wrongProductHints(input:ReviewAnalysisInput): {count:number;category?:string} {
+  if(!input.productTitle) return {count:0};
+  const title=normalize(input.productTitle);
   const mismatchTerms=[
     'necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes',
     'lamp','charger','vacuum','blender','dress','jacket','ring','watch'
   ];
-  let count=0;
+  const counts=new Map<string,number>();
   for(const review of input.reviews){
-    const text=normalize(review.title+' '+review.body);
-    const mentions=mismatchTerms.filter(term=>text.includes(term));
-    if(mentions.length && [...product].every(term=>!text.includes(term))) count++;
+    const text=normalize((review.title ?? '')+' '+review.body);
+    for(const term of mismatchTerms){
+      if(title.includes(term)) continue;
+      if(text.includes(term)) counts.set(term,(counts.get(term) ?? 0)+1);
+    }
   }
-  return count;
+  const top=[...counts.entries()].sort((a,b)=>b[1]-a[1])[0];
+  return top ? {category:top[0],count:top[1]} : {count:0};
 }
 
 export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSignal[] {
@@ -125,13 +127,46 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
   }
 
   const mismatch=wrongProductHints(input);
-  if(mismatch>=2){
+  if(mismatch.count>=2){
     out.push({
       id:'REVIEW_PRODUCT_MISMATCH',family:'reviews',severity:'strong',confidence:.82,weight:21,
       title:'Reviews may describe a different product',
-      explanation:'Multiple visible reviews appear to discuss product categories inconsistent with the current listing. Variant merges or legitimate migrated reviews remain possible alternatives.',
-      observedValue:`${mismatch} potentially mismatched review(s)`,
+      explanation:'Multiple visible reviews repeatedly discuss the same product category that is absent from the current listing title. Variant merges or legitimate migrated reviews remain possible alternatives.',
+      observedValue:`${mismatch.count} review(s) mention ${mismatch.category}`,
       independentKey:'reviews-product-mismatch',
+    });
+  }
+
+  if(reviews.length>=15){
+    const rated=reviews.filter(r=>typeof r.rating==='number');
+    if(rated.length>=15){
+      const fiveStar=rated.filter(r=>(r.rating ?? 0)>=4.8).length/rated.length;
+      if(fiveStar>=.9){
+        out.push({
+          id:'EXTREME_FIVE_STAR_CONCENTRATION',family:'reviews',severity:'weak',confidence:.58,weight:4,
+          title:'Visible ratings are extremely concentrated at five stars',
+          explanation:'Some excellent products legitimately have very high ratings. This is a weak distribution signal and requires independent corroboration.',
+          observedValue:`${Math.round(fiveStar*100)}% of visible rated reviews are approximately five-star`,
+          independentKey:'reviews-rating-concentration',
+        });
+      }
+    }
+  }
+
+  const incentivePatterns=[
+    /free\s+(?:product|item|sample)/i,
+    /received\s+(?:this|the\s+product)\s+(?:for\s+free|at\s+a\s+discount)/i,
+    /discount\s+(?:code|in\s+exchange)/i,
+    /in\s+exchange\s+for\s+(?:my\s+)?(?:honest\s+)?review/i,
+  ];
+  const incentivized=reviews.filter(review=>incentivePatterns.some(pattern=>pattern.test(review.body))).length;
+  if(incentivized>=2){
+    out.push({
+      id:'INCENTIVIZED_REVIEW_LANGUAGE',family:'reviews',severity:'moderate',confidence:.78,weight:9,
+      title:'Multiple reviews disclose incentives or free product',
+      explanation:'Incentivized reviews may be legitimate when properly disclosed, but they reduce confidence that visible review sentiment represents ordinary purchasers.',
+      observedValue:`${incentivized} visible review(s) contain incentive language`,
+      independentKey:'reviews-incentive-language',
     });
   }
 
