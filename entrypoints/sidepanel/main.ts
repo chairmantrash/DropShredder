@@ -24,6 +24,8 @@ import { parseFulfillmentObservation } from '../../src/analysis/fulfillment-obse
 import { fulfillmentContradictions } from '../../src/analysis/contradictions';
 import { analyzeMerchantOrigin, type SiteTextPage } from '../../src/analysis/merchant-origin';
 import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalog-signals';
+import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
+import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -36,18 +38,36 @@ const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
+const autoReputationSweep=document.querySelector<HTMLInputElement>('#auto-reputation-sweep');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
 let lastReport:DropShredderReport|undefined;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
+  if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
   void loadFeatureSettings().then(settings=>
     saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
   );
+});
+
+autoReputationSweep?.addEventListener('change',()=>{
+  void (async()=>{
+    if(autoReputationSweep.checked){
+      const origin='https://www.trustpilot.com/*';
+      const granted=await chrome.permissions.contains({origins:[origin]})
+        || await chrome.permissions.request({origins:[origin]});
+      if(!granted){
+        autoReputationSweep.checked=false;
+        if(status) status.textContent='Auto Reputation Sweep needs optional Trustpilot access.';
+      }
+    }
+    const settings=await loadFeatureSettings();
+    await saveFeatureSettings({...settings,autoReputationSweep:autoReputationSweep.checked});
+  })();
 });
 
 function renderReport(report: DropShredderReport): void {
@@ -387,6 +407,24 @@ async function scanActivePage(): Promise<void> {
             ...sourceEvidence,
           ];
           report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+        }
+      }
+
+      if(settings.autoReputationSweep){
+        try{
+          const observation=await fetchTrustpilotObservation(report.product.domain);
+          if(observation){
+            const reputationEvidence=analyzeReputationObservations([observation]);
+            if(reputationEvidence.length){
+              const combined=[
+                ...report.evidence.filter(existing=>!reputationEvidence.some(item=>item.independentKey===existing.independentKey)),
+                ...reputationEvidence,
+              ];
+              report={...report,evidence:combined,verdict:calculateVerdict(combined)};
+            }
+          }
+        }catch(reputationError){
+          console.warn('DropShredder: automatic Trustpilot sweep failed',reputationError);
         }
       }
     } catch (historyError) {
