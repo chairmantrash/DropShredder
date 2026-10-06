@@ -10,7 +10,8 @@
     "zip": "wxt zip",
     "prepare": "wxt prepare",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/**/*.test.ts"
+    "test": "tsx --test tests/**/*.test.ts",
+    "release:audit": "node scripts/release-audit.mjs"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",
