@@ -3,7 +3,7 @@ import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';\nimport { analyzeHistory } from '../../src/analysis/history-signals';
+import { getObservations, productIdentityKey, saveObservation } from '../../src/storage/history';\nimport { analyzeHistory } from '../../src/analysis/history-signals';\nimport { analyzeReviewProvenance } from '../../src/analysis/review-provenance';\nimport type { ReviewSnapshot } from '../../src/types/review';
 import { analyzeEtsyPage } from '../../src/adapters/etsy';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -88,6 +88,26 @@ async function scanActivePage(): Promise<void> {
         const pageText=(document.body?.innerText || '').slice(0,120000);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
+        const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
+          .slice(0,80)
+          .map((review,index)=>{
+            const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim();
+            const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
+            const ratingMatch=ratingText.match(/([1-5](?:\.\d)?)/);
+            return {
+              id:review.id || `visible-review-${index}`,
+              platform:'amazon',
+              rating:ratingMatch ? Number(ratingMatch[1]) : undefined,
+              title:text('[data-hook="review-title"]'),
+              body:text('[data-hook="review-body"], [data-hook="reviewText"], [data-hook="reviewRichContentContainer"]'),
+              date:text('[data-hook="review-date"]') || undefined,
+              verified:Boolean(review.querySelector('[data-hook="avp-badge"]')),
+              helpfulCount:Number((text('[data-hook="helpful-vote-statement"]').match(/\d+/)?.[0])) || undefined,
+              reviewerName:text('.a-profile-name') || undefined,
+            };
+          })
+          .filter(review=>review.body);
+
         return {
           product:{
             url:location.href,
@@ -124,14 +144,21 @@ async function scanActivePage(): Promise<void> {
             ],
           },
           pageText,
+          reviews,
         };
       },
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string}|undefined;
+    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[]}|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    if(result.reviews.length>=5){
+      evidence.push(...analyzeReviewProvenance({
+        reviews:result.reviews,
+        productTitle:result.product.title,
+      }));
+    }
     if (/(^|\\.)etsy\\.com$/i.test(result.product.domain)) {
       const etsy=analyzeEtsyPage(result.pageText);
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
