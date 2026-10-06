@@ -1,14 +1,42 @@
-import { sourceSearchUrls } from '../intelligence/source-index';
+import { SOURCE_INDEX } from '../intelligence/source-index';
 
 function q(value:string):string { return encodeURIComponent(value.trim()); }
 
+function domainGroups():Array<{label:string;domains:string[]}>{
+  const classes=[
+    ['wholesale',new Set(['wholesale'])],
+    ['marketplaces',new Set(['marketplace'])],
+    ['retail',new Set(['retail'])],
+    ['supplier-networks',new Set(['supplier-network'])],
+    ['pod',new Set(['pod'])],
+  ] as const;
+
+  const groups:Array<{label:string;domains:string[]}>= [];
+  for(const [label,classesForGroup] of classes){
+    const domains=[...new Set(
+      SOURCE_INDEX
+        .filter(source=>classesForGroup.has(source.sourceClass as never))
+        .flatMap(source=>source.queryDomains)
+    )];
+    for(let i=0;i<domains.length;i+=6){
+      groups.push({label:`${label}-${Math.floor(i/6)+1}`,domains:domains.slice(i,i+6)});
+    }
+  }
+  return groups;
+}
+
 export function productSearchUrls(title:string):Record<string,string> {
   const phrase=title ? `"${title.slice(0,180)}"` : '';
-  return {
+  const urls:Record<string,string>={
     web:`https://www.google.com/search?q=${q(phrase)}`,
-    ...sourceSearchUrls(title),
-    reddit:`https://www.google.com/search?q=${q(phrase+' reddit')}`,
   };
+
+  for(const group of domainGroups()){
+    const sites=group.domains.map(domain=>`site:${domain}`).join(' OR ');
+    urls[group.label]=`https://www.google.com/search?q=${q(`${phrase} (${sites})`)}`;
+  }
+  urls.reddit=`https://www.google.com/search?q=${q(phrase+' reddit')}`;
+  return urls;
 }
 
 export function merchantSearchUrls(domain:string):Record<string,string> {
