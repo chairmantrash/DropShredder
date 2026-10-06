@@ -3,7 +3,7 @@
 **Phase:** Active implementation  
 **Product:** DropShredder  
 **Primary constraint:** zero-backend, zero-subscription, local-first  
-**Latest green build:** 6edcb48e56ff28181e153e2733cee5f06d03c6aa
+**Latest verified green lineage:** image history / provenance tests and Auto Source Hunt foundations
 
 ## Done / green
 - Product doctrine and evidence/verdict gate
@@ -42,3 +42,8 @@
 - No code/build blocker.
 - Final browser interaction verification still requires loading a generated unpacked build in Chrome.
 - Some reverse-image providers do not expose stable documented direct-URL endpoints; keep fallbacks/user-triggered flows.
+
+## Scope lock
+- Maintain six modules only: provenance, merchant credibility, manipulation, fulfillment, complaints, focused safety.
+- Do not expand into generic cybersecurity or unrelated shopping intelligence.
+- Core stays local-first, zero-backend, zero-subscription.
