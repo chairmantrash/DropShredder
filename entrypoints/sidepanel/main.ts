@@ -144,6 +144,14 @@ async function scanActivePage(): Promise<void> {
             shippingText:shippingMatch?.[0],
             claims:[],
             pageSignals:[
+              ...(('Shopify' in window || [...document.scripts].some(s=>s.src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
+                ? ['platform:shopify'] : []),
+              ...((document.body?.classList.contains('woocommerce') || [...document.scripts].some(s=>/wc-(?:cart|checkout|add-to-cart)/i.test(s.src)))
+                ? ['platform:woocommerce'] : []),
+              ...(([...document.scripts].some(s=>s.src.includes('bigcommerce.com')) || document.querySelector('[data-content-region]'))
+                ? ['platform:bigcommerce'] : []),
+              ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
+                ? ['platform:magento'] : []),
               ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
@@ -205,7 +213,11 @@ async function scanActivePage(): Promise<void> {
     let report: DropShredderReport={
       version:1,
       product:result.product,
-      merchant:{domain:result.product.domain,sellerName:result.product.seller},
+      merchant:{
+        domain:result.product.domain,
+        sellerName:result.product.seller,
+        detectedPlatform:result.product.pageSignals.find(signal=>signal.startsWith('platform:'))?.split(':')[1],
+      },
       evidence,
       contradictions:[],
       verdict:calculateVerdict(evidence),
