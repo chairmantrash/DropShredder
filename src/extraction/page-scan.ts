@@ -21,6 +21,7 @@ export interface PageScanResult {
  * Keep this function self-contained: chrome.scripting serializes the function body.
  */
 export function extractPageScan():PageScanResult {
+  const LIMITS={images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000} as const;
 
         const meta=(selector:string):string|undefined =>
           document.querySelector<HTMLMetaElement>(selector)?.content?.trim() || undefined;
@@ -60,13 +61,13 @@ export function extractPageScan():PageScanResult {
           ? imageValue.filter((x):x is string=>typeof x==='string')
           : typeof imageValue==='string'?[imageValue]:[];
         const pageImages:string[]=[];
-        for(let i=0;i<Math.min(document.images.length,200);i++){
+        for(let i=0;i<Math.min(document.images.length,LIMITS.images);i++){
           const image=document.images.item(i);
           const src=image?.currentSrc || image?.src;
           if(src) pageImages.push(src);
         }
         const scriptSources:string[]=[];
-        for(let i=0;i<Math.min(document.scripts.length,300);i++){
+        for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts);i++){
           const src=document.scripts.item(i)?.src;
           if(src) scriptSources.push(src);
         }
@@ -89,7 +90,7 @@ export function extractPageScan():PageScanResult {
           if(name && value && Object.keys(specifications).length<40) specifications[name]=value;
         }
 
-        const pageText=(document.body?.innerText || '').slice(0,120000);
+        const pageText=(document.body?.innerText || '').slice(0,LIMITS.pageText);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
         const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
@@ -118,7 +119,7 @@ export function extractPageScan():PageScanResult {
         ];
         const cards=[...new Set(cardSelectors.flatMap(selector=>[...document.querySelectorAll<HTMLElement>(selector)]))]
           .filter(card=>card.innerText.trim().length>0)
-          .slice(0,200);
+          .slice(0,LIMITS.cards);
         const saleCards=cards.filter(card=>
           Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
           || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(card.innerText)
@@ -126,7 +127,7 @@ export function extractPageScan():PageScanResult {
         const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
         const amazonSearchCards:AmazonSearchCard[]=[...document.querySelectorAll<HTMLElement>('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')]
-          .slice(0,160)
+          .slice(0,LIMITS.amazonCards)
           .map(card=>{
             const asin=(card.dataset.asin || '').trim().toUpperCase();
             const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim();
@@ -143,7 +144,7 @@ export function extractPageScan():PageScanResult {
           .filter(card=>/^[A-Z0-9]{10}$/.test(card.asin) && Boolean(card.title));
 
         const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
-          .slice(0,80)
+          .slice(0,LIMITS.reviews)
           .map((review,index)=>{
             const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim();
             const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
@@ -221,7 +222,7 @@ export function extractPageScan():PageScanResult {
             source:'Store-hosted structured reviews',
           } : undefined,
           scriptSources,
-          htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
+          htmlSignature:(document.head?.innerHTML || '').slice(0,LIMITS.htmlSignature)+' '+(document.body?.className || ''),
           amazonSearchCards,
         };
       
