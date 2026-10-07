@@ -25,7 +25,7 @@ const patterns=[
     severity:'moderate' as const,
     confidence:.72,
     regex:/(?:contact|email).{0,80}(?:return address|return instructions)|return address.{0,80}(?:provided|sent).{0,50}(?:after|once).{0,30}(?:contact|email)/i,
-    title:'They won't show the return address up front',
+    title:'They won’t show the return address up front',
     explanation:'The store appears to make you contact them before revealing where a return has to go. That adds friction and hides a cost you may want to know before buying.',
     key:'return-address-withheld',
   },
@@ -53,7 +53,7 @@ const patterns=[
     confidence:.64,
     regex:/(?:all sales are final|no returns? or exchanges?|non[- ]returnable)/i,
     title:'The store may not take it back',
-    explanation:'The policy uses broad final-sale or no-return language. Some products have legitimate exclusions, so check whether it actually applies to what you're buying.',
+    explanation:'The policy uses broad final-sale or no-return language. Some products have legitimate exclusions, so check whether it actually applies to what you’re buying.',
     key:'return-final-sale',
   },
   {
@@ -62,7 +62,7 @@ const patterns=[
     confidence:.66,
     regex:/refund.{0,80}(?:after|once).{0,50}(?:warehouse|return center|facility).{0,30}(?:receive|received|inspect)/i,
     title:'Your refund waits on the warehouse',
-    explanation:'The store says your refund waits until a warehouse receives or inspects the return. That's common, but it can become a headache when the return destination is unclear or far away.',
+    explanation:'The store says your refund waits until a warehouse receives or inspects the return. That’s common, but it can become a headache when the return destination is unclear or far away.',
     key:'return-warehouse-receipt',
   }
 ];
