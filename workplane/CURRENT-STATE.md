@@ -1,55 +1,41 @@
 # Current state
 
-**Phase:** Active implementation  
-**Product:** DropShredder  
-**Primary constraint:** zero-backend, zero-subscription, local-first  
-**Latest verified green lineage:** image history / provenance tests and Auto Source Hunt foundations
+**Phase:** Beta completion / verification
+**Product:** DropShredder
+**Primary constraint:** local-first, no mandatory backend, no paid API dependency
 
-## Done / green
-- Product doctrine and evidence/verdict gate
-- Agent/workplane context, memory and retrieval architecture
-- Canonical GitHub repository and CI
-- WXT/TypeScript Manifest V3 runtime
-- Side-panel active-tab scanner
-- Shadow-DOM page verdict stamp
-- Typed Product/Merchant/Evidence/Review/Report contracts
-- JSON-LD/OpenGraph product extraction foundation
-- Evidence independence/deduplication gate
-- Native IndexedDB observation history
-- Etsy claim/disclosure groundwork
-- Deep Hunt context menus for product/image/store pivots
-- Local review-provenance/anomaly engine
-- Amazon visible-review extraction path
-- Longitudinal scarcity and price-history evidence
-- Informational tracking/review technology signatures
-- Weekly dropshipper-enablement intelligence watch
-- Clean-room competitor/adjacent extension analysis
+## Implemented beta scope
+- WXT/TypeScript Manifest V3 extension and active-tab scanner
+- Generic structured product extraction plus Amazon, Etsy and Walmart marketplace handling
+- Conservative evidence/verdict engine with independence/deduplication and severe-accusation gates
+- Local IndexedDB history with bounded retention
+- Longitudinal scarcity, price, review-change and stateful dark-pattern analysis
+- Review integrity/provenance, complaint consensus and adjusted visible-review rating
+- Exact-first product fingerprinting, local image hashing and cross-history image evidence
+- Merchant/origin/fulfillment/return-policy contradiction analysis
+- Explicit Deep Hunt source, image, store, reputation and RDAP investigations
+- Informational commerce/payment/supply-chain context with zero country/nationality risk weight
+- Exact-first regulatory safety matching primitive; fuzzy title matches remain candidate-only
+- Security, privacy, performance, data, architecture, release and CodeQL gates
+- Customer-facing report renderer extracted from the side-panel controller
+- Beta testing and release smoke-test protocols
 
-## Recently green
-- Auto Source Hunt toggle + indexed-source matching
-- Reputation Sweep launchers + complaint warning gates
-- Same-site return/refund policy analyzer + regression tests
-- Fulfillment observation parser + regression tests
+## Deliberately deferred outside beta core
+These are not required for the beta mission and must not block it:
+- OCR Deep Hunt
+- local embeddings/semantic models
+- marketplace result-page badges
+- broad merchant relationship graph exploration
+- broad policy/storefront fingerprinting beyond current return/fulfillment checks
+- aggregate trade/factory intelligence
 
-## In progress
-- DS-003 extraction hardening and marketplace fallbacks
-- DS-004/005 browser UX verification
-- DS-006 evidence-fusion calibration and contradiction model
-- DS-007/011 longitudinal observation calibration
-- DS-008 Etsy adapter fixtures
-- DS-009 Amazon adapter hardening
-- DS-012 image hashing/similarity
-- DS-013 reverse-image/supplier search validation
-- DS-015 review provenance fixtures and scoring calibration
-- DS-022 technology signature registry provenance/versioning
-- DS-023 fulfillment-claim vs carrier contradiction design
+They may be revisited only with a concrete shopper decision use case and performance/privacy justification.
 
-## Current blockers
-- No code/build blocker.
-- Final browser interaction verification still requires loading a generated unpacked build in Chrome.
-- Some reverse-image providers do not expose stable documented direct-URL endpoints; keep fallbacks/user-triggered flows.
+## Remaining external verification
+- Load the exact generated unpacked artifact in Chrome/Chromium.
+- Run the mandatory browser/site smoke matrix in RELEASE-TESTING.md.
+- Record UI/runtime/performance defects and false positives from real pages.
+- Do not submit publicly until those browser checks pass.
 
 ## Scope lock
-- Maintain six modules only: provenance, merchant credibility, manipulation, fulfillment, complaints, focused safety.
-- Do not expand into generic cybersecurity or unrelated shopping intelligence.
-- Core stays local-first, zero-backend, zero-subscription.
+Default scan remains focused on provenance, merchant credibility, manipulation, fulfillment, complaints and focused safety. Country/nationality, storefront platform, importing and overseas fulfillment are never negative evidence by themselves.
