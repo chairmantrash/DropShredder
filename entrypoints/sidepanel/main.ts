@@ -639,16 +639,15 @@ huntSources?.addEventListener('click',()=>{
   const title=lastReport?.product.title;
   if(title) void openSearches(productSearchUrls(title));
 });
-huntImage?.addEventListener('click',()=>{
+huntImage?.addEventListener('click',async()=>{
   const image=lastReport?.product.imageUrls[0];
   if(!image){
-    void openSearches(imageSearchUrls());
+    await openSearches(imageSearchUrls());
     return;
   }
 
-  void (async()=>{
-    if(status) status.textContent='Checking whether this product image shows up elsewhere…';
-    try {
+  if(status) status.textContent='Checking whether this product image shows up elsewhere…';
+  try {
       const fingerprint=await captureImageFingerprint(image);
       if(fingerprint && lastReport){
         const existing=lastReport.product.imageFingerprints ?? [];
@@ -691,13 +690,12 @@ huntImage?.addEventListener('click',()=>{
         renderReport(lastReport);
         try { await saveObservation(lastReport); } catch {}
       }
-    } catch(error){
-      console.warn('DropShredder: image fingerprinting failed',error);
-    } finally {
-      if(status) status.textContent='Image search opened. See who else is using this picture.';
-      await openSearches(imageSearchUrls(image));
-    }
-  })();
+  } catch(error){
+    console.warn('DropShredder: image fingerprinting failed',error);
+  } finally {
+    if(status) status.textContent='Image search opened. See who else is using this picture.';
+    await openSearches(imageSearchUrls(image));
+  }
 });
 huntStore?.addEventListener('click',()=>{
   const domain=lastReport?.product.domain;
