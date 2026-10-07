@@ -67,3 +67,35 @@ test('HaremPants-like explicit origin + independent quality complaints raises ma
   assert.equal(verdict.massResellLikelihood,null);
   assert.equal(verdict.severeWarningAllowed,false);
 });
+
+
+test('legitimate domestic manufacturer control stays low risk',()=>{
+  const origin=analyzeMerchantOrigin(
+    'We design and manufacture our cookware in Pittsburgh, United States.',
+    [
+      {kind:'about',url:'https://maker.example/about',text:'We are based in Pittsburgh, United States. Made in United States.'},
+      {kind:'shipping',url:'https://maker.example/shipping',text:'Orders ship from Pittsburgh, United States.'},
+      {kind:'returns',url:'https://maker.example/returns',text:'Returns go to Pittsburgh, United States.'},
+    ],
+  );
+  const verdict=calculateVerdict(origin.evidence);
+  assert.equal(verdict.severeWarningAllowed,false);
+  assert.equal(verdict.massResellLikelihood,null);
+  assert.equal(verdict.dropshipLikelihood,null);
+  assert.equal(verdict.merchantRisk,'low');
+});
+
+test('plainly disclosed overseas reseller control is not treated as deception',()=>{
+  const origin=analyzeMerchantOrigin(
+    'We are based in Toronto, Canada. Some products ship from partner warehouses in China.',
+    [
+      {kind:'about',url:'https://reseller.example/about',text:'We are based in Toronto, Canada.'},
+      {kind:'shipping',url:'https://reseller.example/shipping',text:'Orders ship from Canada or China depending on stock.'},
+      {kind:'returns',url:'https://reseller.example/returns',text:'Returns go to Toronto, Canada.'},
+    ],
+  );
+  const verdict=calculateVerdict(origin.evidence);
+  assert.equal(origin.evidence.some(e=>e.id==='MERCHANT_ORIGIN_BURIED_IN_SECONDARY_PAGES'),false);
+  assert.equal(verdict.severeWarningAllowed,false);
+  assert.equal(verdict.deceptionRisk,'low');
+});
