@@ -23,8 +23,8 @@ export function reviewDiscrepancyEvidence(
     severity:gap>=1.5?'strong':'moderate',
     confidence:gap>=1.5?.86:.76,
     weight:gap>=1.5?18:10,
-    title:'Store-hosted and independent review ratings materially disagree',
-    explanation:'The rating shown through the merchant/store review system is substantially higher than an independent review platform. This does not prove review manipulation, but consumers should inspect the independent complaints before relying on the storefront rating.',
+    title:'The store's rating looks much better than outside reviews',
+    explanation:'The rating shown on the store is much higher than the rating on an outside review source. That does not prove anyone manipulated reviews, but you should read the outside complaints before trusting the number on the sales page.',
     observedValue:`${hosted.source}: ${hosted.rating}/5 (${hosted.reviewCount} reviews) • ${external.source}: ${external.rating}/5 (${external.reviewCount} reviews)`,
     independentKey:'review-source-rating-gap',
   }];
