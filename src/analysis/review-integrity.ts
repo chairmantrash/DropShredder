@@ -1,6 +1,6 @@
 import type { ReviewSnapshot } from '../types/review';
 
-export type ReviewFlag='duplicate'|'burst'|'wrong-product'|'incentivized'|'unverified';
+export type ReviewFlag='duplicate'|'burst'|'wrong-product'|'incentivized'|'unverified'|'rating-text-conflict';
 
 export interface ReviewIntegrityItem {
   index:number;
@@ -32,7 +32,7 @@ function similarity(a:string,b:string):number{
   let hit=0;for(const x of aa)if(bb.has(x))hit++;
   return hit/(aa.size+bb.size-hit);
 }
-const incentive=[
+const positiveWords=/\\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\\b/gi;\nconst negativeWords=/\\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\\b/gi;\n\nconst incentive=[
   /free\s+(?:product|item|sample)/i,
   /received\s+(?:this|the\s+product)\s+(?:for\s+free|at\s+a\s+discount)/i,
   /discount\s+(?:code|in\s+exchange)/i,
@@ -64,7 +64,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   for(let i=0;i<usable.length;i++){
     const review=usable[i]!,text=norm((review.title??'')+' '+review.body),s=scores[i]!;
     if(incentive.some(p=>p.test(review.body))){s.score+=.35;s.flags.add('incentivized');}
-    if(review.verified===false){s.score+=.15;s.flags.add('unverified');}
+    if(review.verified===false){s.score+=.15;s.flags.add('unverified');}\n    if(typeof review.rating==='number'){\n      const positives=(text.match(positiveWords)??[]).length;\n      const negatives=(text.match(negativeWords)??[]).length;\n      if((review.rating>=4.5&&negatives>=2&&negatives>positives)||(review.rating<=2&&positives>=2&&positives>negatives)){\n        s.score+=.35;s.flags.add('rating-text-conflict');\n      }\n    }
     if(title){
       const mismatch=categories.some(term=>!title.includes(term)&&text.includes(term));
       if(mismatch){s.score+=.55;s.flags.add('wrong-product');}
