@@ -25,10 +25,10 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
       out.push({
         id:'REPEATED_SCARCITY_CLAIM',family:'scarcity',
         severity:ageDays>=2?'strong':'moderate',confidence:ageDays>=2?.87:.68,
-        weight:ageDays>=2?20:9,title:'Scarcity claim persisted across visits',
+        weight:ageDays>=2?20:9,title:'That "limited" deal keeps hanging around',
         explanation:ageDays>=2
-          ? 'The same urgency/scarcity message has remained observable across multiple visits over multiple days, which is substantially stronger than a one-time timer.'
-          : 'The same urgency/scarcity message has appeared repeatedly. More elapsed time is needed before treating it as strong evidence.',
+          ? 'The same hurry-up message was still there across several visits and multiple days. A supposedly urgent deal that never seems to end deserves more skepticism.'
+          : 'The same hurry-up message has shown up more than once. We need more time before calling it a serious warning.',
         observedValue:`${matches.length+1} matching observations across ${ageDays} day(s)`,
         independentKey:'scarcity-longitudinal',
       });
@@ -41,8 +41,8 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
     if(min>0 && max/min>=1.8){
       out.push({
         id:'LARGE_PRICE_SWING_HISTORY',family:'pricing',severity:'moderate',confidence:.66,weight:8,
-        title:'Large price swings observed over time',
-        explanation:'Large price changes can be legitimate. This history becomes useful when compared with claimed discounts or reference prices.',
+        title:'The price has been bouncing around',
+        explanation:'This product's price has moved a lot across scans. That can be legitimate, but it is worth comparing against any "was" price or huge discount claim.',
         observedValue:`${min.toFixed(2)}–${max.toFixed(2)} across ${prices.length} observations`,
         independentKey:'price-history-range',
       });
