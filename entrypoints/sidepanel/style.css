@@ -59,3 +59,11 @@ details summary::marker{color:var(--dim)}
 button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 @media (max-width:380px){main{padding-inline:12px}.summary,.hunt-actions{grid-template-columns:1fr}button.wide{grid-column:auto}.privacy-badge{display:none}}
 @media (prefers-reduced-motion:reduce){button{transition:none}button:hover{transform:none}}
+
+.evidence-row.severity-strong::before{background:#ff4d42;width:3px}
+.evidence-row.severity-moderate::before{background:#e6a23c;width:3px}
+.evidence-row.severity-weak::before{background:#8b94a1}
+.evidence-row.severity-info::before{background:#59616d}
+.evidence-row.severity-strong .evidence-head span{color:#ffaaa4;border-color:#71332f;background:#351918}
+.evidence-row.severity-moderate .evidence-head span{color:#f0c477;border-color:#65491f;background:#2c2212}
+.evidence-row.severity-weak .evidence-head span,.evidence-row.severity-info .evidence-head span{color:#b6bdc7;border-color:#414751;background:#171a1f}
