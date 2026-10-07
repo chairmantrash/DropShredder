@@ -25,6 +25,8 @@ jobs:
         run: npm run typecheck
       - name: Security audit
         run: npm run audit:security
+      - name: Chrome runtime conformance audit
+        run: npm run audit:chrome-runtime
       - name: Intelligence data lint
         run: npm run lint:data
       - name: Professional AI-assisted engineering audit
