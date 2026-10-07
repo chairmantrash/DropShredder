@@ -3,10 +3,10 @@ import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/d
 const ROOT='dropshredder-root';
 function createMenus():void {
   chrome.contextMenus.removeAll(()=>{
-    chrome.contextMenus.create({id:ROOT,title:'DropShredder',contexts:['page','selection','image']});
-    chrome.contextMenus.create({id:'ds-hunt-product',parentId:ROOT,title:'Hunt this product',contexts:['page','selection']});
-    chrome.contextMenus.create({id:'ds-hunt-image',parentId:ROOT,title:'Hunt this image',contexts:['image']});
-    chrome.contextMenus.create({id:'ds-hunt-store',parentId:ROOT,title:'Hunt this store',contexts:['page']});
+    chrome.contextMenus.create({id:ROOT,title:'DropShredder',contexts:['page','selection','image'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-product',parentId:ROOT,title:'Hunt this product',contexts:['page','selection'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-image',parentId:ROOT,title:'Hunt this image',contexts:['image'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-store',parentId:ROOT,title:'Hunt this store',contexts:['page'],documentUrlPatterns:['http://*/*','https://*/*']});
   });
 }
 
