@@ -703,12 +703,11 @@ huntStore?.addEventListener('click',()=>{
 });
 
 
-checkDomain?.addEventListener('click',()=>{
+checkDomain?.addEventListener('click',async()=>{
   const report=lastReport;
   if(!report || !status) return;
-  void (async()=>{
-    status.textContent='Checking how long this website has been around…';
-    try{
+  status.textContent='Checking how long this website has been around…';
+  try{
       const rdap=await lookupDomainRdap(report.product.domain);
       if(!rdap){
         status.textContent='Couldn’t confirm this website’s age right now.';
@@ -756,10 +755,9 @@ checkDomain?.addEventListener('click',()=>{
       status.textContent=contradictions.length
         ? 'The age of this website doesn’t line up with what the seller says. Check the receipts.'
         : 'The website age doesn’t contradict the seller’s story.';
-    }catch(error){
-      status.textContent=error instanceof Error ? error.message : String(error);
-    }
-  })();
+  }catch(error){
+    status.textContent=error instanceof Error ? error.message : String(error);
+  }
 });
 
 
