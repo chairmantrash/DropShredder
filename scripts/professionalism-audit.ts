@@ -34,7 +34,7 @@ if(Object.keys(pkg.dependencies ?? {}).length){
   warnings.push('Runtime dependencies exist; verify provenance, necessity, license and vulnerability status');
 }
 
-const duplicateArchitecture=[
+const duplicateArchitecture:Array<[string,string]>=[
   ['src/analysis/product-fingerprint.ts','Duplicate product-fingerprint authority must not return'],
 ];
 for(const [file,message] of duplicateArchitecture){
