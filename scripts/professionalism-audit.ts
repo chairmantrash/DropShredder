@@ -7,7 +7,8 @@ const EXECUTABLE_EXTENSIONS=new Set(['.ts','.tsx','.js','.mjs','.cjs']);
 const ROOTS=['src','entrypoints'];
 const REVIEW_BYTES=20_000;
 const BLOCK_BYTES=40_000;
-const documentedLargeFiles=new Set<string>();
+// Temporary reviewed exception: characterize and decompose this orchestration module without mixing behavior changes.
+const documentedLargeFiles=new Set<string>(['entrypoints/sidepanel/main.ts']);
 
 function walk(dir:string):string[]{
   return fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>{
