@@ -55,7 +55,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   // Duplicate/copied wording. Pairwise work is bounded to 120 reviews.
   for(let i=0;i<usable.length;i++)for(let j=i+1;j<usable.length;j++){
     if(reviewTextSimilarity(usable[i]!.body,usable[j]!.body)>=.72){
-      scores[i]!.score+=.45;scores[j]!.score+=.45;
+      scores[i]!.score+=.55;scores[j]!.score+=.55;
       scores[i]!.flags.add('duplicate');scores[j]!.flags.add('duplicate');
     }
   }
@@ -84,7 +84,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
     }
   }
 
-  // One weak clue does not condemn a review. Flag only combined evidence or a strong wrong-product clue.
+  // Weak clues do not condemn a review. Strong copied wording, wrong-product evidence, or combined weaker clues can cross the flag threshold.
   const items=scores.map((s,index)=>({index,flags:[...s.flags],suspicion:Math.min(1,s.score)}));
   const flaggedItems=items.filter(x=>x.suspicion>=.5);
   const passedItems=items.filter(x=>x.suspicion<.5);
