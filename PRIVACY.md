@@ -40,7 +40,6 @@ DropShredder does not operate a hosted user-data backend and does not upload bro
 
 Some optional actions require a public network request or opening a public search page. Examples include:
 - RDAP domain-registration lookups;
-- an optional Trustpilot reputation check;
 - public Google/review searches;
 - reverse-image search services;
 - supplier/marketplace searches;
@@ -50,7 +49,7 @@ The query/request is limited to what the selected feature needs, such as a merch
 
 Auto Source Hunt uses DropShredder's bundled source registry and local observation history. It does not upload the user's browsing history to a DropShredder server.
 
-Auto Reputation Sweep is disabled by default. Enabling it requires an explicit optional Trustpilot host-permission grant. Turning the feature off revokes that Trustpilot access. Users can also revoke all optional site access from the side panel.
+External reputation research is explicit and user-triggered. DropShredder does not automatically sweep third-party review sites. Users can revoke optional site access from the side panel.
 
 ## Data sharing and sale
 
