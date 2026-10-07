@@ -128,3 +128,10 @@ A beta build may be distributed before the full site matrix is complete, but it 
 - Deny a site-access request; DropShredder must explain that access is needed and must not scan.
 - Revoke optional site access; the next scan must request the site again.
 - chrome://, extension pages, login/account, checkout and payment surfaces remain unscannable.
+
+## Modern Chrome transaction checks
+- On a single-page app storefront, start a scan and immediately navigate to another product in the same tab. DropShredder must either finish against the original Chrome document or abort clearly; it must never combine evidence from both products.
+- Keep the side panel open while switching between two authorized storefront tabs. Each scan must follow the active tab in the last-focused browser window.
+- Trigger a cross-origin navigation after Chrome signals a host-access request but before granting it. The old request must not authorize the new origin.
+- Put the extension service worker to sleep/restart between commands. Settings, history and command correctness must survive because no critical state is worker-global.
+- Confirm the injected shopper stamp is isolated in Shadow DOM and does not inherit/store page form values.
