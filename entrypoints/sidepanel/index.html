@@ -11,76 +11,76 @@
         <div class="brand-row">
           <div>
             <div class="eyebrow">DROPSHREDDER</div>
-            <h1>Commerce forensics</h1>
+            <h1>Know what you’re really buying.</h1>
           </div>
-          <span class="privacy-badge">LOCAL-FIRST</span>
+          <span class="privacy-badge">STAYS ON YOUR DEVICE</span>
         </div>
-        <p class="lede">Inspect product provenance, merchant signals and fulfillment evidence without surrendering your browsing history.</p>
+        <p class="lede">Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you.</p>
       </header>
 
       <section class="scan-card" aria-labelledby="scan-heading">
-        <div class="section-kicker" id="scan-heading">ACTIVE PAGE</div>
+        <div class="section-kicker" id="scan-heading">CHECK BEFORE YOU BUY</div>
         <button id="scan" type="button">SCAN THIS PRODUCT</button>
-        <p class="scan-disclosure">Only the page you choose is inspected. Account, checkout, payment and credential surfaces are blocked.</p>
-        <p id="status" class="status" role="status" aria-live="polite">Ready to inspect the active page.</p>
+        <p class="scan-disclosure">DropShredder checks only the page you choose. It stays out of sign-in, checkout and payment pages.</p>
+        <p id="status" class="status" role="status" aria-live="polite">Ready when you are.</p>
       </section>
 
       <section id="summary-section" class="result-section" aria-labelledby="verdict-heading">
         <div class="section-heading">
           <div>
-            <div class="section-kicker">ASSESSMENT</div>
-            <h2 id="verdict-heading">Verdict</h2>
+            <div class="section-kicker">WHAT WE FOUND</div>
+            <h2 id="verdict-heading">Should you trust this listing?</h2>
           </div>
         </div>
         <div id="summary" class="summary">
-          <div class="empty-state">Run a scan to build an evidence-backed assessment.</div>
+          <div class="empty-state">Scan the product to see what’s behind the listing.</div>
         </div>
       </section>
 
       <section id="hunt-actions" class="investigation" hidden aria-labelledby="investigation-heading">
         <div class="section-heading">
           <div>
-            <div class="section-kicker">FOLLOW THE RECEIPTS</div>
-            <h2 id="investigation-heading">Investigate</h2>
+            <div class="section-kicker">DIG DEEPER</div>
+            <h2 id="investigation-heading">Check the story</h2>
           </div>
           <span class="section-note">Optional</span>
         </div>
         <div class="hunt-actions">
-          <button id="hunt-sources" class="secondary" type="button">SOURCE MATCHES</button>
-          <button id="hunt-image" class="secondary" type="button">IMAGE ORIGIN</button>
-          <button id="hunt-store" class="secondary" type="button">MERCHANT WEB</button>
-          <button id="check-domain" class="secondary" type="button">DOMAIN AGE</button>
-          <button id="reputation-sweep" class="secondary" type="button">REPUTATION</button>
-          <button id="policy-check" class="secondary" type="button">RETURN POLICY</button>
-          <button id="fulfillment-check" class="secondary wide" type="button">TRACKING / FULFILLMENT</button>
+          <button id="hunt-sources" class="secondary" type="button">FIND OTHER SELLERS</button>
+          <button id="hunt-image" class="secondary" type="button">SEARCH THIS IMAGE</button>
+          <button id="hunt-store" class="secondary" type="button">CHECK THIS STORE</button>
+          <button id="check-domain" class="secondary" type="button">HOW OLD IS THIS SITE?</button>
+          <button id="reputation-sweep" class="secondary" type="button">WHAT ARE BUYERS SAYING?</button>
+          <button id="policy-check" class="secondary" type="button">CHECK THE FINE PRINT</button>
+          <button id="fulfillment-check" class="secondary wide" type="button">WHERE DOES IT REALLY SHIP FROM?</button>
         </div>
       </section>
 
       <section class="evidence-section" aria-labelledby="evidence-heading">
         <div class="section-heading">
           <div>
-            <div class="section-kicker">WHY DROPSHREDDER THINKS THIS</div>
+            <div class="section-kicker">THE RECEIPTS</div>
             <h2 id="evidence-heading">Evidence</h2>
           </div>
         </div>
         <div id="evidence" class="evidence">
-          <div class="empty-state">Evidence will appear here after a scan.</div>
+          <div class="empty-state">Nothing to show yet. Scan the product and we’ll show you what stood out.</div>
         </div>
       </section>
 
       <details class="settings-panel">
-        <summary>Scan preferences</summary>
+        <summary>How DropShredder checks products</summary>
         <section class="feature-toggles">
           <label class="toggle-row">
-            <span><strong>Auto Source Hunt</strong><small>Check DropShredder's local supplier and marketplace index during scans.</small></span>
+            <span><strong>Look for the same product elsewhere</strong><small>Automatically check whether DropShredder has seen matching products on other stores or marketplaces.</small></span>
             <input id="auto-source-hunt" type="checkbox" />
           </label>
           <label class="toggle-row">
-            <span><strong>Prefer Made in USA</strong><small>Show a separate preference note. Geography never changes the risk score by itself.</small></span>
+            <span><strong>Prefer Made in USA</strong><small>Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious.</small></span>
             <input id="prefer-made-in-usa" type="checkbox" />
           </label>
           <label class="toggle-row">
-            <span><strong>Language tone</strong><small>Changes wording only. Evidence thresholds and verdicts stay identical.</small></span>
+            <span><strong>Attitude</strong><small>Choose how hard DropShredder talks. What counts as evidence never changes.</small></span>
             <select id="tone-mode" aria-label="Language tone">
               <option value="professional">Professional</option>
               <option value="aggressive">Aggressive</option>
@@ -91,16 +91,16 @@
       </details>
 
       <details class="technical-panel">
-        <summary>Technical evidence</summary>
+        <summary>See the full scan details</summary>
         <pre id="raw" class="result" hidden></pre>
       </details>
 
       <details class="local-data">
-        <summary>Privacy & local data</summary>
+        <summary>Your privacy & saved scan history</summary>
         <div class="privacy-tools">
-          <p>History stays in this browser, strips URL query strings, and is capped at 180 days / 2,000 observations.</p>
-          <button id="clear-history" class="secondary" type="button">CLEAR LOCAL HISTORY</button>
-          <button id="revoke-optional-access" class="secondary" type="button">REVOKE OPTIONAL SITE ACCESS</button>
+          <p>Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history.</p>
+          <button id="clear-history" class="secondary" type="button">DELETE MY SCAN HISTORY</button>
+          <button id="revoke-optional-access" class="secondary" type="button">REMOVE EXTRA SITE ACCESS</button>
         </div>
       </details>
 
