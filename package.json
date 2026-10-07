@@ -2,7 +2,9 @@
   "name": "dropshredder",
   "version": "0.2.0",
   "private": true,
-  "engines": {"node": ">=22 <23"},
+  "engines": {
+    "node": ">=22 <23"
+  },
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -14,7 +16,8 @@
     "release:audit": "node scripts/release-audit.mjs",
     "audit:security": "node scripts/security-audit.mjs",
     "audit:performance": "node scripts/performance-audit.mjs",
-    "lint:data": "tsx scripts/data-lint.ts"
+    "lint:data": "tsx scripts/data-lint.ts",
+    "audit:professional": "tsx scripts/professionalism-audit.ts"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",
