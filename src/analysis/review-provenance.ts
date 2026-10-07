@@ -1,32 +1,16 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ReviewAnalysisInput, ReviewSnapshot } from '../types/review';
-
-function normalize(text:string):string {
-  return text.toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
-}
-
-function tokens(text:string):Set<string> {
-  return new Set(normalize(text).split(' ').filter(t=>t.length>=4));
-}
-
-function jaccard(a:Set<string>,b:Set<string>):number {
-  if(!a.size || !b.size) return 0;
-  let intersection=0;
-  for(const value of a) if(b.has(value)) intersection++;
-  return intersection/(a.size+b.size-intersection);
-}
+import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity } from './review-primitives';
 
 function duplicatePairs(reviews:ReviewSnapshot[]): {pairs:number; ratio:number} {
   let pairs=0;
   let eligible=0;
   for(let i=0;i<reviews.length;i++){
-    const a=tokens(reviews[i]?.body ?? '');
-    if(a.size<4) continue;
     for(let j=i+1;j<reviews.length;j++){
-      const b=tokens(reviews[j]?.body ?? '');
-      if(b.size<4) continue;
+      const similarity=reviewTextSimilarity(reviews[i]?.body ?? '',reviews[j]?.body ?? '');
+      if(similarity===0) continue;
       eligible++;
-      if(jaccard(a,b)>=0.72) pairs++;
+      if(similarity>=0.72) pairs++;
     }
   }
   return {pairs,ratio:eligible?pairs/eligible:0};
@@ -50,21 +34,12 @@ function maxWindowShare(reviews:ReviewSnapshot[],days:number):number {
 }
 
 function wrongProductHints(input:ReviewAnalysisInput): {count:number;category?:string} {
-  if(!input.productTitle) return {count:0};
-  const title=normalize(input.productTitle);
-  const mismatchTerms=[
-    'necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes',
-    'lamp','charger','vacuum','blender','dress','jacket','ring','watch'
-  ];
   const counts=new Map<string,number>();
   for(const review of input.reviews){
-    const text=normalize((review.title ?? '')+' '+review.body);
-    for(const term of mismatchTerms){
-      if(title.includes(term)) continue;
-      if(text.includes(term)) counts.set(term,(counts.get(term) ?? 0)+1);
-    }
+    const category=reviewMentionsMismatchedCategory(input.productTitle,(review.title ?? '')+' '+review.body);
+    if(category) counts.set(category,(counts.get(category) ?? 0)+1);
   }
-  const top=[...counts.entries()].sort((a,b)=>b[1]-a[1])[0];
+  const top=[...counts.entries()].sort((left,right)=>right[1]-left[1])[0];
   return top ? {category:top[0],count:top[1]} : {count:0};
 }
 
@@ -153,13 +128,7 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
     }
   }
 
-  const incentivePatterns=[
-    /free\s+(?:product|item|sample)/i,
-    /received\s+(?:this|the\s+product)\s+(?:for\s+free|at\s+a\s+discount)/i,
-    /discount\s+(?:code|in\s+exchange)/i,
-    /in\s+exchange\s+for\s+(?:my\s+)?(?:honest\s+)?review/i,
-  ];
-  const incentivized=reviews.filter(review=>incentivePatterns.some(pattern=>pattern.test(review.body))).length;
+  const incentivized=reviews.filter(review=>reviewHasIncentiveLanguage(review.body)).length;
   if(incentivized>=2){
     out.push({
       id:'INCENTIVIZED_REVIEW_LANGUAGE',family:'reviews',severity:'moderate',confidence:.78,weight:9,
