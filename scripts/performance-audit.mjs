@@ -8,16 +8,20 @@ const history=fs.readFileSync('src/storage/history.ts','utf8');
 const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
 const images=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
 const renderer=fs.readFileSync('src/ui/report-renderer.ts','utf8');
+const scanner=fs.readFileSync('src/extraction/page-scan.ts','utf8');
 
 const requiredMain=[
-  ['page text cap',/slice\(0,120000\)/],
-  ['visible review cap',/\.slice\(0,80\)/],
-  ['Amazon result cap',/\.slice\(0,160\)/],
   ['same-site page cap',/links\.slice\(0,4\)/],
-  ['image DOM cap',/Math\.min\(document\.images\.length,200\)/],
-  ['script DOM cap',/Math\.min\(document\.scripts\.length,300\)/],
   ['search tab cap',/maxTabs=8/],
   ['same-site timeout',/AbortSignal\.timeout\(3500\)/],
+];
+const requiredScanner=[
+  ['central scan budget',/const LIMITS=\{images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000\}/],
+  ['page text cap',/slice\(0,LIMITS\.pageText\)/],
+  ['visible review cap',/\.slice\(0,LIMITS\.reviews\)/],
+  ['Amazon result cap',/\.slice\(0,LIMITS\.amazonCards\)/],
+  ['image DOM cap',/Math\.min\(document\.images\.length,LIMITS\.images\)/],
+  ['script DOM cap',/Math\.min\(document\.scripts\.length,LIMITS\.scripts\)/],
 ];
 const renderMatch=main.match(/function renderReport\([^)]*\): void \{([\s\S]*?)\n\}\n\nasync function scanActivePage/);
 if(!renderMatch) failures.push('sidepanel: renderReport boundary missing');
@@ -27,6 +31,9 @@ if(!/export function renderShopperReport/.test(renderer)) failures.push('report 
 
 for(const [name,pattern] of requiredMain){
   if(!pattern.test(main)) failures.push(`sidepanel: missing ${name}`);
+}
+for(const [name,pattern] of requiredScanner){
+  if(!pattern.test(scanner)) failures.push(`page scanner: missing ${name}`);
 }
 if(!/maxTabs=8/.test(bg)) failures.push('background: missing context-menu search-tab cap');
 if(/\.getAll\s*\(/.test(history)) failures.push('history: unbounded IndexedDB getAll() is forbidden');
