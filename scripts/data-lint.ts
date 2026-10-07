@@ -84,6 +84,12 @@ for(const source of apiRegistry.sources){
   if(!source.access.trim() || !source.runtimeClass.trim() || !source.status.trim()) errors.push(`Public API ${source.id} has incomplete access metadata`);
 }
 if(apiRegistry.sources.length<8) errors.push('Public API registry unexpectedly small');
+for(const source of apiRegistry.sources){
+  if(/paid/i.test(source.access) && !/free/i.test(source.access)) errors.push(`Public API ${source.id} appears to require paid access`);
+  if(/runtime/i.test(source.runtimeClass) && /key/i.test(source.access) && !/user|optional|build/i.test(source.runtimeClass+' '+source.access)){
+    warnings.push(`Public API ${source.id} needs review to ensure no secret is bundled in the extension`);
+  }
+}
 
 const maintenance=JSON.parse(fs.readFileSync('intelligence/REGISTRY-MAINTENANCE.json','utf8')) as {
   registries:Array<{id:string;path:string;checks:string[]}>
