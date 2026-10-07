@@ -37,6 +37,7 @@ import { pageSafety } from '../../src/security/page-safety';
 import { toneCopy, type ToneMode } from '../../src/ui/tone';
 import { renderShopperReport } from '../../src/ui/report-renderer';
 import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
+import { activeWebTab, authorizeChromePage, documentTarget } from '../../src/runtime/chrome-page';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -93,27 +94,6 @@ toneMode?.addEventListener('change',()=>{
   if(lastReport) renderReport(lastReport);
 });
 
-async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
-  const [tab]=await chrome.tabs.query({active:true,lastFocusedWindow:true});
-  return tab?.id ? tab : undefined;
-}
-
-async function authorizedPage(tab:chrome.tabs.Tab):Promise<{url:string;documentId:string}|undefined>{
-  if(!tab.id) return undefined;
-  try{
-    const [probe]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
-      func:()=>location.href,
-    });
-    return typeof probe?.result==='string' && probe.documentId ? {url:probe.result,documentId:probe.documentId} : undefined;
-  }catch{
-    if(chrome.permissions.addHostAccessRequest){
-      await chrome.permissions.addHostAccessRequest({tabId:tab.id});
-    }
-    return undefined;
-  }
-}
-
 function renderReport(report: DropShredderReport): void {
   if(!summary || !evidenceList || !raw) return;
   lastReport=report;
@@ -129,13 +109,13 @@ async function scanActivePage(): Promise<void> {
   try {
     const tab=await activeWebTab();
     if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
-    const page=await authorizedPage(tab);
+    const page=await authorizeChromePage(tab);
     if(!page) throw new Error('Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.');
     const safety=pageSafety(page.url);
     if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
 
     const [sensitiveSurface]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id,documentIds:[page.documentId]},
+      target:documentTarget(page),
       func:()=>Boolean(document.querySelector([
         'input[type="password"]',
         'input[autocomplete="cc-number"]',
@@ -151,7 +131,7 @@ async function scanActivePage(): Promise<void> {
     }
 
     const [execution]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id,documentIds:[page.documentId]},
+      target:documentTarget(page),
       world:'ISOLATED',
       func:extractPageScan,
     });
@@ -211,7 +191,7 @@ async function scanActivePage(): Promise<void> {
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
-          target:{tabId:tab.id,documentIds:[page.documentId]},
+          target:documentTarget(page),
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
             const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
@@ -381,7 +361,7 @@ async function scanActivePage(): Promise<void> {
     }
 
     await chrome.scripting.executeScript({
-      target:{tabId:tab.id,documentIds:[page.documentId]},
+      target:documentTarget(page),
       args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone)],
       func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string})=>{
         document.getElementById('dropshredder-stamp-host')?.remove();
@@ -587,11 +567,11 @@ policyCheck?.addEventListener('click',()=>{
     try{
       const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
-      const page=await authorizedPage(tab);
+      const page=await authorizeChromePage(tab);
       if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id,documentIds:[page.documentId]},
+        target:documentTarget(page),
         func:()=>{
           const policyLink=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
             .map(a=>({href:a.href,text:(a.innerText||'').replace(/\s+/g,' ').trim()}))
@@ -613,7 +593,7 @@ policyCheck?.addEventListener('click',()=>{
       }
 
       const [policyResult]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id,documentIds:[page.documentId]},
+        target:documentTarget(page),
         args:[policyUrl],
         func:async(url:string)=>{
           const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
@@ -656,11 +636,11 @@ fulfillmentCheck?.addEventListener('click',()=>{
     try{
       const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
-      const page=await authorizedPage(tab);
+      const page=await authorizeChromePage(tab);
       if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id,documentIds:[page.documentId]},
+        target:documentTarget(page),
         func:()=>({
           text:(document.body?.innerText || '').replace(/\s+/g,' ').slice(0,50000),
           url:location.href,
