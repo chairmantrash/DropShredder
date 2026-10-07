@@ -164,7 +164,7 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
     out.push({
       id:'INCENTIVIZED_REVIEW_LANGUAGE',family:'reviews',severity:'moderate',confidence:.78,weight:9,
       title:'Several reviewers say they got something for the review',
-      explanation:'Several visible reviews mention a free item, discount or other incentive. Properly disclosed incentives can be legitimate, but those reviews may not reflect an ordinary buyer's experience.',
+      explanation:'Several visible reviews mention a free item, discount or other incentive. Properly disclosed incentives can be legitimate, but those reviews may not reflect an ordinary buyer’s experience.',
       observedValue:`${incentivized} visible review(s) contain incentive language`,
       independentKey:'reviews-incentive-language',
     });
