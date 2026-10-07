@@ -63,7 +63,7 @@ export function contradictionEvidence(items:Contradiction[]):EvidenceSignal[] {
     severity:'strong',
     confidence:item.confidence,
     weight:24,
-    title:'The seller's story doesn't line up',
+    title:'The seller’s story doesn’t line up',
     explanation:item.explanation,
     observedValue:`Seller says: ${item.claim} | We found: ${item.observation}`,
     independentKey:item.independentKey,
