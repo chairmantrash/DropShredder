@@ -5,7 +5,6 @@ const failures=[];
 const main=fs.readFileSync('entrypoints/sidepanel/main.ts','utf8');
 const bg=fs.readFileSync('entrypoints/background.ts','utf8');
 const history=fs.readFileSync('src/storage/history.ts','utf8');
-const trustpilot=fs.readFileSync('src/reputation/trustpilot.ts','utf8');
 const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
 const images=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
 
@@ -28,7 +27,6 @@ if(!/MAX_OBSERVATIONS=2000/.test(history)) failures.push('history: 2,000-record 
 if(!/MAX_IDENTITY_OBSERVATIONS=120/.test(history)) failures.push('history: per-product 120-record cap missing');
 if(!/MAX_AGE_MS=180\*24\*60\*60\*1000/.test(history)) failures.push('history: 180-day retention cap missing');
 if(!/openCursor\([^;]*['"]prev['"]/.test(history)) failures.push('history: bounded reverse-cursor reads missing');
-if(!/AbortSignal\.timeout\(5000\)/.test(trustpilot)) failures.push('Trustpilot timeout missing');
 if(!/AbortSignal\.timeout\(5000\)/.test(rdap)) failures.push('RDAP timeout missing');
 if(!/AbortSignal\.timeout\(8000\)/.test(images)) failures.push('image timeout missing');
 if(!/MAX_IMAGE_BYTES=15_000_000/.test(images)) failures.push('image byte limit missing');
