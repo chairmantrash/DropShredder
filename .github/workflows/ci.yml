@@ -27,6 +27,8 @@ jobs:
         run: npm run audit:security
       - name: Intelligence data lint
         run: npm run lint:data
+      - name: Professional AI-assisted engineering audit
+        run: npm run audit:professional
       - name: Test forensic core
         run: npm test
       - name: Build extension
