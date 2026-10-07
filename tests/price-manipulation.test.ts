@@ -29,3 +29,28 @@ test('detects a persistent sale state only with enough history',()=>{
  ]);
  assert.equal(f.some(x=>x.id==='PERSISTENT_SALE_STATE'),true);
 });
+
+
+test('detects a sale state that repeatedly disappears and returns',()=>{
+ const f=analyzePriceHistory([
+  {at:'2026-01-01',price:30,referencePrice:60},
+  {at:'2026-01-02',price:30},
+  {at:'2026-01-03',price:30,referencePrice:60},
+  {at:'2026-01-04',price:30},
+  {at:'2026-01-05',price:30,referencePrice:60},
+  {at:'2026-01-06',price:30},
+ ]);
+ assert.equal(f.some(x=>x.id==='REPEATED_SALE_RESET'),true);
+});
+
+test('does not call one normal promotion a repeated sale reset',()=>{
+ const f=analyzePriceHistory([
+  {at:'2026-01-01',price:40},
+  {at:'2026-01-02',price:40},
+  {at:'2026-01-03',price:30,referencePrice:40},
+  {at:'2026-01-04',price:30,referencePrice:40},
+  {at:'2026-01-05',price:30,referencePrice:40},
+  {at:'2026-01-06',price:40},
+ ]);
+ assert.equal(f.some(x=>x.id==='REPEATED_SALE_RESET'),false);
+});
