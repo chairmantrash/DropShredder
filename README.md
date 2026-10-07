@@ -92,6 +92,8 @@ A release is not considered publishable solely because it compiles. It must pass
 - CodeQL
 - the browser smoke-test matrix in [RELEASE-TESTING.md](RELEASE-TESTING.md)
 
+For beta testing instructions and bug-report expectations, see [BETA-TESTING.md](BETA-TESTING.md).
+
 ## Development architecture
 
 The repository also contains a scoped project brain/workplane for maintaining provenance, research, authority and agent coordination without relying on giant persistent prompts.
