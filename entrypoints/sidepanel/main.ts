@@ -92,6 +92,11 @@ toneMode?.addEventListener('change',()=>{
   if(lastReport) renderReport(lastReport);
 });
 
+async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
+  const candidates=await chrome.tabs.query({active:true});
+  return candidates.find(tab=>Boolean(tab.id)&&/^https?:\/\//i.test(tab.url ?? ''));
+}
+
 function renderReport(report: DropShredderReport): void {
   if(!summary || !evidenceList || !raw) return;
   lastReport=report;
@@ -105,7 +110,7 @@ async function scanActivePage(): Promise<void> {
   status.textContent='Checking the listing for things worth a second look…';
 
   try {
-    const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
+    const tab=await activeWebTab();
     if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
     const safety=pageSafety(tab.url);
     if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
@@ -766,7 +771,7 @@ policyCheck?.addEventListener('click',()=>{
   void (async()=>{
     status.textContent='Reading the return policy for expensive catches and hoops…';
     try{
-      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
+      const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
@@ -833,7 +838,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
   void (async()=>{
     status.textContent='Checking where the order actually appears to ship from…';
     try{
-      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
+      const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
