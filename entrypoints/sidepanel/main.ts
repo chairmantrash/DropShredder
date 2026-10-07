@@ -114,15 +114,16 @@ function renderReport(report: DropShredderReport): void {
   metric('Review / sales tricks',report.verdict.manipulationRisk.toUpperCase());
   if(report.reviewIntegrity?.total){
     const review=report.reviewIntegrity;
-    metric('Reviews that passed our checks',`${review.passed}/${review.total} (${review.passedPercent}%)`);
-    if(review.displayedRating!==undefined) metric('Rating shown',review.displayedRating.toFixed(1));
-    if(review.adjustedRating!==undefined) metric('Rating after flagged reviews',review.adjustedRating.toFixed(1));
-    if(review.commonComplaints.length){
-      const note=document.createElement('div');
-      note.className='gate';
-      note.textContent=`Common low-star complaints: ${review.commonComplaints.map(item=>`${item.label} (${item.count})`).join(', ')}`;
-      summary.append(note);
-    }
+    const note=document.createElement('div');
+    note.className='gate';
+    const ratings=review.displayedRating!==undefined && review.adjustedRating!==undefined
+      ? ` Rating shown: ${review.displayedRating.toFixed(1)}; after flagged reviews: ${review.adjustedRating.toFixed(1)}.`
+      : '';
+    const complaints=review.commonComplaints.length
+      ? ` Common low-star complaints: ${review.commonComplaints.map(item=>`${item.label} (${item.count})`).join(', ')}.`
+      : '';
+    note.textContent=`Review check: ${review.passed}/${review.total} passed our checks.${ratings}${complaints}`;
+    summary.append(note);
   }
   metric('Shipping headaches',report.verdict.fulfillmentRisk.toUpperCase());
   metric('Where it appears to come from',report.supplyChain?.label ?? 'UNKNOWN');
