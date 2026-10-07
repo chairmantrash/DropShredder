@@ -131,12 +131,12 @@ function renderReport(report: DropShredderReport): void {
   } else {
     for (const item of report.evidence) {
       const row=document.createElement('article');
-      row.className='evidence-row';
+      row.className=`evidence-row severity-${item.severity}`;
 
       const head=document.createElement('div');
       head.className='evidence-head';
       const severity=document.createElement('span');
-      severity.textContent=item.severity.toUpperCase();
+      severity.textContent=item.severity==='strong'?'STRONG':item.severity==='moderate'?'WATCH THIS':item.severity==='weak'?'SMALL FLAG':'FYI';
       const title=document.createElement('strong');
       title.textContent=item.title;
       head.append(severity,title);
