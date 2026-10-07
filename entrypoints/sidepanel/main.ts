@@ -135,7 +135,7 @@ async function scanActivePage(): Promise<void> {
     if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
 
     const [sensitiveSurface]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
+      target:{tabId:tab.id,documentIds:[page.documentId]},
       func:()=>Boolean(document.querySelector([
         'input[type="password"]',
         'input[autocomplete="cc-number"]',
@@ -211,7 +211,7 @@ async function scanActivePage(): Promise<void> {
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
-          target:{tabId:tab.id},
+          target:{tabId:tab.id,documentIds:[page.documentId]},
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
             const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
@@ -381,7 +381,7 @@ async function scanActivePage(): Promise<void> {
     }
 
     await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
+      target:{tabId:tab.id,documentIds:[page.documentId]},
       args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone)],
       func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string})=>{
         document.getElementById('dropshredder-stamp-host')?.remove();
