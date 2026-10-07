@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-06",
+  "policy": {
+    "paidApiDependenciesAllowed": false,
+    "freePublicApisAllowed": true,
+    "freeKeyApisAllowed": true,
+    "runtimeSecretsBundledInExtension": false,
+    "countryOrNationalityRiskWeight": 0
+  },
+  "sources": [
+    {
+      "id": "cpsc-recalls",
+      "operator": "U.S. Consumer Product Safety Commission",
+      "access": "public-no-key",
+      "runtimeClass": "credential-free",
+      "status": "eligible",
+      "purpose": ["recall matching","product safety"],
+      "matchPolicy": "Prefer UPC/GTIN and exact model/manufacturer. Fuzzy title matches are candidate evidence only.",
+      "primarySource": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information"
+    },
+    {
+      "id": "saferproducts",
+      "operator": "U.S. Consumer Product Safety Commission",
+      "access": "free-application-key",
+      "runtimeClass": "free-key",
+      "status": "eligible-with-key-design",
+      "purpose": ["consumer incident reports","product/manufacturer/retailer corroboration"],
+      "matchPolicy": "Incident reports are allegations/reports, not findings of defect; display and score separately from official recalls.",
+      "primarySource": "https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11"
+    },
+    {
+      "id": "openfda",
+      "operator": "U.S. Food and Drug Administration",
+      "access": "public-keyless-with-free-key-higher-limits",
+      "runtimeClass": "credential-free-or-free-key",
+      "status": "eligible",
+      "purpose": ["regulated-product identity","enforcement/recall evidence"],
+      "matchPolicy": "Use exact identifiers where available; regulator records outrank fuzzy product-name similarity.",
+      "primarySource": "https://open.fda.gov/apis/authentication/"
+    },
+    {
+      "id": "sec-edgar-data",
+      "operator": "U.S. Securities and Exchange Commission",
+      "access": "public-no-key",
+      "runtimeClass": "credential-free",
+      "status": "eligible",
+      "purpose": ["legal-entity identity","former names","public-company provenance"],
+      "matchPolicy": "Entity-name similarity alone never establishes merchant identity; corroborate with identifiers/address/domain evidence.",
+      "primarySource": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
+    },
+    {
+      "id": "gleif",
+      "operator": "Global Legal Entity Identifier Foundation",
+      "access": "public-api",
+      "runtimeClass": "credential-free",
+      "status": "eligible-pending-endpoint-test",
+      "purpose": ["legal-entity resolution","LEI relationships"],
+      "matchPolicy": "Treat fuzzy entity matches as candidates until identifiers or other independent attributes corroborate identity.",
+      "primarySource": "https://www.gleif.org/en/lei-data/gleif-api"
+    },
+    {
+      "id": "companies-house",
+      "operator": "UK Companies House",
+      "access": "free-account-api-key",
+      "runtimeClass": "free-key",
+      "status": "eligible-with-key-design",
+      "purpose": ["UK legal-entity identity","company status","filings"],
+      "matchPolicy": "Registered-company data establishes legal records, not product quality or merchant conduct.",
+      "primarySource": "https://developer.company-information.service.gov.uk/get-started"
+    },
+    {
+      "id": "ftc-api",
+      "operator": "U.S. Federal Trade Commission",
+      "access": "free-data-gov-key",
+      "runtimeClass": "free-key",
+      "status": "eligible-with-key-design",
+      "purpose": ["regulatory-action research","machine-readable FTC content"],
+      "matchPolicy": "Only attach an enforcement/action record to a merchant after entity identity is corroborated.",
+      "primarySource": "https://www.ftc.gov/developer"
+    },
+    {
+      "id": "un-comtrade",
+      "operator": "United Nations Statistics Division",
+      "access": "free-tier",
+      "runtimeClass": "free-account-tier",
+      "status": "research-only-pending-terms-and-fit",
+      "purpose": ["aggregate trade-flow context"],
+      "matchPolicy": "Aggregate trade flows cannot establish the factory, manufacturer, or origin of an individual listing.",
+      "primarySource": "https://comtradeplus.un.org/"
+    }
+  ]
+}
