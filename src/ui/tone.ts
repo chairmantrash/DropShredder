@@ -14,25 +14,25 @@ export function toneCopy(mode:ToneMode):ToneCopy{
       return {
         scan:'SHRED THIS SHIT',
         evidenceHeading:'THE FUCKING RECEIPTS',
-        noEvidence:'No meaningful evidence yet. Deep Hunt can keep digging.',
-        signalsFound:'DROP SHREDDER FOUND SOMETHING',
-        severeWarning:'STRONG DROPSHIP / RESELL EVIDENCE',
+        noEvidence:'Nothing solid yet. Keep digging before you give this store your money.',
+        signalsFound:'DROPSHREDDER CAUGHT SOMETHING',
+        severeWarning:'THIS LISTING HAS SERIOUS RESELL / DROPSHIP RED FLAGS',
       };
     case 'aggressive':
       return {
-        scan:'HUNT THIS SHIT',
+        scan:'CHECK THIS SHIT',
         evidenceHeading:'THE RECEIPTS',
-        noEvidence:'No meaningful evidence yet. Deep Hunt can add provenance, supplier, review, and merchant-network evidence.',
-        signalsFound:'DROPSHREDDER SIGNALS FOUND',
-        severeWarning:'STRONG DROPSHIP / RESELL EVIDENCE',
+        noEvidence:'Nothing solid yet. Dig deeper before you trust the sales pitch.',
+        signalsFound:'DROPSHREDDER FOUND RED FLAGS',
+        severeWarning:'STRONG RESELL / DROPSHIP RED FLAGS',
       };
     default:
       return {
-        scan:'SCAN THIS PRODUCT',
-        evidenceHeading:'EVIDENCE',
-        noEvidence:'No meaningful evidence yet. Deeper investigation can add provenance, supplier, review, and merchant-network evidence.',
-        signalsFound:'DROPSHREDDER SIGNALS FOUND',
-        severeWarning:'STRONG DROPSHIP / RESELL EVIDENCE',
+        scan:'CHECK THIS PRODUCT',
+        evidenceHeading:'WHAT STOOD OUT',
+        noEvidence:'Nothing solid yet. You can dig deeper before deciding whether the listing deserves your trust.',
+        signalsFound:'DROPSHREDDER FOUND SOMETHING WORTH CHECKING',
+        severeWarning:'STRONG RESELL / DROPSHIP WARNING SIGNS',
       };
   }
 }
