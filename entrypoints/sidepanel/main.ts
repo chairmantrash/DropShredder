@@ -117,12 +117,12 @@ function renderReport(report: DropShredderReport): void {
     const note=document.createElement('div');
     note.className='gate';
     const ratings=review.displayedRating!==undefined && review.adjustedRating!==undefined
-      ? ` Rating shown: ${review.displayedRating.toFixed(1)}; after flagged reviews: ${review.adjustedRating.toFixed(1)}.`
+      ? ` Rating shown: ${review.displayedRating.toFixed(1)}; after flagged visible reviews: ${review.adjustedRating.toFixed(1)}.`
       : '';
     const complaints=review.commonComplaints.length
       ? ` Common low-star complaints: ${review.commonComplaints.map(item=>`${item.label} (${item.count})`).join(', ')}.`
       : '';
-    note.textContent=`Review check: ${review.passed}/${review.total} passed our checks.${ratings}${complaints}`;
+    note.textContent=`Review check: ${review.passed}/${review.total} visible reviews did not trigger our checks.${ratings}${complaints}`;
     summary.append(note);
   }
   metric('Shipping headaches',report.verdict.fulfillmentRisk.toUpperCase());
