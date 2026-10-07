@@ -17,11 +17,11 @@ test('scan aborts if navigation changes the document during authorization and ex
  assert.match(panel,/page changed while DropShredder was checking it/);
 });
 
-test('scanner keeps bounded expensive collections',async()=>{
+test('scanner centralizes bounded expensive collection budgets',async()=>{
  const scanner=await fs.readFile('src/extraction/page-scan.ts','utf8');
- assert.match(scanner,/Math\.min\(document\.images\.length,200\)/);
- assert.match(scanner,/Math\.min\(document\.scripts\.length,300\)/);
- assert.match(scanner,/\.slice\(0,200\)/);
- assert.match(scanner,/\.slice\(0,80\)/);
- assert.match(scanner,/\.slice\(0,120000\)/);
+ assert.match(scanner,/const LIMITS=\{images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000\}/);
+ assert.match(scanner,/Math\.min\(document\.images\.length,LIMITS\.images\)/);
+ assert.match(scanner,/Math\.min\(document\.scripts\.length,LIMITS\.scripts\)/);
+ assert.match(scanner,/\.slice\(0,LIMITS\.reviews\)/);
+ assert.match(scanner,/\.slice\(0,LIMITS\.pageText\)/);
 });
