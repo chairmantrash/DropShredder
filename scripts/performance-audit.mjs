@@ -19,7 +19,9 @@ const requiredMain=[
   ['search tab cap',/maxTabs=8/],
   ['same-site timeout',/AbortSignal\.timeout\(3500\)/],
 ];
-if(/function renderReport\([^)]*\)[\s\S]{2000,}/.test(main)) failures.push('sidepanel: report rendering grew back into the entrypoint');
+const renderMatch=main.match(/function renderReport\([^)]*\): void \{([\s\S]*?)\n\}\n\nasync function scanActivePage/);
+if(!renderMatch) failures.push('sidepanel: renderReport boundary missing');
+else if(renderMatch[1].length>700) failures.push('sidepanel: report rendering grew back into the entrypoint');
 if(!/renderShopperReport/.test(main)) failures.push('sidepanel: extracted report renderer is not used');
 if(!/export function renderShopperReport/.test(renderer)) failures.push('report renderer: canonical renderer export missing');
 
