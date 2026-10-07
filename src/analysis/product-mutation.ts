@@ -52,8 +52,8 @@ export function productMutationEvidence(
     severity:independentChanges>=3?'strong':'moderate',
     confidence:independentChanges>=3?.9:.78,
     weight:independentChanges>=3?20:10,
-    title:'Product identity changed behind the same listing URL',
-    explanation:'The same canonical listing URL now differs across multiple product-identity dimensions. Supplier replacement, legitimate relaunch, or listing recycling are possible explanations; review/listing chronology should be checked before concluding deception.',
+    title:'This listing may have changed products',
+    explanation:'The same product page now points to something that differs in several important ways from what DropShredder saw before. The store may have relaunched or replaced the item, but recycled listings can also carry old reviews and history into a different product.',
     observedValue:`${independentChanges} independent identity dimensions changed since ${oldest.capturedAt.slice(0,10)}`,
     independentKey:'product-identity-mutation',
   }];
