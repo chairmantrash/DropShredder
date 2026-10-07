@@ -35,6 +35,23 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
     }
   }
 
+  const priorRatings=previous.map(o=>o.report.reviewIntegrity).filter((x):x is NonNullable<DropShredderReport['reviewIntegrity']>=>Boolean(x&&x.total>=5));
+  const currentReviews=current.reviewIntegrity;
+  if(currentReviews&&currentReviews.total>=5&&priorRatings.length){
+    const oldest=priorRatings.at(-1)!;
+    const countJump=oldest.total>0&&currentReviews.total>=oldest.total*2&&currentReviews.total-oldest.total>=20;
+    const ratingJump=oldest.displayedRating!==undefined&&currentReviews.displayedRating!==undefined&&currentReviews.displayedRating-oldest.displayedRating>=.8;
+    if(countJump&&ratingJump){
+      out.push({
+        id:'REVIEW_HISTORY_JUMP',family:'reviews',severity:'moderate',confidence:.72,weight:9,
+        title:'The review history changed fast',
+        explanation:'The visible review count and rating both jumped sharply since an earlier check. That can happen legitimately, but it is worth checking for a relaunch, review migration or a changed product.',
+        observedValue:`${oldest.total} → ${currentReviews.total} reviews; ${oldest.displayedRating!.toFixed(1)} → ${currentReviews.displayedRating!.toFixed(1)} rating`,
+        independentKey:'review-history-jump',
+      });
+    }
+  }
+
   const prices=[current.product.price,...previous.map(o=>o.price)].filter((x):x is number=>typeof x==='number'&&Number.isFinite(x));
   if(prices.length>=3){
     const min=Math.min(...prices),max=Math.max(...prices);
