@@ -7,6 +7,7 @@ const bg=fs.readFileSync('entrypoints/background.ts','utf8');
 const image=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
 const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
 const scanner=fs.readFileSync('src/extraction/page-scan.ts','utf8');
+const pageRuntime=fs.readFileSync('src/runtime/chrome-page.ts','utf8');
 
 const requireMatch=(text,re,message)=>{if(!re.test(text)) failures.push(message);};
 const forbid=(text,re,message)=>{if(re.test(text)) failures.push(message);};
@@ -17,14 +18,14 @@ requireMatch(config,/optional_host_permissions:\s*\['https:\/\/\*\/\*'\]/,'optio
 forbid(config,/'activeTab'/,'activeTab must not be used as persistent side-panel access');
 forbid(config,/host_permissions\s*:/,'permanent host permissions are forbidden');
 
-requireMatch(panel,/chrome\.tabs\.query\(\{active:true,lastFocusedWindow:true\}\)/,'current tab must use active + lastFocusedWindow');
+requireMatch(pageRuntime,/chrome\.tabs\.query\(\{active:true,lastFocusedWindow:true\}\)/,'current tab must use active + lastFocusedWindow');
 forbid(panel,/currentWindow:true/,'side panel must not infer current browser window with currentWindow');
-requireMatch(panel,/chrome\.permissions\.addHostAccessRequest\(\{tabId:tab\.id\}\)/,'scan must use tab-scoped Chrome host access request');
+requireMatch(pageRuntime,/chrome\.permissions\.addHostAccessRequest\(\{tabId:tab\.id\}\)/,'scan must use tab-scoped Chrome host access request');
 requireMatch(panel,/pageSafety\(page\.url\)/,'scan must run page-safety gate on authorized URL');
-requireMatch(panel,/await authorizedPage\(tab\)/,'scan-like paths must gate injection on actual authorized page access');
+requireMatch(panel,/await authorizeChromePage\(tab\)/,'scan-like paths must gate injection on actual authorized page access');
 requireMatch(panel,/chrome\.scripting\.executeScript/,'scanner must use scripting injection after permission gate');
 requireMatch(panel,/func:extractPageScan/,'side panel must invoke packaged page scanner');
-requireMatch(panel,/documentIds:\[page\.documentId\]/,'authorized scan transaction must pin Chrome documentId');
+requireMatch(pageRuntime,/documentIds:\[page\.documentId\]/,'authorized scan transaction must pin Chrome documentId');
 requireMatch(panel,/world:'ISOLATED'/,'page scanner must explicitly use isolated execution world');
 requireMatch(scanner,/export function extractPageScan/,'packaged page scanner missing');
 
