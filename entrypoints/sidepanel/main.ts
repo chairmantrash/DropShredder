@@ -93,12 +93,19 @@ toneMode?.addEventListener('change',()=>{
 });
 
 async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
-  try{
-    const response=await chrome.runtime.sendMessage({type:'dropshredder:get-active-web-tab'}) as {tabId?:number}|undefined;
-    if(response?.tabId) return await chrome.tabs.get(response.tabId);
-  }catch{}
-  const candidates=await chrome.tabs.query({active:true});
-  return candidates.find(tab=>Boolean(tab.id)&&/^https?:\/\//i.test(tab.url ?? ''));
+  const candidates=await chrome.tabs.query({active:true,lastFocusedWindow:true});
+  return candidates.find(tab=>Boolean(tab.id));
+}
+
+async function ensurePageAccess(tab:chrome.tabs.Tab):Promise<boolean>{
+  if(!tab.id || !tab.url) return false;
+  let url:URL;
+  try{url=new URL(tab.url);}catch{return false;}
+  if(url.protocol!=='http:' && url.protocol!=='https:') return false;
+  const origin=`${url.protocol}//${url.host}/*`;
+  const hasAccess=await chrome.permissions.contains({origins:[origin]});
+  if(hasAccess) return true;
+  return chrome.permissions.request({origins:[origin]});
 }
 
 function renderReport(report: DropShredderReport): void {
@@ -118,6 +125,7 @@ async function scanActivePage(): Promise<void> {
     if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
     const safety=pageSafety(tab.url);
     if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
+    if(!await ensurePageAccess(tab)) throw new Error('DropShredder needs permission to check this site. Click CHECK THIS PRODUCT again and allow access when Chrome asks.');
 
     const [sensitiveSurface]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
@@ -777,6 +785,7 @@ policyCheck?.addEventListener('click',()=>{
     try{
       const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
+      if(!await ensurePageAccess(tab)) throw new Error('DropShredder needs permission to check this site. Allow access when Chrome asks.');
 
       const [result]=await chrome.scripting.executeScript({
         target:{tabId:tab.id},
@@ -844,6 +853,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
     try{
       const tab=await activeWebTab();
       if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
+      if(!await ensurePageAccess(tab)) throw new Error('DropShredder needs permission to check this site. Allow access when Chrome asks.');
 
       const [result]=await chrome.scripting.executeScript({
         target:{tabId:tab.id},
