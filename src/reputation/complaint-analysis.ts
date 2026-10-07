@@ -63,8 +63,8 @@ export function analyzeReputationObservations(observations:ReputationObservation
       severity:'moderate',
       confidence:.68,
       weight:8,
-      title:'Public reputation source shows substantial complaints',
-      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback, low ratings, or a high one-star share. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
+      title:'A lot of buyers are complaining',
+      explanation:'One outside review source shows a meaningful pile-up of bad ratings or complaints. Any single review site can be skewed, so check another source before making the call.',
       observedValue:[source.source,observationSummary(source)].filter(Boolean).join(' • '),
       independentKey:`reputation:${source.source}`,
     });
@@ -77,8 +77,8 @@ export function analyzeReputationObservations(observations:ReputationObservation
       severity:'strong',
       confidence:.86,
       weight:20,
-      title:'Multiple independent reputation sources show substantial complaints',
-      explanation:'Two or more public review/complaint sources independently show elevated negative feedback. This is a merchant-quality/risk signal and does not by itself prove dropshipping or provenance deception.',
+      title:'Complaints show up in more than one place',
+      explanation:'Bad feedback is showing up across more than one outside source. That is a stronger warning about the store, but it still does not prove the product is dropshipped or that the seller lied about where it came from.',
       observedValue:negativeSources.map(s=>`${s.source}: ${observationSummary(s)}`).join(' | '),
       independentKey:'reputation:multi-source',
     });
