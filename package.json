@@ -17,7 +17,8 @@
     "audit:security": "node scripts/security-audit.mjs",
     "audit:performance": "node scripts/performance-audit.mjs",
     "lint:data": "tsx scripts/data-lint.ts",
-    "audit:professional": "tsx scripts/professionalism-audit.ts"
+    "audit:professional": "tsx scripts/professionalism-audit.ts",
+    "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",
