@@ -63,7 +63,7 @@ function applyTone(mode:ToneMode):void{
   if(scanButton) scanButton.textContent=copy.scan;
   if(evidenceHeading) evidenceHeading.textContent=copy.evidenceHeading;
 }
-if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • MV3 • local-first`;
+if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • Private by design • No account needed`;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
@@ -106,14 +106,14 @@ function renderReport(report: DropShredderReport): void {
     row.append(name,result);
     summary.append(row);
   };
-  metric('Mass-resell likelihood',score===null?'UNKNOWN':score+'%');
-  metric('Dropship likelihood',report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%');
-  metric('Deception risk',report.verdict.deceptionRisk.toUpperCase());
-  metric('Merchant risk',report.verdict.merchantRisk.toUpperCase());
-  metric('Manipulation risk',report.verdict.manipulationRisk.toUpperCase());
-  metric('Fulfillment risk',report.verdict.fulfillmentRisk.toUpperCase());
-  metric('Supply chain',report.supplyChain?.label ?? 'UNKNOWN');
-  metric('Payment / banking chain',report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
+  metric('Likely sold all over the web',score===null?'UNKNOWN':score+'%');
+  metric('Likely dropshipped',report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%');
+  metric('Misleading claims',report.verdict.deceptionRisk.toUpperCase());
+  metric('Store warning signs',report.verdict.merchantRisk.toUpperCase());
+  metric('Review / sales tricks',report.verdict.manipulationRisk.toUpperCase());
+  metric('Shipping headaches',report.verdict.fulfillmentRisk.toUpperCase());
+  metric('Where it appears to come from',report.supplyChain?.label ?? 'UNKNOWN');
+  metric('Who handles the payment',report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
   for(const message of [report.supplyChain?.preferenceNote,report.verdict.reason]){
     if(!message) continue;
     const gate=document.createElement('div');
@@ -161,13 +161,13 @@ function renderReport(report: DropShredderReport): void {
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
   scanButton.disabled=true;
-  status.textContent='Inspecting this page locally…';
+  status.textContent='Checking the listing for things worth a second look…';
 
   try {
     const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-    if (!tab?.id) throw new Error('No active tab is available.');
+    if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
     const safety=pageSafety(tab.url);
-    if(!safety.allowed) throw new Error(safety.reason ?? 'This page is not eligible for scanning.');
+    if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
 
     const [sensitiveSurface]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
@@ -182,7 +182,7 @@ async function scanActivePage(): Promise<void> {
       ].join(','))),
     });
     if(sensitiveSurface?.result){
-      throw new Error('DropShredder detected authentication/payment fields and will not scan this page.');
+      throw new Error('This looks like a sign-in or payment page, so DropShredder is staying out of it.');
     }
 
     const [execution]=await chrome.scripting.executeScript({
@@ -688,7 +688,7 @@ huntImage?.addEventListener('click',()=>{
   }
 
   void (async()=>{
-    if(status) status.textContent='Fingerprinting the selected image locally…';
+    if(status) status.textContent='Checking whether this product image shows up elsewhere…';
     try {
       const fingerprint=await captureImageFingerprint(image);
       if(fingerprint && lastReport){
@@ -735,7 +735,7 @@ huntImage?.addEventListener('click',()=>{
     } catch(error){
       console.warn('DropShredder: image fingerprinting failed',error);
     } finally {
-      if(status) status.textContent='Image hunt launched.';
+      if(status) status.textContent='Image search opened. See who else is using this picture.';
       await openSearches(imageSearchUrls(image));
     }
   })();
@@ -750,11 +750,11 @@ checkDomain?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Checking public RDAP registration data…';
+    status.textContent='Checking how long this website has been around…';
     try{
       const rdap=await lookupDomainRdap(report.product.domain);
       if(!rdap){
-        status.textContent='RDAP check cancelled or unavailable.';
+        status.textContent='Couldn’t confirm this website’s age right now.';
         return;
       }
 
@@ -797,8 +797,8 @@ checkDomain?.addEventListener('click',()=>{
       renderReport(next);
       try{ await saveObservation(next); }catch{}
       status.textContent=contradictions.length
-        ? 'Domain chronology conflicts with a seller claim. Review the evidence.'
-        : 'Domain chronology checked. No business-age contradiction found.';
+        ? 'The age of this website doesn’t line up with what the seller says. Check the receipts.'
+        : 'The website age doesn’t contradict the seller’s story.';
     }catch(error){
       status.textContent=error instanceof Error ? error.message : String(error);
     }
@@ -814,7 +814,7 @@ reputationSweep?.addEventListener('click',()=>{
     domain:report.merchant.domain,
   };
   void openSearches(reputationSearchUrls(target));
-  if(status) status.textContent='Public reputation searches launched across Trustpilot, Sitejabber, ConsumerAffairs, BBB, Google reviews, and Reddit.';
+  if(status) status.textContent='Buyer-review searches opened. Compare the complaints before you trust the store.';
 });
 
 
@@ -822,10 +822,10 @@ policyCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Looking for a same-site return/refund policy…';
+    status.textContent='Reading the return policy for expensive catches and hoops…';
     try{
       const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-      if(!tab?.id) throw new Error('No active tab is available.');
+      if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
         target:{tabId:tab.id},
@@ -845,7 +845,7 @@ policyCheck?.addEventListener('click',()=>{
 
       const policyUrl=result?.result as string|undefined;
       if(!policyUrl){
-        status.textContent='No same-site return/refund policy link was found.';
+        status.textContent='Couldn’t find a clear return or refund policy on this store.';
         return;
       }
 
@@ -861,11 +861,11 @@ policyCheck?.addEventListener('click',()=>{
         },
       });
       const text=policyResult?.result as string|undefined;
-      if(!text) throw new Error('Return/refund policy page did not return readable text.');
+      if(!text) throw new Error('The return policy couldn’t be read clearly enough to judge.');
       const findings=analyzeReturnPolicy(text);
 
       if(!findings.length){
-        status.textContent='Return/refund policy checked. No targeted friction patterns found.';
+        status.textContent='No obvious return-policy traps stood out.';
         return;
       }
 
@@ -877,7 +877,7 @@ policyCheck?.addEventListener('click',()=>{
       lastReport=next;
       renderReport(next);
       try{await saveObservation(next);}catch{}
-      status.textContent=`Return/refund policy checked: ${findings.length} relevant friction signal(s) found.`;
+      status.textContent=`Found ${findings.length} return-policy catch${findings.length===1?'':'es'} worth reading before you buy.`;
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
     }
@@ -889,10 +889,10 @@ fulfillmentCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Reading explicit fulfillment evidence from the active page…';
+    status.textContent='Checking where the order actually appears to ship from…';
     try{
       const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-      if(!tab?.id) throw new Error('No active tab is available.');
+      if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
         target:{tabId:tab.id},
@@ -902,13 +902,13 @@ fulfillmentCheck?.addEventListener('click',()=>{
         }),
       });
       const page=result?.result as {text:string;url:string}|undefined;
-      if(!page?.text) throw new Error('No readable tracking/fulfillment text was found.');
+      if(!page?.text) throw new Error('Couldn’t find enough shipping information on this page to tell.');
 
       const observation=parseFulfillmentObservation(page.text);
       if(!observation.origin){
         status.textContent=observation.carrier
           ? `Carrier ${observation.carrier} detected, but no explicit shipment origin was found. No contradiction scored.`
-          : 'No explicit shipment origin was found. No contradiction scored.';
+          : 'The page doesn’t clearly say where the order ships from.';
         return;
       }
 
@@ -953,8 +953,8 @@ fulfillmentCheck?.addEventListener('click',()=>{
       renderReport(next);
       try{await saveObservation(next);}catch{}
       status.textContent=contradictions.length
-        ? 'Fulfillment evidence conflicts with an explicit seller shipping-origin claim.'
-        : 'Fulfillment origin recorded. No seller-origin contradiction found.';
+        ? 'Where the order ships from doesn’t match the seller’s claim. Check the receipts.'
+        : 'The shipping origin doesn’t contradict what the seller says.';
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
     }
@@ -968,7 +968,7 @@ clearHistory?.addEventListener('click',()=>{
     clearHistory.disabled=true;
     try{
       await clearObservationHistory();
-      status.textContent='Local DropShredder history cleared from this browser.';
+      status.textContent='Your saved DropShredder scan history is deleted.';
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
     }finally{
@@ -987,8 +987,8 @@ revokeOptionalAccess?.addEventListener('click',()=>{
       const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
       if(origins.length) await chrome.permissions.remove({origins});
       status.textContent=origins.length
-        ? 'Optional site access revoked.'
-        : 'No optional site access was currently granted.';
+        ? 'Extra site access removed.'
+        : 'DropShredder didn’t have any extra site access to remove.';
     }catch(error){
       status.textContent=error instanceof Error?error.message:String(error);
     }finally{
