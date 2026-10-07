@@ -77,10 +77,10 @@ export function indexedSourceEvidence(
     severity:independent>=2?'strong':'moderate',
     confidence:independent>=2?.9:.74,
     weight:independent>=2?22:11,
-    title:'Similar product found in indexed source history',
+    title:'We found what looks like the same product elsewhere',
     explanation:independent>=2
-      ? 'DropShredder found the product on a known supplier/marketplace source using multiple independent product invariants. Chronology and seller claims still determine whether this is legitimate wholesale/private-label activity or deceptive provenance.'
-      : 'DropShredder found a related product in its local indexed source history. A single matching characteristic is not enough to establish provenance.',
+      ? 'DropShredder matched this product to a supplier or marketplace using more than one strong product detail. That can be normal wholesale or private-label business, so compare dates and the seller's claims before calling it deceptive.'
+      : 'DropShredder has seen a similar product on another supplier or marketplace. One matching detail is not enough to prove they are the same item or reveal where it came from.',
     observedValue:`${strongest.sourceName} • ${strongest.domain} • ${independent} independent match type(s)`,
     independentKey:'indexed-source-match',
   }];
