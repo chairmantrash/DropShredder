@@ -40,14 +40,16 @@ Optional host capability:
 
 No permanent host_permissions.
 No activeTab dependency.
-No tabs permission.
+No tabs permission (avoids the Chrome “Read your browsing history” warning).
 No cookies/history/webRequest/debugger/nativeMessaging/identity permissions.
 
 The broad optional HTTPS declaration is capability only. Runtime requests are narrowed to the exact active site, image host or RDAP host as required by the invoked feature.
 
 ## Correctness invariants
 - Side panel never uses currentWindow to identify the browsing page.
-- Current page resolution is active:true + lastFocusedWindow:true.
+- Current tab identity resolution is active:true + lastFocusedWindow:true; no sensitive URL metadata is assumed.
+- Existing page authority is proven by a tiny scripting probe that returns location.href.
+- If authority is missing, Chrome 133+ permissions.addHostAccessRequest({tabId}) creates the browser-native site access request without requiring tabs/browsing-history permission.
 - Page injection never precedes exact-origin authorization.
 - Permission request is directly downstream of a user click.
 - Restricted and sensitive pages are refused before extraction.
