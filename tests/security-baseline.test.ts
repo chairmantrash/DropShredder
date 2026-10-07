@@ -15,7 +15,7 @@ async function sourceFiles(dir:string):Promise<string[]>{
 
 test('manifest keeps required permissions narrow and hosts optional',async()=>{
   const config=await fs.readFile('wxt.config.ts','utf8');
-  assert.match(config,/permissions:\s*\['activeTab', 'scripting', 'storage', 'contextMenus', 'sidePanel'\]/);
+  assert.match(config,/permissions:\s*\['scripting', 'storage', 'contextMenus', 'sidePanel'\]/);
   assert.match(config,/optional_host_permissions:\s*\['https:\/\/\*\/\*'\]/);
   for(const forbidden of ['cookies','history','webRequest','debugger','nativeMessaging','management','privacy']){
     assert.equal(new RegExp(`['"]${forbidden}['"]`).test(config),false,`forbidden permission: ${forbidden}`);
