@@ -76,7 +76,7 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     out.push({
       id:'LOW_PROVENANCE_METADATA', family:'provenance', severity:'weak', confidence:.45, weight:3,
       title:'Few product identity details',
-      explanation:'The page gives us very little to identify the exact product. That's common, but it makes the item harder to trace.',
+      explanation:'The page gives us very little to identify the exact product. That’s common, but it makes the item harder to trace.',
       independentKey:'metadata-sparsity',
     });
   }
