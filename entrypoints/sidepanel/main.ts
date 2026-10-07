@@ -152,11 +152,13 @@ async function scanActivePage(): Promise<void> {
 
     const [execution]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
+      world:'ISOLATED',
       func:extractPageScan,
     });
 
     const result=execution?.result as PageScanResult|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
+    if(result.product.url!==page.url) throw new Error('The page changed while DropShredder was checking it. Try the scan again on the finished product page.');
 
     const platformMatches=detectCommercePlatforms({
       scripts:result.scriptSources,
