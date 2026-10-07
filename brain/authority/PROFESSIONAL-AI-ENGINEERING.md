@@ -71,7 +71,7 @@ Thresholds are review triggers, not automatic defects:
 - new remote origin: mandatory permissions/privacy/performance review.
 
 ## Current DropShredder application
-The side-panel entrypoint exceeds the 40 KB review threshold and must be decomposed behind characterization tests. The merchant-network registry is large but primarily data and should remain governed by registry-integrity/data-lint checks rather than arbitrary splitting.
+The side-panel entrypoint exceeds the 40 KB review threshold and is being decomposed behind characterization tests. Shopper report rendering has been extracted to `src/ui/report-renderer.ts`; remaining scan orchestration should be extracted incrementally rather than rewritten wholesale. The merchant-network registry is large but primarily data and should remain governed by registry-integrity/data-lint checks rather than arbitrary splitting.
 
 The current Trustpilot HTML fetch/parser is a separate release blocker: unsupported HTML scraping should not ship merely because it works technically. Replace it with a supported terms-compatible mechanism or user-launched search.
 
