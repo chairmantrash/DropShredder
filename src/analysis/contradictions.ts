@@ -30,7 +30,7 @@ export function businessAgeContradictions(
     claim:claim.text,
     observation:`Domain registration observed in ${registeredYear} via ${domain.source}`,
     confidence:.88,
-    explanation:'The storefront claims an operating history materially older than the observed domain registration. A business may have changed domains, so corroboration is required before treating this as deception.',
+    explanation:'The store says it has been operating longer than this website appears to have existed. Businesses can change domains, so this is a reason to check—not proof the seller lied.',
     independentKey:'business-age-domain',
   }];
 }
@@ -63,7 +63,7 @@ export function contradictionEvidence(items:Contradiction[]):EvidenceSignal[] {
     severity:'strong',
     confidence:item.confidence,
     weight:24,
-    title:'Seller claim conflicts with observed evidence',
+    title:'The seller's story doesn't line up',
     explanation:item.explanation,
     observedValue:`Claim: ${item.claim} | Observation: ${item.observation}`,
     independentKey:item.independentKey,
