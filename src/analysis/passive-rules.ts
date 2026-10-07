@@ -55,7 +55,7 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     out.push({
       id:'LONG_SHIPPING_WINDOW', family:'fulfillment', severity:'moderate', confidence:.75, weight:10,
       title:'Delivery may take a while',
-      explanation:'The stated delivery window is unusually long and can be consistent with overseas fulfillment. It does not prove the product is dropshipped.',
+      explanation:'Delivery looks slow enough that the item may be shipping from overseas. That alone does not prove dropshipping.',
       observedValue:product.shippingText.slice(0,220), independentKey:'fulfillment-window',
     });
   }
@@ -76,7 +76,7 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     out.push({
       id:'LOW_PROVENANCE_METADATA', family:'provenance', severity:'weak', confidence:.45, weight:3,
       title:'Few product identity details',
-      explanation:'We could not find common product identifiers such as a GTIN, MPN or SKU in the page data. Many legitimate stores omit them, so this is only a small reason to dig deeper.',
+      explanation:'The page gives us very little to identify the exact product. That's common, but it makes the item harder to trace.',
       independentKey:'metadata-sparsity',
     });
   }
