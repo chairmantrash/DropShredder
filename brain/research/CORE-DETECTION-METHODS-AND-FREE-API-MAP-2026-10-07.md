@@ -146,7 +146,7 @@ Use category-aware matching and preserve FDA disclaimers/data limitations.
 ### NHTSA
 Public safety/rating/VIN APIs useful for automotive products/vehicles. Do not bulk VIN query; respect NHTSA traffic controls.
 
-## 10. Legal entity / seller identity intelligence
+### USDA FSIS Recall API\nPublic JSON recall/public-health-alert API for FSIS-regulated foods. Useful category-specific authoritative safety source alongside openFDA.\n\n## 10. Legal entity / seller identity intelligence
 
 ### GLEIF
 Public API for LEI legal-entity reference and ownership data, including fuzzy name/address search.
@@ -160,7 +160,7 @@ Never embed a shared secret in the extension. Prefer user-local key or build-tim
 data.sec.gov submissions and XBRL APIs require no authentication/key.
 Useful only where seller/parent is a public filer. Absence is not negative evidence.
 
-## 11. Trade context
+### ITA Consolidated Screening List\nFree machine-readable/API access to consolidated U.S. restricted-party screening data; API key/account may be required by current developer portal. Fuzzy name matches require identity due diligence and must never be surfaced as sanctions findings without corroboration.\n\n## 11. Trade context
 
 ### USITC DataWeb
 Official U.S. import/export statistics; account/API key required and key expires after six months.
@@ -169,14 +169,14 @@ Contextual/aggregate only. Never infer a specific product factory from aggregate
 ### UN Comtrade
 Aggregate international trade context. Same limitation: plausibility/context, not product-level manufacture proof.
 
-## 12. Open product identity
+## 12. FTC data caveat\nThe current FTC developer API documents Do-Not-Call complaints and HSR early-termination endpoints, not a comprehensive merchant enforcement lookup. Use FTC enforcement datasets/pages as curated research/build-time evidence rather than overstating API coverage.\n\n## 13. Open product identity
 
 ### Open Food Facts
 Free/open product API and downloadable database; ODbL/database-content licensing and attribution obligations must be honored. Current docs state read-product API limits and recommend bulk downloads for larger use.
 Useful for food identity/ingredients/barcodes and potentially related Open Products/Beauty/Pet Food datasets.
 Community data is not authoritative by itself.
 
-## 13. Threat-list licensing caution
+## 14. Threat-list licensing caution
 Google Safe Browsing free API is explicitly non-commercial. Do not make it a commercial DropShredder dependency. A commercial Google threat product would violate the no-paid-dependency goal if required.
 
 ## API deployment policy
