@@ -11,6 +11,6 @@ test('tone modes change wording only',()=>{
     assert.ok(copy.signalsFound.length>0);
     assert.ok(copy.severeWarning.length>0);
   }
-  assert.equal(toneCopy('professional').scan,'SCAN THIS PRODUCT');
-  assert.equal(toneCopy('aggressive').scan,'HUNT THIS SHIT');
+  assert.equal(toneCopy('professional').scan,'CHECK THIS PRODUCT');
+  assert.equal(toneCopy('aggressive').scan,'CHECK THIS SHIT');
 });
