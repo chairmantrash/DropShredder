@@ -8,9 +8,16 @@ export interface SiteTextPage {
   text:string;
 }
 
+export interface MerchantOriginClaims {
+  businessLocation?:string;
+  manufacture?:string;
+  fulfillment?:string;
+}
+
 export interface MerchantOriginResult {
   evidence:EvidenceSignal[];
   disclosedJurisdictions:string[];
+  claims:MerchantOriginClaims;
 }
 
 const COUNTRIES=[
@@ -100,5 +107,9 @@ export function analyzeMerchantOrigin(mainPageText:string,pages:SiteTextPage[]):
     });
   }
 
-  return {evidence,disclosedJurisdictions:allCountries};
+  return {
+    evidence,
+    disclosedJurisdictions:allCountries,
+    claims:{businessLocation:basedClaim,manufacture:madeClaim,fulfillment:shipsClaim},
+  };
 }
