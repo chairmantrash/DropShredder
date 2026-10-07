@@ -93,6 +93,10 @@ toneMode?.addEventListener('change',()=>{
 });
 
 async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
+  try{
+    const response=await chrome.runtime.sendMessage({type:'dropshredder:get-active-web-tab'}) as {tabId?:number}|undefined;
+    if(response?.tabId) return await chrome.tabs.get(response.tabId);
+  }catch{}
   const candidates=await chrome.tabs.query({active:true});
   return candidates.find(tab=>Boolean(tab.id)&&/^https?:\/\//i.test(tab.url ?? ''));
 }
