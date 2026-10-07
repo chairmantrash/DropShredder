@@ -58,34 +58,3 @@ export function parseTrustpilotHtml(html:string,url:string):ReputationObservatio
     url,
   };
 }
-
-const CACHE_MS=30*60*1000;
-
-export async function fetchTrustpilotObservation(domain:string):Promise<ReputationObservation|undefined>{
-  const normalized=domain.toLowerCase().replace(/^www\./,'');
-  const cacheKey=`trustpilot:${normalized}`;
-  try{
-    const cached=(await chrome.storage.session.get(cacheKey))[cacheKey] as {at:number;value:ReputationObservation|undefined}|undefined;
-    if(cached && Date.now()-cached.at<CACHE_MS) return cached.value;
-  }catch{}
-
-  const host='https://www.trustpilot.com/*';
-  const granted=await chrome.permissions.contains({origins:[host]})
-    || await chrome.permissions.request({origins:[host]});
-  if(!granted) return undefined;
-
-  const url=`https://www.trustpilot.com/review/${encodeURIComponent(normalized)}`;
-  const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(5000)});
-  if(response.status===404){
-    try{await chrome.storage.session.set({[cacheKey]:{at:Date.now(),value:undefined}});}catch{}
-    return undefined;
-  }
-  if(!response.ok) throw new Error(`Trustpilot lookup failed: HTTP ${response.status}`);
-  const length=Number(response.headers.get('content-length') || 0);
-  if(length>5_000_000) throw new Error('Trustpilot response exceeded the safety limit.');
-  const html=await response.text();
-  if(html.length>5_000_000) throw new Error('Trustpilot response exceeded the safety limit.');
-  const value=parseTrustpilotHtml(html,url);
-  try{await chrome.storage.session.set({[cacheKey]:{at:Date.now(),value}});}catch{}
-  return value;
-}
