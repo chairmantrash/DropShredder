@@ -1,4 +1,4 @@
-# DropShredder Release Smoke Test
+# DropShredder Beta / Release Smoke Test
 
 Target public build: Chrome/Chromium Manifest V3.
 
@@ -98,3 +98,22 @@ Human/developer-dashboard steps:
 - review permission warnings before submission.
 
 Record date, Chrome version, OS, build commit and any failure before publication.
+
+
+## Beta candidate gate
+Before handing a beta build to testers, record:
+- exact Git commit;
+- CI and CodeQL success on that exact commit;
+- Store ZIP artifact from that CI run, not a locally modified rebuild;
+- known limitations and unsupported sites;
+- browser smoke-test status.
+
+Beta testers should report:
+- page URL with query parameters removed if they share it;
+- what DropShredder said;
+- what they expected;
+- whether the page became slow or unresponsive;
+- Chrome version and OS;
+- screenshots only after checking they contain no personal/account/payment information.
+
+A beta build may be distributed before the full site matrix is complete, but it must not be submitted to the public Chrome Web Store until the mandatory browser checks above pass.
