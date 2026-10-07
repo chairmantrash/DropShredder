@@ -79,7 +79,7 @@ export function indexedSourceEvidence(
     weight:independent>=2?22:11,
     title:'We found what looks like the same product elsewhere',
     explanation:independent>=2
-      ? 'DropShredder matched this product to a supplier or marketplace using more than one strong product detail. That can be normal wholesale or private-label business, so compare dates and the seller's claims before calling it deceptive.'
+      ? 'DropShredder matched this product to a supplier or marketplace using more than one strong product detail. That can be normal wholesale or private-label business, so compare dates and the seller’s claims before calling it deceptive.'
       : 'DropShredder has seen a similar product on another supplier or marketplace. One matching detail is not enough to prove they are the same item or reveal where it came from.',
     observedValue:`${strongest.sourceName} • ${strongest.domain} • ${independent} independent match type(s)`,
     independentKey:'indexed-source-match',
