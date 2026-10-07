@@ -8,7 +8,7 @@ export interface ReviewIntegrityItem {
   suspicion:number;
 }
 
-export interface ReviewIntegrityReport {
+export interface ReviewComplaint {\n  id:string;\n  label:string;\n  count:number;\n  share:number;\n}\n\nexport interface ReviewIntegrityReport {
   total:number;
   rated:number;
   flagged:number;
@@ -38,7 +38,7 @@ const incentive=[
   /discount\s+(?:code|in\s+exchange)/i,
   /in\s+exchange\s+for\s+(?:my\s+)?(?:honest\s+)?review/i,
 ];
-const categories=['necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes','lamp','charger','vacuum','blender','dress','jacket','ring','watch'];
+const complaints=[\n  {id:'breaks',label:'Broke quickly',patterns:[/broke|broken|fell apart|fall apart|snapped|cracked/i]},\n  {id:'quality',label:'Cheap / poor quality',patterns:[/cheap quality|poor quality|cheap material|flimsy|junk|poorly made/i]},\n  {id:'shipping',label:'Shipping took too long',patterns:[/never arrived|late delivery|shipping delay|took (?:forever|weeks|months)|slow shipping/i]},\n  {id:'wrong-item',label:'Wrong or different item',patterns:[/wrong item|wrong product|different product|not as described/i]},\n  {id:'refund',label:'Refund / return problems',patterns:[/refund|return refused|would not accept (?:the )?return|no refund/i]},\n  {id:'support',label:'Bad customer service',patterns:[/customer service|no response|never replied|won't respond|would not respond/i]},\n  {id:'fit',label:'Sizing / fit problems',patterns:[/too small|too large|too big|doesn't fit|does not fit|sizing/i]},\n  {id:'battery',label:'Battery problems',patterns:[/battery|won't hold (?:a )?charge|stopped charging|charging problem/i]},\n  {id:'overheat',label:'Overheating',patterns:[/overheat|too hot to touch|caught fire|smoke|burning smell/i]},\n  {id:'missing',label:'Missing parts',patterns:[/missing (?:part|piece|screw|accessory)|parts missing/i]},\n];\n\nconst categories=['necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes','lamp','charger','vacuum','blender','dress','jacket','ring','watch'];
 
 export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):ReviewIntegrityReport{
   const usable=reviews.filter(r=>r.body?.trim()).slice(0,120);
@@ -79,11 +79,11 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   const displayedRating=rated.length?rated.reduce((a,x)=>a+(x.r.rating??0),0)/rated.length:undefined;
   const adjusted=rated.filter(x=>items[x.index]!.suspicion<.5);
   const adjustedRating=adjusted.length?adjusted.reduce((a,x)=>a+(x.r.rating??0),0)/adjusted.length:undefined;
-  const total=usable.length,flagged=flaggedItems.length,passed=passedItems.length;
+  const lowStar=usable.filter((r,index)=>typeof r.rating==='number' && r.rating<=2 && items[index]!.suspicion<.5);\n  const commonComplaints=complaints.map(group=>{\n    const count=lowStar.filter(r=>group.patterns.some(p=>p.test((r.title??'')+' '+r.body))).length;\n    return {id:group.id,label:group.label,count,share:lowStar.length?Math.round(count/lowStar.length*100):0};\n  }).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,5);\n  const total=usable.length,flagged=flaggedItems.length,passed=passedItems.length;
   return {
     total,rated:rated.length,flagged,passed,
     passedPercent:total?Math.round(passed/total*100):0,
     flaggedPercent:total?Math.round(flagged/total*100):0,
-    displayedRating,adjustedRating,items,
+    displayedRating,adjustedRating,lowStarCount:lowStar.length,commonComplaints,items,
   };
 }
