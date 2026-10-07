@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fuseEvidence } from '../src/analysis/evidence-fusion';
+import { fusionSummary } from '../src/analysis/evidence-engine';
 
 test('missing evidence is unknown rather than clean',()=>{
   assert.equal(fuseEvidence([],[]).verdict,'not-enough-data');
@@ -26,5 +27,14 @@ test('one source repeated across families cannot satisfy source independence',()
   {id:'a',family:'identity',strength:'strong',score:.95,sourceKey:'same-feed',independenceKey:'id'},
   {id:'b',family:'claims',strength:'strong',score:.95,sourceKey:'same-feed',independenceKey:'claim'},
  ],['identity','claims']);
+ assert.notEqual(r.verdict,'strong-red-flags');
+});
+
+
+test('canonical verdict bridge dedupes repeated observations before fusion',()=>{
+ const signal={id:'A',family:'reviews' as const,severity:'strong' as const,confidence:1,weight:30,title:'x',explanation:'x',independentKey:'review:campaign'};
+ const r=fusionSummary([signal,{...signal,id:'B'}],['reviews','provenance']);
+ assert.equal(r.independentFamilies,1);
+ assert.equal(r.independentSources,1);
  assert.notEqual(r.verdict,'strong-red-flags');
 });
