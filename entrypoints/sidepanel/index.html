@@ -7,56 +7,103 @@
   </head>
   <body>
     <main id="app">
-      <header>
-        <div class="eyebrow">DROP SHREDDER</div>
-        <h1>Commerce forensics</h1>
-        <p>Local-first. No account. No telemetry. Show the receipts.</p>
+      <header class="masthead">
+        <div class="brand-row">
+          <div>
+            <div class="eyebrow">DROPSHREDDER</div>
+            <h1>Commerce forensics</h1>
+          </div>
+          <span class="privacy-badge">LOCAL-FIRST</span>
+        </div>
+        <p class="lede">Inspect product provenance, merchant signals and fulfillment evidence without surrendering your browsing history.</p>
       </header>
-      <button id="scan" type="button">SCAN THIS PRODUCT</button>
-      <p class="scan-disclosure">Scans only the page you choose. Account, checkout, payment, and credential pages are blocked.</p>
-      <section class="feature-toggles">
-        <label class="toggle-row">
-          <span><strong>Auto Source Hunt</strong><small>Check DropShredder's indexed supplier/marketplace history on every scan.</small></span>
-          <input id="auto-source-hunt" type="checkbox" />
-        </label>
-        <label class="toggle-row">
-          <span><strong>Prefer Made in USA</strong><small>Show a separate origin-preference warning when the identified commerce chain is predominantly international.</small></span>
-          <input id="prefer-made-in-usa" type="checkbox" />
-        </label>
-        <label class="toggle-row">
-          <span><strong>Language tone</strong><small>Changes wording only. Evidence thresholds and verdicts never change.</small></span>
-          <select id="tone-mode" aria-label="Language tone">
-            <option value="professional">Professional</option>
-            <option value="aggressive">Aggressive</option>
-            <option value="nuclear">Nuclear</option>
-          </select>
-        </label>
+
+      <section class="scan-card" aria-labelledby="scan-heading">
+        <div class="section-kicker" id="scan-heading">ACTIVE PAGE</div>
+        <button id="scan" type="button">SCAN THIS PRODUCT</button>
+        <p class="scan-disclosure">Only the page you choose is inspected. Account, checkout, payment and credential surfaces are blocked.</p>
+        <p id="status" class="status" role="status" aria-live="polite">Ready to inspect the active page.</p>
       </section>
-      <p id="status" class="status">Ready to inspect the active page.</p>
-      <section id="summary" class="summary"></section>
-      <section id="hunt-actions" class="hunt-actions" hidden>
-        <button id="hunt-sources" class="secondary" type="button">HUNT SOURCES</button>
-        <button id="hunt-image" class="secondary" type="button">HUNT IMAGE</button>
-        <button id="hunt-store" class="secondary" type="button">HUNT STORE</button>
-        <button id="check-domain" class="secondary" type="button">CHECK DOMAIN AGE</button>
-        <button id="reputation-sweep" class="secondary" type="button">REPUTATION SWEEP</button>
-        <button id="policy-check" class="secondary" type="button">CHECK RETURN POLICY</button>
-        <button id="fulfillment-check" class="secondary" type="button">CHECK TRACKING / FULFILLMENT</button>
+
+      <section id="summary-section" class="result-section" aria-labelledby="verdict-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">ASSESSMENT</div>
+            <h2 id="verdict-heading">Verdict</h2>
+          </div>
+        </div>
+        <div id="summary" class="summary">
+          <div class="empty-state">Run a scan to build an evidence-backed assessment.</div>
+        </div>
       </section>
-      <section>
-        <h2 id="evidence-heading">EVIDENCE</h2>
-        <div id="evidence" class="evidence"></div>
+
+      <section id="hunt-actions" class="investigation" hidden aria-labelledby="investigation-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">FOLLOW THE RECEIPTS</div>
+            <h2 id="investigation-heading">Investigate</h2>
+          </div>
+          <span class="section-note">Optional</span>
+        </div>
+        <div class="hunt-actions">
+          <button id="hunt-sources" class="secondary" type="button">SOURCE MATCHES</button>
+          <button id="hunt-image" class="secondary" type="button">IMAGE ORIGIN</button>
+          <button id="hunt-store" class="secondary" type="button">MERCHANT WEB</button>
+          <button id="check-domain" class="secondary" type="button">DOMAIN AGE</button>
+          <button id="reputation-sweep" class="secondary" type="button">REPUTATION</button>
+          <button id="policy-check" class="secondary" type="button">RETURN POLICY</button>
+          <button id="fulfillment-check" class="secondary wide" type="button">TRACKING / FULFILLMENT</button>
+        </div>
       </section>
-      <details>
-        <summary>Raw evidence report</summary>
+
+      <section class="evidence-section" aria-labelledby="evidence-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">WHY DROPSHREDDER THINKS THIS</div>
+            <h2 id="evidence-heading">Evidence</h2>
+          </div>
+        </div>
+        <div id="evidence" class="evidence">
+          <div class="empty-state">Evidence will appear here after a scan.</div>
+        </div>
+      </section>
+
+      <details class="settings-panel">
+        <summary>Scan preferences</summary>
+        <section class="feature-toggles">
+          <label class="toggle-row">
+            <span><strong>Auto Source Hunt</strong><small>Check DropShredder's local supplier and marketplace index during scans.</small></span>
+            <input id="auto-source-hunt" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span><strong>Prefer Made in USA</strong><small>Show a separate preference note. Geography never changes the risk score by itself.</small></span>
+            <input id="prefer-made-in-usa" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span><strong>Language tone</strong><small>Changes wording only. Evidence thresholds and verdicts stay identical.</small></span>
+            <select id="tone-mode" aria-label="Language tone">
+              <option value="professional">Professional</option>
+              <option value="aggressive">Aggressive</option>
+              <option value="nuclear">Nuclear</option>
+            </select>
+          </label>
+        </section>
+      </details>
+
+      <details class="technical-panel">
+        <summary>Technical evidence</summary>
         <pre id="raw" class="result" hidden></pre>
       </details>
-      <section class="privacy-tools">
-        <h2>LOCAL DATA</h2>
-        <p class="status">History stays on this browser, strips URL query strings, and is capped at 180 days / 2,000 observations.</p>
-        <button id="clear-history" class="secondary" type="button">CLEAR LOCAL HISTORY</button>
-        <button id="revoke-optional-access" class="secondary" type="button">REVOKE OPTIONAL SITE ACCESS</button>
-      </section>
+
+      <details class="local-data">
+        <summary>Privacy & local data</summary>
+        <div class="privacy-tools">
+          <p>History stays in this browser, strips URL query strings, and is capped at 180 days / 2,000 observations.</p>
+          <button id="clear-history" class="secondary" type="button">CLEAR LOCAL HISTORY</button>
+          <button id="revoke-optional-access" class="secondary" type="button">REVOKE OPTIONAL SITE ACCESS</button>
+        </div>
+      </details>
+
       <footer id="build-meta" class="build-meta"></footer>
     </main>
     <script type="module" src="./main.ts"></script>
