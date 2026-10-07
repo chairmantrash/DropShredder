@@ -9,7 +9,7 @@ function report(at:string,scarcity?:string,price=30):DropShredderReport {
     version:1,
     product:{url:'https://shop.example/p',domain:'shop.example',title:'Widget',price,imageUrls:[],jsonLdProductCount:1,capturedAt:at,claims:[],pageSignals:[]},
     merchant:{domain:'shop.example'},
-    evidence:scarcity?[{id:'SCARCITY',family:'scarcity',severity:'weak',confidence:.6,weight:3,title:scarcity,observedValue:scarcity,independentKey:'scarcity-visible'}]:[],
+    evidence:scarcity?[{id:'SCARCITY',family:'scarcity',severity:'weak',confidence:.6,weight:3,title:scarcity,explanation:'Visible scarcity claim.',observedValue:scarcity,independentKey:'scarcity-visible'}]:[],
     contradictions:[],
     verdict:{massResellLikelihood:null,dropshipLikelihood:null,deceptionRisk:'unknown',merchantRisk:'unknown',manipulationRisk:'unknown',fulfillmentRisk:'unknown',severeWarningAllowed:false,reason:'Not enough data.'},
   };
