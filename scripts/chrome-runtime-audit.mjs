@@ -6,6 +6,7 @@ const panel=fs.readFileSync('entrypoints/sidepanel/main.ts','utf8');
 const bg=fs.readFileSync('entrypoints/background.ts','utf8');
 const image=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
 const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
+const scanner=fs.readFileSync('src/extraction/page-scan.ts','utf8');
 
 const requireMatch=(text,re,message)=>{if(!re.test(text)) failures.push(message);};
 const forbid=(text,re,message)=>{if(re.test(text)) failures.push(message);};
@@ -22,6 +23,10 @@ requireMatch(panel,/chrome\.permissions\.addHostAccessRequest\(\{tabId:tab\.id\}
 requireMatch(panel,/pageSafety\(page\.url\)/,'scan must run page-safety gate on authorized URL');
 requireMatch(panel,/await authorizedPage\(tab\)/,'scan-like paths must gate injection on actual authorized page access');
 requireMatch(panel,/chrome\.scripting\.executeScript/,'scanner must use scripting injection after permission gate');
+requireMatch(panel,/func:extractPageScan/,'side panel must invoke packaged page scanner');
+requireMatch(panel,/documentIds:\[page\.documentId\]/,'authorized scan transaction must pin Chrome documentId');
+requireMatch(panel,/world:'ISOLATED'/,'page scanner must explicitly use isolated execution world');
+requireMatch(scanner,/export function extractPageScan/,'packaged page scanner missing');
 
 requireMatch(bg,/setPanelBehavior\(\{ openPanelOnActionClick: true \}\)/,'toolbar action must open/toggle side panel');
 requireMatch(bg,/documentUrlPatterns:\['http:\/\/\*\/\*','https:\/\/\*\/\*'\]/,'context menus must be limited to web documents');
