@@ -64,8 +64,8 @@ export function crossDomainReferenceEvidence(
     severity:'moderate',
     confidence:.9,
     weight:12,
-    title:'This store points directly to another seller's website',
-    explanation:'The store's own page mentions another seller's website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
+    title:'This store points directly to another seller’s website',
+    explanation:'The store’s own page mentions another seller’s website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
     observedValue:[...new Set(refs)].join(', '),
     independentKey:'merchant-network:cross-domain-reference',
   }];
