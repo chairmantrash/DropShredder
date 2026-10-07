@@ -12,7 +12,7 @@ function report(at:string,scarcity?:string,price=30,reviews?:{total:number;ratin
     evidence:scarcity?[{id:'SCARCITY',family:'scarcity',severity:'weak',confidence:.6,weight:3,title:scarcity,explanation:'Visible scarcity claim.',observedValue:scarcity,independentKey:'scarcity-visible'}]:[],
     contradictions:[],
     verdict:{massResellLikelihood:null,dropshipLikelihood:null,deceptionRisk:'unknown',merchantRisk:'unknown',manipulationRisk:'unknown',fulfillmentRisk:'unknown',severeWarningAllowed:false,reason:'Not enough data.'},
-    reviewIntegrity:reviews?{total:reviews.total,passed:reviews.total,flagged:0,passedPercent:100,flaggedPercent:0,lowStarCount:0,displayedRating:reviews.rating,adjustedRating:reviews.rating,commonComplaints:[],reviews:[]}:undefined,
+    reviewIntegrity:reviews?{total:reviews.total,rated:reviews.total,passed:reviews.total,flagged:0,passedPercent:100,flaggedPercent:0,lowStarCount:0,displayedRating:reviews.rating,adjustedRating:reviews.rating,commonComplaints:[],items:[]}:undefined,
   };
 }
 
