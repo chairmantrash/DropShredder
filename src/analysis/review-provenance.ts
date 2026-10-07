@@ -1,16 +1,16 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ReviewAnalysisInput, ReviewSnapshot } from '../types/review';
-import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity } from './review-primitives';
+import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity, reviewTokenSet } from './review-primitives';
 
 function duplicatePairs(reviews:ReviewSnapshot[]): {pairs:number; ratio:number} {
   let pairs=0;
   let eligible=0;
   for(let i=0;i<reviews.length;i++){
     for(let j=i+1;j<reviews.length;j++){
-      const similarity=reviewTextSimilarity(reviews[i]?.body ?? '',reviews[j]?.body ?? '');
-      if(similarity===0) continue;
+      const left=reviews[i]?.body ?? '',right=reviews[j]?.body ?? '';
+      if(reviewTokenSet(left).size<4||reviewTokenSet(right).size<4) continue;
       eligible++;
-      if(similarity>=0.72) pairs++;
+      if(reviewTextSimilarity(left,right)>=0.72) pairs++;
     }
   }
   return {pairs,ratio:eligible?pairs/eligible:0};
