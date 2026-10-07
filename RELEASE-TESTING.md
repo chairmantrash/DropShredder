@@ -20,8 +20,8 @@ A CI-green ZIP is not publishable until these browser checks pass.
 - Try an ordinary page containing a password or credit-card field: scan is refused.
 - Verify no page cookies, passwords or form values appear in Raw evidence.
 - Scan a URL containing tracking/query parameters, then inspect exported/local diagnostic storage in the internal build: stored URL must contain origin+path only.
-- Enable Auto Reputation Sweep: Chrome asks specifically for Trustpilot access.
-- Disable it: Trustpilot optional access is revoked.
+- Confirm reputation research only runs after an explicit user action.
+- Confirm no third-party review-site access is granted automatically.
 - Grant an image-origin permission, then press REVOKE OPTIONAL SITE ACCESS: the grant disappears.
 - CLEAR LOCAL HISTORY removes local observations.
 
