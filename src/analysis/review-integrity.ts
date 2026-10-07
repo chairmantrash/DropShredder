@@ -1,4 +1,5 @@
 import type { ReviewSnapshot } from '../types/review';
+import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity } from './review-primitives';
 
 export type ReviewFlag='duplicate'|'burst'|'wrong-product'|'incentivized'|'unverified'|'rating-text-conflict';
 
@@ -29,27 +30,9 @@ export interface ReviewIntegrityReport {
   items:ReviewIntegrityItem[];
 }
 
-function norm(value:string):string{
-  return value.toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
-}
-function tokenSet(value:string):Set<string>{
-  return new Set(norm(value).split(' ').filter(t=>t.length>=4));
-}
-function similarity(a:string,b:string):number{
-  const aa=tokenSet(a),bb=tokenSet(b);
-  if(aa.size<4||bb.size<4)return 0;
-  let hit=0;for(const x of aa)if(bb.has(x))hit++;
-  return hit/(aa.size+bb.size-hit);
-}
 const positiveWords=/\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\b/gi;
 const negativeWords=/\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\b/gi;
 
-const incentive=[
-  /free\s+(?:product|item|sample)/i,
-  /received\s+(?:this|the\s+product)\s+(?:for\s+free|at\s+a\s+discount)/i,
-  /discount\s+(?:code|in\s+exchange)/i,
-  /in\s+exchange\s+for\s+(?:my\s+)?(?:honest\s+)?review/i,
-];
 const complaints=[
   {id:'breaks',label:'Broke quickly',patterns:[/broke|broken|fell apart|fall apart|snapped|cracked/i]},
   {id:'quality',label:'Cheap / poor quality',patterns:[/cheap quality|poor quality|cheap material|flimsy|junk|poorly made/i]},
@@ -63,16 +46,15 @@ const complaints=[
   {id:'missing',label:'Missing parts',patterns:[/missing (?:part|piece|screw|accessory)|parts missing/i]},
 ];
 
-const categories=['necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes','lamp','charger','vacuum','blender','dress','jacket','ring','watch'];
 
 export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):ReviewIntegrityReport{
   const usable=reviews.filter(r=>r.body?.trim()).slice(0,120);
   const scores=usable.map(()=>({score:0,flags:new Set<ReviewFlag>()}));
-  const title=norm(productTitle??'');
+  const title=normalizeReviewText(productTitle??'');
 
   // Duplicate/copied wording. Pairwise work is bounded to 120 reviews.
   for(let i=0;i<usable.length;i++)for(let j=i+1;j<usable.length;j++){
-    if(similarity(usable[i]!.body,usable[j]!.body)>=.72){
+    if(reviewTextSimilarity(usable[i]!.body,usable[j]!.body)>=.72){
       scores[i]!.score+=.45;scores[j]!.score+=.45;
       scores[i]!.flags.add('duplicate');scores[j]!.flags.add('duplicate');
     }
@@ -87,8 +69,8 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   }
 
   for(let i=0;i<usable.length;i++){
-    const review=usable[i]!,text=norm((review.title??'')+' '+review.body),s=scores[i]!;
-    if(incentive.some(p=>p.test(review.body))){s.score+=.35;s.flags.add('incentivized');}
+    const review=usable[i]!,text=normalizeReviewText((review.title??'')+' '+review.body),s=scores[i]!;
+    if(reviewHasIncentiveLanguage(review.body)){s.score+=.35;s.flags.add('incentivized');}
     if(review.verified===false){s.score+=.15;s.flags.add('unverified');}
     if(typeof review.rating==='number'){
       const positives=(text.match(positiveWords)??[]).length;
@@ -98,8 +80,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
       }
     }
     if(title){
-      const mismatch=categories.some(term=>!title.includes(term)&&text.includes(term));
-      if(mismatch){s.score+=.55;s.flags.add('wrong-product');}
+      if(reviewMentionsMismatchedCategory(productTitle,text)){s.score+=.55;s.flags.add('wrong-product');}
     }
   }
 
