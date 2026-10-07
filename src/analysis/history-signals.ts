@@ -42,7 +42,7 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
       out.push({
         id:'LARGE_PRICE_SWING_HISTORY',family:'pricing',severity:'moderate',confidence:.66,weight:8,
         title:'The price has been bouncing around',
-        explanation:'This product's price has moved a lot across scans. That can be legitimate, but it is worth comparing against any "was" price or huge discount claim.',
+        explanation:'This product’s price has moved a lot across scans. That can be legitimate, but it is worth comparing against any "was" price or huge discount claim.',
         observedValue:`${min.toFixed(2)}–${max.toFixed(2)} across ${prices.length} observations`,
         independentKey:'price-history-range',
       });
