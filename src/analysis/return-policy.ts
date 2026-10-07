@@ -16,8 +16,8 @@ const patterns=[
     severity:'moderate' as const,
     confidence:.76,
     regex:/customer.{0,40}(?:responsible|pays?).{0,80}(?:international|overseas).{0,30}return|return.{0,80}(?:international|overseas).{0,40}(?:customer|buyer).{0,30}(?:responsible|pays?)/i,
-    title:'Customer-paid international return detected',
-    explanation:'The policy appears to require the customer to pay international return shipping. This can make low-value imported goods effectively non-returnable.',
+    title:'You may have to pay to ship returns overseas',
+    explanation:'The return policy appears to make you pay international return postage. On a cheaper item, that can make returning it barely worth the cost.',
     key:'return-international-cost',
   },
   {
@@ -25,8 +25,8 @@ const patterns=[
     severity:'moderate' as const,
     confidence:.72,
     regex:/(?:contact|email).{0,80}(?:return address|return instructions)|return address.{0,80}(?:provided|sent).{0,50}(?:after|once).{0,30}(?:contact|email)/i,
-    title:'Return address withheld until contact',
-    explanation:'The merchant does not appear to publish a return destination up front. This can create friction and makes fulfillment geography harder to evaluate.',
+    title:'They won't show the return address up front',
+    explanation:'The store appears to make you contact them before revealing where a return has to go. That adds friction and hides a cost you may want to know before buying.',
     key:'return-address-withheld',
   },
   {
@@ -34,8 +34,8 @@ const patterns=[
     severity:'weak' as const,
     confidence:.7,
     regex:/(?:restocking fee.{0,20}(\d{1,2})\s*%|(\d{1,2})\s*%.{0,20}restocking fee)/i,
-    title:'Restocking fee detected',
-    explanation:'A restocking fee may materially reduce refund value. This is a policy-friction signal, not evidence of dropshipping by itself.',
+    title:'Returning it may cost you a restocking fee',
+    explanation:'The policy appears to deduct a restocking fee from some returns. That can shrink your refund, but it does not tell us whether the item is dropshipped.',
     key:'return-restocking-fee',
   },
   {
@@ -44,7 +44,7 @@ const patterns=[
     confidence:.78,
     regex:/\b([1-7])\s*(?:calendar\s+|business\s+)?days?\b.{0,40}(?:return|refund)|(?:return|refund).{0,40}\b([1-7])\s*(?:calendar\s+|business\s+)?days?\b/i,
     title:'Very short return window',
-    explanation:'The visible policy appears to provide seven days or less for returns/refunds. This can be especially burdensome for delayed imported goods.',
+    explanation:'The policy appears to give you seven days or less to return the item. That is a tight window, especially if delivery is slow.',
     key:'return-short-window',
   },
   {
@@ -52,8 +52,8 @@ const patterns=[
     severity:'weak' as const,
     confidence:.64,
     regex:/(?:all sales are final|no returns? or exchanges?|non[- ]returnable)/i,
-    title:'Broad final-sale/no-return language',
-    explanation:'Broad no-return language may materially limit consumer recourse. Legitimate categories can have valid exclusions, so context matters.',
+    title:'The store may not take it back',
+    explanation:'The policy uses broad final-sale or no-return language. Some products have legitimate exclusions, so check whether it actually applies to what you're buying.',
     key:'return-final-sale',
   },
   {
@@ -61,8 +61,8 @@ const patterns=[
     severity:'weak' as const,
     confidence:.66,
     regex:/refund.{0,80}(?:after|once).{0,50}(?:warehouse|return center|facility).{0,30}(?:receive|received|inspect)/i,
-    title:'Refund contingent on warehouse receipt/inspection',
-    explanation:'Refund timing depends on return-center receipt or inspection. This is common commerce practice, but can compound friction when return logistics are opaque.',
+    title:'Your refund waits on the warehouse',
+    explanation:'The store says your refund waits until a warehouse receives or inspects the return. That's common, but it can become a headache when the return destination is unclear or far away.',
     key:'return-warehouse-receipt',
   }
 ];
