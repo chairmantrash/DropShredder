@@ -39,8 +39,8 @@ export function localMerchantNetworkEvidence(
     severity:'strong',
     confidence:.94,
     weight:22,
-    title:'Exact product identifier reused across different storefronts',
-    explanation:'The same stable SKU/GTIN/MPN/ASIN has been observed on another merchant domain. This is strong merchant/catalog relationship evidence, although authorized wholesale or shared suppliers can also explain it.',
+    title:'The exact same product ID showed up on another store',
+    explanation:'DropShredder has seen this exact product identifier on a different store. The stores may share a supplier or sell the same wholesale item, so this is a connection worth checking—not proof they are secretly the same business.',
     observedValue:domains.map(domain=>`${domain}: ${matches.get(domain)!.join(', ')}`).join(' • '),
     independentKey:'merchant-network:shared-product-id',
   }];
@@ -64,8 +64,8 @@ export function crossDomainReferenceEvidence(
     severity:'moderate',
     confidence:.9,
     weight:12,
-    title:'Storefront directly references another merchant domain',
-    explanation:'Visible store content directly references another merchant domain. This can reveal shared operations, copied catalog content, common support infrastructure, or an affiliated brand.',
+    title:'This store points directly to another seller's website',
+    explanation:'The store's own page mentions another seller's website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
     observedValue:[...new Set(refs)].join(', '),
     independentKey:'merchant-network:cross-domain-reference',
   }];
