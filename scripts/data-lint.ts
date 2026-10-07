@@ -65,6 +65,26 @@ for(const network of MERCHANT_NETWORKS){
 const signatures=JSON.parse(fs.readFileSync('intelligence/technology-signatures.json','utf8')) as SignatureRegistry;
 errors.push(...validateRegistry(signatures));
 
+const apiRegistry=JSON.parse(fs.readFileSync('intelligence/public-api-registry.json','utf8')) as {
+  version:number;
+  updatedAt:string;
+  policy:{paidApiDependenciesAllowed:boolean;freePublicApisAllowed:boolean;freeKeyApisAllowed:boolean;runtimeSecretsBundledInExtension:boolean;countryOrNationalityRiskWeight:number};
+  sources:Array<{id:string;access:string;runtimeClass:string;status:string;purpose:string[];matchPolicy:string;primarySource:string}>;
+};
+if(apiRegistry.policy.paidApiDependenciesAllowed) errors.push('Public API registry must not allow paid API dependencies');
+if(apiRegistry.policy.runtimeSecretsBundledInExtension) errors.push('Public API registry must not allow bundled runtime secrets');
+if(apiRegistry.policy.countryOrNationalityRiskWeight!==0) errors.push('Country/nationality must have zero standalone risk weight');
+if(!apiRegistry.policy.freePublicApisAllowed || !apiRegistry.policy.freeKeyApisAllowed) errors.push('Free public/free-key API policy unexpectedly disabled');
+if(!Number.isFinite(Date.parse(apiRegistry.updatedAt+'T00:00:00Z'))) errors.push('Public API registry has invalid updatedAt');
+unique(apiRegistry.sources.map(item=>item.id),'public API id');
+for(const source of apiRegistry.sources){
+  if(!source.primarySource.startsWith('https://')) errors.push(`Public API ${source.id} primary source must be HTTPS`);
+  if(!source.purpose.length) errors.push(`Public API ${source.id} has no purpose`);
+  if(!source.matchPolicy.trim()) errors.push(`Public API ${source.id} has no false-positive/match policy`);
+  if(!source.access.trim() || !source.runtimeClass.trim() || !source.status.trim()) errors.push(`Public API ${source.id} has incomplete access metadata`);
+}
+if(apiRegistry.sources.length<8) errors.push('Public API registry unexpectedly small');
+
 const maintenance=JSON.parse(fs.readFileSync('intelligence/REGISTRY-MAINTENANCE.json','utf8')) as {
   registries:Array<{id:string;path:string;checks:string[]}>
 };
@@ -84,4 +104,4 @@ if(errors.length){
   console.error('DropShredder data lint failed:\n'+errors.map(item=>' - '+item).join('\n'));
   process.exit(1);
 }
-console.log(`Data lint passed: ${SOURCE_INDEX.length} sources, ${COMMERCE_PLATFORMS.length} platforms, ${MERCHANT_NETWORKS.length} merchant networks, ${signatures.signatures.length} technology signatures.`);
+console.log(`Data lint passed: ${SOURCE_INDEX.length} sources, ${COMMERCE_PLATFORMS.length} platforms, ${MERCHANT_NETWORKS.length} merchant networks, ${signatures.signatures.length} technology signatures, ${apiRegistry.sources.length} public APIs.`);
