@@ -63,7 +63,7 @@ test('HaremPants-like explicit origin + independent quality complaints raises ma
 
   assert.equal(origin.evidence.some(e=>e.id==='MERCHANT_ORIGIN_BURIED_IN_SECONDARY_PAGES'),false);
   assert.equal(verdict.manipulationRisk,'moderate');
-  assert.equal(verdict.merchantRisk,'low');
+  assert.equal(verdict.merchantRisk,'unknown');
   assert.equal(verdict.massResellLikelihood,null);
   assert.equal(verdict.severeWarningAllowed,false);
 });
@@ -97,5 +97,5 @@ test('plainly disclosed overseas reseller control is not treated as deception',(
   const verdict=calculateVerdict(origin.evidence);
   assert.equal(origin.evidence.some(e=>e.id==='MERCHANT_ORIGIN_BURIED_IN_SECONDARY_PAGES'),false);
   assert.equal(verdict.severeWarningAllowed,false);
-  assert.equal(verdict.deceptionRisk,'low');
+  assert.equal(verdict.deceptionRisk,'unknown');
 });
