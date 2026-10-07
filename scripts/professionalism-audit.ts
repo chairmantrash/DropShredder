@@ -51,6 +51,17 @@ if(/function\s+(?:duplicatePairs|maxWindowShare)\s*\(/.test(reviewProvenance)){
   errors.push('Review provenance reintroduced duplicate review-analysis primitives');
 }
 
+const betaRequired=[
+  'src/analysis/dark-patterns.ts',
+  'src/intelligence/regulatory-match.ts',
+  'BETA-TESTING.md',
+  'RELEASE-TESTING.md',
+];
+for(const file of betaRequired){if(!fs.existsSync(file)) errors.push(`Beta-critical file missing: ${file}`);}
+
+const currentState=fs.readFileSync('workplane/CURRENT-STATE.md','utf8');
+if(/\*\*Phase:\*\*\s*Active implementation/i.test(currentState)) warnings.push('Workplane still claims generic active implementation instead of beta completion/verification');
+
 const trustpilot='src/reputation/trustpilot.ts';
 if(fs.existsSync(trustpilot)){
   const source=fs.readFileSync(trustpilot,'utf8');
