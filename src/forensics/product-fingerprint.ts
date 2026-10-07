@@ -76,3 +76,80 @@ export function fingerprintSimilarity(a:ProductFingerprint,b:ProductFingerprint)
   for(const token of left) if(right.has(token)) common++;
   return common/(left.size+right.size-common);
 }
+
+
+export interface ExactProductFingerprintInput {
+  gtin?:string;
+  brand?:string;
+  mpn?:string;
+  sku?:string;
+  variantId?:string;
+  title?:string;
+  specs?:Record<string,string|number>;
+  imageHashes?:string[];
+}
+
+export interface ExactProductFingerprint {
+  gtin?:string;
+  brand?:string;
+  mpn?:string;
+  sku?:string;
+  variantId?:string;
+  titleTokens:string[];
+  specTokens:string[];
+  imageHashes:string[];
+}
+
+const normalizeExactText=(value:string|undefined)=>
+  value?.normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()||undefined;
+const normalizeExactIdentifier=(value:string|undefined)=>normalizeExactText(value)?.replace(/[^a-z0-9]/g,'');
+
+export function buildExactProductFingerprint(input:ExactProductFingerprintInput):ExactProductFingerprint {
+  const titleTokens=[...new Set((normalizeExactText(input.title)??'').split(' ').filter(token=>token.length>=3))].sort().slice(0,40);
+  const specTokens=Object.entries(input.specs??{})
+    .map(([key,value])=>`${normalizeExactText(key)}=${normalizeExactText(String(value))}`)
+    .filter(Boolean)
+    .sort()
+    .slice(0,50);
+  return {
+    gtin:normalizeExactIdentifier(input.gtin),
+    brand:normalizeExactText(input.brand),
+    mpn:normalizeExactIdentifier(input.mpn),
+    sku:normalizeExactIdentifier(input.sku),
+    variantId:normalizeExactIdentifier(input.variantId),
+    titleTokens,
+    specTokens,
+    imageHashes:[...new Set(input.imageHashes??[])].sort().slice(0,12),
+  };
+}
+
+export function compareExactProductFingerprints(a:ExactProductFingerprint,b:ExactProductFingerprint){
+  const reasons:string[]=[];
+  let score=0;
+  if(a.gtin&&b.gtin&&a.gtin===b.gtin){
+    score=1;
+    reasons.push('Same GTIN');
+  }else{
+    if(a.brand&&b.brand&&a.brand===b.brand&&a.mpn&&b.mpn&&a.mpn===b.mpn){
+      score+=.72;
+      reasons.push('Same brand and model number');
+    }
+    const images=a.imageHashes.filter(hash=>b.imageHashes.includes(hash)).length;
+    if(images){
+      score+=Math.min(.5,images*.25);
+      reasons.push('Same product image');
+    }
+    const specs=a.specTokens.filter(token=>b.specTokens.includes(token)).length;
+    if(specs>=3){
+      score+=Math.min(.35,specs*.06);
+      reasons.push('Matching product details');
+    }
+    const title=a.titleTokens.filter(token=>b.titleTokens.includes(token)).length;
+    const denominator=Math.max(1,new Set([...a.titleTokens,...b.titleTokens]).size);
+    if(title/denominator>=.55){
+      score+=.18;
+      reasons.push('Very similar product name');
+    }
+  }
+  return {score:Math.min(1,score),reasons,exactIdentity:Boolean(a.gtin&&b.gtin&&a.gtin===b.gtin)};
+}
