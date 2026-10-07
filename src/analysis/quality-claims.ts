@@ -49,8 +49,8 @@ export function qualityClaimEvidence(
     severity:complaintSnippets.length>=4?'strong':'moderate',
     confidence:complaintSnippets.length>=4?.84:.74,
     weight:complaintSnippets.length>=4?20:12,
-    title:'Independent quality complaints conflict with premium-quality marketing',
-    explanation:'The merchant uses explicit quality/craftsmanship marketing while an independent review source contains repeated complaints about construction, materials, durability, or product quality. Reviews are subjective, so this is a claim-risk signal rather than proof of fraud.',
+    title:'Buyers push back on the premium-quality pitch',
+    explanation:'The store calls the product premium, durable or well-made, but outside reviews repeatedly complain about materials, construction or durability. Reviews are subjective, so treat this as a reason to question the sales pitch—not proof of fraud.',
     observedValue:`Merchant claim: “${claim}” • Complaints: ${complaintSnippets.slice(0,3).map(s=>`“${s.slice(0,160)}”`).join(' • ')}`,
     independentKey:'quality-marketing-conflict',
   }];
