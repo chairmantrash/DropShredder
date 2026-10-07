@@ -1,4 +1,5 @@
 import type { EvidenceSignal, RiskLevel, Verdict } from '../types/evidence';
+import { fuseEvidence, type FusionEvidence, type FusionResult } from './evidence-fusion';
 
 const severityRank: Record<EvidenceSignal['severity'], number> = {
   info: 0,
@@ -40,6 +41,21 @@ export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
     if (nextScore > currentScore) byKey.set(signal.independentKey, signal);
   }
   return [...byKey.values()];
+}
+
+export function fusionSummary(signals: EvidenceSignal[],coverageFamilies:string[]=[]): FusionResult {
+  const unique=dedupeEvidence(signals);
+  const fusionItems:FusionEvidence[]=unique
+    .filter(signal=>effectiveWeight(signal)>0)
+    .map(signal=>({
+      id:signal.id,
+      family:signal.family,
+      strength:signal.severity==='direct'?'strong':signal.severity,
+      score:Math.min(1,effectiveWeight(signal)/35),
+      sourceKey:signal.independentKey.split(':')[0] || signal.independentKey,
+      independenceKey:signal.independentKey,
+    }));
+  return fuseEvidence(fusionItems,coverageFamilies);
 }
 
 export function calculateVerdict(signals: EvidenceSignal[]): Verdict {
