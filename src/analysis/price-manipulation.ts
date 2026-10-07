@@ -21,6 +21,23 @@ export function analyzePriceHistory(input:PriceObservation[]):PriceManipulationF
       break;
     }
   }
+  let saleTransitions=0;
+  for(let i=1;i<rows.length;i++){
+    const wasSale=valid(rows[i-1]!.referencePrice)&&rows[i-1]!.referencePrice!>rows[i-1]!.price;
+    const isSale=valid(rows[i]!.referencePrice)&&rows[i]!.referencePrice!>rows[i]!.price;
+    if(wasSale!==isSale) saleTransitions++;
+  }
+  if(rows.length>=6&&saleTransitions>=4){
+    const spanDays=(Date.parse(rows.at(-1)!.at)-Date.parse(rows[0]!.at))/86400000;
+    if(spanDays>=2){
+      out.push({
+        id:'REPEATED_SALE_RESET',severity:'moderate',
+        title:'The sale keeps disappearing and coming back',
+        explanation:'The crossed-out price repeatedly vanished and returned across separate checks. That can make an ordinary price look temporarily urgent.',
+        observedValue:`${saleTransitions} sale-state changes across ${Math.round(spanDays)} day(s)`,
+      });
+    }
+  }
   const withReference=rows.filter(x=>valid(x.referencePrice)&&x.referencePrice>x.price);
   if(rows.length>=5&&withReference.length/rows.length>=.8){
     out.push({
