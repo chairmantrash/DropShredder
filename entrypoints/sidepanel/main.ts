@@ -666,10 +666,10 @@ fulfillmentCheck?.addEventListener('click',()=>{
           url:location.href,
         }),
       });
-      const page=result?.result as {text:string;url:string}|undefined;
-      if(!page?.text) throw new Error('Couldn’t find enough shipping information on this page to tell.');
+      const fulfillmentPage=result?.result as {text:string;url:string}|undefined;
+      if(!fulfillmentPage?.text) throw new Error('Couldn’t find enough shipping information on this page to tell.');
 
-      const observation=parseFulfillmentObservation(page.text);
+      const observation=parseFulfillmentObservation(fulfillmentPage.text);
       if(!observation.origin){
         status.textContent=observation.carrier
           ? `Carrier ${observation.carrier} detected, but no explicit shipment origin was found. No contradiction scored.`
@@ -682,7 +682,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
         origin:observation.origin,
         carrier:observation.carrier,
         routeText:observation.routeText,
-        source:page.url,
+        source:fulfillmentPage.url,
       });
       const added=contradictionEvidence(contradictions);
       const originInfo={
