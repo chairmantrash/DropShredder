@@ -8,7 +8,14 @@ export interface ReviewIntegrityItem {
   suspicion:number;
 }
 
-export interface ReviewComplaint {\n  id:string;\n  label:string;\n  count:number;\n  share:number;\n}\n\nexport interface ReviewIntegrityReport {
+export interface ReviewComplaint {
+  id:string;
+  label:string;
+  count:number;
+  share:number;
+}
+
+export interface ReviewIntegrityReport {
   total:number;
   rated:number;
   flagged:number;
@@ -17,6 +24,8 @@ export interface ReviewComplaint {\n  id:string;\n  label:string;\n  count:numbe
   flaggedPercent:number;
   displayedRating?:number;
   adjustedRating?:number;
+  lowStarCount:number;
+  commonComplaints:ReviewComplaint[];
   items:ReviewIntegrityItem[];
 }
 
@@ -32,13 +41,29 @@ function similarity(a:string,b:string):number{
   let hit=0;for(const x of aa)if(bb.has(x))hit++;
   return hit/(aa.size+bb.size-hit);
 }
-const positiveWords=/\\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\\b/gi;\nconst negativeWords=/\\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\\b/gi;\n\nconst incentive=[
+const positiveWords=/\\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\\b/gi;
+const negativeWords=/\\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\\b/gi;
+
+const incentive=[
   /free\s+(?:product|item|sample)/i,
   /received\s+(?:this|the\s+product)\s+(?:for\s+free|at\s+a\s+discount)/i,
   /discount\s+(?:code|in\s+exchange)/i,
   /in\s+exchange\s+for\s+(?:my\s+)?(?:honest\s+)?review/i,
 ];
-const complaints=[\n  {id:'breaks',label:'Broke quickly',patterns:[/broke|broken|fell apart|fall apart|snapped|cracked/i]},\n  {id:'quality',label:'Cheap / poor quality',patterns:[/cheap quality|poor quality|cheap material|flimsy|junk|poorly made/i]},\n  {id:'shipping',label:'Shipping took too long',patterns:[/never arrived|late delivery|shipping delay|took (?:forever|weeks|months)|slow shipping/i]},\n  {id:'wrong-item',label:'Wrong or different item',patterns:[/wrong item|wrong product|different product|not as described/i]},\n  {id:'refund',label:'Refund / return problems',patterns:[/refund|return refused|would not accept (?:the )?return|no refund/i]},\n  {id:'support',label:'Bad customer service',patterns:[/customer service|no response|never replied|won't respond|would not respond/i]},\n  {id:'fit',label:'Sizing / fit problems',patterns:[/too small|too large|too big|doesn't fit|does not fit|sizing/i]},\n  {id:'battery',label:'Battery problems',patterns:[/battery|won't hold (?:a )?charge|stopped charging|charging problem/i]},\n  {id:'overheat',label:'Overheating',patterns:[/overheat|too hot to touch|caught fire|smoke|burning smell/i]},\n  {id:'missing',label:'Missing parts',patterns:[/missing (?:part|piece|screw|accessory)|parts missing/i]},\n];\n\nconst categories=['necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes','lamp','charger','vacuum','blender','dress','jacket','ring','watch'];
+const complaints=[
+  {id:'breaks',label:'Broke quickly',patterns:[/broke|broken|fell apart|fall apart|snapped|cracked/i]},
+  {id:'quality',label:'Cheap / poor quality',patterns:[/cheap quality|poor quality|cheap material|flimsy|junk|poorly made/i]},
+  {id:'shipping',label:'Shipping took too long',patterns:[/never arrived|late delivery|shipping delay|took (?:forever|weeks|months)|slow shipping/i]},
+  {id:'wrong-item',label:'Wrong or different item',patterns:[/wrong item|wrong product|different product|not as described/i]},
+  {id:'refund',label:'Refund / return problems',patterns:[/refund|return refused|would not accept (?:the )?return|no refund/i]},
+  {id:'support',label:'Bad customer service',patterns:[/customer service|no response|never replied|won't respond|would not respond/i]},
+  {id:'fit',label:'Sizing / fit problems',patterns:[/too small|too large|too big|doesn't fit|does not fit|sizing/i]},
+  {id:'battery',label:'Battery problems',patterns:[/battery|won't hold (?:a )?charge|stopped charging|charging problem/i]},
+  {id:'overheat',label:'Overheating',patterns:[/overheat|too hot to touch|caught fire|smoke|burning smell/i]},
+  {id:'missing',label:'Missing parts',patterns:[/missing (?:part|piece|screw|accessory)|parts missing/i]},
+];
+
+const categories=['necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes','lamp','charger','vacuum','blender','dress','jacket','ring','watch'];
 
 export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):ReviewIntegrityReport{
   const usable=reviews.filter(r=>r.body?.trim()).slice(0,120);
@@ -64,7 +89,14 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   for(let i=0;i<usable.length;i++){
     const review=usable[i]!,text=norm((review.title??'')+' '+review.body),s=scores[i]!;
     if(incentive.some(p=>p.test(review.body))){s.score+=.35;s.flags.add('incentivized');}
-    if(review.verified===false){s.score+=.15;s.flags.add('unverified');}\n    if(typeof review.rating==='number'){\n      const positives=(text.match(positiveWords)??[]).length;\n      const negatives=(text.match(negativeWords)??[]).length;\n      if((review.rating>=4.5&&negatives>=2&&negatives>positives)||(review.rating<=2&&positives>=2&&positives>negatives)){\n        s.score+=.35;s.flags.add('rating-text-conflict');\n      }\n    }
+    if(review.verified===false){s.score+=.15;s.flags.add('unverified');}
+    if(typeof review.rating==='number'){
+      const positives=(text.match(positiveWords)??[]).length;
+      const negatives=(text.match(negativeWords)??[]).length;
+      if((review.rating>=4.5&&negatives>=2&&negatives>positives)||(review.rating<=2&&positives>=2&&positives>negatives)){
+        s.score+=.35;s.flags.add('rating-text-conflict');
+      }
+    }
     if(title){
       const mismatch=categories.some(term=>!title.includes(term)&&text.includes(term));
       if(mismatch){s.score+=.55;s.flags.add('wrong-product');}
@@ -79,7 +111,12 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   const displayedRating=rated.length?rated.reduce((a,x)=>a+(x.r.rating??0),0)/rated.length:undefined;
   const adjusted=rated.filter(x=>items[x.index]!.suspicion<.5);
   const adjustedRating=adjusted.length?adjusted.reduce((a,x)=>a+(x.r.rating??0),0)/adjusted.length:undefined;
-  const lowStar=usable.filter((r,index)=>typeof r.rating==='number' && r.rating<=2 && items[index]!.suspicion<.5);\n  const commonComplaints=complaints.map(group=>{\n    const count=lowStar.filter(r=>group.patterns.some(p=>p.test((r.title??'')+' '+r.body))).length;\n    return {id:group.id,label:group.label,count,share:lowStar.length?Math.round(count/lowStar.length*100):0};\n  }).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,5);\n  const total=usable.length,flagged=flaggedItems.length,passed=passedItems.length;
+  const lowStar=usable.filter((r,index)=>typeof r.rating==='number' && r.rating<=2 && items[index]!.suspicion<.5);
+  const commonComplaints=complaints.map(group=>{
+    const count=lowStar.filter(r=>group.patterns.some(p=>p.test((r.title??'')+' '+r.body))).length;
+    return {id:group.id,label:group.label,count,share:lowStar.length?Math.round(count/lowStar.length*100):0};
+  }).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,5);
+  const total=usable.length,flagged=flaggedItems.length,passed=passedItems.length;
   return {
     total,rated:rated.length,flagged,passed,
     passedPercent:total?Math.round(passed/total*100):0,
