@@ -6,6 +6,7 @@ import type { ProductSnapshot } from '../../src/types/product';
 import { clearObservationHistory, getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
 import { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
+import { reviewIntegrity } from '../../src/analysis/review-integrity';
 import type { ReviewSnapshot } from '../../src/types/review';
 import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
@@ -111,6 +112,18 @@ function renderReport(report: DropShredderReport): void {
   metric('Misleading claims',report.verdict.deceptionRisk.toUpperCase());
   metric('Store warning signs',report.verdict.merchantRisk.toUpperCase());
   metric('Review / sales tricks',report.verdict.manipulationRisk.toUpperCase());
+  if(report.reviewIntegrity?.total){
+    const review=report.reviewIntegrity;
+    metric('Reviews that passed our checks',`${review.passed}/${review.total} (${review.passedPercent}%)`);
+    if(review.displayedRating!==undefined) metric('Rating shown',review.displayedRating.toFixed(1));
+    if(review.adjustedRating!==undefined) metric('Rating after flagged reviews',review.adjustedRating.toFixed(1));
+    if(review.commonComplaints.length){
+      const note=document.createElement('div');
+      note.className='gate';
+      note.textContent=`Common low-star complaints: ${review.commonComplaints.map(item=>`${item.label} (${item.count})`).join(', ')}`;
+      summary.append(note);
+    }
+  }
   metric('Shipping headaches',report.verdict.fulfillmentRisk.toUpperCase());
   metric('Where it appears to come from',report.supplyChain?.label ?? 'UNKNOWN');
   metric('Who handles the payment',report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
@@ -490,8 +503,8 @@ async function scanActivePage(): Promise<void> {
     if(fingerprint.identifiers.length){
       evidence.push({
         id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
-        title:'Stable product identifiers recovered',
-        explanation:'Stable identifiers improve upstream matching and chronology checks. Their presence is informational, not negative evidence.',
+        title:'Product ID found',
+        explanation:'This ID can help us match the exact product on other listings. Finding one is not a warning by itself.',
         observedValue:fingerprint.identifiers.slice(0,6).join(', '),
         independentKey:'product-identifiers',
       });
@@ -542,8 +555,8 @@ async function scanActivePage(): Promise<void> {
         severity:'info',
         confidence:.95,
         weight:0,
-        title:'Does not appear to match Made in USA preference',
-        explanation:'The identified merchant/manufacturing/fulfillment/return chain includes material international components. This is a shopper preference notice, not evidence of wrongdoing.',
+        title:'Does not appear to match your Made in USA preference',
+        explanation:'Parts of the product, seller, shipping or return path appear to involve other countries. That is a preference note, not a warning by itself.',
         observedValue:supplyChain.label,
         independentKey:'made-in-usa-preference',
       });
@@ -561,6 +574,7 @@ async function scanActivePage(): Promise<void> {
       contradictions:[],
       verdict:calculateVerdict(evidence),
       supplyChain,
+      reviewIntegrity:result.reviews.length ? reviewIntegrity(result.reviews,result.product.title) : undefined,
     };
 
     try {
