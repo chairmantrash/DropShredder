@@ -1,17 +1,6 @@
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/deep-hunt/search-urls';
 
 const ROOT='dropshredder-root';
-let lastActiveWebTabId:number|undefined;
-
-function rememberWebTab(tab:chrome.tabs.Tab|undefined):void{
-  if(tab?.id && /^https?:\/\//i.test(tab.url ?? '')) lastActiveWebTabId=tab.id;
-}
-
-async function refreshActiveWebTab(windowId?:number):Promise<void>{
-  const tabs=await chrome.tabs.query(windowId===undefined?{active:true}:{active:true,windowId});
-  rememberWebTab(tabs.find(tab=>/^https?:\/\//i.test(tab.url ?? '')));
-}
-
 function createMenus():void {
   chrome.contextMenus.removeAll(()=>{
     chrome.contextMenus.create({id:ROOT,title:'DropShredder',contexts:['page','selection','image']});
@@ -36,25 +25,6 @@ export default defineBackground(() => {
   if (chrome.sidePanel?.setPanelBehavior) {
     void chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
   }
-
-  void refreshActiveWebTab();
-  chrome.tabs.onActivated.addListener(info=>void chrome.tabs.get(info.tabId).then(rememberWebTab).catch(()=>{}));
-  chrome.tabs.onUpdated.addListener((_tabId,change,tab)=>{if(change.status==='complete'||change.url) rememberWebTab(tab);});
-  chrome.windows.onFocusChanged.addListener(windowId=>{if(windowId!==chrome.windows.WINDOW_ID_NONE) void refreshActiveWebTab(windowId);});
-  chrome.runtime.onMessage.addListener((message,_sender,sendResponse)=>{
-    if(message?.type!=='dropshredder:get-active-web-tab') return;
-    void (async()=>{
-      if(lastActiveWebTabId){
-        try{
-          const tab=await chrome.tabs.get(lastActiveWebTabId);
-          if(/^https?:\/\//i.test(tab.url ?? '')){sendResponse({tabId:tab.id,url:tab.url});return;}
-        }catch{}
-      }
-      await refreshActiveWebTab();
-      sendResponse({tabId:lastActiveWebTabId});
-    })();
-    return true;
-  });
 
   chrome.runtime.onInstalled.addListener(createMenus);
   chrome.runtime.onStartup.addListener(createMenus);
