@@ -7,6 +7,7 @@ const bg=fs.readFileSync('entrypoints/background.ts','utf8');
 const history=fs.readFileSync('src/storage/history.ts','utf8');
 const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
 const images=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
+const renderer=fs.readFileSync('src/ui/report-renderer.ts','utf8');
 
 const requiredMain=[
   ['page text cap',/slice\(0,120000\)/],
@@ -18,6 +19,10 @@ const requiredMain=[
   ['search tab cap',/maxTabs=8/],
   ['same-site timeout',/AbortSignal\.timeout\(3500\)/],
 ];
+if(/function renderReport\([^)]*\)[\s\S]{2000,}/.test(main)) failures.push('sidepanel: report rendering grew back into the entrypoint');
+if(!/renderShopperReport/.test(main)) failures.push('sidepanel: extracted report renderer is not used');
+if(!/export function renderShopperReport/.test(renderer)) failures.push('report renderer: canonical renderer export missing');
+
 for(const [name,pattern] of requiredMain){
   if(!pattern.test(main)) failures.push(`sidepanel: missing ${name}`);
 }
