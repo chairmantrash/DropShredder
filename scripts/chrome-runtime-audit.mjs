@@ -11,16 +11,16 @@ const requireMatch=(text,re,message)=>{if(!re.test(text)) failures.push(message)
 const forbid=(text,re,message)=>{if(re.test(text)) failures.push(message);};
 
 requireMatch(config,/permissions:\s*\['scripting', 'storage', 'contextMenus', 'sidePanel'\]/,'manifest permission baseline drifted');
+requireMatch(config,/minimum_chrome_version:\\s*'133'/,'Chrome 133+ required for tab-scoped host access requests');
 requireMatch(config,/optional_host_permissions:\s*\['https:\/\/\*\/\*'\]/,'optional HTTPS host permission missing');
 forbid(config,/'activeTab'/,'activeTab must not be used as persistent side-panel access');
 forbid(config,/host_permissions\s*:/,'permanent host permissions are forbidden');
 
 requireMatch(panel,/chrome\.tabs\.query\(\{active:true,lastFocusedWindow:true\}\)/,'current tab must use active + lastFocusedWindow');
 forbid(panel,/currentWindow:true/,'side panel must not infer current browser window with currentWindow');
-requireMatch(panel,/chrome\.permissions\.contains\(\{origins:\[origin\]\}\)/,'scan must check exact-origin permission');
-requireMatch(panel,/chrome\.permissions\.request\(\{origins:\[origin\]\}\)/,'scan must request exact-origin permission');
-requireMatch(panel,/pageSafety\(tab\.url\)/,'scan must run page-safety gate');
-requireMatch(panel,/await ensurePageAccess\(tab\)/,'scan-like paths must gate injection on page access');
+requireMatch(panel,/chrome\.permissions\.addHostAccessRequest\(\{tabId:tab\.id\}\)/,'scan must use tab-scoped Chrome host access request');
+requireMatch(panel,/pageSafety\(page\.url\)/,'scan must run page-safety gate on authorized URL');
+requireMatch(panel,/await authorizedPage\(tab\)/,'scan-like paths must gate injection on actual authorized page access');
 requireMatch(panel,/chrome\.scripting\.executeScript/,'scanner must use scripting injection after permission gate');
 
 requireMatch(bg,/setPanelBehavior\(\{ openPanelOnActionClick: true \}\)/,'toolbar action must open/toggle side panel');
