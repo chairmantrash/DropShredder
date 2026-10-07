@@ -8,7 +8,7 @@ export default defineConfig({
     content_security_policy: {
       extension_pages: "script-src 'self'; object-src 'self';",
     },
-    permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', 'sidePanel'],
+    permissions: ['scripting', 'storage', 'contextMenus', 'sidePanel'],
     optional_host_permissions: ['https://*/*'],
     icons: {
       16: 'icon/16.png',
