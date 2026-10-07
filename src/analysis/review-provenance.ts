@@ -1,37 +1,6 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ReviewAnalysisInput, ReviewSnapshot } from '../types/review';
-import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity, reviewTokenSet } from './review-primitives';
-
-function duplicatePairs(reviews:ReviewSnapshot[]): {pairs:number; ratio:number} {
-  let pairs=0;
-  let eligible=0;
-  for(let i=0;i<reviews.length;i++){
-    for(let j=i+1;j<reviews.length;j++){
-      const left=reviews[i]?.body ?? '',right=reviews[j]?.body ?? '';
-      if(reviewTokenSet(left).size<4||reviewTokenSet(right).size<4) continue;
-      eligible++;
-      if(reviewTextSimilarity(left,right)>=0.72) pairs++;
-    }
-  }
-  return {pairs,ratio:eligible?pairs/eligible:0};
-}
-
-function maxWindowShare(reviews:ReviewSnapshot[],days:number):number {
-  const dates=reviews
-    .map(r=>r.date ? Date.parse(r.date) : NaN)
-    .filter(Number.isFinite)
-    .sort((a,b)=>a-b);
-  if(dates.length<5) return 0;
-  const windowMs=days*86400000;
-  let max=0;
-  let end=0;
-  for(let start=0;start<dates.length;start++){
-    if(end<start) end=start;
-    while(end<dates.length && dates[end]!-dates[start]!<=windowMs) end++;
-    max=Math.max(max,end-start);
-  }
-  return max/dates.length;
-}
+import { reviewDuplicatePairs, reviewHasIncentiveLanguage, reviewMaxWindowShare, reviewMentionsMismatchedCategory } from './review-primitives';
 
 function wrongProductHints(input:ReviewAnalysisInput): {count:number;category?:string} {
   const counts=new Map<string,number>();
@@ -63,8 +32,8 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
     }
   }
 
-  const burst3=maxWindowShare(reviews,3);
-  const burst7=maxWindowShare(reviews,7);
+  const burst3=reviewMaxWindowShare(reviews,3);
+  const burst7=reviewMaxWindowShare(reviews,7);
   if(reviews.length>=12 && (burst3>=0.35 || burst7>=0.55)){
     out.push({
       id:'REVIEW_DATE_BURST',family:'reviews',severity:'moderate',confidence:.72,weight:11,
@@ -75,7 +44,7 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
     });
   }
 
-  const dup=duplicatePairs(reviews.slice(0,80));
+  const dup=reviewDuplicatePairs(reviews,80);
   if(dup.pairs>=2 && dup.ratio>=0.025){
     out.push({
       id:'REVIEW_TEXT_DUPLICATION',family:'reviews',severity:dup.ratio>=0.08?'strong':'moderate',
