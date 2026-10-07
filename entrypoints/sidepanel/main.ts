@@ -93,15 +93,25 @@ toneMode?.addEventListener('change',()=>{
 });
 
 async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
-  const candidates=await chrome.tabs.query({active:true,lastFocusedWindow:true});
-  return candidates.find(tab=>Boolean(tab.id));
+  const [tab]=await chrome.tabs.query({active:true,lastFocusedWindow:true});
+  return tab?.id ? tab : undefined;
 }
 
 async function ensurePageAccess(tab:chrome.tabs.Tab):Promise<boolean>{
-  if(!tab.id || !tab.url) return false;
+  if(!tab.id) return false;
+  const [locationResult]=await chrome.scripting.executeScript({
+    target:{tabId:tab.id},
+    func:()=>location.href,
+  }).catch(()=>[]);
+  const pageUrl=locationResult?.result;
+  if(typeof pageUrl==='string' && /^https:\/\//i.test(pageUrl)) return true;
+
+  const candidates=await chrome.tabs.query({active:true,lastFocusedWindow:true});
+  const urlText=candidates.find(candidate=>candidate.id===tab.id)?.url;
+  if(!urlText) return false;
   let url:URL;
-  try{url=new URL(tab.url);}catch{return false;}
-  if(url.protocol!=='http:' && url.protocol!=='https:') return false;
+  try{url=new URL(urlText);}catch{return false;}
+  if(url.protocol!=='https:') return false;
   const origin=`${url.protocol}//${url.host}/*`;
   const hasAccess=await chrome.permissions.contains({origins:[origin]});
   if(hasAccess) return true;
