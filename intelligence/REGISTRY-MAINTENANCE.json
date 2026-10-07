@@ -92,6 +92,18 @@
         "false-positive regressions",
         "new site/platform coverage"
       ]
+    },
+    {
+      "id": "public-api-registry",
+      "path": "intelligence/public-api-registry.json",
+      "checks": [
+        "primary-source availability",
+        "access/cost status",
+        "authentication requirements",
+        "terms/redistribution changes",
+        "rate limits",
+        "false-positive semantics"
+      ]
     }
   ]
 }
