@@ -98,14 +98,14 @@ async function activeWebTab():Promise<chrome.tabs.Tab|undefined>{
   return tab?.id ? tab : undefined;
 }
 
-async function authorizedPage(tab:chrome.tabs.Tab):Promise<{url:string}|undefined>{
+async function authorizedPage(tab:chrome.tabs.Tab):Promise<{url:string;documentId:string}|undefined>{
   if(!tab.id) return undefined;
   try{
     const [probe]=await chrome.scripting.executeScript({
       target:{tabId:tab.id},
       func:()=>location.href,
     });
-    return typeof probe?.result==='string' ? {url:probe.result} : undefined;
+    return typeof probe?.result==='string' && probe.documentId ? {url:probe.result,documentId:probe.documentId} : undefined;
   }catch{
     if(chrome.permissions.addHostAccessRequest){
       await chrome.permissions.addHostAccessRequest({tabId:tab.id});
@@ -151,7 +151,7 @@ async function scanActivePage(): Promise<void> {
     }
 
     const [execution]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
+      target:{tabId:tab.id,documentIds:[page.documentId]},
       world:'ISOLATED',
       func:extractPageScan,
     });
@@ -591,7 +591,7 @@ policyCheck?.addEventListener('click',()=>{
       if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:{tabId:tab.id,documentIds:[page.documentId]},
         func:()=>{
           const policyLink=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
             .map(a=>({href:a.href,text:(a.innerText||'').replace(/\s+/g,' ').trim()}))
@@ -613,7 +613,7 @@ policyCheck?.addEventListener('click',()=>{
       }
 
       const [policyResult]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:{tabId:tab.id,documentIds:[page.documentId]},
         args:[policyUrl],
         func:async(url:string)=>{
           const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
@@ -660,7 +660,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
       if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:{tabId:tab.id,documentIds:[page.documentId]},
         func:()=>({
           text:(document.body?.innerText || '').replace(/\s+/g,' ').slice(0,50000),
           url:location.href,
