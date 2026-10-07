@@ -41,8 +41,8 @@ function similarity(a:string,b:string):number{
   let hit=0;for(const x of aa)if(bb.has(x))hit++;
   return hit/(aa.size+bb.size-hit);
 }
-const positiveWords=/\\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\\b/gi;
-const negativeWords=/\\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\\b/gi;
+const positiveWords=/\b(?:amazing|excellent|perfect|love|great|fantastic|best|wonderful|recommend)\b/gi;
+const negativeWords=/\b(?:broken|broke|terrible|awful|hate|refund|failed|failure|junk|useless|dangerous|disappointed)\b/gi;
 
 const incentive=[
   /free\s+(?:product|item|sample)/i,
