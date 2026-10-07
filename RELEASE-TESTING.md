@@ -117,3 +117,14 @@ Beta testers should report:
 - screenshots only after checking they contain no personal/account/payment information.
 
 A beta build may be distributed before the full site matrix is complete, but it must not be submitted to the public Chrome Web Store until the mandatory browser checks above pass.
+
+
+## Side-panel permission lifecycle — mandatory
+- Open a normal HTTPS product page, open DropShredder, and click CHECK THIS PRODUCT.
+- On a never-authorized origin, Chrome may request access to that site; granting it must allow the scan without reinstalling or changing extension settings.
+- The requested origin must be the active page only, never blanket all-sites access.
+- Switch to a different HTTPS origin while the side panel stays open; CHECK THIS PRODUCT must target the newly active tab and request that origin only if needed.
+- Return to an already-authorized origin; scanning must work without a redundant permission prompt.
+- Deny a site-access request; DropShredder must explain that access is needed and must not scan.
+- Revoke optional site access; the next scan must request the site again.
+- chrome://, extension pages, login/account, checkout and payment surfaces remain unscannable.
