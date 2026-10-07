@@ -9,7 +9,9 @@ export type EvidenceFamily =
   | 'catalog'
   | 'technology'
   | 'identity'
-  | 'claims';
+  | 'claims'
+  | 'quality'
+  | 'safety';
 
 export interface EvidenceSignal {
   id: string;
