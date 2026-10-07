@@ -34,6 +34,23 @@ if(Object.keys(pkg.dependencies ?? {}).length){
   warnings.push('Runtime dependencies exist; verify provenance, necessity, license and vulnerability status');
 }
 
+const duplicateArchitecture=[
+  ['src/analysis/product-fingerprint.ts','Duplicate product-fingerprint authority must not return'],
+];
+for(const [file,message] of duplicateArchitecture){
+  if(fs.existsSync(file)) errors.push(`${message}: ${file}`);
+}
+
+const evidenceEngine=fs.readFileSync('src/analysis/evidence-engine.ts','utf8');
+if(!/from '\.\/evidence-fusion'/.test(evidenceEngine) || !/export function fusionSummary/.test(evidenceEngine)){
+  errors.push('Canonical evidence engine is no longer bridged to independence-aware fusion');
+}
+
+const reviewProvenance=fs.readFileSync('src/analysis/review-provenance.ts','utf8');
+if(/function\s+(?:duplicatePairs|maxWindowShare)\s*\(/.test(reviewProvenance)){
+  errors.push('Review provenance reintroduced duplicate review-analysis primitives');
+}
+
 const trustpilot='src/reputation/trustpilot.ts';
 if(fs.existsSync(trustpilot)){
   const source=fs.readFileSync(trustpilot,'utf8');
