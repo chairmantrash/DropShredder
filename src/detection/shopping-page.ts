@@ -36,6 +36,7 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
   try{u=new URL(f.url);}catch{return no('general','Invalid URL');}
   if(u.protocol!=='https:' && u.protocol!=='http:') return no('general','Not a web page');
   const path=u.pathname.toLowerCase().replace(/\/+$/,'')||'/';
+  if(path==='/') return no('general','Store or website home page');
   const segments=path.split('/').filter(Boolean);
   const marketplaceDetail=/(?:^|\/)(?:dp|gp\/product)\/[a-z0-9]{10}(?:\/|$)/i.test(path)
     || /(?:^|\/)listing\/\d+(?:\/|$)/i.test(path)
