@@ -3,7 +3,9 @@ const SENSITIVE_PATH_PARTS=[
   'auth','oauth','payment','payments','billing','wallet','orders','order-history',
   'my-orders','addresses','address-book','subscriptions','manage-subscription',
   'cart','basket','customer','customers','profile','register','sign-up','signup',
-  'shipping-address','checkout-step','order-confirmation','confirm-order'
+  'shipping-address','checkout-step','order-confirmation','confirm-order',
+  'users','user','members','member','dashboard','myaccount','my-account',
+  'wishlist','wish-list','preferences','settings','personal','my-profile'
 ];
 
 export interface PageSafetyResult {
