@@ -54,7 +54,13 @@ export async function captureImageFingerprint(url:string):Promise<CapturedImageF
   }finally{
     void reader.cancel().catch(()=>{});
   }
-  const blob=new Blob(chunks,{type:response.headers.get('content-type') ?? 'image/jpeg'});
+  const buffer=new Uint8Array(total);
+  let offset=0;
+  for(const chunk of chunks){
+    buffer.set(chunk,offset);
+    offset+=chunk.byteLength;
+  }
+  const blob=new Blob([buffer.buffer],{type:response.headers.get('content-type') ?? 'image/jpeg'});
 
   const bytes=await blob.arrayBuffer();
   const sha256=await sha256Hex(bytes);
