@@ -28,8 +28,8 @@ export function extractPageScan():PageScanResult {
   const bounded=(value:string|undefined,limit:number):string|undefined=>value?.trim().slice(0,limit)||undefined;
 
         const meta=(selector:string):string|undefined =>
-          document.querySelector<HTMLMetaElement>(selector)?.content?.trim() || undefined;
-        const canonical=document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href || undefined;
+          bounded(document.querySelector<HTMLMetaElement>(selector)?.content,4000);
+        const canonical=bounded(document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href,2048);
 
         const jsonNodes: Record<string, unknown>[]=[];
         const walk=(value:unknown,depth=0):void=>{
@@ -115,7 +115,7 @@ export function extractPageScan():PageScanResult {
             visitedTextNodes++;
             const parent=node.parentElement;
             if(!parent || parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"]')) continue;
-            const value=(node.nodeValue||'').replace(/\\s+/g,' ').trim();
+            const value=(node.nodeValue||'').replace(/\s+/g,' ').trim();
             if(!value) continue;
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
             pagePieces.push(clipped);
@@ -126,7 +126,7 @@ export function extractPageScan():PageScanResult {
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
         const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
-          const haystack=(a.pathname+' '+(a.innerText||'')).toLowerCase();
+          const haystack=(a.pathname.slice(0,500)+' '+(a.innerText||'').slice(0,250)).toLowerCase();
           if(/about|our story|who we are/.test(haystack)) return 'about';
           if(/shipping|delivery/.test(haystack)) return 'shipping';
           if(/return|refund|exchange/.test(haystack)) return 'returns';
@@ -172,14 +172,14 @@ export function extractPageScan():PageScanResult {
         }
         const saleCards=cards.filter(card=>
           Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
-          || /\\b(?:sale|save\\s+\\d+%|\\d+%\\s+off)\\b/i.test((card.innerText||'').slice(0,1500))
+          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test((card.innerText||'').slice(0,1500))
         );
         const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
         const amazonSearchCards:AmazonSearchCard[]=amazonElements
           .map(card=>{
             const asin=(card.dataset.asin || '').trim().toUpperCase();
-            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\\s+/g,' ').trim().slice(0,500);
+            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim().slice(0,500);
             const image=card.querySelector<HTMLImageElement>('img.s-image, img[data-image-latency]');
             const priceText=card.querySelector<HTMLElement>('.a-price .a-offscreen')?.innerText || '';
             const price=Number(priceText.replace(/[^0-9.]/g,'')) || undefined;
