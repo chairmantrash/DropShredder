@@ -194,6 +194,14 @@ Application beyond the existing independence-key notes: represent observed page,
 
 No paper proofs were independently verified and no benchmark was reproduced. Dates above describe the retrieved versions, not claims of exhaustive literature coverage.
 
+## Publication and current-release checkpoint
+
+The owner explicitly authorized git publication for worker access after the initial research checkpoint. Published branch: `research/20261008-defensive-intelligence`; first verified remote commit: `6ed2a05c37aea00ef53a1e32242148ba1a7d35e7`. The GitHub-published tree matched the complete locally validated research tree. The branch also contains the prior 41-finding catalogue, nine prior paper records, source-presence archive and previously validated informational source/tooling additions. No further detector/source-registry change was made in this additional research pass.
+
+At publication verification, release/security-performance-hardening was `2f89ddaac2037dbeb78be5a39ae7254b68394a78`, while this research branch deliberately retains supplied build `1507b551` as its base. Read current release code and authority before integrating any candidate; do not overwrite the later release with this research tree. Current release AGENTS and CURRENT-STATE were re-read and retain the beta scope, deferred heavy features and real-Chrome requirement. PR #9 was verified open, draft and unmerged. No release branch or PR mutation was performed.
+
+Worker entry points: [research report](https://github.com/chairmantrash/DropShredder/blob/research/20261008-defensive-intelligence/brain/research/2026-10-08-RESEARCH-GAPS.md), [catalogue](https://github.com/chairmantrash/DropShredder/blob/research/20261008-defensive-intelligence/intelligence/research-gaps-catalogue-20261008.json). Follow-up publication-receipt commits may advance the branch; the SHA above records the first independently checked checkpoint.
+
 ## Resume protocol
 
 Each numbered finding includes public sources, limits and an application. Promote none directly into merchant risk scoring. The companion JSON catalogue indexes all 19 findings and preserves source-presence metadata, including retrieval failures. The original engineering continuation agent can use these files alongside the existing 41-finding research report; real Chrome QA remains environment-blocked. Research was checkpointed after each finding batch. The owner subsequently authorized repository publication of this research. See DS-RESEARCH-GAPS-20261008 for publication evidence. No new runtime feature or Chrome QA pass follows from publishing research.

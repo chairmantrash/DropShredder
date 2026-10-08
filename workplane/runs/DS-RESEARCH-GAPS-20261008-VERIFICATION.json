@@ -8,8 +8,18 @@
   "sourcePresenceRecords": 27,
   "browser_qa": "NOT_RUN_ENVIRONMENT_BLOCKED",
   "runtime_edits_this_pass": false,
-  "publication": "PENDING_REMOTE_VERIFICATION",
-  "report_sha256": "4a2e69b839502bb6c86f134968912ea298730d5a45cc22e547a7b88ee082e637",
+  "publication": "VERIFIED",
+  "report_sha256": "ee3e781e7a0c118d83b316600d4e5ecf08d4670621d59f4e07f2c1ac9f133079",
   "catalogue_sha256": "6b610eb334f09674e1f90e893ad8ebe8ff72513628a1253971972a023ee8b7c0",
-  "checkedAtUTC": "2026-10-08T09:35:20.590825+00:00"
+  "checkedAtUTC": "2026-10-08T09:40:11.994246+00:00",
+  "firstVerifiedRemoteCommit": "6ed2a05c37aea00ef53a1e32242148ba1a7d35e7",
+  "publishedTreeMatchesLocal": "f776e1daa55ba54e4a77ba27cee998014c412eb7",
+  "observedReleaseHead": "2f89ddaac2037dbeb78be5a39ae7254b68394a78",
+  "currentReleaseAuthorityReRead": true,
+  "pr9": {
+    "state": "open",
+    "draft": true,
+    "merged": false
+  },
+  "publicationMethod": "Authenticated GitHub API; ordinary shell push lacked credentials"
 }
