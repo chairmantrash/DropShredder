@@ -6,7 +6,7 @@ DropShredder is a local-first browser extension for investigating product proven
 
 ## Data DropShredder processes
 
-DropShredder only analyzes a page after a user explicitly asks it to scan or investigate that page. The scanner may process public commerce information visible on the active page, including:
+DropShredder has two modes: (1) manual full-page investigations on pages the user chooses; (2) optional automatic product alerts, enabled only after the user grants Chrome access to HTTPS sites. With automatic alerts on, a tiny local classifier checks permitted pages to identify individual product listings and runs a bounded local quick scan only when the page qualifies. Non-shopping, category/search, account and checkout pages show no alerts. A full scan and third-party research remain user-triggered. The scanner may process public commerce information visible on qualifying pages, including:
 - page URL/domain;
 - product title, description, price and structured product metadata;
 - product identifiers and specifications;
@@ -23,7 +23,7 @@ DropShredder refuses to scan known account, authentication, checkout, payment, b
 
 ## Local storage
 
-Investigation observations are stored locally in the browser using IndexedDB. Feature settings are stored in Chrome local storage.
+Investigation observations are stored locally in the browser using IndexedDB. Feature settings are stored in Chrome local storage. The temporary auto-toast result is not added to IndexedDB history until a full report is explicitly requested. A brief in-document list prevents duplicate toasts while navigating the same page.
 
 Local history is minimized before persistence:
 - URL query strings and fragments are removed;
@@ -49,7 +49,7 @@ The query/request is limited to what the selected feature needs, such as a merch
 
 Auto Source Hunt uses DropShredder's bundled source registry and local observation history. It does not upload the user's browsing history to a DropShredder server.
 
-External reputation research is explicit and user-triggered. DropShredder does not automatically sweep third-party review sites. Users can revoke optional site access from the side panel.
+Automatic product alerts never perform external network research or open search tabs. External reputation research is explicit and user-triggered. DropShredder does not automatically sweep third-party review sites. Users can revoke optional site access from the side panel.
 
 ## Data sharing and sale
 
@@ -69,14 +69,13 @@ An internal developer-only diagnostic build exists separately from the public re
 ## Permissions
 
 DropShredder requests only permissions used by its user-facing commerce-forensics workflow:
-- `activeTab`: temporary access to the page the user explicitly chooses to analyze;
-- `scripting`: execute the local user-requested page extractor and optional page warning stamp;
+- `scripting`: run bounded local extractors on user-authorized pages, register the optional auto-alert content script, and render optional warnings;
 - `storage`: local feature settings, short-lived caches and bounded local observation history;
 - `contextMenus`: explicit product/image/store investigation shortcuts;
 - `sidePanel`: the primary DropShredder interface;
-- optional HTTPS host access: declared so user-triggered image/public lookups can request only the specific origin needed at runtime.
+- optional HTTPS host access: site-specific grants for manual scans, image/public lookup origins and (only if selected) one-time broad HTTPS access to provide automatic shopping-page detection. Chrome shows the permission prompt before the broad access is granted. Turning off automatic alerts removes its broad host grant; the user can revoke extra site access anytime.
 
-There is no required all-sites host permission.
+There is **no required all-sites host permission** and no permanent all-sites content script. Auto-alerts use a packaged content script dynamically registered after the opt-in. With the option enabled, Chrome may execute its inexpensive screening on permitted HTTPS pages to decide whether they are shopping listings. Detection results are processed locally and not transmitted to the developer.
 
 ## Chrome Web Store Limited Use
 
