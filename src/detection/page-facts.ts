@@ -25,9 +25,14 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   const type=doc.querySelector<HTMLMetaElement>('meta[property="og:type"]')?.content?.toLowerCase();
   facts.ogProduct=type==='product' || type==='product.item';
   facts.structuredArticle=type==='article';
-  const jsonLd=doc.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]');
-  for(let i=0;i<Math.min(jsonLd.length,12);i++){
-    const raw=jsonLd.item(i)?.textContent??'';
+  // Work budget applies to input traversal as well as parsed outputs.
+  const scripts=doc.scripts;
+  let parsedScripts=0;
+  for(let i=0;i<Math.min(scripts.length,160) && parsedScripts<12;i++){
+    const script=scripts.item(i);
+    if(script?.type!=='application/ld+json') continue;
+    parsedScripts++;
+    const raw=script.textContent??'';
     if(!raw || raw.length>24_000) continue;
     try{
       const parsed=JSON.parse(raw) as unknown;
@@ -62,13 +67,16 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   ];
   let purchase=Boolean(doc.querySelector(purchaseSelectors.join(',')));
   if(!purchase){
-    const controls=doc.querySelectorAll('button,[role="button"],a[href]');
-    for(let i=0;i<Math.min(controls.length,90);i++){
-      const el=controls.item(i);
-      const phrase=(el?.getAttribute('aria-label')||el?.textContent||'').trim().slice(0,80);
-      if(/^(?:buy(?:\s+now)?|add to (?:cart|bag)|pre-?order|purchase|add to basket)(?:\s|$)/i.test(phrase)){
-        purchase=true;break;
+    const groups=[doc.getElementsByTagName('button'),doc.getElementsByTagName('a')];
+    for(const controls of groups){
+      for(let i=0;i<Math.min(controls.length,50);i++){
+        const el=controls.item(i);
+        const phrase=(el?.getAttribute('aria-label')||el?.textContent||'').trim().slice(0,80);
+        if(/^(?:buy(?:\s+now)?|add to (?:cart|bag)|pre-?order|purchase|add to basket)(?:\s|$)/i.test(phrase)){
+          purchase=true;break;
+        }
       }
+      if(purchase) break;
     }
   }
   facts.purchaseAction=purchase;
