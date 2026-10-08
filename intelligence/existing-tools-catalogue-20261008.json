@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-08",
+  "scope": "Existing tools versus DropShredder; primary-source review; no tool executed",
+  "entries": [
+    {
+      "id": "TOOL-001",
+      "name": "Fakespot / Firefox Review Checker",
+      "capability": "review reliability",
+      "status": "retired",
+      "depth": "Official shutdown announcement opened",
+      "sources": [
+        {
+          "url": "https://blog.mozilla.org/en/mozilla/building-whats-next/?pubDate=20250522",
+          "retrieval": "opened",
+          "ref": "turn47view3"
+        }
+      ],
+      "finding": "Mozilla announced Fakespot website/apps/extensions unavailable from 2025-07-01 and Firefox Review Checker ending 2025-06-10. Historical examples are not current integration candidates.",
+      "fit": "Exclude from live dependencies; retain historical UX comparison only.",
+      "license": "No reusable code or dataset examined.",
+      "followup": "Add availability checks to all provider registries; unavailable services must fail to unknown, never a negative product verdict.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-002",
+      "name": "Product BS Detector",
+      "capability": "product research / reviews / dropship claims",
+      "status": "source-inspected prototype",
+      "depth": "sidepanel.js and manifest.json fetched; LICENSE request returned 404",
+      "sources": [
+        {
+          "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/sidepanel.js",
+          "retrieval": "github-file",
+          "blobSha": "dd169f27b462e2f6f110c720851c7be19fe5effe"
+        },
+        {
+          "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/manifest.json",
+          "retrieval": "github-file",
+          "blobSha": "796b0c2c88301f93665ab525ba81b546592a7a23"
+        },
+        {
+          "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/LICENSE",
+          "retrieval": "404"
+        }
+      ],
+      "finding": "Code uses Gemini 2.0 Flash, stores a user API key locally, sends a truncated page title to Google, and renders model verdict/score/source_count without binding displayed claims to grounding citations. Error and parse-failure paths return score 0. Manifest requests all hosts. These are code observations, not executed browser failures.",
+      "fit": "Do not adopt hosted model, credentials, ungrounded grades or error-as-zero behavior. A locally stored key does not make inference local.",
+      "license": "README claims MIT in the discovery result; conventional LICENSE missing at checked path. Rights unresolved, not proven unlicensed.",
+      "followup": "Use as a negative-control design review: ambiguous title, changed tab, API failure and missing citations must yield unknown. Review current model support separately before any external prototype; none recommended for core.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-003",
+      "name": "ReviewMeta",
+      "capability": "review anomalies / adjusted rating",
+      "status": "methodology lead; live API unverified",
+      "depth": "Official homepage and historical methodology search excerpts; homepage open 403, guessed /api unavailable",
+      "sources": [
+        {
+          "url": "https://reviewmeta.com/?id=pro-WSTA0071.html",
+          "retrieval": "search-excerpt",
+          "ref": "turn45search3"
+        },
+        {
+          "url": "https://reviewmeta.com/blog/fakespot-vs-reviewmeta-for-analyzing-reviews/",
+          "retrieval": "search-excerpt; historical 2016",
+          "ref": "turn45search4"
+        },
+        {
+          "url": "https://reviewmeta.com",
+          "retrieval": "403"
+        },
+        {
+          "url": "https://reviewmeta.com/api",
+          "retrieval": "unavailable"
+        }
+      ],
+      "finding": "Official excerpts describe removing/downweighting reviews and showing an adjusted rating with individual tests; the older methodology includes timing and reviewer-profile signals. No current API, operational reliability, terms or independent ecommerce accuracy validation established.",
+      "fit": "Learn transparent per-test explanations; do not inherit a rating, query an assumed endpoint or claim current service functionality.",
+      "license": "Service/data reuse rights not verified.",
+      "followup": "Resolve actual API link, terms and supported stores before integration consideration. Separate reviewer-pattern anomalies from product quality; do not combine correlated tests as independent evidence.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-004",
+      "name": "Fake-Shop Detector (ÖIAT / AIT / X-Net)",
+      "capability": "merchant reputation",
+      "status": "privacy architecture documented",
+      "depth": "Official privacy policy opened; no extension execution or source audit",
+      "sources": [
+        {
+          "url": "https://www.fakeshop.at/en/about-us/privacy/",
+          "retrieval": "opened",
+          "ref": "turn47view2"
+        }
+      ],
+      "finding": "Known-shop judgments use a local curated cache refreshed at restart and every 24 hours. Optional unknown-site classification transmits the page URL to a server; policy describes IP/request logging retained 14 days. Keeping core local and offering server analysis are different data flows.",
+      "fit": "Useful precedent for a local curated baseline, explicit unknown and separate network consent. No inherited verdicts, protected dataset copying or passive browsing uploads.",
+      "license": "Dataset redistribution and extension code reuse rights not examined.",
+      "followup": "Evaluate dated, expiring, correction-capable entries with provenance; same third-party assessment appearing in several places remains one evidence lineage.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-005",
+      "name": "changedetection.io",
+      "capability": "price / scarcity / return-policy history",
+      "status": "documentation-inspected research-lab candidate",
+      "depth": "Primary repository README and repository license identification opened; implementation not audited",
+      "sources": [
+        {
+          "url": "https://github.com/dgtlmoon/changedetection.io",
+          "retrieval": "opened",
+          "ref": "turn48view2"
+        }
+      ],
+      "finding": "Project documents CSS/XPath/JSON filters, diff history, HTTP versus Playwright fetchers and price/restock extraction. Python/self-hosted operation is separate from its paid hosted service; June 2026 hosted AI features are not evidence all advertised behavior belongs to free core.",
+      "fit": "Potential offline research instrument for lawful public policy/price observations; not a Chrome dependency or zero-operating-cost backend. Prefer small local snapshot/diff concepts in DropShredder.",
+      "license": "Repository identifies Apache-2.0; exact license/NOTICE and dependency review still pending.",
+      "followup": "Controlled research comparisons must fix selected variant, currency, geography and observation time. Personalized/login/cart states and fluctuating stock cannot prove deceptive scarcity. No automatic authenticated monitoring or proxy evasion.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-006",
+      "name": "Distill",
+      "capability": "local page-change monitoring",
+      "status": "first-party documentation inspected",
+      "depth": "Official local/cloud docs and pricing search excerpts; no installed extension",
+      "sources": [
+        {
+          "url": "https://distill.io/docs/web-monitor/cloud-local-monitors/",
+          "retrieval": "search-excerpt",
+          "ref": "turn49search0"
+        },
+        {
+          "url": "https://distill.io/pricing/",
+          "retrieval": "search-excerpt",
+          "ref": "turn49search1"
+        }
+      ],
+      "finding": "Local monitors require the browser/device running and may open tabs; background mode is for static pages. Web-app monitors default to cloud. Pricing lists a free 25-monitor allowance including five cloud monitors; policy/account synchronization behavior not audited.",
+      "fit": "Useful independent baseline for explicit local observation history and concurrency controls. Five-second capability is not a suitable passive DropShredder default or a performance result.",
+      "license": "No permissive code/data reuse grant verified; API access not assumed free.",
+      "followup": "Evaluate explicit opt-in schedules, per-user observation scope, bounded workers and suspend/stop semantics; compare raw captured evidence rather than claiming persistent 24/7 history from an extension.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    }
+  ]
+}
