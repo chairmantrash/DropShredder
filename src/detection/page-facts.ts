@@ -84,7 +84,7 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   const price=doc.querySelector<HTMLElement>('[itemprop="price"],[data-price],.product-price,.price,[class*="price"],.a-price .a-offscreen,[class*="product-price"]');
   const metaPrice=doc.querySelector<HTMLMetaElement>('meta[property="product:price:amount"]');
   const priceText=(price?.textContent||metaPrice?.content||'').trim().slice(0,70);
-  facts.visiblePrice=/(?:[$€£¥]\s*\d|\d[\d,.]*\s*(?:USD|EUR|GBP|CAD|AUD)|\d[\d,.]*)/.test(priceText);
+  facts.visiblePrice=/(?:[$€£¥]\\s*\\d|\\d[\\d,.]*\\s*(?:USD|EUR|GBP|CAD|AUD))/i.test(priceText);
 
   // A title alone is not product identity. Require an individual product visual/detail section.
   facts.productDetail=Boolean(facts.title && (
