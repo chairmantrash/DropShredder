@@ -37,3 +37,16 @@ test('page-reading sidepanel actions share the authorized Chrome page transactio
  assert.match(source,/target:documentTarget\(page\)/);
  assert.doesNotMatch(source,/lastActiveWebTabId|dropshredder:get-active-web-tab/);
 });
+
+test('toast open works for both newly opened and already persistent side panels',async()=>{
+ const panel=await fs.readFile('entrypoints/sidepanel/main.ts','utf8');
+ const worker=await fs.readFile('entrypoints/background.ts','utf8');
+ assert.match(worker,/chrome\.storage\.session\.set\(\{\[AUTO_PANEL_INTENT\]:intent\}\)/);
+ assert.match(worker,/DS_AUTO_PANEL_READY/);
+ assert.match(worker,/chrome\.sidePanel\.open\(\{tabId:sender\.tab\.id\}\)/);
+ assert.match(panel,/chrome\.runtime\.onMessage\.addListener/);
+ assert.match(panel,/received\.type==='DS_AUTO_PANEL_READY'/);
+ assert.match(panel,/consumeAutoPanelIntent\(\)/);
+ assert.match(panel,/documentIds:\[value\.documentId\]/);
+ assert.match(panel,/Date\.now\(\)-value\.createdAt>15_000/);
+});
