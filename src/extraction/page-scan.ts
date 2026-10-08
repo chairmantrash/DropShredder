@@ -22,21 +22,35 @@ export interface PageScanResult {
  */
 export function extractPageScan():PageScanResult {
   const LIMITS={images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000} as const;
+  // These limits cap WORK as well as output. Slicing a giant DOM result afterwards is not a work limit.
+  const MAX_JSON_SCRIPTS=40, MAX_JSON_BYTES=60_000, MAX_JSON_NODES=120, MAX_JSON_DEPTH=8;
+  const MAX_TEXT_NODES=4500, MAX_ELEMENTS=9000, MAX_LINKS=1200;
+  const bounded=(value:string|undefined,limit:number):string|undefined=>value?.trim().slice(0,limit)||undefined;
 
         const meta=(selector:string):string|undefined =>
           document.querySelector<HTMLMetaElement>(selector)?.content?.trim() || undefined;
         const canonical=document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href || undefined;
 
         const jsonNodes: Record<string, unknown>[]=[];
-        const walk=(value:unknown):void=>{
-          if (Array.isArray(value)) { value.forEach(walk); return; }
-          if (!value || typeof value!=='object') return;
+        const walk=(value:unknown,depth=0):void=>{
+          if(depth>MAX_JSON_DEPTH || jsonNodes.length>=MAX_JSON_NODES) return;
+          if(Array.isArray(value)){
+            for(let i=0;i<Math.min(value.length,MAX_JSON_NODES);i++) walk(value[i],depth+1);
+            return;
+          }
+          if(!value || typeof value!=='object') return;
           const record=value as Record<string,unknown>;
           jsonNodes.push(record);
-          if (Array.isArray(record['@graph'])) walk(record['@graph']);
+          if (Array.isArray(record['@graph'])) walk(record['@graph'],depth+1);
         };
-        for (const script of document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')) {
-          try { walk(JSON.parse(script.textContent || 'null')); } catch {}
+        let jsonScripts=0;
+        for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts) && jsonScripts<MAX_JSON_SCRIPTS;i++){
+          const script=document.scripts.item(i);
+          if(script?.type!=='application/ld+json') continue;
+          jsonScripts++;
+          const input=script.textContent || '';
+          if(input.length>MAX_JSON_BYTES) continue;
+          try { walk(JSON.parse(input)); } catch {}
         }
         const product=jsonNodes.find(node=>{
           const t=node['@type'];
@@ -45,8 +59,8 @@ export function extractPageScan():PageScanResult {
         const asRecord=(v:unknown):Record<string,unknown>|undefined =>
           v && typeof v==='object' && !Array.isArray(v) ? v as Record<string,unknown> : undefined;
         const first=(v:unknown):string|undefined=>{
-          if (typeof v==='string') return v.trim() || undefined;
-          if (Array.isArray(v)) return v.find(x=>typeof x==='string') as string|undefined;
+          if (typeof v==='string') return bounded(v,4000);
+          if (Array.isArray(v)) return bounded(v.find(x=>typeof x==='string') as string|undefined,4000);
           return undefined;
         };
         const offer=asRecord(Array.isArray(product?.offers)?product?.offers[0]:product?.offers);
@@ -58,18 +72,18 @@ export function extractPageScan():PageScanResult {
         const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
         const imageValue=product?.image;
         const structuredImages=Array.isArray(imageValue)
-          ? imageValue.filter((x):x is string=>typeof x==='string')
-          : typeof imageValue==='string'?[imageValue]:[];
+          ? imageValue.slice(0,60).filter((x):x is string=>typeof x==='string').map(x=>x.slice(0,2048))
+          : typeof imageValue==='string'?[imageValue.slice(0,2048)]:[];
         const pageImages:string[]=[];
         for(let i=0;i<Math.min(document.images.length,LIMITS.images);i++){
           const image=document.images.item(i);
           const src=image?.currentSrc || image?.src;
-          if(src) pageImages.push(src);
+          if(src) pageImages.push(src.slice(0,2048));
         }
         const scriptSources:string[]=[];
         for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts);i++){
           const src=document.scripts.item(i)?.src;
-          if(src) scriptSources.push(src);
+          if(src) scriptSources.push(src.slice(0,2048));
         }
         const amazonAsin=/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})(?:[/?]|$)/i.exec(location.pathname)?.[1]?.toUpperCase();
         const amazonSeller=(
@@ -90,7 +104,25 @@ export function extractPageScan():PageScanResult {
           if(name && value && Object.keys(specifications).length<40) specifications[name]=value;
         }
 
-        const pageText=(document.body?.innerText || '').slice(0,LIMITS.pageText);
+        // A bounded text-node walk avoids materializing the entire body's innerText on huge pages.
+        const pagePieces:string[]=[];
+        let pageChars=0, visitedTextNodes=0;
+        if(document.body){
+          const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+          while(visitedTextNodes<MAX_TEXT_NODES && pageChars<LIMITS.pageText){
+            const node=textWalker.nextNode();
+            if(!node) break;
+            visitedTextNodes++;
+            const parent=node.parentElement;
+            if(!parent || parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"]')) continue;
+            const value=(node.nodeValue||'').replace(/\\s+/g,' ').trim();
+            if(!value) continue;
+            const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
+            pagePieces.push(clipped);
+            pageChars+=clipped.length+1;
+          }
+        }
+        const pageText=pagePieces.join(' ').slice(0,LIMITS.pageText);
         const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
 
         const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
@@ -101,52 +133,68 @@ export function extractPageScan():PageScanResult {
           if(/contact/.test(haystack)) return 'contact';
           return undefined;
         };
-        const siteLinks=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
-          .map(a=>{
-            try{
-              const url=new URL(a.href,location.href);
-              const kind=classifyLink(a);
-              return url.origin===location.origin && kind ? {kind,url:url.href} : undefined;
-            }catch{return undefined;}
-          })
-          .filter((v):v is {kind:'about'|'shipping'|'returns'|'contact';url:string}=>Boolean(v))
-          .filter((v,i,arr)=>arr.findIndex(x=>x.kind===v.kind)===i)
-          .slice(0,4);
+        const siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>=[];
+        const seenLinkKinds=new Set<string>();
+        const anchors=document.getElementsByTagName('a');
+        for(let i=0;i<Math.min(anchors.length,MAX_LINKS) && siteLinks.length<4;i++){
+          const a=anchors.item(i);
+          if(!a?.href) continue;
+          try{
+            const url=new URL(a.href,location.href);
+            const kind=classifyLink(a);
+            if(url.origin===location.origin && kind && !seenLinkKinds.has(kind) && url.href.length<=2048){
+              seenLinkKinds.add(kind);
+              siteLinks.push({kind,url:url.href});
+            }
+          }catch{}
+        }
 
         const cardSelectors=[
           '[class*="product-card"]','[class*="product_card"]','[class*="product-item"]',
           '[class*="product_item"]','[data-product-id]','li[class*="product"]'
         ];
-        const cards=[...new Set(cardSelectors.flatMap(selector=>[...document.querySelectorAll<HTMLElement>(selector)]))]
-          .filter(card=>card.innerText.trim().length>0)
-          .slice(0,LIMITS.cards);
+        const cards:HTMLElement[]=[];
+        const amazonElements:HTMLElement[]=[];
+        const reviewElements:HTMLElement[]=[];
+        if(document.body){
+          const elementWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_ELEMENT);
+          let visitedElements=0;
+          const cardSelector=cardSelectors.join(',');
+          while(visitedElements<MAX_ELEMENTS){
+            const element=elementWalker.nextNode();
+            if(!element) break;
+            visitedElements++;
+            if(!(element instanceof HTMLElement)) continue;
+            if(cards.length<LIMITS.cards && element.matches(cardSelector)) cards.push(element);
+            if(amazonElements.length<LIMITS.amazonCards && element.matches('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')) amazonElements.push(element);
+            if(reviewElements.length<LIMITS.reviews && element.matches('[data-hook="review"]')) reviewElements.push(element);
+          }
+        }
         const saleCards=cards.filter(card=>
           Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
-          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(card.innerText)
+          || /\\b(?:sale|save\\s+\\d+%|\\d+%\\s+off)\\b/i.test((card.innerText||'').slice(0,1500))
         );
         const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
-        const amazonSearchCards:AmazonSearchCard[]=[...document.querySelectorAll<HTMLElement>('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')]
-          .slice(0,LIMITS.amazonCards)
+        const amazonSearchCards:AmazonSearchCard[]=amazonElements
           .map(card=>{
             const asin=(card.dataset.asin || '').trim().toUpperCase();
-            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim();
+            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\\s+/g,' ').trim().slice(0,500);
             const image=card.querySelector<HTMLImageElement>('img.s-image, img[data-image-latency]');
             const priceText=card.querySelector<HTMLElement>('.a-price .a-offscreen')?.innerText || '';
             const price=Number(priceText.replace(/[^0-9.]/g,'')) || undefined;
             return {
               asin,
               title,
-              imageUrl:image?.currentSrc || image?.src,
+              imageUrl:(image?.currentSrc || image?.src)?.slice(0,2048),
               price,
             };
           })
           .filter(card=>/^[A-Z0-9]{10}$/.test(card.asin) && Boolean(card.title));
 
-        const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
-          .slice(0,LIMITS.reviews)
+        const reviews=reviewElements
           .map((review,index)=>{
-            const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim();
+            const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim().slice(0,4000);
             const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
             const ratingMatch=ratingText.match(/([1-5](?:\.\d)?)/);
             return {
@@ -188,26 +236,26 @@ export function extractPageScan():PageScanResult {
             claims:[],
             specifications,
             pageSignals:[
-              ...(('Shopify' in window || [...document.scripts].some(s=>s.src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
+              ...(('Shopify' in window || scriptSources.some(src=>src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
                 ? ['platform:shopify'] : []),
-              ...((document.body?.classList.contains('woocommerce') || [...document.scripts].some(s=>/wc-(?:cart|checkout|add-to-cart)/i.test(s.src)))
+              ...((document.body?.classList.contains('woocommerce') || scriptSources.some(src=>/wc-(?:cart|checkout|add-to-cart)/i.test(src)))
                 ? ['platform:woocommerce'] : []),
-              ...(([...document.scripts].some(s=>s.src.includes('bigcommerce.com')) || document.querySelector('[data-content-region]'))
+              ...((scriptSources.some(src=>src.includes('bigcommerce.com')) || document.querySelector('[data-content-region]'))
                 ? ['platform:bigcommerce'] : []),
               ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
                 ? ['platform:magento'] : []),
-              ...(([...document.scripts].some(s=>/myshopline\.com|shoplineapp\.com/i.test(s.src))
-                || [...document.images].some(i=>/myshopline\.com/i.test(i.currentSrc||i.src))
+              ...((scriptSources.some(src=>/myshopline\.com|shoplineapp\.com/i.test(src))
+                || pageImages.some(src=>/myshopline\.com/i.test(src))
                 || document.querySelector('link[href*="myshopline.com"], meta[content*="SHOPLINE"]'))
                 ? ['platform:shopline'] : []),
-              ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
+              ...(document.querySelector('#looxReviews, .loox-rating') || scriptSources.some(src=>src.includes('loox.io/widget/loox.js'))
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
                 ? ['review-platform:judgeme'] : []),
-              ...([...document.scripts].some(s=>s.src.includes('track123.com/track123-widget.min.js') || s.src.includes('shp.track123.com/tracking-page/build/widget.min.js'))
+              ...(scriptSources.some(src=>src.includes('track123.com/track123-widget.min.js') || src.includes('shp.track123.com/tracking-page/build/widget.min.js'))
                 || document.querySelector('#track123-tracking-widget, track123-tracking-widget')
                 ? ['tracking-platform:track123'] : []),
-              ...([...document.scripts].some(s=>s.src.includes('parcelpanel.com/assets/tracking/track-page.js') || s.src.includes('shopify-edd.parcelpanel.com/loader.js'))
+              ...(scriptSources.some(src=>src.includes('parcelpanel.com/assets/tracking/track-page.js') || src.includes('shopify-edd.parcelpanel.com/loader.js'))
                 || document.querySelector('#pp-tracking-page-app, #pp-tracking-shop, parcelpanel-edd')
                 ? ['tracking-platform:parcelpanel'] : []),
             ],
@@ -222,7 +270,15 @@ export function extractPageScan():PageScanResult {
             source:'Store-hosted structured reviews',
           } : undefined,
           scriptSources,
-          htmlSignature:(document.head?.innerHTML || '').slice(0,LIMITS.htmlSignature)+' '+(document.body?.className || ''),
+          htmlSignature:(()=>{
+            const parts:string[]=[];
+            const head=document.head;
+            if(head) for(let i=0;i<Math.min(head.children.length,100);i++){
+              const item=head.children.item(i);
+              if(item) parts.push(item.outerHTML.slice(0,500));
+            }
+            return parts.join(' ').slice(0,LIMITS.htmlSignature)+' '+(document.body?.className || '').slice(0,500);
+          })(),
           amazonSearchCards,
         };
       
