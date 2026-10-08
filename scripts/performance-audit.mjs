@@ -18,8 +18,11 @@ const requiredMain=[
 const requiredScanner=[
   ['central scan budget',/const LIMITS=\{images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000\}/],
   ['page text cap',/slice\(0,LIMITS\.pageText\)/],
-  ['visible review cap',/\.slice\(0,LIMITS\.reviews\)/],
-  ['Amazon result cap',/\.slice\(0,LIMITS\.amazonCards\)/],
+  ['visible review work cap',/reviewElements\.length<LIMITS\.reviews/],
+  ['Amazon result work cap',/amazonElements\.length<LIMITS\.amazonCards/],
+  ['bounded element traversal',/visitedElements<MAX_ELEMENTS/],
+  ['bounded text-node traversal',/visitedTextNodes<MAX_TEXT_NODES/],
+  ['bounded structured-data input',/input\.length>MAX_JSON_BYTES/],
   ['image DOM cap',/Math\.min\(document\.images\.length,LIMITS\.images\)/],
   ['script DOM cap',/Math\.min\(document\.scripts\.length,LIMITS\.scripts\)/],
 ];
@@ -35,6 +38,7 @@ for(const [name,pattern] of requiredMain){
 for(const [name,pattern] of requiredScanner){
   if(!pattern.test(scanner)) failures.push(`page scanner: missing ${name}`);
 }
+if(/document\.body\?\.innerText|document\.head\?\.innerHTML/.test(scanner)) failures.push('scanner: output slice is not a bound on DOM traversal or serialization');
 if(!/maxTabs=8/.test(bg)) failures.push('background: missing context-menu search-tab cap');
 if(/\.getAll\s*\(/.test(history)) failures.push('history: unbounded IndexedDB getAll() is forbidden');
 if(!/MAX_OBSERVATIONS=2000/.test(history)) failures.push('history: 2,000-record cap missing');
