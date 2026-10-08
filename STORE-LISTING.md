@@ -2,7 +2,7 @@
 
 ## Single purpose
 
-DropShredder helps shoppers investigate whether online products are mass-resold/dropshipped, deceptively presented, associated with relevant merchant-risk patterns, or part of a commodity clone network. It analyzes the commerce page the user explicitly chooses and builds an explainable evidence report.
+DropShredder helps shoppers investigate whether online products are mass-resold/dropshipped, deceptively presented, associated with relevant merchant-risk patterns, or part of a commodity clone network. It offers optional automatic quick checks on real product listings, followed by a user-click full evidence report. Automatic checks require explicit Chrome HTTPS site-access consent.
 
 ## Short description
 
@@ -55,10 +55,10 @@ Optional site permissions can also be revoked from the side panel.
 
 ## Performance model
 
-Ordinary browsing is passive: DropShredder does not continuously crawl pages or run a background DOM scanner.
+There is no continuous crawling, timer-based page sampling, or always-on background forensic worker. One lightweight DOM/structured-data gate runs on explicitly permitted sites when the automatic-alert option is enabled; ordinary browsing receives no toast.
 
-A scan begins only after a user action. Work is bounded:
-- page text capped at 120,000 characters;
+With automatic alerts enabled by the user, a small classifier runs only on permitted HTTPS documents, abstains on non-product or sensitive pages, and performs a bounded local quick scan only on qualifying product listings. No passive third-party lookups occur; the full forensic and public-source check remains user-triggered. Work is bounded:
+- page text capped at 100,000 characters in full scan;
 - product/catalog/review/DOM collections capped;
 - same-site policy/about/contact enrichment limited to four pages and run concurrently;
 - public reputation/RDAP checks cached and time-bounded;
@@ -72,11 +72,8 @@ Professional is the default public tone. Users may choose Aggressive or Nuclear 
 
 ## Permission justifications
 
-### activeTab
-Temporary access to the page the user deliberately asks DropShredder to inspect. No permanent all-sites page access is required.
-
 ### scripting
-Runs the bounded extractor and optional dismissible warning stamp after a user action.
+Runs manual bounded extraction after user action, and registers an opt-in ISOLATED-world product detector after consent.
 
 ### storage
 Stores local settings, short-lived public-lookup caches and bounded local observation history.
@@ -88,7 +85,7 @@ Provides explicit product/image/store investigation shortcuts.
 Hosts the primary DropShredder interface.
 
 ### optional HTTPS host access
-Declared only so explicitly selected image/public lookup features can request the specific origin they need at runtime. These permissions are not granted at install time and can be revoked by the user.
+Supports narrow manual site/image/public lookup requests. Automatic alerts require a distinct opt-in to broad HTTPS host access; they perform local on-page screening only, not remote research. The user can disable auto alerts and revoke optional access.
 
 ## Data-use declaration
 
