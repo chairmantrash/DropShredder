@@ -243,6 +243,7 @@ async function scanActivePage(): Promise<void> {
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
           target:documentTarget(page),
+          world:'ISOLATED',
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
             const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
@@ -255,8 +256,22 @@ async function scanActivePage(): Promise<void> {
                 if(!response.ok) return undefined;
                 const length=Number(response.headers.get('content-length') || 0);
                 if(length>2_000_000) return undefined;
-                const html=await response.text();
-                if(html.length>2_000_000) return undefined;
+                if(new URL(response.url).origin!==location.origin || !response.body) return undefined;
+                const reader=response.body.getReader();
+                const decoder=new TextDecoder();
+                let html='',size=0;
+                try{
+                  while(true){
+                    const {done,value}=await reader.read();
+                    if(done) break;
+                    size+=value.byteLength;
+                    if(size>2_000_000) return undefined;
+                    html+=decoder.decode(value,{stream:true});
+                  }
+                  html+=decoder.decode();
+                }finally{
+                  void reader.cancel().catch(()=>{});
+                }
                 const doc=new DOMParser().parseFromString(html,'text/html');
                 const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
                 return text ? {...link,text} : undefined;
@@ -651,16 +666,17 @@ policyCheck?.addEventListener('click',()=>{
       const [result]=await chrome.scripting.executeScript({
         target:documentTarget(page),
         func:()=>{
-          const policyLink=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
-            .map(a=>({href:a.href,text:(a.innerText||'').replace(/\s+/g,' ').trim()}))
-            .find(item=>{
-              try{
-                const url=new URL(item.href,location.href);
-                if(url.origin!==location.origin) return false;
-                return /return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+item.text);
-              }catch{return false;}
-            });
-          return policyLink?.href;
+          const anchors=document.getElementsByTagName('a');
+          for(let i=0;i<Math.min(anchors.length,1200);i++){
+            const a=anchors.item(i);
+            if(!a?.href) continue;
+            try{
+              const url=new URL(a.href,location.href);
+              if(url.origin!==location.origin || url.href.length>2048) continue;
+              if(/return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+(a.innerText||'').slice(0,250))) return url.href;
+            }catch{}
+          }
+          return undefined;
         },
       });
 
@@ -676,7 +692,23 @@ policyCheck?.addEventListener('click',()=>{
         func:async(url:string)=>{
           const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
           if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
-          const html=await response.text();
+          const length=Number(response.headers.get('content-length')||0);
+          if(length>2_000_000 || new URL(response.url).origin!==location.origin || !response.body) return undefined;
+          const reader=response.body.getReader();
+          const decoder=new TextDecoder();
+          let html='',size=0;
+          try{
+            while(true){
+              const {done,value}=await reader.read();
+              if(done) break;
+              size+=value.byteLength;
+              if(size>2_000_000) return undefined;
+              html+=decoder.decode(value,{stream:true});
+            }
+            html+=decoder.decode();
+          }finally{
+            void reader.cancel().catch(()=>{});
+          }
           const doc=new DOMParser().parseFromString(html,'text/html');
           return (doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
         },
@@ -717,8 +749,23 @@ fulfillmentCheck?.addEventListener('click',()=>{
 
       const [result]=await chrome.scripting.executeScript({
         target:documentTarget(page),
+        world:'ISOLATED',
         func:()=>({
-          text:(document.body?.innerText || '').replace(/\s+/g,' ').slice(0,50000),
+          text:(()=>{
+            if(!document.body) return '';
+            const pieces:string[]=[];
+            const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+            let nodes=0,chars=0;
+            while(nodes<3000 && chars<50000){
+              const node=walker.nextNode();
+              if(!node) break;
+              nodes++;
+              if(node.parentElement?.closest('script,style,input,textarea,[contenteditable="true"],[hidden]')) continue;
+              const value=(node.nodeValue||'').replace(/\s+/g,' ').trim().slice(0,1000);
+              if(value){pieces.push(value);chars+=value.length+1;}
+            }
+            return pieces.join(' ').slice(0,50000);
+          })(),
           url:location.href,
         }),
       });
