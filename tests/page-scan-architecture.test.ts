@@ -22,6 +22,13 @@ test('scanner centralizes bounded expensive collection budgets',async()=>{
  assert.match(scanner,/const LIMITS=\{images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000\}/);
  assert.match(scanner,/Math\.min\(document\.images\.length,LIMITS\.images\)/);
  assert.match(scanner,/Math\.min\(document\.scripts\.length,LIMITS\.scripts\)/);
- assert.match(scanner,/\.slice\(0,LIMITS\.reviews\)/);
+ assert.match(scanner,/reviewElements\.length<LIMITS\.reviews/);
+ assert.match(scanner,/visitedElements<MAX_ELEMENTS/);
+ assert.match(scanner,/visitedTextNodes<MAX_TEXT_NODES/);
+ assert.match(scanner,/jsonScripts<MAX_JSON_SCRIPTS/);
+ assert.match(scanner,/input\.length>MAX_JSON_BYTES/);
+ assert.match(scanner,/Math\.min\(anchors\.length,MAX_LINKS\)/);
+ assert.doesNotMatch(scanner,/document\.body\?\.innerText|document\.head\?\.innerHTML/);
+ assert.doesNotMatch(scanner,/\.\.\.document\.scripts|\.\.\.document\.images|querySelectorAll<HTMLAnchorElement>/);
  assert.match(scanner,/\.slice\(0,LIMITS\.pageText\)/);
 });
