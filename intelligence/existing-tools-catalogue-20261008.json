@@ -503,6 +503,11 @@
           "url": "https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/LICENSE",
           "retrieval": "github-file",
           "blobSha": "42c23b2103346d5439dd72582ed6d4a0d8d7b27b"
+        },
+        {
+          "url": "https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/README.md",
+          "retrieval": "github-file",
+          "blobSha": "ee895b20a09f93b28008fd96ed027b6f6bbc9806"
         }
       ],
       "finding": "Python/C++ fuzzy string matching provides several metrics rather than an entity resolver. Repository notes preprocessing behavior changed in v3: case/whitespace/punctuation normalization is not automatic by default. Algorithm/normalizer versions affect comparable scores.",
@@ -550,6 +555,405 @@
       "riskWeight": 0,
       "integration": "research-only; no runtime change",
       "executed": false
+    }
+  ],
+  "sourcePresence": [
+    {
+      "toolId": "TOOL-001",
+      "checkedAt": "2026-10-08",
+      "url": "https://blog.mozilla.org/en/mozilla/building-whats-next/?pubDate=20250522",
+      "retrieval": "opened",
+      "ref": "turn47view3",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-002",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/sidepanel.js",
+      "retrieval": "github-file",
+      "blobSha": "dd169f27b462e2f6f110c720851c7be19fe5effe",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-002",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/manifest.json",
+      "retrieval": "github-file",
+      "blobSha": "796b0c2c88301f93665ab525ba81b546592a7a23",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-002",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/dynamicwebpaige/product-bs-detector/blob/main/LICENSE",
+      "retrieval": "404",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-003",
+      "checkedAt": "2026-10-08",
+      "url": "https://reviewmeta.com/?id=pro-WSTA0071.html",
+      "retrieval": "search-excerpt",
+      "ref": "turn45search3",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-003",
+      "checkedAt": "2026-10-08",
+      "url": "https://reviewmeta.com/blog/fakespot-vs-reviewmeta-for-analyzing-reviews/",
+      "retrieval": "search-excerpt; historical 2016",
+      "ref": "turn45search4",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-003",
+      "checkedAt": "2026-10-08",
+      "url": "https://reviewmeta.com",
+      "retrieval": "403",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-003",
+      "checkedAt": "2026-10-08",
+      "url": "https://reviewmeta.com/api",
+      "retrieval": "unavailable",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-004",
+      "checkedAt": "2026-10-08",
+      "url": "https://www.fakeshop.at/en/about-us/privacy/",
+      "retrieval": "opened",
+      "ref": "turn47view2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-005",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/dgtlmoon/changedetection.io",
+      "retrieval": "opened",
+      "ref": "turn48view2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-005",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/master/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "a6e09a45199d495dd9ff687399fb4835acb0b843",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-006",
+      "checkedAt": "2026-10-08",
+      "url": "https://distill.io/docs/web-monitor/cloud-local-monitors/",
+      "retrieval": "search-excerpt",
+      "ref": "turn49search0",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-006",
+      "checkedAt": "2026-10-08",
+      "url": "https://distill.io/pricing/",
+      "retrieval": "search-excerpt",
+      "ref": "turn49search1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-007",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/openfoodfacts/open-prices",
+      "retrieval": "opened",
+      "ref": "turn48view1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-007",
+      "checkedAt": "2026-10-08",
+      "url": "https://openfoodfacts.github.io/open-prices/guides/data/",
+      "retrieval": "opened",
+      "ref": "turn53view0",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-007",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/openfoodfacts/open-prices/blob/HEAD/API.md",
+      "retrieval": "github-file",
+      "blobSha": "25e04f9f0e203ceae6d18624c1863fc4c36d21dd",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-007",
+      "checkedAt": "2026-10-08",
+      "url": "https://huggingface.co/datasets/openfoodfacts/open-prices",
+      "retrieval": "primary search-excerpt",
+      "ref": "turn52search27",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-008",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/gildas-lormeau/SingleFile",
+      "retrieval": "opened",
+      "ref": "turn50view0",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-008",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/gildas-lormeau/SingleFile/blob/HEAD/privacy.md",
+      "retrieval": "github-file",
+      "blobSha": "c395807662481a448dd0a4e70968c01497924ef9",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-008",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/gildas-lormeau/SingleFile/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-009",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/scrapinghub/extruct",
+      "retrieval": "opened",
+      "ref": "turn50view1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-009",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/scrapinghub/extruct/blob/HEAD/README.rst",
+      "retrieval": "github-file",
+      "blobSha": "01595119775f16f23ce1cb2e8ea32da499ae0428",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-009",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/scrapinghub/extruct/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "737fbfaae515cd1f90c361857a7bca399aface65",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-010",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/README.md",
+      "retrieval": "github-file",
+      "blobSha": "fc359c8607797deb960c9f5975b9060fe0dc09bd",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-010",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-010",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/docs/research/OSS-FINAL-CORRECTNESS.md",
+      "retrieval": "github-file",
+      "blobSha": "d80991d73af590bbe2e6ebca15b8412c491fecac",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-011",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Lissy93/web-check",
+      "retrieval": "opened",
+      "ref": "turn54view0",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-011",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Lissy93/web-check/blob/HEAD/.github/README.md",
+      "retrieval": "github-file",
+      "blobSha": "704e9cc5f17c6360f079feeaa9e1b28c1a740c0c",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-011",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Lissy93/web-check/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "bee7ddc03c90cc69d10685c0b361facccac675bf",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-012",
+      "checkedAt": "2026-10-08",
+      "url": "https://urlscan.io/docs/api/",
+      "retrieval": "opened",
+      "ref": "turn54view1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-013",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/idealo/imagededup",
+      "retrieval": "opened",
+      "ref": "turn51view2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-013",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/idealo/imagededup/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "3ed49f4b9d82b46e529b8ee5221eaf133b4f2f23",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-014",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/JohannesBuchner/imagehash",
+      "retrieval": "opened",
+      "ref": "turn51view3",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-014",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/JohannesBuchner/imagehash/blob/HEAD/imagehash/__init__.py",
+      "retrieval": "github-file",
+      "blobSha": "9e679d02b469f56292d8e3ed542dc1bcbc4c572a",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-014",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/JohannesBuchner/imagehash/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "bc9678155161ae6ac2b3522e5c48281e359d5dae",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer",
+      "retrieval": "opened",
+      "ref": "turn53view2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/README.md",
+      "retrieval": "github-file",
+      "blobSha": "1c1ff5ef2561b4e34fd7a76807edf962188bdb5a",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/package.json",
+      "retrieval": "github-file",
+      "blobSha": "087b07a12b3d07244c376a4dbdcfaf0abdc4cf61",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "fd4ea3fc0fc7623ed46a88615fa089b274c333fd",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/src/detect/engine.ts",
+      "retrieval": "github-file",
+      "blobSha": "ef3a8ea97c919b85ab0595694af5f3fcf6518d22",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-015",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/src/fingerprints/external.ts",
+      "retrieval": "github-file",
+      "blobSha": "7bd49c87e8da09e7a7125f10a626fca91aaa3048",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-016",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/mozilla/readability",
+      "retrieval": "opened",
+      "ref": "turn55view1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-016",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/mozilla/readability/blob/HEAD/LICENSE.md",
+      "retrieval": "github-file",
+      "blobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-017",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/rapidfuzz/RapidFuzz",
+      "retrieval": "opened",
+      "ref": "turn55view2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-017",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/LICENSE",
+      "retrieval": "github-file",
+      "blobSha": "42c23b2103346d5439dd72582ed6d4a0d8d7b27b",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-017",
+      "checkedAt": "2026-10-08",
+      "url": "https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/README.md",
+      "retrieval": "github-file",
+      "blobSha": "ee895b20a09f93b28008fd96ed027b6f6bbc9806",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-018",
+      "checkedAt": "2026-10-08",
+      "url": "https://help.tineye.com/article/246-can-i-sort-my-results",
+      "retrieval": "primary search-excerpt",
+      "ref": "turn56search0",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-018",
+      "checkedAt": "2026-10-08",
+      "url": "https://help.tineye.com/article/248-what-does-tineye-first-found-on-mean",
+      "retrieval": "primary search-excerpt",
+      "ref": "turn56search1",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-018",
+      "checkedAt": "2026-10-08",
+      "url": "https://help.tineye.com/article/233-how-does-tineye-work",
+      "retrieval": "primary search-excerpt",
+      "ref": "turn56search2",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
+    },
+    {
+      "toolId": "TOOL-018",
+      "checkedAt": "2026-10-08",
+      "url": "https://help.tineye.com/article/275-signing-up",
+      "retrieval": "primary search-excerpt",
+      "ref": "turn52search19",
+      "archiveScope": "presence and reviewed observations only; not a complete page/code archive"
     }
   ]
 }

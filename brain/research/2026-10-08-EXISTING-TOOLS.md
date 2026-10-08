@@ -267,7 +267,7 @@ Python/C++ fuzzy string matching provides several metrics rather than an entity 
 
 **Engineering follow-up:** Version Unicode/case/token processing and bound comparisons. Distinguish shared boilerplate from shared operators; numerals such as 14 versus 30 days and model/size codes must not disappear under fuzzy normalization.
 
-**Primary evidence:** [opened](https://github.com/rapidfuzz/RapidFuzz); [github-file](https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/LICENSE) (Git blob 42c23b2103346d5439dd72582ed6d4a0d8d7b27b).
+**Primary evidence:** [opened](https://github.com/rapidfuzz/RapidFuzz); [README source](https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/README.md) (Git blob ee895b20a09f93b28008fd96ed027b6f6bbc9806); [github-file](https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/LICENSE) (Git blob 42c23b2103346d5439dd72582ed6d4a0d8d7b27b).
 
 ### TOOL-018 — TinEye
 
