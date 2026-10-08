@@ -1,6 +1,7 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { DropShredderReport } from '../types/report';
 import type { StoredObservation } from '../storage/history';
+import { compareProductIdentity } from './product-identity';
 
 function scarcityTexts(report:DropShredderReport):string[] {
   return report.evidence
@@ -12,6 +13,18 @@ function scarcityTexts(report:DropShredderReport):string[] {
 
 export function analyzeHistory(current:DropShredderReport, previous:StoredObservation[]):EvidenceSignal[] {
   const out:EvidenceSignal[]=[];
+  const now=Date.parse(current.product.capturedAt);
+  const seen=new Set<string>();
+  const offerUrl=(p:DropShredderReport['product'])=>{
+    try{const url=new URL(p.canonicalUrl??p.url);url.search='';url.hash='';return url.href;}catch{return undefined;}
+  };
+  const currentOffer=offerUrl(current.product);
+  previous=previous.slice(0,120).filter(obs=>{
+    const at=Date.parse(obs.capturedAt),identity=compareProductIdentity(current.product,obs.report.product);
+    if(!currentOffer || obs.domain!==current.product.domain || offerUrl(obs.report.product)!==currentOffer) return false;
+    if(!Number.isFinite(now) || !Number.isFinite(at) || at>=now || !identity.compatible || seen.has(obs.capturedAt)) return false;
+    seen.add(obs.capturedAt);return true;
+  }).sort((a,b)=>b.capturedAt.localeCompare(a.capturedAt));
   if(!previous.length) return out;
 
   const currentScarcity=new Set(scarcityTexts(current));
@@ -52,7 +65,11 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
     }
   }
 
-  const prices=[current.product.price,...previous.map(o=>o.price)].filter((x):x is number=>typeof x==='number'&&Number.isFinite(x));
+  const currency=current.product.currency?.toUpperCase();
+  const priceHistory=currency?previous.filter(obs=>
+    (obs.report.product.currency??obs.currency)?.toUpperCase()===currency):[];
+  const prices=currency?[current.product.price,...priceHistory.map(o=>o.report.product.price)]
+    .filter((x):x is number=>typeof x==='number'&&Number.isFinite(x)&&x>0):[];
   if(prices.length>=3){
     const min=Math.min(...prices),max=Math.max(...prices);
     if(min>0 && max/min>=1.8){

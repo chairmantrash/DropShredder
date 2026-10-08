@@ -1,5 +1,6 @@
 import type { Contradiction, EvidenceSignal } from '../types/evidence';
 import type { ExtractedClaim } from './claims';
+import { sameJurisdiction } from './merchant-origin';
 
 export interface DomainAgeObservation {
   registeredAt?:string;
@@ -42,9 +43,7 @@ export function fulfillmentContradictions(
   const claim=claims.find(c=>c.kind==='ships-from' && c.normalizedValue);
   if(!claim?.normalizedValue || !observation.origin) return [];
 
-  const claimed=claim.normalizedValue.toLowerCase();
-  const observed=observation.origin.toLowerCase();
-  if(claimed.includes(observed) || observed.includes(claimed)) return [];
+  if(sameJurisdiction(claim.normalizedValue,observation.origin)) return [];
 
   return [{
     id:'FULFILLMENT_ORIGIN_CONFLICT',

@@ -1,0 +1,36 @@
+{
+  "task": "DS-TOOLS-20261008",
+  "researchDate": "2026-10-08",
+  "checks": {
+    "catalogue_ids_fields_report_links": "PASS",
+    "zero_risk_weights_no_execution_or_runtime_promotion": "PASS",
+    "public_https_urls_no_credentials_sensitive_query_fields": "PASS",
+    "git_blob_hash_syntax": "PASS",
+    "source_presence_count_consistency": "PASS"
+  },
+  "tools": 18,
+  "sourcePresenceRecords": 50,
+  "uniqueSourceURLs": 50,
+  "githubBlobPins": 24,
+  "latestPublishedCheckpoint": "2ee897bb57cddc532d479363120651f3e504ad47",
+  "files": {
+    "intelligence/existing-tools-catalogue-20261008.json": "d28deb5647b219d205fdbc6512fb8809a220f96f855ff9bd9540cb9b46be7060",
+    "brain/research/2026-10-08-EXISTING-TOOLS.md": "3887cb72e434f58d8221b3a8ce8713d0a1d726a5cdf47e8286a3617344db4d89"
+  },
+  "notExecuted": [
+    "tool installations or runs",
+    "live API or reverse-image searches",
+    "merchant scans or submissions",
+    "dataset/model downloads",
+    "runtime integrations",
+    "real desktop Chrome QA",
+    "performance/accuracy benchmarks"
+  ],
+  "pr9": {
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "observedReleaseHead": "2f89ddaac2037dbeb78be5a39ae7254b68394a78"
+  },
+  "scope": "Research documentation only; final remote verification follows publication. No source code, weights, permissions, release artifacts or PR mutations."
+}

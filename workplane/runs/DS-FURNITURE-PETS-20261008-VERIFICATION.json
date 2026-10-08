@@ -1,0 +1,29 @@
+{
+  "task": "DS-FURNITURE-PETS-20261008",
+  "date": "2026-10-08",
+  "findings": 17,
+  "academicReviews": 4,
+  "academicDepth": "abstract/specifications only; not full-paper audits",
+  "sourcePresenceRecords": 25,
+  "uniqueSourceURLs": 24,
+  "checks": {
+    "IDs_and_report_references": "PASS",
+    "risk_weights_research_only": "PASS",
+    "recall_id_SKU_country_scope_checks": "PASS",
+    "URL_and_source_counts": "PASS"
+  },
+  "checkpoint": "564d098c6723d71ea80b74f1ebb1edd6cd250d3d",
+  "hashes": {
+    "intelligence/furniture-pets-catalogue-20261008.json": "4fc9177be8ee9902619a5cbd00308947feb1ac56dbade6bb85d9048d467d0e4f",
+    "brain/research/2026-10-08-FURNITURE-PETS.md": "57dc5b81e3039169b16c5b0affccee3ee73eef4c4a055f821787d29921a2a122"
+  },
+  "notPerformed": [
+    "shopping-page inspection",
+    "physical testing",
+    "Chrome QA",
+    "runtime integration",
+    "regional probability calibration"
+  ],
+  "nextTask": "manufacturer-network mapping; separate claim",
+  "pr9": "not modified; last verified open/draft/unmerged"
+}

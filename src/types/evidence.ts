@@ -23,6 +23,10 @@ export interface EvidenceSignal {
   explanation: string;
   observedValue?: string;
   independentKey: string;
+  /** Shared observation ancestry; different rule IDs do not make it independent. */
+  correlationKeys?: string[];
+  sourceKey?: string;
+  provenance?: {sourceUrl:string;observedAt:string;method:string};
 }
 
 export interface Contradiction {

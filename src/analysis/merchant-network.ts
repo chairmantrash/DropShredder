@@ -1,33 +1,19 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 import type { StoredObservation } from '../storage/history';
-
-function normalize(value:string|undefined):string|undefined{
-  const v=value?.trim().toLowerCase();
-  return v||undefined;
-}
-
-function stableIds(product:ProductSnapshot):Set<string>{
-  return new Set([product.gtin,product.mpn,product.sku,product.asin]
-    .map(normalize)
-    .filter((v):v is string=>Boolean(v)));
-}
+import { compareProductIdentity } from './product-identity';
 
 export function localMerchantNetworkEvidence(
   current:ProductSnapshot,
   history:StoredObservation[],
 ):EvidenceSignal[]{
   const currentDomain=current.domain.toLowerCase().replace(/^www\./,'');
-  const ids=stableIds(current);
-  if(!ids.size) return [];
-
   const matches=new Map<string,string[]>();
-  for(const obs of history){
+  for(const obs of history.slice(0,250)){
     const otherDomain=obs.domain.toLowerCase().replace(/^www\./,'');
     if(otherDomain===currentDomain) continue;
-    const otherIds=stableIds(obs.report.product);
-    const shared=[...ids].filter(id=>otherIds.has(id));
-    if(shared.length) matches.set(otherDomain,shared);
+    const identity=compareProductIdentity(current,obs.report.product);
+    if(identity.compatible && identity.matches.length) matches.set(otherDomain,identity.matches);
   }
 
   if(!matches.size) return [];
@@ -36,11 +22,11 @@ export function localMerchantNetworkEvidence(
   return [{
     id:'CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER',
     family:'identity',
-    severity:'strong',
+    severity:'info',
     confidence:.94,
-    weight:22,
-    title:'The exact same product ID showed up on another store',
-    explanation:'DropShredder has seen this exact product identifier on a different store. The stores may share a supplier or sell the same wholesale item, so this is a connection worth checking—not proof they are secretly the same business.',
+    weight:0,
+    title:'Matching typed product identifiers appeared on other stores',
+    explanation:'Matching GTIN, ASIN or brand/model identifiers suggest comparable products, not a common merchant owner. Store-local SKUs are not global identifiers. A legitimate manufacturer can supply unrelated retailers; this carries no merchant-risk weight.',
     observedValue:domains.map(domain=>`${domain}: ${matches.get(domain)!.join(', ')}`).join(' • '),
     independentKey:'merchant-network:shared-product-id',
   }];
