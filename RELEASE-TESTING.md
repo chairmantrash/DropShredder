@@ -135,3 +135,46 @@ A beta build may be distributed before the full site matrix is complete, but it 
 - Trigger a cross-origin navigation after Chrome signals a host-access request but before granting it. The old request must not authorize the new origin.
 - Put the extension service worker to sleep/restart between commands. Settings, history and command correctness must survive because no critical state is worker-global.
 - Confirm the injected shopper stamp is isolated in Shadow DOM and does not inherit/store page form values.
+
+## Precision automatic product alerts (DS-029) — required real Chrome tests
+
+Automatic protection is **opt-in**, requiring the shopper to grant Chrome's optional HTTPS host access. Do not claim it functions from the manifest or simulation alone.
+
+### Permission lifecycle
+- Before opting in, confirm no automatic content script is registered and no alert appears. Manual current-site permission requests still work.
+- Toggle automatic alerts ON. The browser must show its actual permission prompt for broad HTTPS site access; deny and confirm no registration or toast.
+- Grant access and confirm dynamic content script appears through `chrome.scripting.getRegisteredContentScripts()` with ID `dropshredder-auto-shopping-v1`, ISOLATED, document_idle, main frame only.
+- Confirm existing product page is evaluated without needing to reload after grant.
+- Toggle OFF. Confirm dynamic registration is removed, broad optional HTTPS grant revoked, and further pages do not trigger. Re-enable, then test browser restart and worker suspension.
+- Set Chrome site access to “On click” or one specific site and verify other domains stay untouched.
+
+### Silent pages (should show **no toast**)
+- Browser home/new tab, Google searches, general articles, forums, online email, social media.
+- Ecommerce homepage, category/collection, merchant search, Amazon search, Etsy search, Walmart search.
+- Editorial product reviews or affiliate pages containing Product JSON-LD and a price.
+- An unusual category page containing scattered Product schema, many product cards, and purchase buttons.
+- Login, account, profile, payment, checkout, cart, or a page with credential/card fields.
+
+### Qualifying pages (should show **one** useful toast)
+- Apple iPhone detail page and a distinct Apple product page.
+- Individual products on Shopify, WooCommerce, SHOPLINE, Shoplazza, ShopBase, Wix, Ecwid and Squarespace.
+- Amazon product detail, Etsy listing, Walmart Marketplace product.
+- Structured-data-heavy and React/Next/Hydrogen-rendered product details.
+- Product lacking JSON-LD but with clear individual title, displayed price and Buy/Add to Cart control.
+
+### Nuisance and navigation control
+- Enter and leave a product before the first-pass scan completes: no stale verdict.
+- Switch tabs while the page hydrates: no background-tab toast.
+- Dismiss toast, change a variant or hash: no repeated toast for the same product path.
+- Switch SPA products via pushState: new product may trigger, previous toast must disappear; no two stale UI overlays.
+- Timeout toast after approximately 12 seconds with a working dismiss control.
+- Click the quick verdict immediately. Panel must open and run the **clicked document**, including through a sleeping worker. No silent failure.
+- Click toast then navigate away, switch tabs, or revoke access: full report must fail closed rather than target another product.
+- Quick verdict cannot claim a shop is safe, a dropshipper, or a scam without the independently verified evidence gate.
+- Use Chrome Task Manager on huge product/category pages and verify no repeated background traversal, network fan-out or scrolling lag.
+
+### Build checks
+- Generated manifest contains no required blanket `host_permissions`, no `tabs`/`activeTab` permission, and no static all-HTTPS content-script match.
+- Packaged file `content-scripts/auto.js` is present and runtime registration targets that exact file.
+- Quick toast remains entirely local: no third-party requests, no image fetching, no IndexedDB observation storage.
+- Chrome Store privacy disclosure explicitly describes optional automatic screening on approved HTTPS sites.
