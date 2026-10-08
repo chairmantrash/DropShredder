@@ -27,8 +27,13 @@ test('manifest uses modern host request support without browsing-history permiss
 
 test('page-reading sidepanel actions share the authorized Chrome page transaction',async()=>{
  const source=await fs.readFile('entrypoints/sidepanel/main.ts','utf8');
- const calls=source.match(/await authorizeChromePage\(tab\)/g) ?? [];
- assert.ok(calls.length>=3,'scan, policy and fulfillment must all prove page authority');
+ assert.match(source,/await authorizeChromePage\(tab\)/);
+ const guarded=source.match(/await verifiedReportPage\(report\)/g) ?? [];
+ assert.ok(guarded.length>=6,'policy, fulfillment, RDAP, image and searches must reject stale report context');
+ assert.match(source,/chrome\.tabs\.onActivated\.addListener/);
+ assert.match(source,/chrome\.tabs\.onUpdated\.addListener/);
+ assert.match(source,/epoch!==scanEpoch/);
+ assert.match(source,/await isCurrentChromePage\(page\)/);
  assert.match(source,/target:documentTarget\(page\)/);
  assert.doesNotMatch(source,/lastActiveWebTabId|dropshredder:get-active-web-tab/);
 });
