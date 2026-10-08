@@ -1,6 +1,6 @@
 # DS-FULLSTACK-GAP-AUDIT-20261008 — Second cross-layer gap-closing sweep
 
-Status: VERIFYING — local implementation/checks pass; exact-head remote checks and real Chrome gate remain
+Status: VERIFYING — local and implementation-head remote checks pass; real Chrome gate remains
 Owner: Codex in the owner research conversation
 Started: 2026-10-08
 Branch: feature/research-enhancement-audit-20261008 / draft PR #10
@@ -35,3 +35,5 @@ Correct direct-evidence presentation and source traceability; contrast/reflow an
 ## Outcome
 
 2026-10-08: 215/215 Node tests (30 additional), clean locked install, typecheck, static security/data/architecture/Chrome audits and clean ZIP/release/performance checks pass. Zero runtime dependencies; required manifest permissions unchanged. All 27 dispositions and nine API capability states checkpointed; live CPSC probe receipts explain incompleteness. See the dated research note, ADR and verification receipt. Static owner gaps are in DS-GAP-RUNTIME-FOLLOWUP-20261008.md; prior runtime handoff retained. Real Chrome: ENVIRONMENT BLOCKED, zero tests. No merge/release/publication.
+
+Implementation commit 8035b0bc6421f379c865cc0eb21453fcafcf5b42: CI run 37789209943 and CodeQL run 37789209588 completed success; both build artifacts belong to that exact SHA. npm audit under Node 22 returned zero reported advisories (registry snapshot, not proof of vulnerability absence). Durable receipt: workplane/runs/DS-FULLSTACK-GAP-AUDIT-20261008-REMOTE-VERIFICATION.json. PR #9 release head 2f89dda unchanged/open/draft/unmerged.

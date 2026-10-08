@@ -99,3 +99,7 @@ The task remains VERIFYING pending this real Chrome gate. PR #9 is not merged, n
 - FTC: https://www.ftc.gov/developer
 - SAFERPRODUCTS-FAQ: https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11
 - COMTRADE: https://comtradeplus.un.org/
+
+## Publication and dependency advisory receipt
+
+Implementation commit `8035b0bc6421f379c865cc0eb21453fcafcf5b42` completed [CI](https://github.com/chairmantrash/DropShredder/actions/runs/37789209943) and [CodeQL](https://github.com/chairmantrash/DropShredder/actions/runs/37789209588) successfully; unpacked/ZIP artifacts report that exact head. Node 22 `npm audit --json` returned zero reported advisories; this is the registry snapshot at review time, not a security guarantee. Metadata includes 184 development/optional graph entries (136 installed for this platform). Full normalized remote/dependency/protected-state receipt: `workplane/runs/DS-FULLSTACK-GAP-AUDIT-20261008-REMOTE-VERIFICATION.json`.
