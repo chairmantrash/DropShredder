@@ -32,3 +32,36 @@ export async function authorizeChromePage(tab:chrome.tabs.Tab):Promise<Authorize
 export function documentTarget(page:AuthorizedChromePage):chrome.scripting.InjectionTarget{
   return {tabId:page.tabId,documentIds:[page.documentId]};
 }
+
+/**
+ * Fail closed when the panel's target changes. documentId catches full navigations;
+ * URL catches history.pushState / replaceState SPA transitions within one document.
+ * This also rejects an account/checkout modal appearing on the same URL.
+ */
+export async function isCurrentChromePage(page:AuthorizedChromePage):Promise<boolean>{
+  const tab=await activeWebTab();
+  if(tab?.id!==page.tabId) return false;
+  try{
+    const [probe]=await chrome.scripting.executeScript({
+      target:documentTarget(page),
+      world:'ISOLATED',
+      func:()=>({
+        url:location.href,
+        sensitive:Boolean(document.querySelector([
+          'input[type="password"]',
+          'input[autocomplete="cc-number"]',
+          'input[autocomplete="cc-csc"]',
+          'input[autocomplete="current-password"]',
+          'input[autocomplete="new-password"]',
+          'form[action*="checkout" i]',
+          'form[action*="payment" i]',
+        ].join(','))),
+      }),
+    });
+    return probe?.documentId===page.documentId
+      && probe?.result?.url===page.url
+      && !probe?.result?.sensitive;
+  }catch{
+    return false;
+  }
+}
