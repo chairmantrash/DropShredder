@@ -94,7 +94,8 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   const words=(facts.title||'').toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>1).slice(0,12);
   for(let n=0;n<Math.min(doc.images.length,60) && words.length>=2;n++){
     const alt=(doc.images.item(n)?.alt||'').toLowerCase();
-    if(words.filter(w=>alt.includes(w)).length>=2){facts.focusedHero=true;break;}
+    const altWords=new Set(alt.split(/[^a-z0-9]+/).filter(w=>w.length>1));
+    if(words.filter(w=>altWords.has(w)).length>=2){facts.focusedHero=true;break;}
   }
   const possibleCards=doc.getElementsByClassName('product-card').length+
     doc.getElementsByClassName('product-item').length+
