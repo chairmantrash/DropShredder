@@ -37,7 +37,7 @@ import { pageSafety } from '../../src/security/page-safety';
 import { toneCopy, type ToneMode } from '../../src/ui/tone';
 import { renderShopperReport } from '../../src/ui/report-renderer';
 import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
-import { activeWebTab, authorizeChromePage, documentTarget } from '../../src/runtime/chrome-page';
+import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -60,6 +60,47 @@ const buildMeta=document.querySelector<HTMLElement>('#build-meta');
 const toneMode=document.querySelector<HTMLSelectElement>('#tone-mode');
 const evidenceHeading=document.querySelector<HTMLElement>('#evidence-heading');
 let lastReport:DropShredderReport|undefined;
+let reportPage:AuthorizedChromePage|undefined;
+let scanningTabId:number|undefined;
+let scanEpoch=0;
+
+// The side panel outlives tabs and documents. Never reuse a report after navigation.
+function invalidatePageReport(message='The page changed. Check this product again.'):void {
+  scanEpoch++;
+  lastReport=undefined;
+  reportPage=undefined;
+  scanningTabId=undefined;
+  if(scanButton) scanButton.disabled=false;
+  if(huntActions) huntActions.hidden=true;
+  if(summary) summary.replaceChildren();
+  if(evidenceList) evidenceList.replaceChildren();
+  if(raw) raw.replaceChildren();
+  if(status) status.textContent=message;
+}
+chrome.tabs.onActivated.addListener(({tabId})=>{
+  if((scanningTabId!==undefined && scanningTabId!==tabId) || (reportPage && reportPage.tabId!==tabId)){
+    invalidatePageReport();
+  }
+});
+chrome.tabs.onUpdated.addListener((tabId,change)=>{
+  if((tabId===scanningTabId || tabId===reportPage?.tabId) &&
+    (change.status==='loading' || (Boolean(change.url) && change.url!==reportPage?.url))){
+    invalidatePageReport();
+  }
+});
+chrome.permissions.onRemoved.addListener(permission=>{
+  if(permission.origins?.length && (scanningTabId!==undefined || reportPage)) invalidatePageReport('Site access changed. Check this product again.');
+});
+
+async function verifiedReportPage(report:DropShredderReport):Promise<AuthorizedChromePage>{
+  const page=reportPage;
+  if(!page || lastReport!==report || !(await isCurrentChromePage(page)) || lastReport!==report){
+    invalidatePageReport();
+    throw new Error('The page changed. Check this product again.');
+  }
+  return page;
+}
+
 let currentTone:ToneMode='professional';
 function applyTone(mode:ToneMode):void{
   currentTone=mode;
@@ -103,12 +144,21 @@ function renderReport(report: DropShredderReport): void {
 
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
+  const epoch=++scanEpoch;
   scanButton.disabled=true;
+  lastReport=undefined;
+  reportPage=undefined;
+  if(huntActions) huntActions.hidden=true;
+  if(summary) summary.replaceChildren();
+  if(evidenceList) evidenceList.replaceChildren();
+  if(raw) raw.replaceChildren();
   status.textContent='Checking the listing for things worth a second look…';
 
   try {
     const tab=await activeWebTab();
     if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
+    if(epoch!==scanEpoch) return;
+    scanningTabId=tab.id;
     const page=await authorizeChromePage(tab);
     if(!page) throw new Error('Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.');
     const safety=pageSafety(page.url);
@@ -139,6 +189,7 @@ async function scanActivePage(): Promise<void> {
     const result=execution?.result as PageScanResult|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
     if(result.product.url!==page.url) throw new Error('The page changed while DropShredder was checking it. Try the scan again on the finished product page.');
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
 
     const platformMatches=detectCommercePlatforms({
       scripts:result.scriptSources,
@@ -352,18 +403,21 @@ async function scanActivePage(): Promise<void> {
       console.warn('DropShredder: local history/source-index read failed', historyError);
     }
 
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
+    reportPage=page;
     renderReport(report);
 
     try {
-      await saveObservation(report);
+      if(epoch===scanEpoch && await isCurrentChromePage(page)) await saveObservation(report);
     } catch (storageError) {
       console.warn('DropShredder: local history write failed', storageError);
     }
 
     await chrome.scripting.executeScript({
       target:documentTarget(page),
-      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone)],
-      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string})=>{
+      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone),page.url],
+      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string},expectedUrl:string)=>{
+        if(location.href!==expectedUrl) return false;
         document.getElementById('dropshredder-stamp-host')?.remove();
         const host=document.createElement('div');
         host.id='dropshredder-stamp-host';
@@ -403,14 +457,22 @@ async function scanActivePage(): Promise<void> {
         box.append(close,brand,headlineEl,detail);
         shadow.append(style,box);
         document.documentElement.append(host);
+        return true;
       },
     });
-
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
+    scanningTabId=undefined;
     status.textContent=`Scan complete for ${result.product.domain}.`;
   } catch (error) {
-    status.textContent=error instanceof Error?error.message:String(error);
+    if(epoch===scanEpoch){
+      lastReport=undefined;
+      reportPage=undefined;
+      scanningTabId=undefined;
+      if(huntActions) huntActions.hidden=true;
+      status.textContent=error instanceof Error?error.message:String(error);
+    }
   } finally {
-    scanButton.disabled=false;
+    if(epoch===scanEpoch) scanButton.disabled=false;
   }
 }
 
@@ -495,6 +557,7 @@ checkDomain?.addEventListener('click',async()=>{
   status.textContent='Checking how long this website has been around…';
   try{
       const rdap=await lookupDomainRdap(report.product.domain);
+      await verifiedReportPage(report);
       if(!rdap){
         status.textContent='Couldn’t confirm this website’s age right now.';
         return;
@@ -565,10 +628,7 @@ policyCheck?.addEventListener('click',()=>{
   void (async()=>{
     status.textContent='Reading the return policy for expensive catches and hoops…';
     try{
-      const tab=await activeWebTab();
-      if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
-      const page=await authorizeChromePage(tab);
-      if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
+      const page=await verifiedReportPage(report);
 
       const [result]=await chrome.scripting.executeScript({
         target:documentTarget(page),
@@ -606,6 +666,7 @@ policyCheck?.addEventListener('click',()=>{
       const text=policyResult?.result as string|undefined;
       if(!text) throw new Error('The return policy couldn’t be read clearly enough to judge.');
       const findings=analyzeReturnPolicy(text);
+      await verifiedReportPage(report);
 
       if(!findings.length){
         status.textContent='No obvious return-policy traps stood out.';
@@ -634,10 +695,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
   void (async()=>{
     status.textContent='Checking where the order actually appears to ship from…';
     try{
-      const tab=await activeWebTab();
-      if(!tab?.id) throw new Error('Open the product page you want to check, then try again.');
-      const page=await authorizeChromePage(tab);
-      if(!page) throw new Error('Chrome needs permission for this site. Allow DropShredder access, then try again.');
+      const page=await verifiedReportPage(report);
 
       const [result]=await chrome.scripting.executeScript({
         target:documentTarget(page),
@@ -647,6 +705,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
         }),
       });
       const fulfillmentPage=result?.result as {text:string;url:string}|undefined;
+      await verifiedReportPage(report);
       if(!fulfillmentPage?.text) throw new Error('Couldn’t find enough shipping information on this page to tell.');
 
       const observation=parseFulfillmentObservation(fulfillmentPage.text);
