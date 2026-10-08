@@ -1,4 +1,5 @@
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/deep-hunt/search-urls';
+import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../src/runtime/auto-registration';
 
 const ROOT='dropshredder-root';
 function createMenus():void {
@@ -28,6 +29,44 @@ export default defineBackground(() => {
 
   chrome.runtime.onInstalled.addListener(createMenus);
   chrome.runtime.onStartup.addListener(createMenus);
+
+  // Registrations live outside the disposable MV3 service-worker process.
+  // Reconcile permissions/settings after install and browser startup.
+  const syncAuto=async():Promise<void>=>{
+    const stored=await chrome.storage.local.get('dropshredder-feature-settings-v1');
+    const enabled=Boolean(stored['dropshredder-feature-settings-v1']?.autoProtection);
+    const authorized=enabled && await chrome.permissions.contains({origins:[AUTO_PATTERN]});
+    await setAutoContentRegistration(authorized);
+  };
+  void syncAuto().catch(()=>{});
+  chrome.runtime.onStartup.addListener(()=>{void syncAuto().catch(()=>{});});
+  chrome.runtime.onInstalled.addListener(()=>{void syncAuto().catch(()=>{});});
+  chrome.permissions.onRemoved.addListener(()=>{void syncAuto().catch(()=>{});});
+
+  chrome.runtime.onMessage.addListener((message:unknown,sender,sendResponse)=>{
+    if(!message || typeof message!=='object') return;
+    const record=message as Record<string,unknown>;
+    if(record.version!==1) return;
+    if(record.type==='DS_AUTO_STATUS'){
+      if(!sender.tab?.id || sender.frameId!==0 || !sender.url?.startsWith('https://')) return;
+      void (async()=>{
+        const stored=await chrome.storage.local.get('dropshredder-feature-settings-v1');
+        const enabled=Boolean(stored['dropshredder-feature-settings-v1']?.autoProtection)
+          && await chrome.permissions.contains({origins:[AUTO_PATTERN]});
+        sendResponse({enabled});
+      })().catch(()=>sendResponse({enabled:false}));
+      return true;
+    }
+    if(record.type==='DS_AUTO_OPEN'){
+      if(!sender.tab?.id || sender.frameId!==0 || !sender.documentId || !sender.url?.startsWith('https://')) return;
+      const url=new URL(sender.url);
+      if(!url.hostname) return;
+      const intent={tabId:sender.tab.id,documentId:sender.documentId,createdAt:Date.now()};
+      // Preserve the click activation: sidePanel.open is called without an await.
+      void chrome.storage.session.set({[AUTO_PANEL_INTENT]:intent}).catch(()=>{});
+      void chrome.sidePanel.open({tabId:sender.tab.id}).catch(()=>{});
+    }
+  });
 
   chrome.contextMenus.onClicked.addListener((info,tab)=>{
     const pageUrl=tab?.url || info.pageUrl || '';
