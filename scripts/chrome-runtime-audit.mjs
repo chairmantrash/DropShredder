@@ -59,6 +59,31 @@ requireMatch(rdap,/chrome\.storage\.session/,'RDAP cache must use extension sess
 
 forbid(bg,/lastActiveWebTabId|dropshredder:get-active-web-tab/,'obsolete guessed-tab architecture returned');
 
+// Opt-in automatic shopping alerts: verify the permission and noisy-page boundaries,
+// not only the manual scan invariants.
+const autoContent=fs.readFileSync('entrypoints/auto.content.ts','utf8');
+const detector=fs.readFileSync('src/detection/shopping-page.ts','utf8');
+const autoRegistration=fs.readFileSync('src/runtime/auto-registration.ts','utf8');
+const pageFacts=fs.readFileSync('src/detection/page-facts.ts','utf8');
+requireMatch(config,/optional_host_permissions:\\s*\\['https:\\/\\/\\*\\/\\*'\\]/,'automatic host screening must remain optional');
+requireMatch(autoContent,/registration:'runtime'/,'auto scanner must not be statically registered for all sites');
+requireMatch(autoContent,/matches:\\[\\]/,'WXT runtime auto entrypoint must not add required host permissions');
+requireMatch(autoRegistration,/persistAcrossSessions:true/,'automatic registration must survive worker restart');
+requireMatch(autoRegistration,/world:'ISOLATED'/,'automatic screening must stay isolated');
+requireMatch(autoContent,/detectShoppingPage\\(document,url\\)/,'automatic scanner must classify page before extraction');
+requireMatch(autoContent,/classification\\.showToast/,'only confirmed product pages may show toasts');
+requireMatch(autoContent,/DS_AUTO_STATUS/,'auto scanner must verify consent immediately before content work');
+requireMatch(panel,/chrome\\.permissions\\.request\\(\\{origins:\\[AUTO_PATTERN\\]\\}\\)/,'opt-in must request Chrome permission from user gesture');
+requireMatch(bg,/chrome\\.sidePanel\\.open\\(\\{tabId:sender\\.tab\\.id\\}\\)/,'toast click must open the originating tab panel');
+requireMatch(bg,/sender\\.documentId/,'toast intent must bind a Chrome document');
+requireMatch(panel,/documentIds:\\[value\\.documentId\\]/,'side panel must reject stale toast documents');
+requireMatch(detector,/classification|showToast/,'pure page classifier must be present');
+requireMatch(detector,/structuredArticle/,'article markup must be considered before automatic alerts');
+requireMatch(detector,/collectionPath/,'collection/search exclusion must exist');
+requireMatch(pageFacts,/hasSensitiveFields/,'preflight must check password/payment fields');
+forbid(autoContent,/MutationObserver|setInterval|fetch\\(|captureImageFingerprint|saveObservation|openSearches/,
+ 'automatic product alerts must not crawl, fetch, store reports or open external tabs');
+
 if(failures.length){
  console.error('Chrome runtime audit failed:\n'+failures.map(x=>' - '+x).join('\n'));
  process.exit(1);
