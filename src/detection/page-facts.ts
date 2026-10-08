@@ -81,7 +81,7 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   }
   facts.purchaseAction=purchase;
 
-  const price=doc.querySelector<HTMLElement>('[itemprop="price"],[data-price],.product-price,.price,.a-price .a-offscreen,[class*="product-price"]');
+  const price=doc.querySelector<HTMLElement>('[itemprop="price"],[data-price],.product-price,.price,[class*="price"],.a-price .a-offscreen,[class*="product-price"]');
   const metaPrice=doc.querySelector<HTMLMetaElement>('meta[property="product:price:amount"]');
   const priceText=(price?.textContent||metaPrice?.content||'').trim().slice(0,70);
   facts.visiblePrice=/(?:[$€£¥]\s*\d|\d[\d,.]*\s*(?:USD|EUR|GBP|CAD|AUD)|\d[\d,.]*)/.test(priceText);
