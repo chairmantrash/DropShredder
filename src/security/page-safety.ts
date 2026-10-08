@@ -30,6 +30,12 @@ export function pageSafety(urlValue:string|undefined):PageSafetyResult{
     return {allowed:false,reason:'DropShredder only scans ordinary HTTP/HTTPS commerce pages.'};
   }
 
+  const host=url.hostname.toLowerCase();
+  if(/^(?:accounts?|auth|login|signin|checkout|payments?|billing|wallet|mail|webmail|inbox)\./.test(host)
+    || /^(?:mail\.google\.com|outlook\.live\.com|outlook\.office\.com)$/.test(host)){
+    return {allowed:false,reason:'DropShredder does not scan account, email, checkout or payment services.'};
+  }
+
   const parts=url.pathname.toLowerCase().split('/').filter(Boolean);
   if(parts.some(part=>SENSITIVE_PATH_PARTS.some(blocked=>part===blocked || part.startsWith(blocked+'-')))){
     return {
