@@ -124,11 +124,16 @@
           "url": "https://github.com/dgtlmoon/changedetection.io",
           "retrieval": "opened",
           "ref": "turn48view2"
+        },
+        {
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/master/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "a6e09a45199d495dd9ff687399fb4835acb0b843"
         }
       ],
       "finding": "Project documents CSS/XPath/JSON filters, diff history, HTTP versus Playwright fetchers and price/restock extraction. Python/self-hosted operation is separate from its paid hosted service; June 2026 hosted AI features are not evidence all advertised behavior belongs to free core.",
       "fit": "Potential offline research instrument for lawful public policy/price observations; not a Chrome dependency or zero-operating-cost backend. Prefer small local snapshot/diff concepts in DropShredder.",
-      "license": "Repository identifies Apache-2.0; exact license/NOTICE and dependency review still pending.",
+      "license": "Apache-2.0 LICENSE fetched (blob a6e09a45199d495dd9ff687399fb4835acb0b843); dependencies/NOTICE and actual runtime not audited.",
       "followup": "Controlled research comparisons must fix selected variant, currency, geography and observation time. Personalized/login/cart states and fluctuating stock cannot prove deceptive scarcity. No automatic authenticated monitoring or proxy evasion.",
       "checkedAt": "2026-10-08",
       "riskWeight": 0,
@@ -157,6 +162,390 @@
       "fit": "Useful independent baseline for explicit local observation history and concurrency controls. Five-second capability is not a suitable passive DropShredder default or a performance result.",
       "license": "No permissive code/data reuse grant verified; API access not assumed free.",
       "followup": "Evaluate explicit opt-in schedules, per-user observation scope, bounded workers and suspend/stop semantics; compare raw captured evidence rather than claiming persistent 24/7 history from an extension.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-007",
+      "name": "Open Prices (Open Food Facts)",
+      "capability": "evidence-backed price history",
+      "status": "data/API documentation inspected",
+      "depth": "Primary repository, data guide and API.md; no API calls or dataset analysis",
+      "sources": [
+        {
+          "url": "https://github.com/openfoodfacts/open-prices",
+          "retrieval": "opened",
+          "ref": "turn48view1"
+        },
+        {
+          "url": "https://openfoodfacts.github.io/open-prices/guides/data/",
+          "retrieval": "opened",
+          "ref": "turn53view0"
+        },
+        {
+          "url": "https://github.com/openfoodfacts/open-prices/blob/HEAD/API.md",
+          "retrieval": "github-file",
+          "blobSha": "25e04f9f0e203ceae6d18624c1863fc4c36d21dd"
+        },
+        {
+          "url": "https://huggingface.co/datasets/openfoodfacts/open-prices",
+          "retrieval": "primary search-excerpt",
+          "ref": "turn52search27"
+        }
+      ],
+      "finding": "Public price observations have date, currency, location and proof identifiers; the published dataset also includes discount and receipt fields. Exploration is available without an account; some API endpoints require authentication. Data guide names ODbL, while repository software is AGPL-3.0. Food-oriented coverage is not established apparel coverage.",
+      "fit": "Borrow the observation/proof schema for local history, not a universal apparel-price feed. No receipt uploads, account requirement or server introduced.",
+      "license": "Data and software have distinct licenses; ODbL attribution/share-alike review required for imported databases. Receipt-image rights/PII policy not verified.",
+      "followup": "Separate observed price, claimed compare-at price, selected variant and delivered-cost conditions. Preserve dates and provenance; gaps in sampling must stay gaps. Use public-data fixtures only after rights review.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-008",
+      "name": "SingleFile",
+      "capability": "manual evidence capture / offline replay",
+      "status": "documentation and privacy inspected",
+      "depth": "Primary README, privacy.md and actual LICENSE fetched; implementation/runtime not audited",
+      "sources": [
+        {
+          "url": "https://github.com/gildas-lormeau/SingleFile",
+          "retrieval": "opened",
+          "ref": "turn50view0"
+        },
+        {
+          "url": "https://github.com/gildas-lormeau/SingleFile/blob/HEAD/privacy.md",
+          "retrieval": "github-file",
+          "blobSha": "c395807662481a448dd0a4e70968c01497924ef9"
+        },
+        {
+          "url": "https://github.com/gildas-lormeau/SingleFile/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52"
+        }
+      ],
+      "finding": "Saves a page into one HTML file. Privacy document says processing/storage is local by default, but capture can fetch uncached page resources and temporarily inject data; website detection may be possible. Optional cloud destinations, browser-settings synchronization and proof-of-existence hashing have separate transmissions.",
+      "fit": "Independent manual research capture companion, not silently bundled/autosaved. Local processing does not mean zero resource requests or invisible capture.",
+      "license": "AGPL-3.0 LICENSE verified; README identifies some third-party MIT code. Combination/distribution obligations need review before copying.",
+      "followup": "Capture only explicit public product/policy targets; preview and redact before sharing. Distinguish saved DOM from original response and observed state; hashes establish byte integrity, not truth. No cloud upload or blockchain-hash action.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-009",
+      "name": "extruct",
+      "capability": "structured product extraction",
+      "status": "documentation/license inspected",
+      "depth": "README.rst and LICENSE fetched; extraction code/tests not audited",
+      "sources": [
+        {
+          "url": "https://github.com/scrapinghub/extruct",
+          "retrieval": "opened",
+          "ref": "turn50view1"
+        },
+        {
+          "url": "https://github.com/scrapinghub/extruct/blob/HEAD/README.rst",
+          "retrieval": "github-file",
+          "blobSha": "01595119775f16f23ce1cb2e8ea32da499ae0428"
+        },
+        {
+          "url": "https://github.com/scrapinghub/extruct/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "737fbfaae515cd1f90c361857a7bca399aface65"
+        }
+      ],
+      "finding": "Python extractor supports JSON-LD, Microdata, Microformats, Open Graph, experimental RDFa and Dublin Core, accepting supplied HTML and optional base URL. Extracting seller-authored metadata does not establish its truth or identify the selected product automatically.",
+      "fit": "Promising offline cross-check for a frozen HTML fixture corpus; Python/lxml-style stack is not a direct Chrome JS dependency.",
+      "license": "BSD-3-Clause actual license verified (blob 737fbfaae515cd1f90c361857a7bca399aface65); dependency licenses still require review.",
+      "followup": "Compare raw channels independently using parent/variant identity. Exercise multiple Products, Offer/AggregateOffer, malformed/large JSON-LD and conflicting visible versus metadata prices. Agreement is one seller's repeated assertion, not independent corroboration.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-010",
+      "name": "Scavenge",
+      "capability": "multi-channel field provenance",
+      "status": "experimental research lead",
+      "depth": "README, LICENSE and historical final correctness report fetched; no execution or implementation audit",
+      "sources": [
+        {
+          "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/README.md",
+          "retrieval": "github-file",
+          "blobSha": "fc359c8607797deb960c9f5975b9060fe0dc09bd"
+        },
+        {
+          "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "url": "https://github.com/aarohim24/Scavenge/blob/HEAD/docs/research/OSS-FINAL-CORRECTNESS.md",
+          "retrieval": "github-file",
+          "blobSha": "d80991d73af590bbe2e6ebca15b8412c491fecac"
+        }
+      ],
+      "finding": "Current README restricts output to price/availability observations across raw DOM, structured data, embedded state, rendered DOM and network JSON. Its historical author-run 23-page/12-storefront validation says all 16 DIFFERENT relations were spurious: different Products, cart/upsell totals and minor units. Current README removes semantic comparison. These are self-reported results, not our replication.",
+      "fit": "Highly useful negative-case inventory and exact locator/subject/status schema. Python/Playwright experimental tool is an offline candidate, not production Chrome code or a validated semantic oracle.",
+      "license": "Apache-2.0 actual LICENSE verified. Public research reports remain author-controlled material; link/briefly summarize rather than replicate.",
+      "followup": "Require independently established selected-product/variant identity before contradictions. Unknown currency, units or subject prevents comparison. README security-bound claims are unverified; rendered-browser execution and request bounds require source audit before use.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-011",
+      "name": "Web-Check",
+      "capability": "on-demand merchant/site OSINT",
+      "status": "documentation/license inspected",
+      "depth": "Actual .github/README.md and LICENSE fetched; API implementation not audited",
+      "sources": [
+        {
+          "url": "https://github.com/Lissy93/web-check",
+          "retrieval": "opened",
+          "ref": "turn54view0"
+        },
+        {
+          "url": "https://github.com/Lissy93/web-check/blob/HEAD/.github/README.md",
+          "retrieval": "github-file",
+          "blobSha": "704e9cc5f17c6360f079feeaa9e1b28c1a740c0c"
+        },
+        {
+          "url": "https://github.com/Lissy93/web-check/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "bee7ddc03c90cc69d10685c0b361facccac675bf"
+        }
+      ],
+      "finding": "On-demand site analysis has a GUI/API and server/container deployments. Extra checks use optional Google, Shodan, Cloudmersive, Tranco and GitHub credentials. Its full server architecture is not an in-browser dependency, and infrastructure configuration is not evidence of product quality.",
+      "fit": "Investigate as a separately operated research comparison tool; review individual public-data adapters instead of copying the application or exposing a server.",
+      "license": "MIT license verified (blob bee7ddc03c90cc69d10685c0b361facccac675bf); third-party services/dependencies need their own checks.",
+      "followup": "Map each adapter to exact data source, consent, cache age and failure-to-unknown behavior. Shared CDN/IP/certificate services do not prove shared merchant control. Review redirects/private-address handling before any server usage; no vulnerability asserted.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-012",
+      "name": "urlscan.io",
+      "capability": "historical infrastructure / page evidence",
+      "status": "official API/privacy visibility reviewed",
+      "depth": "Primary API documentation opened; no submissions/search API calls",
+      "sources": [
+        {
+          "url": "https://urlscan.io/docs/api/",
+          "retrieval": "opened",
+          "ref": "turn54view1"
+        }
+      ],
+      "finding": "API supports submissions, existing-result retrieval and search, generally with an account/key; unauthenticated quotas are minor. Public scans are searchable; unlisted scans are available to vetted Pro researchers/companies, so unlisted is not private. Docs prohibit wholesale mirroring and require graceful missing-field/429 handling.",
+      "fit": "Manual examination of existing public results may inform investigations; never automatically submit a browsed URL or treat unlisted submission as private. Not a credential-free guaranteed core API.",
+      "license": "No bulk copying or unrestricted data redistribution grant established.",
+      "followup": "An existing result is a dated external-vantage capture, not the current selected variant or logged-in page. Record scan time and original source; similar network dependencies or repeated reports do not establish ownership/independent corroboration.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-013",
+      "name": "imagededup (idealo)",
+      "capability": "exact/near-duplicate product imagery",
+      "status": "documentation/license inspected",
+      "depth": "Primary README and LICENSE; model code/weights not audited",
+      "sources": [
+        {
+          "url": "https://github.com/idealo/imagededup",
+          "retrieval": "opened",
+          "ref": "turn51view2"
+        },
+        {
+          "url": "https://github.com/idealo/imagededup/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "3ed49f4b9d82b46e529b8ee5221eaf133b4f2f23"
+        }
+      ],
+      "finding": "Python image deduplication supports perceptual/difference/average/wavelet hashes and CNN encodings, plus dataset evaluation. README explicitly warns its published benchmarks apply only through v0.2.2 and may not hold for later releases.",
+      "fit": "Strong offline baseline candidate for a labelled crop/recolor/watermark/near-match corpus. No transfer of historical speed/accuracy numbers or Python CNN stack to passive Chrome.",
+      "license": "Apache-2.0 actual license verified; pretrained model/weight/training-data terms not verified.",
+      "followup": "Evaluate each transform and false match to visually similar garments separately. Keep cheap hash retrieval distinct from verified product identity; reuse/licensed stock images and similar designs remain negative controls.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-014",
+      "name": "ImageHash",
+      "capability": "small perceptual/crop-resistant fingerprints",
+      "status": "selected code inspected",
+      "depth": "README, LICENSE and imagehash/__init__.py fetched; key hashing/segmentation matching functions reviewed",
+      "sources": [
+        {
+          "url": "https://github.com/JohannesBuchner/imagehash",
+          "retrieval": "opened",
+          "ref": "turn51view3"
+        },
+        {
+          "url": "https://github.com/JohannesBuchner/imagehash/blob/HEAD/imagehash/__init__.py",
+          "retrieval": "github-file",
+          "blobSha": "9e679d02b469f56292d8e3ed542dc1bcbc4c572a"
+        },
+        {
+          "url": "https://github.com/JohannesBuchner/imagehash/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "bc9678155161ae6ac2b3522e5c48281e359d5dae"
+        }
+      ],
+      "finding": "pHash/dHash convert to luminance; colorhash models color distribution separately. Crop-resistant matching uses segmented hashes and defaults to allowing one matching region with 25% bit error. Those permissive defaults are not apparel identity thresholds. Code notes segmentation can differ with Pillow versions.",
+      "fit": "Offline reference implementation for compact fingerprints and interoperability tests. A browser port requires pinned resize/color/DCT/bit-order semantics and separate measurements.",
+      "license": "BSD-2-Clause actual license verified (blob bc9678155161ae6ac2b3522e5c48281e359d5dae).",
+      "followup": "Reject shared background/logo-only matches; require garment-relevant regions and corroborating attributes. Test hue changes, white backgrounds, mirrored views, crops and lookalike cuts. Similar pixels alone prove neither supplier nor quality.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-015",
+      "name": "Opentechalyzer / Wappalyzer-format ecosystem",
+      "capability": "store platform / app signatures / network candidates",
+      "status": "selected code and mixed licenses inspected",
+      "depth": "README, package.json, LICENSE, public exports, detect/engine.ts and fingerprints/external.ts fetched",
+      "sources": [
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer",
+          "retrieval": "opened",
+          "ref": "turn53view2"
+        },
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/README.md",
+          "retrieval": "github-file",
+          "blobSha": "1c1ff5ef2561b4e34fd7a76807edf962188bdb5a"
+        },
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/package.json",
+          "retrieval": "github-file",
+          "blobSha": "087b07a12b3d07244c376a4dbdcfaf0abdc4cf61"
+        },
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "fd4ea3fc0fc7623ed46a88615fa089b274c333fd"
+        },
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/src/detect/engine.ts",
+          "retrieval": "github-file",
+          "blobSha": "ef3a8ea97c919b85ab0595694af5f3fcf6518d22"
+        },
+        {
+          "url": "https://github.com/Houseofmvps/opentechalyzer/blob/HEAD/src/fingerprints/external.ts",
+          "retrieval": "github-file",
+          "blobSha": "7bd49c87e8da09e7a7125f10a626fca91aaa3048"
+        }
+      ],
+      "finding": "Node >=18.17 package separates detection from collection. Engine emits matched source/pattern snippets and captured IDs, combines nominal reliabilities with damped same-source repeats, and infers related technologies. External importer fetches a separate GPL-3.0 Wappalyzer-format dataset. Source groups are not proof of statistical/evidentiary independence; percentages are heuristic, not validated DropShredder probabilities.",
+      "fit": "Promising clean-room comparison and pure matching-engine design reference. Do not run its all-in-one crawling/probing/email/MCP paths during ordinary browsing or inherit its scores.",
+      "license": "Actual MIT LICENSE requires notice retention despite README saying no attribution required. Optional imported GPL data is separate; importer separation does not prove any future distribution compliant. Built-in corpus provenance claim not independently audited.",
+      "followup": "Review individual bounded signatures with fixtures and lineage; neutral platform/app presence. Same IDs may come from agencies/test templates, not owners. Inferred and direct detections must stay distinct. Regex cache lacks a visible bound in inspected engine; budget corpus/input/cache before browser reuse.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-016",
+      "name": "Mozilla Readability",
+      "capability": "return/shipping policy text extraction",
+      "status": "documentation/license inspected",
+      "depth": "Primary README and LICENSE.md; not executed",
+      "sources": [
+        {
+          "url": "https://github.com/mozilla/readability",
+          "retrieval": "opened",
+          "ref": "turn55view1"
+        },
+        {
+          "url": "https://github.com/mozilla/readability/blob/HEAD/LICENSE.md",
+          "retrieval": "github-file",
+          "blobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        }
+      ],
+      "finding": "Reader-mode article extraction exposes maxElemsToParse (default unlimited) and character thresholds. Project explicitly does not sanitize untrusted HTML and recommends sanitization/CSP before displaying output. Article heuristics can omit short or tabular policy clauses; no completeness claim established.",
+      "fit": "Candidate for explicit policy-document comparison and boilerplate reduction with a hard element cap, text-only output and original evidence locator. Never replace full-page evidence or imply policy completeness.",
+      "license": "Apache-2.0 actual LICENSE.md verified.",
+      "followup": "Evaluate short return windows, exclusions in tables/accordions, multilingual clauses and appended legal footnotes. Parser success does not mean all obligations captured. Keep untrusted rendered HTML out of the sidebar.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-017",
+      "name": "RapidFuzz",
+      "capability": "title / policy / address string candidates",
+      "status": "documentation/license inspected",
+      "depth": "Primary README and LICENSE fetched; normalization examples reviewed, no benchmarks executed",
+      "sources": [
+        {
+          "url": "https://github.com/rapidfuzz/RapidFuzz",
+          "retrieval": "opened",
+          "ref": "turn55view2"
+        },
+        {
+          "url": "https://github.com/rapidfuzz/RapidFuzz/blob/HEAD/LICENSE",
+          "retrieval": "github-file",
+          "blobSha": "42c23b2103346d5439dd72582ed6d4a0d8d7b27b"
+        }
+      ],
+      "finding": "Python/C++ fuzzy string matching provides several metrics rather than an entity resolver. Repository notes preprocessing behavior changed in v3: case/whitespace/punctuation normalization is not automatic by default. Algorithm/normalizer versions affect comparable scores.",
+      "fit": "Offline baseline for candidate retrieval and duplicate policy text, not a direct browser dependency or seller-identity authority.",
+      "license": "Actual MIT license verified; copying/ports retain notices and review bundled dependencies.",
+      "followup": "Version Unicode/case/token processing and bound comparisons. Distinguish shared boilerplate from shared operators; numerals such as 14 versus 30 days and model/size codes must not disappear under fuzzy normalization.",
+      "checkedAt": "2026-10-08",
+      "riskWeight": 0,
+      "integration": "research-only; no runtime change",
+      "executed": false
+    },
+    {
+      "id": "TOOL-018",
+      "name": "TinEye",
+      "capability": "reverse image search / dated image reuse",
+      "status": "provider documentation reviewed; existing capability deepened",
+      "depth": "Official FAQ/search and detailed help excerpts; FAQ direct page requires JavaScript; no actual search performed",
+      "sources": [
+        {
+          "url": "https://help.tineye.com/article/246-can-i-sort-my-results",
+          "retrieval": "primary search-excerpt",
+          "ref": "turn56search0"
+        },
+        {
+          "url": "https://help.tineye.com/article/248-what-does-tineye-first-found-on-mean",
+          "retrieval": "primary search-excerpt",
+          "ref": "turn56search1"
+        },
+        {
+          "url": "https://help.tineye.com/article/233-how-does-tineye-work",
+          "retrieval": "primary search-excerpt",
+          "ref": "turn56search2"
+        },
+        {
+          "url": "https://help.tineye.com/article/275-signing-up",
+          "retrieval": "primary search-excerpt",
+          "ref": "turn52search19"
+        }
+      ],
+      "finding": "TinEye distinguishes exact/altered image matches from different photos of similar objects. First-found/oldest refers to its crawl date, not initial publication or the image creator. API automation uses paid search bundles; no result means absent from that index, not unique on the web.",
+      "fit": "Explicit user-triggered external investigation link, with upload/URL data flow disclosed; paid API is unsuitable for required $0 core. This deepens an existing reverse-search capability rather than adding one.",
+      "license": "Proprietary service/index; manual-use/API terms and image rights apply. No permission to redistribute found images assumed.",
+      "followup": "Record provider-observed crawl dates distinctly from verified publication/manufacture dates. A supplier page crawled first cannot by itself establish upstream origin; treat both match and no-match as bounded search observations.",
       "checkedAt": "2026-10-08",
       "riskWeight": 0,
       "integration": "research-only; no runtime change",
