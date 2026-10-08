@@ -33,12 +33,27 @@ requireMatch(bg,/setPanelBehavior\(\{ openPanelOnActionClick: true \}\)/,'toolba
 requireMatch(bg,/documentUrlPatterns:\['http:\/\/\*\/\*','https:\/\/\*\/\*'\]/,'context menus must be limited to web documents');
 requireMatch(bg,/chrome\.tabs\.create\(\{url,active:false\}\)/,'Deep Hunt searches must open bounded background tabs');
 
-requireMatch(image,/chrome\.permissions\.request\(\{origins:\[origin\]\}\)/,'image acquisition must request its exact image host');
+requireMatch(image,/chrome\.permissions\.request\(\{origins:\[hostPattern\(url\)\]\}\)/,'image acquisition must request its exact image host directly');
+forbid(image,/await chrome\.permissions\.contains/,'image permissions must not await a preflight before request');
+requireMatch(image,/response\.body\.getReader\(\)/,'image downloads must enforce byte limits while streaming');
+requireMatch(panel,/verifiedReportPage\(report\)/,'Deep Hunt must bind actions to scanned document');
+requireMatch(panel,/chrome\.tabs\.onActivated\.addListener/,'tab switching must invalidate stale side-panel reports');
+requireMatch(panel,/chrome\.tabs\.onUpdated\.addListener/,'full navigation must invalidate side-panel reports');
+requireMatch(panel,/await isCurrentChromePage\(page\)/,'SPA and document validity must be proven before results are applied');
+requireMatch(pageRuntime,/probe\?\.documentId===page\.documentId/,'page validity must include document ID');
+requireMatch(pageRuntime,/probe\?\.result\?\.url===page\.url/,'page validity must include SPA URL');
+requireMatch(scanner,/MAX_ELEMENTS=9000/,'scanner must bound DOM element traversal');
+requireMatch(scanner,/MAX_TEXT_NODES=4500/,'scanner must bound page text traversal');
+requireMatch(scanner,/MAX_JSON_BYTES=60_000/,'scanner must bound JSON-LD bytes');
+forbid(scanner,/document\.body\?\.innerText|document\.head\?\.innerHTML|\.\.\.document\.scripts|\.\.\.document\.images/,'scanner must not materialize unbounded DOM collections');
 requireMatch(image,/credentials:'omit'/,'image fetch must omit credentials');
 requireMatch(image,/AbortSignal\.timeout\(8000\)/,'image fetch timeout missing');
 requireMatch(image,/MAX_IMAGE_BYTES=15_000_000/,'image byte bound missing');
 
-requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\[origin\]\}\)/,'RDAP must request its own host permission');
+requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\['https:\/\/rdap\.org\/\*'\]\}\)/,'RDAP must request host access directly from the click');
+forbid(rdap,/await chrome\.permissions\.contains/,'RDAP permissions must not await a preflight before request');
+requireMatch(rdap,/response\.body\.getReader\(\)/,'RDAP data must be stream-limited');
+requireMatch(rdap,/const permission=ensureRdapPermission\(\)/,'RDAP must request permission before async cache reads');
 requireMatch(rdap,/AbortSignal\.timeout\(5000\)/,'RDAP timeout missing');
 requireMatch(rdap,/chrome\.storage\.session/,'RDAP cache must use extension session storage');
 
