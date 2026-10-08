@@ -95,9 +95,9 @@
           "checkedAt": "2026-10-08"
         }
       ],
-      "finding": "The CPSC recall dated 2026-08-13 names three Merax Murphy-bed models, eleven WF SKUs, and possible aliases Euroco, Harper & Bright Designs, Modern Luxe and Polibi. Products were sold across Amazon/Walmart and other stores. CPSC reports assembly/disassembly impact/crush hazards and two injuries; manufacture country is Vietnam.",
+      "finding": "CPSC recall 26-694 dated 2026-08-13 names three Merax Murphy-bed models, eleven WF SKUs, and possible aliases Euroco, Harper & Bright Designs, Modern Luxe and Polibi. Products were sold across Amazon/Walmart and other stores. CPSC reports assembly/disassembly impact/crush hazards and two injuries; manufacture country is Vietnam.",
       "application": "Match model/SKU before brand, then exact dimensional/design scope. Store hazard stage: assembly/disassembly is distinct from normal-use stability. Link official remedy rather than generate repair instructions.",
-      "limits": "Do not expand the recall to every Merax/GigaCloud product or infer origin from brand similarity. This is research, not a listing inspection. Notice ID requires explicit confirmation.",
+      "limits": "Scope is the listed models/SKUs; do not expand it to every Merax/GigaCloud product or infer origin from brand similarity. This is research, not inspection of a current shopping listing.",
       "identity": {
         "brands": [
           "Merax",
@@ -131,7 +131,9 @@
           ]
         },
         "manufacturedIn": "Vietnam",
-        "noticeIds": []
+        "noticeIds": [
+          "26-694"
+        ]
       },
       "proposedFamily": "product-safety; separate from deception",
       "checkedAt": "2026-10-08",
@@ -305,7 +307,7 @@
       "id": "FP-009",
       "title": "Composite-wood labels verify a limited emissions claim",
       "category": "furniture / pet furniture materials",
-      "depth": "EPA formaldehyde guidance and consumer FAQ opened; relevant requirements reviewed",
+      "depth": "EPA primary requirements/consumer-FAQ search excerpts and opened page; rule text and certificates not audited",
       "sources": [
         {
           "url": "https://www.epa.gov/formaldehyde/formaldehyde-emission-standards-composite-wood-products",
@@ -367,6 +369,414 @@
       "integration": "research-only",
       "runtimeRiskWeight": 0,
       "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-011",
+      "title": "Pet-toy chemical migration depends on formulation and use",
+      "category": "pet toys / foundational chemical evidence",
+      "depth": "2013 paper's complete PubMed abstract in primary search; direct page failed; full paper not reviewed",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24007620/",
+          "ref": "turn66search0",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "Wooten and Smith (Chemosphere, 2013, DOI 10.1016/j.chemosphere.2013.07.075) measured selected phthalates/BPA migration into synthetic canine saliva and in-vitro endocrine activity. Training bumpers and sampled toys behaved differently; simulated chewing altered migration. This older study provides a mechanism, not a current marketplace prevalence estimate.",
+      "application": "A chemical flag needs an exact product/batch test, analyte, migration protocol, date and relevant exposure—not an appearance/material-country guess. Preserve distinctions between content assays, migration assays and biological assays.",
+      "limits": "No tested current ASIN, factory linkage or manufacturing-region comparison established. Do not extrapolate to all plastics or all pet toys.",
+      "identity": {
+        "doi": "10.1016/j.chemosphere.2013.07.075",
+        "year": 2013,
+        "reviewDepth": "abstract"
+      },
+      "proposedFamily": "chemical evidence; requires product-specific tests",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-012",
+      "title": "A newer dog-toy study still does not prove clinical disease",
+      "category": "pet toys / modern academic evidence",
+      "depth": "PubMed abstract and bibliographic information opened; full methods/dataset not reviewed",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38866337/",
+          "ref": "turn65view0",
+          "retrieval": "opened-abstract",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "Park et al. (Chemosphere, 2024, DOI 10.1016/j.chemosphere.2024.142579) report BPA in dog-toy synthetic-saliva leachates and adipogenic differentiation in canine stem cells. They did not detect phthalates/azo dyes in those leachates. Their cellular mechanism is not proof that a particular retail toy causes obesity in dogs.",
+      "application": "Record detected, not detected, detection limits when available, test conditions and product identity. Lab-study hypotheses can guide Deep Hunt evidence requests, not autonomous diagnosis or a regional toxicity score.",
+      "limits": "Abstract-only review; sample selection, product origins, limits of detection and doses require full-paper review before any classifier feature. No clinical outcome or representative regional sample validated.",
+      "identity": {
+        "doi": "10.1016/j.chemosphere.2024.142579",
+        "year": 2024,
+        "reviewDepth": "abstract"
+      },
+      "proposedFamily": "chemical evidence; no clinical inference",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-013",
+      "title": "Clinical obstruction cases are not a product failure denominator",
+      "category": "pet toys / mechanical hazard evidence",
+      "depth": "2025 PubMed abstract in primary search; full PMC page returned challenge; full report not reviewed",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41069716/",
+          "ref": "turn66search1",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12506697/",
+          "ref": "turn63search4",
+          "retrieval": "metadata-excerpt; direct-full-text-challenge",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "Laiket et al. (2025) retrospectively studied 261 dogs treated for esophageal/gastric foreign bodies. Materials included fabric, rubber and plastic alongside bones and other items. This is a selected clinical case series, not the rate of injuries among purchasers of any toy or region.",
+      "application": "Mechanical screening should distinguish toy dimensions/part detachment from animal-size compatibility and observed damage. Supplier-origin claims cannot establish swallowability or durability. Use vetted product-specific testing and exact instructions.",
+      "limits": "No retailer, factory, SKU or manufacture-country association established. Do not rank brands from these cases or translate hospital case proportions into consumer injury probabilities.",
+      "identity": {
+        "pmid": "41069716",
+        "year": 2025,
+        "reviewDepth": "abstract",
+        "sample": "261 affected dogs; case series"
+      },
+      "proposedFamily": "mechanical safety; context-dependent",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-014",
+      "title": "Wood emissions require test conditions and balanced findings",
+      "category": "furniture / pet furniture material science",
+      "depth": "2025 paper abstract and dataset specifications in primary PMC search; direct full text challenged",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12361599/",
+          "ref": "turn66search2",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "The 2025 Data in Brief dataset (DOI 10.1016/j.dib.2025.111965) compares three panel types in dense, poorly ventilated 50-cm chambers. Four male mice per group were exposed for 14 days; some measures differed but stayed within physiological ranges, and no specific histopathological abnormalities were reported. Emission profiles differ by material/test conditions.",
+      "application": "Store chamber/loading/ventilation/conditioning and assay results alongside any emissions claim. A wood-panel study cannot classify an unrelated cat tree or shelf as toxic. Distinguish solid material composition from compliance and durability.",
+      "limits": "Small animal experiment; no human/pet-room risk estimate, product factory attribution or regional comparison. Dataset rights/measurement methods require further review; no blanket material-country penalty follows.",
+      "identity": {
+        "doi": "10.1016/j.dib.2025.111965",
+        "year": 2025,
+        "reviewDepth": "abstract/specifications"
+      },
+      "proposedFamily": "material evidence; test-specific",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-015",
+      "title": "Pet-toy suitability is use- and animal-dependent",
+      "category": "pet toys / practical veterinary evidence",
+      "depth": "Texas A&M veterinary guidance primary excerpts; direct article 403",
+      "sources": [
+        {
+          "url": "https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/",
+          "ref": "turn63search5",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        },
+        {
+          "url": "https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/",
+          "ref": "turn67search0",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "Texas A&M veterinary guidance dated 2025-11-06 discusses toy size relative to the animal, shredded rope/strings and swallowed parts. This supports contextual mechanical-hazard checks, not classification by color, cheap price or country.",
+      "application": "Optional user-supplied size/use context can help explain fit; do not infer a pet's health or collect medical history. Compare stated supervision/size guidance with exact product evidence and independently validated instructions.",
+      "limits": "Expert guidance is not a product-specific test. No current cat-tree safety or toy brand evaluation performed; no active listing is called unsafe from photos alone.",
+      "identity": {
+        "sourceType": "veterinary school guidance",
+        "publishedAt": "2025-11-06"
+      },
+      "proposedFamily": "use suitability; no generic brand penalty",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-016",
+      "title": "A regional-weight hypothesis needs denominators and independent evaluation",
+      "category": "manufacturing region / evidence calibration",
+      "depth": "Current CPSC imports guidance and historical RAM report; research-design inference clearly separated",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Imports",
+          "ref": "turn66search3",
+          "retrieval": "primary-search-excerpt",
+          "checkedAt": "2026-10-08"
+        },
+        {
+          "url": "https://www.cpsc.gov/Newsroom/News-Releases/2014/CPSC-Uses-Pilot-Risk-Assessment-Tool-to-Strengthen-Import-Safety",
+          "ref": "turn68view3",
+          "retrieval": "opened-historical",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "CPSC describes risk-based selection of shipments for inspection. Its historical report lists manufacturer/importer/product/model/country and violations for selected shipments. Such inspected or recalled cases lack a comparable sales/inspection denominator for all goods; they cannot establish a blanket regional failure probability.",
+      "application": "Investigate factory × category × material × date × verified test/recall first. Evaluate region only with representative, comparable labels, country-specific units/tests, inspection intensity, price/category adjustment, grouped holdout testing and abstention. Report incremental value beyond exact factory/product evidence.",
+      "limits": "No validated regional coefficient obtained. The owner's requested hypothesis is retained as a research question; no nationality or region penalty is implemented. Raw counts and selected enforcement samples are not calibrated retail quality scores.",
+      "identity": {
+        "requestedByOwner": "stronger manufacture-region weighting",
+        "regionalWeightEstablished": false
+      },
+      "proposedFamily": "offline calibration research",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    },
+    {
+      "id": "FP-017",
+      "title": "Import certificate collection changed in July 2026",
+      "category": "manufacturer identifiers / freshness",
+      "depth": "Current CPSC announcement opened; detailed final rule not audited",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports",
+          "ref": "turn68view2",
+          "retrieval": "opened",
+          "checkedAt": "2026-10-08"
+        }
+      ],
+      "finding": "CPSC's 2026-07-08 announcement says eFiling is in effect for regulated imported products and does not create new testing/certification obligations. It gives 2027-01-08 for applicable foreign-trade-zone requirements. Certificate transmission is different from independently measured compliance.",
+      "application": "Version future evidence requests by jurisdiction, product scope and date. Factory/test-lab/certificate identifiers can inform exact traceability when legitimately public or voluntarily supplied; do not assume consumers can query customs filings.",
+      "limits": "No public certificate database, API or retail-listing access established. Missing online certificate content is unresolved, not proof of illegal imports or counterfeit certification.",
+      "identity": {
+        "jurisdiction": "United States",
+        "announcedEffectiveDate": "2026-07-08",
+        "ftzDate": "2027-01-08"
+      },
+      "proposedFamily": "certificate provenance; scope-dependent",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0,
+      "regionalRiskWeightEstablished": false
+    }
+  ],
+  "sourcePresence": [
+    {
+      "findingId": "FP-001",
+      "url": "https://www.cpsc.gov/Recalls/2026/Walmart-Reannounces-Recall-of-Mainstays-Nine-Drawer-Fabric-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Walmart-Distributed-Recalled-Dressers-Post-Recall-Sold-to-Consumers-Through-Liquidators",
+      "ref": "turn60view0",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-002",
+      "url": "https://www.cpsc.gov/Recalls/2026/YITA-Recalls-Multiple-Brands-of-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violates-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ref": "turn60view1",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-003",
+      "url": "https://www.cpsc.gov/Recalls/2026/GigaCloud-Technology-USA-Recalls-Merax-Murphy-Beds-Due-to-Risk-of-Serious-Injury-or-Death-from-Impact-and-Crush-Hazards",
+      "ref": "turn62view0",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-004",
+      "url": "https://www.cpsc.gov/Recalls/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Petgravity-Cat-Toys-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Ingestion-Hazard-Violations-of-Federal-Regulations-for-Consumer-Products-with-Coin-Batteries-Sold-on-Amazon-by-Sanchio-Store",
+      "ref": "turn63search0",
+      "retrieval": "primary-search; direct-open-403",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-005",
+      "url": "https://www.gigacloudtech.com/",
+      "ref": "turn62view3",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-005",
+      "url": "https://get.gigacloudtech.com/shopify-dropshipping-app-integration",
+      "ref": "turn62view4",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-006",
+      "url": "https://www.aboutamazon.com/news/policy-news-views/amazon-trustworthy-shopping-experience-report-2025",
+      "ref": "turn61search9",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-006",
+      "url": "https://trustworthyshopping.aboutamazon.com/approach/robust-proactive-controls",
+      "ref": "turn61search7",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-007",
+      "url": "https://marketplacelearn.walmart.com/guides/Walmart%20Fulfillment%20Services%20%28WFS%29/WFS%20item%20setup/Convert-seller-fulfilled-items-to-WFS",
+      "ref": "turn61search5",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-007",
+      "url": "https://marketplacelearn.walmart.com/guides/Walmart/WFS-hazmat-item-setup",
+      "ref": "turn61search6",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-008",
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Clothing-Storage-Units",
+      "ref": "turn60view3",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-009",
+      "url": "https://www.epa.gov/formaldehyde/formaldehyde-emission-standards-composite-wood-products",
+      "ref": "turn58search4",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-009",
+      "url": "https://www.epa.gov/formaldehyde/frequent-questions-consumers-about-formaldehyde-standards-composite-wood-products-act",
+      "ref": "turn60view4",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-010",
+      "url": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+      "ref": "turn64view2",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-010",
+      "url": "https://www.cpsc.gov/Recalls",
+      "ref": "turn63search6",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24007620/",
+      "ref": "turn66search0",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38866337/",
+      "ref": "turn65view0",
+      "retrieval": "opened-abstract",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41069716/",
+      "ref": "turn66search1",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12506697/",
+      "ref": "turn63search4",
+      "retrieval": "metadata-excerpt; direct-full-text-challenge",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12361599/",
+      "ref": "turn66search2",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-015",
+      "url": "https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/",
+      "ref": "turn63search5",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-015",
+      "url": "https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/",
+      "ref": "turn67search0",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-016",
+      "url": "https://www.cpsc.gov/Imports",
+      "ref": "turn66search3",
+      "retrieval": "primary-search-excerpt",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-016",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2014/CPSC-Uses-Pilot-Risk-Assessment-Tool-to-Strengthen-Import-Safety",
+      "ref": "turn68view3",
+      "retrieval": "opened-historical",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
+    },
+    {
+      "findingId": "FP-017",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports",
+      "ref": "turn68view2",
+      "retrieval": "opened",
+      "checkedAt": "2026-10-08",
+      "archiveScope": "dated source presence and observations; not complete web capture"
     }
   ]
 }

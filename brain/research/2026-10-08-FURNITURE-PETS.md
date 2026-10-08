@@ -1,6 +1,6 @@
 # DropShredder — furniture and pet-product evidence expansion
 
-Research checkpoint: 2026-10-08; ten findings saved, academic and regional-comparison work in progress. User requested furniture, pet furniture/toys, Amazon/Walmart evaluation and stronger manufacturing-region weighting. Region/factory metadata will be recorded; a predictive regional penalty has not been validated. No runtime weighting or blacklist is introduced.
+Research date: 2026-10-08; seventeen findings, four academic abstract-level reviews and twenty-four unique primary-source URLs. Research complete for this bounded batch; manufacturer-network mapping follows separately. User requested furniture, pet furniture/toys, Amazon/Walmart evaluation and stronger manufacturing-region weighting. Region/factory metadata will be recorded; a predictive regional penalty has not been validated. No runtime weighting or blacklist is introduced.
 
 Separate product safety, construction/material quality, provenance deception and fulfillment. An exact official recall can support a product-specific safety notice; it does not establish dropshipping or poor quality of every product from a brand, platform or region. No individual shopping page, purchase, physical product or browser extension was tested. Primary-source snapshots below describe selected cases, not a representative marketplace survey.
 
@@ -38,13 +38,13 @@ CPSC recall 26-251 (2026-02-05) identifies Yita LLC and five dresser brands: Yit
 
 **Area:** furniture safety / exact product matching. **Reading depth:** CPSC Merax recall opened and model/SKU table read.
 
-The CPSC recall dated 2026-08-13 names three Merax Murphy-bed models, eleven WF SKUs, and possible aliases Euroco, Harper & Bright Designs, Modern Luxe and Polibi. Products were sold across Amazon/Walmart and other stores. CPSC reports assembly/disassembly impact/crush hazards and two injuries; manufacture country is Vietnam.
+CPSC recall 26-694 dated 2026-08-13 names three Merax Murphy-bed models, eleven WF SKUs, and possible aliases Euroco, Harper & Bright Designs, Modern Luxe and Polibi. Products were sold across Amazon/Walmart and other stores. CPSC reports assembly/disassembly impact/crush hazards and two injuries; manufacture country is Vietnam.
 
 **Application:** Match model/SKU before brand, then exact dimensional/design scope. Store hazard stage: assembly/disassembly is distinct from normal-use stability. Link official remedy rather than generate repair instructions.
 
-**Limits:** Do not expand the recall to every Merax/GigaCloud product or infer origin from brand similarity. This is research, not a listing inspection. Notice ID requires explicit confirmation.
+**Limits:** Scope is the listed models/SKUs; do not expand it to every Merax/GigaCloud product or infer origin from brand similarity. This is research, not inspection of a current shopping listing.
 
-**Identity/scope:** {"brands":["Merax","Euroco","Harper & Bright Designs","Modern Luxe","Polibi"],"models":["GX000392AAK","GX000391AAK","GX000383AAK"],"modelSkus":{"GX000392AAK":["WF530245","WF530246","WF530247","WF530248"],"GX000391AAK":["WF530240","WF530241","WF530242","WF530243"],"GX000383AAK":["WF324470","WF324471","WF324472"]},"manufacturedIn":"Vietnam","noticeIds":[]}.
+**Identity/scope:** {"brands":["Merax","Euroco","Harper & Bright Designs","Modern Luxe","Polibi"],"models":["GX000392AAK","GX000391AAK","GX000383AAK"],"modelSkus":{"GX000392AAK":["WF530245","WF530246","WF530247","WF530248"],"GX000391AAK":["WF530240","WF530241","WF530242","WF530243"],"GX000383AAK":["WF324470","WF324471","WF324472"]},"manufacturedIn":"Vietnam","noticeIds":["26-694"]}.
 
 **Sources:** [opened](https://www.cpsc.gov/Recalls/2026/GigaCloud-Technology-USA-Recalls-Merax-Murphy-Beds-Due-to-Risk-of-Serious-Injury-or-Death-from-Impact-and-Crush-Hazards).
 
@@ -120,7 +120,7 @@ CPSC guidance for 16 CFR 1261 includes freestanding clothing storage at least 27
 
 ### FP-009 — Composite-wood labels verify a limited emissions claim
 
-**Area:** furniture / pet furniture materials. **Reading depth:** EPA formaldehyde guidance and consumer FAQ opened; relevant requirements reviewed.
+**Area:** furniture / pet furniture materials. **Reading depth:** EPA primary requirements/consumer-FAQ search excerpts and opened page; rule text and certificates not audited.
 
 EPA describes TSCA Title VI coverage for hardwood plywood, MDF, particleboard and finished goods containing them, with panel third-party certification and finished-good labels. Post-March-2019 requirements differ from the earlier CARB transition; nonexempt laminated-product requirements also have a March-2024 boundary.
 
@@ -146,3 +146,108 @@ CPSC documents a public REST recall interface with XML/JSON and example filters.
 
 **Sources:** [opened](https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information); [primary-search-excerpt](https://www.cpsc.gov/Recalls).
 
+### FP-011 — Pet-toy chemical migration depends on formulation and use
+
+**Area:** pet toys / foundational chemical evidence. **Reading depth:** 2013 paper's complete PubMed abstract in primary search; direct page failed; full paper not reviewed.
+
+Wooten and Smith (Chemosphere, 2013, DOI 10.1016/j.chemosphere.2013.07.075) measured selected phthalates/BPA migration into synthetic canine saliva and in-vitro endocrine activity. Training bumpers and sampled toys behaved differently; simulated chewing altered migration. This older study provides a mechanism, not a current marketplace prevalence estimate.
+
+**Application:** A chemical flag needs an exact product/batch test, analyte, migration protocol, date and relevant exposure—not an appearance/material-country guess. Preserve distinctions between content assays, migration assays and biological assays.
+
+**Limits:** No tested current ASIN, factory linkage or manufacturing-region comparison established. Do not extrapolate to all plastics or all pet toys.
+
+**Identity/scope:** {"doi":"10.1016/j.chemosphere.2013.07.075","year":2013,"reviewDepth":"abstract"}.
+
+**Sources:** [primary-search-excerpt](https://pubmed.ncbi.nlm.nih.gov/24007620/).
+
+### FP-012 — A newer dog-toy study still does not prove clinical disease
+
+**Area:** pet toys / modern academic evidence. **Reading depth:** PubMed abstract and bibliographic information opened; full methods/dataset not reviewed.
+
+Park et al. (Chemosphere, 2024, DOI 10.1016/j.chemosphere.2024.142579) report BPA in dog-toy synthetic-saliva leachates and adipogenic differentiation in canine stem cells. They did not detect phthalates/azo dyes in those leachates. Their cellular mechanism is not proof that a particular retail toy causes obesity in dogs.
+
+**Application:** Record detected, not detected, detection limits when available, test conditions and product identity. Lab-study hypotheses can guide Deep Hunt evidence requests, not autonomous diagnosis or a regional toxicity score.
+
+**Limits:** Abstract-only review; sample selection, product origins, limits of detection and doses require full-paper review before any classifier feature. No clinical outcome or representative regional sample validated.
+
+**Identity/scope:** {"doi":"10.1016/j.chemosphere.2024.142579","year":2024,"reviewDepth":"abstract"}.
+
+**Sources:** [opened-abstract](https://pubmed.ncbi.nlm.nih.gov/38866337/).
+
+### FP-013 — Clinical obstruction cases are not a product failure denominator
+
+**Area:** pet toys / mechanical hazard evidence. **Reading depth:** 2025 PubMed abstract in primary search; full PMC page returned challenge; full report not reviewed.
+
+Laiket et al. (2025) retrospectively studied 261 dogs treated for esophageal/gastric foreign bodies. Materials included fabric, rubber and plastic alongside bones and other items. This is a selected clinical case series, not the rate of injuries among purchasers of any toy or region.
+
+**Application:** Mechanical screening should distinguish toy dimensions/part detachment from animal-size compatibility and observed damage. Supplier-origin claims cannot establish swallowability or durability. Use vetted product-specific testing and exact instructions.
+
+**Limits:** No retailer, factory, SKU or manufacture-country association established. Do not rank brands from these cases or translate hospital case proportions into consumer injury probabilities.
+
+**Identity/scope:** {"pmid":"41069716","year":2025,"reviewDepth":"abstract","sample":"261 affected dogs; case series"}.
+
+**Sources:** [primary-search-excerpt](https://pubmed.ncbi.nlm.nih.gov/41069716/); [metadata-excerpt; direct-full-text-challenge](https://pmc.ncbi.nlm.nih.gov/articles/PMC12506697/).
+
+### FP-014 — Wood emissions require test conditions and balanced findings
+
+**Area:** furniture / pet furniture material science. **Reading depth:** 2025 paper abstract and dataset specifications in primary PMC search; direct full text challenged.
+
+The 2025 Data in Brief dataset (DOI 10.1016/j.dib.2025.111965) compares three panel types in dense, poorly ventilated 50-cm chambers. Four male mice per group were exposed for 14 days; some measures differed but stayed within physiological ranges, and no specific histopathological abnormalities were reported. Emission profiles differ by material/test conditions.
+
+**Application:** Store chamber/loading/ventilation/conditioning and assay results alongside any emissions claim. A wood-panel study cannot classify an unrelated cat tree or shelf as toxic. Distinguish solid material composition from compliance and durability.
+
+**Limits:** Small animal experiment; no human/pet-room risk estimate, product factory attribution or regional comparison. Dataset rights/measurement methods require further review; no blanket material-country penalty follows.
+
+**Identity/scope:** {"doi":"10.1016/j.dib.2025.111965","year":2025,"reviewDepth":"abstract/specifications"}.
+
+**Sources:** [primary-search-excerpt](https://pmc.ncbi.nlm.nih.gov/articles/PMC12361599/).
+
+### FP-015 — Pet-toy suitability is use- and animal-dependent
+
+**Area:** pet toys / practical veterinary evidence. **Reading depth:** Texas A&M veterinary guidance primary excerpts; direct article 403.
+
+Texas A&M veterinary guidance dated 2025-11-06 discusses toy size relative to the animal, shredded rope/strings and swallowed parts. This supports contextual mechanical-hazard checks, not classification by color, cheap price or country.
+
+**Application:** Optional user-supplied size/use context can help explain fit; do not infer a pet's health or collect medical history. Compare stated supervision/size guidance with exact product evidence and independently validated instructions.
+
+**Limits:** Expert guidance is not a product-specific test. No current cat-tree safety or toy brand evaluation performed; no active listing is called unsafe from photos alone.
+
+**Identity/scope:** {"sourceType":"veterinary school guidance","publishedAt":"2025-11-06"}.
+
+**Sources:** [primary-search-excerpt](https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/); [primary-search-excerpt](https://vetmed.tamu.edu/news/pet-talk/pet-toy-dangers/).
+
+### FP-016 — A regional-weight hypothesis needs denominators and independent evaluation
+
+**Area:** manufacturing region / evidence calibration. **Reading depth:** Current CPSC imports guidance and historical RAM report; research-design inference clearly separated.
+
+CPSC describes risk-based selection of shipments for inspection. Its historical report lists manufacturer/importer/product/model/country and violations for selected shipments. Such inspected or recalled cases lack a comparable sales/inspection denominator for all goods; they cannot establish a blanket regional failure probability.
+
+**Application:** Investigate factory × category × material × date × verified test/recall first. Evaluate region only with representative, comparable labels, country-specific units/tests, inspection intensity, price/category adjustment, grouped holdout testing and abstention. Report incremental value beyond exact factory/product evidence.
+
+**Limits:** No validated regional coefficient obtained. The owner's requested hypothesis is retained as a research question; no nationality or region penalty is implemented. Raw counts and selected enforcement samples are not calibrated retail quality scores.
+
+**Identity/scope:** {"requestedByOwner":"stronger manufacture-region weighting","regionalWeightEstablished":false}.
+
+**Sources:** [primary-search-excerpt](https://www.cpsc.gov/Imports); [opened-historical](https://www.cpsc.gov/Newsroom/News-Releases/2014/CPSC-Uses-Pilot-Risk-Assessment-Tool-to-Strengthen-Import-Safety).
+
+### FP-017 — Import certificate collection changed in July 2026
+
+**Area:** manufacturer identifiers / freshness. **Reading depth:** Current CPSC announcement opened; detailed final rule not audited.
+
+CPSC's 2026-07-08 announcement says eFiling is in effect for regulated imported products and does not create new testing/certification obligations. It gives 2027-01-08 for applicable foreign-trade-zone requirements. Certificate transmission is different from independently measured compliance.
+
+**Application:** Version future evidence requests by jurisdiction, product scope and date. Factory/test-lab/certificate identifiers can inform exact traceability when legitimately public or voluntarily supplied; do not assume consumers can query customs filings.
+
+**Limits:** No public certificate database, API or retail-listing access established. Missing online certificate content is unresolved, not proof of illegal imports or counterfeit certification.
+
+**Identity/scope:** {"jurisdiction":"United States","announcedEffectiveDate":"2026-07-08","ftzDate":"2027-01-08"}.
+
+**Sources:** [opened](https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports).
+
+## Handoff priorities and boundaries
+
+Prioritize exact official recall/warning matches with dated status, role-separated seller/importer/factory records, SKU aliases, supersession and original agency remedy. Preserve material scope, label/certificate limits, manufacturing dates and unknown identities. Product safety has its own output; a documented recall is not a dropship/deception verdict.
+
+No merchant listing inspected, physical product tested, browser test performed, or epidemiological/regional probability established. The sample was chosen to find failures, so it cannot measure prevalence or trend in Amazon/Walmart catalogues. Modern chemical/clinical papers were reviewed at abstract level only; full methods/datasets and product origins remain unverified. Pet-furniture/cat-tree mechanical load, anchoring and entrapment evidence still needs exact model manuals and independent tests. No generic cat-tree standard or factory-specific quality rate was established.
+
+Further network mapping should rank concrete repeated safety events and verified entity relationships; preserve history and corrections. Do not infer current factory misconduct from stale enforcement data or label every item manufactured in a country. No runtime integration or weight change in this batch. Review/port selected docs onto the current release; the research branch retains the supplied 1507b551 base.
