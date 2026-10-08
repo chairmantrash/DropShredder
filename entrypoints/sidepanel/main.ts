@@ -483,12 +483,17 @@ async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
   for(const url of unique) await chrome.tabs.create({url,active:false});
 }
 
-huntSources?.addEventListener('click',()=>{
-  const title=lastReport?.product.title;
-  if(title) void openSearches(productSearchUrls(title));
-});
+huntSources?.addEventListener('click',()=>void (async()=>{
+  const report=lastReport;
+  if(!report) return;
+  try{
+    await verifiedReportPage(report);
+    if(report.product.title) await openSearches(productSearchUrls(report.product.title));
+  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+})());
 huntImage?.addEventListener('click',async()=>{
-  const image=lastReport?.product.imageUrls[0];
+  const report=lastReport;
+  const image=report?.product.imageUrls[0];
   if(!image){
     await openSearches(imageSearchUrls());
     return;
@@ -497,8 +502,9 @@ huntImage?.addEventListener('click',async()=>{
   if(status) status.textContent='Checking whether this product image shows up elsewhere…';
   try {
       const fingerprint=await captureImageFingerprint(image);
-      if(fingerprint && lastReport){
-        const existing=lastReport.product.imageFingerprints ?? [];
+      if(fingerprint && report){
+        await verifiedReportPage(report);
+        const existing=report.product.imageFingerprints ?? [];
         const nextEvidence={
           id:'LOCAL_IMAGE_FINGERPRINT',
           family:'provenance' as const,
@@ -511,10 +517,10 @@ huntImage?.addEventListener('click',async()=>{
           independentKey:`image-fingerprint:${fingerprint.sha256}`,
         };
         const nextProduct={
-          ...lastReport.product,
+          ...report.product,
           imageFingerprints:[...existing.filter(item=>item.url!==image),fingerprint],
         };
-        let nextEvidenceList=[...lastReport.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence];
+        let nextEvidenceList=[...report.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence];
 
         try{
           const allHistory=await getRecentObservationsAll(250);
@@ -529,8 +535,9 @@ huntImage?.addEventListener('click',async()=>{
           console.warn('DropShredder: cross-domain image history comparison failed',historyError);
         }
 
+        await verifiedReportPage(report);
         lastReport={
-          ...lastReport,
+          ...report,
           product:nextProduct,
           evidence:nextEvidenceList,
           verdict:calculateVerdict(nextEvidenceList),
@@ -541,14 +548,21 @@ huntImage?.addEventListener('click',async()=>{
   } catch(error){
     console.warn('DropShredder: image fingerprinting failed',error);
   } finally {
-    if(status) status.textContent='Image search opened. See who else is using this picture.';
-    await openSearches(imageSearchUrls(image));
+    // The user explicitly requested a public reverse-image search, even if local hashing failed.
+    if(report===lastReport){
+      if(status) status.textContent='Image search opened. See who else is using this picture.';
+      await openSearches(imageSearchUrls(image));
+    }
   }
 });
-huntStore?.addEventListener('click',()=>{
-  const domain=lastReport?.product.domain;
-  if(domain) void openSearches(merchantSearchUrls(domain));
-});
+huntStore?.addEventListener('click',()=>void (async()=>{
+  const report=lastReport;
+  if(!report) return;
+  try{
+    await verifiedReportPage(report);
+    await openSearches(merchantSearchUrls(report.product.domain));
+  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+})());
 
 
 checkDomain?.addEventListener('click',async()=>{
@@ -610,16 +624,19 @@ checkDomain?.addEventListener('click',async()=>{
 });
 
 
-reputationSweep?.addEventListener('click',()=>{
+reputationSweep?.addEventListener('click',()=>void (async()=>{
   const report=lastReport;
   if(!report) return;
-  const target={
-    merchantName:report.merchant.businessName || report.merchant.sellerName,
-    domain:report.merchant.domain,
-  };
-  void openSearches(reputationSearchUrls(target));
-  if(status) status.textContent='Buyer-review searches opened. Compare the complaints before you trust the store.';
-});
+  try{
+    await verifiedReportPage(report);
+    const target={
+      merchantName:report.merchant.businessName || report.merchant.sellerName,
+      domain:report.merchant.domain,
+    };
+    await openSearches(reputationSearchUrls(target));
+    if(status) status.textContent='Buyer-review searches opened. Compare the complaints before you trust the store.';
+  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+})());
 
 
 policyCheck?.addEventListener('click',()=>{
