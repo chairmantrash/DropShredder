@@ -148,6 +148,17 @@ autoProtection?.addEventListener('change',()=>{
     await setAutoContentRegistration(wanted);
     const current=await loadFeatureSettings();
     await saveFeatureSettings({...current,autoProtection:wanted});
+    if(wanted){
+      // Newly enabled protection should check the currently visible product page too.
+      const tab=await activeWebTab();
+      if(tab?.id){
+        void chrome.scripting.executeScript({
+          target:{tabId:tab.id},
+          world:'ISOLATED',
+          files:['content-scripts/auto.js'],
+        }).catch(()=>{});
+      }
+    }
     if(!wanted) await chrome.permissions.remove({origins:[AUTO_PATTERN]});
     if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
       ? 'Automatic alerts are on for supported shopping pages. Other pages stay quiet.'
