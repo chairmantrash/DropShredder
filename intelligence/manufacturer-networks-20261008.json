@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "researchDate": "2026-10-08",
-  "status": "checkpoint",
+  "status": "complete-bounded-batch",
   "integration": "research-only",
   "runtimeRiskWeight": 0,
   "regionalWeightEstablished": false,
@@ -341,6 +341,712 @@
       "id": "Home Depot / Lowe's",
       "label": "Home Depot / Lowe's",
       "type": "retail-channel"
+    },
+    {
+      "id": "yita",
+      "label": "Yita LLC",
+      "type": "company"
+    },
+    {
+      "id": "N11-product",
+      "label": "An official multi-brand recall supplies useful entity aliases",
+      "type": "product",
+      "brands": [
+        "Yitahome",
+        "Uforic",
+        "Dextrus",
+        "Yintatech",
+        "ModFusion"
+      ],
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "SKU",
+          "value": "FTBFSD-0161"
+        },
+        {
+          "kind": "SKU",
+          "value": "FTBFSD-0162"
+        },
+        {
+          "kind": "SKU",
+          "value": "FTBFSD-0212"
+        },
+        {
+          "kind": "SKU",
+          "value": "FTBFSD-0246"
+        },
+        {
+          "kind": "SKU",
+          "value": "FTBFSD-0465"
+        }
+      ]
+    },
+    {
+      "id": "N11-event",
+      "label": "26-251",
+      "type": "safety-event",
+      "noticeId": "26-251",
+      "date": "2026-02-05",
+      "hazard": "Tip-over / entrapment; clothing-storage-unit standard violation",
+      "status": "recall"
+    },
+    {
+      "id": "N11-brand0",
+      "label": "Yitahome",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N11-brand1",
+      "label": "Uforic",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N11-brand2",
+      "label": "Dextrus",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N11-brand3",
+      "label": "Yintatech",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N11-brand4",
+      "label": "ModFusion",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "giga-usa",
+      "label": "GigaCloud Technology (USA) Inc.",
+      "type": "company"
+    },
+    {
+      "id": "N12-product",
+      "label": "Furniture recall matching must survive different retail brands",
+      "type": "product",
+      "brands": [
+        "Merax",
+        "Euroco",
+        "Harper & Bright Designs",
+        "Modern Luxe",
+        "Polibi"
+      ],
+      "manufacturedIn": "Vietnam",
+      "identifiers": [
+        {
+          "kind": "model",
+          "value": "GX000392AAK"
+        },
+        {
+          "kind": "model",
+          "value": "GX000391AAK"
+        },
+        {
+          "kind": "model",
+          "value": "GX000383AAK"
+        }
+      ],
+      "modelSkus": {
+        "GX000392AAK": [
+          "WF530245",
+          "WF530246",
+          "WF530247",
+          "WF530248"
+        ],
+        "GX000391AAK": [
+          "WF530240",
+          "WF530241",
+          "WF530242",
+          "WF530243"
+        ],
+        "GX000383AAK": [
+          "WF324470",
+          "WF324471",
+          "WF324472"
+        ]
+      }
+    },
+    {
+      "id": "N12-event",
+      "label": "26-694",
+      "type": "safety-event",
+      "noticeId": "26-694",
+      "date": "2026-08-13",
+      "hazard": "Impact / crush during assembly or disassembly",
+      "status": "recall"
+    },
+    {
+      "id": "N12-brand0",
+      "label": "Merax",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N12-brand1",
+      "label": "Euroco",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N12-brand2",
+      "label": "Harper & Bright Designs",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N12-brand3",
+      "label": "Modern Luxe",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N12-brand4",
+      "label": "Polibi",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "hop-thang",
+      "label": "Hop Thang Interior Wood Co. Ltd.",
+      "type": "company"
+    },
+    {
+      "id": "N13-product",
+      "label": "Recalled furniture can reappear through liquidation",
+      "type": "product",
+      "brands": [
+        "Mainstays"
+      ],
+      "manufacturedIn": "Vietnam",
+      "identifiers": [
+        {
+          "kind": "sample-lot-caption",
+          "value": "HCV202601"
+        }
+      ]
+    },
+    {
+      "id": "N13-event",
+      "label": "26-726",
+      "type": "safety-event",
+      "noticeId": "26-726",
+      "date": "2026-08-27",
+      "hazard": "Tip-over / entrapment; post-recall distribution",
+      "status": "recall-reannouncement"
+    },
+    {
+      "id": "N13-brand0",
+      "label": "Mainstays",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "petgravity-seller",
+      "label": "LYsolcusnee Guangzhoulinlikejiyouxiangongsi (Sanchio Store / LYsolcusnee)",
+      "type": "company"
+    },
+    {
+      "id": "N14-product",
+      "label": "A pet toy can have a documented child-safety hazard",
+      "type": "product",
+      "brands": [
+        "Sanchio Store",
+        "LYsolcusnee"
+      ],
+      "manufacturedIn": "China",
+      "identifiers": []
+    },
+    {
+      "id": "N14-event",
+      "label": "25-297",
+      "type": "safety-event",
+      "noticeId": "25-297",
+      "date": "2025-05-29",
+      "hazard": "Accessible CR2032 battery; child-ingestion hazard; required warnings missing",
+      "status": "agency-warning"
+    },
+    {
+      "id": "N14-brand0",
+      "label": "Sanchio Store",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "N14-brand1",
+      "label": "LYsolcusnee",
+      "type": "brand-or-storefront"
+    },
+    {
+      "id": "Walmart",
+      "label": "Walmart Inc.",
+      "type": "retail-channel"
+    },
+    {
+      "id": "omg",
+      "label": "OMG California Community",
+      "type": "liquidator"
+    },
+    {
+      "id": "threads",
+      "label": "Threads of Fenton",
+      "type": "liquidator"
+    },
+    {
+      "id": "golden-cone",
+      "label": "Golden Cone Electronic, Inc.",
+      "type": "liquidator"
+    },
+    {
+      "id": "returnpro",
+      "label": "ReturnPro",
+      "type": "liquidator"
+    },
+    {
+      "id": "mainstays-original",
+      "label": "26-522",
+      "type": "safety-event",
+      "noticeId": "26-522",
+      "date": "2026-05-28",
+      "hazard": "Same recalled Mainstays nine-drawer dresser",
+      "status": "recall"
+    },
+    {
+      "id": "giga-parent",
+      "label": "GigaCloud Technology Inc.",
+      "type": "company"
+    },
+    {
+      "id": "noble-assets",
+      "label": "Noble House assets purchased in 2023",
+      "type": "asset-bundle"
+    },
+    {
+      "id": "noble",
+      "label": "Noble House Home Furnishings LLC",
+      "type": "company"
+    },
+    {
+      "id": "wondersign",
+      "label": "Apexis Inc., dba Wondersign",
+      "type": "company"
+    },
+    {
+      "id": "noble-stool",
+      "label": "Louigi / Tate counter stools",
+      "type": "product",
+      "manufacturedIn": [
+        "China",
+        "Vietnam"
+      ],
+      "identifiers": []
+    },
+    {
+      "id": "noble-stool-event",
+      "label": "16-175",
+      "type": "safety-event",
+      "noticeId": "16-175",
+      "date": "2016-05-25",
+      "hazard": "Sharp kick plates; six injury reports",
+      "status": "recall"
+    },
+    {
+      "id": "noble-chair",
+      "label": "Kaius / Henrietta / Fauna chairs",
+      "type": "product",
+      "manufacturedIn": [
+        "Malaysia"
+      ],
+      "identifiers": []
+    },
+    {
+      "id": "noble-chair-event",
+      "label": "17-177",
+      "type": "safety-event",
+      "noticeId": "17-177",
+      "date": "2017-06-13",
+      "hazard": "Breaking legs; six break reports / four bruise incidents",
+      "status": "recall"
+    },
+    {
+      "id": "noble-chest",
+      "label": "Luna/Glendora, Paulus/Gladys, Pavona, Penrod/Mavis",
+      "type": "product",
+      "manufacturedIn": [
+        "Vietnam"
+      ],
+      "identifiers": [
+        {
+          "kind": "model",
+          "value": "55429.00MAH"
+        },
+        {
+          "kind": "model",
+          "value": "66755.00"
+        },
+        {
+          "kind": "model",
+          "value": "66756.00"
+        },
+        {
+          "kind": "model",
+          "value": "66760.00WALNWHT"
+        }
+      ]
+    },
+    {
+      "id": "noble-chest-event",
+      "label": "21-718",
+      "type": "safety-event",
+      "noticeId": "21-718",
+      "date": "2021-01-07",
+      "hazard": "Tip-over / entrapment; no injuries reported",
+      "status": "recall"
+    },
+    {
+      "id": "joybuy",
+      "label": "JD E Commerce America Limited (dba Joybuy Marketplace Express)",
+      "type": "company"
+    },
+    {
+      "id": "joybuy-carriers",
+      "label": "Recalled unlabeled sling carriers",
+      "type": "product",
+      "manufacturedIn": "China",
+      "matchNeeds": "Purchase history / exact notice seller table; no product brand marks."
+    },
+    {
+      "id": "joybuy-carrier-event",
+      "label": "24-258",
+      "type": "safety-event",
+      "noticeId": "24-258",
+      "date": "2024-06-06",
+      "hazard": "Infant suffocation and fall",
+      "status": "recall"
+    },
+    {
+      "id": "hongyuan",
+      "label": "Shenzhen Hongyuan Supply Chain Management Co., Ltd.",
+      "type": "company",
+      "noticeBrand": "Wisremt",
+      "formerNames": [
+        "Yituo Youpin",
+        "Chengdu Meidanyou Technology Ltd."
+      ]
+    },
+    {
+      "id": "shengminyuan",
+      "label": "Shenzhen Shengminyuan E-Commerce Ltd.",
+      "type": "company",
+      "noticeBrand": "Sunisery",
+      "formerNames": []
+    },
+    {
+      "id": "huanqi",
+      "label": "Shenzhen Huanqi Tongda Technology Co., LTD.",
+      "type": "company",
+      "noticeBrand": "Sunisery",
+      "formerNames": [
+        "Shenzhen Shangpinyuan E-commerce Co."
+      ]
+    },
+    {
+      "id": "pufei",
+      "label": "Jiujiang Pufei E-commerce Co.",
+      "type": "company",
+      "noticeBrand": "Multitrust",
+      "formerNames": []
+    },
+    {
+      "id": "xunyi",
+      "label": "Jiujiang Xunyi E-Commerce Co.",
+      "type": "company",
+      "noticeBrand": "Inevnen",
+      "formerNames": [
+        "Shenzhen Jiaqin Supply Chain Technology Co., Ltd."
+      ]
+    },
+    {
+      "id": "liyu",
+      "label": "Shenzhen Liyu Network Technology Co.",
+      "type": "company",
+      "noticeBrand": "Farrubbyine8",
+      "formerNames": []
+    },
+    {
+      "id": "chenlang",
+      "label": "Dongguan Chenlang E-commerce Technology Co.",
+      "type": "company",
+      "noticeBrand": "Jolly's",
+      "formerNames": []
+    },
+    {
+      "id": "yeluo",
+      "label": "Dongguan Yeluo Huakai E-commerce Technology Co.",
+      "type": "company",
+      "noticeBrand": "Tinkercad",
+      "formerNames": []
+    },
+    {
+      "id": "yanlei",
+      "label": "Shanghai Yanlei Network Technology Co. Ltd.",
+      "type": "company"
+    },
+    {
+      "id": "relax-magnets",
+      "label": "Relax 5mm Science Kit — 216 magnetic balls",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [],
+      "matchNeeds": "Exact 216-ball set / case / storage bag and notice seller history."
+    },
+    {
+      "id": "relax-event",
+      "label": "24-071",
+      "type": "safety-event",
+      "noticeId": "24-071",
+      "date": "2023-12-28",
+      "hazard": "High-powered magnet ingestion; no incidents reported for these units",
+      "status": "recall"
+    },
+    {
+      "id": "H01-maker",
+      "label": "ALLIANCE (HK) ENTERPRISE LIMITED",
+      "type": "company"
+    },
+    {
+      "id": "H01-importer",
+      "label": "Caribbean Retail Ventures Inc.",
+      "type": "company"
+    },
+    {
+      "id": "H01-product",
+      "label": "Volart R/C",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "46-81526"
+        }
+      ]
+    },
+    {
+      "id": "H01-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Lead, certificate and tracking-label violations",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "H02-maker",
+      "label": "ANKYO DEVELOPMENT LIMITED",
+      "type": "company"
+    },
+    {
+      "id": "H02-importer",
+      "label": "Dollar Tree Stores Inc.",
+      "type": "company"
+    },
+    {
+      "id": "H02-product",
+      "label": "Sea Life Water Squirter Bath Toy",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "144309"
+        }
+      ]
+    },
+    {
+      "id": "H02-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Phthalate limit violation",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "H03-maker",
+      "label": "SHENZHEN KEDESHUN TRADING CO. LTD.",
+      "type": "company"
+    },
+    {
+      "id": "H03-importer",
+      "label": "Neway Import Inc.",
+      "type": "company"
+    },
+    {
+      "id": "H03-product",
+      "label": "Toy Bicycle B/O",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "6568"
+        }
+      ]
+    },
+    {
+      "id": "H03-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Lead, phthalate, certificate and tracking-label violations",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "H04-maker",
+      "label": "SHAINTOU CHENGHAI TOMADE CO. LTD.",
+      "type": "company"
+    },
+    {
+      "id": "H04-importer",
+      "label": "Allied Star International Inc.",
+      "type": "company"
+    },
+    {
+      "id": "H04-product",
+      "label": "Doll",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "200915"
+        },
+        {
+          "kind": "historic-model",
+          "value": "8558A"
+        }
+      ]
+    },
+    {
+      "id": "H04-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Lead, phthalate, certificate and tracking-label violations",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "H05-maker",
+      "label": "HANG WING PLASTIC INDUSTRY CO. LTD.",
+      "type": "company"
+    },
+    {
+      "id": "H05-importer",
+      "label": "Angelica's Record Distributors",
+      "type": "company"
+    },
+    {
+      "id": "H05-product",
+      "label": "Insect Musical Drum",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "HWA603069"
+        }
+      ]
+    },
+    {
+      "id": "H05-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Small-parts, tracking-label and certificate violations",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "H06-maker",
+      "label": "SHANTOU MING HONG PLASTIC TOYS FACTORY",
+      "type": "company"
+    },
+    {
+      "id": "H06-importer",
+      "label": "Asonic Trading",
+      "type": "company"
+    },
+    {
+      "id": "H06-product",
+      "label": "Bubble Gun",
+      "type": "product",
+      "manufacturedIn": "China",
+      "identifiers": [
+        {
+          "kind": "historic-model",
+          "value": "626A-2(626AB)"
+        }
+      ]
+    },
+    {
+      "id": "H06-event",
+      "label": "FY2013 seized shipment",
+      "type": "safety-event",
+      "status": "historical-port-seizure",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "hazard": "Small-parts and certificate violations",
+      "currentStatus": "unverified"
+    },
+    {
+      "id": "xiniuniu-profile",
+      "label": "Fujian Xiniuniu supplier profile (fzdeyu)",
+      "type": "supplier-profile",
+      "claims": [
+        "Changle, Fujian airport industrial area",
+        "30 years production experience",
+        "OEM / panel furniture / Amazon focus"
+      ],
+      "claimsVerified": false
+    },
+    {
+      "id": "C01",
+      "label": "Chenghai, Shantou, Guangdong",
+      "type": "manufacturing-cluster"
+    },
+    {
+      "id": "C02",
+      "label": "Anji, Zhejiang",
+      "type": "manufacturing-cluster"
+    },
+    {
+      "id": "C03",
+      "label": "Nankang, Ganzhou, Jiangxi",
+      "type": "manufacturing-cluster"
+    },
+    {
+      "id": "C04",
+      "label": "Keqiao, Shaoxing, Zhejiang",
+      "type": "manufacturing-cluster"
+    },
+    {
+      "id": "C05",
+      "label": "Shuitou, Pingyang, Wenzhou, Zhejiang",
+      "type": "manufacturing-cluster"
+    },
+    {
+      "id": "A01",
+      "label": "Anji JinBiao Furniture Factory",
+      "type": "company"
+    },
+    {
+      "id": "A02",
+      "label": "Zhejiang Demure Furniture Co., Ltd.",
+      "type": "company"
+    },
+    {
+      "id": "A03",
+      "label": "Zhejiang Baizhijia Furniture Co., Ltd. / CHENXU",
+      "type": "company"
+    },
+    {
+      "id": "C06",
+      "label": "Longjiang, Shunde, Foshan, Guangdong",
+      "type": "manufacturing-cluster"
     }
   ],
   "edges": [
@@ -682,6 +1388,739 @@
       "sourceId": "S10",
       "scope": "26-126",
       "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E038",
+      "from": "yita",
+      "to": "N11-product",
+      "type": "importer",
+      "sourceId": "S11",
+      "scope": "26-251",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E039",
+      "from": "N11-product",
+      "to": "N11-event",
+      "type": "covered-by",
+      "sourceId": "S11",
+      "scope": "Only recalled/warned product scope.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E040",
+      "from": "N11-product",
+      "to": "N11-brand0",
+      "type": "marketed-under",
+      "sourceId": "S11",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E041",
+      "from": "N11-product",
+      "to": "N11-brand1",
+      "type": "marketed-under",
+      "sourceId": "S11",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E042",
+      "from": "N11-product",
+      "to": "N11-brand2",
+      "type": "marketed-under",
+      "sourceId": "S11",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E043",
+      "from": "N11-product",
+      "to": "N11-brand3",
+      "type": "marketed-under",
+      "sourceId": "S11",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E044",
+      "from": "N11-product",
+      "to": "N11-brand4",
+      "type": "marketed-under",
+      "sourceId": "S11",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E045",
+      "from": "giga-usa",
+      "to": "N12-product",
+      "type": "importer",
+      "sourceId": "S12",
+      "scope": "26-694",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E046",
+      "from": "N12-product",
+      "to": "N12-event",
+      "type": "covered-by",
+      "sourceId": "S12",
+      "scope": "Only recalled/warned product scope.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E047",
+      "from": "N12-product",
+      "to": "N12-brand0",
+      "type": "marketed-under",
+      "sourceId": "S12",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E048",
+      "from": "N12-product",
+      "to": "N12-brand1",
+      "type": "marketed-under",
+      "sourceId": "S12",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E049",
+      "from": "N12-product",
+      "to": "N12-brand2",
+      "type": "marketed-under",
+      "sourceId": "S12",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E050",
+      "from": "N12-product",
+      "to": "N12-brand3",
+      "type": "marketed-under",
+      "sourceId": "S12",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E051",
+      "from": "N12-product",
+      "to": "N12-brand4",
+      "type": "marketed-under",
+      "sourceId": "S12",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E052",
+      "from": "hop-thang",
+      "to": "N13-product",
+      "type": "manufacturer",
+      "sourceId": "S13",
+      "scope": "26-726",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E053",
+      "from": "N13-product",
+      "to": "N13-event",
+      "type": "covered-by",
+      "sourceId": "S13",
+      "scope": "Only recalled/warned product scope.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E054",
+      "from": "N13-product",
+      "to": "N13-brand0",
+      "type": "marketed-under",
+      "sourceId": "S13",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E055",
+      "from": "petgravity-seller",
+      "to": "N14-product",
+      "type": "seller",
+      "sourceId": "S14",
+      "scope": "25-297",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E056",
+      "from": "N14-product",
+      "to": "N14-event",
+      "type": "covered-by",
+      "sourceId": "S14",
+      "scope": "Only recalled/warned product scope.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E057",
+      "from": "N14-product",
+      "to": "N14-brand0",
+      "type": "marketed-under",
+      "sourceId": "S14",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E058",
+      "from": "N14-product",
+      "to": "N14-brand1",
+      "type": "marketed-under",
+      "sourceId": "S14",
+      "scope": "These described units only.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E059",
+      "from": "Walmart",
+      "to": "N13-product",
+      "type": "retailer",
+      "sourceId": "S13",
+      "scope": "26-726 Mainstays units.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E060",
+      "from": "N13-product",
+      "to": "omg",
+      "type": "post-recall-sold-through",
+      "sourceId": "S13",
+      "scope": "CPSC-described post-recall distribution; product-specific, not all inventory.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E061",
+      "from": "N13-product",
+      "to": "threads",
+      "type": "post-recall-sold-through",
+      "sourceId": "S13",
+      "scope": "CPSC-described post-recall distribution; product-specific, not all inventory.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E062",
+      "from": "N13-product",
+      "to": "golden-cone",
+      "type": "post-recall-sold-through",
+      "sourceId": "S13",
+      "scope": "CPSC-described post-recall distribution; product-specific, not all inventory.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E063",
+      "from": "N13-product",
+      "to": "returnpro",
+      "type": "post-recall-sold-through",
+      "sourceId": "S13",
+      "scope": "CPSC-described post-recall distribution; product-specific, not all inventory.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E064",
+      "from": "N13-event",
+      "to": "mainstays-original",
+      "type": "reannounces",
+      "sourceId": "S13",
+      "scope": "One lineage; do not count two independent original recalls.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E065",
+      "from": "giga-parent",
+      "to": "noble-assets",
+      "type": "asset-acquisition",
+      "sourceId": "S16",
+      "scope": "2023 transaction; approximately $85m announcement subject to adjustments.",
+      "evidenceStatus": "source-stated",
+      "effectivePeriod": "2023-10",
+      "announcementDate": "2023-11-01"
+    },
+    {
+      "id": "E066",
+      "from": "noble",
+      "to": "noble-assets",
+      "type": "asset-seller",
+      "sourceId": "S16",
+      "scope": "Selected assets: inventory, leases, domains, brands, patents and channels.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E067",
+      "from": "giga-parent",
+      "to": "wondersign",
+      "type": "equity-acquisition",
+      "sourceId": "S17",
+      "scope": "100% equity acquired November 2023; $10m reported.",
+      "evidenceStatus": "source-stated",
+      "effectivePeriod": "2023-11"
+    },
+    {
+      "id": "E068",
+      "from": "noble",
+      "to": "noble-stool",
+      "type": "importer",
+      "sourceId": "S18",
+      "scope": "Notice-time role; predates 2023 asset sale.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E069",
+      "from": "noble-stool",
+      "to": "noble-stool-event",
+      "type": "covered-by",
+      "sourceId": "S18",
+      "scope": "Exact described old products, not current entire brand.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E070",
+      "from": "noble",
+      "to": "noble-chair",
+      "type": "importer",
+      "sourceId": "S19",
+      "scope": "Notice-time role; predates 2023 asset sale.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E071",
+      "from": "noble-chair",
+      "to": "noble-chair-event",
+      "type": "covered-by",
+      "sourceId": "S19",
+      "scope": "Exact described old products, not current entire brand.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E072",
+      "from": "noble",
+      "to": "noble-chest",
+      "type": "importer",
+      "sourceId": "S20",
+      "scope": "Notice-time role; predates 2023 asset sale.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E073",
+      "from": "noble-chest",
+      "to": "noble-chest-event",
+      "type": "covered-by",
+      "sourceId": "S20",
+      "scope": "Exact described old products, not current entire brand.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E074",
+      "from": "joybuy-carriers",
+      "to": "joybuy-carrier-event",
+      "type": "covered-by",
+      "sourceId": "S21",
+      "scope": "Notice table and description; no all-brand warning.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E075",
+      "from": "joybuy-carriers",
+      "to": "Walmart",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "September 2020–April 2023.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E076",
+      "from": "hongyuan",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E077",
+      "from": "hongyuan",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E078",
+      "from": "shengminyuan",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E079",
+      "from": "shengminyuan",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E080",
+      "from": "huanqi",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E081",
+      "from": "huanqi",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E082",
+      "from": "pufei",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E083",
+      "from": "pufei",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E084",
+      "from": "xunyi",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E085",
+      "from": "xunyi",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E086",
+      "from": "liyu",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E087",
+      "from": "liyu",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E088",
+      "from": "chenlang",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E089",
+      "from": "chenlang",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E090",
+      "from": "yeluo",
+      "to": "joybuy-carriers",
+      "type": "retailer",
+      "sourceId": "S21",
+      "scope": "24-258 seller table, exact description.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E091",
+      "from": "yeluo",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S21",
+      "scope": "Notice-time channel; not equity ownership or factory relationship.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E092",
+      "from": "yanlei",
+      "to": "relax-magnets",
+      "type": "seller",
+      "sourceId": "S22",
+      "scope": "24-071",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E093",
+      "from": "yanlei",
+      "to": "joybuy",
+      "type": "sold-through",
+      "sourceId": "S22",
+      "scope": "Notice-time channel, not ownership.",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E094",
+      "from": "relax-magnets",
+      "to": "Walmart",
+      "type": "sold-through",
+      "sourceId": "S22",
+      "scope": "February 2022–April 2023",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E095",
+      "from": "relax-magnets",
+      "to": "relax-event",
+      "type": "covered-by",
+      "sourceId": "S22",
+      "scope": "Exact described product",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E096",
+      "from": "H01-maker",
+      "to": "H01-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E097",
+      "from": "H01-importer",
+      "to": "H01-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E098",
+      "from": "H01-product",
+      "to": "H01-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E099",
+      "from": "H02-maker",
+      "to": "H02-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E100",
+      "from": "H02-importer",
+      "to": "H02-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E101",
+      "from": "H02-product",
+      "to": "H02-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E102",
+      "from": "H03-maker",
+      "to": "H03-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E103",
+      "from": "H03-importer",
+      "to": "H03-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E104",
+      "from": "H03-product",
+      "to": "H03-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E105",
+      "from": "H04-maker",
+      "to": "H04-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E106",
+      "from": "H04-importer",
+      "to": "H04-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E107",
+      "from": "H04-product",
+      "to": "H04-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E108",
+      "from": "H05-maker",
+      "to": "H05-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E109",
+      "from": "H05-importer",
+      "to": "H05-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E110",
+      "from": "H05-product",
+      "to": "H05-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E111",
+      "from": "H06-maker",
+      "to": "H06-product",
+      "type": "foreign-manufacturer",
+      "sourceId": "S23",
+      "scope": "Historical table row; role is source's foreign-manufacturer field.",
+      "evidenceStatus": "source-stated",
+      "locator": "FY2013 seized-product table"
+    },
+    {
+      "id": "E112",
+      "from": "H06-importer",
+      "to": "H06-product",
+      "type": "importer",
+      "sourceId": "S23",
+      "scope": "Historical table row",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E113",
+      "from": "H06-product",
+      "to": "H06-event",
+      "type": "seized-shipment",
+      "sourceId": "S23",
+      "scope": "Old inspected shipment; not a current recall",
+      "evidenceStatus": "source-stated"
+    },
+    {
+      "id": "E114",
+      "from": "xiniuniu-profile",
+      "to": "xiniuniu-home",
+      "type": "candidate-identifies",
+      "sourceId": "S24",
+      "scope": "Supplier profile lead only; corporate legal identity not independently verified.",
+      "evidenceStatus": "hypothesis",
+      "usableForAlert": false
+    },
+    {
+      "id": "E115",
+      "from": "A01",
+      "to": "C02",
+      "type": "self-claims-location",
+      "sourceId": "S30",
+      "scope": "Self-description only; no registry/certificate verification.",
+      "evidenceStatus": "self-claim",
+      "usableForAlert": false
+    },
+    {
+      "id": "E116",
+      "from": "A02",
+      "to": "C02",
+      "type": "self-claims-location",
+      "sourceId": "S31",
+      "scope": "Self-description only; no registry/certificate verification.",
+      "evidenceStatus": "self-claim",
+      "usableForAlert": false
+    },
+    {
+      "id": "E117",
+      "from": "A03",
+      "to": "C02",
+      "type": "self-claims-location",
+      "sourceId": "S32",
+      "scope": "Self-description only; no registry/certificate verification.",
+      "evidenceStatus": "self-claim",
+      "usableForAlert": false
     }
   ],
   "families": [
@@ -689,7 +2128,8 @@
       "id": "N01",
       "title": "Fujian Xiniuniu / Timechee",
       "sourceIds": [
-        "S01"
+        "S01",
+        "S24"
       ],
       "productIds": [
         "N01-product"
@@ -832,6 +2272,209 @@
       ],
       "limits": "Ningbo Tianqi and FUFU & GAGA TRADE CO., LTD are distinct unresolved entities, not proven common ownership.",
       "priority": "documented product event; refresh scope before alert"
+    },
+    {
+      "id": "N11",
+      "title": "An official multi-brand recall supplies useful entity aliases",
+      "sourceIds": [
+        "S11"
+      ],
+      "productIds": [
+        "N11-product"
+      ],
+      "eventIds": [
+        "N11-event"
+      ],
+      "limits": "Association applies to listed recalled units; a multi-brand business or Chinese manufacture does not establish deceptive provenance or poor quality of unrelated goods.",
+      "priority": "documented product event; refresh scope before alert"
+    },
+    {
+      "id": "N12",
+      "title": "Furniture recall matching must survive different retail brands",
+      "sourceIds": [
+        "S12"
+      ],
+      "productIds": [
+        "N12-product"
+      ],
+      "eventIds": [
+        "N12-event"
+      ],
+      "limits": "Scope is the listed models/SKUs; do not expand it to every Merax/GigaCloud product or infer origin from brand similarity. This is research, not inspection of a current shopping listing.",
+      "priority": "documented product event; refresh scope before alert"
+    },
+    {
+      "id": "N13",
+      "title": "Recalled furniture can reappear through liquidation",
+      "sourceIds": [
+        "S13",
+        "S15"
+      ],
+      "productIds": [
+        "N13-product"
+      ],
+      "eventIds": [
+        "N13-event",
+        "mainstays-original"
+      ],
+      "limits": "Description says manufacture September 2023–December 2025, while illustrative label caption shows January 2026/HCV202601. Preserve that source ambiguity and seek official model confirmation; do not invent a hard batch cutoff.",
+      "priority": "documented product event; refresh scope before alert"
+    },
+    {
+      "id": "N14",
+      "title": "A pet toy can have a documented child-safety hazard",
+      "sourceIds": [
+        "S14"
+      ],
+      "productIds": [
+        "N14-product"
+      ],
+      "eventIds": [
+        "N14-event"
+      ],
+      "limits": "Notice-time status may change; refresh before a user-facing alert. Do not misclassify a children's pretend pet-vet playset as a pet toy. This warning does not establish chemical toxicity, all-brand failure or pet injury.",
+      "priority": "documented product event; refresh scope before alert"
+    },
+    {
+      "id": "N15",
+      "title": "GigaCloud / Noble House / Wondersign transaction history",
+      "sourceIds": [
+        "S16",
+        "S17"
+      ],
+      "productIds": [],
+      "eventIds": [],
+      "limits": "Asset acquisition is not an all-company equity acquisition or proof of inherited past safety liability. Results state Noble consideration $77.6m; preserve announcement versus adjusted results.",
+      "priority": "corporate-history context"
+    },
+    {
+      "id": "N16",
+      "title": "Legacy Noble House product events",
+      "sourceIds": [
+        "S18",
+        "S19",
+        "S20"
+      ],
+      "productIds": [
+        "noble-stool",
+        "noble-chair",
+        "noble-chest"
+      ],
+      "eventIds": [
+        "noble-stool-event",
+        "noble-chair-event",
+        "noble-chest-event"
+      ],
+      "limits": "Three distinct historical product events, across different origin countries. No currently verified factory link to 2026 Merax beds. Model/description scope still required.",
+      "priority": "repeat historical importer events; current attribution unresolved"
+    },
+    {
+      "id": "N17",
+      "title": "Joybuy seller/channel history",
+      "sourceIds": [
+        "S21",
+        "S22"
+      ],
+      "productIds": [
+        "joybuy-carriers",
+        "relax-magnets"
+      ],
+      "eventIds": [
+        "joybuy-carrier-event",
+        "relax-event"
+      ],
+      "limits": "Two distinct old product events share a channel. Factories unknown. Notice-listed former names are usable entity-history leads, not proof every entity's current products are hazardous.",
+      "priority": "repeat channel events; historical seller identity"
+    },
+    {
+      "id": "H01",
+      "title": "Historic port-seizure lead: ALLIANCE (HK) ENTERPRISE LIMITED",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H01-product"
+      ],
+      "eventIds": [
+        "H01-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
+    },
+    {
+      "id": "H02",
+      "title": "Historic port-seizure lead: ANKYO DEVELOPMENT LIMITED",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H02-product"
+      ],
+      "eventIds": [
+        "H02-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
+    },
+    {
+      "id": "H03",
+      "title": "Historic port-seizure lead: SHENZHEN KEDESHUN TRADING CO. LTD.",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H03-product"
+      ],
+      "eventIds": [
+        "H03-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
+    },
+    {
+      "id": "H04",
+      "title": "Historic port-seizure lead: SHAINTOU CHENGHAI TOMADE CO. LTD.",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H04-product"
+      ],
+      "eventIds": [
+        "H04-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
+    },
+    {
+      "id": "H05",
+      "title": "Historic port-seizure lead: HANG WING PLASTIC INDUSTRY CO. LTD.",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H05-product"
+      ],
+      "eventIds": [
+        "H05-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
+    },
+    {
+      "id": "H06",
+      "title": "Historic port-seizure lead: SHANTOU MING HONG PLASTIC TOYS FACTORY",
+      "sourceIds": [
+        "S23"
+      ],
+      "productIds": [
+        "H06-product"
+      ],
+      "eventIds": [
+        "H06-event"
+      ],
+      "limits": "Retain raw name, including source spelling. No current corporate identity, factory street, products or recurrence verified.",
+      "priority": "historical lead only"
     }
   ],
   "sources": [
@@ -842,7 +2485,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S02",
@@ -858,7 +2502,8 @@
       "issueDate": "2025-04-08",
       "authenticity": "not verified with issuer",
       "sampleOnly": true,
-      "reproduction": "No PDF or label images republished; presence/hash/own brief notes only."
+      "reproduction": "No PDF or label images republished; presence/hash/own brief notes only.",
+      "independenceFamily": "https://images.thdstatic.com/catalog/pdfImages/13/13171b70-dcca-4c5c-9652-f602175a1de9.pdf"
     },
     {
       "id": "S03",
@@ -867,7 +2512,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S04",
@@ -876,7 +2522,8 @@
       "depth": "primary search excerpt; direct open failed",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S05",
@@ -885,7 +2532,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S06",
@@ -894,7 +2542,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S07",
@@ -903,7 +2552,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S08",
@@ -912,7 +2562,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S09",
@@ -921,7 +2572,8 @@
       "depth": "opened",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
     },
     {
       "id": "S10",
@@ -930,7 +2582,311 @@
       "depth": "primary search excerpt; direct open 403",
       "kind": "regulator",
       "observedAt": "2026-10-08",
-      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy."
+      "archiveScope": "Source presence, own factual notes and provenance; not a complete archived copy.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.cpsc.gov/Recalls/2026/YITA-Recalls-Multiple-Brands-of-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violates-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ref": "turn60view1",
+      "depth": "opened",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.cpsc.gov/Recalls/2026/GigaCloud-Technology-USA-Recalls-Merax-Murphy-Beds-Due-to-Risk-of-Serious-Injury-or-Death-from-Impact-and-Crush-Hazards",
+      "ref": "turn62view0",
+      "depth": "opened",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.cpsc.gov/Recalls/2026/Walmart-Reannounces-Recall-of-Mainstays-Nine-Drawer-Fabric-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Walmart-Distributed-Recalled-Dressers-Post-Recall-Sold-to-Consumers-Through-Liquidators",
+      "ref": "turn60view0",
+      "depth": "opened",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.cpsc.gov/Recalls/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Petgravity-Cat-Toys-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Ingestion-Hazard-Violations-of-Federal-Regulations-for-Consumer-Products-with-Coin-Batteries-Sold-on-Amazon-by-Sanchio-Store",
+      "ref": "turn88search0",
+      "depth": "primary CPSC search excerpt; direct open 403",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.cpsc.gov/Recalls/2026/Walmart-Recalls-Mainstays-9-Drawer-Fabric-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violates-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ref": "turn79search2",
+      "depth": "primary search excerpt",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S16",
+      "url": "https://investors.gigacloudtech.com/news-releases/news-release-details/gigacloud-technology-inc-completes-acquisition-noble-house",
+      "ref": "turn75view0",
+      "depth": "opened",
+      "kind": "company-announcement",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "publishedDate": "2023-11-01",
+      "independenceFamily": "https://investors.gigacloudtech.com/news-releases/news-release-details/gigacloud-technology-inc-completes-acquisition-noble-house"
+    },
+    {
+      "id": "S17",
+      "url": "https://investors.gigacloudtech.com/news-releases/news-release-details/gigacloud-technology-inc-announces-fourth-quarter-2023-and-year",
+      "ref": "turn69search3",
+      "depth": "primary search excerpt",
+      "kind": "company-financial-results",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "https://investors.gigacloudtech.com/news-releases/news-release-details/gigacloud-technology-inc-announces-fourth-quarter-2023-and-year"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.cpsc.gov/Recalls/2016/noble-house-recalls-counter-stools",
+      "ref": "turn79search0",
+      "depth": "primary search excerpt; direct open failed",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S19",
+      "url": "https://www.cpsc.gov/Recalls/2017/noble-house-recalls-chairs",
+      "ref": "turn78view4",
+      "depth": "opened",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S20",
+      "url": "https://www.cpsc.gov/Recalls/2021/Noble-House-Home-Furnishings-Recalls-Chests-Cabinets-and-Dressers-Due-to-Tip-Over-and-Entrapment-Hazards-Recall-Alert",
+      "ref": "turn86view0",
+      "depth": "opened; model table read",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S21",
+      "url": "https://www.cpsc.gov/Recalls/2024/Sling-Carriers-Recalled-Due-to-Infant-Suffocation-and-Fall-Hazards-Violation-of-the-Federal-Safety-Regulation-for-Sling-Carriers-Sold-on-Walmart-com-through-Joybuy-Marketplace-Express",
+      "ref": "turn81search1",
+      "depth": "primary search excerpt; direct open 403",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S22",
+      "url": "https://www.cpsc.gov/Recalls/2024/High-Powered-Magnetic-Balls-Recalled-Due-to-Ingestion-Hazard-Sold-Exclusively-on-Walmart-com-through-Joybuy?language=en",
+      "ref": "turn81search0",
+      "depth": "primary search excerpt",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S23",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2014/CPSC-Uses-Pilot-Risk-Assessment-Tool-to-Strengthen-Import-Safety",
+      "ref": "turn82view1",
+      "depth": "opened",
+      "kind": "regulator",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own observations, not complete capture.",
+      "publishedDate": "2013-12-02",
+      "samplePeriod": "2012-10-01/2013-03-31",
+      "dateCaution": "URL says 2014; actual release says December 2, 2013.",
+      "independenceFamily": "CPSC"
+    },
+    {
+      "id": "S24",
+      "url": "https://fzdeyu.en.made-in-china.com/",
+      "ref": "turn75view4",
+      "depth": "opened",
+      "kind": "supplier-hosted-directory-profile",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://fzdeyu.en.made-in-china.com/"
+    },
+    {
+      "id": "S25",
+      "url": "https://english.shantou.gov.cn/english/news/content/post_2542464.html",
+      "ref": "turn78view3",
+      "depth": "opened",
+      "kind": "municipal-hosted-industry-report",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2026-05-28",
+      "independenceFamily": "https://english.shantou.gov.cn/english/news/content/post_2542464.html"
+    },
+    {
+      "id": "S26",
+      "url": "https://zjic.zj.gov.cn/ywdh/qyfz/202607/t20260730_24171873.shtml",
+      "ref": "turn82view2",
+      "depth": "opened",
+      "kind": "government-hosted-newspaper-report",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2026-07-30",
+      "independenceFamily": "https://zjic.zj.gov.cn/ywdh/qyfz/202607/t20260730_24171873.shtml"
+    },
+    {
+      "id": "S27",
+      "url": "https://www.nkjx.gov.cn/nkqxxgk/c116315/202305/8c8a1aaef01144eebf9563746d1e1445.shtml",
+      "ref": "turn86view4",
+      "depth": "opened",
+      "kind": "municipal-investment-guide",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2023-05-08",
+      "independenceFamily": "https://www.nkjx.gov.cn/nkqxxgk/c116315/202305/8c8a1aaef01144eebf9563746d1e1445.shtml"
+    },
+    {
+      "id": "S28",
+      "url": "https://www.ezhejiang.gov.cn/shaoxing/2025-04/03/c_1084790.htm",
+      "ref": "turn86view3",
+      "depth": "opened",
+      "kind": "municipal-information-office-report",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2025-04-03",
+      "independenceFamily": "https://www.ezhejiang.gov.cn/shaoxing/2025-04/03/c_1084790.htm"
+    },
+    {
+      "id": "S29",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1937/site/attach/0/3e02fc05e54841fa9aa0ee7a72e7578b.pdf",
+      "ref": "turn81search7",
+      "depth": "primary search excerpt; PDF not downloaded/read",
+      "kind": "government-investment-project-profile",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": null,
+      "independenceFamily": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1937/site/attach/0/3e02fc05e54841fa9aa0ee7a72e7578b.pdf"
+    },
+    {
+      "id": "S30",
+      "url": "https://www.zjjinbiao.com/",
+      "ref": "turn77search5",
+      "depth": "primary supplier search excerpt",
+      "kind": "supplier-self-description",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://www.zjjinbiao.com/"
+    },
+    {
+      "id": "S31",
+      "url": "https://www.zj-demure.com/",
+      "ref": "turn77search6",
+      "depth": "primary supplier search excerpt",
+      "kind": "supplier-self-description",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://www.zj-demure.com/"
+    },
+    {
+      "id": "S32",
+      "url": "https://baizhijia.net/about/",
+      "ref": "turn77search7",
+      "depth": "primary supplier search excerpt",
+      "kind": "supplier-self-description",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://baizhijia.net/about/"
+    },
+    {
+      "id": "S33",
+      "url": "https://info.opensupplyhub.org/api",
+      "ref": "turn84view0",
+      "depth": "opened",
+      "kind": "tool-provider",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://info.opensupplyhub.org/api"
+    },
+    {
+      "id": "S34",
+      "url": "https://info.opensupplyhub.org/resources/api-documentation",
+      "ref": "turn84view1",
+      "depth": "opened",
+      "kind": "official-tool-documentation",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://info.opensupplyhub.org/resources/api-documentation"
+    },
+    {
+      "id": "S35",
+      "url": "https://info.opensupplyhub.org/resources/how-to-search",
+      "ref": "turn83search13",
+      "depth": "primary search excerpt",
+      "kind": "official-tool-documentation",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "independenceFamily": "https://info.opensupplyhub.org/resources/how-to-search"
+    },
+    {
+      "id": "S36",
+      "url": "https://arxiv.org/html/2408.07705v1",
+      "ref": "turn86view2 / turn87view0 / turn87view2",
+      "depth": "abstract, methods and evaluation sections read",
+      "kind": "academic-preprint",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2024-08-05",
+      "independenceFamily": "paper:https://arxiv.org/html/2408.07705v1"
+    },
+    {
+      "id": "S37",
+      "url": "https://arxiv.org/abs/2404.06571",
+      "ref": "turn84view3",
+      "depth": "abstract and metadata read; full paper/data not evaluated",
+      "kind": "academic-preprint",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "publishedDate": "2024-04-09",
+      "independenceFamily": "paper:https://arxiv.org/abs/2404.06571"
+    },
+    {
+      "id": "S38",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/00207543.2025.2575841",
+      "ref": "turn83search35",
+      "depth": "primary publisher search excerpt; direct open failed",
+      "kind": "academic-publisher",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a complete capture.",
+      "dateCaution": "2025 DOI; exact publication day not verified. Later related publication, not a separate validation dataset.",
+      "independenceFamily": "paper:https://www.tandfonline.com/doi/full/10.1080/00207543.2025.2575841"
+    },
+    {
+      "id": "S39",
+      "url": "https://www.cnfa.com.cn/infodetails4477.html",
+      "ref": "turn88search5",
+      "depth": "primary association search excerpt",
+      "kind": "industry-association-event-report",
+      "observedAt": "2026-10-08",
+      "publishedDate": "2025-08-20",
+      "archiveScope": "Dated source presence and own notes.",
+      "independenceFamily": "CNFA"
     }
   ],
   "openQuestions": [
@@ -938,6 +2894,155 @@
     "Resolve KF200068-01/-02 report-sample and label-role differences with issuer; no scope extrapolation.",
     "Retrieve manufacturer identities for seller-only recall notices.",
     "Obtain representative product-category failure denominators before evaluating a geographic predictor.",
-    "Refresh warning/recall notices before an alert; date-specific facts may change."
+    "Refresh warning/recall notices before an alert; date-specific facts may change.",
+    "Verify notice-listed former names with registries and effective dates; they are currently CPSC-attributed aliases.",
+    "Retrieve official manufacturer/UPC corrections where source identifiers or captions conflict.",
+    "Broaden hazard coverage to popular retail categories requested next; preserve this graph as a sourced research input.",
+    "Cross-border recall mirrors can change role labels: Safety Korea's Petgravity result calls the seller manufacturer. Prefer original agency role, preserve translation discrepancy."
+  ],
+  "matchingPolicy": {
+    "modelPrefix": "candidate retrieval only; never recall scope expansion",
+    "sharedPhoto": "candidate retrieval only; never manufacturer/ownership proof",
+    "brand": "narrow product match required",
+    "manufacturingCountry": "record sourced declaration; no validated independent regional penalty",
+    "retailerCity": "not factory location",
+    "GTINPrefix": "allocation is not manufacturing country",
+    "repeatCounts": "Distinct events, not reannouncements/mirrors; normalize roles and effective dates",
+    "unknown": "Missing factory/model/registry match remains unresolved, not cleared or accused",
+    "severeDeception": "Separate product-safety facts from deception; repository evidence gate still applies"
+  },
+  "clusters": [
+    {
+      "id": "C01",
+      "label": "Chenghai, Shantou, Guangdong",
+      "sourceId": "S25",
+      "history": "City report describes a large toy cluster, including 68,000 production/business entities and AI-toy ecosystem agreements.",
+      "application": "Catalogue/exhibitor leads; connected-toy app/privacy checks. Figures are promotional reported claims, not safety rates.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    },
+    {
+      "id": "C02",
+      "label": "Anji, Zhejiang",
+      "sourceId": "S26",
+      "history": "Report dates chair development to 1981 and describes later moves from simple parts/OEM toward R&D-led seating.",
+      "application": "Chair-part and final-assembly roles matter. Regional history does not establish any specific company's current compliance.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    },
+    {
+      "id": "C03",
+      "label": "Nankang, Ganzhou, Jiangxi",
+      "sourceId": "S27",
+      "history": "Guide dates furniture cluster to early 1990s and lists wood distribution, shared preparation/spraying and sales-logistics infrastructure.",
+      "application": "A sourcing city or shared processing centre is not a single factory. Material purchase, machining, coating and assembly may be separate.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    },
+    {
+      "id": "C04",
+      "label": "Keqiao, Shaoxing, Zhejiang",
+      "sourceId": "S28",
+      "history": "China Textile City founded 1988, renamed 1992; report describes procurement trade and cross-border e-commerce.",
+      "application": "Fabric merchant versus weaving/dyeing/garment factory must be separated; market address cannot establish garment origin.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    },
+    {
+      "id": "C05",
+      "label": "Shuitou, Pingyang, Wenzhou, Zhejiang",
+      "sourceId": "S29",
+      "history": "Public investment profile describes a pet-product manufacturing project in Shuitou.",
+      "application": "Proposed project is not proof a plant is operating, nor a pet-product quality assessment.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    },
+    {
+      "id": "C06",
+      "label": "Longjiang, Shunde, Foshan, Guangdong",
+      "sourceId": "S39",
+      "history": "Furniture association describes design/manufacturing/materials cluster and August 2025 furniture/material exhibitions.",
+      "application": "Exhibitor/material supplier leads; finished goods, upholstery, hardware and showroom roles need distinct entity records.",
+      "adverseEventEstablishedForCluster": false,
+      "regionalRiskWeight": 0,
+      "geocode": null
+    }
+  ],
+  "neutralSupplierLeads": [
+    {
+      "id": "A01",
+      "sourceId": "S30",
+      "claim": "Claims established 2005; Dipu/Anji factory address.",
+      "adverseEventObtained": false,
+      "limits": "Neutral identity/history lead. No adverse case obtained does not prove safe; same region does not prove risky."
+    },
+    {
+      "id": "A02",
+      "sourceId": "S31",
+      "claim": "Claims founded 1999; Tangpu Industrial Zone / chairs and reclining furniture.",
+      "adverseEventObtained": false,
+      "limits": "Neutral identity/history lead. No adverse case obtained does not prove safe; same region does not prove risky."
+    },
+    {
+      "id": "A03",
+      "sourceId": "S32",
+      "claim": "Claims predecessor Anji Chenxu, 1999 founding and local chair-component suppliers.",
+      "adverseEventObtained": false,
+      "limits": "Neutral identity/history lead. No adverse case obtained does not prove safe; same region does not prove risky."
+    }
+  ],
+  "tools": [
+    {
+      "id": "T01",
+      "name": "Open Supply Hub",
+      "sourceIds": [
+        "S33",
+        "S34",
+        "S35"
+      ],
+      "use": "OS IDs and contributor-attributed facility records; preserve merge history, data source and dates.",
+      "access": "Public search/download described as free; API token and subscription/trial needed.",
+      "costObserved": "2,500 calls/year advertised $2,700/year ($225/month equivalent); monthly checkout label $259. Preserve billing distinctions.",
+      "decision": "Manual public research / optional lookup candidate; no paid API dependency for free core.",
+      "limits": "Contributor or supplier claims are not official factory-registration proof or SKU-level sourcing. No account/API calls/submissions performed."
+    }
+  ],
+  "papers": [
+    {
+      "id": "P01",
+      "sourceIds": [
+        "S36",
+        "S38"
+      ],
+      "title": "Enhancing Supply Chain Visibility with Knowledge Graphs and Large Language Models",
+      "depth": "2024 preprint methods and evaluation read; later publisher excerpt checked",
+      "finding": "EV/Wikipedia extraction evaluation uses 1,277 sentences. It evaluates extracted triples, not empirical supply-chain truth; missed-triple recall/F-scores not assessed. Supplies-to accuracy reported 0.71.",
+      "application": "LLM-assisted candidate extraction can preserve typed edges/locators. Require documentary verification before merging or using supply links in product verdicts.",
+      "limits": "Not a benchmark for Chinese consumer goods, live supplier truth or DropShredder. No replication performed."
+    },
+    {
+      "id": "P02",
+      "sourceIds": [
+        "S37"
+      ],
+      "title": "Building A Knowledge Graph to Enrich ChatGPT Responses in Manufacturing Service Discovery",
+      "depth": "abstract-level",
+      "finding": "Describes North-American small-manufacturer discovery and a dataset of over 13,000 manufacturer links/services/certification/location entity types.",
+      "application": "Ontology and retrieval design lead; locality/certification must be source-scoped.",
+      "limits": "Not evidence of current Chinese factory identity, reliability or retail product quality; dataset/code/license not audited."
+    }
+  ],
+  "limitations": [
+    "Selection deliberately targets documented safety events; not a market census or worst-factory probability ranking.",
+    "No beneficial ownership or Chinese registry identity authenticated; no street geocodes invented.",
+    "No exact live shopping listing matched, manufacturing visit performed, lab test commissioned or recall remedy attempted.",
+    "Old events and current companies require dated entity continuity evidence.",
+    "Only source presence and one local PDF hash preserved; no full legal web-archive copies or source screenshots republished.",
+    "No validated country-risk weight; no production detection changes or Chrome QA."
   ]
 }

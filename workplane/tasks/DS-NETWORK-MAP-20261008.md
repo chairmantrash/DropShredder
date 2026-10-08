@@ -1,6 +1,6 @@
 # DS-NETWORK-MAP-20261008 — Manufacturer/importer/brand network map
 
-Status: IN PROGRESS
+Status: DONE
 Owner: Codex research agent, this owner conversation
 Claimed: 2026-10-08
 Branch: research/20261008-defensive-intelligence
@@ -16,3 +16,7 @@ Own this task, brain/research/2026-10-08-MANUFACTURER-NETWORKS.md, intelligence/
 ## Acceptance
 
 Evidence-bearing typed edges for manufacturer, importer, brand aliases, ownership/acquisition, product models and notices. Separate historical entities from current ones; do not infer factory identity from name/country/warehouse. Preserve source dates, status, scope, correction and independence. Checkpoint/publish as investigation grows. Final map is a documented investigation inventory, not a finding all network products are bad.
+
+## Result
+
+23 family investigations, 127 nodes, 48 company nodes, 117 sourced edges, 39 sources, six clusters, three neutral supplier leads, one tool assessment and two academic studies. Integrity checks passed; no runtime integration or real Chrome QA. Owner follow-ups: broader popular categories, then additional storefronts and adversarial tutorials.
