@@ -21,6 +21,11 @@ if(!manifest.content_security_policy?.extension_pages?.includes("script-src 'sel
   fail('Self-only extension CSP is missing.');
 }
 
+// Auto protection is dynamically registered ONLY after Chrome opt-in.
+if((manifest.content_scripts??[]).some(script=>script.matches?.some(match=>/https:\/\/\*/.test(match)))){
+  fail('Automatic scanner must not be a permanent all-sites manifest content script.');
+}
+
 const files=[];
 async function walk(dir){
   for(const entry of await fs.readdir(dir,{withFileTypes:true})){
@@ -30,6 +35,13 @@ async function walk(dir){
   }
 }
 await walk(root);
+const autoScript=path.join(root,'content-scripts','auto.js');
+if(!files.includes(autoScript)) fail('Opt-in content script bundle is missing from production build.');
+const autoCode=await fs.readFile(autoScript,'utf8');
+if(!autoCode.includes('DS_AUTO_OPEN')) fail('Packaged scanner is missing its side-panel open control.');
+if(!autoCode.includes('DS_AUTO_STATUS')) fail('Packaged scanner is missing the consent check.');
+if(!autoCode.includes('dropshredder-auto-verdict')) fail('Packaged scanner is missing its toast UI.');
+
 
 const forbiddenNames=[
   /(^|\/)node_modules(\/|$)/,
