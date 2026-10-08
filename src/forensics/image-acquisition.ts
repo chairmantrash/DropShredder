@@ -18,10 +18,10 @@ function hostPattern(url:string):string {
   return `${parsed.protocol}//${parsed.host}/*`;
 }
 
-async function ensureImageHostPermission(url:string):Promise<boolean> {
-  const origin=hostPattern(url);
-  if(await chrome.permissions.contains({origins:[origin]})) return true;
-  return chrome.permissions.request({origins:[origin]});
+function ensureImageHostPermission(url:string):Promise<boolean> {
+  // Must reach the browser's permission request in the direct click chain.
+  // A preceding await permissions.contains() can lose the user gesture.
+  return chrome.permissions.request({origins:[hostPattern(url)]});
 }
 
 export async function captureImageFingerprint(url:string):Promise<CapturedImageFingerprint|undefined> {
@@ -38,9 +38,23 @@ export async function captureImageFingerprint(url:string):Promise<CapturedImageF
   const declaredSize=Number(response.headers.get('content-length') || 0);
   if(declaredSize>MAX_IMAGE_BYTES) throw new Error('Selected image exceeds the 15 MB safety limit.');
 
-  const blob=await response.blob();
-  if(blob.size>MAX_IMAGE_BYTES) throw new Error('Selected image exceeds the 15 MB safety limit.');
-  if(!blob.type.startsWith('image/')) throw new Error('Selected resource is not an image.');
+  if(!response.headers.get('content-type')?.toLowerCase().startsWith('image/')) throw new Error('Selected resource is not an image.');
+  if(!response.body) throw new Error('Image response could not be read.');
+  const reader=response.body.getReader();
+  const chunks:Uint8Array[]=[];
+  let total=0;
+  try{
+    while(true){
+      const {done,value}=await reader.read();
+      if(done) break;
+      total+=value.byteLength;
+      if(total>MAX_IMAGE_BYTES) throw new Error('Selected image exceeds the 15 MB safety limit.');
+      chunks.push(value);
+    }
+  }finally{
+    void reader.cancel().catch(()=>{});
+  }
+  const blob=new Blob(chunks,{type:response.headers.get('content-type') ?? 'image/jpeg'});
 
   const bytes=await blob.arrayBuffer();
   const sha256=await sha256Hex(bytes);
