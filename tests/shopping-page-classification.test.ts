@@ -105,3 +105,32 @@ test('artificial schema markup on articles cannot force a shopping toast',()=>{
   });
   assert.equal(classified.showToast,false);
 });
+
+test('high-density merchandising grids do not trigger a verdict from stray Product JSON-LD',()=>{
+  const classified=classifyShoppingPage({
+    ...product('https://store.example/featured-picks'),
+    productCards:24,
+    ogProduct:false,
+  });
+  assert.equal(classified.kind,'collection');
+  assert.equal(classified.showToast,false);
+});
+
+test('an article with affiliate purchase links stays quiet',()=>{
+  const classified=classifyShoppingPage({
+    ...product('https://magazine.example/guide/headphone-picks'),
+    structuredArticle:true,
+  });
+  assert.equal(classified.showToast,false);
+});
+
+test('account-service domains and store homepages do not trigger even with product-like markup',()=>{
+  for(const url of [
+    'https://accounts.google.com/products/book',
+    'https://mail.example.com/products/book',
+    'https://checkout.shop.example/products/book',
+    'https://store.example/',
+  ]){
+    assert.equal(classifyShoppingPage(product(url)).showToast,false,url);
+  }
+});
