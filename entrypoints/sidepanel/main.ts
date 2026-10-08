@@ -493,6 +493,7 @@ huntSources?.addEventListener('click',()=>void (async()=>{
 })());
 huntImage?.addEventListener('click',async()=>{
   const report=lastReport;
+  const pageAtClick=reportPage;
   const image=report?.product.imageUrls[0];
   if(!image){
     await openSearches(imageSearchUrls());
@@ -549,7 +550,7 @@ huntImage?.addEventListener('click',async()=>{
     console.warn('DropShredder: image fingerprinting failed',error);
   } finally {
     // The user explicitly requested a public reverse-image search, even if local hashing failed.
-    if(report===lastReport){
+    if(pageAtClick && reportPage===pageAtClick){
       if(status) status.textContent='Image search opened. See who else is using this picture.';
       await openSearches(imageSearchUrls(image));
     }
