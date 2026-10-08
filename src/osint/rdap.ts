@@ -38,23 +38,24 @@ function normalizeDomain(input:string):string {
   return candidate.replace(/^www\./,'');
 }
 
-async function ensureRdapPermission():Promise<boolean> {
-  const origin='https://rdap.org/*';
-  if(await chrome.permissions.contains({origins:[origin]})) return true;
-  return chrome.permissions.request({origins:[origin]});
+function ensureRdapPermission():Promise<boolean> {
+  // Called before the first await of the user-clicked RDAP action.
+  return chrome.permissions.request({origins:['https://rdap.org/*']});
 }
 
 const CACHE_MS=6*60*60*1000;
 
 export async function lookupDomainRdap(input:string):Promise<RdapDomainObservation|undefined> {
   const domain=normalizeDomain(input);
-  if(!domain || !domain.includes('.')) return undefined;
+  if(!domain || domain.length>253 || !/^(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/.test(domain)) return undefined;
+  // Ask Chrome while the click still has user activation, before async cache reads.
+  const permission=ensureRdapPermission();
   const cacheKey=`rdap:${domain}`;
   try{
     const cached=(await chrome.storage.session.get(cacheKey))[cacheKey] as {at:number;value:RdapDomainObservation}|undefined;
     if(cached && Date.now()-cached.at<CACHE_MS) return cached.value;
   }catch{}
-  if(!(await ensureRdapPermission())) return undefined;
+  if(!(await permission)) return undefined;
 
   const url=`https://rdap.org/domain/${encodeURIComponent(domain)}`;
   const response=await fetch(url,{
@@ -64,7 +65,23 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
   if(!response.ok) throw new Error(`RDAP lookup failed: HTTP ${response.status}`);
   const length=Number(response.headers.get('content-length') || 0);
   if(length>2_000_000) throw new Error('RDAP response exceeded the safety limit.');
-  const data=await response.json() as RdapResponse;
+  if(!response.body) throw new Error('RDAP response could not be read.');
+  const reader=response.body.getReader();
+  const decoder=new TextDecoder();
+  let text='',size=0;
+  try{
+    while(true){
+      const {done,value}=await reader.read();
+      if(done) break;
+      size+=value.byteLength;
+      if(size>2_000_000) throw new Error('RDAP response exceeded the safety limit.');
+      text+=decoder.decode(value,{stream:true});
+    }
+    text+=decoder.decode();
+  }finally{
+    void reader.cancel().catch(()=>{});
+  }
+  const data=JSON.parse(text) as RdapResponse;
 
   const value:RdapDomainObservation={
     domain,
