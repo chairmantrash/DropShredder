@@ -1,0 +1,1117 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-08",
+  "status": "complete",
+  "integration": "research-only",
+  "runtimeRiskWeight": 0,
+  "regionalWeightEstablished": false,
+  "entries": [
+    {
+      "id": "SF01",
+      "platform": "Etsy",
+      "title": "Exceptions belong in the policy model",
+      "sources": [
+        {
+          "url": "https://help.etsy.com/hc/en-us/articles/23948763872151-Does-Etsy-Allow-Drop-Shipping-or-Reselling",
+          "ref": "turn98search0",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "Etsy permits limited craft/party-supply dropshipping; permits certain reselling categories and original-design/buyer-personalized production-partner fulfillment. A note/card on an unchanged commercial item does not qualify.",
+      "application": "Product type and exact maker/design/customization claim must precede a policy-conflict finding.",
+      "limits": "No current item inspected. Manufacturing region or fulfillment without inventory cannot establish Etsy policy violation.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF02",
+      "platform": "Etsy",
+      "title": "Production-partner disclosure is broader than a supplier brand name",
+      "sources": [
+        {
+          "url": "https://help.etsy.com/hc/en-us/articles/360000336547-Working-with-Production-Partners-on-Etsy?segment=selling",
+          "ref": "turn98search1",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "Etsy requires production-assistance disclosure and accurate shipping origin; distinguishes original-design partners from white-label/OEM/ODM/commercial resale sources.",
+      "application": "Store seller role, original design/customization, disclosed partner descriptor and ship-from separately.",
+      "limits": "Supplier full legal name may not be publicly shown; partner absence/anonymous descriptor alone is inconclusive.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF03",
+      "platform": "eBay",
+      "title": "Wholesale fulfillment and retail-to-customer purchase differ",
+      "sources": [
+        {
+          "url": "https://www.ebay.com/help/selling/listings/dropshipping?id=4176",
+          "ref": "turn98search3",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "eBay allows direct wholesale-supplier fulfillment but forbids listing then buying from another retailer/marketplace to ship directly to the customer; seller remains responsible for delivery/satisfaction.",
+      "application": "Evidence needs actual sourcing transaction/fulfillment chain; price markup or an Amazon box alone is not enough.",
+      "limits": "Ordinary resale/wholesale fulfillment can be legitimate. No order purchased or seller account examined.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF04",
+      "platform": "TikTok Shop US",
+      "title": "Third-party fulfillment has inventory and packaging conditions",
+      "sources": [
+        {
+          "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7131013343053575",
+          "ref": "turn98search4",
+          "depth": "primary platform search excerpt"
+        },
+        {
+          "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7131013343053575",
+          "ref": "turn106view1",
+          "depth": "primary policy opened; September 3, 2026 date displayed"
+        }
+      ],
+      "finding": "US packaging policy permits third-party pack/ship providers while seller owns inventory and prohibits another online retailer shipping an order directly to the customer; review-incentivizing inserts prohibited.",
+      "application": "Country-specific policy records; distinguish merchant, affiliate/creator and fulfillment roles. Blind/plain packaging is not itself evidence of deception.",
+      "limits": "No current seller/order inspected; policy cannot be extrapolated to every TikTok country. Supplier-removal packaging can serve compliant operations.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF05",
+      "platform": "Wayfair",
+      "title": "Dropshipping is a normal fulfillment model",
+      "sources": [
+        {
+          "url": "https://sell.wayfair.com/start-beginners-guide",
+          "ref": "turn98search8",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "Wayfair calls warehouse-to-customer dropshipping its primary fulfillment method.",
+      "application": "Treat fulfillment-model identification as neutral; investigate material/model/safety/claim contradictions independently.",
+      "limits": "No basis to classify all Wayfair inventory as deceptive because of supplier fulfillment.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF06",
+      "platform": "Wayfair",
+      "title": "Supplier requirements reveal good matching fields",
+      "sources": [
+        {
+          "url": "https://sell.wayfair.com/onboarding-checklist",
+          "ref": "turn98search7",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "Onboarding requests model/manufacturer part number, supplier part number, dimensions, materials, warnings and regional warehouse/3PL.",
+      "application": "Prioritize part numbers and dimensional/material variants for cross-brand candidates; factory, vendor and warehouse roles differ.",
+      "limits": "Supplier inputs may not all be public; no partner API or private data accessed.",
+      "kind": "platform-documentation",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF07",
+      "platform": "Wayfair",
+      "title": "Plain packaging and documented testing are platform requirements",
+      "sources": [
+        {
+          "url": "https://sell.wayfair.com/wayfair-supplier-code-of-conduct",
+          "ref": "turn98search6",
+          "depth": "primary platform search excerpt"
+        }
+      ],
+      "finding": "Code requires truthful product information, product-safety compliance/test chain of custody, and unmarked/supplier/Wayfair packaging rather than other-retailer packaging.",
+      "application": "Do not label plain packaging as concealed fraud. Test reports should connect sample/model/materials to listing, preserving exact scope.",
+      "limits": "Code is expected conduct, not measured compliance; no all-supplier quality conclusion.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF08",
+      "platform": "Temu EU",
+      "title": "Current regulator finding goes beyond a preliminary allegation",
+      "sources": [
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-temu-eu200-million-breaching-digital-services-act",
+          "ref": "turn99search0",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "European Commission 2026-05-28 notice reports €200m DSA fine for deficient illegal-product systemic-risk assessment. It cites selected charger and baby-toy mystery-shopping failures and service-design amplification risks.",
+      "application": "Catalogue exact decision date/jurisdiction/status; prioritize category-specific authoritative product tests and recommender context.",
+      "limits": "Not a probability every Temu item is bad, not a factory/region verdict. Appeal/remediation status after decision not established here.",
+      "kind": "regulator",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF09",
+      "platform": "Etsy / Printify",
+      "title": "An integration default can mislabel seller role",
+      "sources": [
+        {
+          "url": "https://help.printify.com/hc/en-us/articles/4578896595345-What-should-I-know-about-Etsy-s-Creative-Standards-policy",
+          "ref": "turn99search4",
+          "depth": "primary provider help excerpt"
+        },
+        {
+          "url": "https://help.printify.com/hc/en-us/articles/4578896595345-What-should-I-know-about-Etsy-s-Creative-Standards-policy",
+          "ref": "turn107view1",
+          "depth": "primary vendor help opened; default and disclosure steps read"
+        }
+      ],
+      "finding": "Printify says without an existing Printify production partner, publishing can default to Made by seller and requires seller correction to Designed by seller. Provider supports generic public partner descriptor.",
+      "application": "Treat role mismatch as a checkable claim conflict; intentional fraud cannot be inferred from the default alone. Partner descriptor and ship-from may describe different locations.",
+      "limits": "No actual Printify/Etsy account used or bug reproduced. This is documented behavior, not a DropShredder QA failure.",
+      "kind": "seller-enablement-documentation",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF10",
+      "platform": "Etsy / AutoDS",
+      "title": "Commercial import/automation claims exceed a policy guarantee",
+      "sources": [
+        {
+          "url": "https://www.autods.com/etsy/",
+          "ref": "turn99search6",
+          "depth": "primary provider page excerpt"
+        }
+      ],
+      "finding": "AutoDS markets Etsy product imports, AI copy, POD and fulfillment, and names retail sources including Amazon/eBay/Shein/Target. Those claims do not override Etsy's narrow exceptions.",
+      "application": "Defensive hypothesis: rewritten titles and generic partner claims can weaken text-only origin matching; preserve exact maker/product identity plus upstream evidence.",
+      "limits": "No tool used, store connected or ordinary AutoDS user accused. Retail sourcing can be allowed for some item types; page marketing is not proof of actual abuse.",
+      "kind": "seller-enablement-marketing",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF11",
+      "platform": "Etsy",
+      "title": "Enforcement totals do not measure residual violative inventory",
+      "sources": [
+        {
+          "url": "https://investors.etsy.com/_assets/_de5e340f38f38bb809a618effecc65e6/etsy/db/1016/10091/pdf/2025_Transparency_Report_Digital.pdf",
+          "ref": "turn99search10",
+          "depth": "primary PDF search excerpt; full PDF not reviewed"
+        }
+      ],
+      "finding": "Etsy's 2025 report describes internal detection/human review/community/trusted-authority flags and declining removal counts, with the company's explanation.",
+      "application": "Keep platform self-reported enforcement metrics separate from independent prevalence or individual listing safety.",
+      "limits": "No report PDF downloaded/rendered; removals have changing denominators/rules and no direct quality prevalence interpretation.",
+      "kind": "platform-transparency-report",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF12",
+      "platform": "AliExpress / EU",
+      "title": "Final enforcement and relisting failure modes",
+      "sources": [
+        {
+          "url": "https://cyprus.representation.ec.europa.eu/news/commission-fines-aliexpress-eur550-million-breaching-digital-services-act-2026-07-20_en?prefLang=pt",
+          "ref": "turn101search0",
+          "depth": "primary European Commission search excerpt"
+        },
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act",
+          "ref": "turn105search1",
+          "depth": "canonical primary Commission search excerpt; direct open returned 429"
+        }
+      ],
+      "finding": "The Commission announced a €550 million DSA fine on July 20, 2026. Its findings include inadequate moderation, misleading quantitative metrics, similar-form relisting, active penalized stores, category misclassification and recommendation amplification of illegal goods.",
+      "application": "Keep stable product identifiers and dated seller/listing lineage; normalize product category from the item rather than accepting the seller's label.",
+      "limits": "A platform systemic-risk decision is not a verdict on every item, factory or manufacturing country. Later appeals/remedies not checked. Canonical Commission page returned HTTP 429.",
+      "kind": "regulatory-enforcement",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF13",
+      "platform": "AliExpress / EU",
+      "title": "Hidden links and researcher-access eligibility",
+      "sources": [
+        {
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-makes-aliexpress-commitments-under-digital-services-act-binding",
+          "ref": "turn101search1",
+          "depth": "primary Commission search excerpt"
+        }
+      ],
+      "finding": "June 18, 2025 binding commitments address trader traceability, affiliate controls, hidden links and research access. A displayed listing may differ from the product promoted through an external link.",
+      "application": "Preserve displayed item, referring URL and claimed product separately, with explicit user action and redaction. Treat research APIs as eligibility-gated.",
+      "limits": "Distinct proceeding from the 2026 fine. No hidden-link transaction performed; no unrestricted consumer API access established.",
+      "kind": "regulatory-enforcement",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF14",
+      "platform": "Multiple storefronts",
+      "title": "Source identifiers survive rewritten listing copy",
+      "sources": [
+        {
+          "url": "https://help.autods.com/en/articles/12700438-product-uploads-supported-suppliers-import-to-store-and-manage-variants",
+          "ref": "turn103search0",
+          "depth": "primary seller-tool help search excerpt"
+        }
+      ],
+      "finding": "AutoDS documents importing original supplier SKUs into custom labels and monitoring Amazon Buy Box price/availability. Its Etsy marketing separately advertises automated retail-source imports and AI-generated copy.",
+      "application": "Give exact identifiers, image variants and timestamped sold-by fields priority over title-only matching; record each source seller observation separately.",
+      "limits": "Custom labels may be private and must not be assumed readable. Tool support is not proof of platform compliance or merchant abuse.",
+      "kind": "seller-tool-documentation",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF15",
+      "platform": "Etsy",
+      "title": "A compliant production-partner tutorial is a necessary control",
+      "sources": [
+        {
+          "url": "https://www.cjdropshipping.com/blogs/selling-strategies/Etsy-Dropshipping",
+          "ref": "turn103search1",
+          "depth": "primary supplier tutorial search excerpt"
+        }
+      ],
+      "finding": "CJ's Etsy guide discusses fulfillment as a production partner for sellers' original designs, rather than treating all sourced goods as permissible handmade items.",
+      "application": "Include original-design and accurate partner disclosure as negative controls in evaluations; separate vendor tutorial advice from platform rules.",
+      "limits": "Commercial tutorial, not Etsy authority or proof that individual CJ sellers comply. No seller account or fulfillment tested.",
+      "kind": "seller-tutorial",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF16",
+      "platform": "Multiple storefronts",
+      "title": "Seller extensions must not be conflated",
+      "sources": [
+        {
+          "url": "https://help.autods.com/en/articles/12700457-autods-helper-chrome-extension-one-click-product-importer-and-buyer-address-copier",
+          "ref": "turn103search24",
+          "depth": "primary seller-tool help search excerpt"
+        }
+      ],
+      "finding": "AutoDS distinguishes its Helper product importer/address copier from its eBay non-API/MIP extension and describes separate monitor workflows.",
+      "application": "If future consented fingerprint research is justified, pin exact extension ID/version and behavior; don't assign suspicion to generic automation or names.",
+      "limits": "No code or manifest inspected, no installation, no 'undetectable' capability established. Buyer address copying is a merchant feature, not permission for DropShredder to collect customer data.",
+      "kind": "seller-tool-documentation",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF17",
+      "platform": "Etsy",
+      "title": "Buyer allegation: quality disappointment and image match",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Etsy/comments/leglyk",
+          "ref": "turn101reddit10",
+          "depth": "dated first-person forum search excerpt"
+        }
+      ],
+      "finding": "A February 7, 2021 buyer reported disappointing earrings sold as handmade and a visually matching AliExpress item despite positive reviews.",
+      "application": "Capture the exact handmade claim and image-match candidate separately; require corroboration beyond matching photos before accusing a seller.",
+      "limits": "Unverified, old, self-selected complaint; same physical item, source direction and manufacturer not established. No current shop scan or prevalence estimate.",
+      "kind": "complaint-lead",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF18",
+      "platform": "Etsy",
+      "title": "Buyer allegation: inconsistent delivery dates",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Etsy/comments/1dkj0ph",
+          "ref": "turn101reddit12",
+          "depth": "dated first-person forum search excerpt"
+        }
+      ],
+      "finding": "A June 20, 2024 buyer reported a missing parcel, conflicting delivery dates and an AliExpress match.",
+      "application": "Offer user-initiated tracking-evidence capture with carrier/time-zone normalization; keep delivery discrepancy separate from supplier match.",
+      "limits": "No carrier query or order investigation. Tracking discrepancies alone do not prove fabricated/reused tracking or dropshipping.",
+      "kind": "complaint-lead",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF19",
+      "platform": "eBay",
+      "title": "Buyer allegation: Amazon fulfillment",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/ebaysucks/comments/1oyqkta/ebay_is_slowly_becoming_chock_full_of_amazon/",
+          "ref": "turn100reddit48",
+          "depth": "dated first-person forum search excerpt"
+        }
+      ],
+      "finding": "A November 16, 2025 buyer reported eBay purchases arriving directly from Amazon.",
+      "application": "Explain that retail-postsale sourcing would conflict with eBay policy, while a branded box alone cannot identify purchase timing or fulfillment ownership.",
+      "limits": "Unverified buyer account, self-selected sample, no seller identity or order documents inspected. Not a marketplace prevalence measure.",
+      "kind": "complaint-lead",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF20",
+      "platform": "Wayfair",
+      "title": "Buyer discussion: renamed matching furniture",
+      "sources": [
+        {
+          "url": "https://slickdeals.net/f/17797551-60-trent-austin-design-nguyen-2-door-tv-stand-135-more-free-shipping",
+          "ref": "turn101search8",
+          "depth": "dated community discussion search excerpt"
+        }
+      ],
+      "finding": "An October 12, 2024 discussion asserts that differently named listings share furniture images and discusses price comparisons.",
+      "application": "Match dimensions, materials, supplier model, variant and shipping terms before displaying a comparable offer; private-label names are not a deception verdict.",
+      "limits": "Unverified identity and pricing allegation. No physical inspection or current matched offers; different variants may share photos.",
+      "kind": "complaint-lead",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF21",
+      "platform": "eBay",
+      "title": "Self-described retail arbitrage is an investigation lead",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/dropship/comments/1s4yh9h/how_ebay_actually_pays_my_bills/",
+          "ref": "turn100reddit49",
+          "depth": "dated self-described seller forum search excerpt"
+        }
+      ],
+      "finding": "A March 27, 2026 post claims post-sale Amazon sourcing for eBay sales and account/feedback setup tactics.",
+      "application": "Archive the claimed sourcing pattern against official eBay rules; evaluate transaction timing only when independently evidenced.",
+      "limits": "Self-report may be promotional or false; no method effectiveness, user identity or activity verified. Avoid teaching evasion workflows.",
+      "kind": "seller-tutorial-unverified",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF22",
+      "platform": "Etsy",
+      "title": "Buyer detection tool: Etsy Guardian",
+      "sources": [
+        {
+          "url": "https://chromewebstore.google.com/detail/etsy-guardian-dropshippin/ombbkjlaapmdcipgieobdpkoepdicdno",
+          "ref": "turn102view3",
+          "depth": "primary store listing opened"
+        },
+        {
+          "url": "https://etsyguardian.com/",
+          "ref": "turn102view2",
+          "depth": "primary product site opened"
+        },
+        {
+          "url": "https://chromewebstore.google.com/detail/etsy-guardian-ip-protecti/ellbahipgkafoehplhphdjgnpodppnpg",
+          "ref": "turn100search4",
+          "depth": "primary store search excerpt; distinct seller IP-protection product"
+        }
+      ],
+      "finding": "The buyer extension markets a trust score, listing/review signals, reverse-image assistance and price history. Its extension ID is ombbkjlaapmdcipgieobdpkoepdicdno; a different same-name IP-protection extension has another ID.",
+      "application": "Benchmark individual claimed signals and abstention behavior; do not import a composite score without validation.",
+      "limits": "Not installed, audited or accuracy/performance tested. Website automatic image-check wording and store shortcut wording do not establish the same mechanism.",
+      "kind": "existing-tool",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF23",
+      "platform": "Etsy",
+      "title": "Etsy Guardian's local-storage and AI-egress claims differ",
+      "sources": [
+        {
+          "url": "https://etsyguardian.com/privacy/",
+          "ref": "turn104view3",
+          "depth": "primary privacy policy opened; dated August 5, 2026"
+        }
+      ],
+      "finding": "The policy describes local core data, but AI requests send listing title, price, description, review texts and public photo URLs through the service to Anthropic/Google Vision. Account sync uses Supabase; other vendors serve billing/email/optional analytics.",
+      "application": "Compare consent and egress by feature, not a blanket 'local' label. Keep public photo URLs and listing/review text out of passive third-party requests in DropShredder.",
+      "limits": "Statements are vendor claims, not a network audit. Signed-out AI/account gating, retention and actual consent behavior not tested; no privacy breach alleged.",
+      "kind": "existing-tool-privacy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF24",
+      "platform": "Multiple storefronts",
+      "title": "Product Sniffer reverse-image shortcuts",
+      "sources": [
+        {
+          "url": "https://chromewebstore.google.com/detail/product-sniffer/bdiiamoehaiomgidplbgnpbdpjehmkjc",
+          "ref": "turn102view4",
+          "depth": "primary store listing opened"
+        }
+      ],
+      "finding": "Product Sniffer markets right-click image searches, domain filtering, tracking-parameter stripping and local operation. Extension ID: bdiiamoehaiomgidplbgnpbdpjehmkjc.",
+      "application": "Compare a lightweight user-triggered image-search handoff with heavy scraping. Disclose that external engines may receive an image URL/query even without a tool-owned backend.",
+      "limits": "No installation/code/network audit; exact search payload inferred, not observed. Similar images are candidate matches rather than origin proof.",
+      "kind": "existing-tool",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF25",
+      "platform": "Etsy / eBay / Amazon / Redbubble",
+      "title": "CopyRadar cross-platform visual triage",
+      "sources": [
+        {
+          "url": "https://etsy.getstat.app/",
+          "ref": "turn100search22",
+          "depth": "primary provider search excerpt"
+        }
+      ],
+      "finding": "CopyRadar advertises image clusters and review of possible cross-platform copies.",
+      "application": "Use image families to prioritize manual examination and preserve earliest observed date, rather than automatically naming the first search result as the manufacturer.",
+      "limits": "Vendor claims only; same image can represent the owner's other store, licensed use or copied legitimate work. Pricing, license, privacy and accuracy not audited.",
+      "kind": "existing-tool",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF26",
+      "platform": "Etsy",
+      "title": "Hosted supplier-finder actor",
+      "sources": [
+        {
+          "url": "https://apify.com/yumitori/etsy-manufacturer-finder",
+          "ref": "turn100search19",
+          "depth": "primary actor publisher search excerpt"
+        }
+      ],
+      "finding": "The Who Makes It actor advertises Etsy supplier/factory discovery using listing/site evidence and external marketplace matching.",
+      "application": "Compare evidence provenance and false supplier attribution before any integration; retain exact observable text distinct from inferred manufacturer.",
+      "limits": "Hosted vendor tool, not independently validated. Photo match cannot establish factory identity or sourcing direction. Cost, execution privacy, code/license and access permissions not established; not a free-core dependency.",
+      "kind": "existing-tool",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF27",
+      "platform": "Cross-platform research",
+      "title": "Chinese counterfeit-text model is not product authentication",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41598-025-29693-w",
+          "ref": "turn102view5",
+          "depth": "primary article introduction opened; dataset-method primary search excerpt"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41598-025-29693-w",
+          "ref": "turn105search0",
+          "depth": "primary search excerpt including dataset generation, limitations and code/data availability"
+        }
+      ],
+      "finding": "CDANet (November 27, 2025) fuses semantic/glyph/pinyin text features. Its CGT corpus is generated character alterations of 289,851 JD descriptions across 29 categories, with two annotators reviewing simulated samples. Code/data are available upon reasonable request.",
+      "application": "Explore confusable-brand text as a low-confidence retrieval aid while preserving original names and language; assess transfer and item-disjoint tests.",
+      "limits": "Single-platform synthetic spelling/brand alteration is not physical counterfeit ground truth. Code/data not obtained or audited, no English-marketplace calibration. Chinese language is not a risk signal.",
+      "kind": "academic-method",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF28",
+      "platform": "Cross-platform research",
+      "title": "Physical garment photos and abstention",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2410.05969",
+          "ref": "turn104view0",
+          "depth": "primary abstract and metadata opened"
+        },
+        {
+          "url": "https://arxiv.org/html/2410.05969v2",
+          "ref": "turn108view0",
+          "depth": "primary full HTML methods/results read"
+        }
+      ],
+      "finding": "The 2024 garment-image paper reports 99.71% accuracy after 3.06% rejections on 1,702 test images of Lacoste polo emblems; training/validation counts are 20,945/8,747 images. Manufacturer experts supplied labels; processing is cloud-based.",
+      "application": "Adopt the evaluation question—can the system abstain when evidence is insufficient?—without importing a laboratory benchmark as a listing-authentication score.",
+      "limits": "One-brand physical photos, not reused listing images. Physical-item/batch-disjoint split not established from the inspected text. The authors state the accuracy/rejection tradeoff is task-specific. Weights/samples offered on request for non-commercial experimentation; not an established commercial extension license.",
+      "kind": "academic-method",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF29",
+      "platform": "Secondhand marketplaces",
+      "title": "Resale prices include symbolic value",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11890435/",
+          "ref": "turn100search10",
+          "depth": "primary paper search excerpt; full page blocked by CAPTCHA"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-4446.13168",
+          "ref": "turn107view6",
+          "depth": "primary publisher methods and pricing discussion read"
+        }
+      ],
+      "finding": "The secondhand-pricing ethnography (online 2024, 2025 issue) interviewed 31 US resellers plus seven contextual participants in 2022–2023, using mixed convenience/online recruitment and field observations. Symbolic, historical and material signifiers inform prices.",
+      "application": "Add legitimate vintage/preowned resale as a negative control; a markup alone does not prove counterfeit goods, bad quality or concealed fulfillment.",
+      "limits": "Qualitative purposive/convenience sample, not causal market-quality or fraud-prevalence measurement. Marketplace authentication comments describe the study period, not current 2026 capabilities. PMC blocked; publisher methods were accessible.",
+      "kind": "academic-method",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF30",
+      "platform": "Depop",
+      "title": "Original-design exception still requires original photos",
+      "sources": [
+        {
+          "url": "https://depophelp.zendesk.com/hc/en-gb/articles/22499808769553-Dropshipping-Policy",
+          "ref": "turn109view0",
+          "depth": "primary full policy opened"
+        }
+      ],
+      "finding": "Depop prohibits catalogue/marketplace bought-to-order dropshipping and supplier/stock-photo dropship listings, while allowing seller-designed handcrafted or print-on-demand goods with original photographs and production/shipping disclosures.",
+      "application": "Parse design claim, original-photo claim, partner location and timeframe separately; include permitted designer POD as a negative control.",
+      "limits": "No current item tested. Photo similarity alone does not establish prohibited inventory or ownership. Policy read October 8, 2026; actual enforcement not measured.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF31",
+      "platform": "Mercari / US and Japan",
+      "title": "Rules need market-specific scope",
+      "sources": [
+        {
+          "url": "https://www.mercari.com/us/help_center/topics/listing/policies/prohibited-conduct/",
+          "ref": "turn109view1",
+          "depth": "primary full US policy opened"
+        },
+        {
+          "url": "https://help.jp.mercari.com/guide/articles/866/",
+          "ref": "turn108search13",
+          "depth": "primary Japan help search excerpt; Japanese text read"
+        }
+      ],
+      "finding": "US conduct rules prohibit manufacturer-direct shipping, items outside possession/third-party shipping, stock or unowned photos, invalid tracking and false categories/brands. The same page restricts automated extraction not provided by Mercari.",
+      "application": "Record exact market and claim date. Keep consented product-page analysis bounded; don't assume an official public crawling API or permission for a marketplace-wide harvester.",
+      "limits": "No account/order behavior tested. Page displays older update dates; observed live October 8, 2026. Japan policy is a separate source, not silently a US rule.",
+      "kind": "platform-policy",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF32",
+      "platform": "TikTok Shop / jurisdiction unresolved",
+      "title": "Seller allegation of false counterfeit enforcement",
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/TikTokshop/comments/1vdad6w/counterfeit_goods/",
+          "ref": "turn105reddit7",
+          "depth": "dated first-person seller forum search excerpt"
+        }
+      ],
+      "finding": "An August 2, 2026 seller claimed that authentic goods were wrongly labeled counterfeit despite receipts and appeals.",
+      "application": "Include false-accusation scenarios and an evidence-review/abstention path; positive reviews do not authenticate goods, and platform enforcement alone is not proof of a seller's wrongdoing.",
+      "limits": "Unverified seller account, jurisdiction and appeal outcome unknown. No buyer complaint series retrieved for TikTok in this batch; no measured error rate or verdict on that seller.",
+      "kind": "complaint-lead",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF33",
+      "platform": "Review-manipulation research",
+      "title": "Graph evidence targets products buying reviews",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2410.17507v1",
+          "ref": "turn110view0",
+          "depth": "primary HTML data/network methods read; metadata confirms PNAS 2022"
+        }
+      ],
+      "finding": "The PNAS 2022 paper (arXiv upload 2024; DOI 10.1073/pnas.2211932119) observes review purchasing and constructs shared-reviewer product graphs. Roughly 1,500 flagged products and 2,714 competitor controls underpin product-level analysis.",
+      "application": "Prioritize direct labels over synthetic/proxy labels; assess shared-reviewer clusters with category/time controls when legitimately accessible. Treat product-level suspicion separately from an individual review accusation.",
+      "limits": "2019–2020 Amazon observations, not Etsy/2026 validation. Unobserved review buying may contaminate controls. Graph construction requires broad data unavailable on one product page; no scraping/private-group participation or model reproduction performed.",
+      "kind": "academic-method",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "SF34",
+      "platform": "Review-manipulation research",
+      "title": "Recent survey retained as an access-limited lead",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2609.30292",
+          "ref": "turn108academia36",
+          "depth": "primary indexed abstract excerpt; direct open DisabledError"
+        }
+      ],
+      "finding": "The indexed 2026 survey describes 211 studies covering text, temporal, graph, multimodal and external evidence, and flags label/split/protocol differences and uncertainty/cross-domain gaps.",
+      "application": "Use as a literature queue for evaluation design, especially missing-source robustness; do not lift reported model rankings into production.",
+      "limits": "Full primary page unavailable in this environment. Mirrors appeared in verification search and were not accepted as independent primary evidence. Exact version/acceptance/code and all 211 studies not audited.",
+      "kind": "academic-lead-access-limited",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    }
+  ],
+  "sourcePresence": [
+    {
+      "findingId": "SF01",
+      "url": "https://help.etsy.com/hc/en-us/articles/23948763872151-Does-Etsy-Allow-Drop-Shipping-or-Reselling",
+      "ref": "turn98search0",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF02",
+      "url": "https://help.etsy.com/hc/en-us/articles/360000336547-Working-with-Production-Partners-on-Etsy?segment=selling",
+      "ref": "turn98search1",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF03",
+      "url": "https://www.ebay.com/help/selling/listings/dropshipping?id=4176",
+      "ref": "turn98search3",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF04",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7131013343053575",
+      "ref": "turn98search4",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF05",
+      "url": "https://sell.wayfair.com/start-beginners-guide",
+      "ref": "turn98search8",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF06",
+      "url": "https://sell.wayfair.com/onboarding-checklist",
+      "ref": "turn98search7",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-documentation"
+    },
+    {
+      "findingId": "SF07",
+      "url": "https://sell.wayfair.com/wayfair-supplier-code-of-conduct",
+      "ref": "turn98search6",
+      "depth": "primary platform search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF08",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-temu-eu200-million-breaching-digital-services-act",
+      "ref": "turn99search0",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "regulator"
+    },
+    {
+      "findingId": "SF09",
+      "url": "https://help.printify.com/hc/en-us/articles/4578896595345-What-should-I-know-about-Etsy-s-Creative-Standards-policy",
+      "ref": "turn99search4",
+      "depth": "primary provider help excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "seller-enablement-documentation"
+    },
+    {
+      "findingId": "SF10",
+      "url": "https://www.autods.com/etsy/",
+      "ref": "turn99search6",
+      "depth": "primary provider page excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "seller-enablement-marketing"
+    },
+    {
+      "findingId": "SF11",
+      "url": "https://investors.etsy.com/_assets/_de5e340f38f38bb809a618effecc65e6/etsy/db/1016/10091/pdf/2025_Transparency_Report_Digital.pdf",
+      "ref": "turn99search10",
+      "depth": "primary PDF search excerpt; full PDF not reviewed",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; not a full capture.",
+      "kind": "platform-transparency-report"
+    },
+    {
+      "findingId": "SF12",
+      "url": "https://cyprus.representation.ec.europa.eu/news/commission-fines-aliexpress-eur550-million-breaching-digital-services-act-2026-07-20_en?prefLang=pt",
+      "ref": "turn101search0",
+      "depth": "primary European Commission search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "regulatory-enforcement"
+    },
+    {
+      "findingId": "SF13",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-makes-aliexpress-commitments-under-digital-services-act-binding",
+      "ref": "turn101search1",
+      "depth": "primary Commission search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "regulatory-enforcement"
+    },
+    {
+      "findingId": "SF14",
+      "url": "https://help.autods.com/en/articles/12700438-product-uploads-supported-suppliers-import-to-store-and-manage-variants",
+      "ref": "turn103search0",
+      "depth": "primary seller-tool help search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "seller-tool-documentation"
+    },
+    {
+      "findingId": "SF15",
+      "url": "https://www.cjdropshipping.com/blogs/selling-strategies/Etsy-Dropshipping",
+      "ref": "turn103search1",
+      "depth": "primary supplier tutorial search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "seller-tutorial"
+    },
+    {
+      "findingId": "SF16",
+      "url": "https://help.autods.com/en/articles/12700457-autods-helper-chrome-extension-one-click-product-importer-and-buyer-address-copier",
+      "ref": "turn103search24",
+      "depth": "primary seller-tool help search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "seller-tool-documentation"
+    },
+    {
+      "findingId": "SF17",
+      "url": "https://www.reddit.com/r/Etsy/comments/leglyk",
+      "ref": "turn101reddit10",
+      "depth": "dated first-person forum search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "complaint-lead"
+    },
+    {
+      "findingId": "SF18",
+      "url": "https://www.reddit.com/r/Etsy/comments/1dkj0ph",
+      "ref": "turn101reddit12",
+      "depth": "dated first-person forum search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "complaint-lead"
+    },
+    {
+      "findingId": "SF19",
+      "url": "https://www.reddit.com/r/ebaysucks/comments/1oyqkta/ebay_is_slowly_becoming_chock_full_of_amazon/",
+      "ref": "turn100reddit48",
+      "depth": "dated first-person forum search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "complaint-lead"
+    },
+    {
+      "findingId": "SF20",
+      "url": "https://slickdeals.net/f/17797551-60-trent-austin-design-nguyen-2-door-tv-stand-135-more-free-shipping",
+      "ref": "turn101search8",
+      "depth": "dated community discussion search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "complaint-lead"
+    },
+    {
+      "findingId": "SF21",
+      "url": "https://www.reddit.com/r/dropship/comments/1s4yh9h/how_ebay_actually_pays_my_bills/",
+      "ref": "turn100reddit49",
+      "depth": "dated self-described seller forum search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "seller-tutorial-unverified"
+    },
+    {
+      "findingId": "SF22",
+      "url": "https://chromewebstore.google.com/detail/etsy-guardian-dropshippin/ombbkjlaapmdcipgieobdpkoepdicdno",
+      "ref": "turn102view3",
+      "depth": "primary store listing opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    },
+    {
+      "findingId": "SF23",
+      "url": "https://etsyguardian.com/privacy/",
+      "ref": "turn104view3",
+      "depth": "primary privacy policy opened; dated August 5, 2026",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool-privacy"
+    },
+    {
+      "findingId": "SF24",
+      "url": "https://chromewebstore.google.com/detail/product-sniffer/bdiiamoehaiomgidplbgnpbdpjehmkjc",
+      "ref": "turn102view4",
+      "depth": "primary store listing opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    },
+    {
+      "findingId": "SF25",
+      "url": "https://etsy.getstat.app/",
+      "ref": "turn100search22",
+      "depth": "primary provider search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    },
+    {
+      "findingId": "SF26",
+      "url": "https://apify.com/yumitori/etsy-manufacturer-finder",
+      "ref": "turn100search19",
+      "depth": "primary actor publisher search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    },
+    {
+      "findingId": "SF27",
+      "url": "https://www.nature.com/articles/s41598-025-29693-w",
+      "ref": "turn102view5",
+      "depth": "primary article introduction opened; dataset-method primary search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF28",
+      "url": "https://arxiv.org/abs/2410.05969",
+      "ref": "turn104view0",
+      "depth": "primary abstract and metadata opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF29",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11890435/",
+      "ref": "turn100search10",
+      "depth": "primary paper search excerpt; full page blocked by CAPTCHA",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF04",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7131013343053575",
+      "ref": "turn106view1",
+      "depth": "primary policy opened; September 3, 2026 date displayed",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF09",
+      "url": "https://help.printify.com/hc/en-us/articles/4578896595345-What-should-I-know-about-Etsy-s-Creative-Standards-policy",
+      "ref": "turn107view1",
+      "depth": "primary vendor help opened; default and disclosure steps read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "seller-enablement-documentation"
+    },
+    {
+      "findingId": "SF12",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act",
+      "ref": "turn105search1",
+      "depth": "canonical primary Commission search excerpt; direct open returned 429",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "regulatory-enforcement"
+    },
+    {
+      "findingId": "SF27",
+      "url": "https://www.nature.com/articles/s41598-025-29693-w",
+      "ref": "turn105search0",
+      "depth": "primary search excerpt including dataset generation, limitations and code/data availability",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF28",
+      "url": "https://arxiv.org/html/2410.05969v2",
+      "ref": "turn108view0",
+      "depth": "primary full HTML methods/results read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF29",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-4446.13168",
+      "ref": "turn107view6",
+      "depth": "primary publisher methods and pricing discussion read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF30",
+      "url": "https://depophelp.zendesk.com/hc/en-gb/articles/22499808769553-Dropshipping-Policy",
+      "ref": "turn109view0",
+      "depth": "primary full policy opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF31",
+      "url": "https://www.mercari.com/us/help_center/topics/listing/policies/prohibited-conduct/",
+      "ref": "turn109view1",
+      "depth": "primary full US policy opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF31",
+      "url": "https://help.jp.mercari.com/guide/articles/866/",
+      "ref": "turn108search13",
+      "depth": "primary Japan help search excerpt; Japanese text read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "platform-policy"
+    },
+    {
+      "findingId": "SF32",
+      "url": "https://www.reddit.com/r/TikTokshop/comments/1vdad6w/counterfeit_goods/",
+      "ref": "turn105reddit7",
+      "depth": "dated first-person seller forum search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "complaint-lead"
+    },
+    {
+      "findingId": "SF33",
+      "url": "https://arxiv.org/html/2410.17507v1",
+      "ref": "turn110view0",
+      "depth": "primary HTML data/network methods read; metadata confirms PNAS 2022",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-method"
+    },
+    {
+      "findingId": "SF34",
+      "url": "https://arxiv.org/abs/2609.30292",
+      "ref": "turn108academia36",
+      "depth": "primary indexed abstract excerpt; direct open DisabledError",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "academic-lead-access-limited"
+    },
+    {
+      "findingId": "SF22",
+      "url": "https://etsyguardian.com/",
+      "ref": "turn102view2",
+      "depth": "primary product site opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    },
+    {
+      "findingId": "SF22",
+      "url": "https://chromewebstore.google.com/detail/etsy-guardian-ip-protecti/ellbahipgkafoehplhphdjgnpodppnpg",
+      "ref": "turn100search4",
+      "depth": "primary store search excerpt; distinct seller IP-protection product",
+      "observedAt": "2026-10-08",
+      "archiveScope": "URL and research paraphrase; no full copyrighted page snapshot",
+      "kind": "existing-tool"
+    }
+  ],
+  "scope": {
+    "platforms": [
+      "Etsy",
+      "eBay",
+      "TikTok Shop / US",
+      "Wayfair",
+      "Temu / EU",
+      "AliExpress / EU",
+      "Depop",
+      "Mercari / US (Japan separately cited)"
+    ],
+    "findings": 34,
+    "toolComparisons": 4,
+    "academicPapersOrLeads": 5,
+    "complaintOrSellerSelfReportLeads": 6
+  },
+  "archive": {
+    "method": "Incremental URL presence, typed paraphrase, retrieval depth and limitations stored in git. No complete web page, copyrighted PDF or screenshot archive is claimed.",
+    "scope": "Public research only. No logins, merchant orders, buyer addresses, private groups, checkout transactions or vendor API submissions.",
+    "continuation": "Each finding is independently addressable by SF ID; source mirrors and repeat retrievals must not become independent corroboration."
+  },
+  "integrationCriteria": {
+    "scoreChanges": "Not authorized by this research receipt; runtime weights remain zero.",
+    "evidenceGate": "Follow repository EVIDENCE-POLICY: severe deception requires the documented independent A/B/C gate; safety notices remain scoped safety facts.",
+    "toolGate": "Verify license, consent, cost, access terms, network egress and accuracy before adoption.",
+    "regionalWeight": "No country coefficient calibrated. Origin, ship-from, importer address, partner location and factory location remain separate fields."
+  }
+}
