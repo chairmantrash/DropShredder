@@ -134,3 +134,23 @@ test('account-service domains and store homepages do not trigger even with produ
     assert.equal(classifyShoppingPage(product(url)).showToast,false,url);
   }
 });
+
+test('a generic page with a buy button and a price is not enough to interrupt',()=>{
+  const f:ShoppingPageFacts={url:'https://retail.example/featured',
+    title:'Summer offers',purchaseAction:true,visiblePrice:true,productDetail:true,
+    focusedHero:false,productCards:0};
+  assert.equal(classifyShoppingPage(f).showToast,false);
+});
+
+test('a schema-free manufacturer detail can qualify with a matching product hero',()=>{
+  const f:ShoppingPageFacts={url:'https://manufacturer.example/iphone-17',
+    title:'iPhone 17',purchaseAction:true,visiblePrice:true,productDetail:true,
+    focusedHero:true,productCards:1};
+  assert.equal(classifyShoppingPage(f).showToast,true);
+});
+
+test('sales landing pages without an individual product remain quiet',()=>{
+  for(const url of ['https://store.example/sale','https://store.example/deals','https://store.example/clearance']){
+    assert.equal(classifyShoppingPage({...product(url),focusedHero:true}).showToast,false,url);
+  }
+});
