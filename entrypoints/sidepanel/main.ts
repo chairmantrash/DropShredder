@@ -548,7 +548,11 @@ scanButton?.addEventListener('click',()=>void scanActivePage());
 
 // A toast click opens Chrome's panel via a user gesture. The short-lived intent
 // is in session storage across worker restarts, not in service-worker globals.
+let consumingAutoPanelIntent=false;
 async function consumeAutoPanelIntent():Promise<boolean>{
+  if(consumingAutoPanelIntent) return true;
+  consumingAutoPanelIntent=true;
+  try{
   const value=(await chrome.storage.session.get(AUTO_PANEL_INTENT))[AUTO_PANEL_INTENT] as
     {tabId?:number;documentId?:string;createdAt?:number}|undefined;
   if(!value || !value.tabId || !value.documentId || !value.createdAt ||
@@ -567,6 +571,9 @@ async function consumeAutoPanelIntent():Promise<boolean>{
     if(status) status.textContent='The product page changed. Click CHECK THIS PRODUCT to try again.';
   }
   return true;
+  }finally{
+    consumingAutoPanelIntent=false;
+  }
 }
 
 // Already-open panels do not reload when Chrome calls sidePanel.open again.
