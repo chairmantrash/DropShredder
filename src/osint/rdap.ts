@@ -47,7 +47,7 @@ const CACHE_MS=6*60*60*1000;
 
 export async function lookupDomainRdap(input:string):Promise<RdapDomainObservation|undefined> {
   const domain=normalizeDomain(input);
-  if(!domain || domain.length>253 || !/^(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/.test(domain)) return undefined;
+  if(!domain || domain.length>253 || !/^(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/.test(domain)) return undefined;
   // Ask Chrome while the click still has user activation, before async cache reads.
   const permission=ensureRdapPermission();
   const cacheKey=`rdap:${domain}`;
