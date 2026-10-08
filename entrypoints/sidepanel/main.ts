@@ -38,6 +38,7 @@ import { toneCopy, type ToneMode } from '../../src/ui/tone';
 import { renderShopperReport } from '../../src/ui/report-renderer';
 import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
 import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
+import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../../src/runtime/auto-registration';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -50,6 +51,8 @@ const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
+const autoProtection=document.querySelector<HTMLInputElement>('#auto-protection');
+const autoProtectionStatus=document.querySelector<HTMLElement>('#auto-protection-status');
 const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-usa');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
@@ -111,9 +114,48 @@ function applyTone(mode:ToneMode):void{
 if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • Private by design • No account needed`;
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
+  if(autoProtection){
+    autoProtection.checked=settings.autoProtection;
+    if(settings.autoProtection){
+      void chrome.permissions.contains({origins:[AUTO_PATTERN]}).then(granted=>{
+        if(!granted && autoProtection){
+          autoProtection.checked=false;
+          if(autoProtectionStatus) autoProtectionStatus.textContent='Automatic alerts need Chrome site permission. Switch on to allow it.';
+        }
+      });
+    }
+  }
   if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
   if(toneMode) toneMode.value=settings.toneMode;
   applyTone(settings.toneMode);
+});
+
+autoProtection?.addEventListener('change',()=>{
+  if(!autoProtection) return;
+  const wanted=autoProtection.checked;
+  autoProtection.disabled=true;
+  if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
+    ? 'Asking Chrome to allow automatic product alerts…'
+    : 'Turning off automatic alerts…';
+  // Permission request MUST be invoked directly in the click/change gesture.
+  const grant=wanted?chrome.permissions.request({origins:[AUTO_PATTERN]}):Promise.resolve(false);
+  void grant.then(async allowed=>{
+    if(wanted && !allowed){
+      if(autoProtection) autoProtection.checked=false;
+      if(autoProtectionStatus) autoProtectionStatus.textContent='Chrome permission was not granted. Manual checks still work.';
+      return;
+    }
+    await setAutoContentRegistration(wanted);
+    const current=await loadFeatureSettings();
+    await saveFeatureSettings({...current,autoProtection:wanted});
+    if(!wanted) await chrome.permissions.remove({origins:[AUTO_PATTERN]});
+    if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
+      ? 'Automatic alerts are on for supported shopping pages. Other pages stay quiet.'
+      : 'Automatic alerts are off. Extra broad site access removed.';
+  }).catch(error=>{
+    if(autoProtectionStatus) autoProtectionStatus.textContent=error instanceof Error?error.message:'Could not update automatic alerts.';
+    if(autoProtection) autoProtection.checked=!wanted;
+  }).finally(()=>{if(autoProtection) autoProtection.disabled=false;});
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
@@ -493,6 +535,39 @@ async function scanActivePage(): Promise<void> {
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
 
+// A toast click opens Chrome's panel via a user gesture. The intent stays in
+// session storage across a disposable service-worker restart, never in globals.
+void (async()=>{
+  const consume=async():Promise<boolean>=>{
+    const value=(await chrome.storage.session.get(AUTO_PANEL_INTENT))[AUTO_PANEL_INTENT] as
+      {tabId?:number;documentId?:string;createdAt?:number}|undefined;
+    if(!value || !value.tabId || !value.documentId || !value.createdAt ||
+      Date.now()-value.createdAt>15_000) return false;
+    const tab=await activeWebTab();
+    if(tab?.id!==value.tabId) return false;
+    await chrome.storage.session.remove(AUTO_PANEL_INTENT);
+    try{
+      const [probe]=await chrome.scripting.executeScript({
+        target:{tabId:value.tabId,documentIds:[value.documentId]},
+        world:'ISOLATED',func:()=>location.href,
+      });
+      if(probe?.documentId!==value.documentId) return true;
+      await scanActivePage();
+    }catch{
+      if(status) status.textContent='The product page changed. Click CHECK THIS PRODUCT to try again.';
+    }
+    return true;
+  };
+  try{
+    if(!(await consume())){
+      await new Promise(resolve=>setTimeout(resolve,250));
+      await consume();
+    }
+  }catch{}
+})();
+
+
+
 async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
   const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
   for(const url of unique) await chrome.tabs.create({url,active:false});
@@ -855,6 +930,10 @@ revokeOptionalAccess?.addEventListener('click',()=>{
       const granted=await chrome.permissions.getAll();
       const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
       if(origins.length) await chrome.permissions.remove({origins});
+      await setAutoContentRegistration(false);
+      const settings=await loadFeatureSettings();
+      await saveFeatureSettings({...settings,autoProtection:false});
+      if(autoProtection) autoProtection.checked=false;
       status.textContent=origins.length
         ? 'Extra site access removed.'
         : 'DropShredder didn’t have any extra site access to remove.';
