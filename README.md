@@ -24,7 +24,8 @@ The public extension:
 - has no mandatory backend;
 - does not collect passwords, payment-card data, cookies, form values or browser history;
 - refuses account/login/checkout/payment/billing/order-history surfaces;
-- uses temporary `activeTab` access for the page the user chooses;
+- uses Chrome's site-specific host-access flow for user-triggered checks, without requiring the `tabs` or `activeTab` permission;
+- offers opt-in, locally screened automatic product alerts on explicitly authorized HTTPS sites (no popups on general browsing/search/checkout);
 - keeps observation history locally in IndexedDB;
 - strips URL query strings/fragments before persistence;
 - caps history at 180 days, 2,000 total records and 120 records per product identity;
@@ -62,12 +63,14 @@ Requirements:
 
 - Node.js 22
 - npm
-- Chrome/Chromium 114+
+- Chrome/Chromium 133+
 
 ```bash
 npm install
 npm run typecheck
 npm run audit:security
+npm run audit:chrome-runtime
+npm run audit:professional
 npm run lint:data
 npm test
 npm run build
