@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-08",
   "policy": {
     "paidApiDependenciesAllowed": false,
     "freePublicApisAllowed": true,
@@ -14,80 +14,159 @@
       "operator": "U.S. Consumer Product Safety Commission",
       "access": "public-no-key",
       "runtimeClass": "credential-free",
-      "status": "eligible",
-      "purpose": ["recall matching","product safety"],
+      "status": "implemented-explicit-candidate-lookup",
+      "purpose": [
+        "recall matching",
+        "product safety"
+      ],
       "matchPolicy": "Prefer UPC/GTIN and exact model/manufacturer. Fuzzy title matches are candidate evidence only.",
-      "primarySource": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information"
+      "primarySource": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Substring query can retrieve unrelated brands.",
+        "ProductName and RecallTitle returned different notice sets.",
+        "Both live queries omitted packaged Anker notice 25-466. No full-coverage or no-recall guarantee.",
+        "Model token presence only; exact serial/unit scope remains manual.",
+        "Never alters report scores or history."
+      ]
     },
     {
       "id": "saferproducts",
       "operator": "U.S. Consumer Product Safety Commission",
       "access": "free-application-key",
       "runtimeClass": "free-key",
-      "status": "eligible-with-key-design",
-      "purpose": ["consumer incident reports","product/manufacturer/retailer corroboration"],
+      "status": "research-only-key-and-privacy-design-required",
+      "purpose": [
+        "consumer incident reports",
+        "product/manufacturer/retailer corroboration"
+      ],
       "matchPolicy": "Incident reports are allegations/reports, not findings of defect; display and score separately from official recalls.",
-      "primarySource": "https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11"
+      "primarySource": "https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Separate consumer incident API, not the credential-free recalls endpoint.",
+        "FAQ specifies API key used as Basic username with no password.",
+        "Incident narratives are reports/allegations, not official defect findings; records can contain age/sex or other personal details.",
+        "No key storage, proxy or runtime integration shipped."
+      ]
     },
     {
       "id": "openfda",
       "operator": "U.S. Food and Drug Administration",
-      "access": "public-keyless-with-free-key-higher-limits",
+      "access": "official-documentation-conflict-pending-endpoint-test",
       "runtimeClass": "credential-free-or-free-key",
-      "status": "eligible",
-      "purpose": ["regulated-product identity","enforcement/recall evidence"],
+      "status": "research-only-authentication-clarification-required",
+      "purpose": [
+        "regulated-product identity",
+        "enforcement/recall evidence"
+      ],
       "matchPolicy": "Use exact identifiers where available; regulator records outrank fuzzy product-name similarity.",
-      "primarySource": "https://open.fda.gov/apis/authentication/"
+      "primarySource": "https://open.fda.gov/apis/authentication/",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Authentication page says a key is required but also publishes no-key quotas.",
+        "Page lists 240 requests/minute and 1000/day without key, 120000/day with key; availability not endpoint-tested.",
+        "Do not assume a guaranteed keyless runtime until service-specific behavior is verified.",
+        "Regulated-category applicability and exact product identity remain required."
+      ]
     },
     {
       "id": "sec-edgar-data",
       "operator": "U.S. Securities and Exchange Commission",
       "access": "public-no-key",
       "runtimeClass": "credential-free",
-      "status": "eligible",
-      "purpose": ["legal-entity identity","former names","public-company provenance"],
+      "status": "research-only-network-policy-design-required",
+      "purpose": [
+        "legal-entity identity",
+        "former names",
+        "public-company provenance"
+      ],
       "matchPolicy": "Entity-name similarity alone never establishes merchant identity; corroborate with identifiers/address/domain evidence.",
-      "primarySource": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
+      "primarySource": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Official APIs do not support CORS; extension host permissions have different context, not evaluated here.",
+        "Automated access must follow SEC identification/fair-access policy; aggregate request cap described as 10/s.",
+        "CIK or corroborated entity identity required; legal records do not prove retail quality."
+      ]
     },
     {
       "id": "gleif",
       "operator": "Global Legal Entity Identifier Foundation",
       "access": "public-api",
       "runtimeClass": "credential-free",
-      "status": "eligible-pending-endpoint-test",
-      "purpose": ["legal-entity resolution","LEI relationships"],
+      "status": "research-only-pending-endpoint-test",
+      "purpose": [
+        "legal-entity resolution",
+        "LEI relationships"
+      ],
       "matchPolicy": "Treat fuzzy entity matches as candidates until identifiers or other independent attributes corroborate identity.",
-      "primarySource": "https://www.gleif.org/en/lei-data/gleif-api"
+      "primarySource": "https://www.gleif.org/en/lei-data/gleif-api",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Official API page found in search; direct open timed out.",
+        "No endpoint/authentication/limit or Chrome behavior verified.",
+        "Entity names are candidates until identifiers corroborate."
+      ]
     },
     {
       "id": "companies-house",
       "operator": "UK Companies House",
       "access": "free-account-api-key",
       "runtimeClass": "free-key",
-      "status": "eligible-with-key-design",
-      "purpose": ["UK legal-entity identity","company status","filings"],
+      "status": "research-only-user-key-design-required",
+      "purpose": [
+        "UK legal-entity identity",
+        "company status",
+        "filings"
+      ],
       "matchPolicy": "Registered-company data establishes legal records, not product quality or merchant conduct.",
-      "primarySource": "https://developer.company-information.service.gov.uk/get-started"
+      "primarySource": "https://developer.company-information.service.gov.uk/get-started",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Official API uses an account key for Basic authentication.",
+        "Official rate limit 600 requests per 5 minutes, then HTTP 429.",
+        "No key bundled/stored or runtime integration added.",
+        "Registration establishes legal records, not product quality."
+      ]
     },
     {
       "id": "ftc-api",
       "operator": "U.S. Federal Trade Commission",
       "access": "free-data-gov-key",
       "runtimeClass": "free-key",
-      "status": "eligible-with-key-design",
-      "purpose": ["regulatory-action research","machine-readable FTC content"],
-      "matchPolicy": "Only attach an enforcement/action record to a merchant after entity identity is corroborated.",
-      "primarySource": "https://www.ftc.gov/developer"
+      "status": "research-only-current-api-scope-mismatch",
+      "purpose": [
+        "Do Not Call complaint API research",
+        "HSR early-termination API research",
+        "manual enforcement-dataset research"
+      ],
+      "matchPolicy": "Current listed APIs are not a general merchant enforcement feed. Use independently matched enforcement datasets for manual research; do not attribute unrelated records to a seller.",
+      "primarySource": "https://www.ftc.gov/developer",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "Current developer page describes Do Not Call complaints and HSR early termination APIs.",
+        "These APIs are not a general merchant-enforcement feed.",
+        "Public CSV/XLS enforcement datasets can inform corroborated manual research; a matching current API was not verified."
+      ]
     },
     {
       "id": "un-comtrade",
       "operator": "United Nations Statistics Division",
       "access": "free-tier",
       "runtimeClass": "free-account-tier",
-      "status": "research-only-pending-terms-and-fit",
-      "purpose": ["aggregate trade-flow context"],
+      "status": "research-only-pending-terms-endpoint-and-fit",
+      "purpose": [
+        "aggregate trade-flow context"
+      ],
       "matchPolicy": "Aggregate trade flows cannot establish the factory, manufacturer, or origin of an individual listing.",
-      "primarySource": "https://comtradeplus.un.org/"
+      "primarySource": "https://comtradeplus.un.org/",
+      "reviewedAt": "2026-10-08",
+      "accessReviewNotes": [
+        "API-root probe returned 404; no usable endpoint or current free-tier terms verified.",
+        "Aggregate flows cannot establish an individual listing factory, quality or unit origin."
+      ]
     }
-  ]
+  ],
+  "capabilityAudit": "intelligence/API-CAPABILITIES-20261008.json"
 }

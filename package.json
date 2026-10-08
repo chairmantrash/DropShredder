@@ -22,9 +22,10 @@
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",
-    "typescript": "5.9.3",
-    "wxt": "0.21.4",
+    "@types/node": "22.18.10",
+    "linkedom": "0.18.12",
     "tsx": "4.20.6",
-    "@types/node": "22.18.10"
+    "typescript": "5.9.3",
+    "wxt": "0.21.4"
   }
 }

@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-08",
+  "task": "DS-FULLSTACK-GAP-AUDIT-20261008",
+  "policy": {
+    "noBundledKeys": true,
+    "noAutomaticApiLookupsAdded": true,
+    "noBackend": true,
+    "countryOrNationalityRiskWeight": 0
+  },
+  "sources": {
+    "CPSC-API": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+    "CPSC-GUIDE": "https://www.cpsc.gov/s3fs-public/RecallRetrievalWebServicesProgrammersGuide20180917.pdf",
+    "CHROME-PERMISSIONS": "https://developer.chrome.com/docs/extensions/reference/api/permissions",
+    "CHROME-STORAGE": "https://developer.chrome.com/docs/extensions/reference/api/storage",
+    "W3C-CONTRAST": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "W3C-REFLOW": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "NPM-CI": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+    "LINKEDOM": "https://github.com/WebReflection/linkedom",
+    "SEC-API": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "SEC-FAIR-ACCESS": "https://www.sec.gov/developer",
+    "OPENFDA-AUTH": "https://open.fda.gov/apis/authentication/",
+    "GLEIF": "https://www.gleif.org/en/lei-data/gleif-api",
+    "COMPANIES-HOUSE-AUTH": "https://developer-specs.company-information.service.gov.uk/guides/authorisation",
+    "COMPANIES-HOUSE-LIMITS": "https://developer-specs.company-information.service.gov.uk/guides/rateLimiting",
+    "FTC": "https://www.ftc.gov/developer",
+    "SAFERPRODUCTS-FAQ": "https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11",
+    "COMTRADE": "https://comtradeplus.un.org/"
+  },
+  "capabilities": [
+    {
+      "id": "cpsc-recalls",
+      "state": "implemented-explicit-candidate-lookup",
+      "access": "public-no-key",
+      "keysBundled": false,
+      "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+      "fields": [
+        "RecallTitle",
+        "ProductName",
+        "UPC"
+      ],
+      "runtime": "src/osint/cpsc.ts",
+      "chromeVerified": false,
+      "liveEndpointProbes": 2,
+      "bounds": {
+        "queryCharacters": 100,
+        "timeoutMs": 8000,
+        "responseBytes": 2000000,
+        "inspectedRecords": 200,
+        "displayedNotices": 12
+      },
+      "limitations": [
+        "Substring query can retrieve unrelated brands.",
+        "ProductName and RecallTitle returned different notice sets.",
+        "Both live queries omitted packaged Anker notice 25-466. No full-coverage or no-recall guarantee.",
+        "Model token presence only; exact serial/unit scope remains manual.",
+        "Never alters report scores or history."
+      ],
+      "sources": [
+        "CPSC-API",
+        "CPSC-GUIDE",
+        "CHROME-PERMISSIONS"
+      ]
+    },
+    {
+      "id": "rdap",
+      "state": "existing-runtime-owner-followup",
+      "access": "public-no-key",
+      "runtime": "src/osint/rdap.ts",
+      "chromeVerified": false,
+      "limitations": [
+        "Domain chronology is not business age.",
+        "Registered-domain resolution and redirect permissions need owner verification.",
+        "Existing cached-return path starts permission request but returns cached record before consent result."
+      ],
+      "sources": [
+        "CHROME-PERMISSIONS"
+      ]
+    },
+    {
+      "id": "saferproducts",
+      "state": "research-only-key-and-privacy-design-required",
+      "access": "free-application-key",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Separate consumer incident API, not the credential-free recalls endpoint.",
+        "FAQ specifies API key used as Basic username with no password.",
+        "Incident narratives are reports/allegations, not official defect findings; records can contain age/sex or other personal details.",
+        "No key storage, proxy or runtime integration shipped."
+      ],
+      "sources": [
+        "SAFERPRODUCTS-FAQ"
+      ]
+    },
+    {
+      "id": "openfda",
+      "state": "research-only-authentication-clarification-required",
+      "access": "official-documentation-conflict",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Authentication page says a key is required but also publishes no-key quotas.",
+        "Page lists 240 requests/minute and 1000/day without key, 120000/day with key; availability not endpoint-tested.",
+        "Do not assume a guaranteed keyless runtime until service-specific behavior is verified.",
+        "Regulated-category applicability and exact product identity remain required."
+      ],
+      "sources": [
+        "OPENFDA-AUTH"
+      ]
+    },
+    {
+      "id": "sec-edgar-data",
+      "state": "research-only-network-policy-design-required",
+      "access": "public-no-key",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Official APIs do not support CORS; extension host permissions have different context, not evaluated here.",
+        "Automated access must follow SEC identification/fair-access policy; aggregate request cap described as 10/s.",
+        "CIK or corroborated entity identity required; legal records do not prove retail quality."
+      ],
+      "sources": [
+        "SEC-API",
+        "SEC-FAIR-ACCESS"
+      ]
+    },
+    {
+      "id": "gleif",
+      "state": "research-only-pending-endpoint-test",
+      "access": "public-api",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Official API page found in search; direct open timed out.",
+        "No endpoint/authentication/limit or Chrome behavior verified.",
+        "Entity names are candidates until identifiers corroborate."
+      ],
+      "sources": [
+        "GLEIF"
+      ]
+    },
+    {
+      "id": "companies-house",
+      "state": "research-only-user-key-design-required",
+      "access": "free-account-api-key",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Official API uses an account key for Basic authentication.",
+        "Official rate limit 600 requests per 5 minutes, then HTTP 429.",
+        "No key bundled/stored or runtime integration added.",
+        "Registration establishes legal records, not product quality."
+      ],
+      "sources": [
+        "COMPANIES-HOUSE-AUTH",
+        "COMPANIES-HOUSE-LIMITS"
+      ]
+    },
+    {
+      "id": "ftc-api",
+      "state": "research-only-current-api-scope-mismatch",
+      "access": "free-data-gov-key",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "Current developer page describes Do Not Call complaints and HSR early termination APIs.",
+        "These APIs are not a general merchant-enforcement feed.",
+        "Public CSV/XLS enforcement datasets can inform corroborated manual research; a matching current API was not verified."
+      ],
+      "sources": [
+        "FTC"
+      ]
+    },
+    {
+      "id": "un-comtrade",
+      "state": "research-only-pending-terms-endpoint-and-fit",
+      "access": "free-tier",
+      "chromeVerified": false,
+      "liveEndpointProbes": 0,
+      "limitations": [
+        "API-root probe returned 404; no usable endpoint or current free-tier terms verified.",
+        "Aggregate flows cannot establish an individual listing factory, quality or unit origin."
+      ],
+      "sources": [
+        "COMTRADE"
+      ]
+    }
+  ],
+  "probeReceipts": [
+    "brain/research/2026-10-08-CPSC-LIVE-PROBE.json",
+    "brain/research/2026-10-08-CPSC-TITLE-PROBE.json"
+  ],
+  "scope": "Access research and code integration states, not approval of every API for Chrome runtime."
+}

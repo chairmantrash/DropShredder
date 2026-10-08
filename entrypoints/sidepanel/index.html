@@ -68,10 +68,42 @@
             <h2 id="evidence-heading">Evidence</h2>
           </div>
         </div>
+        <div class="evidence-tools">
+          <label for="evidence-query">Find in evidence</label>
+          <input id="evidence-query" type="search" maxlength="100" placeholder="Search source, claim or observation" />
+          <label for="evidence-filter">Show evidence</label>
+          <select id="evidence-filter"><option value="all">All evidence</option><option value="warnings">Warning signals</option><option value="context">Informational context</option></select>
+          <p id="evidence-count" class="status" role="status" aria-live="polite">No scan yet.</p>
+        </div>
         <div id="evidence" class="evidence">
           <div class="empty-state">Nothing to show yet. Scan the product and we’ll show you what stood out.</div>
         </div>
       </section>
+
+      <details class="recall-panel">
+        <summary>Search official recall notices</summary>
+        <p class="scan-disclosure">Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety.</p>
+        <div class="evidence-tools">
+          <label for="recall-field">Search field</label>
+          <select id="recall-field"><option value="RecallTitle">Notice title / brand</option><option value="ProductName">Product name</option><option value="UPC">UPC / GTIN</option></select>
+          <label for="recall-query">Query to share with CPSC</label>
+          <input id="recall-query" type="text" maxlength="100" autocomplete="off" />
+          <button id="recall-lookup" class="secondary" type="button" disabled>SEARCH CPSC NOTICES</button>
+          <button id="recall-cancel" class="secondary" type="button" disabled>CANCEL LOOKUP</button>
+          <p id="recall-status" class="status" role="status" aria-live="polite"></p>
+        </div>
+        <div id="recall-results" class="evidence"></div>
+      </details>
+
+      <details class="appearance-panel">
+        <summary>Customize your display</summary>
+        <div class="evidence-tools">
+          <label for="display-theme">Theme</label><select id="display-theme"><option value="dark">Dark</option><option value="light">Light</option><option value="system">Follow system</option></select>
+          <label for="display-density">Spacing</label><select id="display-density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select>
+          <label for="display-scale">Text size</label><select id="display-scale"><option value="100">Standard</option><option value="115">Larger</option><option value="130">Largest</option></select>
+          <button id="reset-display" class="secondary" type="button">RESET APPEARANCE</button>
+        </div>
+      </details>
 
       <details class="settings-panel">
         <summary>How DropShredder checks products</summary>
@@ -104,6 +136,9 @@
         <summary>Your privacy & saved scan history</summary>
         <div class="privacy-tools">
           <p>Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history.</p>
+          <button id="export-report" class="secondary" type="button" disabled>EXPORT CURRENT SCAN</button>
+          <p>Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it.</p>
+          <p id="controls-status" class="status" role="status" aria-live="polite"></p>
           <button id="clear-history" class="secondary" type="button">DELETE MY SCAN HISTORY</button>
           <button id="revoke-optional-access" class="secondary" type="button">REMOVE EXTRA SITE ACCESS</button>
         </div>
@@ -112,5 +147,6 @@
       <footer id="build-meta" class="build-meta"></footer>
     </main>
     <script type="module" src="./main.ts"></script>
+    <script type="module" src="./controls.ts"></script>
   </body>
 </html>

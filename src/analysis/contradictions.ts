@@ -59,10 +59,10 @@ export function contradictionEvidence(items:Contradiction[]):EvidenceSignal[] {
   return items.map(item=>({
     id:item.id,
     family:item.id.includes('FULFILLMENT')?'fulfillment':'claims',
-    severity:'strong',
+    severity:item.id==='BUSINESS_AGE_CONFLICT'?'info':'strong',
     confidence:item.confidence,
-    weight:24,
-    title:'The seller’s story doesn’t line up',
+    weight:item.id==='BUSINESS_AGE_CONFLICT'?0:24,
+    title:item.id==='BUSINESS_AGE_CONFLICT'?'Website age differs from the claimed business age':'The seller’s story doesn’t line up',
     explanation:item.explanation,
     observedValue:`Seller says: ${item.claim} | We found: ${item.observation}`,
     independentKey:item.independentKey,

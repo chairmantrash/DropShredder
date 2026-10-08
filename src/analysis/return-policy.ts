@@ -22,11 +22,11 @@ const patterns=[
   },
   {
     id:'RETURN_ADDRESS_AFTER_CONTACT',
-    severity:'moderate' as const,
+    severity:'info' as const,
     confidence:.72,
     regex:/(?:contact|email).{0,80}(?:return address|return instructions)|return address.{0,80}(?:provided|sent).{0,50}(?:after|once).{0,30}(?:contact|email)/i,
-    title:'They won’t show the return address up front',
-    explanation:'The store appears to make you contact them before revealing where a return has to go. That adds friction and hides a cost you may want to know before buying.',
+    title:'Contact is required for return instructions',
+    explanation:'The store appears to make you contact them before revealing where a return has to go. Contact/RMA procedures are common; this alone does not establish hidden costs or wrongdoing.',
     key:'return-address-withheld',
   },
   {
@@ -42,7 +42,7 @@ const patterns=[
     id:'VERY_SHORT_RETURN_WINDOW',
     severity:'moderate' as const,
     confidence:.78,
-    regex:/\b([1-7])\s*(?:calendar\s+|business\s+)?days?\b.{0,40}(?:return|refund)|(?:return|refund).{0,40}\b([1-7])\s*(?:calendar\s+|business\s+)?days?\b/i,
+    regex:/\breturns?\s+(?:items?\s+)?within\s+([1-7])\s*(?:calendar\s+|business\s+)?days?\b|(?:returns?\s+(?:must be (?:requested|initiated|made)|accepted)|(?:request|initiate|start|make)\s+(?:a\s+)?return|return\s+(?:window|period))[^.;!?]{0,35}\b([1-7])\s*(?:calendar\s+|business\s+)?days?\b|\b([1-7])[- ]day\s+return\s+(?:window|period)|\b(?:have|within)\s+([1-7])\s*(?:calendar\s+|business\s+)?days?\s+to\s+(?:request\s+(?:a\s+)?)?return\b/i,
     title:'Very short return window',
     explanation:'The policy appears to give you seven days or less to return the item. That is a tight window, especially if delivery is slow.',
     key:'return-short-window',
@@ -58,7 +58,7 @@ const patterns=[
   },
   {
     id:'REFUND_AFTER_WAREHOUSE_RECEIPT',
-    severity:'weak' as const,
+    severity:'info' as const,
     confidence:.66,
     regex:/refund.{0,80}(?:after|once).{0,50}(?:warehouse|return center|facility).{0,30}(?:receive|received|inspect)/i,
     title:'Your refund waits on the warehouse',
@@ -68,17 +68,21 @@ const patterns=[
 ];
 
 export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
-  const normalized=text.replace(/\s+/g,' ').slice(0,100000);
+  const normalized=text.slice(0,100000).replace(/\s+/g,' ');
   const out:EvidenceSignal[]=[];
 
   for(const p of patterns){
     const match=normalized.match(p.regex);
     if(!match) continue;
-    let severity=p.severity;
+    const before=normalized.slice(Math.max(0,(match.index??0)-30),match.index);
+    if(/\b(?:no|not|never|without|do not|does not|will not)\s+(?:a\s+|any\s+|charge\s+|pay\s+|have\s+|need\s+)?$/i.test(before)) continue;
+    if(p.id==='INTERNATIONAL_RETURN_AT_CUSTOMER_COST' && /\bnot\s+(?:responsible|required)|\b(?:will|do)\s+not\s+pay/i.test(match[0])) continue;
+    let severity:EvidenceSignal['severity']=p.severity;
     let weight=severity==='moderate'?9:severity==='weak'?4:0;
 
     if(p.id==='RESTOCKING_FEE'){
       const pct=Number(match[0].match(/(\d{1,2})\s*%/)?.[1]);
+      if(pct===0) continue;
       if(Number.isFinite(pct) && pct>=20){
         severity='moderate';
         weight=8;
@@ -95,6 +99,7 @@ export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
       explanation:p.explanation,
       observedValue:match[0].slice(0,220),
       independentKey:p.key,
+      sourceKey:'return-policy-observation',
     });
   }
 
