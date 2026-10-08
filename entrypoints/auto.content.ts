@@ -65,9 +65,22 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPri
   body.append(brand,heading,product,facts,trust,cta);
   body.addEventListener('click',()=>{
     if(location.href!==pageUrl) return;
-    // Chrome sidePanel.open is invoked by the background directly from this user gesture.
-    void chrome.runtime.sendMessage({type:'DS_AUTO_OPEN',version:1}).catch(()=>{});
-    host.remove();
+    body.disabled=true;
+    cta.textContent='Opening full check…';
+    // Chrome sidePanel.open is invoked by the background from this user gesture.
+    void chrome.runtime.sendMessage({type:'DS_AUTO_OPEN',version:1})
+      .then((reply:unknown)=>{
+        if(reply && typeof reply==='object' && (reply as {ok?:boolean}).ok===true){
+          host.remove();
+        }else{
+          body.disabled=false;
+          cta.textContent='Could not open panel. Use the DropShredder toolbar icon.';
+        }
+      })
+      .catch(()=>{
+        body.disabled=false;
+        cta.textContent='Could not open panel. Use the DropShredder toolbar icon.';
+      });
   });
   const close=document.createElement('button');close.className='close';close.type='button';
   close.setAttribute('aria-label','Dismiss DropShredder quick check');close.textContent='×';
