@@ -10,6 +10,7 @@ export interface ShoppingPageFacts {
   purchaseAction?:boolean;
   visiblePrice?:boolean;
   productDetail?:boolean;
+  focusedHero?:boolean;
   productCards?:number;
   hasSensitiveFields?:boolean;
 }
@@ -45,7 +46,7 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
     /^(?:products?|item|sku)$/.test(part) && i<segments.length-1 &&
     !/^(?:reviews?|search|categories|collections)$/.test(segments[i+1]||'')
   ) || /\/(?:p|pd)\/[a-z0-9][a-z0-9_-]{4,}/i.test(path);
-  const collectionPath=/(?:^|\/)(?:search|s|collections?|categories|category|catalog|shop|stores|browse|results)(?:\/|$)/.test(path)
+  const collectionPath=/(?:^|\/)(?:search|s|collections?|categories|category|catalog|shop|stores|browse|results|sale|deals|clearance|promotions)(?:\/|$)/.test(path)
     || u.searchParams.has('search_query') || u.searchParams.has('searchTerm');
   const editorialPath=/(?:^|\/)(?:blog|blogs|news|articles?|stories|guides|tutorials|reviews|editorial|magazine)(?:\/|$)/.test(path);
   if(editorialPath && !marketplaceDetail) return no('general','Editorial page');
@@ -68,7 +69,7 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
   if(detail) reasons.push('Individual product details');
   // A storefront platform, product mention, ad or price alone NEVER qualifies.
   const high=score>=7 && buying && price && detail &&
-    (identity || (score>=7 && (f.productCards??0)<8));
+    (identity || (f.focusedHero && (f.productCards??0)<8));
   if(high) return {kind:'product',showToast:true,confidence:'high',reasons};
   const plausible=score>=4 && (identity || buying);
   return {kind:plausible?'uncertain':'general',showToast:false,confidence:plausible?'medium':'low',reasons};
