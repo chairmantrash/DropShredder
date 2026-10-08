@@ -63,7 +63,12 @@ export default defineBackground(() => {
       if(!url.hostname) return;
       const intent={tabId:sender.tab.id,documentId:sender.documentId,createdAt:Date.now()};
       // Preserve the click activation: sidePanel.open is called without an await.
-      void chrome.storage.session.set({[AUTO_PANEL_INTENT]:intent}).catch(()=>{});
+      const stored=chrome.storage.session.set({[AUTO_PANEL_INTENT]:intent});
+      // If the side panel is already open, it will not reload. Notify it after
+      // storing the intent; a newly opened panel also consumes the saved intent.
+      void stored.then(()=>chrome.runtime.sendMessage({
+        type:'DS_AUTO_PANEL_READY',version:1,
+      }).catch(()=>{})).catch(()=>{});
       void chrome.sidePanel.open({tabId:sender.tab.id}).catch(()=>{});
     }
   });
