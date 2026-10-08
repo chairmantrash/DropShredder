@@ -546,38 +546,47 @@ async function scanActivePage(): Promise<void> {
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
 
-// A toast click opens Chrome's panel via a user gesture. The intent stays in
-// session storage across a disposable service-worker restart, never in globals.
-void (async()=>{
-  const consume=async():Promise<boolean>=>{
-    const value=(await chrome.storage.session.get(AUTO_PANEL_INTENT))[AUTO_PANEL_INTENT] as
-      {tabId?:number;documentId?:string;createdAt?:number}|undefined;
-    if(!value || !value.tabId || !value.documentId || !value.createdAt ||
-      Date.now()-value.createdAt>15_000) return false;
-    const tab=await activeWebTab();
-    if(tab?.id!==value.tabId) return false;
-    await chrome.storage.session.remove(AUTO_PANEL_INTENT);
-    try{
-      const [probe]=await chrome.scripting.executeScript({
-        target:{tabId:value.tabId,documentIds:[value.documentId]},
-        world:'ISOLATED',func:()=>location.href,
-      });
-      if(probe?.documentId!==value.documentId) return true;
-      await scanActivePage();
-    }catch{
-      if(status) status.textContent='The product page changed. Click CHECK THIS PRODUCT to try again.';
-    }
-    return true;
-  };
+// A toast click opens Chrome's panel via a user gesture. The short-lived intent
+// is in session storage across worker restarts, not in service-worker globals.
+async function consumeAutoPanelIntent():Promise<boolean>{
+  const value=(await chrome.storage.session.get(AUTO_PANEL_INTENT))[AUTO_PANEL_INTENT] as
+    {tabId?:number;documentId?:string;createdAt?:number}|undefined;
+  if(!value || !value.tabId || !value.documentId || !value.createdAt ||
+    Date.now()-value.createdAt>15_000) return false;
+  const tab=await activeWebTab();
+  if(tab?.id!==value.tabId) return false;
+  await chrome.storage.session.remove(AUTO_PANEL_INTENT);
   try{
-    if(!(await consume())){
+    const [probe]=await chrome.scripting.executeScript({
+      target:{tabId:value.tabId,documentIds:[value.documentId]},
+      world:'ISOLATED',func:()=>location.href,
+    });
+    if(probe?.documentId!==value.documentId) return true;
+    await scanActivePage();
+  }catch{
+    if(status) status.textContent='The product page changed. Click CHECK THIS PRODUCT to try again.';
+  }
+  return true;
+}
+
+// Already-open panels do not reload when Chrome calls sidePanel.open again.
+chrome.runtime.onMessage.addListener((message:unknown)=>{
+  if(!message || typeof message!=='object') return;
+  const received=message as Record<string,unknown>;
+  if(received.type==='DS_AUTO_PANEL_READY' && received.version===1){
+    void consumeAutoPanelIntent().catch(()=>{});
+  }
+});
+// A newly opened panel might load after the worker's notification; session
+// storage is the authoritative fallback, with one short bounded retry.
+void (async()=>{
+  try{
+    if(!(await consumeAutoPanelIntent())){
       await new Promise(resolve=>setTimeout(resolve,250));
-      await consume();
+      await consumeAutoPanelIntent();
     }
   }catch{}
 })();
-
-
 
 async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
   const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
