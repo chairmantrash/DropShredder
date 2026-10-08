@@ -69,7 +69,10 @@ export default defineBackground(() => {
       void stored.then(()=>chrome.runtime.sendMessage({
         type:'DS_AUTO_PANEL_READY',version:1,
       }).catch(()=>{})).catch(()=>{});
-      void chrome.sidePanel.open({tabId:sender.tab.id}).catch(()=>{});
+      // Open synchronously while Chrome still recognizes the content-script click.
+      const opening=chrome.sidePanel.open({tabId:sender.tab.id});
+      void opening.then(()=>sendResponse({ok:true})).catch(()=>sendResponse({ok:false}));
+      return true;
     }
   });
 
