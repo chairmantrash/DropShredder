@@ -91,6 +91,11 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
     doc.querySelector('[itemprop="image"],[data-testid="product-image"],[class*="product-gallery"],[id*="product-image"],.product__media,meta[property="og:image"]')
     || doc.querySelector('main h1,article h1')
   ));
+  const words=(facts.title||'').toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>1).slice(0,12);
+  for(let n=0;n<Math.min(doc.images.length,60) && words.length>=2;n++){
+    const alt=(doc.images.item(n)?.alt||'').toLowerCase();
+    if(words.filter(w=>alt.includes(w)).length>=2){facts.focusedHero=true;break;}
+  }
   const possibleCards=doc.getElementsByClassName('product-card').length+
     doc.getElementsByClassName('product-item').length+
     doc.getElementsByClassName('s-result-item').length;
