@@ -5,7 +5,7 @@ import {calculateVerdict} from '../src/analysis/evidence-engine';
 
 type QuickFinding={title:string; severity:string};
 
-function makeToast(title:string,findings:QuickFinding[],pageUrl:string):HTMLElement {
+function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPrice?:string,seller?:string):HTMLElement {
   const host=document.createElement('div');
   host.id='dropshredder-auto-verdict';
   host.style.cssText='all:initial;position:fixed;top:20px;right:18px;z-index:2147483646;';
@@ -51,8 +51,18 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string):HTMLElem
     li.textContent='No clear red flags in this quick check. Seller trust is still unknown.';
     facts.append(li);
   }
+  if(listedPrice){
+    const li=document.createElement('li');li.textContent='Listed price: '+listedPrice.slice(0,50);
+    facts.append(li);
+  }
+  if(seller){
+    const li=document.createElement('li');li.textContent='Seller listed as: '+seller.slice(0,80);
+    facts.append(li);
+  }
+  const trust=document.createElement('div');trust.className='cta';
+  trust.textContent='Seller trust: NOT VERIFIED';
   const cta=document.createElement('div');cta.className='cta';cta.textContent='Open full check →';
-  body.append(brand,heading,product,facts,cta);
+  body.append(brand,heading,product,facts,trust,cta);
   body.addEventListener('click',()=>{
     if(location.href!==pageUrl) return;
     // Chrome sidePanel.open is invoked by the background directly from this user gesture.
@@ -105,7 +115,10 @@ export default defineContentScript({
       notified.add(key);
       if(notified.size>40) notified.delete(notified.values().next().value!);
       remove();
-      toast=makeToast(scan.product.title||classification.reasons[0]||'Product listing',findings,url);
+      const price=scan.product.price!==undefined && Number.isFinite(scan.product.price)
+        ? [scan.product.currency||'',String(scan.product.price)].filter(Boolean).join(' ')
+        : undefined;
+      toast=makeToast(scan.product.title||classification.reasons[0]||'Product listing',findings,url,price,scan.product.seller);
       document.documentElement.append(toast);
       const shown=toast;
       window.setTimeout(()=>{if(toast===shown) remove();},12000);
