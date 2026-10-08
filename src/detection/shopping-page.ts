@@ -49,7 +49,9 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
   const editorialPath=/(?:^|\/)(?:blog|blogs|news|articles?|stories|guides|tutorials|reviews|editorial|magazine)(?:\/|$)/.test(path);
   if(editorialPath && !marketplaceDetail) return no('general','Editorial page');
   if(collectionPath && !productPath) return no('collection','Collection or search page');
-  if(f.structuredArticle && !f.purchaseAction) return no('general','Article, not a sales listing');
+  if(f.structuredArticle && !productPath && !marketplaceDetail) return no('general','Article, not a sales listing');
+  // Merchandising grids can contain one Product schema, prices and add-to-cart controls.
+  if((f.productCards??0)>=8 && !productPath && !f.ogProduct) return no('collection','Several products on the page');
 
   const identity=Boolean(f.structuredProduct || f.ogProduct || productPath);
   const buying=Boolean(f.purchaseAction);
