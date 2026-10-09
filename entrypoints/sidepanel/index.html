@@ -127,6 +127,14 @@
         </details>
       </details>
 
+      <details class="brave-panel">
+        <summary>Optional live supplier search with your own API key</summary>
+        <p class="scan-disclosure">No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations.</p>
+        <label for="brave-key">Brave Search API key (not stored)</label><input id="brave-key" type="password" maxlength="256" autocomplete="off" spellcheck="false" />
+        <label for="brave-query">Your supplier or product search phrase</label><input id="brave-query" type="text" maxlength="180" autocomplete="off" spellcheck="false" placeholder="Brand model or quoted product title" />
+        <button id="brave-search" class="secondary" type="button">SEARCH USING MY KEY</button><button id="brave-cancel" class="secondary" type="button" disabled>CANCEL</button>
+        <p id="brave-status" class="status" role="status"></p><div id="brave-results" class="evidence"></div>
+      </details>
       <details class="entity-panel">
         <summary>Check a legal entity identifier</summary>
         <p class="scan-disclosure">Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store.</p>
