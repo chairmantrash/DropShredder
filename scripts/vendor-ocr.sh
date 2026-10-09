@@ -6,17 +6,17 @@ ROOT="$(pwd)"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 npm pack --silent --pack-destination "$TMP" tesseract.js@7.0.0
-npm pack --silent --pack-destination "$TMP" tesseract.js-core@6.1.2
+npm pack --silent --pack-destination "$TMP" tesseract.js-core@7.0.0
 mkdir -p "$TMP/tjs" "$TMP/core" "$ROOT/public/ocr"
 tar -xf "$TMP/tesseract.js-7.0.0.tgz" -C "$TMP/tjs"
-tar -xf "$TMP/tesseract.js-core-6.1.2.tgz" -C "$TMP/core"
+tar -xf "$TMP/tesseract.js-core-7.0.0.tgz" -C "$TMP/core"
 cp "$TMP/tjs/package/dist/tesseract.min.js" "$ROOT/public/ocr/tesseract.min.js"
 cp "$TMP/tjs/package/dist/worker.min.js" "$ROOT/public/ocr/worker.min.js"
-for name in tesseract-core.wasm.js tesseract-core-simd.wasm.js tesseract-core-lstm.wasm.js tesseract-core-simd-lstm.wasm.js; do
+for name in tesseract-core.wasm.js tesseract-core-simd.wasm.js tesseract-core-lstm.wasm.js tesseract-core-simd-lstm.wasm.js tesseract-core-relaxedsimd.wasm.js tesseract-core-relaxedsimd-lstm.wasm.js; do
   cp "$TMP/core/package/$name" "$ROOT/public/ocr/$name"
 done
 # WASM sidecars are not executed remotely; all variants resolve from the extension.
-for name in tesseract-core.wasm tesseract-core-simd.wasm tesseract-core-lstm.wasm tesseract-core-simd-lstm.wasm; do
+for name in tesseract-core.wasm tesseract-core-simd.wasm tesseract-core-lstm.wasm tesseract-core-simd-lstm.wasm tesseract-core-relaxedsimd.wasm tesseract-core-relaxedsimd-lstm.wasm; do
   cp "$TMP/core/package/$name" "$ROOT/public/ocr/$name"
 done
 # Chrome MV3 rejects runtime code generation, including dead webpack fallbacks.
