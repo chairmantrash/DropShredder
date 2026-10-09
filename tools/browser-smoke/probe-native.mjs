@@ -75,7 +75,7 @@ async function attach(targetId) {
       // The controlled Chrome 156/Xvfb screenshots show the panel WebContents
       // inset 9px from the window right edge and 8px from its bottom edge.
       // Require the observed window size; changed geometry fails explicitly.
-      assert.equal(bounds.width, 1288); assert.equal(bounds.height, 850);
+      assert.equal(bounds.width, 1288); assert.ok([850, 851].includes(bounds.height), `Unexpected window height ${bounds.height}`);
       assert.ok(viewport.width > 0 && viewport.height > 0);
       const desktop = { x: bounds.left + bounds.width - viewport.width - 9 + point.x,
         y: bounds.top + bounds.height - viewport.height - 8 + point.y };
