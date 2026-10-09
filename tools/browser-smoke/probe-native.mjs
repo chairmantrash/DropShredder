@@ -118,7 +118,7 @@ async function openNative() {
   await page.route('https://fixture.example.test/**', route => route.fulfill({ contentType: 'text/html', body: route.request().url().includes('/journal/')
     ? '<!doctype html><title>Owned article</title><article><h1>How mugs are made</h1><p>No item for sale.</p></article>'
     : (route.request().url().includes('sign-in') ? '<input type="password" autocomplete="current-password">' : '') +
-    '<!doctype html><title>Fixture mug</title><h1>Fixture mug</h1><p>$12.00</p><button>Add to cart</button>' +
+    '<!doctype html><title>Fixture mug</title><main><h1>Fixture mug</h1><p class="product-price">$12.00</p><button>Add to cart</button></main>' +
     '<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Fixture mug","sku":"FIXTURE-MUG-001","offers":{"@type":"Offer","price":"12.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>' }));
   browserCdp = await context.browser().newBrowserCDPSession(); report.browser = await browserCdp.send('Browser.getVersion');
   // Match the already-proven blank-tab action method first. Navigation comes
