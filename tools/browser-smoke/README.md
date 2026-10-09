@@ -1,6 +1,6 @@
 # Packaged Chromium runtime smoke
 
-This independent tooling package runs the production MV3 extension in a headed Chromium browser on GitHub Actions with Xvfb. Playwright 1.64.0 is pinned in its own lockfile and is not a runtime extension dependency. No accounts, keys, paid providers, additional production permissions or servers are required.
+This independent tooling package runs the production MV3 extension in full Chromium on GitHub Actions. CI uses the documented Chromium headless channel to avoid flaky Xvfb screenshot capture; a headed Xvfb mode remains available. Both use a real extension runtime. Playwright 1.64.0 is pinned in its own lockfile and is not a runtime extension dependency. No accounts, keys, paid providers, additional production permissions or servers are required.
 
 The runner uses actual Chrome APIs and UI controls. It does not fake APIs, change the manifest, write saved settings directly, grant permissions behind the UI, or invoke private extension methods. Read-only Chrome queries establish state. The owned product fixture supplies page content only; it is not evidence of live-store accuracy. The runner stops at the first failure, with no retries, and preserves a JSON report and screenshots.
 
@@ -15,7 +15,9 @@ npm ci
 npm run build
 npm ci --prefix tools/browser-smoke
 node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-xvfb-run -a node tools/browser-smoke/run.mjs
+DS_BROWSER_HEADLESS=1 node tools/browser-smoke/run.mjs
+# Alternative headed desktop mode:
+xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/run.mjs
 ```
 
 The candidate hash manifest identifies source 764e892a2cdddcfc8ac08f70d159d3e965fe9181. If production code changes, review and regenerate that manifest explicitly; a mismatch fails rather than silently testing a different build. Reports also record the exact harness checkout SHA and browser version.

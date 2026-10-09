@@ -35,9 +35,11 @@ jobs:
         run: |
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Run headed Chromium with the unchanged packaged extension
+      - name: Run Chromium with the unchanged packaged extension
         timeout-minutes: 3
-        run: xvfb-run -a node tools/browser-smoke/run.mjs
+        env:
+          DS_BROWSER_HEADLESS: '1'
+        run: node tools/browser-smoke/run.mjs
       - name: Preserve browser evidence even on failure
         if: always()
         uses: actions/upload-artifact@v4

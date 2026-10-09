@@ -14,9 +14,10 @@ const output = path.join(root, 'browser-smoke-results');
 await fs.mkdir(output, { recursive: true });
 const profile = await fs.mkdtemp(path.join(os.tmpdir(), 'dropshredder-smoke-'));
 const errors = [], extensionRequests = [];
+const headless = process.env.DS_BROWSER_HEADLESS === '1';
 const report = {
   sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
-  startedAt: new Date().toISOString(), mode: 'headed Chromium / Xvfb / automated packaged runtime',
+  startedAt: new Date().toISOString(), mode: `${headless ? 'headless Chromium' : 'headed Chromium / Xvfb'} / automated packaged runtime`,
   status: 'RUNNING', tests: [], errors, extensionRequests,
   notTested: [
     'Full independent A01-D06 desktop QA protocol',
@@ -40,7 +41,7 @@ async function test(id, description, fn) {
 }
 async function openContext() {
   const ctx = await chromium.launchPersistentContext(profile, {
-    channel: 'chromium', headless: false, viewport: { width: 420, height: 1000 },
+    channel: 'chromium', headless, viewport: { width: 420, height: 900 },
     args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`],
   });
   ctx.setDefaultTimeout(10000);
