@@ -423,7 +423,7 @@ try {
         return {scope:'Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested'};
       });
       await test('N28','Packaged local OCR engine and language data exist without making a remote request at panel startup',async()=>{
-        const paths=['ocr/tesseract.min.js','ocr/worker.min.js','ocr/eng.traineddata.gz'];
+        const paths=['ocr/tesseract.min.js','ocr/worker.min.js','ocr/eng.traineddata.gz','ocr/tesseract-core-relaxedsimd-lstm.wasm.js','ocr/tesseract-core-relaxedsimd-lstm.wasm'];
         const inspected=await worker.evaluate(async paths=>{
           const results=[];
           for(const path of paths){
