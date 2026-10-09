@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { parseHTML } from 'linkedom';
 import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, chromeProductSelectionStamp } from '../src/runtime/chrome-page';
 import { lookupDomainRdap } from '../src/osint/rdap';
 import { captureImageFingerprint } from '../src/forensics/image-acquisition';
@@ -93,4 +94,22 @@ test('image acquisition starts exact-host access request without async preflight
   });
   assert.equal(await captureImageFingerprint('https://img.example/a.png'),undefined);
   assert.deepEqual(calls,['request']);
+});
+
+test('explicit pressed option swatches invalidate same-URL product selection stamps without reading unrelated form fields',()=>{
+  const {document:doc}=parseHTML('<html><body><main><h1>Fixture lamp</h1><button data-option-name="color" data-option-value="red" aria-pressed="true">Red</button><button data-option-name="color" data-option-value="blue" aria-pressed="false">Blue</button><input type="password" value="DONT-READ"></main></body></html>');
+  const g=globalThis as typeof globalThis & {document?:Document};
+  const previous=g.document;
+  try{
+    g.document=doc as unknown as Document;
+    const original=chromeProductSelectionStamp();
+    const [red,blue]=[...doc.querySelectorAll('[data-option-name]')];
+    red!.setAttribute('aria-pressed','false');blue!.setAttribute('aria-pressed','true');
+    const updated=chromeProductSelectionStamp();
+    assert.notEqual(updated,original);
+    assert.ok(!updated.includes('DONT-READ'));
+  }finally{
+    if(previous) g.document=previous;
+    else delete g.document;
+  }
 });
