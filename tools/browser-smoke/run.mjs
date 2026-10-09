@@ -115,12 +115,17 @@ try {
   });
   await test('R05', 'Two panel documents preserve independent feature changes', async () => {
     const second = await panel(context, extensionId);
+    await currentPage.bringToFront();
     await currentPage.locator('.settings-panel > summary').click();
+    await second.bringToFront();
     await second.locator('.settings-panel > summary').click();
-    await Promise.all([
-      currentPage.locator('#auto-source-hunt').check(),
-      second.locator('#prefer-made-in-usa').check(),
-    ]);
+    // Chromium has one native pointer/focus per window: simultaneous input in
+    // different tabs can misdirect clicks. Use rapid real UI actions in order,
+    // without waiting for settings writes between the independent patches.
+    await currentPage.bringToFront();
+    await currentPage.locator('#auto-source-hunt').check();
+    await second.bringToFront();
+    await second.locator('#prefer-made-in-usa').check();
     await second.locator('#tone-mode').selectOption('nuclear');
     await savedFeatures(second, { autoSourceHunt: true, preferMadeInUSA: true, toneMode: 'nuclear', autoProtection: false });
     await currentPage.reload();
