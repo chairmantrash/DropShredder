@@ -36,7 +36,7 @@ for(const file of runtimeFiles){
 }
 
 const config=fs.readFileSync('wxt.config.ts','utf8');
-const required=['scripting','storage','contextMenus','sidePanel'];
+const required=['scripting','storage','contextMenus','sidePanel','alarms'];
 const requiredMatch=config.match(/permissions\s*:\s*\[([^\]]+)\]/s);
 const actual=requiredMatch
   ? [...requiredMatch[1].matchAll(/['"]([^'"]+)['"]/g)].map(match=>match[1])

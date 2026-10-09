@@ -1,10 +1,12 @@
 import { LIST_KEY, MAX_LIST_BYTES, WEEK_MS, fetchListPreview, loadUserLists, mutateUserLists, previewList, validatePublisherKey, type ListPreview, type ListStore } from '../intelligence/user-lists';
 import { lookupLegalEntity } from '../osint/gleif';
+import { loadFeatureSettings, updateFeatureSettings } from '../settings/features';
 
 export function mountIntelligenceControls(doc:Document=document):void{
   const get=<T extends HTMLElement>(id:string)=>doc.getElementById(id) as T|null;
   const status=get<HTMLElement>('list-status'),preview=get<HTMLElement>('list-preview'),saved=get<HTMLElement>('saved-lists');
   const file=get<HTMLInputElement>('list-file'),url=get<HTMLInputElement>('list-url'),save=get<HTMLButtonElement>('list-save');
+  const weekly=get<HTMLInputElement>('list-auto-weekly'),weeklyStatus=get<HTMLElement>('list-weekly-status');
   const cancel=get<HTMLButtonElement>('list-cancel'),subscribe=get<HTMLInputElement>('list-subscribe');
   const keyInput=get<HTMLTextAreaElement>('publisher-key'),keyStatus=get<HTMLElement>('publisher-key-status'),pin=get<HTMLButtonElement>('publisher-pin');
   const entityInput=get<HTMLInputElement>('entity-lei'),entityStatus=get<HTMLElement>('entity-status'),entityResults=get<HTMLElement>('entity-results');
@@ -25,6 +27,13 @@ export function mountIntelligenceControls(doc:Document=document):void{
     if(list.records.length>20){const note=doc.createElement('p');note.textContent='Preview shows the first 20 records. Review the full JSON before adding this list.';preview?.append(note);}
     if(save) save.disabled=result.stale;message(status,'Preview ready. Adding a list keeps it local and does not change warning thresholds.');
   };
+  weekly?.addEventListener('change',()=>{
+    const wanted=weekly.checked;weekly.disabled=true;
+    void updateFeatureSettings({weeklyIntelligenceUpdates:wanted}).then(()=>{
+      message(weeklyStatus,wanted?'Weekly signed-feed checks enabled. Only previously authorized, signed, pinned-key subscriptions are eligible; no new permission prompts.':'Automatic feed checks disabled; saved lists are unchanged.');
+    }).catch(e=>{weekly.checked=!wanted;message(weeklyStatus,e);}).finally(()=>{weekly.disabled=false;});
+  });
+  void loadFeatureSettings().then(settings=>{if(weekly) weekly.checked=settings.weeklyIntelligenceUpdates;}).catch(e=>message(weeklyStatus,e));
   const refresh=async()=>{
     store=await loadUserLists();saved?.replaceChildren();
     for(const row of store.lists){const section=doc.createElement('article');section.className='evidence-row';const label=doc.createElement('p');
@@ -54,7 +63,7 @@ export function mountIntelligenceControls(doc:Document=document):void{
   on('list-cancel',()=>{cancelList();message(status,'Feed fetch canceled.');});
   on('list-save',()=>{const current=pending;if(!current||!save) return;save.disabled=true;
     void mutateUserLists({type:'save',input:current.input,...(subscribe?.checked&&current.source?{subscriptionUrl:current.source}:{})})
-      .then(()=>{clearPreview();message(status,'List added locally. Feed refreshes require your next explicit request and preview.');return refresh();})
+      .then(()=>{clearPreview();message(status,'List added locally. Automatic updates require separate opt-in and an independently pinned signing key; unsigned feeds stay manual.');return refresh();})
       .catch(e=>{message(status,e);if(pending===current) save.disabled=current.preview.stale;});
   });
   on('list-clear',()=>{cancelList();pinnedInput=undefined;if(pin) pin.disabled=true;void mutateUserLists({type:'clear'}).then(()=>{message(status,'User lists, previous versions, subscriptions and publisher keys removed.');return refresh();}).catch(e=>message(status,e));});

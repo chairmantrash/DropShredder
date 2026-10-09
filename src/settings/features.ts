@@ -3,6 +3,7 @@ import type { ToneMode } from '../ui/tone';
 export interface DropShredderFeatureSettings {
   autoSourceHunt:boolean;
   autoProtection:boolean;
+  weeklyIntelligenceUpdates:boolean;
   preferMadeInUSA:boolean;
   toneMode:ToneMode;
 }
@@ -10,6 +11,7 @@ export interface DropShredderFeatureSettings {
 export const DEFAULT_FEATURE_SETTINGS:DropShredderFeatureSettings={
   autoSourceHunt:false,
   autoProtection:false,
+  weeklyIntelligenceUpdates:false;
   preferMadeInUSA:false,
   toneMode:'professional',
 };
@@ -21,6 +23,7 @@ export function normalizeFeatureSettings(value:unknown):DropShredderFeatureSetti
   return {
     autoSourceHunt:raw.autoSourceHunt===true,
     autoProtection:raw.autoProtection===true,
+    weeklyIntelligenceUpdates:raw.weeklyIntelligenceUpdates===true,
     preferMadeInUSA:raw.preferMadeInUSA===true,
     toneMode:raw.toneMode==='aggressive'||raw.toneMode==='nuclear'?raw.toneMode:'professional',
   };
@@ -30,7 +33,7 @@ export function validFeaturePatch(value:unknown):value is Partial<DropShredderFe
   if(!value || typeof value!=='object' || Array.isArray(value)) return false;
   return Object.entries(value).every(([key,v])=>
     key==='toneMode'?['professional','aggressive','nuclear'].includes(v as string):
-      ['autoSourceHunt','autoProtection','preferMadeInUSA'].includes(key) && typeof v==='boolean');
+      ['autoSourceHunt','autoProtection','weeklyIntelligenceUpdates','preferMadeInUSA'].includes(key) && typeof v==='boolean');
 }
 
 export async function loadFeatureSettings():Promise<DropShredderFeatureSettings>{

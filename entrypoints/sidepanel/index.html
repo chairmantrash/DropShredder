@@ -103,7 +103,9 @@
           <label for="list-file">Preview a local JSON list (up to 800 KB / 500 records)</label><input id="list-file" type="file" accept="application/json,.json" />
           <label for="list-url">Public HTTPS feed URL</label><input id="list-url" type="url" maxlength="2048" autocomplete="off" placeholder="https://publisher.example.com/products.json" />
           <button id="list-fetch" class="secondary" type="button">FETCH PREVIEW</button><button id="list-cancel" class="secondary" type="button" disabled>CANCEL FETCH</button>
-          <label for="list-subscribe"><input id="list-subscribe" type="checkbox" /> Save this feed for manual weekly refresh</label>
+          <label for="list-subscribe"><input id="list-subscribe" type="checkbox" /> Save this feed as a subscription</label>
+          <label class="toggle-row" for="list-auto-weekly"><span>Check signed, trusted subscriptions weekly in the background</span><input id="list-auto-weekly" type="checkbox" /></label>
+          <p id="list-weekly-status" class="scan-disclosure" role="status">Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers.</p>
           <p>Saved feeds show when a weekly refresh is due. Every download and replacement needs your request and review. Expired lists stop matching.</p>
           <div id="list-preview" class="evidence"></div><button id="list-save" class="secondary" type="button" disabled>ADD REVIEWED LIST</button>
           <p id="list-status" class="status" role="status" aria-live="polite"></p>

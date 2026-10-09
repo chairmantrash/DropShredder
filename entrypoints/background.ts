@@ -3,6 +3,7 @@ import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/d
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../src/runtime/auto-registration';
 import { applyListMutation } from '../src/intelligence/user-lists';
 import { pageSafety } from '../src/security/page-safety';
+import { checkDueSignedFeeds, ensureIntelligenceAlarm, INTELLIGENCE_ALARM } from '../src/intelligence/auto-refresh';
 
 const ROOT='dropshredder-root';
 function createMenus():void {
@@ -40,8 +41,12 @@ export default defineBackground(() => {
     await setAutoContentRegistration(authorized);
   };
   void syncAuto().catch(()=>{});
-  chrome.runtime.onStartup.addListener(()=>{void syncAuto().catch(()=>{});});
-  chrome.runtime.onInstalled.addListener(()=>{void syncAuto().catch(()=>{});});
+  void ensureIntelligenceAlarm().catch(()=>{});
+  chrome.alarms.onAlarm.addListener(alarm=>{
+    if(alarm.name===INTELLIGENCE_ALARM) void checkDueSignedFeeds().catch(()=>{});
+  });
+  chrome.runtime.onStartup.addListener(()=>{void syncAuto().catch(()=>{});void ensureIntelligenceAlarm().catch(()=>{});});
+  chrome.runtime.onInstalled.addListener(()=>{void syncAuto().catch(()=>{});void ensureIntelligenceAlarm().catch(()=>{});});
   chrome.permissions.onRemoved.addListener(()=>{void syncAuto().catch(()=>{});});
 
   chrome.runtime.onMessage.addListener((message:unknown,sender,sendResponse)=>{
@@ -55,7 +60,7 @@ export default defineBackground(() => {
     }
     if(record.type==='DS_FEATURE_PATCH'){
       if(sender.id!==chrome.runtime.id || sender.tab || !sender.url?.startsWith(chrome.runtime.getURL(''))) return;
-      void applyFeaturePatch(record.patch).then(settings=>sendResponse({ok:true,settings})).catch(()=>sendResponse({ok:false}));
+      void applyFeaturePatch(record.patch).then(async settings=>{await ensureIntelligenceAlarm();sendResponse({ok:true,settings});}).catch(()=>sendResponse({ok:false}));
       return true;
     }
     if(record.type==='DS_AUTO_STATUS'){
