@@ -1,0 +1,48 @@
+name: DropShredder Chromium Runtime
+
+on:
+  pull_request:
+    branches: [main, release/security-performance-hardening]
+    paths:
+      - 'tools/browser-smoke/**'
+      - '.github/workflows/browser-smoke.yml'
+      - 'src/**'
+      - 'entrypoints/**'
+      - 'public/**'
+      - 'intelligence/**'
+      - 'wxt.config.ts'
+      - 'package*.json'
+
+permissions:
+  contents: read
+
+jobs:
+  packaged-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install and build production package
+        run: |
+          npm ci
+          npm run build
+      - name: Install isolated browser test tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Run headed Chromium with the unchanged packaged extension
+        timeout-minutes: 3
+        run: xvfb-run -a node tools/browser-smoke/run.mjs
+      - name: Preserve browser evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-chromium-runtime-evidence
+          path: browser-smoke-results/
+          if-no-files-found: warn
+          retention-days: 30

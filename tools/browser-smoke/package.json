@@ -1,0 +1,8 @@
+{
+  "name": "dropshredder-browser-smoke",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright": "1.64.0"
+  }
+}

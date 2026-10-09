@@ -1,0 +1,77 @@
+{
+  "sourceCommit": "764e892a2cdddcfc8ac08f70d159d3e965fe9181",
+  "sourceTree": "b1f7c576d7c91b27aa2561037417c8bff0002ada",
+  "version": "0.2.0",
+  "buildFiles": [
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19121,
+      "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
+    },
+    {
+      "path": "assets/sidepanel-Bn8EqEZH.css",
+      "bytes": 9819,
+      "sha256": "9ca3c38499c34c77c028a3faf7611469d9c533a113985cb0f05177f71704b99e"
+    },
+    {
+      "path": "background.js",
+      "bytes": 13738,
+      "sha256": "6a96bbcb34ec48958a90baf39d9d4e58299ba3f0e4e9231914921e426b701166"
+    },
+    {
+      "path": "chunks/search-DZhWEVI1.js",
+      "bytes": 424,
+      "sha256": "8d935beb892a4f7c183f7fc30101f67df9102598fcf781ebe988510529b69274"
+    },
+    {
+      "path": "chunks/search-chooser-DRenk8Rb.js",
+      "bytes": 2341,
+      "sha256": "9ca878717876491f56a3b2e237245738cbb76276a17ed4e4b064379ed65c6981"
+    },
+    {
+      "path": "chunks/sidepanel-DKFBG88o.js",
+      "bytes": 445011,
+      "sha256": "c1055b6deac9f73224d0818a535cb67e7a89a38a5fe4d1c5fe03853a6aa641ba"
+    },
+    {
+      "path": "content-scripts/auto.js",
+      "bytes": 40366,
+      "sha256": "adfb3812b5d195f39953f37c7760aa75e2cf18bd07e7eceee5f876ad04e816e5"
+    },
+    {
+      "path": "icon/128.png",
+      "bytes": 825,
+      "sha256": "5d71bfcb0a26b95861a0abd6d4476b0617d14a56545e6f30f39d16cd5dd2f934"
+    },
+    {
+      "path": "icon/16.png",
+      "bytes": 186,
+      "sha256": "7cf46112e601ecd34689f3b810b19e3fa87b57c1c3c09f85c8433831f968608e"
+    },
+    {
+      "path": "icon/32.png",
+      "bytes": 287,
+      "sha256": "3f9cd29efd325bf4c32d30cbb978691e01105e7e54e0ec1c29c29adad6b9fe6a"
+    },
+    {
+      "path": "icon/48.png",
+      "bytes": 380,
+      "sha256": "66a39d8c9481c8567b2d8a235a63aa1a6674da09b62d6b608480fbb68e56b08e"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 653,
+      "sha256": "c98297e134ecec9f7ee1507bdaa7cb1894e660d07784606ba4a4796416976f82"
+    },
+    {
+      "path": "search.html",
+      "bytes": 724,
+      "sha256": "567396c958c63291ac82660c9243418ad6917e11bc2330a383a902d66cf70466"
+    },
+    {
+      "path": "sidepanel.html",
+      "bytes": 9015,
+      "sha256": "7b3bbed5d5bac4deeaccb758ff2260932d810438cdcaf5893cd06ce389e7007e"
+    }
+  ]
+}
