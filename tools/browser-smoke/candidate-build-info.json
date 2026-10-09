@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "737f9bf9824bdd7c4ff6c11674762bb184b607a1",
-  "sourceTree": "201d7834ed9bf684abaa9c1a34b8804c1b134013",
+  "sourceCommit": "40ddfdc86825834a85bb4bc79e055b55508a87ad",
+  "sourceTree": "75220f4479f1e34e269a40e59ba77512bd5ca3a1",
   "version": "0.2.0",
-  "reviewedChange": "Full feature integration: local Tesseract OCR worker/WASM/eng data vendored at build time, weekly user-opted signed updates using alarms, bounded marketplace result links, provenance-scoped entity-role graph, local lexical hashed vectors and safe native label reading. No new hosted inference, credentials or remote runtime code.",
+  "reviewedChange": "Full-feature test candidate: opt-in signed-feed weekly refresh, result-page badges, local product vectors and entity graph, bundled offline Tesseract OCR, optional BYO-key one-shot Brave search. All scores conservative; zero mandatory backend/API.",
   "buildFiles": [
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
@@ -25,9 +25,9 @@
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-BUH9ypHn.js",
-      "bytes": 474364,
-      "sha256": "0d16bdb11799522ba7c4124b44613484ce3a61888afe642db71b8a8b49be77c3"
+      "path": "chunks/sidepanel-Coq1W2-z.js",
+      "bytes": 477794,
+      "sha256": "20c97f523653afd8525971e6b823f53018920e1bd5b59f4db8d0dbd66225cb7c"
     },
     {
       "path": "content-scripts/auto.js",
@@ -131,8 +131,8 @@
     },
     {
       "path": "sidepanel.html",
-      "bytes": 13816,
-      "sha256": "ef71c7654ab9039aa663a3729bc7ae287cec32af06cc17269a1270fb59deeaba"
+      "bytes": 15155,
+      "sha256": "d7be75187e34ec8f2e585e8bda4c73f925c3d7598581c0e1644677c58998e8eb"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
