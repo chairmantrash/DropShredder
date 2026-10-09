@@ -1,14 +1,9 @@
 {
-  "sourceCommit": "cb82ea8a06f987a529dc8fc70914aa36eb6c5377",
-  "sourceTree": "b801669d0251cc280186354f6fd615b4d11f1ea7",
+  "sourceCommit": "82e5c22a957bccab72c1bf480d7ed62f5f0d432e",
+  "sourceTree": "04dee382eab58c36392bd4ba01d7e5d748e2d31c",
   "version": "0.2.0",
-  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus. Amazon product-title identity excludes unrelated accessibility headings.",
+  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus. Amazon product-title identity excludes unrelated accessibility headings. Race-safe content-script registration and fail-closed early opt-out on permission revocation, with native signed-key and local-file browser checks and dedicated race tests.",
   "buildFiles": [
-    {
-      "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19121,
-      "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
-    },
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
       "bytes": 10301,
@@ -16,13 +11,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 22623,
-      "sha256": "a6daea476b40775e2241c668e0821e311ef05d1d2a690ad83c38f0e683c55aff"
-    },
-    {
-      "path": "chunks/search-VvQDJEw9.js",
-      "bytes": 424,
-      "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
+      "bytes": 22745,
+      "sha256": "69f05183fa9b73f83b0a2f14ef89ec35bd757f57c8541d200eb488d506b08387"
     },
     {
       "path": "chunks/search-chooser-CEmkGmME.js",
@@ -30,9 +20,14 @@
       "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
     },
     {
-      "path": "chunks/sidepanel-uXOLcpaU.js",
-      "bytes": 464074,
-      "sha256": "8e5e1275636d912abc24aa3847f06378632f40d7af49c260dcd0816201701a96"
+      "path": "chunks/search-VvQDJEw9.js",
+      "bytes": 424,
+      "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
+    },
+    {
+      "path": "chunks/sidepanel-WwZssTxd.js",
+      "bytes": 464378,
+      "sha256": "3be67673c15c95c517382fa0dfcf18f11119d9d2f4fe0aeb8244b4a09fdaba09"
     },
     {
       "path": "content-scripts/auto.js",
@@ -72,7 +67,12 @@
     {
       "path": "sidepanel.html",
       "bytes": 12456,
-      "sha256": "6247b34cd9f17c3b7aa7e63251b815beea41677e8601d788d1ee79d90ffe06d1"
+      "sha256": "b77e503317e9afe697bb17c9d70b7983a0358406664e09c7c36d199b4ac65b89"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19121,
+      "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
     }
   ]
 }
