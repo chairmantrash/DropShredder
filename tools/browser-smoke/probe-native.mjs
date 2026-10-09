@@ -366,6 +366,35 @@ try {
         await native.click('#list-fetch');await until(()=>native.evaluate("!document.querySelector('#list-save').disabled"),'repeated version preview');await native.click('#list-save');await until(()=>native.evaluate("document.querySelector('#list-status').textContent.includes('version did not increase')"),'rollback protection');
         await native.screenshot('native-user-lists.png');await native.click('#list-clear');await until(()=>native.evaluate("document.querySelector('#saved-lists').textContent === 'No user-added lists.'"),'list reset');
       });
+
+      await test('N26','Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions',async()=>{
+        await native.click('.intelligence-panel details > summary');
+        const keyInput=JSON.stringify({sourceUrl:'https://publisher.example.com/products.json',keyId:'browser-fixture-key',issuer:'Owned browser fixture',publicKey:fixturePublicKey});
+        await native.type('#publisher-key',keyInput);
+        assert.equal(await native.evaluate("document.querySelector('#publisher-pin').disabled"),true);
+        await native.click('#publisher-preview');
+        await until(()=>native.evaluate("!document.querySelector('#publisher-pin').disabled"),'key review completes');
+        const note=await native.evaluate("document.querySelector('#publisher-key-status').textContent");
+        assert.match(note,/SHA-256 of base64url key/);
+        await native.click('#publisher-pin');
+        await until(()=>native.evaluate("document.querySelector('#publisher-key-status').textContent.includes('pinned')"),'trusted fixture key saved');
+        const keys=await worker.evaluate(async()=>(await chrome.storage.local.get('dropshredder-user-lists-v1'))['dropshredder-user-lists-v1']?.keys??[]);
+        assert.equal(keys.length,1);assert.equal(keys[0].keyId,'browser-fixture-key');
+        feedMode='signed';feedVersion=4;
+        await native.click('#list-fetch');
+        await until(()=>native.evaluate("!document.querySelector('#list-save').disabled"),'signed feed preview');
+        const disclosure=await native.evaluate("document.querySelector('#list-preview').textContent");
+        assert.match(disclosure,/Signature checked against your pinned key browser-fixture-key/);
+        assert.match(disclosure,/facts remain unverified/);
+        const before=await worker.evaluate(async()=>(await chrome.storage.local.get('dropshredder-user-lists-v1'))['dropshredder-user-lists-v1']?.lists?.length??0);
+        assert.equal(before,0,'Preview may not activate a list');
+        await native.click('#list-save');
+        await until(()=>native.evaluate("document.querySelector('#saved-lists').textContent.includes('v4')"),'signed feed saved');
+        await native.screenshot('native-signed-feed-onboarding.png');
+        await native.click('#list-clear');
+        await until(()=>native.evaluate("document.querySelector('#saved-lists').textContent === 'No user-added lists.'"),'signed feed removed');
+        feedMode='unsigned';return {scope:'Ephemeral owned Ed25519 test key; genuine native panel controls; no real issuer authenticated',signedVersion:4};
+      });
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);
