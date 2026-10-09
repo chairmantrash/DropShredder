@@ -1,13 +1,18 @@
 {
-  "sourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
-  "sourceTree": "68a90a2737fd0972766b4f783c224b3c627e830f",
+  "sourceCommit": "bca7b4ddf8d3f38afb5e0bab1bea5d5fcd4dfe53",
+  "sourceTree": "e7f6d1c399a0560ffcdaf38da6de84a3d5936ff2",
   "version": "0.2.0",
-  "reviewedChange": "Masthead wraps the privacy badge before the brand/title are squeezed at large text sizes. Production manifest and dependencies unchanged.",
+  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
       "bytes": 19121,
       "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
+    },
+    {
+      "path": "assets/sidepanel-Bq3TO1x-.css",
+      "bytes": 10301,
+      "sha256": "6dc911fe5c520c5b3de966a4ab50c80a8feed2cc0f8848e747c9aba139ec5c8a"
     },
     {
       "path": "assets/sidepanel-BxHqPi78.css",
@@ -16,8 +21,13 @@
     },
     {
       "path": "background.js",
-      "bytes": 13738,
-      "sha256": "6a96bbcb34ec48958a90baf39d9d4e58299ba3f0e4e9231914921e426b701166"
+      "bytes": 22623,
+      "sha256": "a6daea476b40775e2241c668e0821e311ef05d1d2a690ad83c38f0e683c55aff"
+    },
+    {
+      "path": "chunks/search-BT6cXt5e.js",
+      "bytes": 424,
+      "sha256": "e82617cd5f3720b49950a643b79fd5c01cfb8a11384f18be0304daa101004793"
     },
     {
       "path": "chunks/search-DZhWEVI1.js",
@@ -25,9 +35,24 @@
       "sha256": "8d935beb892a4f7c183f7fc30101f67df9102598fcf781ebe988510529b69274"
     },
     {
+      "path": "chunks/search-chooser-Cdgf0Gf7.js",
+      "bytes": 2448,
+      "sha256": "3b2be13fe64071d4ba71ee3cdd8ce346a9ff2178585359fcdfda08375acf5b91"
+    },
+    {
       "path": "chunks/search-chooser-DRenk8Rb.js",
       "bytes": 2341,
       "sha256": "9ca878717876491f56a3b2e237245738cbb76276a17ed4e4b064379ed65c6981"
+    },
+    {
+      "path": "chunks/sidepanel-CZ8z_3x-.js",
+      "bytes": 463652,
+      "sha256": "4f24c00186fbd93673fdbe1e64225f3bdc6fe647ccd70ac512f83b043d2f778e"
+    },
+    {
+      "path": "chunks/sidepanel-DUZ7iPRM.js",
+      "bytes": 463777,
+      "sha256": "f25cc70737386317c41386030f5eb0950d6762fbc6d6d5cb64cbd4dace1b15b3"
     },
     {
       "path": "chunks/sidepanel-DZSCaPek.js",
@@ -36,8 +61,8 @@
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 40366,
-      "sha256": "adfb3812b5d195f39953f37c7760aa75e2cf18bd07e7eceee5f876ad04e816e5"
+      "bytes": 41272,
+      "sha256": "8d30ce7a6584c2282998d1dfe8ce3e76068cd5c96eda712eb815f5b39b675685"
     },
     {
       "path": "icon/128.png",
@@ -67,12 +92,12 @@
     {
       "path": "search.html",
       "bytes": 724,
-      "sha256": "567396c958c63291ac82660c9243418ad6917e11bc2330a383a902d66cf70466"
+      "sha256": "bb997683ea1f22acc42ebe4a91c83d03eca5fe17c362cae7445efca7d212eef9"
     },
     {
       "path": "sidepanel.html",
-      "bytes": 9015,
-      "sha256": "df1329e1fa46abc9e04790f61768683a9b0ccf069c21a42bba53faa2568907c2"
+      "bytes": 12456,
+      "sha256": "14a3b24f108d70723532ba5b64d82032878a34c58fd4cc035b5f005a2cf13415"
     }
   ]
 }
