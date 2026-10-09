@@ -441,12 +441,12 @@ try {
         return {files:inspected,scope:'Packaged local assets, not accuracy or photographed-label recognition'};
       });
       await test('N29','Actual native panel invokes bundled offline OCR on a synthetic local image',async()=>{
-        const imageData=await native.evaluate(()=>{
+        const imageData=await native.evaluate(`(()=>{
           const canvas=document.createElement('canvas');canvas.width=850;canvas.height=170;
           const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,850,170);
           ctx.fillStyle='#000';ctx.font='bold 68px Arial';ctx.fillText('PRODUCT 12345',25,105);
           return canvas.toDataURL('image/png');
-        });
+        })()`);
         const filename=path.join(output,'owned-ocr-label.png');
         await fs.writeFile(filename,Buffer.from(imageData.split(',')[1],'base64'));
         await native.evaluate("document.querySelector('#label-image').closest('details').open=true");
