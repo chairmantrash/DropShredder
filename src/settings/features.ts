@@ -11,7 +11,7 @@ export interface DropShredderFeatureSettings {
 export const DEFAULT_FEATURE_SETTINGS:DropShredderFeatureSettings={
   autoSourceHunt:false,
   autoProtection:false,
-  weeklyIntelligenceUpdates:false;
+  weeklyIntelligenceUpdates:false,
   preferMadeInUSA:false,
   toneMode:'professional',
 };
