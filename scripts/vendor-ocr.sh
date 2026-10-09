@@ -19,6 +19,24 @@ done
 for name in tesseract-core.wasm tesseract-core-simd.wasm tesseract-core-lstm.wasm tesseract-core-simd-lstm.wasm; do
   cp "$TMP/core/package/$name" "$ROOT/public/ocr/$name"
 done
+# Chrome MV3 rejects runtime code generation, including dead webpack fallbacks.
+# Replace well-identified upstream legacy-global shims with globalThis.
+python3 - <<'PY'
+from pathlib import Path
+for filename in ('tesseract.min.js','worker.min.js'):
+    path=Path('public/ocr')/filename
+    text=path.read_text()
+    replacements={
+        'new Function("return this")()':'globalThis',
+        'Function("r","regeneratorRuntime = r")(i)':'(globalThis.regeneratorRuntime=i)',
+        'Function("r","regeneratorRuntime = r")(o)':'(globalThis.regeneratorRuntime=o)',
+    }
+    for old,new in replacements.items():
+        text=text.replace(old,new)
+    if 'new Function(' in text or 'Function("r","regeneratorRuntime = r")' in text:
+        raise SystemExit('MV3 dynamic-function shim not removed from '+filename)
+    path.write_text(text)
+PY
 curl --fail --silent --show-error --location --max-time 60 --retry 2 \
  "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/eng.traineddata" \
  --output "$ROOT/public/ocr/eng.traineddata"
