@@ -31,6 +31,8 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: Print read-only clean package fingerprint inventory
+        run: node tools/browser-smoke/inventory.mjs
       - name: Install isolated browser test tooling
         run: |
           npm ci --prefix tools/browser-smoke
