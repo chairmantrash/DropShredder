@@ -12,7 +12,7 @@ const pageRuntime=fs.readFileSync('src/runtime/chrome-page.ts','utf8');
 const requireMatch=(text,re,message)=>{if(!re.test(text)) failures.push(message);};
 const forbid=(text,re,message)=>{if(re.test(text)) failures.push(message);};
 
-requireMatch(config,/permissions:\s*\['scripting', 'storage', 'contextMenus', 'sidePanel'\]/,'manifest permission baseline drifted');
+requireMatch(config,/permissions:\s*\['scripting', 'storage', 'contextMenus', 'sidePanel', 'alarms'\]/,'manifest permission baseline drifted');
 requireMatch(config,/minimum_chrome_version:\s*'133'/,'Chrome 133+ required for tab-scoped host access requests');
 requireMatch(config,/optional_host_permissions:\s*\['https:\/\/\*\/\*'\]/,'optional HTTPS host permission missing');
 forbid(config,/'activeTab'/,'activeTab must not be used as persistent side-panel access');

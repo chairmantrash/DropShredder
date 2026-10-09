@@ -7,7 +7,7 @@ const manifest=JSON.parse(await fs.readFile(path.join(root,'manifest.json'),'utf
 function fail(message){ throw new Error(message); }
 
 if(manifest.manifest_version!==3) fail('Release must be Manifest V3.');
-const expected=['scripting','storage','contextMenus','sidePanel'].sort();
+const expected=['scripting','storage','contextMenus','sidePanel','alarms'].sort();
 const actual=[...(manifest.permissions ?? [])].sort();
 if(JSON.stringify(actual)!==JSON.stringify(expected)){
   fail(`Unexpected required permissions: ${JSON.stringify(actual)}`);
