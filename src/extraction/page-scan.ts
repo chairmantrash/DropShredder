@@ -71,7 +71,12 @@ export function extractPageScan():PageScanResult {
         const currentUrl=normalizeUrl(location.href);
         const ownUrls=(node:Record<string,unknown>)=>(node.url!==undefined?[node.url]:[node['@id']]).map(normalizeUrl).filter(Boolean);
         const named=(v:unknown)=>typeof v==='string'?v.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim():'';
-        const visibleTitle=bounded(document.querySelector('h1')?.textContent||undefined,500);
+        const amazonProduct=/^(?:www\.)?amazon\.(?:com|ca|de|fr|it|es|in|co\.uk|co\.jp|com\.au|com\.br|com\.mx)$/.test(location.hostname) && /\/(?:dp|gp\/product)\/[A-Z0-9]{10}(?:\/|$)/i.test(location.pathname);
+        // Amazon may place an accessibility/keyboard-help h1 before the actual
+        // product-title span. Keep that navigation text out of product identity.
+        const visibleTitle=amazonProduct
+          ? bounded(document.querySelector('#productTitle')?.textContent||meta('meta[property="og:title"]')||document.title||undefined,500)
+          : bounded(document.querySelector('h1')?.textContent||undefined,500);
         const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
         let product:Record<string,unknown>|undefined=exact.length===1?exact[0]:undefined;
         let selectedByControls=false;

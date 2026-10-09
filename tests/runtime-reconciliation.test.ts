@@ -26,6 +26,12 @@ function scan(nodes:unknown,href?:string,controls=''){
 }
 const product=(name='Target Lamp',url='https://shop.example/products/lamp',price=29)=>({'@type':'Product',name,url,sku:name,image:`https://images.example/${name}.jpg`,offers:{'@type':'Offer',price,priceCurrency:'USD'},aggregateRating:{ratingValue:4.8,reviewCount:100}});
 
+test('Amazon product title takes precedence over an unrelated first heading and stays host-scoped',()=>{
+  const controls='<span id="productTitle">Noctua fixture cooling fan</span>';
+  assert.equal(scan({},'https://www.amazon.com/dp/B000000001',controls).product.title,'Noctua fixture cooling fan');
+  assert.equal(scan({},'https://amazon.com.evil.example/dp/B000000001',controls).product.title,'Target Lamp');
+});
+
 test('recommendations before the target cannot supply price, ratings, images or identity',()=>{
   const s=scan([product('Recommendation','https://shop.example/products/other',999),product()]);
   assert.equal(s.product.title,'Target Lamp');assert.equal(s.product.price,29);
