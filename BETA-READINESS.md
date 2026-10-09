@@ -32,5 +32,7 @@ Automated completion cannot substitute for a real browser. Before public beta di
 4. Record false positives, missed obvious manipulation, console errors and noticeable slowdown.
 5. Treat a strong accusation with weak receipts, credential/payment capture, or material browsing slowdown as release-blocking.
 
-## Deferred by scope, not unfinished beta work
-OCR, local embeddings, result-page badges, broad corporate/network OSINT and aggregate trade/factory intelligence are deliberately outside the beta mission. They must not be represented as missing beta functionality.
+## Current full feature scope — October 9, 2026
+The owner expanded scope beyond the earlier beta mission. Offline English OCR, neutral marketplace result links, source-scoped relationship leads, bounded lexical similarity and opt-in trusted signed weekly feed updates are implemented. Optional Brave Search uses a temporary user key and may require a provider plan; standard functions work without it. Neural embeddings, guaranteed factory authentication and silent publisher-key rotation are not claimed.
+
+Implementation is not acceptance: genuine label photographs, category-disjoint calibration, independent A01–D06, full native context menus/concurrent panels and authenticated external provider/unit scope still require testing. Current completion evidence is DS-037; prior receipts are historical. The latest package must pass its exact fingerprint before Chrome results count.

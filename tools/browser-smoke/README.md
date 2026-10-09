@@ -39,3 +39,8 @@ Feed cryptography/corruption/expiry/key trust, registration races, and mutation 
 
 
 Primary methods: https://playwright.dev/docs/chrome-extensions, https://playwright.dev/docs/ci, https://chromedevtools.github.io/devtools-protocol/tot/Extensions/ and https://developer.chrome.com/docs/extensions/reference/api/permissions. Permission requests require Chrome's genuine user gesture and prompt; X11 desktop input supplies that gesture without granting behind the UI.
+
+## DS-037 current package and live beta continuation (October 9, 2026)
+The DS-036 source now contains all six Tesseract 7 core/loader pairs, including Relaxed SIMD, plus the actual upstream JS and extracted bundle license notices. The candidate manifest is regenerated from the clean current package; historical 14/27-file numbers above are archival. R01/N01 retain exact path/size/SHA checks and never accept arbitrary extra files. N28 checks all five declared asset probes, and N29 must actually invoke the packaged OCR engine on the owned label.
+
+With DS_LIVE_SURFACES=1, the headed suite then disables provider response interception and observes a genuine registry lookup for reserved example.net and the explicit CPSC RecallTitle=Anker query. These are separate BETA-P01/P02 observations, not affected-unit certification. It also observes the four existing live public storefront URLs. Wrong-page attribution or a live severe gate stops immediately for evidence review; inaccessible/blocked storefronts remain unavailable. No anti-bot bypass, account login or paid key is used. Screenshots and messages are kept in the native evidence artifact.

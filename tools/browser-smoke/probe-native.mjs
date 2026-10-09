@@ -133,7 +133,7 @@ async function attach(targetId) {
     // not a test of the operating system's graphical file-picker dialog.
     await call('DOM.setFileInputFiles',{files,nodeId});
   };
-  return { evaluate, click, key, screenshot, type, setFiles };
+  return { evaluate, click, key, screenshot, type, setFiles, liveProviders:()=>call('Fetch.disable') };
 }
 async function openNative() {
   context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: !headed,
@@ -147,7 +147,7 @@ async function openNative() {
   id = new URL(worker.url()).host; page = context.pages()[0];
   // Reserved example.com origin with wholly owned, routed HTML; no live store.
   // Unlike .test, this URL passes the public-evidence export/link guard.
-  await context.route('https://fixture.example.com/**', route => {
+  await context.route(/^https:\/\/fixture\.example\.(?:com|net)\//, route => {
     const url=route.request().url();
     if(url.includes('/slow-policy')) return void(async()=>{await pause(2000);await route.fulfill({contentType:'text/html',body:'<p>Return policy: returns accepted within 30 days.</p>'});})().catch(()=>{});
     const product={"@context":"https://schema.org","@type":"Product",name:"Fixture mug",sku:"FIXTURE-MUG-001",gtin:"012345678905",offers:{"@type":"Offer",price:"12.00",priceCurrency:"USD",availability:"https://schema.org/InStock"}};
@@ -434,7 +434,7 @@ try {
           }
           return results;
         },paths);
-        assert.equal(inspected.length,3);
+        assert.equal(inspected.length,paths.length);
         assert.ok(inspected.every(v=>v.bytes>1000));
         assert.match(await native.evaluate("document.querySelector('label[for=label-image]').textContent"),/product label/i);
         assert.ok(!externalRequests.some(x=>/tessdata|jsdelivr|unpkg/i.test(x)),'No OCR download from external providers');
@@ -469,6 +469,33 @@ try {
         await native.screenshot('native-gleif-live.png');return {endpoint:'https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12',scope:'Live public CC0 identity record only; not merchant/product attribution'};
       });
       if(process.env.DS_LIVE_SURFACES==='1'){
+        // End public-response fixtures before observing genuine provider traffic.
+        // Browser permissions and UI have always been native; no API overrides.
+        await native.liveProviders();report.liveProviders=[];
+        await scanFixture('https://fixture.example.net/products/mug');
+        const rdap={id:'BETA-P01',endpoint:'https://rdap.verisign.com/net/v1/domain/example.net',status:'NOT_EVALUATED',scope:'Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy'};
+        const start=Date.now();await native.click('#check-domain');
+        await until(()=>native.evaluate("!document.querySelector('#check-domain').disabled"),'live RDAP response',15000);
+        rdap.uiMessage=await native.evaluate("document.querySelector('#status').textContent");
+        const rdapReport=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent"));
+        const chronology=rdapReport.evidence.find(e=>e.id==='RDAP_DOMAIN_OBSERVATION');
+        if(chronology){
+          assert.equal(chronology.weight,0);assert.equal(chronology.severity,'info');
+          assert.equal(chronology.provenance.sourceUrl,rdap.endpoint);
+          rdap.status='OBSERVED_RESPONSE';rdap.observation=chronology.observedValue;
+        }else rdap.status='EXTERNAL_BLOCKER_OR_ABSTENTION';
+        rdap.elapsedMs=Date.now()-start;report.liveProviders.push(rdap);
+        await native.screenshot('beta-live-rdap.png');
+        // The live query is public and explicit. No key, image or serial upload.
+        await native.evaluate("document.querySelector('.recall-panel').open=true");
+        await native.type('#recall-query','Anker');const beforeRecall=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;
+        await native.click('#recall-lookup');await until(()=>native.evaluate("!document.querySelector('#recall-lookup').disabled"),'live CPSC response',15000);
+        const cpscMessage=await native.evaluate("document.querySelector('#recall-status').textContent");
+        assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,beforeRecall);
+        const notices=await native.evaluate("Array.from(document.querySelectorAll('#recall-results a')).map(a=>({title:a.textContent,url:a.href}))");
+        for(const notice of notices)assert.match(notice.url,/^https:\/\/(?:www\.)?cpsc\.gov\/Recalls\//i);
+        report.liveProviders.push({id:'BETA-P02',endpoint:'https://www.saferproducts.gov/RestWebServices/Recall',query:'RecallTitle=Anker',status:/candidate notice|No candidates returned/.test(cpscMessage)?'OBSERVED_RESPONSE':'EXTERNAL_BLOCKER_OR_ABSTENTION',uiMessage:cpscMessage,notices,scope:'Live incomplete candidate feed; no unit or product safety verification'});
+        await native.screenshot('beta-live-cpsc.png');
         report.liveSurfaces=[];
         const fixturePage=page;
         for(const surface of [
@@ -483,16 +510,25 @@ try {
             // observation and from the deterministic fixture assertions.
             page=await context.newPage();
             const response=await page.goto(surface.url,{waitUntil:'domcontentloaded',timeout:20000});await pause(2000);
-            entry.httpStatus=response?.status();entry.finalUrl=page.url();
+            entry.httpStatus=response?.status();const observedUrl=new URL(page.url());observedUrl.search='';observedUrl.hash='';entry.finalUrl=observedUrl.href;
             const body=(await page.locator('body').innerText({timeout:3000})).slice(0,15000);
             if(entry.httpStatus>=400||/captcha|robot check|verify you are human|press & hold|access denied/i.test(body)||!body.toLowerCase().includes(surface.expected.toLowerCase())){entry.status='UNAVAILABLE_OR_IDENTITY_UNCONFIRMED';}
             else{
               await page.bringToFront();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'live public surface scan',20000);
               entry.panelStatus=await native.evaluate("document.querySelector('#status').textContent");const raw=await native.evaluate("document.querySelector('#raw').textContent");
-              if(raw){const data=JSON.parse(raw);entry.status='OBSERVED_SCAN';entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,mpn:data.product.mpn,asin:data.product.asin,price:data.product.price,currency:data.product.currency,extraction:data.product.extraction};entry.verdict=data.verdict;entry.evidence=data.evidence.slice(0,20).map(e=>({id:e.id,severity:e.severity,weight:e.weight}));}
+              if(raw){const data=JSON.parse(raw);
+                const actual=new URL(data.product.url),intended=new URL(page.url());
+                if(actual.origin+actual.pathname!==intended.origin+intended.pathname)throw Object.assign(new Error('Wrong-tab/product attribution during live beta scan'),{betaStop:true});
+                if(data.verdict.severeWarningAllowed)throw Object.assign(new Error('Live beta severe-warning gate requires independent evidence review before continuing'),{betaStop:true});
+                entry.status='OBSERVED_SCAN';entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,mpn:data.product.mpn,asin:data.product.asin,price:data.product.price,currency:data.product.currency,extraction:data.product.extraction};entry.verdict=data.verdict;entry.evidence=data.evidence.slice(0,20).map(e=>({id:e.id,severity:e.severity,weight:e.weight}));
+                await native.screenshot('beta-live-'+surface.kind.split(' / ')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png');
+              }
               else entry.status='ABSTAINED_OR_REFUSED';
             }
-          }catch(error){entry.status='ENVIRONMENT_OR_SURFACE_UNAVAILABLE';entry.error=String(error);}
+          }catch(error){
+            if(error?.betaStop){entry.status='BETA_STOP';entry.error=String(error);report.liveSurfaces.push(entry);throw error;}
+            entry.status='ENVIRONMENT_OR_SURFACE_UNAVAILABLE';entry.error=String(error);
+          }
           finally{if(page!==fixturePage) await page.close();page=fixturePage;await page.bringToFront();}
           entry.finishedAt=new Date().toISOString();report.liveSurfaces.push(entry);
         }
@@ -517,8 +553,11 @@ try {
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
         await native.screenshot('native-after-revoke.png');
       });
-      await test('N14', 'Granted fixture scans cause no uncaught errors or external investigations', async () => {
-        assert.deepEqual(errors, []); assert.ok(externalRequests.every(origin=>['https://publisher.example.com','https://rdap.verisign.com','https://www.saferproducts.gov','https://api.gleif.org'].includes(origin)), JSON.stringify(externalRequests));
+      await test('N14', 'Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins', async () => {
+        const allowedOrigins=new Set(['https://publisher.example.com','https://rdap.verisign.com','https://www.saferproducts.gov','https://api.gleif.org']);
+        for(const entry of report.liveSurfaces??[])if(entry.status==='OBSERVED_SCAN')allowedOrigins.add(new URL(entry.product.url).origin);
+        report.approvedRequestOrigins=[...allowedOrigins];
+        assert.deepEqual(errors, []); assert.ok(externalRequests.every(origin=>allowedOrigins.has(origin)), JSON.stringify(externalRequests));
         report.finalPermissionState = { granted: await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })),
           scripts: await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), features: await features() };
       });

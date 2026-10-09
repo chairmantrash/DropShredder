@@ -29,7 +29,10 @@ The public extension:
 - keeps observation history locally in IndexedDB;
 - strips URL query strings/fragments before persistence;
 - caps history at 180 days, 2,000 total records and 120 records per product identity;
-- lets the user clear local history and revoke optional site access.
+- lets the user clear local history and revoke optional site access;
+- supports off-by-default weekly updates only for previously authorized, signed subscriptions with user-pinned keys;
+- keeps optional local label photos/OCR on device and never stores those photos;
+- offers an optional single-query Brave Search action with a transient user-entered API key, never a required account or paid dependency.
 
 See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md).
 
@@ -50,6 +53,10 @@ See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md).
 - Explicit tracking/fulfillment contradiction checks
 - Etsy/Amazon marketplace-specific extraction
 - Made in USA preference notices kept separate from wrongdoing scores
+- User-previewed signed/unsigned reference lists with version floors, expiry, rollback and optional trusted weekly refresh
+- Informational local manufacturer/importer/seller leads and lightweight lexical similarity (not neural embeddings)
+- Local user-selected barcode/English OCR with packaged worker/WASM/data
+- Neutral marketplace result-page links and optional explicit provider searches
 
 Country, nationality, storefront platform, payment processor and ordinary third-party fulfillment are informational by themselves and do not count as misconduct.
 
@@ -66,7 +73,7 @@ Requirements:
 - Chrome/Chromium 133+
 
 ```bash
-npm install
+npm ci
 npm run typecheck
 npm run audit:security
 npm run audit:chrome-runtime
@@ -106,3 +113,5 @@ Start there with [START-HERE.md](START-HERE.md).
 ## Internal diagnostics
 
 A separate internal-only diagnostic build exists for development. It exports sanitized local diagnostic cases to help convert missed detections into new fixtures and rules. It is intentionally isolated from the public Store release and is not telemetry.
+
+The optional OCR assets dominate unpacked size (about 45 MiB before license/code overhead); they are loaded only for a selected local photo. Exact package sizes/hashes are in `tools/browser-smoke/candidate-build-info.json`. No main merge or Chrome Web Store publication is authorized by engineering completion.

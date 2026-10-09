@@ -69,8 +69,8 @@ if(fs.existsSync(output)){
   }
   const maxTotal=60*1024*1024;
   const maxSingle=12*1024*1024;
-  if(total>maxTotal) failures.push(`built extension too large: ${(total/1024/1024).toFixed(2)} MiB > 10 MiB`);
-  if(largest.size>maxSingle) failures.push(`single built asset too large: ${largest.path} > 3 MiB`);
+  if(total>maxTotal) failures.push(`built extension too large: ${(total/1024/1024).toFixed(2)} MiB > 60 MiB`);
+  if(largest.size>maxSingle) failures.push(`single built asset too large: ${largest.path} > 12 MiB`);
   console.log(`Built size ${(total/1024/1024).toFixed(2)} MiB; largest asset ${largest.path} ${(largest.size/1024).toFixed(1)} KiB`);
 }
 

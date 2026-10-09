@@ -18,6 +18,7 @@ export function mountOptionalWebSearch(doc:Document=document):void{
     // Request host access before any awaited work in this user gesture.
     const permission=chrome.permissions.request({origins:[BRAVE_ORIGIN]});
     void permission.then(async allowed=>{
+      if(pending!==ctl)return;
       if(!allowed||ctl.signal.aborted){status.textContent='Permission denied or canceled; no request sent.';return;}
       const matches=await supplierSearchWithKey(phrase,token,ctl.signal);
       if(pending!==ctl || !await chrome.permissions.contains({origins:[BRAVE_ORIGIN]}))return;
@@ -31,5 +32,9 @@ export function mountOptionalWebSearch(doc:Document=document):void{
     }).catch(e=>{if(pending===ctl)status.textContent=ctl.signal.aborted?'Canceled.':e instanceof Error?e.message:'Web search unavailable.';})
       .finally(()=>{if(pending===ctl){pending=undefined;button.disabled=false;cancel.disabled=true;}});
   });
-  chrome.permissions.onRemoved.addListener(({origins})=>{if(origins?.includes(BRAVE_ORIGIN)){stop();results.replaceChildren();}});
+  const revoke=()=>{stop();key.value='';results.replaceChildren();status.textContent='Search canceled while site access is removed. The API key is not saved.';};
+  doc.getElementById('revoke-optional-access')?.addEventListener('click',revoke);
+  chrome.permissions.onRemoved.addListener(({origins})=>{
+    if(origins?.some(origin=>[BRAVE_ORIGIN,'https://*/*','*://*/*','<all_urls>'].includes(origin)))revoke();
+  });
 }

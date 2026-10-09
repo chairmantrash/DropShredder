@@ -41,12 +41,14 @@ curl --fail --silent --show-error --location --max-time 60 --retry 2 \
  "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/eng.traineddata" \
  --output "$ROOT/public/ocr/eng.traineddata"
 gzip -n -9 -f "$ROOT/public/ocr/eng.traineddata"
-if test -f "$TMP/tjs/package/LICENSE"; then cp "$TMP/tjs/package/LICENSE" "$ROOT/public/ocr/LICENSE-TESSERACT-JS.txt"; fi
+cp "$TMP/tjs/package/LICENSE.md" "$ROOT/public/ocr/LICENSE-TESSERACT-JS.txt"
+cp "$TMP/tjs/package/dist/tesseract.min.js.LICENSE.txt" "$ROOT/public/ocr/tesseract.min.js.LICENSE.txt"
+cp "$TMP/tjs/package/dist/worker.min.js.LICENSE.txt" "$ROOT/public/ocr/worker.min.js.LICENSE.txt"
 if test -f "$TMP/core/package/LICENSE"; then cp "$TMP/core/package/LICENSE" "$ROOT/public/ocr/LICENSE-TESSERACT-CORE.txt"; fi
 cat > "$ROOT/public/ocr/PROVENANCE.txt" <<'EOF'
 DropShredder fully local, optional OCR assets
 tesseract.js npm 7.0.0 — Tesseract JavaScript API and local worker
-tesseract.js-core npm 6.1.2 — Emscripten WASM engines
+tesseract.js-core npm 7.0.0 — Emscripten WASM engines
 English training data tessdata_fast SHA 87416418657359cb625c412a48b6e1d6d41c29bd
 All files packaged at BUILD TIME; no CDN/remote code/model downloads at runtime.
 Public package license notices and full source licenses must be retained.
