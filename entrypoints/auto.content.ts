@@ -123,8 +123,10 @@ export default defineContentScript({
       const verdict=calculateVerdict(evidence);
       const findings=evidence.filter(item=>item.severity==='moderate' || item.severity==='strong' || item.severity==='direct' || item.severity==='weak')
         .filter(item=>item.weight>0).slice(0,2);
-      // A fast first pass is never entitled to declare a shop safe or confirm fraud.
-      if(verdict.severeWarningAllowed) return;
+      // Severe findings are not a reason to hide a warning. This lightweight
+      // toast describes observed evidence, never asserts that fraud is proven
+      // or claims a merchant is safe. The full scan owns deeper adjudication.
+      void verdict.severeWarningAllowed;
       notified.add(key);
       if(notified.size>40) notified.delete(notified.values().next().value!);
       remove();

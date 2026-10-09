@@ -1,4 +1,5 @@
 import { SOURCE_INDEX } from '../intelligence/source-index';
+import { publicEvidenceUrl } from '../security/public-url';
 
 function q(value:string):string { return encodeURIComponent(value.trim()); }
 
@@ -53,14 +54,25 @@ export function merchantSearchUrls(domain:string):Record<string,string> {
 }
 
 export function imageSearchUrls(imageUrl?:string):Record<string,string> {
+  // Remote reverse-image services receive the image URL when selected.
+  // Signed CDN query parameters or fragments can contain private tokens.
+  // Never forward those parameters; offer the provider's manual start page
+  // instead. The URL itself is shared only after explicit destination choice.
+  let safe: string|undefined;
+  if(imageUrl) {
+    try {
+      const original=new URL(imageUrl);
+      if(!original.search && !original.hash) safe=publicEvidenceUrl(original.href);
+    }catch{}
+  }
   return {
-    googleLens:imageUrl
-      ? `https://lens.google.com/uploadbyurl?url=${encodeURIComponent(imageUrl)}`
+    googleLens:safe
+      ? `https://lens.google.com/uploadbyurl?url=${encodeURIComponent(safe)}`
       : 'https://lens.google.com/',
     bing:'https://www.bing.com/visualsearch?cc=us',
     yandex:'https://yandex.com/images/',
-    tineye:imageUrl
-      ? `https://tineye.com/search?url=${encodeURIComponent(imageUrl)}`
+    tineye:safe
+      ? `https://tineye.com/search?url=${encodeURIComponent(safe)}`
       : 'https://tineye.com/',
   };
 }
