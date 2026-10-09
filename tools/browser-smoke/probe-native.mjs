@@ -200,7 +200,7 @@ try {
     await native.click('#prefer-made-in-usa'); await until(async () => (await features())?.preferMadeInUSA === true, 'origin saved');
     await native.click('#tone-mode'); await native.key('End', 'End', 35); await native.key('Enter', 'Enter', 13);
     await until(async () => (await features())?.toneMode === 'nuclear', 'tone saved');
-    assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, preferMadeInUSA: true, toneMode: 'nuclear' });
+    assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, weeklyIntelligenceUpdates: false, preferMadeInUSA: true, toneMode: 'nuclear' });
     await native.screenshot('native-settings.png');
   });
   await test('N04', 'Nondefault preferences survive a full native-profile restart', async () => {
@@ -221,7 +221,7 @@ try {
     await native.click('.local-data > summary'); await native.click('#revoke-optional-access');
     await until(() => native.evaluate("!document.querySelector('#revoke-optional-access').disabled"), 'remove access settled');
     assert.equal(await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })), false);
-    assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, preferMadeInUSA: true, toneMode: 'nuclear' });
+    assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, weeklyIntelligenceUpdates: false, preferMadeInUSA: true, toneMode: 'nuclear' });
     const status = await native.evaluate("document.querySelector('#status').textContent"); assert.match(status, /didn.t have any extra site access/);
     return { status, scope: 'No-grant removal, not revocation of an accepted grant' };
   });
@@ -422,6 +422,24 @@ try {
         await native.screenshot('native-local-file-preview-refusal.png');
         return {scope:'Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested'};
       });
+      await test('N28','Packaged local OCR engine and language data exist without making a remote request at panel startup',async()=>{
+        const paths=['ocr/tesseract.min.js','ocr/worker.min.js','ocr/eng.traineddata.gz'];
+        const inspected=await worker.evaluate(async paths=>{
+          const results=[];
+          for(const path of paths){
+            const response=await fetch(chrome.runtime.getURL(path),{credentials:'omit',cache:'no-store'});
+            if(!response.ok)throw new Error('Local packaged OCR asset missing: '+path);
+            const data=await response.arrayBuffer();
+            results.push({path,bytes:data.byteLength});
+          }
+          return results;
+        },paths);
+        assert.equal(inspected.length,3);
+        assert.ok(inspected.every(v=>v.bytes>1000));
+        assert.match(await native.evaluate("document.querySelector('label[for=label-image]').textContent"),/product label/i);
+        assert.ok(!externalRequests.some(x=>/tessdata|jsdelivr|unpkg/i.test(x)),'No OCR download from external providers');
+        return {files:inspected,scope:'Packaged local assets, not accuracy or photographed-label recognition'};
+      });
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);
@@ -472,7 +490,7 @@ try {
         await until(() => native.evaluate("!document.querySelector('#revoke-optional-access').disabled"), 'accepted grant revoked');
         assert.equal(await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })), false);
         assert.deepEqual(await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), []);
-        assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, preferMadeInUSA: true, toneMode: 'nuclear' });
+        assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, weeklyIntelligenceUpdates: false, preferMadeInUSA: true, toneMode: 'nuclear' });
         await page.goto('https://fixture.example.com/products/mug'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
         await native.screenshot('native-after-revoke.png');
