@@ -1,3 +1,4 @@
+import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
 import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
@@ -10,13 +11,13 @@ import { reviewIntegrity } from '../../src/analysis/review-integrity';
 import type { ReviewSnapshot } from '../../src/types/review';
 import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
-import { analyzeEtsyPage } from '../../src/adapters/etsy';
+import { analyzeEtsyPage, isEtsyDomain } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
 import { imageHistoryEvidence } from '../../src/forensics/image-history';
 import { lookupDomainRdap } from '../../src/osint/rdap';
 import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
-import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/features';
+import { loadFeatureSettings, updateFeatureSettings } from '../../src/settings/features';
 import { indexedSourceEvidence } from '../../src/analysis/source-match';
 import { reputationSearchUrls } from '../../src/reputation/reputation-search';
 import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
@@ -39,6 +40,9 @@ import { renderShopperReport } from '../../src/ui/report-renderer';
 import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
 import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../../src/runtime/auto-registration';
+import { loadUserLists } from '../../src/intelligence/user-lists';
+import { importedProductLeads } from '../../src/analysis/product-leads';
+import { setReportGuard } from '../../src/ui/report-guard';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -66,9 +70,15 @@ let lastReport:DropShredderReport|undefined;
 let reportPage:AuthorizedChromePage|undefined;
 let scanningTabId:number|undefined;
 let scanEpoch=0;
+let domainRequest:AbortController|undefined;
+const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
+function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
+cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent='Domain lookup canceled.';});
 
 // The side panel outlives tabs and documents. Never reuse a report after navigation.
 function invalidatePageReport(message='The page changed. Check this product again.'):void {
+  stopDomainLookup();
+  document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
   lastReport=undefined;
   reportPage=undefined;
@@ -103,6 +113,7 @@ async function verifiedReportPage(report:DropShredderReport):Promise<AuthorizedC
   }
   return page;
 }
+setReportGuard(async()=>{const report=lastReport;if(!report) return false;await verifiedReportPage(report);return lastReport===report;});
 
 let currentTone:ToneMode='professional';
 function applyTone(mode:ToneMode):void{
@@ -145,9 +156,11 @@ autoProtection?.addEventListener('change',()=>{
       if(autoProtectionStatus) autoProtectionStatus.textContent='Chrome permission was not granted. Manual checks still work.';
       return;
     }
-    await setAutoContentRegistration(wanted);
-    const current=await loadFeatureSettings();
-    await saveFeatureSettings({...current,autoProtection:wanted});
+    // Turn the saved gate off before unregistering so already-injected tabs
+    // reject alerts even when Chrome's registration cleanup races a worker.
+    if(wanted) await setAutoContentRegistration(true);
+    await updateFeatureSettings({autoProtection:wanted});
+    if(!wanted) await setAutoContentRegistration(false);
     if(wanted){
       // Newly enabled protection should check the currently visible product page too.
       const tab=await activeWebTab();
@@ -170,21 +183,19 @@ autoProtection?.addEventListener('change',()=>{
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
-  );
+  const wanted=autoSourceHunt.checked;
+  void updateFeatureSettings({autoSourceHunt:wanted}).catch(()=>{autoSourceHunt.checked=!wanted;if(status) status.textContent='Could not save source-hunt setting.';});
 });
 
 preferMadeInUSA?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
-  );
+  const wanted=preferMadeInUSA.checked;
+  void updateFeatureSettings({preferMadeInUSA:wanted}).catch(()=>{preferMadeInUSA.checked=!wanted;if(status) status.textContent='Could not save origin preference.';});
 });
 
 toneMode?.addEventListener('change',()=>{
   const next=(toneMode.value==='aggressive'||toneMode.value==='nuclear')?toneMode.value:'professional';
   applyTone(next);
-  void loadFeatureSettings().then(settings=>saveFeatureSettings({...settings,toneMode:next}));
+  void updateFeatureSettings({toneMode:next}).catch(()=>{if(status) status.textContent='Could not save tone preference.';});
   if(lastReport) renderReport(lastReport);
 });
 
@@ -274,6 +285,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    try{evidence.push(...importedProductLeads(result.product,(await loadUserLists()).lists));}catch{/* Optional local references do not block a scan. */}
     evidence.push(...amazonCloneClusterEvidence(result.amazonSearchCards));
     evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
@@ -365,7 +377,7 @@ async function scanActivePage(): Promise<void> {
         productTitle:result.product.title,
       }));
     }
-    if (/(^|\\.)etsy\\.com$/i.test(result.product.domain)) {
+    if (isEtsyDomain(result.product.domain)) {
       const etsy=analyzeEtsyPage(result.pageText);
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
@@ -596,8 +608,7 @@ void (async()=>{
 })();
 
 async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
-  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
-  for(const url of unique) await chrome.tabs.create({url,active:false});
+  showSearchChooser(urls);
 }
 
 huntSources?.addEventListener('click',()=>void (async()=>{
@@ -685,10 +696,12 @@ huntStore?.addEventListener('click',()=>void (async()=>{
 
 checkDomain?.addEventListener('click',async()=>{
   const report=lastReport;
-  if(!report || !status) return;
+  if(!report || !status || domainRequest) return;
+  const active=new AbortController();domainRequest=active;checkDomain.disabled=true;if(cancelDomain) cancelDomain.disabled=false;
   status.textContent='Checking how long this website has been around…';
   try{
-      const rdap=await lookupDomainRdap(report.product.domain);
+      const rdap=await lookupDomainRdap(report.product.domain,active.signal);
+      if(domainRequest!==active) return;
       await verifiedReportPage(report);
       if(!rdap){
         status.textContent='Couldn’t confirm this website’s age right now.';
@@ -708,8 +721,10 @@ checkDomain?.addEventListener('click',async()=>{
         confidence:.98,
         weight:0,
         title:'Domain registration chronology retrieved',
-        explanation:'Public RDAP domain chronology is informational by itself. It becomes relevant when it conflicts with an explicit seller business-age claim.',
+        explanation:'Registration dates describe the registered domain, not the age or credibility of the business.',
+        provenance:{sourceUrl:rdap.source,observedAt:rdap.retrievedAt,method:'Explicit public RDAP lookup'},
         observedValue:[
+          `registered domain ${rdap.domain}`,
           rdap.registeredAt ? `registered ${rdap.registeredAt.slice(0,10)}` : undefined,
           rdap.registrar ? `registrar ${rdap.registrar}` : undefined,
         ].filter(Boolean).join(' • ') || 'RDAP record retrieved',
@@ -733,11 +748,11 @@ checkDomain?.addEventListener('click',async()=>{
       lastReport=next;
       renderReport(next);
       try{ await saveObservation(next); }catch{}
-      status.textContent=contradictions.length
-        ? 'The age of this website doesn’t line up with what the seller says. Check the receipts.'
-        : 'The website age doesn’t contradict the seller’s story.';
+      status.textContent='Domain registration information retrieved. It does not establish the business’s age.';
   }catch(error){
-    status.textContent=error instanceof Error ? error.message : String(error);
+    if(domainRequest===active) status.textContent=active.signal.aborted?'Domain lookup canceled.':error instanceof Error ? error.message : String(error);
+  }finally{
+    if(domainRequest===active) stopDomainLookup();
   }
 });
 
@@ -954,13 +969,17 @@ revokeOptionalAccess?.addEventListener('click',()=>{
   void (async()=>{
     revokeOptionalAccess.disabled=true;
     try{
+      // The opt-in setting is the first and definitive protection gate.
+      // Cleanup may race the worker's permissions.onRemoved reconciliation.
+      await updateFeatureSettings({autoProtection:false});
+      if(autoProtection) autoProtection.checked=false;
       const granted=await chrome.permissions.getAll();
       const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
       if(origins.length) await chrome.permissions.remove({origins});
       await setAutoContentRegistration(false);
-      const settings=await loadFeatureSettings();
-      await saveFeatureSettings({...settings,autoProtection:false});
-      if(autoProtection) autoProtection.checked=false;
+      const remaining=(await chrome.permissions.getAll()).origins ?? [];
+      if(remaining.some(origin=>origin.startsWith('https://')))
+        throw new Error('Chrome kept a site permission; check extension site access.');
       status.textContent=origins.length
         ? 'Extra site access removed.'
         : 'DropShredder didn’t have any extra site access to remove.';

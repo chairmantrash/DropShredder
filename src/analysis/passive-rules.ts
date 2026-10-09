@@ -1,5 +1,8 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
+import { marketplacePolicyEvidence } from './marketplace-policy';
+import { certificationClaimEvidence } from './certification-claims';
+import { focusedSafetyEvidence } from '../intelligence/focused-safety';
 
 const scarcityPatterns=[
   /only\s+\d+\s+(?:left|remaining)/i,
@@ -10,8 +13,9 @@ const scarcityPatterns=[
 const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–)\s*(?:1[5-9]|2\d|3\d)\s+(?:business\s+)?days\b/i;
 
 export function runPassiveRules(product: ProductSnapshot, pageText: string): EvidenceSignal[] {
-  const out: EvidenceSignal[]=[];
+  const out: EvidenceSignal[]=[...marketplacePolicyEvidence(product),...certificationClaimEvidence(product),...focusedSafetyEvidence(product)];
 
+  const contextualCount=out.length;
   for (const signal of product.pageSignals) {
     if (signal.startsWith('platform:')) {
       out.push({
@@ -81,5 +85,5 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     });
   }
 
-  return out;
+  return out.map((item,index)=>index<contextualCount || item.provenance?item:{...item,provenance:{sourceUrl:product.url,observedAt:product.capturedAt,method:`Local rule analysis of ${product.extraction?.method || 'product metadata and bounded page text'}`}});
 }

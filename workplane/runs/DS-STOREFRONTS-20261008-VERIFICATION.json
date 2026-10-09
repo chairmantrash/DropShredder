@@ -1,0 +1,32 @@
+{
+  "task": "DS-STOREFRONTS-20261008",
+  "checkedAt": "2026-10-08T10:55:08.703487+00:00",
+  "result": "PASS \u2014 research integrity only",
+  "findings": 34,
+  "platformFamilies": 8,
+  "toolComparisons": 4,
+  "academicPapersOrLeads": 5,
+  "complaintOrSelfReportLeads": 6,
+  "sourcePresenceObservations": 43,
+  "uniqueSourceURLs": 40,
+  "checks": [
+    "unique IDs",
+    "source-presence coverage",
+    "retrieval depth and limits",
+    "correct tool and academic counts",
+    "publication versus upload dates retained",
+    "policy exception and jurisdiction scope",
+    "zero runtime weights"
+  ],
+  "notTested": [
+    "Chrome installation or runtime QA",
+    "physical quality/lab safety",
+    "current product listing scans",
+    "orders or private transaction evidence",
+    "tool installation/traffic/performance",
+    "seller account or private groups",
+    "model/code/data reproduction",
+    "access/license clearance",
+    "region coefficient calibration"
+  ]
+}

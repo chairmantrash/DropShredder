@@ -61,3 +61,5 @@ export function analyzeEtsyPage(pageText: string): EtsyAdapterResult {
     claims,
   };
 }
+
+export function isEtsyDomain(domain:string):boolean{return /(^|\.)etsy\.com$/i.test(domain);}

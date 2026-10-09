@@ -1,0 +1,30 @@
+{
+  "task": "DS-NETWORK-MAP-20261008",
+  "checkedAt": "2026-10-08T10:32:58.220182+00:00",
+  "result": "PASS \u2014 research integrity checks only",
+  "counts": {
+    "families": 23,
+    "nodes": 127,
+    "companies": 48,
+    "edges": 117,
+    "sources": 39,
+    "clusters": 6
+  },
+  "checks": [
+    "unique IDs",
+    "all edge endpoints and source references exist",
+    "all family references resolve",
+    "scope and evidence status retained",
+    "candidate legal equivalence not promoted to verified",
+    "seller-only notice not promoted to manufacturer",
+    "PDF hash recorded",
+    "runtime weight zero / region coefficient unestablished"
+  ],
+  "notTested": [
+    "Chrome extension or live listings",
+    "supplier ground truth",
+    "registry identity",
+    "prediction accuracy",
+    "paid API or paper replication"
+  ]
+}

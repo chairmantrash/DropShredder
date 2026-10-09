@@ -31,7 +31,10 @@ requireMatch(scanner,/export function extractPageScan/,'packaged page scanner mi
 
 requireMatch(bg,/setPanelBehavior\(\{ openPanelOnActionClick: true \}\)/,'toolbar action must open/toggle side panel');
 requireMatch(bg,/documentUrlPatterns:\['http:\/\/\*\/\*','https:\/\/\*\/\*'\]/,'context menus must be limited to web documents');
-requireMatch(bg,/chrome\.tabs\.create\(\{url,active:false\}\)/,'Deep Hunt searches must open bounded background tabs');
+const chooser=fs.readFileSync('src/ui/search-chooser.ts','utf8');
+requireMatch(chooser,/chrome\.tabs\.create\(\{url:c\.url,active:false\}\)/,'Deep Hunt searches must open bounded background tabs after explicit selection');
+requireMatch(chooser,/selected\.length>8/,'Deep Hunt must cap each batch at eight');
+requireMatch(bg,/search\.html#\$\{key\}/,'Context searches must disclose destinations in the same chooser');
 
 requireMatch(image,/chrome\.permissions\.request\(\{origins:\[hostPattern\(url\)\]\}\)/,'image acquisition must request its exact image host directly');
 forbid(image,/await chrome\.permissions\.contains/,'image permissions must not await a preflight before request');
@@ -50,10 +53,11 @@ requireMatch(image,/credentials:'omit'/,'image fetch must omit credentials');
 requireMatch(image,/AbortSignal\.timeout\(8000\)/,'image fetch timeout missing');
 requireMatch(image,/MAX_IMAGE_BYTES=15_000_000/,'image byte bound missing');
 
-requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\['https:\/\/rdap\.org\/\*'\]\}\)/,'RDAP must request host access directly from the click');
-forbid(rdap,/await chrome\.permissions\.contains/,'RDAP permissions must not await a preflight before request');
+requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\[origin\]\}\)/,'RDAP must request host access directly from the click');
+requireMatch(rdap,/if\(!\(await permission\)\)/,'RDAP must await consent before cache access');
+requireMatch(rdap,/redirect:'error'/,'RDAP must not follow unapproved redirects');
 requireMatch(rdap,/response\.body\.getReader\(\)/,'RDAP data must be stream-limited');
-requireMatch(rdap,/const permission=ensureRdapPermission\(\)/,'RDAP must request permission before async cache reads');
+requireMatch(rdap,/const permission=ensureRdapPermission\(origin\)/,'RDAP must request permission before async cache reads');
 requireMatch(rdap,/AbortSignal\.timeout\(5000\)/,'RDAP timeout missing');
 requireMatch(rdap,/chrome\.storage\.session/,'RDAP cache must use extension session storage');
 

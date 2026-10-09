@@ -1,0 +1,20 @@
+# DS-GAP-RUNTIME-FOLLOWUP-20261008 — Second sweep owner handoff
+
+Status: READY
+Addressed to: Original DropShredder continuation engineering agent, active DS-028 / DS-029 owners
+Source task: DS-FULLSTACK-GAP-AUDIT-20261008
+Baseline: 7417aa2d5de90df3211586e5d1a4525c649ae0e8
+Date: 2026-10-08
+
+These are static engineering findings and local code changes, not performed Chrome QA failures. Chrome version/extension ID are unavailable. Coordinate current claims and reread current source before fixes. Preserve the three prior findings in DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md.
+
+1. **GAP-16 — Core feature settings / consent semantics.** `src/settings/features.ts` spreads unvalidated saved fields over defaults. Values such as string "false" can remain truthy. Panel toggles perform asynchronous load/whole-object saves, so overlapping actions can lose unrelated updates. Validate boolean/tone schema and use a serialized patch or equivalent atomic update. Test denial/revocation/malformed persisted state. Display preferences added here use a different key; core flags are untouched.
+2. **GAP-17 — Silent source-hunt omissions.** `openSearches` caps the first eight `Object.values`; `productSearchUrls` yields ten destinations and puts POD/Reddit last. Keep the bounded tab limit but expose selected batches and omitted/remaining choices. Do not open an unbounded tab storm or describe ten sources as checked when only eight opened.
+3. **GAP-18 — RDAP cache permission ordering.** `lookupDomainRdap` starts permission request, awaits session cache and returns a fresh cached record before awaiting permission. Reproduce locally with populated cache and delayed/denied permission. Expected: no cache result is shown until permission accepted, no orphan promise errors. Actual source: cached return precedes consent resolution. This is a static control-flow finding; no observed Chrome privacy breach is claimed.
+4. **GAP-19 — RDAP routing/identity.** Current query strips only www, uses `rdap.org/domain/...`, and follows native redirects with a single rdap.org permission. Verify registry bootstrap, redirect permission handling, and registered-domain attribution for `shop.example.co.uk`. Chrome 133 cannot assume later browser PSL APIs. This is a risk requiring tests, not a verified universal failure.
+5. **GAP-20 — RDAP UI wording.** The panel uses `contradictions.length` to say “The age of this website doesn’t line up with what the seller says. Check the receipts.” New domain/business-age evidence is info/zero-weight because website age does not establish business age. Status text must reflect that scope and not reintroduce an unsupported accusation.
+6. **GAP-02 / GAP-21 — Consistent presentation and provenance.** Check automatic toast/stamp wording against evidence scores; panel changes do not modify active auto scripts. Add actual extraction source/method at producer sites; the renderer displays an explicit omission rather than inventing provenance. Migrate legacy supply-chain enum keys only in coordination with their active consumers; user-visible labels now state partial coverage.
+
+Required Chrome validation for draft PR #10: install exact-head unpacked artifact on desktop Chrome 133+; run WORK-AGENT-TEST-PROMPT.md in order and stop at the first reproducible failure. Verify the new light/system/large-text/compact controls at narrow widths, keyboard focus and details, evidence counts, local appearance persistence/reset, actual JSON download and review excluded fields. Test CPSC direct user consent deny/grant, cancel during pending consent, report change during request, revocation, service errors, no automatic requests and candidate-only notices. Test all original lifecycle/excluded-page/wrong-tab requirements. No local DOM test substitutes for these.
+
+No PR merge, release change or extension publication is authorized by this handoff. Paste it into the original engineering conversation; do not ask the owner to perform build/package commands. The package is built by the assistant and CI artifacts are the reviewable input.

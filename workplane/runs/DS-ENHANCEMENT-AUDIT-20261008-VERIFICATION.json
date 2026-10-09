@@ -1,0 +1,232 @@
+{
+  "task": "DS-ENHANCEMENT-AUDIT-20261008",
+  "verifiedAt": "2026-10-08",
+  "releaseBaseline": "2f89ddaac2037dbeb78be5a39ae7254b68394a78",
+  "researchBaseline": "62a46d7be0ffc312b40f3a39fe12fe3f5a3143b0",
+  "node": "22.20.0",
+  "os": "Linux container",
+  "tests": {
+    "performed": 185,
+    "passed": 185,
+    "failed": 0,
+    "skipped": 0,
+    "newResearchTests": 27
+  },
+  "checks": [
+    {
+      "name": "typecheck",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "tests",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node --import tsx --test tests/*.test.ts",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "security",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node scripts/security-audit.mjs",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "chrome-static",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node scripts/chrome-runtime-audit.mjs",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "data",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node --import tsx scripts/data-lint.ts",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "architecture",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node --import tsx scripts/professionalism-audit.ts",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "clean-build-and-zip",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node node_modules/wxt/bin/wxt.mjs zip",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "release",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node scripts/release-audit.mjs",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "performance-static",
+      "command": "/root/.npm/_npx/34eee67a6c71a3b6/node_modules/node/node_modules/node-linux-x64/bin/node scripts/performance-audit.mjs",
+      "result": "PASS",
+      "exitCode": 0
+    }
+  ],
+  "warnings": [
+    "Existing src/intelligence/merchant-networks.ts exceeds architecture size guideline",
+    "Existing entrypoints/sidepanel/main.ts exceeds architecture size guideline"
+  ],
+  "archive": {
+    "bytes": 69697,
+    "sha256": "86960f6bc142fe0e4cb4bfc5e04bf4c348f82dbb1d95ecf4fd32b220a2f71d9d",
+    "entries": [
+      "assets/sidepanel-C4GvpQ7x.css",
+      "background.js",
+      "chunks/sidepanel-Fhu3SRdQ.js",
+      "content-scripts/auto.js",
+      "icon/128.png",
+      "icon/16.png",
+      "icon/32.png",
+      "icon/48.png",
+      "manifest.json",
+      "sidepanel.html"
+    ]
+  },
+  "manifest": {
+    "manifest_version": 3,
+    "name": "DropShredder",
+    "description": "Local-first commerce forensics and product provenance analysis.",
+    "version": "0.2.0",
+    "icons": {
+      "16": "icon/16.png",
+      "32": "icon/32.png",
+      "48": "icon/48.png",
+      "128": "icon/128.png"
+    },
+    "minimum_chrome_version": "133",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "permissions": [
+      "scripting",
+      "storage",
+      "contextMenus",
+      "sidePanel"
+    ],
+    "optional_host_permissions": [
+      "https://*/*"
+    ],
+    "action": {
+      "default_title": "Open DropShredder",
+      "default_icon": {
+        "16": "icon/16.png",
+        "32": "icon/32.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    }
+  },
+  "unpackedBytes": 200253,
+  "benchmarks": {
+    "baseline": {
+      "runtime": "v22.20.0",
+      "root": "/workspace/scratch/1fe04fd621db/dropshredder-baseline",
+      "notMeasured": [
+        "Chrome wall time",
+        "DOM extraction",
+        "network latency",
+        "physical product accuracy"
+      ],
+      "scenarios": [
+        {
+          "name": "passive rules / 100k characters",
+          "iterations": 100,
+          "meanMs": 0.35975165000000286,
+          "p95Ms": 2.2039190000000417,
+          "maxMs": 4.176000000000045
+        },
+        {
+          "name": "source matching / 250 observations x 12 images",
+          "iterations": 50,
+          "meanMs": 0.46204554000000597,
+          "p95Ms": 2.4164010000000644,
+          "maxMs": 5.274347999999918
+        },
+        {
+          "name": "explicit image history / 250 observations x 12 x 12 images",
+          "iterations": 20,
+          "meanMs": 74.73972105000003,
+          "p95Ms": 92.8881859999999,
+          "maxMs": 92.8881859999999
+        },
+        {
+          "name": "fusion / 512 correlated signals",
+          "iterations": 100,
+          "meanMs": 0.1567355900000075,
+          "p95Ms": 0.46304700000018784,
+          "maxMs": 3.3115280000001803
+        }
+      ]
+    },
+    "candidate": {
+      "runtime": "v22.20.0",
+      "root": "/workspace/scratch/1fe04fd621db/dropshredder-repo",
+      "notMeasured": [
+        "Chrome wall time",
+        "DOM extraction",
+        "network latency",
+        "physical product accuracy"
+      ],
+      "scenarios": [
+        {
+          "name": "passive rules / 100k characters",
+          "iterations": 100,
+          "meanMs": 0.3384593199999989,
+          "p95Ms": 1.670142999999996,
+          "maxMs": 3.938836000000009
+        },
+        {
+          "name": "source matching / 250 observations x 12 images",
+          "iterations": 50,
+          "meanMs": 2.2294360400000017,
+          "p95Ms": 4.09179899999998,
+          "maxMs": 4.888580999999988
+        },
+        {
+          "name": "explicit image history / 250 observations x 12 x 12 images",
+          "iterations": 20,
+          "meanMs": 38.40494730000002,
+          "p95Ms": 48.54632599999991,
+          "maxMs": 48.54632599999991
+        },
+        {
+          "name": "fusion / 512 correlated signals",
+          "iterations": 100,
+          "meanMs": 0.23667090000000826,
+          "p95Ms": 0.7513980000001084,
+          "maxMs": 4.311698999999862
+        }
+      ]
+    },
+    "method": "Sequential local Node runs after other checks; five warmups; synthetic workload; shared-host timings may vary; not Chrome QA"
+  },
+  "chromeQa": {
+    "result": "ENVIRONMENT BLOCKED",
+    "testsPerformed": 0,
+    "version": null,
+    "extensionId": null,
+    "reason": "No real desktop Chrome surface supporting unpacked extension installation available in this session"
+  },
+  "staticOwnerFollowups": [
+    "RUNTIME-AUDIT-01",
+    "RUNTIME-AUDIT-02",
+    "RUNTIME-AUDIT-03"
+  ],
+  "publication": "Dedicated feature branch and draft review; remote checks recorded separately",
+  "notes": [
+    "Direct Node --import tsx bypasses sandbox CLI IPC EPERM without changing project code",
+    "Removed only generated build directory before final ZIP; package contains no stale incremental chunk",
+    "No runtime dependencies or permission changes",
+    "No production accuracy or category error-rate claim"
+  ]
+}

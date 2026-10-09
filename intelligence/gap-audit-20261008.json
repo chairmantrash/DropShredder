@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-FULLSTACK-GAP-AUDIT-20261008",
+  "reviewedAt": "2026-10-08",
+  "baseline": "7417aa2d5de90df3211586e5d1a4525c649ae0e8",
+  "meaning": "Implemented means source plus local tests, not real Chrome approval. This is a bounded cross-layer audit, not proof every possible gap is closed.",
+  "findings": [
+    {
+      "id": "GAP-01",
+      "layer": "UI / detection",
+      "finding": "Direct evidence was labeled FYI; source metadata was hidden.",
+      "disposition": "implemented-local-checks",
+      "action": "DIRECT badge plus bounded safe source/method disclosure; producer omissions remain explicit.",
+      "files": [
+        "src/ui/report-renderer.ts",
+        "src/security/public-url.ts"
+      ]
+    },
+    {
+      "id": "GAP-02",
+      "layer": "UI / client agency",
+      "finding": "Heuristic percentages can be mistaken for measured probabilities.",
+      "disposition": "implemented-local-checks",
+      "action": "Panel displays evidence scores /100 and explicit qualifier; auto-toast copy remains owner review.",
+      "files": [
+        "src/ui/report-renderer.ts"
+      ]
+    },
+    {
+      "id": "GAP-03",
+      "layer": "UI / utility",
+      "finding": "Long evidence lists lacked safe filtering and visibility counts.",
+      "disposition": "implemented-local-checks",
+      "action": "Render cap 300, search 100 characters, severity filter and hidden-item counts; scores unaffected.",
+      "files": [
+        "src/ui/report-renderer.ts",
+        "src/ui/panel-controls.ts"
+      ]
+    },
+    {
+      "id": "GAP-04",
+      "layer": "customization / control",
+      "finding": "Display preferences absent and could overwrite protection settings if shared.",
+      "disposition": "implemented-local-checks",
+      "action": "Validated local separate-key theme/density/text-size; serialized writes and reset only appearance.",
+      "files": [
+        "src/ui/preferences.ts",
+        "src/ui/panel-controls.ts"
+      ]
+    },
+    {
+      "id": "GAP-05",
+      "layer": "UI / accessibility",
+      "finding": "Small low-contrast text and fixed minimum width.",
+      "disposition": "implemented-local-checks-chrome-layout-pending",
+      "action": "Minimum 12px base text, light/system themes, focus styles, 44px buttons, narrow-width CSS; eight contrast pairs pass, no layout/screen-reader claim.",
+      "files": [
+        "entrypoints/sidepanel/style.css"
+      ]
+    },
+    {
+      "id": "GAP-06",
+      "layer": "utility / privacy",
+      "finding": "No bounded current-scan share/export with deliberate data exclusions.",
+      "disposition": "implemented-local-checks",
+      "action": "Public HTTPS scan only; schema/value guards, query/token/email redaction, first 300 allowlisted items; native download intent only tested in DOM harness.",
+      "files": [
+        "src/reporting/export-report.ts",
+        "src/security/public-url.ts",
+        "src/ui/panel-controls.ts"
+      ]
+    },
+    {
+      "id": "GAP-07",
+      "layer": "detection",
+      "finding": "Refund processing time, negated fees and ordinary RMA steps inflated return-policy risk.",
+      "disposition": "implemented-local-checks",
+      "action": "Explicit short return deadlines, fee negation, informational contact/RMA and inspection; one policy source lineage.",
+      "files": [
+        "src/analysis/return-policy.ts"
+      ]
+    },
+    {
+      "id": "GAP-08",
+      "layer": "detection",
+      "finding": "Domain younger than claimed business age was scored as deception.",
+      "disposition": "implemented-local-checks",
+      "action": "Domain/business age mismatch informational with zero weight; no business-age conclusion.",
+      "files": [
+        "src/analysis/contradictions.ts"
+      ]
+    },
+    {
+      "id": "GAP-09",
+      "layer": "detection / client agency",
+      "finding": "Pronoun us, incidental return-policy geography and partial roles could imply a complete foreign chain.",
+      "disposition": "implemented-local-checks",
+      "action": "Shared jurisdiction aliases, destination-specific roles and partial-coverage labels; geographic weight remains zero.",
+      "files": [
+        "src/analysis/supply-chain-profile.ts"
+      ]
+    },
+    {
+      "id": "GAP-10",
+      "layer": "detection / evidence lineage",
+      "finding": "Malformed samples, provider aliases and generic complaint words could manufacture corroboration.",
+      "disposition": "implemented-local-checks",
+      "action": "Validate ratings/counts/share; provider-host canonicalization, snippet dedupe, required negative phrasing and shared reputation ancestry.",
+      "files": [
+        "src/reputation/complaint-analysis.ts",
+        "src/analysis/quality-claims.ts"
+      ]
+    },
+    {
+      "id": "GAP-11",
+      "layer": "detection / evidence lineage",
+      "finding": "Product ratings versus merchant-service ratings treated as directly comparable.",
+      "disposition": "implemented-local-checks",
+      "action": "Score only known matching scope and subject ID; uncertain comparisons remain informational.",
+      "files": [
+        "src/reputation/review-discrepancy.ts"
+      ]
+    },
+    {
+      "id": "GAP-12",
+      "layer": "API / control",
+      "finding": "Credential-free recall service not available to a shopper as a bounded candidate tool.",
+      "disposition": "implemented-local-checks-chrome-permission-pending",
+      "action": "User-selected public query and field; direct permission chain, cancel before/after grant, 8s/2MB limits, stale-report guards; no scoring.",
+      "files": [
+        "src/osint/cpsc.ts",
+        "src/ui/panel-controls.ts"
+      ]
+    },
+    {
+      "id": "GAP-13",
+      "layer": "coding / supply chain",
+      "finding": "Transitive development graph not locked; CI used npm install.",
+      "disposition": "implemented-local-checks",
+      "action": "Exact package-lock and npm ci; clean Node 22 install passes; LinkeDOM dev-only ISC, no runtime dependencies.",
+      "files": [
+        "package.json",
+        "package-lock.json",
+        ".github/workflows/ci.yml"
+      ]
+    },
+    {
+      "id": "GAP-14",
+      "layer": "coding / privacy / performance",
+      "finding": "New UI/API surfaces need bounded and adversarial regression coverage.",
+      "disposition": "implemented-local-checks",
+      "action": "30 added tests, 215 total; caps, malformed payloads, hostile URLs, consent cancellation and chunked oversize responses.",
+      "files": [
+        "tests/gap-audit.test.ts"
+      ]
+    },
+    {
+      "id": "GAP-15",
+      "layer": "research / API",
+      "finding": "Eligible research entries could be mistaken for implemented APIs.",
+      "disposition": "documented-corrected",
+      "action": "Nine capability dispositions including existing RDAP; FTC scope corrected and openFDA conflicting auth text retained as unresolved.",
+      "files": [
+        "intelligence/API-CAPABILITIES-20261008.json",
+        "intelligence/public-api-registry.json"
+      ]
+    },
+    {
+      "id": "GAP-16",
+      "layer": "client agency / coding",
+      "finding": "Core feature settings trust arbitrary saved values and use overlapping load/save actions.",
+      "disposition": "active-owner-followup",
+      "action": "Typed validation plus atomic patch/update queue needed; separate display settings do not repair core consent flags.",
+      "files": [
+        "src/settings/features.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "id": "GAP-17",
+      "layer": "utility / control",
+      "finding": "Source hunt generates 10 destinations but opens first eight, dropping POD and Reddit silently.",
+      "disposition": "active-owner-followup",
+      "action": "Keep bounded tabs; expose selected batches/remaining destinations and accurately describe coverage.",
+      "files": [
+        "entrypoints/sidepanel/main.ts",
+        "src/deep-hunt/search-urls.ts"
+      ]
+    },
+    {
+      "id": "GAP-18",
+      "layer": "API / consent",
+      "finding": "RDAP cache path returns cached result before pending permission decision resolves.",
+      "disposition": "active-owner-followup",
+      "action": "Await permission before showing cache; denial and pending-request error paths need meaningful tests. Static finding, no Chrome breach alleged.",
+      "files": [
+        "src/osint/rdap.ts"
+      ]
+    },
+    {
+      "id": "GAP-19",
+      "layer": "API / identity",
+      "finding": "RDAP redirects and registrable-domain resolution not established.",
+      "disposition": "active-owner-followup",
+      "action": "Verify bootstrap/endpoint policy, permissions and registered root on multi-label suffixes/subdomains; current query only strips www.",
+      "files": [
+        "src/osint/rdap.ts"
+      ]
+    },
+    {
+      "id": "GAP-20",
+      "layer": "UI / detection",
+      "finding": "RDAP button status still implies seller-story conflict for informational domain age.",
+      "disposition": "active-owner-followup",
+      "action": "Change owning panel status to factual domain chronology with business-age limitation.",
+      "files": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "id": "GAP-21",
+      "layer": "research / evidence",
+      "finding": "Many producers lack provenance; source disclosure cannot reconstruct missing observations.",
+      "disposition": "not-closed-owner-design",
+      "action": "Add extraction source and method at production time; do not fabricate metadata or count missing metadata as exoneration.",
+      "files": [
+        "src/ui/report-renderer.ts",
+        "src/types/evidence.ts"
+      ]
+    },
+    {
+      "id": "GAP-22",
+      "layer": "coding / browser QA / UI",
+      "finding": "Actual Chrome install, consent lifecycle, download, visual reflow and focus behavior unavailable.",
+      "disposition": "environment-blocked",
+      "action": "0 real Chrome tests. Full QA package must run in Chrome 133+ before release.",
+      "files": [
+        "workplane/tasks/DS-GAP-RUNTIME-FOLLOWUP-20261008.md"
+      ]
+    },
+    {
+      "id": "GAP-23",
+      "layer": "detection / evaluation",
+      "finding": "No representative labeled evaluation establishes category accuracy or calibration.",
+      "disposition": "not-closed-research-design",
+      "action": "Synthetic regression guards behavior, not population precision/recall or physical product quality. Maintain abstention.",
+      "files": [
+        "tests/gap-audit.test.ts"
+      ]
+    },
+    {
+      "id": "GAP-24",
+      "layer": "research / maintenance",
+      "finding": "Research corpora require freshness, identifiers, licenses and deployment dispositions.",
+      "disposition": "partially-documented",
+      "action": "Retain first-sweep 174-record integration map; new API states and probe receipts checkpointed. No automatic signed feed or full-page archival implementation.",
+      "files": [
+        "intelligence/research-integration-audit-20261008.json",
+        "intelligence/API-CAPABILITIES-20261008.json"
+      ]
+    },
+    {
+      "id": "GAP-25",
+      "layer": "detection / runtime",
+      "finding": "Etsy hostname literal has doubled escaping.",
+      "disposition": "existing-active-owner-followup",
+      "action": "RUNTIME-AUDIT-01 retained; exact literal fails etsy.com in Node, adapter Chrome path not performed.",
+      "files": [
+        "workplane/tasks/DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md"
+      ]
+    },
+    {
+      "id": "GAP-26",
+      "layer": "detection / runtime",
+      "finding": "Visible price literal has doubled escaping.",
+      "disposition": "existing-active-owner-followup",
+      "action": "RUNTIME-AUDIT-02 retained; exact literal misses $29.99 / 29.99 USD; no Chrome product test.",
+      "files": [
+        "workplane/tasks/DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md"
+      ]
+    },
+    {
+      "id": "GAP-27",
+      "layer": "detection / exact product",
+      "finding": "First Product/Offer extraction may select recommendation/other variant.",
+      "disposition": "existing-active-owner-validation",
+      "action": "RUNTIME-AUDIT-03 retained; release-critical recommendation-first / ProductGroup / selected-variant fixtures and real Chrome required.",
+      "files": [
+        "workplane/tasks/DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md"
+      ]
+    }
+  ],
+  "sourceReferences": {
+    "CPSC-API": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+    "CPSC-GUIDE": "https://www.cpsc.gov/s3fs-public/RecallRetrievalWebServicesProgrammersGuide20180917.pdf",
+    "CHROME-PERMISSIONS": "https://developer.chrome.com/docs/extensions/reference/api/permissions",
+    "CHROME-STORAGE": "https://developer.chrome.com/docs/extensions/reference/api/storage",
+    "W3C-CONTRAST": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "W3C-REFLOW": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "NPM-CI": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+    "LINKEDOM": "https://github.com/WebReflection/linkedom",
+    "SEC-API": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "SEC-FAIR-ACCESS": "https://www.sec.gov/developer",
+    "OPENFDA-AUTH": "https://open.fda.gov/apis/authentication/",
+    "GLEIF": "https://www.gleif.org/en/lei-data/gleif-api",
+    "COMPANIES-HOUSE-AUTH": "https://developer-specs.company-information.service.gov.uk/guides/authorisation",
+    "COMPANIES-HOUSE-LIMITS": "https://developer-specs.company-information.service.gov.uk/guides/rateLimiting",
+    "FTC": "https://www.ftc.gov/developer",
+    "SAFERPRODUCTS-FAQ": "https://www.saferproducts.gov/FAQs/FrequentlyAskedQuestions11",
+    "COMTRADE": "https://comtradeplus.un.org/"
+  },
+  "verification": "workplane/runs/DS-FULLSTACK-GAP-AUDIT-20261008-VERIFICATION.json"
+}

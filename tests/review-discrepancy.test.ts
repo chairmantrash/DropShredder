@@ -7,7 +7,8 @@ test('large hosted-vs-independent rating gap is surfaced',()=>{
     {rating:4.7,reviewCount:10000,source:'Store-hosted'},
     {source:'Trustpilot',rating:3.4,reviewCount:69,url:'https://example.invalid'}
   );
-  assert.equal(evidence[0]?.severity,'moderate');
+  assert.equal(evidence[0]?.severity,'info');
+  assert.equal(evidence[0]?.weight,0);
 });
 
 test('small samples do not create discrepancy warning',()=>{
