@@ -97,6 +97,15 @@
       </details>
 
       <details class="intelligence-panel">
+        <summary>Read a product label locally (barcode and OCR)</summary>
+        <p class="scan-disclosure">Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. Experimental text recognition is not available on all browsers. If unavailable, use the built-in manual source search.</p>
+        <label for="label-image">Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)</label>
+        <input id="label-image" type="file" accept="image/png,image/jpeg,image/webp" />
+        <button id="label-read" class="secondary" type="button">READ LABEL ON DEVICE</button>
+        <p id="label-status" class="status" role="status"></p>
+        <div id="label-results" class="evidence" aria-live="polite"></div>
+      </details>
+      <details class="intelligence-panel">
         <summary>Your product reference lists</summary>
         <p class="scan-disclosure">Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent.</p>
         <div class="evidence-tools">
