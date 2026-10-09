@@ -6,7 +6,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
-// This exercises the unchanged production package in a real Chromium runtime.
+// This exercises the reviewed production package in a real Chromium runtime.
 // It never mocks chrome.*, writes extension storage, or grants host permission.
 const root = path.resolve(import.meta.dirname, '../..');
 const extension = path.join(root, '.output/chrome-mv3');
@@ -64,13 +64,6 @@ async function panel(ctx, id) {
   await page.waitForFunction(() => document.querySelector('#build-meta')?.textContent.includes('0.2.0'));
   return page;
 }
-async function savedFeatures(page, expected) {
-  await page.waitForFunction(async expected => {
-    const saved = (await chrome.storage.local.get('dropshredder-feature-settings-v1'))['dropshredder-feature-settings-v1'];
-    return Object.entries(expected).every(([key, value]) => saved?.[key] === value);
-  }, expected);
-}
-
 try {
   await test('R01', 'Packaged bytes match the reviewed candidate', async () => {
     const candidate = JSON.parse(await fs.readFile(path.join(import.meta.dirname, 'candidate-build-info.json'), 'utf8'));
@@ -131,6 +124,27 @@ try {
     await currentPage.locator('#display-density').selectOption('compact');
     await currentPage.locator('#display-scale').selectOption('130');
     await currentPage.waitForFunction(() => document.documentElement.dataset.textScale === '130');
+    const layouts = [];
+    for (const width of [320, 380, 420, 640]) {
+      await currentPage.setViewportSize({ width, height: 900 });
+      const layout = await currentPage.evaluate(() => {
+        const row = document.querySelector('.brand-row').getBoundingClientRect();
+        const title = document.querySelector('.brand-row > div').getBoundingClientRect();
+        const badge = document.querySelector('.privacy-badge').getBoundingClientRect();
+        return { viewport: innerWidth, content: document.documentElement.scrollWidth,
+          rowWidth: row.width, titleWidth: title.width, titleBottom: title.bottom,
+          badgeTop: badge.top, badgeWidth: badge.width };
+      });
+      assert.ok(layout.content <= width, `Horizontal overflow at ${width}px`);
+      assert.ok(layout.titleWidth >= Math.min(300, layout.rowWidth) - 1, `Heading squeezed at ${width}px: ${JSON.stringify(layout)}`);
+      if (layout.badgeWidth > 0 && layout.rowWidth < 320 + layout.badgeWidth + 12) {
+        assert.ok(layout.badgeTop >= layout.titleBottom, `Privacy badge must wrap below large title at ${width}px`);
+      }
+      layouts.push(layout);
+      await currentPage.screenshot({ path: path.join(output, `panel-large-${width}.png`), fullPage: true, timeout: 30000, animations: 'disabled' });
+    }
+    report.largeTextLayouts = layouts;
+    await currentPage.setViewportSize({ width: 420, height: 900 });
     await currentPage.screenshot({ path: path.join(output, 'panel-light-large.png'), fullPage: true, timeout: 30000, animations: 'disabled' });
     await currentPage.reload();
     await currentPage.waitForFunction(() => document.documentElement.dataset.theme === 'light');

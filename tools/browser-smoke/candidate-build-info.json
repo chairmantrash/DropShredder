@@ -1,7 +1,8 @@
 {
-  "sourceCommit": "764e892a2cdddcfc8ac08f70d159d3e965fe9181",
-  "sourceTree": "b1f7c576d7c91b27aa2561037417c8bff0002ada",
+  "sourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
+  "sourceTree": "68a90a2737fd0972766b4f783c224b3c627e830f",
   "version": "0.2.0",
+  "reviewedChange": "Masthead wraps the privacy badge before the brand/title are squeezed at large text sizes. Production manifest and dependencies unchanged.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -9,9 +10,9 @@
       "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
     },
     {
-      "path": "assets/sidepanel-Bn8EqEZH.css",
-      "bytes": 9819,
-      "sha256": "9ca3c38499c34c77c028a3faf7611469d9c533a113985cb0f05177f71704b99e"
+      "path": "assets/sidepanel-BxHqPi78.css",
+      "bytes": 9913,
+      "sha256": "602c75662a44fc804e6c4c48841a10767758f7cd99087d7d9a194a1d2d5c1641"
     },
     {
       "path": "background.js",
@@ -29,7 +30,7 @@
       "sha256": "9ca878717876491f56a3b2e237245738cbb76276a17ed4e4b064379ed65c6981"
     },
     {
-      "path": "chunks/sidepanel-DKFBG88o.js",
+      "path": "chunks/sidepanel-DZSCaPek.js",
       "bytes": 445011,
       "sha256": "c1055b6deac9f73224d0818a535cb67e7a89a38a5fe4d1c5fe03853a6aa641ba"
     },
@@ -71,7 +72,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 9015,
-      "sha256": "7b3bbed5d5bac4deeaccb758ff2260932d810438cdcaf5893cd06ce389e7007e"
+      "sha256": "df1329e1fa46abc9e04790f61768683a9b0ccf069c21a42bba53faa2568907c2"
     }
   ]
 }

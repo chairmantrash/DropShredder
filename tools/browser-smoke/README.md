@@ -8,7 +8,11 @@ Coverage: exact reviewed package hashes, MV3 loading, panel document rendering, 
 
 This is an automated real-browser subset. It is not the independent A01-D06 QA protocol. The panel HTML is opened in a browser tab, so native toolbar/side-panel mounting is untested. Native permission prompts, post-grant product scans/toasts, merchant accuracy, target switching, context menus, search batches and live RDAP/CPSC remain untested. Do not mark DS-031 DONE from this workflow.
 
-The separate `probe-native.mjs` uses the browser-scoped public `Extensions.triggerAction` API on a `tab` target. It opens the native side panel without a source/manifest change. Playwright does not expose that WebContents in its normal page list, so the diagnostic attaches using public `Target` protocol messages. Trusted `Input.dispatchMouseEvent` clicks the actual native controls; only read-only DOM/storage queries verify the result. It observes native-panel mounting and one saved source-hunt toggle, with a screenshot. It does not test native permission prompts, multiple panels, all settings, or full product scans. Its unsafe-extension-debugging flag is limited to the disposable test profile and is never part of the delivered extension.
+The separate `probe-native.mjs` uses the browser-scoped public `Extensions.triggerAction` API on a `tab` target. Playwright does not expose native panel WebContents in its page list, so the runner attaches using public `Target` protocol messages. Trusted `Input.dispatchMouseEvent` and `Input.dispatchKeyEvent` operate the actual controls; read-only DOM/storage queries verify results. N01–N07 assert native mounting, source/origin/tone saves without lost patches, full-profile restart with nondefault preferences, a product scan failing closed without host access, safe no-grant access removal and no uncaught errors/external investigations. Failures return a nonzero exit and preserve evidence. Its unsafe-extension-debugging flag is limited to the disposable test profile and is never part of the delivered extension.
+
+After those assertions, a separately accounted exploration clicks the real automatic-alert control and records whether Chrome's request settles, host access and registered scripts. It never accepts/denies a browser prompt through an override. A pending or implicit result is not explicit permission-UI QA. N08 runs an actual full scan on an owned HTTPS fixture only if Chrome has granted access and the UI settles. Otherwise that scan remains blocked. Owned fixtures cannot establish merchant/category accuracy. Genuine permission UI, granted-access revocation, concurrent panels and broad browser/category coverage remain open.
+
+R06 now measures large-text layout at 320, 380, 420 and 640 pixels and saves each screenshot. It rejects horizontal overflow and title squeezing; human visual inspection remains a separate check.
 
 Run on a desktop/CI host permitting Chromium sockets:
 
@@ -22,6 +26,6 @@ DS_BROWSER_HEADLESS=1 node tools/browser-smoke/run.mjs
 xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/run.mjs
 ```
 
-The candidate hash manifest identifies source 764e892a2cdddcfc8ac08f70d159d3e965fe9181. If production code changes, review and regenerate that manifest explicitly; a mismatch fails rather than silently testing a different build. Reports also record the exact harness checkout SHA and browser version.
+The candidate hash manifest identifies source 4fd0b24c8cb5a11009d14bb1833b39656a210422, whose only production change from the previous candidate is masthead CSS. If production code changes, review and regenerate that manifest explicitly; a mismatch fails rather than silently testing a different build. Reports also record the exact harness checkout SHA and browser version.
 
 Primary methods: https://playwright.dev/docs/chrome-extensions and https://playwright.dev/docs/ci.

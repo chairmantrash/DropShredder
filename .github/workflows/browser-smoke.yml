@@ -35,7 +35,7 @@ jobs:
         run: |
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Run Chromium with the unchanged packaged extension
+      - name: Run Chromium with the reviewed packaged extension
         timeout-minutes: 3
         env:
           DS_BROWSER_HEADLESS: '1'
@@ -48,7 +48,7 @@ jobs:
           path: browser-smoke-results/
           if-no-files-found: warn
           retention-days: 30
-  native-action-diagnostic:
+  native-panel-runtime:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -63,12 +63,12 @@ jobs:
           npm run build
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Probe documented native extension action
+      - name: Verify native panel and explore genuine host permission request
         timeout-minutes: 2
         run: node tools/browser-smoke/probe-native.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: dropshredder-native-action-diagnostic
+          name: dropshredder-native-panel-evidence
           path: browser-smoke-results/
           retention-days: 30
