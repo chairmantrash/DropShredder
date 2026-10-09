@@ -26,3 +26,6 @@ Preserve the guardrails: free local-first core, no mandatory account/backend, no
 
 ## Implementation continuation DS-035
 After PR #11 merged, the only development branch remains `release/security-performance-hardening` under draft PR #9. Additional source changes cover named storefront swatches + report invalidation, bounded lot/serial regulatory scope, automatic-toast signal visibility, and privacy-safe explicit reverse-image launchers. Source-to-artifact exact-hash and browser gate receipts must be regenerated for the new production bytes; the previous 250-test / 36-browser count is historical, not verification for DS-035. Do not treat these engineering enhancements as representative merchant accuracy or an independent A01–D06 acceptance pass.
+
+## DS-035 verification closure (engineering only)
+`c18953c6` passes 255 core tests (0 failures), CodeQL and all three hosted Chromium workflow jobs. Reviewed bundle source `f8b74a93` matches pinned 14-file hashes; run `37917272818` generated a new unpacked QA-only artifact. No post-pin production edits. This is engineering verification and does not close any independent release gates or authorize a merge into `main`.
