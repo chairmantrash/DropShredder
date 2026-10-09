@@ -24,3 +24,5 @@ Primary sources reviewed:
 - https://developer.chrome.com/docs/extensions/reference/api/permissions
 - https://www.cpsc.gov/s3fs-public/RecallRetrievalWebServicesProgrammersGuide20180917.pdf
 - Prior retained TUF/PROV/variant/import research: brain/research/2026-10-08-RESEARCH-GAPS.md
+
+Verification update: source cb82ea8a/harness 2fd69e5d now passes the bounded hosted suite (34 distinct checks) and 246 core tests. Native search-modal focus required explicit Tab boundary handling. Live Amazon exposed an unrelated accessibility h1 ahead of #productTitle; host-scoped product-title selection fixes it, with owned and live verification. Live-site observations use separate disposable tabs to prevent delayed navigation contaminating fixture assertions. Remaining gates above are retained; see the current continuation receipt.

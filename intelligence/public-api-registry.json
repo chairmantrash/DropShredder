@@ -95,7 +95,7 @@
       "operator": "Global Legal Entity Identifier Foundation",
       "access": "public-api",
       "runtimeClass": "credential-free",
-      "status": "implemented-exact-lei-pending-hosted-verification",
+      "status": "implemented-manual-exact-lei-hosted-chrome-verified",
       "purpose": [
         "legal-entity resolution",
         "LEI relationships"
@@ -107,7 +107,7 @@
         "Manual exact LEI GET at api.gleif.org/api/v1/lei-records/{lei}; no authentication supplied; verified matching response locally.",
         "Free CC0 data; legal identity only, no retail quality or store attribution.",
         "No universal published rate limit verified; one explicit request, no retries/polling; 429 fails unavailable.",
-        "Browser grant/CORS verification pending exact candidate."
+        "Native Chrome N24 passed on exact source cb82ea8a; actual public HTTPS request, exact supplied LEI only."
       ]
     },
     {

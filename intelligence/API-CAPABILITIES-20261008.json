@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-08",
+  "reviewedAt": "2026-10-09",
   "task": "DS-FULLSTACK-GAP-AUDIT-20261008",
   "policy": {
     "noBundledKeys": true,
@@ -127,20 +127,20 @@
     },
     {
       "id": "gleif",
-      "state": "implemented-manual-exact-lei-pending-hosted-chrome-verification",
+      "state": "implemented-manual-exact-lei-hosted-chrome-verified",
       "access": "public-api",
-      "chromeVerified": false,
-      "liveEndpointProbes": 1,
+      "chromeVerified": true,
+      "liveEndpointProbes": 2,
       "limitations": [
         "Exact check-digit-valid LEI only; no name matching, alias merge or merchant/product attribution.",
         "Direct unauthenticated HTTPS endpoint returned 200 / matching identity on 2026-10-09.",
         "Public data under CC0; no universal rate limit verified. Single explicit request, bounded/cancellable, no retries, 429 is unavailable.",
-        "Chrome verification pending this candidate."
+        "Native Chrome N24 passed on exact source cb82ea8a; one live exact-LEI result, not coverage or store/entity attribution."
       ],
       "sources": [
         "GLEIF"
       ],
-      "continuation": "src/osint/gleif.ts; brain/research/2026-10-09-GLEIF-ENDPOINT-PROBE.json"
+      "continuation": "src/osint/gleif.ts; brain/research/2026-10-09-GLEIF-ENDPOINT-PROBE.json; workplane/runs/DS-031-034-CONTINUATION-20261009.json"
     },
     {
       "id": "companies-house",
@@ -191,7 +191,8 @@
   ],
   "probeReceipts": [
     "brain/research/2026-10-08-CPSC-LIVE-PROBE.json",
-    "brain/research/2026-10-08-CPSC-TITLE-PROBE.json"
+    "brain/research/2026-10-08-CPSC-TITLE-PROBE.json",
+    "brain/research/2026-10-09-GLEIF-ENDPOINT-PROBE.json"
   ],
   "scope": "Access research and code integration states, not approval of every API for Chrome runtime."
 }
