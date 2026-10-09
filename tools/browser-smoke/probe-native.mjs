@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
+import { createHash, generateKeyPairSync, sign } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -15,7 +15,13 @@ const profile = await fs.mkdtemp(path.join(os.tmpdir(), 'dropshredder-native-'))
 const headed = process.env.DS_NATIVE_HEADED === '1';
 await fs.mkdir(output, { recursive: true });
 const errors = [], externalRequests = [], providerRequests = [];
-let feedVersion=1, providerMode="normal";
+let feedVersion=1, providerMode="normal", feedMode="unsigned";
+const fixtureSigningPair=generateKeyPairSync('ed25519');
+const fixturePublicKey=fixtureSigningPair.publicKey.export({format:'der',type:'spki'}).subarray(-32).toString('base64url');
+const signedFixtureList=()=>{
+  const payload=JSON.stringify(fixtureList());
+  return {payload,signature:{keyId:'browser-fixture-key',value:sign(null,Buffer.from(payload,'utf8'),fixtureSigningPair.privateKey).toString('base64url')}};
+};
 const fixtureList=()=>({schemaVersion:1,id:"browser-fixture",title:"Owned browser reference",sourceUrl:"https://publisher.example.com/products.json",license:"CC0-1.0",publishedAt:new Date(Date.now()-1000).toISOString(),expiresAt:new Date(Date.now()+86400000).toISOString(),version:feedVersion,records:[{id:"mug",title:"Fixture reference mug",url:"https://manufacturer.example.com/products/mug",gtin:"012345678905",attributes:{},entities:[{role:"manufacturer",name:"Fixture Maker",sourceUrl:"https://manufacturer.example.com/about",observedAt:new Date(Date.now()-1000).toISOString()}]}]});
 const report = { sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
   startedAt: new Date().toISOString(), mode: headed ? 'headed Chromium / Xvfb' : 'headless Chromium', status: 'RUNNING', tests: [], errors, externalRequests, providerRequests,
@@ -51,7 +57,7 @@ async function attach(targetId) {
       const {requestId,request}=response.params;const url=request.url;providerRequests.push({url,mode:providerMode,at:new Date().toISOString()});
       void(async()=>{
         const mode=providerMode;if(mode==='delay') await pause(2000);
-        const body=url.includes('publisher.example.com')?fixtureList():url.includes('rdap.verisign.com')?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
+        const body=url.includes('publisher.example.com')?(feedMode==='signed'?signedFixtureList():fixtureList()):url.includes('rdap.verisign.com')?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
         await call('Fetch.fulfillRequest',{requestId,responseCode:mode==='error'?503:200,responseHeaders:[{name:'content-type',value:'application/json'}],body:Buffer.from(JSON.stringify(body)).toString('base64')});
       })().catch(()=>{});return;
     }
