@@ -48,7 +48,7 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPri
     }
   }else{
     const li=document.createElement('li');
-    li.textContent='No clear red flags in this quick check. Seller trust is still unknown.';
+    li.textContent='This quick check found no scored signals. Seller trust is still unknown.';
     facts.append(li);
   }
   if(listedPrice){
@@ -108,7 +108,7 @@ export default defineContentScript({
       const url=location.href;
       const classification=detectShoppingPage(document,url);
       if(!classification.showToast) return;
-      const key=location.origin+location.pathname;
+      const key=location.href;
       if(notified.has(key)) return;
       // Reconfirm opt-in after user disables auto protection in an already-injected tab.
       try{

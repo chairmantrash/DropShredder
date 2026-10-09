@@ -88,3 +88,5 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .toggle-row select{min-width:0;max-width:45%;min-height:44px;border-color:var(--line)}
 body{overflow-wrap:anywhere;scrollbar-color:var(--muted) var(--bg)}
 @media(max-width:320px){main{padding-inline:8px}.toggle-row{flex-wrap:wrap}.toggle-row select{max-width:100%}}
+
+#ds-search-chooser{max-width:min(34rem,90vw);max-height:85vh;overflow:auto;background:var(--panel,#111827);color:var(--text,#f9fafb);padding:20px;border:1px solid currentColor}#ds-search-chooser label{margin:12px 0}#ds-search-chooser button{margin:8px;padding:10px}

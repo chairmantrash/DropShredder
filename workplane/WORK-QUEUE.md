@@ -29,3 +29,15 @@
 | DS-025 | P0 | Merchant complaint / reputation sweep | DONE | forensics | DS-006 |
 | DS-026 | P1 | Return/refund friction detector | DONE | forensics | DS-006 |
 | DS-027 | P2 | Focused imported-product safety checks | DONE | — | DS-003,DS-006 |
+
+## Current reconciliation queue (2026-10-09)
+
+Earlier DONE rows describe historical implementation, not a real Chrome gate pass. DS-030 addresses the DS-003/008/013/014 and DS-028/029 follow-ups without changing their original receipts.
+
+| ID | Priority | Task | Status | Owner |
+|---|---|---|---|---|
+| DS-030 | P0 | Runtime and research reconciliation | VERIFYING | successor Work agent |
+| DS-031 | P0 | Chrome/category validation | READY | unclaimed |
+| DS-032 | P1 | Controlled data imports/subscriptions | READY | unclaimed |
+| DS-033 | P1 | Product matching/manufacturer graph | READY | unclaimed |
+| DS-034 | P1 | Safety/certification/API capabilities | READY | unclaimed |

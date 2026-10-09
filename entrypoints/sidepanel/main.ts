@@ -1,3 +1,4 @@
+import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
 import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
@@ -10,13 +11,13 @@ import { reviewIntegrity } from '../../src/analysis/review-integrity';
 import type { ReviewSnapshot } from '../../src/types/review';
 import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
-import { analyzeEtsyPage } from '../../src/adapters/etsy';
+import { analyzeEtsyPage, isEtsyDomain } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
 import { imageHistoryEvidence } from '../../src/forensics/image-history';
 import { lookupDomainRdap } from '../../src/osint/rdap';
 import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
-import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/features';
+import { loadFeatureSettings, updateFeatureSettings } from '../../src/settings/features';
 import { indexedSourceEvidence } from '../../src/analysis/source-match';
 import { reputationSearchUrls } from '../../src/reputation/reputation-search';
 import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
@@ -146,8 +147,7 @@ autoProtection?.addEventListener('change',()=>{
       return;
     }
     await setAutoContentRegistration(wanted);
-    const current=await loadFeatureSettings();
-    await saveFeatureSettings({...current,autoProtection:wanted});
+    await updateFeatureSettings({autoProtection:wanted});
     if(wanted){
       // Newly enabled protection should check the currently visible product page too.
       const tab=await activeWebTab();
@@ -170,21 +170,19 @@ autoProtection?.addEventListener('change',()=>{
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
-  );
+  const wanted=autoSourceHunt.checked;
+  void updateFeatureSettings({autoSourceHunt:wanted}).catch(()=>{autoSourceHunt.checked=!wanted;if(status) status.textContent='Could not save source-hunt setting.';});
 });
 
 preferMadeInUSA?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
-  );
+  const wanted=preferMadeInUSA.checked;
+  void updateFeatureSettings({preferMadeInUSA:wanted}).catch(()=>{preferMadeInUSA.checked=!wanted;if(status) status.textContent='Could not save origin preference.';});
 });
 
 toneMode?.addEventListener('change',()=>{
   const next=(toneMode.value==='aggressive'||toneMode.value==='nuclear')?toneMode.value:'professional';
   applyTone(next);
-  void loadFeatureSettings().then(settings=>saveFeatureSettings({...settings,toneMode:next}));
+  void updateFeatureSettings({toneMode:next}).catch(()=>{if(status) status.textContent='Could not save tone preference.';});
   if(lastReport) renderReport(lastReport);
 });
 
@@ -365,7 +363,7 @@ async function scanActivePage(): Promise<void> {
         productTitle:result.product.title,
       }));
     }
-    if (/(^|\\.)etsy\\.com$/i.test(result.product.domain)) {
+    if (isEtsyDomain(result.product.domain)) {
       const etsy=analyzeEtsyPage(result.pageText);
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
@@ -596,8 +594,7 @@ void (async()=>{
 })();
 
 async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
-  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
-  for(const url of unique) await chrome.tabs.create({url,active:false});
+  showSearchChooser(urls);
 }
 
 huntSources?.addEventListener('click',()=>void (async()=>{
@@ -708,8 +705,10 @@ checkDomain?.addEventListener('click',async()=>{
         confidence:.98,
         weight:0,
         title:'Domain registration chronology retrieved',
-        explanation:'Public RDAP domain chronology is informational by itself. It becomes relevant when it conflicts with an explicit seller business-age claim.',
+        explanation:'Registration dates describe the registered domain, not the age or credibility of the business.',
+        provenance:{sourceUrl:rdap.source,observedAt:rdap.retrievedAt,method:'Explicit public RDAP lookup'},
         observedValue:[
+          `registered domain ${rdap.domain}`,
           rdap.registeredAt ? `registered ${rdap.registeredAt.slice(0,10)}` : undefined,
           rdap.registrar ? `registrar ${rdap.registrar}` : undefined,
         ].filter(Boolean).join(' • ') || 'RDAP record retrieved',
@@ -733,9 +732,7 @@ checkDomain?.addEventListener('click',async()=>{
       lastReport=next;
       renderReport(next);
       try{ await saveObservation(next); }catch{}
-      status.textContent=contradictions.length
-        ? 'The age of this website doesn’t line up with what the seller says. Check the receipts.'
-        : 'The website age doesn’t contradict the seller’s story.';
+      status.textContent='Domain registration information retrieved. It does not establish the business’s age.';
   }catch(error){
     status.textContent=error instanceof Error ? error.message : String(error);
   }
@@ -958,8 +955,7 @@ revokeOptionalAccess?.addEventListener('click',()=>{
       const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
       if(origins.length) await chrome.permissions.remove({origins});
       await setAutoContentRegistration(false);
-      const settings=await loadFeatureSettings();
-      await saveFeatureSettings({...settings,autoProtection:false});
+      await updateFeatureSettings({autoProtection:false});
       if(autoProtection) autoProtection.checked=false;
       status.textContent=origins.length
         ? 'Extra site access removed.'

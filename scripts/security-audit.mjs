@@ -56,10 +56,11 @@ for(const permission of ['cookies','history','webRequest','webRequestBlocking','
 if(!/script-src 'self'/.test(config)) failures.push('wxt.config.ts: self-only extension CSP missing');
 
 const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
-if(Object.keys(pkg.dependencies ?? {}).length) failures.push('package.json: runtime dependencies must be explicitly reviewed; baseline is zero');
+if(JSON.stringify(pkg.dependencies ?? {})!==JSON.stringify({tldts:'7.4.18'})) failures.push('package.json: dependency graph differs from reviewed tldts 7.4.18 baseline');
+if(!fs.existsSync('brain/decisions/20261009-001-runtime-reconciliation.md') || !fs.existsSync('public/THIRD-PARTY-NOTICES.txt')) failures.push('Domain parser review or license notice missing');
 
 if(failures.length){
   console.error('DropShredder security audit failed:\n'+failures.map(item=>' - '+item).join('\n'));
   process.exit(1);
 }
-console.log(`Security audit passed: ${runtimeFiles.length} runtime files, reviewed permission baseline, zero runtime dependencies.`);
+console.log(`Security audit passed: ${runtimeFiles.length} runtime files, reviewed permission baseline, pinned reviewed local domain parser.`);

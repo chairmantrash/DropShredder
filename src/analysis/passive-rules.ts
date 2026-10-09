@@ -15,6 +15,7 @@ const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–)\s*(?:1[5-9]|2\d|3\d)\s+(
 export function runPassiveRules(product: ProductSnapshot, pageText: string): EvidenceSignal[] {
   const out: EvidenceSignal[]=[...marketplacePolicyEvidence(product),...certificationClaimEvidence(product),...focusedSafetyEvidence(product)];
 
+  const contextualCount=out.length;
   for (const signal of product.pageSignals) {
     if (signal.startsWith('platform:')) {
       out.push({
@@ -84,5 +85,5 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     });
   }
 
-  return out;
+  return out.map((item,index)=>index<contextualCount || item.provenance?item:{...item,provenance:{sourceUrl:product.url,observedAt:product.capturedAt,method:`Local rule analysis of ${product.extraction?.method || 'product metadata and bounded page text'}`}});
 }

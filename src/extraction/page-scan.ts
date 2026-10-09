@@ -42,6 +42,8 @@ export function extractPageScan():PageScanResult {
           const record=value as Record<string,unknown>;
           jsonNodes.push(record);
           if (Array.isArray(record['@graph'])) walk(record['@graph'],depth+1);
+          if(record.hasVariant) walk(record.hasVariant,depth+1);
+          if(record.mainEntity) walk(record.mainEntity,depth+1);
         };
         let jsonScripts=0;
         for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts) && jsonScripts<MAX_JSON_SCRIPTS;i++){
@@ -52,10 +54,31 @@ export function extractPageScan():PageScanResult {
           if(input.length>MAX_JSON_BYTES) continue;
           try { walk(JSON.parse(input)); } catch {}
         }
-        const product=jsonNodes.find(node=>{
-          const t=node['@type'];
-          return t==='Product' || (Array.isArray(t) && t.includes('Product'));
-        });
+        // Bind seller-authored metadata to the current product before comparing it.
+        const types=(node:Record<string,unknown>)=>Array.isArray(node['@type'])?node['@type']:[node['@type']];
+        const products=jsonNodes.filter(node=>types(node).includes('Product'));
+        const normalizeUrl=(value:unknown):string|undefined=>{
+          if(typeof value!=='string' || value.length>2048) return undefined;
+          try{
+            const url=new URL(value,location.href);
+            if(url.origin!==location.origin || !/^https?:$/.test(url.protocol)) return undefined;
+            url.hash='';
+            for(const key of [...url.searchParams.keys()]) if(/^(?:utm_.+|gclid|fbclid)$/i.test(key)) url.searchParams.delete(key);
+            url.searchParams.sort();
+            return url.href;
+          }catch{return undefined;}
+        };
+        const currentUrl=normalizeUrl(location.href);
+        const ownUrls=(node:Record<string,unknown>)=>(node.url!==undefined?[node.url]:[node['@id']]).map(normalizeUrl).filter(Boolean);
+        const named=(v:unknown)=>typeof v==='string'?v.normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim():'';
+        const visibleTitle=bounded(document.querySelector('h1')?.textContent||undefined,500);
+        const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
+        let product:Record<string,unknown>|undefined=exact.length===1?exact[0]:undefined;
+        // A canonical parent cannot choose between variants, nor override a variant URL.
+        if(!product && !exact.length && products.length===1){
+          const only=products[0]!, urls=ownUrls(only);
+          if(!Array.from(new URL(location.href).searchParams.keys()).some(key=>/^(?:variant|sku|color|colour|size)$/i.test(key)) && !urls.length && visibleTitle && named(only.name)===named(visibleTitle)) product=only;
+        }
         const asRecord=(v:unknown):Record<string,unknown>|undefined =>
           v && typeof v==='object' && !Array.isArray(v) ? v as Record<string,unknown> : undefined;
         const first=(v:unknown):string|undefined=>{
@@ -63,11 +86,12 @@ export function extractPageScan():PageScanResult {
           if (Array.isArray(v)) return bounded(v.find(x=>typeof x==='string') as string|undefined,4000);
           return undefined;
         };
-        const offer=asRecord(Array.isArray(product?.offers)?product?.offers[0]:product?.offers);
+        const offers=(Array.isArray(product?.offers)?product.offers:[product?.offers]).map(asRecord).filter((v):v is Record<string,unknown>=>Boolean(v));
+        const currentOffers=offers.filter(node=>ownUrls(node).includes(currentUrl));
+        const offer=currentOffers.length===1?currentOffers[0]:offers.length===1 && (!ownUrls(offers[0]!).length || ownUrls(offers[0]!).includes(currentUrl))?offers[0]:undefined;
         const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
-        const aggregateNode=asRecord(product?.aggregateRating)
-          ?? asRecord(jsonNodes.find(node=>Boolean(node.aggregateRating))?.aggregateRating);
+        const aggregateNode=asRecord(product?.aggregateRating);
         const hostedRating=Number(aggregateNode?.ratingValue) || undefined;
         const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
         const imageValue=product?.image;
@@ -216,9 +240,9 @@ export function extractPageScan():PageScanResult {
             url:location.href,
             domain:location.hostname,
             canonicalUrl:canonical,
-            title:first(product?.name) || meta('meta[property="og:title"]') || document.title?.trim() || undefined,
+            title:first(product?.name) || visibleTitle || meta('meta[property="og:title"]') || document.title?.trim() || undefined,
             description:first(product?.description) || meta('meta[property="og:description"]') || meta('meta[name="description"]'),
-            price:Number(offer?.price) || undefined,
+            price:offer && ((typeof offer.price==='number' && Number.isFinite(offer.price) && offer.price>=0) || (typeof offer.price==='string' && /^\d+(?:\.\d+)?$/.test(offer.price.trim())))?Number(offer.price):undefined,
             currency:first(offer?.priceCurrency),
             brand:first(brand?.name ?? product?.brand),
             seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
@@ -226,7 +250,7 @@ export function extractPageScan():PageScanResult {
             asin:amazonAsin,
             mpn:first(product?.mpn),
             gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
-            imageUrls:[...new Set([...structuredImages,...pageImages])].slice(0,30),
+            imageUrls:[...new Set(structuredImages.length?structuredImages:[meta('meta[property="og:image"]')].filter((v):v is string=>Boolean(v)))].slice(0,30),
             jsonLdProductCount:jsonNodes.filter(node=>{
               const t=node['@type'];
               return t==='Product' || (Array.isArray(t) && t.includes('Product'));
@@ -235,6 +259,8 @@ export function extractPageScan():PageScanResult {
             shippingText:shippingMatch?.[0],
             claims:[],
             specifications,
+            variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
+            extraction:{method:product?'current-product JSON-LD':'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer)},
             pageSignals:[
               ...(('Shopify' in window || scriptSources.some(src=>src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
                 ? ['platform:shopify'] : []),
@@ -268,6 +294,8 @@ export function extractPageScan():PageScanResult {
             rating: hostedRating,
             reviewCount: hostedReviewCount,
             source:'Store-hosted structured reviews',
+            scope:'product',
+            subjectId:first(product?.gtin ?? product?.gtin13 ?? product?.mpn ?? product?.sku) || currentUrl,
           } : undefined,
           scriptSources,
           htmlSignature:(()=>{

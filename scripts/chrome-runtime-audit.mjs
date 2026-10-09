@@ -50,10 +50,11 @@ requireMatch(image,/credentials:'omit'/,'image fetch must omit credentials');
 requireMatch(image,/AbortSignal\.timeout\(8000\)/,'image fetch timeout missing');
 requireMatch(image,/MAX_IMAGE_BYTES=15_000_000/,'image byte bound missing');
 
-requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\['https:\/\/rdap\.org\/\*'\]\}\)/,'RDAP must request host access directly from the click');
-forbid(rdap,/await chrome\.permissions\.contains/,'RDAP permissions must not await a preflight before request');
+requireMatch(rdap,/chrome\.permissions\.request\(\{origins:\[origin\]\}\)/,'RDAP must request host access directly from the click');
+requireMatch(rdap,/if\(!\(await permission\)\)/,'RDAP must await consent before cache access');
+requireMatch(rdap,/redirect:'error'/,'RDAP must not follow unapproved redirects');
 requireMatch(rdap,/response\.body\.getReader\(\)/,'RDAP data must be stream-limited');
-requireMatch(rdap,/const permission=ensureRdapPermission\(\)/,'RDAP must request permission before async cache reads');
+requireMatch(rdap,/const permission=ensureRdapPermission\(origin\)/,'RDAP must request permission before async cache reads');
 requireMatch(rdap,/AbortSignal\.timeout\(5000\)/,'RDAP timeout missing');
 requireMatch(rdap,/chrome\.storage\.session/,'RDAP cache must use extension session storage');
 

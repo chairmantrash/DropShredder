@@ -12,12 +12,12 @@
     "zip": "wxt zip",
     "prepare": "wxt prepare",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/**/*.test.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
     "release:audit": "node scripts/release-audit.mjs",
     "audit:security": "node scripts/security-audit.mjs",
     "audit:performance": "node scripts/performance-audit.mjs",
-    "lint:data": "tsx scripts/data-lint.ts",
-    "audit:professional": "tsx scripts/professionalism-audit.ts",
+    "lint:data": "node --import tsx scripts/data-lint.ts",
+    "audit:professional": "node --import tsx scripts/professionalism-audit.ts",
     "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs"
   },
   "devDependencies": {
@@ -27,5 +27,8 @@
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "wxt": "0.21.4"
+  },
+  "dependencies": {
+    "tldts": "7.4.18"
   }
 }

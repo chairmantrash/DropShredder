@@ -1,3 +1,4 @@
+import { applyFeaturePatch, loadFeatureSettings } from '../src/settings/features';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/deep-hunt/search-urls';
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../src/runtime/auto-registration';
 
@@ -12,7 +13,14 @@ function createMenus():void {
 }
 
 async function openMany(urls:Record<string,string>,maxTabs=8):Promise<void> {
-  const unique=[...new Set(Object.values(urls))].slice(0,maxTabs);
+  const all=[...new Set(Object.values(urls))];
+  if(all.length>maxTabs){
+    const key=`ds-search-${crypto.randomUUID()}`;
+    await chrome.storage.session.set({[key]:urls});
+    await chrome.tabs.create({url:chrome.runtime.getURL(`search.html#${key}`),active:true});
+    return;
+  }
+  const unique=all;
   for(const url of unique) {
     await chrome.tabs.create({url,active:false});
   }
@@ -33,8 +41,7 @@ export default defineBackground(() => {
   // Registrations live outside the disposable MV3 service-worker process.
   // Reconcile permissions/settings after install and browser startup.
   const syncAuto=async():Promise<void>=>{
-    const stored=await chrome.storage.local.get('dropshredder-feature-settings-v1');
-    const enabled=Boolean(stored['dropshredder-feature-settings-v1']?.autoProtection);
+    const enabled=(await loadFeatureSettings()).autoProtection;
     const authorized=enabled && await chrome.permissions.contains({origins:[AUTO_PATTERN]});
     await setAutoContentRegistration(authorized);
   };
@@ -47,11 +54,15 @@ export default defineBackground(() => {
     if(!message || typeof message!=='object') return;
     const record=message as Record<string,unknown>;
     if(record.version!==1) return;
+    if(record.type==='DS_FEATURE_PATCH'){
+      if(sender.id!==chrome.runtime.id || sender.tab || !sender.url?.startsWith(chrome.runtime.getURL(''))) return;
+      void applyFeaturePatch(record.patch).then(settings=>sendResponse({ok:true,settings})).catch(()=>sendResponse({ok:false}));
+      return true;
+    }
     if(record.type==='DS_AUTO_STATUS'){
       if(!sender.tab?.id || sender.frameId!==0 || !sender.url?.startsWith('https://')) return;
       void (async()=>{
-        const stored=await chrome.storage.local.get('dropshredder-feature-settings-v1');
-        const enabled=Boolean(stored['dropshredder-feature-settings-v1']?.autoProtection)
+        const enabled=(await loadFeatureSettings()).autoProtection
           && await chrome.permissions.contains({origins:[AUTO_PATTERN]});
         sendResponse({enabled});
       })().catch(()=>sendResponse({enabled:false}));

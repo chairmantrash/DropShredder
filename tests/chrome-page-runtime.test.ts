@@ -70,14 +70,14 @@ test('RDAP asks permission before any async cache lookup and does not fetch afte
   const calls:string[]=[];
   install({
     permissions:{request:({origins}:{origins:string[]})=>{
-      assert.deepEqual(origins,['https://rdap.org/*']);
+      assert.deepEqual(origins,['https://rdap.verisign.com/*']);
       calls.push('request');
       return Promise.resolve(false);
     }},
     storage:{session:{get:async()=>{calls.push('cache');return {};}}},
   });
   assert.equal(await lookupDomainRdap('example.com'),undefined);
-  assert.deepEqual(calls,['request','cache']);
+  assert.deepEqual(calls,['request']);
 });
 
 test('image acquisition starts exact-host access request without async preflight',async()=>{

@@ -2,6 +2,8 @@ export interface ProductSnapshot {
   url: string;
   domain: string;
   canonicalUrl?: string;
+  variantId?: string;
+  extraction?: {method:string;structuredIdentityResolved:boolean;offerResolved:boolean};
   title?: string;
   description?: string;
   price?: number;

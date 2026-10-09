@@ -46,9 +46,9 @@ test('runtime source contains no remote-code or credential-access primitives',as
   }
 });
 
-test('package ships no runtime dependency graph',async()=>{
+test('runtime domain parser is pinned and limited to its reviewed dependency',async()=>{
   const pkg=JSON.parse(await fs.readFile('package.json','utf8')) as {dependencies?:Record<string,string>};
-  assert.deepEqual(pkg.dependencies ?? {},{});
+  assert.deepEqual(pkg.dependencies,{tldts:'7.4.18'});
 });
 
 test('privacy policy discloses local history and no credential collection',async()=>{
