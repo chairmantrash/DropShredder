@@ -29,7 +29,7 @@ test('Etsy and Walmart require individual listing paths inside a product card',(
     ['https://www.walmart.com/search?q=bag','https://www.walmart.com/ip/bag/12345678?athbdg=secret'],
   ]){
     const {document}=parseHTML('<html><body><article><a href="'+href+'">Product</a></article><nav><a href="'+href+'">Navigation</a></nav></body></html>');
-    assert.equal(attachMarketplaceBadges(document as unknown as Document,url),1);
+    assert.equal(attachMarketplaceBadges(document as unknown as Document,url??''),1);
     const link=document.querySelector('[data-dropshredder-result-label]')!;
     assert.ok(!(link.getAttribute('href')??'').includes('secret'));
   }
