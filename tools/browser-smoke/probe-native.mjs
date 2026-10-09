@@ -125,7 +125,15 @@ async function attach(targetId) {
     if(headed){execFileSync('xdotool',['key','ctrl+a']);execFileSync('xdotool',['type','--clearmodifiers','--delay','1',String(value)]);}
     else {await call('Input.dispatchKeyEvent',{type:'keyDown',key:'a',code:'KeyA',modifiers:2,windowsVirtualKeyCode:65});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'a',code:'KeyA',windowsVirtualKeyCode:65});await call('Input.insertText',{text:String(value)});}
   };
-  return { evaluate, click, key, screenshot, type };
+  const setFiles=async(selector,files)=>{
+    const {root}=await call('DOM.getDocument',{depth:1});
+    const {nodeId}=await call('DOM.querySelector',{nodeId:root.nodeId,selector});
+    if(!nodeId) throw new Error('File input missing: '+selector);
+    // Public CDP chooser plumbing against the real native-panel WebContents,
+    // not a test of the operating system's graphical file-picker dialog.
+    await call('DOM.setFileInputFiles',{files,nodeId});
+  };
+  return { evaluate, click, key, screenshot, type, setFiles };
 }
 async function openNative() {
   context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: !headed,
@@ -394,6 +402,25 @@ try {
         await native.click('#list-clear');
         await until(()=>native.evaluate("document.querySelector('#saved-lists').textContent === 'No user-added lists.'"),'signed feed removed');
         feedMode='unsigned';return {scope:'Ephemeral owned Ed25519 test key; genuine native panel controls; no real issuer authenticated',signedVersion:4};
+      });
+      await test('N27','Chrome file-input dispatch previews JSON without saving and rejects malformed local files',async()=>{
+        feedMode='unsigned';feedVersion=5;
+        const valid=path.join(output,'owned-local-reference.json');
+        const broken=path.join(output,'owned-invalid-reference.json');
+        await fs.writeFile(valid,JSON.stringify(fixtureList()));
+        await fs.writeFile(broken,'{ invalid JSON, no executable content }');
+        await native.setFiles('#list-file',[valid]);
+        await until(()=>native.evaluate("!document.querySelector('#list-save').disabled"),'native local-file preview');
+        assert.match(await native.evaluate("document.querySelector('#list-preview').textContent"),/Owned browser reference/);
+        const before=await worker.evaluate(async()=>(await chrome.storage.local.get('dropshredder-user-lists-v1'))['dropshredder-user-lists-v1']?.lists?.length??0);
+        assert.equal(before,0,'Selecting a local file cannot activate it');
+        await native.setFiles('#list-file',[broken]);
+        await until(()=>native.evaluate("document.querySelector('#list-status').textContent.includes('JSON')"),'malformed file refusal');
+        assert.equal(await native.evaluate("document.querySelector('#list-save').disabled"),true);
+        const after=await worker.evaluate(async()=>(await chrome.storage.local.get('dropshredder-user-lists-v1'))['dropshredder-user-lists-v1']?.lists?.length??0);
+        assert.equal(after,0);
+        await native.screenshot('native-local-file-preview-refusal.png');
+        return {scope:'Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested'};
       });
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
