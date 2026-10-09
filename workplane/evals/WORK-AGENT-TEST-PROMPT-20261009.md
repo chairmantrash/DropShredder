@@ -3,7 +3,7 @@
 **Role:** Independent **QA / browser-testing agent only**. You are NOT the engineering or repair agent.
 
 **Project:** `chairmantrash/DropShredder`
-**Candidate:** feature/runtime-reconciliation-20261009; exact source commit in the supplied BUILD-INFO.json. Never merge or publish.
+**Candidate:** unified draft PR #9, branch `release/security-performance-hardening`; inspect the exact production source/manifest in the supplied BUILD-INFO.json. PR #11 was already integrated into this release candidate. Never merge to `main` or publish.
 **Exact extension build:** commit `[sourceCommit from BUILD-INFO.json]`, Chrome MV3, extension version `0.2.0`, Chrome **133 or newer**.
 **Test subject:** the attached `DropShredder-Unpacked/` directory (unzip the supplied Work Agent QA bundle first). The `manifest.json` must be immediately inside this directory.
 
