@@ -59,6 +59,7 @@ async function openContext() {
 async function panel(ctx, id) {
   const page = await ctx.newPage();
   await page.goto(`chrome-extension://${id}/sidepanel.html`);
+  await page.bringToFront();
   await page.waitForFunction(() => document.querySelector('#build-meta')?.textContent.includes('0.2.0'));
   return page;
 }
@@ -102,7 +103,7 @@ try {
     assert.equal(await currentPage.locator('#export-report').isEnabled(), false);
     assert.equal(await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })), false);
     assert.deepEqual(await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), []);
-    await currentPage.screenshot({ path: path.join(output, 'panel-initial.png'), fullPage: true });
+    await currentPage.screenshot({ path: path.join(output, 'panel-initial.png'), fullPage: true, timeout: 30000, animations: 'disabled' });
   });
   await test('R04', 'Unsupported extension-page scan returns without a report', async () => {
     await currentPage.bringToFront();
@@ -140,7 +141,7 @@ try {
     await currentPage.locator('#display-density').selectOption('compact');
     await currentPage.locator('#display-scale').selectOption('130');
     await currentPage.waitForFunction(() => document.documentElement.dataset.textScale === '130');
-    await currentPage.screenshot({ path: path.join(output, 'panel-light-large.png'), fullPage: true });
+    await currentPage.screenshot({ path: path.join(output, 'panel-light-large.png'), fullPage: true, timeout: 30000, animations: 'disabled' });
     await currentPage.reload();
     await currentPage.waitForFunction(() => document.documentElement.dataset.theme === 'light');
     assert.equal(await currentPage.locator('html').getAttribute('data-text-scale'), '130');
@@ -172,7 +173,7 @@ try {
     assert.equal(await currentPage.locator('#auto-source-hunt').isChecked(), true);
     assert.equal(await currentPage.locator('#prefer-made-in-usa').isChecked(), true);
     assert.equal(await currentPage.locator('#auto-protection').isChecked(), false);
-    await currentPage.screenshot({ path: path.join(output, 'panel-after-restart.png'), fullPage: true });
+    await currentPage.screenshot({ path: path.join(output, 'panel-after-restart.png'), fullPage: true, timeout: 30000, animations: 'disabled' });
   });
   await test('R09', 'No uncaught panel errors or unsolicited extension network requests', async () => {
     assert.deepEqual(errors, []);
@@ -182,7 +183,10 @@ try {
 } catch (error) {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED';
   report.failure = String(error);
-  if (currentPage) await currentPage.screenshot({ path: path.join(output, 'failure.png'), fullPage: true }).catch(() => {});
+  if (currentPage) {
+    await currentPage.bringToFront().catch(() => {});
+    await currentPage.screenshot({ path: path.join(output, 'failure.png'), fullPage: true, timeout: 30000 }).catch(() => {});
+  }
   console.error(error);
   process.exitCode = 1;
 } finally {
