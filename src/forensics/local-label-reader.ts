@@ -108,7 +108,7 @@ export async function readLocalLabel(file:File,signal:AbortSignal):Promise<Local
         signal.throwIfAborted();
         // Never mask a broken packaged OCR engine as "unavailable" after the
         // user explicitly requested fallback recognition.
-        throw new Error('Offline OCR failed: '+(error instanceof Error?error.message.slice(0,240):'Unknown engine error.'));
+        throw new Error('Offline OCR failed: '+String(error&&typeof error==='object'&&'message' in error?(error as {message:unknown}).message:error).slice(0,240));
       }
     }
     return collectLocalLabelResults(barcodes.values.map(v=>v.rawValue),lines,
