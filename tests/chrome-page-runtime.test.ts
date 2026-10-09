@@ -110,6 +110,6 @@ test('explicit pressed option swatches invalidate same-URL product selection sta
     assert.ok(!updated.includes('DONT-READ'));
   }finally{
     if(previous) g.document=previous;
-    else delete g.document;
+    else delete (g as unknown as {document?:Document}).document;
   }
 });
