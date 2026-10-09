@@ -62,16 +62,34 @@ async function attach(targetId) {
     if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails)); return result.result.value;
   };
   const click = async selector => {
+    await until(() => evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)})?.getBoundingClientRect().width)`), `visible control ${selector}`);
     await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); if(!el || el.disabled) throw new Error('Missing/disabled control'); el.scrollIntoView({block:'center'}); })()`);
     // Chrome Views forwards native-panel input through compositor hit testing.
     // Let the scroll settle before computing/clicking a visible, unobscured hit.
     await pause(200);
     const point = await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); const r=el.getBoundingClientRect(); if(!r.width || !r.height) throw new Error('Control is hidden'); const x=r.x+r.width/2,y=r.y+r.height/2,hit=document.elementFromPoint(x,y); if(!hit || !(hit===el || el.contains(hit))) throw new Error('Control is obscured'); return {x,y}; })()`);
+    if (headed) {
+      const { targetInfo } = await (await context.newCDPSession(page)).send('Target.getTargetInfo');
+      const { bounds } = await browserCdp.send('Browser.getWindowForTarget', { targetId: targetInfo.targetId });
+      const viewport = await evaluate('({width:innerWidth,height:innerHeight})');
+      // The controlled Chrome 156/Xvfb screenshots show the panel WebContents
+      // inset 9px from the window right edge and 8px from its bottom edge.
+      // Require the observed window size; changed geometry fails explicitly.
+      assert.equal(bounds.width, 1288); assert.equal(bounds.height, 850);
+      assert.ok(viewport.width > 0 && viewport.height > 0);
+      const desktop = { x: bounds.left + bounds.width - viewport.width - 9 + point.x,
+        y: bounds.top + bounds.height - viewport.height - 8 + point.y };
+      report.nativeDesktopGeometry = { bounds, viewport, insetRight: 9, insetBottom: 8 };
+      execFileSync('xdotool', ['mousemove', String(Math.round(desktop.x)), String(Math.round(desktop.y)), 'click', '1']);
+      await pause(150);
+      return;
+    }
     await call('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point });
     await call('Input.dispatchMouseEvent', { type: 'mousePressed', ...point, button: 'left', clickCount: 1 });
     await call('Input.dispatchMouseEvent', { type: 'mouseReleased', ...point, button: 'left', clickCount: 1 });
   };
   const key = async (key, code, windowsVirtualKeyCode) => {
+    if (headed) { execFileSync('xdotool', ['key', key === 'Enter' ? 'Return' : key]); return; }
     await call('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode });
     await call('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode });
   };
