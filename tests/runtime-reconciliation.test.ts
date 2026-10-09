@@ -88,7 +88,7 @@ test('schema-free visible currency prices are detected without mistaking arbitra
   const {doc,href}=page({},undefined,'Call for details');assert.equal(collectShoppingPageFacts(doc,href).visiblePrice,false);
 });
 test('malformed persisted settings cannot enable monitoring',()=>{
-  assert.deepEqual(normalizeFeatureSettings({autoProtection:'false',autoSourceHunt:1,preferMadeInUSA:[],toneMode:'anything',unknown:true}),{autoProtection:false,autoSourceHunt:false,preferMadeInUSA:false,toneMode:'professional'});
+  assert.deepEqual(normalizeFeatureSettings({autoProtection:'false',autoSourceHunt:1,preferMadeInUSA:[],toneMode:'anything',unknown:true}),{autoProtection:false,autoSourceHunt:false,weeklyIntelligenceUpdates:false,preferMadeInUSA:false,toneMode:'professional'});
 });
 test('concurrent setting patches preserve unrelated changes and recover after a failed write',async()=>{
   const g=globalThis as unknown as {chrome:unknown},old=g.chrome;let stored:Record<string,unknown>={};let fail=false;
