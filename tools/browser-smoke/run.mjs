@@ -6,7 +6,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
-// This exercises the unchanged production package in a real headed Chromium.
+// This exercises the unchanged production package in a real Chromium runtime.
 // It never mocks chrome.*, writes extension storage, or grants host permission.
 const root = path.resolve(import.meta.dirname, '../..');
 const extension = path.join(root, '.output/chrome-mv3');
@@ -115,28 +115,17 @@ try {
     assert.equal(await currentPage.locator('#raw').textContent(), '');
     return { visibleStatus: status };
   });
-  await test('R05', 'Two panel documents preserve independent feature changes', async () => {
-    const second = await panel(context, extensionId);
-    await currentPage.bringToFront();
+  await test('R05', 'Regular-tab settings requests fail closed outside the native panel', async () => {
     await currentPage.locator('.settings-panel > summary').click();
-    await second.bringToFront();
-    await second.locator('.settings-panel > summary').click();
-    // Chromium has one native pointer/focus per window: simultaneous input in
-    // different tabs can misdirect clicks. Use rapid real UI actions in order,
-    // without waiting for settings writes between the independent patches.
-    await currentPage.bringToFront();
-    await currentPage.locator('#auto-source-hunt').check();
-    await second.bringToFront();
-    await second.locator('#prefer-made-in-usa').check();
-    await second.locator('#tone-mode').selectOption('nuclear');
-    await savedFeatures(second, { autoSourceHunt: true, preferMadeInUSA: true, toneMode: 'nuclear', autoProtection: false });
-    await currentPage.reload();
-    await currentPage.waitForFunction(() => document.querySelector('#tone-mode').value === 'nuclear');
-    assert.equal(await currentPage.locator('#auto-source-hunt').isChecked(), true);
-    assert.equal(await currentPage.locator('#prefer-made-in-usa').isChecked(), true);
-    await second.close();
+    await currentPage.locator('#auto-source-hunt').click();
+    await currentPage.waitForFunction(() => document.querySelector('#status').textContent === 'Could not save source-hunt setting.');
+    assert.equal(await currentPage.locator('#auto-source-hunt').isChecked(), false);
+    const saved = await worker.evaluate(async () => (await chrome.storage.local.get('dropshredder-feature-settings-v1'))['dropshredder-feature-settings-v1']);
+    assert.notEqual(saved?.autoSourceHunt, true);
+    return { scope: 'Regular tab is rejected by sender.tab guard; native-side-panel saving is exercised by the separate native diagnostic.' };
   });
   await test('R06', 'Display controls apply, persist, and reset without erasing features', async () => {
+    const before = await worker.evaluate(() => chrome.storage.local.get('dropshredder-feature-settings-v1'));
     await currentPage.locator('.appearance-panel > summary').click();
     await currentPage.locator('#display-theme').selectOption('light');
     await currentPage.locator('#display-density').selectOption('compact');
@@ -150,7 +139,8 @@ try {
     await currentPage.locator('.appearance-panel > summary').click();
     await currentPage.locator('#reset-display').click();
     assert.equal(await currentPage.locator('html').getAttribute('data-theme'), 'dark');
-    await savedFeatures(currentPage, { autoSourceHunt: true, preferMadeInUSA: true, toneMode: 'nuclear' });
+    await currentPage.waitForFunction(async () => (await chrome.storage.local.get('dropshredder-display-v1'))['dropshredder-display-v1']?.theme === 'dark');
+    assert.deepEqual(await worker.evaluate(() => chrome.storage.local.get('dropshredder-feature-settings-v1')), before);
   });
   await test('R07', 'No optional content script or network investigation before consent', async () => {
     const owned = await context.newPage();
@@ -166,13 +156,14 @@ try {
     await owned.close();
     return { scope: 'Owned fulfilled HTTPS fixture; no post-grant detection or live merchant claim' };
   });
-  await test('R08', 'Feature preferences survive a full browser/profile restart', async () => {
+  await test('R08', 'Display reset and default feature state survive full profile restart', async () => {
     await context.close();
     context = await openContext();
     currentPage = await panel(context, extensionId);
-    await currentPage.waitForFunction(() => document.querySelector('#tone-mode').value === 'nuclear');
-    assert.equal(await currentPage.locator('#auto-source-hunt').isChecked(), true);
-    assert.equal(await currentPage.locator('#prefer-made-in-usa').isChecked(), true);
+    await currentPage.waitForFunction(() => document.documentElement.dataset.theme === 'dark');
+    assert.equal(await currentPage.locator('#tone-mode').inputValue(), 'professional');
+    assert.equal(await currentPage.locator('#auto-source-hunt').isChecked(), false);
+    assert.equal(await currentPage.locator('#prefer-made-in-usa').isChecked(), false);
     assert.equal(await currentPage.locator('#auto-protection').isChecked(), false);
     await currentPage.screenshot({ path: path.join(output, 'panel-after-restart.png'), fullPage: true, timeout: 30000, animations: 'disabled' });
   });
