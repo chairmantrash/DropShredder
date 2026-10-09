@@ -67,6 +67,8 @@ async function panel(ctx, id) {
 try {
   await test('R01', 'Packaged bytes match the reviewed candidate', async () => {
     const candidate = JSON.parse(await fs.readFile(path.join(import.meta.dirname, 'candidate-build-info.json'), 'utf8'));
+    const actual=await fs.readdir(extension,{recursive:true,withFileTypes:true});
+    assert.deepEqual(actual.filter(e=>e.isFile()).map(e=>path.relative(extension,path.join(e.parentPath,e.name))).sort(),candidate.buildFiles.map(e=>e.path).sort(),'Unexpected or missing package files');
     for (const file of candidate.buildFiles) {
       const bytes = await fs.readFile(path.join(extension, file.path));
       assert.equal(bytes.length, file.bytes, file.path);

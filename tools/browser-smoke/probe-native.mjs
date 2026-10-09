@@ -166,6 +166,8 @@ const features = () => worker.evaluate(async () => (await chrome.storage.local.g
 try {
   await test('N01', 'Reviewed package mounts in the native side panel without host grants', async () => {
     const candidate = JSON.parse(await fs.readFile(path.join(import.meta.dirname, 'candidate-build-info.json'), 'utf8'));
+    const actual=await fs.readdir(ext,{recursive:true,withFileTypes:true});
+    assert.deepEqual(actual.filter(e=>e.isFile()).map(e=>path.relative(ext,path.join(e.parentPath,e.name))).sort(),candidate.buildFiles.map(e=>e.path).sort(),'Unexpected or missing package files');
     for (const file of candidate.buildFiles) {
       const bytes = await fs.readFile(path.join(ext, file.path)); assert.equal(bytes.length, file.bytes, file.path);
       assert.equal(createHash('sha256').update(bytes).digest('hex'), file.sha256, file.path);
@@ -413,7 +415,7 @@ try {
 } catch (error) {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED'; report.failure = String(error);
   report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent})").catch(() => undefined);
-  report.savedFeaturesAtFailure = await features().catch(() => undefined);
+  report.savedFeaturesAtFailure = worker ? await features().catch(() => undefined) : undefined;
   await native?.screenshot('native-failure.png').catch(() => {}); console.error(error); process.exitCode = 1;
 } finally {
   report.finishedAt = new Date().toISOString(); report.testsPassed = report.tests.filter(t => t.status === 'PASS').length;
