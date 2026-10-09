@@ -2,6 +2,7 @@ import {detectShoppingPage} from '../src/detection/page-facts';
 import {extractPageScan} from '../src/extraction/page-scan';
 import {runPassiveRules} from '../src/analysis/passive-rules';
 import {calculateVerdict} from '../src/analysis/evidence-engine';
+import { attachMarketplaceBadges, marketplaceResultsKind, removeMarketplaceBadges } from '../src/ui/marketplace-badges';
 
 type QuickFinding={title:string; severity:string};
 
@@ -107,13 +108,19 @@ export default defineContentScript({
       if(id!==sequence || document.visibilityState!=='visible') return;
       const url=location.href;
       const classification=detectShoppingPage(document,url);
-      if(!classification.showToast) return;
+      const resultsKind=marketplaceResultsKind(url);
+      if(!classification.showToast && !resultsKind) return;
       const key=location.href;
-      if(notified.has(key)) return;
+      if(notified.has(key) && !resultsKind) return;
       // Reconfirm opt-in after user disables auto protection in an already-injected tab.
       try{
         const reply=await chrome.runtime.sendMessage({type:'DS_AUTO_STATUS',version:1}) as {enabled?:boolean}|undefined;
-        if(!reply?.enabled || id!==sequence || location.href!==url) return;
+        if(!reply?.enabled){removeMarketplaceBadges(document);return;}
+        if(id!==sequence || location.href!==url) return;
+        if(resultsKind){
+          attachMarketplaceBadges(document,url);
+          return;
+        }
       }catch{return;}
       // No external requests. Only previously guarded, bounded, packaged forensic logic.
       let scan:ReturnType<typeof extractPageScan>;
@@ -151,7 +158,7 @@ export default defineContentScript({
     window.setTimeout(()=>{if(!toast) schedule(300);},3600);
     window.addEventListener('popstate',()=>schedule(500));
     window.addEventListener('hashchange',()=>schedule(500));
-    window.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible') schedule(550);else remove();});
+    window.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible') schedule(550);else{remove();removeMarketplaceBadges(document);}});
     // Chrome Navigation API catches history.pushState on SPAs without monkey-patching page scripts.
     const nav=(window as Window & {navigation?:EventTarget}).navigation;
     nav?.addEventListener('navigatesuccess',()=>schedule(500));
