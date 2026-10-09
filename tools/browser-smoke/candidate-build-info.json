@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "b4da32b2636ecd8d13cc42a4beae71a7ac8abf99",
-  "sourceTree": "21f7607e74c74aa22fc27a19fb9af2c6302fd4b2",
+  "sourceCommit": "cb82ea8a06f987a529dc8fc70914aa36eb6c5377",
+  "sourceTree": "b801669d0251cc280186354f6fd615b4d11f1ea7",
   "version": "0.2.0",
-  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus.",
+  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus. Amazon product-title identity excludes unrelated accessibility headings.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -30,14 +30,14 @@
       "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
     },
     {
-      "path": "chunks/sidepanel-DzLVx-o3.js",
-      "bytes": 463777,
-      "sha256": "934eb4b851d9af4a0d5c587cce525f524f243820627df3a864cba9ae48ed0dd7"
+      "path": "chunks/sidepanel-uXOLcpaU.js",
+      "bytes": 464074,
+      "sha256": "8e5e1275636d912abc24aa3847f06378632f40d7af49c260dcd0816201701a96"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 41272,
-      "sha256": "8d30ce7a6584c2282998d1dfe8ce3e76068cd5c96eda712eb815f5b39b675685"
+      "bytes": 41569,
+      "sha256": "a6f75e0c21123a2fbbc0dd4131df28b1217c1684e03e8ac69216acfcbe16f75e"
     },
     {
       "path": "icon/128.png",
@@ -72,7 +72,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 12456,
-      "sha256": "a57c86643cd7d8338774dfd627d7a5c7c1cda30f3b826e0f481056534bc5f41b"
+      "sha256": "6247b34cd9f17c3b7aa7e63251b815beea41677e8601d788d1ee79d90ffe06d1"
     }
   ]
 }

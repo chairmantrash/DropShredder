@@ -330,6 +330,11 @@ try {
         await page.locator('input[value=red]').check();const before=downloads.length;await native.click('#export-report');await pause(500);assert.equal(downloads.length,before);assert.equal(await native.evaluate("document.querySelector('#raw').textContent"),'');
         const red=await scanFixture(),next=JSON.parse(red.raw);assert.equal(next.product.sku,'RED-MUG');assert.equal(next.product.price,10);
       });
+      await test('N25','Amazon extraction ignores an earlier accessibility heading in favor of the product title',async()=>{
+        const url='https://www.amazon.com/dp/B000000001';await context.route(url,route=>route.fulfill({contentType:'text/html',body:'<h1>Product summary presents key product information Keyboard shortcut shift alt D</h1><span id="productTitle">Noctua fixture cooling fan</span><p>$20.00</p><button>Add to cart</button>'}));
+        const state=await scanFixture(url),data=JSON.parse(state.raw);assert.equal(data.product.title,'Noctua fixture cooling fan');assert.equal(data.product.asin,'B000000001');
+        await scanFixture('https://fixture.example.com/products/mug');return {scope:'Owned intercepted Amazon page; live store remains separately observed'};
+      });
       await test('N21','RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational',async()=>{
         await scanFixture('https://fixture.example.com/products/mug');providerMode='delay';const start=providerRequests.length;await native.click('#check-domain');await until(()=>providerRequests.length>start,'RDAP explicit request');await native.click('#cancel-domain');await pause(2100);
         assert.equal(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).evidence.some(x=>x.id==='RDAP_DOMAIN_OBSERVATION'),false);
