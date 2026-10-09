@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updatedAt": "2026-10-06",
+  "version": 2,
+  "updatedAt": "2026-10-09",
   "weeklyMaintenanceRequired": true,
   "registries": [
     {
@@ -104,6 +104,45 @@
         "rate limits",
         "false-positive semantics"
       ]
+    },
+    {
+      "id": "rdap-bootstrap",
+      "path": "intelligence/rdap-bootstrap.json",
+      "checks": [
+        "Compare services/publication to https://data.iana.org/rdap/dns.json",
+        "IANA protocol-registry CC0 scope and source attribution",
+        "HTTPS-only endpoint guard; no inheritance of registry response rights"
+      ]
+    },
+    {
+      "id": "focused-safety-records",
+      "path": "src/intelligence/focused-safety.ts",
+      "checks": [
+        "Re-open exact official notices and expansions",
+        "Verify model/serial/lot/color/retailer scope and exclusions",
+        "No completeness/safety claim; minimal facts not third-party notice photos"
+      ]
+    },
+    {
+      "id": "redistribution-provenance",
+      "path": "DATA-PROVENANCE.md",
+      "checks": [
+        "Match all shipped third-party material to licenses/notices",
+        "Record authored summaries versus copied datasets",
+        "Keep research-only candidates out of runtime until reviewed"
+      ]
     }
-  ]
+  ],
+  "responsibility": {
+    "accountable": "Repository owner chairmantrash",
+    "researchLane": "DS-021 reviewer assigned by owner",
+    "releaseLane": "Release agent retains rights/source/package/disclosure evidence",
+    "automationInstalled": false,
+    "cadenceDays": 7,
+    "nextMaintenanceDue": "2026-10-13",
+    "builtInUpdate": "Reviewed repository change and new extension package; alarms do not update packaged tables",
+    "signedUserFeedUpdate": "Separate opt-in; preauthorized host and pinned key; per-source seven-day throttle",
+    "onMissedReview": "Record overdue state; expire/quarantine evidence where supported; never advance observed dates automatically",
+    "rightsPolicy": "Source links and signed license fields are not proof of redistribution rights; unknown imports stay research-only"
+  }
 }

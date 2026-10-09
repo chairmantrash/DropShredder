@@ -1,0 +1,66 @@
+{
+  "task": "DS-038",
+  "date": "2026-10-09",
+  "status": "PREPARATION COMPLETE; RELEASE HELD FOR ACCEPTANCE/AUTHORIZATION",
+  "baseline": "e29c55f9933994afe87dbb616ca32ff6141592b0",
+  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "runtimeChanged": false,
+  "scope": [
+    "queue/task result reconciliation",
+    "store feature/permissions copy",
+    "privacy handling and dashboard worksheet",
+    "source/rights/attribution/freshness review",
+    "maintenance responsibility and limitations",
+    "genuine current UI distribution materials",
+    "release operator checklist"
+  ],
+  "verification": {
+    "node": "22.20.0 (data lint/security); metadata-only inventory generation used host Node24",
+    "dataLint": "PASS:37 sources/14 platforms/18 networks/5 signature metadata/8 APIs",
+    "security": "PASS:93 runtime files; existing permissions unchanged",
+    "package": "All34 file paths/bytes/hashes match DS-037 candidate; no runtime/public/package dependency changes",
+    "images": "6 PNGs valid RGB, expected dimensions/hashes; 4 UI crops byte-identical to actual source pixel crops; generation deterministic; all6 visually reviewed;128 icon matches runtime and has16px padding",
+    "diffCheck": "PASS",
+    "fullTests": "No local core/browser rerun for documentation/assets-only edits.267core and38browser DS-037 evidence retained with exact source/harness provenance; hosted CI will run for this branch update."
+  },
+  "provenance": {
+    "ledger": "intelligence/PROVENANCE-20261009.json",
+    "iana": "IANA protocol registry CC0 verified; live dns.json services equal bundled; publication2026-09-30T23:00:03Z",
+    "gleif": "Official Access Service data CC0 terms inspected; no endorsement",
+    "notices": "Pinned runtime MIT/MPL/Apache notices retained; official factual safety subset not third-party photographs",
+    "freshness": "18 merchant network records within recorded windows; no dates advanced by this document edit;31 source-index rows plus platform/tool tables have missing row-level dates documented as neutral-metadata limitations",
+    "unresolvedRights": "No blanket license asserted for linked review/images/spy-tool data, arbitrary publisher declarations or research/model candidates; excluded from public runtime corpus until reviewed",
+    "projectLicense": "No root source-reuse license selected; no relabeling as MIT/open-source licensed"
+  },
+  "assets": {
+    "manifest": "store-assets/ASSET-MANIFEST.json",
+    "sourceRun": 37979165995,
+    "oldPromo": "Existing2846byte PNG failed view/Pillow decode; replaced by valid authored vector PNG",
+    "selectedCaptureReview": "Recovered genuine Chrome156 archive; excluded blank pre-paint frame, nuclear UI and live merchant imagery; selected frames reviewed. Prior DS-037 archive403 limitation now resolved for selected capture extraction, not an all-frame QA claim"
+  },
+  "release": {
+    "pr": 9,
+    "draft": true,
+    "mainMerge": false,
+    "tagCreated": false,
+    "storeAccountAccessed": false,
+    "submitted": false,
+    "published": false,
+    "pending": [
+      "independent release acceptance",
+      "explicit owner release authorization",
+      "publisher account/item/contact/distribution settings at release time"
+    ],
+    "sourceReuseLicense": "Owner may choose a project license separately; free executable distribution does not imply source sublicensing"
+  },
+  "references": [
+    "https://developer.chrome.com/docs/webstore/images",
+    "https://developer.chrome.com/docs/webstore/cws-dashboard-privacy",
+    "https://developer.chrome.com/docs/webstore/user_data",
+    "https://www.iana.org/help/licensing-terms",
+    "https://www.iana.org/protocols",
+    "https://data.iana.org/rdap/dns.json",
+    "https://www.gleif.org/en/meta/lei-data-terms-of-use",
+    "https://www.cpsc.gov/content/Clearance-Procedures-For-Providing-Information-To-The-Public-Directives"
+  ]
+}

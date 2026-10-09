@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-10-09",
+  "task": "DS-038",
+  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "testedHarness": "fe22e27b44424273d4b465d8af5cafbc40178bdb",
+  "browser": "Chrome/156.0.8078.4",
+  "sourceRun": "https://github.com/chairmantrash/DropShredder/actions/runs/37979165995",
+  "artifacts": {
+    "native": 11640001725,
+    "packaged": 11640825265
+  },
+  "exclusions": [
+    "Initial headed capture was blank before compositor paint; excluded.",
+    "Nuclear-tone scan/toast captures excluded from customer-facing assets.",
+    "Live merchant logos/images and full public-key textarea not used."
+  ],
+  "rendering": {
+    "script": "scripts/prepare-store-assets.py",
+    "Pillow": "12.3.0",
+    "font": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "fontSha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280",
+    "boldSha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+  },
+  "sources": "Unmodified source capture files retained under store-assets/captures; SVG layout files are also included.",
+  "images": [
+    {
+      "path": "store-assets/screenshots/01-check-control-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0741eab0bafbdc9fb5f5cf37eee19c6ac41088c230d2022f13f7fcf6df6216ee",
+      "source": "store-assets/captures/professional-panel.png",
+      "sourceSha256": "487f73a553505c06e78601ef058b68e3b7ff08d86a34c20b79cb560feb05e271",
+      "sourceDimensions": [
+        420,
+        1622
+      ],
+      "crop": [
+        0,
+        0,
+        420,
+        716
+      ],
+      "transforms": "Crop only, no UI pixel edits or scaling; external brand/caption composition; PNG encoded RGB",
+      "scope": "Real Chromium extension document in a tab; default professional tone, not native toolbar opening or merchant accuracy."
+    },
+    {
+      "path": "store-assets/screenshots/02-local-label-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "c5b588d4898a33b28246aa535639e01364936e9a8f008175088f0784ebd23bbd",
+      "source": "store-assets/captures/native-local-label.png",
+      "sourceSha256": "c8be5e68a7111f1bd610997feffcb56bbb8f21c0b12c1ce29b8edfe40fc516ae",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        929,
+        136,
+        1289,
+        852
+      ],
+      "transforms": "Crop only, no UI pixel edits or scaling; external brand/caption composition; PNG encoded RGB",
+      "scope": "Actual native bundled OCR on synthetic PRODUCT 12345 image. Native barcode support unavailable in this browser; no real-photo accuracy claim."
+    },
+    {
+      "path": "store-assets/screenshots/03-private-history-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "fa0f97ae5e5fd34b3152c59a756d2836cfa6cf3f43dd7252f978ce55af0449a6",
+      "source": "store-assets/captures/native-private-history.png",
+      "sourceSha256": "258d7f05aed1af36381402b95437a2b722bc80a9e1f575c7ecb1fae628692e01",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        929,
+        136,
+        1289,
+        852
+      ],
+      "transforms": "Crop only, no UI pixel edits or scaling; external brand/caption composition; PNG encoded RGB",
+      "scope": "Actual native privacy controls after revoking fixture host access. Disabled stale export is visible."
+    },
+    {
+      "path": "store-assets/screenshots/04-signed-reference-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0ebf86120e1a808cceb9894dbcfdc1758fff817435aeca3974430bb1525bf074",
+      "source": "store-assets/captures/native-signed-reference.png",
+      "sourceSha256": "344b2c969d14e1eb92c5171895aaa03f7e55366ce158d3ec8a2b1ef5b8642e11",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        929,
+        152,
+        1289,
+        780
+      ],
+      "transforms": "Crop only, no UI pixel edits or scaling; external brand/caption composition; PNG encoded RGB",
+      "scope": "Actual native signed-feed onboarding with ephemeral owned fixture key; no external issuer authenticated or elapsed-week scheduler test."
+    },
+    {
+      "path": "store-assets/promo-440x280.png",
+      "width": 440,
+      "height": 280,
+      "sha256": "fec5e4b660b3158e831b4c94cb4b46292581dadead005e64ee56df3e88d07263",
+      "scope": "Project-authored vector brand composition; no accuracy/Google endorsement claims"
+    },
+    {
+      "path": "store-assets/marquee-1400x560.png",
+      "width": 1400,
+      "height": 560,
+      "sha256": "37a3810bdd2b1126549e5b0f93031ed857b39f6288b2b8d98a49171b7ced9cee",
+      "scope": "Project-authored vector brand composition; no accuracy/Google endorsement claims"
+    }
+  ],
+  "icon": {
+    "path": "store-assets/icon-128.png",
+    "sha256": "5d71bfcb0a26b95861a0abd6d4476b0617d14a56545e6f30f39d16cd5dd2f934",
+    "source": "public/icon/128.png",
+    "transforms": "Exact copy; no runtime icon change"
+  }
+}

@@ -1,116 +1,54 @@
-# Chrome Web Store release notes
+# DropShredder — Chrome Web Store submission copy
+Prepared October 9,2026; candidate 0.2.0. Not submitted. See RELEASE-CHECKLIST.md for acceptance and authorization.
 
-## Single purpose
+## Name
+DropShredder
 
-DropShredder helps shoppers investigate whether online products are mass-resold/dropshipped, deceptively presented, associated with relevant merchant-risk patterns, or part of a commodity clone network. It offers optional automatic quick checks on real product listings, followed by a user-click full evidence report. Automatic checks require explicit Chrome HTTPS site-access consent.
+## Short description (under132characters)
+Investigate product provenance, seller claims and resale clues with local evidence and optional public research tools.
 
-## Short description
+## Detailed description (customer copy)
+Know more about the product before you buy. DropShredder helps investigate public product listings, sourcing clues and seller claims, then shows the evidence and its limits in Chrome's side panel.
 
-Local-first commerce forensics for product provenance, clone listings, merchant transparency, review anomalies and fulfillment claims.
+Click CHECK THIS PRODUCT for a bounded local investigation. Enable automatic product alerts only if you want them: Chrome asks for HTTPS site access first. Qualifying individual listings can show a brief evidence toast; account, login, checkout and ordinary browsing stay outside the scan. Supported Amazon, Etsy and Walmart search pages can show neutral links to the original product page, without accusations or background supplier searches.
 
-## Core capabilities
+Investigate product identifiers, reused images/descriptions, local price/scarcity chronology, storefront/platform clues, source references, merchant relationships, visible review patterns, shipping contradictions and return friction. Shared platforms, importing, country of manufacture and similar pictures do not establish dishonesty. Missing evidence produces UNKNOWN, not a clean bill of health or a severe accusation.
 
-- product identifiers and technical/specification fingerprints;
-- local product/image chronology;
-- bundled supplier and marketplace source registry;
-- Amazon commodity clone clustering;
-- known merchant/sister-store network intelligence with freshness controls;
-- commerce-platform detection;
-- fake-scarcity and price-history contradictions;
-- review-provenance checks;
-- optional public reputation checks;
-- domain-age chronology;
-- return-policy friction checks;
-- explicit tracking/fulfillment contradiction checks;
-- supply-chain origin profile;
-- optional Made in USA preference notice;
-- image fingerprinting and user-triggered reverse-image/source searches;
-- evidence-gated warnings that prefer UNKNOWN over unsupported severe accusations.
+Optional tools let you:
+- open chosen supplier, reputation or reverse-image search destinations;
+- retrieve public domain-registration chronology and an exact legal-entity identifier;
+- search official recall candidates and confirm model/serial/lot applicability at the official source;
+- read a selected product-label image locally using packaged English OCR, with native barcode detection where Chrome supports it;
+- preview and save small source-linked reference lists; separately opt into weekly updates for already-authorized signed feeds with independently pinned publisher keys;
+- perform a one-shot Brave supplier search with your own temporary API key. A provider plan may cost money; this optional tool is never required for the standard extension.
 
-Platform choice, country, nationality, payment processor, CDN/provider, or ordinary third-party fulfillment never establish wrongdoing by themselves.
+Standard DropShredder functions are free and require no DropShredder account, subscription or mandatory backend. Scan history/settings remain on your device. There is no developer telemetry, browsing-history upload, advertising or sale of data. Optional chosen providers receive the necessary public query/resource and network metadata; their own policies apply. The temporary Brave key is sent only to Brave for the chosen request and is never stored or exported. Label photos are not uploaded or saved.
 
-## Privacy and security summary
+Use the side panel to delete scan history, remove user lists/keys, revoke extra site access, choose search destinations and customize display/tone. Professional is the default; optional stronger wording never changes evidence thresholds.
 
-DropShredder is local-first:
-- no DropShredder account required;
-- no telemetry;
-- no ads or behavioral profiling;
-- no mandatory backend;
-- no paid API dependency;
-- no remote browsing-history upload;
-- no remotely hosted executable code;
-- no cookie/history/debugger/webRequest/native-messaging permissions;
-- no password, payment-card, authentication-token or form-field collection.
+Limitations: extraction and source coverage vary by site; some pages block access. This is an investigation assistant, not a fraud verdict service, comprehensive recall database, manufacturer authenticator or product safety/quality guarantee. OCR text and search hits are unverified leads. A signed feed authenticates bytes against a chosen key, not its publisher's claims or rights.
 
-The scanner refuses known account, login, checkout, payment, billing, address-book and order-history pages. It also refuses any page where credential or payment-card fields are detected.
+## Submission details
+Single purpose and all permission/data-category fields: STORE-PRIVACY-DECLARATIONS.md.
+Current policy: PRIVACY.md; verify its public URL after the accepted release merge.
+Support: https://github.com/chairmantrash/DropShredder ; security handling: SECURITY.md.
+No invented publisher email or Store item ID.
 
-Local observations:
-- remove URL query strings and fragments before persistence;
-- are limited to 180 days;
-- are limited to 2,000 observations globally;
-- are limited to 120 observations for one product identity;
-- can be erased from the side panel at any time.
+## Permissions / performance disclosures
+Required: scripting, storage, contextMenus, sidePanel, alarms. Optional HTTPS origins are requested only for chosen functions; automatic detection needs separate broad-host consent. Alarms run optional preauthorized signed-feed checks, not continuous page crawling. No history/cookies/debugger/webRequest/native-messaging permission.
 
-Optional site permissions can also be revoked from the side panel.
+No remotely hosted executable code: OCR JavaScript, worker, WASM and English data are packaged and loaded lazily. Inert signed JSON is reference data. Passive product checks perform no external research. Full page text/collections, same-site enrichment, network requests, local history and tab fan-out are bounded. The exact candidate is 34 files / 47,483,460bytes unpacked; standard browsing does not load OCR engines. Tested Chrome156 evidence does not prove every supported version's behavior.
 
-## Performance model
+## Assets
+- store-assets/icon-128.png
+- store-assets/promo-440x280.png
+- store-assets/marquee-1400x560.png (optional)
+- store-assets/screenshots/01-check-control-1280x800.png
+- store-assets/screenshots/02-local-label-1280x800.png
+- store-assets/screenshots/03-private-history-1280x800.png
+- store-assets/screenshots/04-signed-reference-1280x800.png
 
-There is no continuous crawling, timer-based page sampling, or always-on background forensic worker. One lightweight DOM/structured-data gate runs on explicitly permitted sites when the automatic-alert option is enabled; ordinary browsing receives no toast.
-
-With automatic alerts enabled by the user, a small classifier runs only on permitted HTTPS documents, abstains on non-product or sensitive pages, and performs a bounded local quick scan only on qualifying product listings. No passive third-party lookups occur; the full forensic and public-source check remains user-triggered. Work is bounded:
-- page text capped at 100,000 characters in full scan;
-- product/catalog/review/DOM collections capped;
-- same-site policy/about/contact enrichment limited to four pages and run concurrently;
-- public reputation/RDAP checks cached and time-bounded;
-- image fingerprinting is explicit, HTTPS-only, size-limited, and downsampled before perceptual hashing;
-- source-hunt searches are grouped and tab fan-out is capped;
-- local IndexedDB reads use bounded indexes/cursors rather than full-database loads.
-
-## Language tone
-
-Professional is the default public tone. Users may choose Aggressive or Nuclear wording. Tone changes **only presentation text**; evidence, confidence, thresholds and verdict logic are identical in all modes.
-
-## Permission justifications
-
-### scripting
-Runs manual bounded extraction after user action, and registers an opt-in ISOLATED-world product detector after consent.
-
-### storage
-Stores local settings, short-lived public-lookup caches and bounded local observation history.
-
-### contextMenus
-Provides explicit product/image/store investigation shortcuts.
-
-### sidePanel
-Hosts the primary DropShredder interface.
-
-### optional HTTPS host access
-Supports narrow manual site/image/public lookup requests. Automatic alerts require a distinct opt-in to broad HTTPS host access; they perform local on-page screening only, not remote research. The user can disable auto alerts and revoke optional access.
-
-## Data-use declaration
-
-- No sale of user data.
-- No advertising or behavioral profiling.
-- No credential or payment-data collection.
-- No DropShredder cloud copy of browsing/investigation history.
-- Public commerce content is processed only for the user-requested consumer-protection functionality.
-- User-triggered external lookups disclose only the query/resource required by that third-party service.
-
-Privacy policy: publish the repository's `PRIVACY.md` URL in the Chrome Web Store developer dashboard.
+Sources/transforms/fixture limits: store-assets/ASSET-MANIFEST.json. These use actual current Chrome pixels; composed captions are outside the UI and explicitly distinguish owned demo content. Do not substitute a mockup or pretend to authenticate a live merchant.
 
 ## Release gates
-
-Before Chrome publication:
-- TypeScript typecheck passes.
-- Security source audit passes.
-- Intelligence/data lint passes.
-- Full regression suite passes.
-- MV3 production build passes.
-- Chrome Store ZIP builds.
-- Generated manifest/bundle audit passes.
-- Performance budget audit passes.
-- CodeQL passes.
-- 16/32/48/128 raster icons are included.
-- Privacy-practices form exactly matches `PRIVACY.md`.
-- Browser smoke-test matrix is completed on the target Chrome release.
-- Store screenshots and promotional assets reflect the actual current UI.
+All existing automated gates plus independent acceptance must pass for the accepted runtime bytes. Ensure current privacy form matches implementation, notices retained, support/policy URL accessible, screenshots current and owner authorization recorded before merge/submission/publication. See RELEASE-CHECKLIST.md; this preparation does not publish the extension.

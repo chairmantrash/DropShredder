@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-09",
+  "reviewTask": "DS-038",
+  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "runtimeUnchanged": true,
+  "scope": "Integrity/lineage/rights-source review; not all linked merchants recrawled or universal legal clearance",
+  "data": [
+    {
+      "id": "source-index",
+      "count": 37,
+      "datedNotes": 6,
+      "missingRowDates": [
+        "aliexpress",
+        "alibaba",
+        "1688",
+        "temu",
+        "dhgate",
+        "banggood",
+        "taobao",
+        "tmall",
+        "made-in-china",
+        "globalsources",
+        "lightinthebox",
+        "shein",
+        "amazon",
+        "ebay",
+        "walmart",
+        "cjdropshipping",
+        "zendrop",
+        "spocket",
+        "doba",
+        "salehoo",
+        "wholesale2b",
+        "modalyst",
+        "syncee",
+        "autods",
+        "inventory-source",
+        "dropified",
+        "dsers",
+        "printify",
+        "printful",
+        "gelato",
+        "tapstitch"
+      ],
+      "origin": "Project-authored source names/URLs/brief notes; no external catalogue copied"
+    },
+    {
+      "id": "commerce-platforms",
+      "count": 14,
+      "missingRowDates": [
+        "shopify",
+        "woocommerce",
+        "bigcommerce",
+        "magento",
+        "shopline",
+        "shoplazza",
+        "shopbase",
+        "wix",
+        "ecwid",
+        "squarespace",
+        "prestashop",
+        "opencart",
+        "shift4shop",
+        "salesforce-commerce-cloud"
+      ],
+      "origin": "Project-authored neutral technical patterns/source links"
+    },
+    {
+      "id": "tool-signatures",
+      "count": 4,
+      "missingRowDates": [
+        "review-loox",
+        "review-judgeme",
+        "tracking-track123",
+        "tracking-parcelpanel"
+      ],
+      "origin": "Neutral technical selectors/URLs; no provider code included"
+    },
+    {
+      "id": "merchant-networks",
+      "count": 18,
+      "rows": [
+        {
+          "id": "harempants-suredesign",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 120,
+          "fresh": true,
+          "expiresAt": "2027-02-03T00:00:00.000Z",
+          "sources": [
+            "https://www.linkedin.com/showcase/harem-pants/",
+            "https://www.suredesigntshirts.com/pages/contact-us",
+            "https://www.suredesigntshirts.com/pages/track-shipment",
+            "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+            "https://www.harempants.com/products/triangles-womens-harem-pants-in-black"
+          ],
+          "consumerRiskSources": []
+        },
+        {
+          "id": "chicv-current-fashion-network",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 60,
+          "fresh": true,
+          "expiresAt": "2026-12-05T00:00:00.000Z",
+          "sources": [
+            "https://www.justfashionnow.com/information/terms-and-conditions",
+            "https://noracora.com/information/terms",
+            "https://www.stylewe.com/information/terms",
+            "https://trademarks.justia.com/owners/chicv-international-holding-limited-4889837/"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/ny/jamaica/profile/online-retailer/justfashionnow-0121-87157959",
+            "https://www.bbb.org/us/ny/new-york/profile/online-retailer/noracora-0121-87155743/complaints",
+            "https://www.trustpilot.com/review/chicv.com"
+          ]
+        },
+        {
+          "id": "hongkong-yuzhen-fashion-network",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 60,
+          "fresh": true,
+          "expiresAt": "2026-12-05T00:00:00.000Z",
+          "sources": [
+            "https://www.modlily.com/who-is-modlily-a343.html",
+            "https://www.modlily.com/terms-of-use-a92.html",
+            "https://m.rotita.com/OagTL/terms-of-use-a92.html",
+            "https://www.rosewe.com/en/about-us-a35.html",
+            "https://www.modlily.com/Underwire/flow.php"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/az/scottsdale/profile/online-shopping/molylily-1126-1000074082/complaints",
+            "https://www.bbb.org/us/nj/cedar-grove/profile/online-retailer/rotita-0221-90189365",
+            "https://www.trustpilot.com/review/rosewe.com"
+          ]
+        },
+        {
+          "id": "lightinthebox-brand-matrix",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 90,
+          "fresh": true,
+          "expiresAt": "2027-01-04T00:00:00.000Z",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1523836/000110465926038848/litb-20251231x20f.htm",
+            "https://www.sec.gov/Archives/edgar/data/1523836/000110465926038848/litb-20251231xex8d1.htm",
+            "https://ir.ador.com/"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/or/portland/profile/online-retailer/light-in-the-box-1296-22959195/complaints"
+          ]
+        },
+        {
+          "id": "gearlaunch-white-label-network",
+          "status": "watch",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 45,
+          "fresh": true,
+          "expiresAt": "2026-11-20T00:00:00.000Z",
+          "sources": [
+            "https://www.gearlaunch.com/platform",
+            "https://www.bbb.org/us/ut/salt-lake-city/profile/online-retailer/gear-launch-inc-1126-90026613",
+            "https://alwaysnavy.com/"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/ut/salt-lake-city/profile/online-retailer/gear-launch-inc-1126-90026613/complaints"
+          ]
+        },
+        {
+          "id": "fullbeauty-brand-family",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 120,
+          "fresh": true,
+          "expiresAt": "2027-02-03T00:00:00.000Z",
+          "sources": [
+            "https://www.fbbrands.com/company-profile/our-brands/",
+            "https://www.brylanehome.com/c/privacy-policy.html",
+            "https://www.jessicalondon.com/c/our-brands.html"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/in/indianapolis/profile/catalog-shopping/full-beauty-brands-0382-1809/complaints"
+          ]
+        },
+        {
+          "id": "techstyle-membership-fashion",
+          "status": "watch",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 60,
+          "fresh": true,
+          "expiresAt": "2026-12-05T00:00:00.000Z",
+          "sources": [
+            "https://www.linkedin.com/posts/fableticsos_weve-converted-the-techstyle-fashion-group-activity-6844301556020584448-gAfo",
+            "https://downloads.regulations.gov/USTR-2019-0004-1797/attachment_1.pdf"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/ca/el-segundo/profile/retail-sportswear/fabletics-1216-413899/complaints"
+          ]
+        },
+        {
+          "id": "debenhams-fashion-group",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 90,
+          "fresh": true,
+          "expiresAt": "2027-01-04T00:00:00.000Z",
+          "sources": [
+            "https://www.debenhamsgroup.com/files/results-centre/2025/debenhams-group-annual-report-2025.pdf"
+          ],
+          "consumerRiskSources": [
+            "https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation"
+          ]
+        },
+        {
+          "id": "wayfair-brand-family",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 120,
+          "fresh": true,
+          "expiresAt": "2027-02-03T00:00:00.000Z",
+          "sources": [
+            "https://www.wayfair.com/about.php",
+            "https://www.wayfair.com/sca/professional/ideas-and-advice/interior-design/a-brand-for-every-project-joss-main-allmodern-birch-lane-T23876"
+          ],
+          "consumerRiskSources": []
+        },
+        {
+          "id": "qvc-group-retail-family",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 120,
+          "fresh": true,
+          "expiresAt": "2027-02-03T00:00:00.000Z",
+          "sources": [
+            "https://www.qvcgrp.com/newsroom/pressrelease/qurate-retail-officially-becomes-qvc-group/",
+            "https://www.qvcgrp.com/cornerstonebrands/"
+          ],
+          "consumerRiskSources": []
+        },
+        {
+          "id": "global-fashion-group",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 120,
+          "fresh": true,
+          "expiresAt": "2027-02-03T00:00:00.000Z",
+          "sources": [
+            "https://global-fashion-group.com/about/"
+          ],
+          "consumerRiskSources": []
+        },
+        {
+          "id": "shein-romwe",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 60,
+          "fresh": true,
+          "expiresAt": "2026-12-05T00:00:00.000Z",
+          "sources": [
+            "https://kr.shein.com/store/home?store_code=3143873479"
+          ],
+          "consumerRiskSources": [
+            "https://digital-strategy.ec.europa.eu/en/news/commission-requests-information-shein-illegal-products-and-its-recommender-system"
+          ]
+        },
+        {
+          "id": "pdd-temu-pinduoduo",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 90,
+          "fresh": true,
+          "expiresAt": "2027-01-04T00:00:00.000Z",
+          "sources": [
+            "https://investor.pddholdings.com/financial-information/annual-reports"
+          ],
+          "consumerRiskSources": [
+            "https://digital-strategy.ec.europa.eu/en/news/commission-fines-temu-eu200-million-breaching-digital-services-act"
+          ]
+        },
+        {
+          "id": "alibaba-commerce-ecosystem",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 90,
+          "fresh": true,
+          "expiresAt": "2027-01-04T00:00:00.000Z",
+          "sources": [
+            "https://www.alibabagroup.com/en-US/about-alibaba-businesses"
+          ],
+          "consumerRiskSources": [
+            "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+          ]
+        },
+        {
+          "id": "aosom-house-brands",
+          "status": "active",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 90,
+          "fresh": true,
+          "expiresAt": "2027-01-04T00:00:00.000Z",
+          "sources": [
+            "https://www.aosom.com/page/about-us-home"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/or/wilsonville/profile/online-retailer/aosom-llc-1296-22529970/complaints"
+          ]
+        },
+        {
+          "id": "viralstyle-platform",
+          "status": "watch",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 45,
+          "fresh": true,
+          "expiresAt": "2026-11-20T00:00:00.000Z",
+          "sources": [
+            "https://viralstyle.com/"
+          ],
+          "consumerRiskSources": [
+            "https://www.bbb.org/us/fl/tampa/profile/online-retailer/viral-style-llc-0653-90212358/complaints"
+          ]
+        },
+        {
+          "id": "spring-teespring-platform",
+          "status": "watch",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 45,
+          "fresh": true,
+          "expiresAt": "2026-11-20T00:00:00.000Z",
+          "sources": [
+            "https://www.teespring.com/"
+          ],
+          "consumerRiskSources": [
+            "https://www.trustpilot.com/review/www.teespring.com"
+          ]
+        },
+        {
+          "id": "moteefe-platform",
+          "status": "watch",
+          "reviewedAt": "2026-10-06",
+          "freshnessDays": 45,
+          "fresh": true,
+          "expiresAt": "2026-11-20T00:00:00.000Z",
+          "sources": [
+            "https://www.moteefe.com/"
+          ],
+          "consumerRiskSources": [
+            "https://www.trustpilot.com/review/moteefe.com"
+          ]
+        }
+      ],
+      "origin": "Authored affiliation summaries and domain-specific complaint pointers; no scraped review database"
+    },
+    {
+      "id": "focused-safety",
+      "count": 6,
+      "noticeIds": [
+        "25-466",
+        "26-199"
+      ],
+      "sourceReviewedAt": "2026-10-08",
+      "officialNoticesOpenedAt": "2026-10-09",
+      "origin": "Minimal official identity/scope facts; no photographs; incomplete subset"
+    },
+    {
+      "id": "rdap-bootstrap",
+      "publication": "2026-09-30T23:00:03Z",
+      "liveServicesMatch": true,
+      "license": "CC0-1.0",
+      "licenseSource": "https://www.iana.org/help/licensing-terms",
+      "registryListed": "https://www.iana.org/protocols",
+      "source": "https://data.iana.org/rdap/dns.json"
+    },
+    {
+      "id": "technology-signatures",
+      "runtimeDisposition": "Supporting registry metadata; actual detector is separate TS",
+      "rows": [
+        {
+          "id": "track123-widget-script",
+          "lastVerified": "2026-10-06",
+          "status": "active",
+          "sourceUrl": "https://intercom.help/track123/en/articles/13303463-create-a-track123-tracking-page-in-a-headless-shopify-store",
+          "defaultWeight": 0
+        },
+        {
+          "id": "track123-widget-selector",
+          "lastVerified": "2026-10-06",
+          "status": "active",
+          "sourceUrl": "https://intercom.help/track123/en/articles/13303463-create-a-track123-tracking-page-in-a-headless-shopify-store",
+          "defaultWeight": 0
+        },
+        {
+          "id": "parcelpanel-tracking-script",
+          "lastVerified": "2026-10-06",
+          "status": "active",
+          "sourceUrl": "https://parcelpanel.com/",
+          "defaultWeight": 0
+        },
+        {
+          "id": "loox-widget-script",
+          "lastVerified": "2026-10-06",
+          "status": "active",
+          "sourceUrl": "https://apps.shopify.com/loox",
+          "defaultWeight": 0
+        },
+        {
+          "id": "judgeme-widget-selector",
+          "lastVerified": "2026-10-06",
+          "status": "active",
+          "sourceUrl": "https://apps.shopify.com/judgeme",
+          "defaultWeight": 0
+        }
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "id": "GLEIF",
+      "license": "CC0-1.0",
+      "source": "https://www.gleif.org/en/meta/lei-data-terms-of-use",
+      "scope": "Exact one-record API; no logos/endorsement/global dataset bundled"
+    },
+    {
+      "id": "registry-responses/reviews/search/images/Brave",
+      "license": "Provider-specific; no blanket redistribution permission verified",
+      "scope": "Chosen temporary lookup/manual destination, not redistributed corpus"
+    },
+    {
+      "id": "user-lists",
+      "license": "Publisher metadata unverified",
+      "scope": "Key verifies bytes, not rights or facts"
+    }
+  ],
+  "researchDisposition": "Unresolved commercial/model/tool terms remain research-only; not imported into runtime",
+  "projectSourceReuseLicense": "No root license selected; do not infer a new license",
+  "maintenance": "DATA-PROVENANCE.md / intelligence/REGISTRY-MAINTENANCE.json",
+  "files": [
+    {
+      "path": "src/intelligence/source-index.ts",
+      "sha256": "93f5e07eb3ad5eafa894787e8567fff96be77a3a33d509dd41a523b5a3baa166",
+      "bytes": 8477
+    },
+    {
+      "path": "src/intelligence/merchant-networks.ts",
+      "sha256": "ee3a5cffa5080705eac11533a382c377ca663e07c1b97b08ae8bcb4a2d567e28",
+      "bytes": 22420
+    },
+    {
+      "path": "src/intelligence/commerce-platforms.ts",
+      "sha256": "ed2069e0fda28ed28d7c9d6b9668526f2a8f4cd5f60fd6fea08329c78157db9f",
+      "bytes": 5249
+    },
+    {
+      "path": "src/intelligence/tool-signatures.ts",
+      "sha256": "f65c4aad9df399ec9a3af069822db5bfa0973ffec82723786b4cb784995ddb09",
+      "bytes": 2673
+    },
+    {
+      "path": "src/intelligence/focused-safety.ts",
+      "sha256": "f6eb59345bde9e8ab9d000d0f3e87fde102ef040e6591b9faad44ee32d2736b3",
+      "bytes": 3282
+    },
+    {
+      "path": "intelligence/rdap-bootstrap.json",
+      "sha256": "15e779a9ff0d9df7ccb9243ee7f6c41f774ac2b55843679c95bea872de354b4c",
+      "bytes": 32664
+    },
+    {
+      "path": "intelligence/technology-signatures.json",
+      "sha256": "cdb7a22f8cf7d95c940f386c9a0c8ee6a52fec58a2a5a2f96bcc274bc9eb6f2f",
+      "bytes": 2400
+    },
+    {
+      "path": "public/THIRD-PARTY-NOTICES.txt",
+      "sha256": "3540193ac79688fef6d062cfc607d0f9cc1ac80f05d8a02433d179551be344d1",
+      "bytes": 19620
+    },
+    {
+      "path": "public/ocr/PROVENANCE.txt",
+      "sha256": "5337b16032cb60ee34f6be33450b7cb841c8557799347d48599795f4042d214f",
+      "bytes": 633
+    }
+  ]
+}

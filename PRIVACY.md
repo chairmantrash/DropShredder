@@ -6,7 +6,7 @@ DropShredder is a local-first browser extension for investigating product proven
 
 ## Data DropShredder processes
 
-DropShredder has two modes: (1) manual full-page investigations on pages the user chooses; (2) optional automatic product alerts, enabled only after the user grants Chrome access to HTTPS sites. With automatic alerts on, a tiny local classifier checks permitted pages to identify individual product listings and runs a bounded local quick scan only when the page qualifies. Non-shopping, category/search, account and checkout pages show no alerts. A full scan and third-party research remain user-triggered. The scanner may process public commerce information visible on qualifying pages, including:
+DropShredder has two modes: (1) manual full-page investigations on pages the user chooses; (2) optional automatic product alerts, enabled only after the user grants Chrome access to HTTPS sites. With automatic alerts on, a tiny local classifier checks permitted pages to identify individual product listings and runs a bounded local quick scan only when the page qualifies. Non-shopping, category/search, account and checkout pages show no verdict alerts. Neutral links on supported marketplace searches are described below. A full scan and third-party research remain user-triggered; separately enabled signed reference-feed updates can run on their weekly schedule as disclosed below. The scanner may process public commerce information visible on qualifying pages, including:
 - page URL/domain;
 - product title, description, price and structured product metadata;
 - product identifiers and specifications;
@@ -45,7 +45,7 @@ Some optional actions require a public network request or opening a public searc
 - supplier/marketplace searches;
 - explicitly selected image fingerprint acquisition.
 
-The query/request is limited to what the selected feature needs, such as a merchant domain, product name, or public image URL. Network operations are time-bounded and use HTTPS.
+The query/request is limited to what the selected feature needs, such as a merchant domain, product name, or public image URL. Network operations are time-bounded and use HTTPS. Third-party servers also necessarily receive network metadata such as the connection IP address. Choosing a search opens that provider’s website, where its own cookies, sign-in state and privacy policy apply; DropShredder does not read those cookies.
 
 Auto Source Hunt uses DropShredder's bundled source registry and local observation history. It does not upload the user's browsing history to a DropShredder server.
 
