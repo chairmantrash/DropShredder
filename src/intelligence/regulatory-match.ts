@@ -6,12 +6,14 @@ export interface RegulatoryRecord {
   gtins?:string[];brand?:string;model?:string;recalledAt?:string;summary?:string;
   serials?:string[];
   serialRanges?:Array<{prefix:string;start:string;end:string}>;
+  lotNumbers?:string[];
+  lotRanges?:Array<{prefix:string;start:string;end:string}>;
   requiresOfficialSerialCheck?:boolean;
   requiredAttributes?:Record<string,string[]>;
   excludedModels?:string[];
 }
 export interface RegulatoryProduct {
-  gtin?:string;brand?:string;model?:string;title?:string;serial?:string;
+  gtin?:string;brand?:string;model?:string;title?:string;serial?:string;lot?:string;
   attributes?:Record<string,string>;
 }
 export interface RegulatoryMatch {
@@ -37,21 +39,26 @@ function scope(product:RegulatoryProduct,record:RegulatoryRecord):{coverage:Regu
     if(!value) unknown.push(key+' not observed');
     else if(!values.slice(0,100).some(expected=>id(expected)===id(value))) excluded.push(key+' outside notice scope');
   }
-  if(record.serials?.length || record.serialRanges?.length){
-    if(!product.serial) unknown.push('Serial number not observed');
-    else {
-      // Serial lookup is exact and case-sensitive; never infer OCR confusables or numeric coercion.
-      const serial=product.serial.trim();
-      const listed=record.serials?.slice(0,500).includes(serial);
-      const ranged=record.serialRanges?.slice(0,100).some(range=>{
-        const suffix=serial.startsWith(range.prefix)?serial.slice(range.prefix.length):'';
-        return /^\d+$/.test(suffix) && /^\d+$/.test(range.start) && /^\d+$/.test(range.end) &&
-          suffix.length===range.start.length && suffix.length===range.end.length &&
-          suffix>=range.start && suffix<=range.end;
-      });
-      if(!listed && !ranged) excluded.push('Serial number outside notice scope');
-    }
-  }
+  const inRange=(code:string,ranges:Array<{prefix:string;start:string;end:string}>)=>
+    ranges.slice(0,100).some(range=>{
+      // Fixed-width numeric suffix only. Never coerce zeroes away, expand a range,
+      // accept wildcard prefixes or infer visual/OCR lookalikes.
+      if(!range || typeof range.prefix!=='string' || typeof range.start!=='string' || typeof range.end!=='string') return false;
+      const suffix=code.startsWith(range.prefix)?code.slice(range.prefix.length):'';
+      return /^\d{1,30}$/.test(suffix) && /^\d{1,30}$/.test(range.start) && /^\d{1,30}$/.test(range.end) &&
+        suffix.length===range.start.length && suffix.length===range.end.length &&
+        range.start<=range.end && suffix>=range.start && suffix<=range.end;
+    });
+  const scopeCode=(code:string|undefined,listed:string[]|undefined,ranges:RegulatoryRecord['serialRanges'],label:string)=>{
+    if(!listed?.length && !ranges?.length) return;
+    if(!code || code.length>100){unknown.push(label+' not observed');return;}
+    // AND across separately specified lot/serial conditions is conservative.
+    // A positive notice cannot be asserted on a partially known product.
+    if(!listed?.slice(0,500).includes(code.trim()) && !inRange(code.trim(),ranges??[]))
+      excluded.push(label+' outside notice scope');
+  };
+  scopeCode(product.serial,record.serials,record.serialRanges,'Serial number');
+  scopeCode(product.lot,record.lotNumbers,record.lotRanges,'Lot number');
   if(record.requiresOfficialSerialCheck) unknown.push('Official serial verification required');
   reasons.push(...excluded,...unknown);
   return {coverage:excluded.length?'excluded':unknown.length?'unresolved':'matched',reasons};

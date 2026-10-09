@@ -54,6 +54,20 @@ test('same-URL ProductGroup uses explicit selected variant attributes and abstai
   assert.equal(scan({...group,hasVariant:[red,blue,{...blue,sku:'ambiguous'}]},base,control).product.price,undefined);
   assert.equal(scan(group,base,'<input type="radio" name="color" value="green" checked>').product.sku,undefined);
 });
+
+test('named pressed swatch controls identify one same-URL ProductGroup variant, never a generic CTA',()=>{
+  const url='https://shop.example/products/lamp';
+  const red={...product('Red lamp',url,10),color:'red'};
+  const blue={...product('Blue lamp',url,20),color:'blue'};
+  const group={'@type':'ProductGroup',name:'Target Lamp',url,hasVariant:[red,blue]};
+  const namedButton='<button type="button" data-option-name="color" data-option-value="blue" aria-pressed="true">Blue</button>';
+  const chosen=scan(group,url,namedButton);
+  assert.equal(chosen.product.sku,'Blue lamp');assert.equal(chosen.product.price,20);
+  assert.equal(scan(group,url,'<button aria-pressed="true" value="blue">Blue</button>').product.price,undefined);
+  assert.equal(scan(group,url,namedButton+'<button data-option-name="color" data-option-value="red" aria-pressed="true">Red</button>').product.price,undefined);
+  assert.equal(scan(group,url,'<button data-option-name="color" data-option-value="green" aria-pressed="true">Green</button>').product.price,undefined);
+});
+
 test('RDAP cancellation before consent prevents cache reads and network work',async()=>{
   const g=globalThis as unknown as {chrome:unknown},old=g.chrome;let resolve!:(v:boolean)=>void,reads=0;
   g.chrome={permissions:{request:()=>new Promise<boolean>(r=>{resolve=r;})},storage:{session:{get:async()=>{reads++;return {};}}}};

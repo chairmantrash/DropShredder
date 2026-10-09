@@ -86,11 +86,20 @@ export function extractPageScan():PageScanResult {
           (ownUrls(node).includes(currentUrl)||(!ownUrls(node).length&&visibleTitle&&named(node.name)===named(visibleTitle))));
         const selected:Record<string,string>={};
         let conflictingControls=false;
-        for(const control of [...document.querySelectorAll<HTMLSelectElement|HTMLInputElement>('main select[name], main input[type="radio"][name]:checked')].slice(0,40)){
-          const match=/^(?:options\[)?(color|colour|size|capacity|material)\]?$/i.exec(control.name);
-          if(!match||!control.value||control.disabled) continue;
-          const key=match[1]!.toLowerCase()==='colour'?'color':match[1]!.toLowerCase(),value=named(control.value);
-          if(selected[key]&&selected[key]!==value) conflictingControls=true;selected[key]=value;
+        // Explicitly named options only. Do not guess from unlabelled image swatches,
+        // prices, arbitrary form fields or a third-party widget's private state.
+        const selector='main select[name],main select[data-option-name],main input[type="radio"][name]:checked,main input[type="radio"][data-option-name]:checked,main [data-option-name][aria-pressed="true"],main [data-option-name][aria-checked="true"]';
+        for(const control of [...document.querySelectorAll<HTMLElement>(selector)].slice(0,40)){
+          const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
+          const match=/^(?:options\[)?(color|colour|size|capacity|material)\]?$/i.exec(name);
+          if(!match || control.hasAttribute('disabled') || control.getAttribute('aria-disabled')==='true') continue;
+          const value=control instanceof HTMLInputElement || control instanceof HTMLSelectElement
+            ? control.value : control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
+          if(!value || value.length>200) continue;
+          const key=match[1]!.toLowerCase()==='colour'?'color':match[1]!.toLowerCase(),normalized=named(value);
+          if(!normalized) continue;
+          if(selected[key]&&selected[key]!==normalized) conflictingControls=true;
+          selected[key]=normalized;
         }
         if(groups.length===1&&!conflictingControls&&Object.keys(selected).length){
           const children=Array.isArray(groups[0]!.hasVariant)?groups[0]!.hasVariant:[];

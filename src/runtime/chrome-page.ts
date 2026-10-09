@@ -8,8 +8,16 @@ export interface AuthorizedChromePage {
 /** Read only product-selection fields, never form credentials or arbitrary inputs. */
 export function chromeProductSelectionStamp():string{
   const values:string[]=[document.querySelector('main h1')?.textContent?.slice(0,500)??''];
-  for(const control of [...document.querySelectorAll<HTMLSelectElement|HTMLInputElement>('main select[name], main input[type="radio"][name]:checked')].slice(0,40)){
-    if(/^(?:options\[)?(?:color|colour|size|capacity|material|variant|sku)\]?$/i.test(control.name)) values.push(`${control.name}:${control.value.slice(0,200)}`);
+  // Match the explicit-control contract in extractPageScan. A route may
+  // preserve its URL while a real selected swatch/button changes SKU/price.
+  const selector='main select[name],main select[data-option-name],main input[type="radio"][name]:checked,main input[type="radio"][data-option-name]:checked,main [data-option-name][aria-pressed="true"],main [data-option-name][aria-checked="true"]';
+  for(const control of [...document.querySelectorAll<HTMLElement>(selector)].slice(0,40)){
+    const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
+    if(!/^(?:options\[)?(?:color|colour|size|capacity|material|variant|sku)\]?$/i.test(name)
+      ||control.hasAttribute('disabled')||control.getAttribute('aria-disabled')==='true') continue;
+    const value=control instanceof HTMLInputElement || control instanceof HTMLSelectElement
+      ?control.value:control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
+    if(value && value.length<=200) values.push(`${name}:${value}`);
   }
   // Detect seller updates to structured identity even when the URL stays fixed.
   let bytes=0,hash=2166136261;
