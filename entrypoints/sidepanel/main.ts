@@ -41,7 +41,7 @@ import { extractPageScan, type PageScanResult } from '../../src/extraction/page-
 import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../../src/runtime/auto-registration';
 import { loadUserLists } from '../../src/intelligence/user-lists';
-import { importedProductLeads } from '../../src/analysis/product-leads';
+import { approximateImportedProductLeads, importedEntityRoleGraph, importedProductLeads } from '../../src/analysis/product-leads';
 import { setReportGuard } from '../../src/ui/report-guard';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -285,7 +285,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
-    try{evidence.push(...importedProductLeads(result.product,(await loadUserLists()).lists));}catch{/* Optional local references do not block a scan. */}
+    try{const lists=(await loadUserLists()).lists;evidence.push(...importedProductLeads(result.product,lists),...approximateImportedProductLeads(result.product,lists),...importedEntityRoleGraph(result.product,lists));}catch{/* Optional local references do not block a scan. */}
     evidence.push(...amazonCloneClusterEvidence(result.amazonSearchCards));
     evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
