@@ -17,6 +17,15 @@ export function showSearchChooser(urls:Record<string,string>,doc:Document=docume
   const finish=()=>{dialog.remove();if(previous?.isConnected) previous.focus();};
   const close=doc.createElement('button');close.textContent='Close';close.addEventListener('click',finish);
   dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
+  // Chrome's native side-panel host can move focus into browser chrome at
+  // the WebContents boundary, even while this dialog is modal.
+  dialog.addEventListener('keydown',event=>{
+    if(event.key!=='Tab') return;
+    const focusable=[...dialog.querySelectorAll<HTMLInputElement|HTMLButtonElement>('input:not(:disabled),button:not(:disabled)')];
+    const first=focusable[0],last=focusable.at(-1);
+    if(event.shiftKey && doc.activeElement===first){event.preventDefault();last?.focus();}
+    else if(!event.shiftKey && doc.activeElement===last){event.preventDefault();first?.focus();}
+  });
   open.addEventListener('click',()=>void(async()=>{
     const selected=choices.filter(c=>c.input.checked && !c.opened);
     if(!selected.length || selected.length>8){status.textContent='Choose between 1 and 8 searches.';return;}
