@@ -42,6 +42,18 @@ jobs:
         env:
           DS_BROWSER_HEADLESS: '1'
         run: node tools/browser-smoke/run.mjs
+      - name: Stage exact-head unpacked QA candidate
+        run: |
+          mkdir -p qa-candidate/DropShredder-Unpacked
+          cp -a .output/chrome-mv3/. qa-candidate/DropShredder-Unpacked/
+          cp tools/browser-smoke/candidate-build-info.json qa-candidate/BUILD-INFO.json
+      - name: Preserve exact-head QA candidate (testing only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-unpacked-qa
+          path: qa-candidate/
+          if-no-files-found: error
+          retention-days: 30
       - name: Preserve browser evidence even on failure
         if: always()
         uses: actions/upload-artifact@v4
