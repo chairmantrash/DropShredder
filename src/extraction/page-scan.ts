@@ -93,8 +93,8 @@ export function extractPageScan():PageScanResult {
           const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
           const match=/^(?:options\[)?(color|colour|size|capacity|material)\]?$/i.exec(name);
           if(!match || control.hasAttribute('disabled') || control.getAttribute('aria-disabled')==='true') continue;
-          const value=control instanceof HTMLInputElement || control instanceof HTMLSelectElement
-            ? control.value : control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
+          const value=control.tagName==='INPUT' || control.tagName==='SELECT'
+            ? (control as HTMLInputElement|HTMLSelectElement).value : control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
           if(!value || value.length>200) continue;
           const key=match[1]!.toLowerCase()==='colour'?'color':match[1]!.toLowerCase(),normalized=named(value);
           if(!normalized) continue;
