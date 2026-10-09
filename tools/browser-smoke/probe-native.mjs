@@ -89,13 +89,20 @@ async function openNative() {
   await page.route('https://fixture.example.test/**', route => route.fulfill({ contentType: 'text/html', body:
     '<!doctype html><title>Fixture mug</title><h1>Fixture mug</h1><p>$12.00</p><button>Add to cart</button>' +
     '<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Fixture mug","sku":"FIXTURE-MUG-001","offers":{"@type":"Offer","price":"12.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>' }));
-  await page.goto('https://fixture.example.test/products/mug'); await page.bringToFront();
   browserCdp = await context.browser().newBrowserCDPSession(); report.browser = await browserCdp.send('Browser.getVersion');
+  // Match the already-proven blank-tab action method first. Navigation comes
+  // after native mounting, so a routed fixture cannot alter the action context.
+  await until(async () => (await worker.evaluate(() => chrome.sidePanel.getPanelBehavior())).openPanelOnActionClick === true, 'native action behavior ready');
+  report.actionOptions = await worker.evaluate(() => chrome.sidePanel.getOptions({}));
   const targets = await browserCdp.send('Target.getTargets', { filter: [{ type: 'tab' }] });
   assert.equal(targets.targetInfos.length, 1, 'Clean profile must expose one product tab');
   await browserCdp.send('Extensions.triggerAction', { id, targetId: targets.targetInfos[0].targetId });
   let target;
-  await until(async () => { target = (await browserCdp.send('Target.getTargets')).targetInfos.find(t => t.url === `chrome-extension://${id}/sidepanel.html`); return target; }, 'native panel target');
+  await until(async () => {
+    const list = await browserCdp.send('Target.getTargets');
+    report.actionTargets = list.targetInfos.map(t => ({ type: t.type, url: t.url }));
+    target = list.targetInfos.find(t => t.url === `chrome-extension://${id}/sidepanel.html`); return target;
+  }, 'native panel target');
   native = await attach(target.targetId);
   await until(() => native.evaluate("Boolean(document.querySelector('#build-meta')?.textContent.includes('0.2.0'))"), 'panel ready');
 }
@@ -131,6 +138,8 @@ try {
     await native.screenshot('native-after-restart.png');
   });
   await test('N05', 'Native product scan fails closed without host access', async () => {
+    await page.goto('https://fixture.example.test/products/mug');
+    await page.bringToFront();
     await native.click('#scan'); await until(() => native.evaluate("!document.querySelector('#scan').disabled"), 'scan settled');
     const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent,exportDisabled:document.querySelector('#export-report').disabled})");
     assert.match(state.status, /permission|access/i); assert.equal(state.raw, ''); assert.equal(state.exportDisabled, true);
