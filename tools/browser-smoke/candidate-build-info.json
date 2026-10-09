@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "bfef772ec57a3d8654e96c70db824dbd839f00f2",
-  "sourceTree": "1a80fecd6707c496c76a4306855e699f2f2e6ced",
+  "sourceCommit": "ea8aaa487d48fe2c8bffc665f453772ce72554b2",
+  "sourceTree": "773ae3c0309fafa3c1e17dfdf6d51b12d0fc18da",
   "version": "0.2.0",
-  "reviewedChange": "Full feature candidate with locally vendored offline OCR, signed weekly feeds, marketplace badges, source/relationship graph, no-model local similarity, optional one-shot BYO supplier web search. OCR runtime must pass actual user-triggered inference tests before engineering acceptance.",
+  "reviewedChange": "Complete feature candidate with hosted OCR worker failure diagnostics, signed opted-in weekly feeds, marketplace badges, sourced graph, lexical vectors, local Tesseract, and optional BYO one-shot search. Full native OCR execution check is release engineering gate.",
   "buildFiles": [
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
@@ -25,9 +25,9 @@
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-BtXF6bE7.js",
-      "bytes": 477818,
-      "sha256": "a3abadad1fc146efbd4ef27bbc6b2235f5edba6c5057a063b610e050266d67a3"
+      "path": "chunks/sidepanel-pwG-Au1o.js",
+      "bytes": 477820,
+      "sha256": "402e035c7fbb9871a70f00d40fe4e98701271167f09d10bb55e92b718567ef8c"
     },
     {
       "path": "content-scripts/auto.js",
@@ -132,7 +132,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 15155,
-      "sha256": "f2a0c11179974b99bef7acd2bc707d789eb0e3a7db7b778faac4f8bebcece645"
+      "sha256": "8fbca4ed16b06d9081f24ffe4b7479d92877de90d24bafe9d381eb6b26bb4b09"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
