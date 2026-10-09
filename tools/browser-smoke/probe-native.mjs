@@ -115,7 +115,9 @@ async function openNative() {
   });
   worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker');
   id = new URL(worker.url()).host; page = context.pages()[0];
-  await page.route('https://fixture.example.test/**', route => route.fulfill({ contentType: 'text/html', body: route.request().url().includes('/journal/')
+  // Reserved example.com origin with wholly owned, routed HTML; no live store.
+  // Unlike .test, this URL passes the public-evidence export/link guard.
+  await page.route('https://fixture.example.com/**', route => route.fulfill({ contentType: 'text/html', body: route.request().url().includes('/journal/')
     ? '<!doctype html><title>Owned article</title><article><h1>How mugs are made</h1><p>No item for sale.</p></article>'
     : (route.request().url().includes('sign-in') ? '<input type="password" autocomplete="current-password">' : '') +
     '<!doctype html><title>Fixture mug</title><main><h1>Fixture mug</h1><p class="product-price">$12.00</p><button>Add to cart</button></main>' +
@@ -169,7 +171,7 @@ try {
     await native.screenshot('native-after-restart.png');
   });
   await test('N05', 'Native product scan fails closed without host access', async () => {
-    await page.goto('https://fixture.example.test/products/mug');
+    await page.goto('https://fixture.example.com/products/mug');
     await page.bringToFront();
     await native.click('#scan'); await until(() => native.evaluate("!document.querySelector('#scan').disabled"), 'scan settled');
     const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent,exportDisabled:document.querySelector('#export-report').disabled})");
@@ -247,7 +249,7 @@ try {
     await test('N11', 'Full native product scan after an observed grant on an owned HTTPS fixture', async () => {
       await native.click('#scan'); await until(() => native.evaluate("!document.querySelector('#scan').disabled"), 'full scan', 20000);
       const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent,exportDisabled:document.querySelector('#export-report').disabled})");
-      assert.match(state.status, /^Scan complete for fixture.example.test/);
+      assert.equal(state.status, 'Scan complete for fixture.example.com.');
       const scan = JSON.parse(state.raw); assert.equal(scan.product.title, 'Fixture mug');
       assert.equal(scan.product.sku, 'FIXTURE-MUG-001'); assert.equal(scan.product.price, 12);
       assert.equal(state.exportDisabled, false);
@@ -255,9 +257,9 @@ try {
     });
     if (headed) {
       await test('N12', 'Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses', async () => {
-        await page.goto('https://fixture.example.test/journal/mugs'); await pause(4500);
+        await page.goto('https://fixture.example.com/journal/mugs'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
-        await page.goto('https://fixture.example.test/products/sign-in'); await pause(4500);
+        await page.goto('https://fixture.example.com/products/sign-in'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
         await native.click('#scan'); await until(() => native.evaluate("!document.querySelector('#scan').disabled"), 'sensitive refusal');
         const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent})");
@@ -270,7 +272,7 @@ try {
         assert.equal(await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })), false);
         assert.deepEqual(await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), []);
         assert.deepEqual(await features(), { autoSourceHunt: true, autoProtection: false, preferMadeInUSA: true, toneMode: 'nuclear' });
-        await page.goto('https://fixture.example.test/products/mug'); await pause(4500);
+        await page.goto('https://fixture.example.com/products/mug'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
         await native.screenshot('native-after-revoke.png');
       });
