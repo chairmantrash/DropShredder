@@ -23,10 +23,13 @@ try {
   const page = context.pages()[0];
   const cdp = await context.newCDPSession(page);
   const browserCdp = await context.browser().newBrowserCDPSession();
-  const target = await cdp.send('Target.getTargetInfo');
+  // The native action requires Chrome's tab target, not its child page target.
+  const tabs = await browserCdp.send('Target.getTargets', { filter: [{ type: 'tab' }] });
+  const target = tabs.targetInfos[0];
+  if (!target) throw new Error('No browser tab target exposed for the clean profile.');
   report.browser = await cdp.send('Browser.getVersion');
   report.options = await worker.evaluate(() => chrome.sidePanel.getOptions({}));
-  await browserCdp.send('Extensions.triggerAction', { id, targetId: target.targetInfo.targetId });
+  await browserCdp.send('Extensions.triggerAction', { id, targetId: target.targetId });
   for (let n = 0; n < 30; n++) {
     report.targets = (await cdp.send('Target.getTargets')).targetInfos.map(t => ({ targetId: t.targetId, type: t.type, url: t.url }));
     if (report.targets.some(t => t.url === `chrome-extension://${id}/sidepanel.html`)) break;
