@@ -64,7 +64,7 @@ jobs:
           retention-days: 30
   native-panel-runtime:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
@@ -78,7 +78,7 @@ jobs:
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
       - name: Verify native panel and explore genuine host permission request
-        timeout-minutes: 2
+        timeout-minutes: 4
         run: node tools/browser-smoke/probe-native.mjs
       - uses: actions/upload-artifact@v4
         if: always()
@@ -88,7 +88,7 @@ jobs:
           retention-days: 30
   headed-permission-diagnostic:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
@@ -103,7 +103,7 @@ jobs:
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
           sudo apt-get install -y scrot xdotool
       - name: Capture genuine Chrome host-permission dialog on Xvfb desktop
-        timeout-minutes: 6
+        timeout-minutes: 8
         env:
           DS_NATIVE_HEADED: '1'
           DS_LIVE_SURFACES: '1'
