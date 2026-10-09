@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "bca7b4ddf8d3f38afb5e0bab1bea5d5fcd4dfe53",
-  "sourceTree": "e7f6d1c399a0560ffcdaf38da6de84a3d5936ff2",
+  "sourceCommit": "b4da32b2636ecd8d13cc42a4beae71a7ac8abf99",
+  "sourceTree": "21f7607e74c74aa22fc27a19fb9af2c6302fd4b2",
   "version": "0.2.0",
-  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained.",
+  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -20,19 +20,19 @@
       "sha256": "a6daea476b40775e2241c668e0821e311ef05d1d2a690ad83c38f0e683c55aff"
     },
     {
-      "path": "chunks/search-BT6cXt5e.js",
+      "path": "chunks/search-VvQDJEw9.js",
       "bytes": 424,
-      "sha256": "e82617cd5f3720b49950a643b79fd5c01cfb8a11384f18be0304daa101004793"
+      "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/search-chooser-Cdgf0Gf7.js",
-      "bytes": 2448,
-      "sha256": "3b2be13fe64071d4ba71ee3cdd8ce346a9ff2178585359fcdfda08375acf5b91"
+      "path": "chunks/search-chooser-CEmkGmME.js",
+      "bytes": 2731,
+      "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
     },
     {
-      "path": "chunks/sidepanel-DUZ7iPRM.js",
+      "path": "chunks/sidepanel-DzLVx-o3.js",
       "bytes": 463777,
-      "sha256": "f25cc70737386317c41386030f5eb0950d6762fbc6d6d5cb64cbd4dace1b15b3"
+      "sha256": "934eb4b851d9af4a0d5c587cce525f524f243820627df3a864cba9ae48ed0dd7"
     },
     {
       "path": "content-scripts/auto.js",
@@ -67,12 +67,12 @@
     {
       "path": "search.html",
       "bytes": 724,
-      "sha256": "bb997683ea1f22acc42ebe4a91c83d03eca5fe17c362cae7445efca7d212eef9"
+      "sha256": "9887be5db3bd1ab7e8aed31ae120b2fcad4ce6e0c782a82caa927fa0bc690507"
     },
     {
       "path": "sidepanel.html",
       "bytes": 12456,
-      "sha256": "14a3b24f108d70723532ba5b64d82032878a34c58fd4cc035b5f005a2cf13415"
+      "sha256": "a57c86643cd7d8338774dfd627d7a5c7c1cda30f3b826e0f481056534bc5f41b"
     }
   ]
 }

@@ -101,7 +101,7 @@ async function attach(targetId) {
     await call('Input.dispatchMouseEvent', { type: 'mouseReleased', ...point, button: 'left', clickCount: 1 });
   };
   const key = async (key, code, windowsVirtualKeyCode) => {
-    if (headed) { execFileSync('xdotool', ['key', key === 'Enter' ? 'Return' : key]); return; }
+    if (headed) { execFileSync('xdotool', ['key', key === 'Enter' ? 'Return' : key]); await pause(100); return; }
     await call('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode });
     await call('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode });
   };
@@ -414,7 +414,7 @@ try {
   } else report.productScanBlocked = 'Full scan/toast testing requires genuine Chrome host access; no test override was used.';
 } catch (error) {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED'; report.failure = String(error);
-  report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent})").catch(() => undefined);
+  report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent,focused:document.activeElement?.outerHTML?.slice(0,300),chooserOpen:document.querySelector('#ds-search-chooser')?.open,documentFocused:document.hasFocus()})").catch(() => undefined);
   report.savedFeaturesAtFailure = worker ? await features().catch(() => undefined) : undefined;
   await native?.screenshot('native-failure.png').catch(() => {}); console.error(error); process.exitCode = 1;
 } finally {
