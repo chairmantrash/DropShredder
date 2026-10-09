@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "f8b74a93f520a8d2982083283cfa6a9869a89143",
-  "sourceTree": "d321522960a91a446aa6bd46a20f2526e06b8388",
+  "sourceCommit": "737f9bf9824bdd7c4ff6c11674762bb184b607a1",
+  "sourceTree": "201d7834ed9bf684abaa9c1a34b8804c1b134013",
   "version": "0.2.0",
-  "reviewedChange": "DS-035: Explicitly named same-URL variant swatches with corresponding target stamps, fixed-width lot and serial scope matcher, evidence-backed passive alert visibility, safe reverse-image source URLs. No new required permissions or runtime dependencies. Pre-release verification only.",
+  "reviewedChange": "Full feature integration: local Tesseract OCR worker/WASM/eng data vendored at build time, weekly user-opted signed updates using alarms, bounded marketplace result links, provenance-scoped entity-role graph, local lexical hashed vectors and safe native label reading. No new hosted inference, credentials or remote runtime code.",
   "buildFiles": [
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
@@ -11,8 +11,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 22818,
-      "sha256": "31fcf8caa53be9460f3677224e781a5df98dc5007c8e0ae138ed771f168a17d7"
+      "bytes": 25456,
+      "sha256": "28740ff7442cca4890bba0e154c8ec8078a21be51f5d121dc98e6cfaee6d2bea"
     },
     {
       "path": "chunks/search-chooser-CEmkGmME.js",
@@ -25,14 +25,14 @@
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-D-GWOrHU.js",
-      "bytes": 465609,
-      "sha256": "f69999a0d0d4a4864369a9727dc665dddab183d282888fcf770d9139de024ad0"
+      "path": "chunks/sidepanel-BUH9ypHn.js",
+      "bytes": 474364,
+      "sha256": "0d16bdb11799522ba7c4124b44613484ce3a61888afe642db71b8a8b49be77c3"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 42225,
-      "sha256": "80fdb93153b64496c0c84368f2ed556f21185fca21cfc1494f070b3bd89766d4"
+      "bytes": 44423,
+      "sha256": "6a5ee9206bc58c0d349eede6e21e9eae7c7ac008fdafeff0e6c06a85efb4a0fb"
     },
     {
       "path": "icon/128.png",
@@ -56,8 +56,73 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 653,
-      "sha256": "c98297e134ecec9f7ee1507bdaa7cb1894e660d07784606ba4a4796416976f82"
+      "bytes": 681,
+      "sha256": "aff66da1c558c339cce26eccc1e94e997eb4b4a0c79cbdd23a7be52f3044b6b2"
+    },
+    {
+      "path": "ocr/eng.traineddata.gz",
+      "bytes": 1976293,
+      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "ocr/PROVENANCE.txt",
+      "bytes": 407,
+      "sha256": "d89e781f84d43ca54350ed1cd938fa6189d43e9e86dad62216bc177cba3872d5"
+    },
+    {
+      "path": "ocr/tesseract-core-lstm.wasm",
+      "bytes": 2871085,
+      "sha256": "220e2e87551edccb85519796a170469f8ab2a8055216789e3b8b1ada18b7bc2b"
+    },
+    {
+      "path": "ocr/tesseract-core-lstm.wasm.js",
+      "bytes": 3954181,
+      "sha256": "775a35df6f2ae100e02609443e6bd5cafcd07983dd6175454ca4a432a7730687"
+    },
+    {
+      "path": "ocr/tesseract-core-simd-lstm.wasm",
+      "bytes": 2871377,
+      "sha256": "187d76742dfc0d8929f0b49a619f145bb6370730776c7bd0d3e20c6b2098808d"
+    },
+    {
+      "path": "ocr/tesseract-core-simd-lstm.wasm.js",
+      "bytes": 3954569,
+      "sha256": "9d7c43fb206dc9f48475228b46bf35f888fa9e6259da2e67d5a75c77049f2dc7"
+    },
+    {
+      "path": "ocr/tesseract-core-simd.wasm",
+      "bytes": 3469078,
+      "sha256": "ca11ee92a02023e4f5083eefd0966fb83b297416da54e997b9f6ce445f719c9b"
+    },
+    {
+      "path": "ocr/tesseract-core-simd.wasm.js",
+      "bytes": 4751193,
+      "sha256": "3b0678c47a8dea6abb931b214171c08b742a5b9a9fcbbb1a028a08d5de6e9d4c"
+    },
+    {
+      "path": "ocr/tesseract-core.wasm",
+      "bytes": 3468788,
+      "sha256": "740f7e466a2f026e1f1e54a2e0d9957e386d8166110d1290224abd3d08986106"
+    },
+    {
+      "path": "ocr/tesseract-core.wasm.js",
+      "bytes": 4750805,
+      "sha256": "e66872f6a76f5ad414d73d21512245df0de3060ad4871a97c47efceaab27b955"
+    },
+    {
+      "path": "ocr/tesseract.min.js",
+      "bytes": 62953,
+      "sha256": "00fa50915e6224635c57f44f1737a9a4d1761d38e8b7471261a55fdd6fd27f9d"
+    },
+    {
+      "path": "ocr/worker.min.js",
+      "bytes": 111280,
+      "sha256": "5e53cfc8aaaafa9631ea2a566d7004c6e3303c3c1fcbdc3668ba9141c83cd482"
     },
     {
       "path": "search.html",
@@ -66,13 +131,13 @@
     },
     {
       "path": "sidepanel.html",
-      "bytes": 12456,
-      "sha256": "54386dffe17fd129ae99d61aa69a99b593d25d345b9b9079ca88e240502e85a5"
+      "bytes": 13816,
+      "sha256": "ef71c7654ab9039aa663a3729bc7ae287cec32af06cc17269a1270fb59deeaba"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19121,
-      "sha256": "c909ae4b70e047c13d2eaf578c6db6661805b141ef922e2a0a87dc1a6b786551"
+      "bytes": 19620,
+      "sha256": "d11b71c6c503cfc8467d401263e134067c98c99864409e1bb49514670e67c33b"
     }
   ]
 }
