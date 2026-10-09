@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "40ddfdc86825834a85bb4bc79e055b55508a87ad",
-  "sourceTree": "75220f4479f1e34e269a40e59ba77512bd5ca3a1",
+  "sourceCommit": "bfef772ec57a3d8654e96c70db824dbd839f00f2",
+  "sourceTree": "1a80fecd6707c496c76a4306855e699f2f2e6ced",
   "version": "0.2.0",
-  "reviewedChange": "Full-feature test candidate: opt-in signed-feed weekly refresh, result-page badges, local product vectors and entity graph, bundled offline Tesseract OCR, optional BYO-key one-shot Brave search. All scores conservative; zero mandatory backend/API.",
+  "reviewedChange": "Full feature candidate with locally vendored offline OCR, signed weekly feeds, marketplace badges, source/relationship graph, no-model local similarity, optional one-shot BYO supplier web search. OCR runtime must pass actual user-triggered inference tests before engineering acceptance.",
   "buildFiles": [
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
@@ -25,9 +25,9 @@
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-Coq1W2-z.js",
-      "bytes": 477794,
-      "sha256": "20c97f523653afd8525971e6b823f53018920e1bd5b59f4db8d0dbd66225cb7c"
+      "path": "chunks/sidepanel-BtXF6bE7.js",
+      "bytes": 477818,
+      "sha256": "a3abadad1fc146efbd4ef27bbc6b2235f5edba6c5057a063b610e050266d67a3"
     },
     {
       "path": "content-scripts/auto.js",
@@ -132,7 +132,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 15155,
-      "sha256": "d7be75187e34ec8f2e585e8bda4c73f925c3d7598581c0e1644677c58998e8eb"
+      "sha256": "f2a0c11179974b99bef7acd2bc707d789eb0e3a7db7b778faac4f8bebcece645"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
