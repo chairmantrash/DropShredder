@@ -86,5 +86,18 @@
     "No guaranteed factory authentication or neural embedding claim",
     "All new standard features work without a paid API/account"
   ],
-  "publication": "Draft PR9 only; no main merge/public extension publication"
+  "publication": "Draft PR9 only; no main merge/public extension publication",
+  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "sourceTree": "3420d4ca675c41b3f8b7be380935c05ffd8c1ef6",
+  "package": {
+    "files": 34,
+    "bytes": 47483460,
+    "archiveBytes": 19001398,
+    "archiveSha256": "82c5493ab00dc3fe173f58e5ba606925e52144c2a186d006030c06dd8e994d29",
+    "fingerprint": "tools/browser-smoke/candidate-build-info.json"
+  },
+  "dependencyAudit": {
+    "reportedAdvisories": 0,
+    "scope": "npm registry snapshot, not proof of vulnerability absence"
+  }
 }

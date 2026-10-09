@@ -1,9 +1,14 @@
 {
-  "sourceCommit": "ea8aaa487d48fe2c8bffc665f453772ce72554b2",
-  "sourceTree": "773ae3c0309fafa3c1e17dfdf6d51b12d0fc18da",
+  "sourceCommit": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "sourceTree": "3420d4ca675c41b3f8b7be380935c05ffd8c1ef6",
   "version": "0.2.0",
-  "reviewedChange": "Complete feature candidate with hosted OCR worker failure diagnostics, signed opted-in weekly feeds, marketplace badges, sourced graph, lexical vectors, local Tesseract, and optional BYO one-shot search. Full native OCR execution check is release engineering gate.",
+  "reviewedChange": "DS-037 completed current release assembly: matching Tesseract7/Core7 engines, retained upstream notices, documented provenance, correct privacy disclosures, supplier consent/revocation control guards. Native OCR and live beta results remain separate evidence.",
   "buildFiles": [
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19620,
+      "sha256": "3540193ac79688fef6d062cfc607d0f9cc1ac80f05d8a02433d179551be344d1"
+    },
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
       "bytes": 10301,
@@ -15,19 +20,19 @@
       "sha256": "28740ff7442cca4890bba0e154c8ec8078a21be51f5d121dc98e6cfaee6d2bea"
     },
     {
-      "path": "chunks/search-chooser-CEmkGmME.js",
-      "bytes": 2731,
-      "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
-    },
-    {
       "path": "chunks/search-VvQDJEw9.js",
       "bytes": 424,
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-pwG-Au1o.js",
-      "bytes": 477820,
-      "sha256": "402e035c7fbb9871a70f00d40fe4e98701271167f09d10bb55e92b718567ef8c"
+      "path": "chunks/search-chooser-CEmkGmME.js",
+      "bytes": 2731,
+      "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
+    },
+    {
+      "path": "chunks/sidepanel-DMnHUQKs.js",
+      "bytes": 478071,
+      "sha256": "cd5e05b3a217927f38d1e9e7badab2c0ff4e802bbbac68da8b0307d2036bfede"
     },
     {
       "path": "content-scripts/auto.js",
@@ -60,59 +65,84 @@
       "sha256": "aff66da1c558c339cce26eccc1e94e997eb4b4a0c79cbdd23a7be52f3044b6b2"
     },
     {
-      "path": "ocr/eng.traineddata.gz",
-      "bytes": 1976293,
-      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
-    },
-    {
       "path": "ocr/LICENSE-TESSERACT-CORE.txt",
       "bytes": 11358,
       "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
     },
     {
+      "path": "ocr/LICENSE-TESSERACT-JS.txt",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
       "path": "ocr/PROVENANCE.txt",
-      "bytes": 407,
-      "sha256": "d89e781f84d43ca54350ed1cd938fa6189d43e9e86dad62216bc177cba3872d5"
+      "bytes": 633,
+      "sha256": "5337b16032cb60ee34f6be33450b7cb841c8557799347d48599795f4042d214f"
+    },
+    {
+      "path": "ocr/eng.traineddata.gz",
+      "bytes": 1976293,
+      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
     },
     {
       "path": "ocr/tesseract-core-lstm.wasm",
-      "bytes": 2871085,
-      "sha256": "220e2e87551edccb85519796a170469f8ab2a8055216789e3b8b1ada18b7bc2b"
+      "bytes": 2855361,
+      "sha256": "66b17df6e20c5329a17ffa9c202a47eaa3e32500b253d4c7f38e7f2bc01457c3"
     },
     {
       "path": "ocr/tesseract-core-lstm.wasm.js",
-      "bytes": 3954181,
-      "sha256": "775a35df6f2ae100e02609443e6bd5cafcd07983dd6175454ca4a432a7730687"
+      "bytes": 3896484,
+      "sha256": "eef5f8b2f8e20e150680b20adaec4a60babafee3adbe8a94583c81fee46e8680"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm",
+      "bytes": 2862266,
+      "sha256": "7985c92d4c64e7267d24cadffe1b2a1da6bf8aa55fdcaf953fe94fe122a24545"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "bytes": 3905767,
+      "sha256": "861a536cf9ef8e63cb644d57bab39c388f37f7d6b6f60024b741c5f6b39a59b3"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd.wasm",
+      "bytes": 3456075,
+      "sha256": "45f8c9b516df326b6ae6b493ed3a6289df5cbd10490e7b6ff8bf5b12ea42d1da"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd.wasm.js",
+      "bytes": 4697227,
+      "sha256": "843074aa5bad1cc6421b74a86201768ced9f244795e4d81435435a61a40ce535"
     },
     {
       "path": "ocr/tesseract-core-simd-lstm.wasm",
-      "bytes": 2871377,
-      "sha256": "187d76742dfc0d8929f0b49a619f145bb6370730776c7bd0d3e20c6b2098808d"
+      "bytes": 2857601,
+      "sha256": "34e8d50cac216427d86bf397d610fdd9f49492539bbcdfbfccc4eda20c810bea"
     },
     {
       "path": "ocr/tesseract-core-simd-lstm.wasm.js",
-      "bytes": 3954569,
-      "sha256": "9d7c43fb206dc9f48475228b46bf35f888fa9e6259da2e67d5a75c77049f2dc7"
+      "bytes": 3899472,
+      "sha256": "c58b46a4c796c0b8afccf77591d5b875b6896b45d402bbce8caa6f5362447b38"
     },
     {
       "path": "ocr/tesseract-core-simd.wasm",
-      "bytes": 3469078,
-      "sha256": "ca11ee92a02023e4f5083eefd0966fb83b297416da54e997b9f6ce445f719c9b"
+      "bytes": 3451410,
+      "sha256": "7d237a13edfeb0fa2f104744fccde0a00e0c076c3e23b7a8fc7af75ec9af2c3e"
     },
     {
       "path": "ocr/tesseract-core-simd.wasm.js",
-      "bytes": 4751193,
-      "sha256": "3b0678c47a8dea6abb931b214171c08b742a5b9a9fcbbb1a028a08d5de6e9d4c"
+      "bytes": 4690932,
+      "sha256": "6b61ef4e911b5cf57e656bbfe983d6e2b3711a02dd164154ddda064566e8e09d"
     },
     {
       "path": "ocr/tesseract-core.wasm",
-      "bytes": 3468788,
-      "sha256": "740f7e466a2f026e1f1e54a2e0d9957e386d8166110d1290224abd3d08986106"
+      "bytes": 3449168,
+      "sha256": "c7f5ace62ac0ad065e71e9c6725f1d7cdf82e7eda8fba532cbb9563964da7098"
     },
     {
       "path": "ocr/tesseract-core.wasm.js",
-      "bytes": 4750805,
-      "sha256": "e66872f6a76f5ad414d73d21512245df0de3060ad4871a97c47efceaab27b955"
+      "bytes": 4687944,
+      "sha256": "0bc6ce3e5fbbd0cd89706cf2fd70960e3372f4f01ee24265b26990808aaeb286"
     },
     {
       "path": "ocr/tesseract.min.js",
@@ -120,9 +150,19 @@
       "sha256": "00fa50915e6224635c57f44f1737a9a4d1761d38e8b7471261a55fdd6fd27f9d"
     },
     {
+      "path": "ocr/tesseract.min.js.LICENSE.txt",
+      "bytes": 149,
+      "sha256": "cdf963ced7d25a0f98901a547647b4d6e2dbe0197fd78c87a059a87b0e542fe2"
+    },
+    {
       "path": "ocr/worker.min.js",
       "bytes": 111280,
       "sha256": "5e53cfc8aaaafa9631ea2a566d7004c6e3303c3c1fcbdc3668ba9141c83cd482"
+    },
+    {
+      "path": "ocr/worker.min.js.LICENSE.txt",
+      "bytes": 466,
+      "sha256": "45f54171aeaa1d10c0c1a66f374b7bba1f02472b1487fbe892eec04f840002ac"
     },
     {
       "path": "search.html",
@@ -132,12 +172,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 15155,
-      "sha256": "8fbca4ed16b06d9081f24ffe4b7479d92877de90d24bafe9d381eb6b26bb4b09"
-    },
-    {
-      "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19620,
-      "sha256": "d11b71c6c503cfc8467d401263e134067c98c99864409e1bb49514670e67c33b"
+      "sha256": "ad3a4d05c3ca30dc05897166a188fe33505509c7fe1ecef0b759e30ffac6a677"
     }
   ]
 }
