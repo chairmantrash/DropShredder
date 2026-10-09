@@ -87,7 +87,7 @@ jobs:
           npm run build
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-          sudo apt-get install -y scrot
+          sudo apt-get install -y scrot xdotool
       - name: Capture genuine Chrome host-permission dialog on Xvfb desktop
         timeout-minutes: 3
         env:
