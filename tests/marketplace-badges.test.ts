@@ -14,7 +14,7 @@ test('marketplace badges are limited to actual search result pages, not browsing
 test('badges are inert, bounded, idempotent and only navigate to marketplace products',()=>{
   const {document}=parseHTML('<html><body><section data-component-type="s-search-result"><a href="https://www.amazon.com/dp/B0ABC12345?ref_=affiliate">Lamp</a></section><section data-component-type="s-search-result"><a href="https://evil.example.com/dp/B0ABC12345">Bad link</a></section><section data-component-type="s-search-result"><a href="https://www.amazon.com/gp/help">Help</a></section></body></html>');
   const url='https://www.amazon.com/s?k=lamp';
-  assert.equal(attachMarketplaceBadges(document as unknown as Document,url),1);
+  assert.equal(attachMarketplaceBadges(document as unknown as Document,url??''),1);
   assert.equal(attachMarketplaceBadges(document as unknown as Document,url),0);
   const anchor=document.querySelector('[data-dropshredder-result-label]')!;
   assert.equal(anchor.getAttribute('href'),'https://www.amazon.com/dp/B0ABC12345');
