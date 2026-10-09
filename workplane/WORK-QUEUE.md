@@ -42,4 +42,8 @@ Earlier DONE rows describe historical implementation, not a real Chrome gate pas
 | DS-033 | P1 | Product matching/manufacturer graph | VERIFYING | /root — exact informational leads; broad accuracy/model gates open |
 | DS-034 | P1 | Safety/certification/API capabilities | VERIFYING | /root — exact GLEIF; live CPSC/RDAP/certification gates open |
 
-2026-10-09 synchronization: DS-031–034 statuses above match their current packets and the bounded engineering receipt `workplane/runs/DS-031-034-CONTINUATION-20261009.json`. VERIFYING is not DONE or release authorization. Draft PR #11 contains the engineering continuation; consolidate through PR #9's release branch only after exact-head checks. Independent A01–D06, representative category calibration, native browser edges and live-provider acceptance remain explicit gates.
+2026-10-09 synchronization: DS-031–034 statuses above match their current packets and the bounded engineering receipt `workplane/runs/DS-031-034-CONTINUATION-20261009.json`. VERIFYING is not DONE or release authorization. PR #11 was integrated into the internal PR #9 release branch as merge 7271f9c; PR #9 is the sole draft release gate. Independent A01–D06, representative category calibration, native browser edges and live-provider acceptance remain explicit gates.
+
+| DS-035 | P1 | Bounded selected variants / recall lot scope / alert and image-search privacy | VERIFYING | release engineer — source implemented; exact package and independent browser review pending |
+
+Source implementation and constraints: `workplane/tasks/DS-035.md`. Unshipped optional OCR/embeddings/automated feed/key rotation are documented research candidates, not required beta implementations.

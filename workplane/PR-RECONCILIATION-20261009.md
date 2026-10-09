@@ -23,3 +23,6 @@
 5. Explicit owner authorization for `main` merge/publication. OCR and embeddings remain optional post-beta research, not hidden mandatory blockers.
 
 Preserve the guardrails: free local-first core, no mandatory account/backend, no credential storage, user-chosen HTTPS requests, low passive CPU/network use, independence-weighted evidence and genuine UNKNOWN outcomes. See `START-HERE.md`, `brain/authority/PRODUCT-CONTRACT.md`, `brain/authority/EVIDENCE-POLICY.md`, and `workplane/evals/WORK-AGENT-TEST-PROMPT-20261009.md`.
+
+## Implementation continuation DS-035
+After PR #11 merged, the only development branch remains `release/security-performance-hardening` under draft PR #9. Additional source changes cover named storefront swatches + report invalidation, bounded lot/serial regulatory scope, automatic-toast signal visibility, and privacy-safe explicit reverse-image launchers. Source-to-artifact exact-hash and browser gate receipts must be regenerated for the new production bytes; the previous 250-test / 36-browser count is historical, not verification for DS-035. Do not treat these engineering enhancements as representative merchant accuracy or an independent A01–D06 acceptance pass.
