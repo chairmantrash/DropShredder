@@ -12,10 +12,11 @@ const root = path.resolve(import.meta.dirname, '../..');
 const ext = path.join(root, '.output/chrome-mv3');
 const output = path.join(root, 'browser-smoke-results');
 const profile = await fs.mkdtemp(path.join(os.tmpdir(), 'dropshredder-native-'));
+const headed = process.env.DS_NATIVE_HEADED === '1';
 await fs.mkdir(output, { recursive: true });
 const errors = [], externalRequests = [];
 const report = { sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
-  startedAt: new Date().toISOString(), status: 'RUNNING', tests: [], errors, externalRequests,
+  startedAt: new Date().toISOString(), mode: headed ? 'headed Chromium / Xvfb' : 'headless Chromium', status: 'RUNNING', tests: [], errors, externalRequests,
   notTested: ['Independent A01-D06 desktop QA', 'Explicit operator accept/deny of native Chrome permission UI',
     'Live merchant/category accuracy', 'Concurrent panels, malformed storage, SPA/search/context menus, RDAP/CPSC'] };
 let context, worker, browserCdp, native, id, page;
@@ -71,13 +72,19 @@ async function attach(targetId) {
     await call('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode });
   };
   const screenshot = async name => {
+    if (headed) {
+      // Actual X11 desktop capture includes browser chrome/native dialogs.
+      // No WebContents screenshot fallback is labelled as browser-chrome evidence.
+      execFileSync('scrot', ['--overwrite', path.join(output, name)]);
+      return;
+    }
     const capture = await call('Page.captureScreenshot', { format: 'png' });
     await fs.writeFile(path.join(output, name), Buffer.from(capture.data, 'base64'));
   };
   return { evaluate, click, key, screenshot };
 }
 async function openNative() {
-  context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: true,
+  context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: !headed,
     args: ['--enable-unsafe-extension-debugging', `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
   context.on('request', request => {
     let fromExtension = request.serviceWorker()?.url().startsWith('chrome-extension://');

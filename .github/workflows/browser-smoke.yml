@@ -72,3 +72,30 @@ jobs:
           name: dropshredder-native-panel-evidence
           path: browser-smoke-results/
           retention-days: 30
+  headed-permission-diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot
+      - name: Capture genuine Chrome host-permission dialog on Xvfb desktop
+        timeout-minutes: 3
+        env:
+          DS_NATIVE_HEADED: '1'
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-headed-permission-evidence
+          path: browser-smoke-results/
+          retention-days: 30
