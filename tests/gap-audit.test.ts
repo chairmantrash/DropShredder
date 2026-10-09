@@ -14,6 +14,7 @@ import { publicEvidenceUrl } from '../src/security/public-url';
 import { exportCurrentReport, readPanelReport } from '../src/reporting/export-report';
 import { renderShopperReport } from '../src/ui/report-renderer';
 import { mountPanelControls } from '../src/ui/panel-controls';
+import { setReportGuard } from '../src/ui/report-guard';
 import { lookupRecallCandidates, recallQueryUrl, parseRecallCandidates } from '../src/osint/cpsc';
 import type { DropShredderReport } from '../src/types/report';
 
@@ -179,11 +180,13 @@ test('base themes meet tested normal-text and badge contrast pairs',()=>{
 });
 
 test('export controls prepare a local bounded file without a third-party request',async()=>dom(async(doc,window)=>{
+ setReportGuard(async()=>true);
  renderShopperReport(report(),{summary:doc.getElementById('summary')!,evidenceList:doc.getElementById('evidence')!,raw:doc.getElementById('raw')!},'professional');
  const controls=mountPanelControls(doc);await tick();let filename='';
  doc.body.addEventListener('click',e=>{const a=e.target as HTMLAnchorElement;if(a.tagName==='A')filename=a.download;});
  doc.getElementById('export-report')!.dispatchEvent(new window.Event('click'));
- assert.equal(filename,'DropShredder-current-scan.json');assert.match(doc.getElementById('controls-status')!.textContent!,/export prepared/);controls.dispose();
+ await tick();
+ assert.equal(filename,'DropShredder-current-scan.json');assert.match(doc.getElementById('controls-status')!.textContent!,/export prepared/);setReportGuard(async()=>false);controls.dispose();
 }));
 test('cancel and stale-report UI prevent a consent-delayed recall request',async()=>dom(async(doc,window)=>{
  const g=globalThis as unknown as Record<string,unknown>,originalFetch=g.fetch;let resolve!:(v:boolean)=>void,requests=0;

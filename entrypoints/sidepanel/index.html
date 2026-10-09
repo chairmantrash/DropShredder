@@ -55,6 +55,7 @@
           <button id="hunt-image" class="secondary" type="button">SEARCH THIS IMAGE</button>
           <button id="hunt-store" class="secondary" type="button">CHECK THIS STORE</button>
           <button id="check-domain" class="secondary" type="button">HOW OLD IS THIS SITE?</button>
+          <button id="cancel-domain" class="secondary" type="button" disabled>CANCEL DOMAIN LOOKUP</button>
           <button id="reputation-sweep" class="secondary" type="button">WHAT ARE BUYERS SAYING?</button>
           <button id="policy-check" class="secondary" type="button">CHECK THE FINE PRINT</button>
           <button id="fulfillment-check" class="secondary wide" type="button">WHERE DOES IT REALLY SHIP FROM?</button>
@@ -93,6 +94,36 @@
           <p id="recall-status" class="status" role="status" aria-live="polite"></p>
         </div>
         <div id="recall-results" class="evidence"></div>
+      </details>
+
+      <details class="intelligence-panel">
+        <summary>Your product reference lists</summary>
+        <p class="scan-disclosure">Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent.</p>
+        <div class="evidence-tools">
+          <label for="list-file">Preview a local JSON list (up to 800 KB / 500 records)</label><input id="list-file" type="file" accept="application/json,.json" />
+          <label for="list-url">Public HTTPS feed URL</label><input id="list-url" type="url" maxlength="2048" autocomplete="off" placeholder="https://publisher.example.com/products.json" />
+          <button id="list-fetch" class="secondary" type="button">FETCH PREVIEW</button><button id="list-cancel" class="secondary" type="button" disabled>CANCEL FETCH</button>
+          <label for="list-subscribe"><input id="list-subscribe" type="checkbox" /> Save this feed for manual weekly refresh</label>
+          <p>Saved feeds show when a weekly refresh is due. Every download and replacement needs your request and review. Expired lists stop matching.</p>
+          <div id="list-preview" class="evidence"></div><button id="list-save" class="secondary" type="button" disabled>ADD REVIEWED LIST</button>
+          <p id="list-status" class="status" role="status" aria-live="polite"></p>
+          <div id="saved-lists" class="evidence"></div><button id="list-clear" class="secondary" type="button">DELETE USER LISTS & PUBLISHER KEYS</button>
+        </div>
+        <details><summary>Trust a publisher signing key</summary>
+          <p>Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads.</p>
+          <label for="publisher-key">Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)</label><textarea id="publisher-key" maxlength="2000" rows="4" spellcheck="false"></textarea>
+          <button id="publisher-preview" class="secondary" type="button">REVIEW KEY</button><p id="publisher-key-status" class="status" role="status"></p><button id="publisher-pin" class="secondary" type="button" disabled>TRUST REVIEWED KEY</button>
+        </details>
+      </details>
+
+      <details class="entity-panel">
+        <summary>Check a legal entity identifier</summary>
+        <p class="scan-disclosure">Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store.</p>
+        <div class="evidence-tools">
+          <label for="entity-lei">20-character LEI from the entity’s own records</label><input id="entity-lei" type="text" maxlength="20" autocomplete="off" spellcheck="false" />
+          <button id="entity-lookup" class="secondary" type="button">LOOK UP THIS LEI</button><button id="entity-cancel" class="secondary" type="button" disabled>CANCEL LOOKUP</button>
+          <p id="entity-status" class="status" role="status" aria-live="polite"></p><div id="entity-results" class="evidence"></div>
+        </div>
       </details>
 
       <details class="appearance-panel">

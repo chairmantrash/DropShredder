@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage } from '../src/runtime/chrome-page';
+import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, chromeProductSelectionStamp } from '../src/runtime/chrome-page';
 import { lookupDomainRdap } from '../src/osint/rdap';
 import { captureImageFingerprint } from '../src/forensics/image-acquisition';
 
@@ -43,16 +43,18 @@ test('successful probe pins the real document without relying on tab URL metadat
 });
 
 test('current-page check rejects tab switches, SPA navigation, document changes and sensitive forms',async()=>{
-  const page={tab:{id:43} as chrome.tabs.Tab,tabId:43,documentId:'doc-1',url:'https://shop.example/item'};
+  const page={tab:{id:43} as chrome.tabs.Tab,tabId:43,documentId:'doc-1',url:'https://shop.example/item',selectionStamp:'initial'};
   let tabId=43;
   let documentId='doc-1';
   let url=page.url;
   let sensitive=false;
+  let selectionStamp='initial';
   install({
     tabs:{query:async()=>[{id:tabId}]},
-    scripting:{executeScript:async()=>[{documentId,result:{url,sensitive}}]},
+    scripting:{executeScript:async({func}:{func:unknown})=>[{documentId,result:func===chromeProductSelectionStamp?selectionStamp:{url,sensitive}}]},
   });
   assert.equal(await isCurrentChromePage(page),true);
+  selectionStamp='changed variant';assert.equal(await isCurrentChromePage(page),false);selectionStamp='initial';
   tabId=99;
   assert.equal(await isCurrentChromePage(page),false);
   tabId=43;

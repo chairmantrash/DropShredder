@@ -1,6 +1,7 @@
 import { applyDisplayPreferences, DEFAULT_DISPLAY, DISPLAY_KEY, normalizeDisplayPreferences } from './preferences';
 import { exportCurrentReport, readPanelReport } from '../reporting/export-report';
 import { lookupRecallCandidates, type RecallField } from '../osint/cpsc';
+import { currentReportAllowed } from './report-guard';
 
 export function mountPanelControls(doc:Document=document) {
   const raw=doc.querySelector<HTMLElement>('#raw'),list=doc.querySelector<HTMLElement>('#evidence');
@@ -55,13 +56,14 @@ export function mountPanelControls(doc:Document=document) {
     applyFilters();
   };
   on('evidence-query','input',applyFilters);on('evidence-filter','change',applyFilters);
-  on('export-report','click',()=>{
-    const report=readPanelReport(raw?.textContent??'');if(!report) return;
+  on('export-report','click',()=>void(async()=>{
+    const value=raw?.textContent??'',report=readPanelReport(value);if(!report) return;
+    if(!await currentReportAllowed()||raw?.textContent!==value){if(status) status.textContent='The page changed. Check this product again before exporting.';return;}
     const blob=new Blob([JSON.stringify(exportCurrentReport(report),null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob),a=doc.createElement('a');a.href=url;a.download='DropShredder-current-scan.json';
     doc.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
     if(status) status.textContent='Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded.';
-  });
+  })());
   on('recall-cancel','click',()=>{stopLookup();if(recallButton) recallButton.disabled=!readPanelReport(raw?.textContent??'');
     if(recallStatus) recallStatus.textContent='Recall lookup canceled.';});
   on('recall-lookup','click',()=>{

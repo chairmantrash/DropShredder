@@ -40,6 +40,9 @@ import { renderShopperReport } from '../../src/ui/report-renderer';
 import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
 import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../../src/runtime/auto-registration';
+import { loadUserLists } from '../../src/intelligence/user-lists';
+import { importedProductLeads } from '../../src/analysis/product-leads';
+import { setReportGuard } from '../../src/ui/report-guard';
 
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
@@ -67,9 +70,15 @@ let lastReport:DropShredderReport|undefined;
 let reportPage:AuthorizedChromePage|undefined;
 let scanningTabId:number|undefined;
 let scanEpoch=0;
+let domainRequest:AbortController|undefined;
+const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
+function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
+cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent='Domain lookup canceled.';});
 
 // The side panel outlives tabs and documents. Never reuse a report after navigation.
 function invalidatePageReport(message='The page changed. Check this product again.'):void {
+  stopDomainLookup();
+  document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
   lastReport=undefined;
   reportPage=undefined;
@@ -104,6 +113,7 @@ async function verifiedReportPage(report:DropShredderReport):Promise<AuthorizedC
   }
   return page;
 }
+setReportGuard(async()=>{const report=lastReport;if(!report) return false;await verifiedReportPage(report);return lastReport===report;});
 
 let currentTone:ToneMode='professional';
 function applyTone(mode:ToneMode):void{
@@ -272,6 +282,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    try{evidence.push(...importedProductLeads(result.product,(await loadUserLists()).lists));}catch{/* Optional local references do not block a scan. */}
     evidence.push(...amazonCloneClusterEvidence(result.amazonSearchCards));
     evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
@@ -682,10 +693,12 @@ huntStore?.addEventListener('click',()=>void (async()=>{
 
 checkDomain?.addEventListener('click',async()=>{
   const report=lastReport;
-  if(!report || !status) return;
+  if(!report || !status || domainRequest) return;
+  const active=new AbortController();domainRequest=active;checkDomain.disabled=true;if(cancelDomain) cancelDomain.disabled=false;
   status.textContent='Checking how long this website has been around…';
   try{
-      const rdap=await lookupDomainRdap(report.product.domain);
+      const rdap=await lookupDomainRdap(report.product.domain,active.signal);
+      if(domainRequest!==active) return;
       await verifiedReportPage(report);
       if(!rdap){
         status.textContent='Couldn’t confirm this website’s age right now.';
@@ -734,7 +747,9 @@ checkDomain?.addEventListener('click',async()=>{
       try{ await saveObservation(next); }catch{}
       status.textContent='Domain registration information retrieved. It does not establish the business’s age.';
   }catch(error){
-    status.textContent=error instanceof Error ? error.message : String(error);
+    if(domainRequest===active) status.textContent=active.signal.aborted?'Domain lookup canceled.':error instanceof Error ? error.message : String(error);
+  }finally{
+    if(domainRequest===active) stopDomainLookup();
   }
 });
 

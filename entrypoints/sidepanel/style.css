@@ -59,7 +59,7 @@ details summary::marker{color:var(--dim)}
 .result{max-height:360px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--control-bg);border:1px solid var(--line);border-radius:9px;padding:11px;color:var(--code);font:10px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
 .privacy-tools{display:grid;gap:7px;margin-top:7px}.privacy-tools p{margin:0 0 3px;font-size:calc(12px * var(--font-scale));line-height:1.45;color:var(--dim)}
 .build-meta{margin-top:18px;padding-top:10px;border-top:1px solid var(--line);color:var(--dim);font-size:calc(12px * var(--font-scale));line-height:1.4}
-button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 @media (max-width:380px){main{padding-inline:12px}.summary,.hunt-actions{grid-template-columns:1fr}button.wide{grid-column:auto}.privacy-badge{display:none}}
 @media (prefers-reduced-motion:reduce){button{transition:none}button:hover{transform:none}}
 
@@ -82,6 +82,9 @@ button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visi
 .evidence-tools{display:grid;gap:7px;margin-top:10px}
 .evidence-tools label{font-size:calc(12px * var(--font-scale));color:var(--text)}
 .evidence-tools input,.evidence-tools select{min-height:44px;width:100%;min-width:0;background:var(--control-bg);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:9px;font:inherit}
+.evidence-tools input[type=checkbox]{width:20px;min-height:20px;vertical-align:middle;accent-color:var(--accent)}
+.intelligence-panel textarea{width:100%;max-width:100%;min-width:0;background:var(--control-bg);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:9px;font:inherit}
+#list-preview,#saved-lists,#entity-results{overflow-wrap:anywhere}
 a{color:var(--text);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .evidence-source{margin-top:8px;padding-top:5px}

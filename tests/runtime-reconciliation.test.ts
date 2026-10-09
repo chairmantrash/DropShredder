@@ -17,8 +17,9 @@ function page(nodes:unknown,href='https://shop.example/products/lamp',price='$29
   }
   return {w,doc,href};
 }
-function scan(nodes:unknown,href?:string){
+function scan(nodes:unknown,href?:string,controls=''){
   const {w,doc,href:url}=page(nodes,href),g=globalThis as unknown as Record<string,unknown>;
+  if(controls){const holder=doc.createElement('div');holder.innerHTML=controls;doc.querySelector('main')?.append(holder);}
   const values={document:doc,window:w,location:new URL(url),NodeFilter:{SHOW_TEXT:4,SHOW_ELEMENT:1},HTMLElement:w.HTMLElement};
   const old=Object.fromEntries(Object.keys(values).map(k=>[k,g[k]]));Object.assign(g,values);
   try{return extractPageScan();}finally{for(const k of Object.keys(values)) if(old[k]===undefined) delete g[k];else g[k]=old[k];}
@@ -35,6 +36,22 @@ test('ProductGroup selects the current variant URL and abstains at ambiguous par
   const group={'@type':'ProductGroup',hasVariant:variants};
   assert.equal(scan(group,'https://shop.example/products/lamp?variant=2').product.price,20);
   const unknown=scan(group);assert.equal(unknown.product.price,undefined);assert.equal(unknown.product.sku,undefined);assert.equal(unknown.hostedReviews,undefined);
+});
+test('same-URL ProductGroup uses explicit selected variant attributes and abstains when ambiguous',()=>{
+  const base='https://shop.example/products/lamp';
+  const red={...product('Red lamp',base,10),color:'red',material:'cotton'};
+  const blue={...product('Blue lamp',base,20),color:'blue',material:'cotton'};
+  const group={'@type':'ProductGroup',name:'Target Lamp',url:base,hasVariant:[red,blue]};
+  const control='<input type="radio" name="color" value="blue" checked>';
+  const selected=scan(group,base,control);assert.equal(selected.product.price,20);assert.equal(selected.product.sku,'Blue lamp');assert.match(selected.product.extraction!.method,/selected controls/);
+  assert.equal(scan(group).product.price,undefined);
+  assert.equal(scan({...group,hasVariant:[red,blue,{...blue,sku:'ambiguous'}]},base,control).product.price,undefined);
+  assert.equal(scan(group,base,'<input type="radio" name="color" value="green" checked>').product.sku,undefined);
+});
+test('RDAP cancellation before consent prevents cache reads and network work',async()=>{
+  const g=globalThis as unknown as {chrome:unknown},old=g.chrome;let resolve!:(v:boolean)=>void,reads=0;
+  g.chrome={permissions:{request:()=>new Promise<boolean>(r=>{resolve=r;})},storage:{session:{get:async()=>{reads++;return {};}}}};
+  try{const c=new AbortController(),pending=lookupDomainRdap('example.com',c.signal);c.abort();resolve(true);await assert.rejects(pending,{name:'AbortError'});assert.equal(reads,0);}finally{g.chrome=old;}
 });
 test('unresolved offers and unrelated aggregate ratings remain unknown',()=>{
   const p={...product(),offers:[{price:1},{price:99}],aggregateRating:undefined};

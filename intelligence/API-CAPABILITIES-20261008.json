@@ -127,18 +127,20 @@
     },
     {
       "id": "gleif",
-      "state": "research-only-pending-endpoint-test",
+      "state": "implemented-manual-exact-lei-pending-hosted-chrome-verification",
       "access": "public-api",
       "chromeVerified": false,
-      "liveEndpointProbes": 0,
+      "liveEndpointProbes": 1,
       "limitations": [
-        "Official API page found in search; direct open timed out.",
-        "No endpoint/authentication/limit or Chrome behavior verified.",
-        "Entity names are candidates until identifiers corroborate."
+        "Exact check-digit-valid LEI only; no name matching, alias merge or merchant/product attribution.",
+        "Direct unauthenticated HTTPS endpoint returned 200 / matching identity on 2026-10-09.",
+        "Public data under CC0; no universal rate limit verified. Single explicit request, bounded/cancellable, no retries, 429 is unavailable.",
+        "Chrome verification pending this candidate."
       ],
       "sources": [
         "GLEIF"
-      ]
+      ],
+      "continuation": "src/osint/gleif.ts; brain/research/2026-10-09-GLEIF-ENDPOINT-PROBE.json"
     },
     {
       "id": "companies-house",

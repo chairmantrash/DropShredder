@@ -1,6 +1,7 @@
 /** Explicit selection keeps every destination visible without an unbounded tab burst. */
 export function showSearchChooser(urls:Record<string,string>,doc:Document=document):void{
   doc.querySelector('#ds-search-chooser')?.remove();
+  const previous=doc.activeElement as HTMLElement|null;
   const entries=Object.entries(urls).filter(([,url])=>{try{return new URL(url).protocol==='https:';}catch{return false;}}).slice(0,40);
   const dialog=doc.createElement('dialog');dialog.id='ds-search-chooser';
   const title=doc.createElement('h2');title.textContent='Choose searches to open';dialog.append(title);
@@ -13,7 +14,9 @@ export function showSearchChooser(urls:Record<string,string>,doc:Document=docume
   });
   const status=doc.createElement('p');status.setAttribute('role','status');dialog.append(status);
   const open=doc.createElement('button');open.textContent='Open selected searches';
-  const close=doc.createElement('button');close.textContent='Close';close.addEventListener('click',()=>dialog.remove());
+  const finish=()=>{dialog.remove();if(previous?.isConnected) previous.focus();};
+  const close=doc.createElement('button');close.textContent='Close';close.addEventListener('click',finish);
+  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
   open.addEventListener('click',()=>void(async()=>{
     const selected=choices.filter(c=>c.input.checked && !c.opened);
     if(!selected.length || selected.length>8){status.textContent='Choose between 1 and 8 searches.';return;}

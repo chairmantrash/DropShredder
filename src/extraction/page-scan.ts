@@ -74,6 +74,29 @@ export function extractPageScan():PageScanResult {
         const visibleTitle=bounded(document.querySelector('h1')?.textContent||undefined,500);
         const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
         let product:Record<string,unknown>|undefined=exact.length===1?exact[0]:undefined;
+        let selectedByControls=false;
+        // Some ProductGroups share one URL. Require one page-scoped group and
+        // an unambiguous combination of explicit selected variant attributes.
+        const groups=jsonNodes.filter(node=>types(node).includes('ProductGroup') &&
+          (ownUrls(node).includes(currentUrl)||(!ownUrls(node).length&&visibleTitle&&named(node.name)===named(visibleTitle))));
+        const selected:Record<string,string>={};
+        let conflictingControls=false;
+        for(const control of [...document.querySelectorAll<HTMLSelectElement|HTMLInputElement>('main select[name], main input[type="radio"][name]:checked')].slice(0,40)){
+          const match=/^(?:options\[)?(color|colour|size|capacity|material)\]?$/i.exec(control.name);
+          if(!match||!control.value||control.disabled) continue;
+          const key=match[1]!.toLowerCase()==='colour'?'color':match[1]!.toLowerCase(),value=named(control.value);
+          if(selected[key]&&selected[key]!==value) conflictingControls=true;selected[key]=value;
+        }
+        if(groups.length===1&&!conflictingControls&&Object.keys(selected).length){
+          const children=Array.isArray(groups[0]!.hasVariant)?groups[0]!.hasVariant:[];
+          const candidates=products.filter(node=>children.includes(node)&&Object.entries(selected).every(([key,value])=>named(node[key]??(key==='color'?node.colour:undefined))===value));
+          if(candidates.length===1){
+            const candidate=candidates[0]!;
+            // A selected control never overrides a different exact URL match.
+            if(!product||product===candidate){product=candidate;selectedByControls=true;}
+            else product=undefined;
+          }else product=undefined;
+        }
         // A canonical parent cannot choose between variants, nor override a variant URL.
         if(!product && !exact.length && products.length===1){
           const only=products[0]!, urls=ownUrls(only);
@@ -88,7 +111,7 @@ export function extractPageScan():PageScanResult {
         };
         const offers=(Array.isArray(product?.offers)?product.offers:[product?.offers]).map(asRecord).filter((v):v is Record<string,unknown>=>Boolean(v));
         const currentOffers=offers.filter(node=>ownUrls(node).includes(currentUrl));
-        const offer=currentOffers.length===1?currentOffers[0]:offers.length===1 && (!ownUrls(offers[0]!).length || ownUrls(offers[0]!).includes(currentUrl))?offers[0]:undefined;
+        const offer=currentOffers.length===1?currentOffers[0]:offers.length===1 && (!ownUrls(offers[0]!).length || ownUrls(offers[0]!).includes(currentUrl) || selectedByControls)?offers[0]:undefined;
         const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
         const aggregateNode=asRecord(product?.aggregateRating);
@@ -121,6 +144,7 @@ export function extractPageScan():PageScanResult {
           ? product?.additionalProperty
           : product?.additionalProperty ? [product.additionalProperty] : [];
         const specifications:Record<string,string>={};
+        for(const key of ['color','size','capacity','material']){const value=first(product?.[key]??(key==='color'?product?.colour:undefined));if(value) specifications[key]=value.slice(0,200);}
         for(const entry of additionalProperties){
           const record=asRecord(entry);
           const name=first(record?.name);
@@ -260,7 +284,7 @@ export function extractPageScan():PageScanResult {
             claims:[],
             specifications,
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
-            extraction:{method:product?'current-product JSON-LD':'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer)},
+            extraction:{method:product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer)},
             pageSignals:[
               ...(('Shopify' in window || scriptSources.some(src=>src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
                 ? ['platform:shopify'] : []),

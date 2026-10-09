@@ -104,3 +104,8 @@ Material privacy-practice changes will be reflected in this policy and, when req
 ## Contact
 
 Security and privacy issues may be reported through the public DropShredder GitHub repository's security/reporting channels.
+# User reference lists and optional entity lookup (2026-10-09)
+
+User-added JSON records, their public signing keys and one previous version stay in Chrome's local extension storage until removed/reset. These are public reference data, not account credentials. No feed downloads happen automatically. Clicking Fetch preview sends only the chosen public feed URL to its publisher, after Chrome permission; no browsing history, scan or stored records are uploaded. Downloads omit credentials and referrer, reject redirects and have size/time limits. Signed feeds require a manually reviewed public key; a signature does not validate product facts.
+
+The optional GLEIF lookup sends only the exact LEI the shopper enters, after Chrome permission. Results stay in the current panel and are not added to scan history or exported reports. No account, secret key, entity address or ownership graph is collected. CPSC and RDAP remain explicit optional public lookups. Remove extra site access cancels active requests. Browser/provider network failures never establish safety, quality or merchant identity.

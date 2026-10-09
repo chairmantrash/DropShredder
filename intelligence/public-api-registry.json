@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08",
+  "updatedAt": "2026-10-09",
   "policy": {
     "paidApiDependenciesAllowed": false,
     "freePublicApisAllowed": true,
@@ -95,7 +95,7 @@
       "operator": "Global Legal Entity Identifier Foundation",
       "access": "public-api",
       "runtimeClass": "credential-free",
-      "status": "research-only-pending-endpoint-test",
+      "status": "implemented-exact-lei-pending-hosted-verification",
       "purpose": [
         "legal-entity resolution",
         "LEI relationships"
@@ -104,9 +104,10 @@
       "primarySource": "https://www.gleif.org/en/lei-data/gleif-api",
       "reviewedAt": "2026-10-08",
       "accessReviewNotes": [
-        "Official API page found in search; direct open timed out.",
-        "No endpoint/authentication/limit or Chrome behavior verified.",
-        "Entity names are candidates until identifiers corroborate."
+        "Manual exact LEI GET at api.gleif.org/api/v1/lei-records/{lei}; no authentication supplied; verified matching response locally.",
+        "Free CC0 data; legal identity only, no retail quality or store attribution.",
+        "No universal published rate limit verified; one explicit request, no retries/polling; 429 fails unavailable.",
+        "Browser grant/CORS verification pending exact candidate."
       ]
     },
     {

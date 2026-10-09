@@ -33,10 +33,10 @@ export function parseRecallCandidates(data:unknown,model?:string):Omit<RecallLoo
   out.sort((a,b)=>Number(b.modelMentioned)-Number(a.modelMentioned)||(b.date??'').localeCompare(a.date??''));
   return {candidates:out.slice(0,12),inspected:Math.min(data.length,200),truncated:data.length>200||out.length>12};
 }
-export interface RecallDependencies {requestPermission:()=>Promise<boolean>;fetch:typeof fetch}
+export interface RecallDependencies {requestPermission:()=>Promise<boolean>;fetch:typeof fetch;hasPermission?:()=>Promise<boolean>}
 /** User-triggered only; zero caching, credentials, scoring or follow-up requests. */
 export async function lookupRecallCandidates(query:string,field:RecallField,model:string|undefined,signal:AbortSignal,
-  deps:RecallDependencies={requestPermission:()=>chrome.permissions.request({origins:[CPSC_ORIGIN]}),fetch:(input,init)=>globalThis.fetch(input,init)}):Promise<RecallLookup|undefined> {
+  deps:RecallDependencies={requestPermission:()=>chrome.permissions.request({origins:[CPSC_ORIGIN]}),fetch:(input,init)=>globalThis.fetch(input,init),hasPermission:()=>chrome.permissions.contains({origins:[CPSC_ORIGIN]})}):Promise<RecallLookup|undefined> {
   const url=recallQueryUrl(query,field);
   signal.throwIfAborted();
   // Request Chrome access in the direct click chain, before the first await.
@@ -53,6 +53,8 @@ export async function lookupRecallCandidates(query:string,field:RecallField,mode
     bytes+=value.byteLength;if(bytes>2_000_000) throw new Error('Recall response exceeded the 2 MB limit.');
     body+=decoder.decode(value,{stream:true});}body+=decoder.decode();
   }finally{void reader.cancel().catch(()=>{});}
+  combined.throwIfAborted();
+  if(deps.hasPermission&&!await deps.hasPermission()) return undefined;
   combined.throwIfAborted();
   return {...parseRecallCandidates(JSON.parse(body),model),retrievedAt:new Date().toISOString()};
 }

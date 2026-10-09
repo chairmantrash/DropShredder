@@ -50,9 +50,9 @@ export function compareProductIdentity(a:ProductIdentityInput,b:ProductIdentityI
   // Store-local variant/SKU numbers are not globally unique. Do not cross-match those namespaces.
   if(a.domain && a.domain===b.domain && a.variantId && b.variantId &&
       normalizeProductIdentifier(a.variantId)!==normalizeProductIdentifier(b.variantId)) conflicts.push('variant');
-  for(const key of ['color','colour','size','capacity']){
+  for(const key of ['color','size','capacity','material']){
     const get=(v:ProductIdentityInput)=>Object.entries(v.specifications??{}).slice(0,40)
-      .find(([name])=>name.toLowerCase()===key)?.[1];
+      .find(([name])=>(name.toLowerCase()==='colour'?'color':name.toLowerCase())===key)?.[1];
     const left=normalizeProductIdentifier(get(a)),right=normalizeProductIdentifier(get(b));
     if(left && right && left!==right) conflicts.push(`variant:${key}`);
   }

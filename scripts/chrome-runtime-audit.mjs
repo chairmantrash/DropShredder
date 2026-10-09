@@ -31,7 +31,10 @@ requireMatch(scanner,/export function extractPageScan/,'packaged page scanner mi
 
 requireMatch(bg,/setPanelBehavior\(\{ openPanelOnActionClick: true \}\)/,'toolbar action must open/toggle side panel');
 requireMatch(bg,/documentUrlPatterns:\['http:\/\/\*\/\*','https:\/\/\*\/\*'\]/,'context menus must be limited to web documents');
-requireMatch(bg,/chrome\.tabs\.create\(\{url,active:false\}\)/,'Deep Hunt searches must open bounded background tabs');
+const chooser=fs.readFileSync('src/ui/search-chooser.ts','utf8');
+requireMatch(chooser,/chrome\.tabs\.create\(\{url:c\.url,active:false\}\)/,'Deep Hunt searches must open bounded background tabs after explicit selection');
+requireMatch(chooser,/selected\.length>8/,'Deep Hunt must cap each batch at eight');
+requireMatch(bg,/search\.html#\$\{key\}/,'Context searches must disclose destinations in the same chooser');
 
 requireMatch(image,/chrome\.permissions\.request\(\{origins:\[hostPattern\(url\)\]\}\)/,'image acquisition must request its exact image host directly');
 forbid(image,/await chrome\.permissions\.contains/,'image permissions must not await a preflight before request');

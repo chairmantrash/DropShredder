@@ -67,7 +67,8 @@ function ensureRdapPermission(origin:string):Promise<boolean> {
 
 const CACHE_MS=6*60*60*1000;
 
-export async function lookupDomainRdap(input:string):Promise<RdapDomainObservation|undefined> {
+export async function lookupDomainRdap(input:string,signal:AbortSignal=new AbortController().signal):Promise<RdapDomainObservation|undefined> {
+  signal.throwIfAborted();
   const domain=registeredDomain(input);
   if(!domain) return undefined;
   const url=rdapEndpoint(domain);
@@ -76,6 +77,7 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
   // Ask Chrome while the click still has user activation, before async cache reads.
   const permission=ensureRdapPermission(origin);
   if(!(await permission)) return undefined;
+  signal.throwIfAborted();
   const cacheKey=`rdap:${domain}`;
   try{
     const cached=(await chrome.storage.session.get(cacheKey))[cacheKey] as {at:number;value:RdapDomainObservation}|undefined;
@@ -86,9 +88,10 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
       && Array.isArray(cached.value.nameservers) && Array.isArray(cached.value.statuses)
       && await chrome.permissions.contains({origins:[origin]})) return cached.value;
   }catch{}
+  const combined=AbortSignal.any([signal,AbortSignal.timeout(5000)]);
   const response=await fetch(url,{
     headers:{accept:'application/rdap+json, application/json'},
-    signal:AbortSignal.timeout(5000),
+    signal:combined,
     credentials:'omit',referrerPolicy:'no-referrer',cache:'no-store',redirect:'error',
   });
   if(!response.ok) throw new Error(`RDAP lookup failed: HTTP ${response.status}`);
@@ -100,6 +103,7 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
   let text='',size=0;
   try{
     while(true){
+      combined.throwIfAborted();
       const {done,value}=await reader.read();
       if(done) break;
       size+=value.byteLength;
@@ -111,6 +115,7 @@ export async function lookupDomainRdap(input:string):Promise<RdapDomainObservati
     void reader.cancel().catch(()=>{});
   }
   const data=JSON.parse(text) as RdapResponse;
+  combined.throwIfAborted();
   if(!data || typeof data!=='object' || data.ldhName?.toLowerCase()!==domain) throw new Error('RDAP record did not identify the requested registered domain.');
   if(!(await chrome.permissions.contains({origins:[origin]}))) return undefined;
 
