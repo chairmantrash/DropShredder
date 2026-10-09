@@ -62,7 +62,11 @@ async function attach(targetId) {
     if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails)); return result.result.value;
   };
   const click = async selector => {
-    const point = await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); if(!el || el.disabled) throw new Error('Missing/disabled control'); el.scrollIntoView({block:'center'}); const r=el.getBoundingClientRect(); return {x:r.x+r.width/2,y:r.y+r.height/2}; })()`);
+    await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); if(!el || el.disabled) throw new Error('Missing/disabled control'); el.scrollIntoView({block:'center'}); })()`);
+    // Chrome Views forwards native-panel input through compositor hit testing.
+    // Let the scroll settle before computing/clicking a visible, unobscured hit.
+    await pause(200);
+    const point = await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); const r=el.getBoundingClientRect(); if(!r.width || !r.height) throw new Error('Control is hidden'); const x=r.x+r.width/2,y=r.y+r.height/2,hit=document.elementFromPoint(x,y); if(!hit || !(hit===el || el.contains(hit))) throw new Error('Control is obscured'); return {x,y}; })()`);
     await call('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point });
     await call('Input.dispatchMouseEvent', { type: 'mousePressed', ...point, button: 'left', clickCount: 1 });
     await call('Input.dispatchMouseEvent', { type: 'mouseReleased', ...point, button: 'left', clickCount: 1 });
@@ -261,6 +265,8 @@ try {
   } else report.productScanBlocked = 'Full scan/toast testing requires genuine Chrome host access; no test override was used.';
 } catch (error) {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED'; report.failure = String(error);
+  report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent})").catch(() => undefined);
+  report.savedFeaturesAtFailure = await features().catch(() => undefined);
   await native?.screenshot('native-failure.png').catch(() => {}); console.error(error); process.exitCode = 1;
 } finally {
   report.finishedAt = new Date().toISOString(); report.testsPassed = report.tests.filter(t => t.status === 'PASS').length;
