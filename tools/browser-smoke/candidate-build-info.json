@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "82e5c22a957bccab72c1bf480d7ed62f5f0d432e",
-  "sourceTree": "04dee382eab58c36392bd4ba01d7e5d748e2d31c",
+  "sourceCommit": "f8b74a93f520a8d2982083283cfa6a9869a89143",
+  "sourceTree": "d321522960a91a446aa6bd46a20f2526e06b8388",
   "version": "0.2.0",
-  "reviewedChange": "Inert local lists, explicit manual feeds/signatures, role-separated product leads, exact GLEIF identity lookup, cancellation/export/lifecycle/selected-variant guards; required permission and dependency baseline retained. Native dialog Tab boundaries explicitly retain focus. Amazon product-title identity excludes unrelated accessibility headings. Race-safe content-script registration and fail-closed early opt-out on permission revocation, with native signed-key and local-file browser checks and dedicated race tests.",
+  "reviewedChange": "DS-035: Explicitly named same-URL variant swatches with corresponding target stamps, fixed-width lot and serial scope matcher, evidence-backed passive alert visibility, safe reverse-image source URLs. No new required permissions or runtime dependencies. Pre-release verification only.",
   "buildFiles": [
     {
       "path": "assets/sidepanel-Bq3TO1x-.css",
@@ -11,8 +11,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 22745,
-      "sha256": "69f05183fa9b73f83b0a2f14ef89ec35bd757f57c8541d200eb488d506b08387"
+      "bytes": 22818,
+      "sha256": "31fcf8caa53be9460f3677224e781a5df98dc5007c8e0ae138ed771f168a17d7"
     },
     {
       "path": "chunks/search-chooser-CEmkGmME.js",
@@ -25,14 +25,14 @@
       "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
     },
     {
-      "path": "chunks/sidepanel-WwZssTxd.js",
-      "bytes": 464378,
-      "sha256": "3be67673c15c95c517382fa0dfcf18f11119d9d2f4fe0aeb8244b4a09fdaba09"
+      "path": "chunks/sidepanel-D-GWOrHU.js",
+      "bytes": 465609,
+      "sha256": "f69999a0d0d4a4864369a9727dc665dddab183d282888fcf770d9139de024ad0"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 41569,
-      "sha256": "a6f75e0c21123a2fbbc0dd4131df28b1217c1684e03e8ac69216acfcbe16f75e"
+      "bytes": 42225,
+      "sha256": "80fdb93153b64496c0c84368f2ed556f21185fca21cfc1494f070b3bd89766d4"
     },
     {
       "path": "icon/128.png",
@@ -67,7 +67,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 12456,
-      "sha256": "b77e503317e9afe697bb17c9d70b7983a0358406664e09c7c36d199b4ac65b89"
+      "sha256": "54386dffe17fd129ae99d61aa69a99b593d25d345b9b9079ca88e240502e85a5"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
