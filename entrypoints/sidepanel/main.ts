@@ -156,8 +156,11 @@ autoProtection?.addEventListener('change',()=>{
       if(autoProtectionStatus) autoProtectionStatus.textContent='Chrome permission was not granted. Manual checks still work.';
       return;
     }
-    await setAutoContentRegistration(wanted);
+    // Turn the saved gate off before unregistering so already-injected tabs
+    // reject alerts even when Chrome's registration cleanup races a worker.
+    if(wanted) await setAutoContentRegistration(true);
     await updateFeatureSettings({autoProtection:wanted});
+    if(!wanted) await setAutoContentRegistration(false);
     if(wanted){
       // Newly enabled protection should check the currently visible product page too.
       const tab=await activeWebTab();
@@ -966,12 +969,17 @@ revokeOptionalAccess?.addEventListener('click',()=>{
   void (async()=>{
     revokeOptionalAccess.disabled=true;
     try{
+      // The opt-in setting is the first and definitive protection gate.
+      // Cleanup may race the worker's permissions.onRemoved reconciliation.
+      await updateFeatureSettings({autoProtection:false});
+      if(autoProtection) autoProtection.checked=false;
       const granted=await chrome.permissions.getAll();
       const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
       if(origins.length) await chrome.permissions.remove({origins});
       await setAutoContentRegistration(false);
-      await updateFeatureSettings({autoProtection:false});
-      if(autoProtection) autoProtection.checked=false;
+      const remaining=(await chrome.permissions.getAll()).origins ?? [];
+      if(remaining.some(origin=>origin.startsWith('https://')))
+        throw new Error('Chrome kept a site permission; check extension site access.');
       status.textContent=origins.length
         ? 'Extra site access removed.'
         : 'DropShredder didn’t have any extra site access to remove.';
