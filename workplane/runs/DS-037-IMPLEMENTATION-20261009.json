@@ -80,7 +80,7 @@
   "node": "22.20.0",
   "staticAudits": "typecheck/security/chrome/data/professionalism PASS; architecture size warnings retained",
   "reference": "npm tesseract.js@7.0.0 official package source reviewed (createWorker, spawnWorker, LICENSE.md and dist notices); no generated engine changed",
-  "browser": "Exact revised package has not yet run; no historical browser passes claimed",
+  "browser": "Subsequent exact-package run completed: 9 packaged +29 headed native Chrome156 passes; see DS-037-LIVE-BETA-20261009.json. No historical passes counted.",
   "limitations": [
     "No calibrated physical product quality or regional blacklist",
     "No guaranteed factory authentication or neural embedding claim",
