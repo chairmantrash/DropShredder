@@ -1,0 +1,6 @@
+DropShredder fully local, optional OCR assets
+tesseract.js npm 7.0.0 — Tesseract JavaScript API and local worker
+tesseract.js-core npm 6.1.2 — Emscripten WASM engines
+English training data tessdata_fast SHA 87416418657359cb625c412a48b6e1d6d41c29bd
+All files packaged at BUILD TIME; no CDN/remote code/model downloads at runtime.
+Public package license notices and full source licenses must be retained.
