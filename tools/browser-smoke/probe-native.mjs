@@ -452,7 +452,9 @@ try {
         await native.evaluate("document.querySelector('#label-image').closest('details').open=true");
         await native.setFiles('#label-image',[filename]);
         await native.click('#label-read');
-        await until(()=>native.evaluate("document.querySelector('#label-status').textContent.includes('Local analysis complete')"),'offline OCR loaded and finished',60000);
+        await until(()=>native.evaluate("(/Local analysis complete|Offline OCR failed|unavailable|Could not/.test(document.querySelector('#label-status').textContent))"),'offline OCR loaded and finished',60000);
+        const ocrStatus=await native.evaluate("document.querySelector('#label-status').textContent");
+        assert.match(ocrStatus,/Local analysis complete/, 'Expected local OCR success; actual: '+ocrStatus);
         const outputText=await native.evaluate("document.querySelector('#label-results').textContent");
         assert.match(outputText,/OCR support: available/);
         assert.match(outputText,/PRODUCT|12345/i);
