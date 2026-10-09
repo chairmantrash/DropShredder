@@ -440,6 +440,26 @@ try {
         assert.ok(!externalRequests.some(x=>/tessdata|jsdelivr|unpkg/i.test(x)),'No OCR download from external providers');
         return {files:inspected,scope:'Packaged local assets, not accuracy or photographed-label recognition'};
       });
+      await test('N29','Actual native panel invokes bundled offline OCR on a synthetic local image',async()=>{
+        const imageData=await native.evaluate(()=>{
+          const canvas=document.createElement('canvas');canvas.width=850;canvas.height=170;
+          const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,850,170);
+          ctx.fillStyle='#000';ctx.font='bold 68px Arial';ctx.fillText('PRODUCT 12345',25,105);
+          return canvas.toDataURL('image/png');
+        });
+        const filename=path.join(output,'owned-ocr-label.png');
+        await fs.writeFile(filename,Buffer.from(imageData.split(',')[1],'base64'));
+        await native.evaluate("document.querySelector('#label-image').closest('details').open=true");
+        await native.setFiles('#label-image',[filename]);
+        await native.click('#label-read');
+        await until(()=>native.evaluate("document.querySelector('#label-status').textContent.includes('Local analysis complete')"),'offline OCR loaded and finished',60000);
+        const outputText=await native.evaluate("document.querySelector('#label-results').textContent");
+        assert.match(outputText,/OCR support: available/);
+        assert.match(outputText,/PRODUCT|12345/i);
+        assert.ok(!externalRequests.some(origin=>/tessdata|jsdelivr|unpkg|cdn\./i.test(origin)),JSON.stringify(externalRequests));
+        await native.screenshot('native-packaged-ocr.png');
+        return {scope:'Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested',output:outputText.slice(0,250)};
+      });
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);
