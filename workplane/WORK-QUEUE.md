@@ -17,11 +17,11 @@
 | DS-013 | P0 | Reverse-image/supplier search launchers | DONE | runtime | DS-003 |
 | DS-014 | P1 | RDAP/DNS merchant intelligence | DONE | forensics | DS-006 |
 | DS-015 | P0 | Review provenance/anomaly engine | DONE | forensics | DS-006 |
-| DS-016 | P1 | Policy/storefront fingerprinting | DEFERRED-DEEP-HUNT | — | DS-007 |
-| DS-017 | P2 | Merchant relationship graph | DEFERRED-DEEP-HUNT | — | DS-007,DS-016 |
-| DS-018 | P1 | OCR Deep Hunt | DEFERRED-DEEP-HUNT | — | DS-012 |
-| DS-019 | P2 | Marketplace result-page badges | DEFERRED-POST-BETA | — | DS-008,DS-009,DS-010 |
-| DS-020 | P1 | Local embeddings/semantic invariant matching | DEFERRED-POST-BETA | — | DS-012,DS-015 |
+| DS-016 | P1 | Policy/storefront fingerprinting | IMPLEMENTED-QA-PENDING | release | DS-007 |
+| DS-017 | P2 | Merchant relationship graph | IMPLEMENTED-QA-PENDING | release | DS-007,DS-016 |
+| DS-018 | P1 | OCR Deep Hunt | IMPLEMENTED-QA-PENDING | release | DS-012 |
+| DS-019 | P2 | Marketplace result-page badges | IMPLEMENTED-QA-PENDING | release | DS-008,DS-009,DS-010 |
+| DS-020 | P1 | Local similarity and invariant matching (bounded feature hashing; no neural model) | IMPLEMENTED-QA-PENDING | release | DS-012,DS-015 |
 | DS-021 | P0 | Weekly dropshipper enablement intelligence watch | RUNNING | research | — |
 | DS-022 | P1 | Technology signature registry (informational-first) | DONE | research | DS-021,DS-006 |
 | DS-023 | P1 | Fulfillment-claim vs carrier contradiction engine | DONE | forensics | DS-007,DS-021 |
@@ -46,4 +46,6 @@ Earlier DONE rows describe historical implementation, not a real Chrome gate pas
 2026-10-09 synchronization: DS-031–034 statuses above match their current packets and the bounded engineering receipt `workplane/runs/DS-031-034-CONTINUATION-20261009.json`. VERIFYING is not DONE or release authorization. PR #11 was integrated into the internal PR #9 release branch as merge 7271f9c; PR #9 is the sole draft release gate. Independent A01–D06, representative category calibration, native browser edges and live-provider acceptance remain explicit gates.
 
 
-Source implementation and constraints: `workplane/tasks/DS-035.md`. Unshipped optional OCR/embeddings/automated feed/key rotation are documented research candidates, not required beta implementations.
+Source implementation and constraints: `workplane/tasks/DS-035.md`. The owner subsequently reopened all deferred feature work via DS-036. The implementation uses licensed, locally packaged offline OCR and no-model vector similarity; it does not claim neural embeddings. Signed subscription updates are scheduled with explicit user opt-in. See `workplane/tasks/DS-036.md` and `workplane/runs/DS-036-FEATURE-CONVERGENCE-20261009.json` for exact verification scope.
+
+| DS-036 | P0 | Finish deferred feature set, converge release candidate and lock package | IMPLEMENTED-QA-PENDING | release agent — 27-file package, browser gate pending |

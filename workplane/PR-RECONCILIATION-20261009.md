@@ -29,3 +29,8 @@ After PR #11 merged, the only development branch remains `release/security-perfo
 
 ## DS-035 verification closure (engineering only)
 `c18953c6` passes 255 core tests (0 failures), CodeQL and all three hosted Chromium workflow jobs. Reviewed bundle source `f8b74a93` matches pinned 14-file hashes; run `37917272818` generated a new unpacked QA-only artifact. No post-pin production edits. This is engineering verification and does not close any independent release gates or authorize a merge into `main`.
+
+## DS-036 feature convergence — owner direction
+Reopened previously deferred feature work, implemented signed-background update scheduling and settings, result-page badges for Amazon/Etsy/Walmart, exact role-linked local importer/manufacturer/seller graph, no-model local semantic-candidate retrieval, opt-in packaged offline Tesseract OCR, and optional privacy-scoped BYO-key search for one-off supplier discovery. These capabilities are subject to actual runtime verification and privacy/accuracy acceptance. The core stays free with no mandatory API/account; optional BYO-key Brave plan may have charges. No automatic publisher key rotation, unverified facts, authenticated real issuer feed, universal neural model, or provider coverage is claimed. All unvalidated inputs and matching leads remain unscored.
+
+The final build artifact/source SHA and latest GitHub-hosted browser run supersede earlier 14-file/255-test historical receipts. Keep PR #9 draft and `main` unchanged until user accepts independent A01–D06 real-store, native context menu, concurrency, file picker, third-party live-source and calibration checks.
