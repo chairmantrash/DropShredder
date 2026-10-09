@@ -368,6 +368,7 @@ try {
       });
       if(process.env.DS_LIVE_SURFACES==='1'){
         report.liveSurfaces=[];
+        const fixturePage=page;
         for(const surface of [
           {kind:'direct manufacturer / cooling fan',url:'https://www.noctua.at/en/products/nf-a12x25-g2-pwm',expected:'NF-A12x25'},
           {kind:'Amazon / cooling fan',url:'https://www.amazon.com/dp/B0FC636JBS',expected:'Noctua'},
@@ -376,6 +377,9 @@ try {
         ]){
           const entry={...surface,startedAt:new Date().toISOString(),status:'NOT_EVALUATED',limits:'Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate'};
           try{
+            // Isolate each live site's late redirects/errors from the next
+            // observation and from the deterministic fixture assertions.
+            page=await context.newPage();
             const response=await page.goto(surface.url,{waitUntil:'domcontentloaded',timeout:20000});await pause(2000);
             entry.httpStatus=response?.status();entry.finalUrl=page.url();
             const body=(await page.locator('body').innerText({timeout:3000})).slice(0,15000);
@@ -387,6 +391,7 @@ try {
               else entry.status='ABSTAINED_OR_REFUSED';
             }
           }catch(error){entry.status='ENVIRONMENT_OR_SURFACE_UNAVAILABLE';entry.error=String(error);}
+          finally{if(page!==fixturePage) await page.close();page=fixturePage;await page.bringToFront();}
           entry.finishedAt=new Date().toISOString();report.liveSurfaces.push(entry);
         }
       }
