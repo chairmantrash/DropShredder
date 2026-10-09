@@ -65,7 +65,8 @@ for(const file of codeFiles){
 
 let totalBytes=0;
 for(const file of files) totalBytes+=(await fs.stat(file)).size;
-const budget=10*1024*1024;
+// Local OCR engines/models are package resources loaded only for explicit user scans.
+const budget=60*1024*1024;
 if(totalBytes>budget) fail(`Unpacked extension exceeds 10 MiB budget: ${totalBytes} bytes`);
 
 console.log(JSON.stringify({

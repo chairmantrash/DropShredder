@@ -6,7 +6,7 @@ export default defineConfig({
     description: 'Local-first commerce forensics and product provenance analysis.',
     minimum_chrome_version: '133',
     content_security_policy: {
-      extension_pages: "script-src 'self'; object-src 'self';",
+      extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';",
     },
     permissions: ['scripting', 'storage', 'contextMenus', 'sidePanel', 'alarms'],
     optional_host_permissions: ['https://*/*'],

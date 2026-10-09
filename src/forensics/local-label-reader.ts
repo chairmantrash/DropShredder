@@ -1,5 +1,55 @@
 import { normalizeGtin } from '../analysis/product-identity';
 
+type TesseractAPI={createWorker:(lang:string,oem:number,opts:Record<string,unknown>)=>Promise<{
+  recognize:(image:Blob)=>Promise<{data:{text?:string}}>;
+  terminate:()=>Promise<unknown>;
+}>};
+let offlineScript:Promise<TesseractAPI>|undefined;
+function offlineEngine():Promise<TesseractAPI>{
+  if(offlineScript)return offlineScript;
+  offlineScript=new Promise<TesseractAPI>((resolve,reject)=>{
+    const existing=(globalThis as unknown as {Tesseract?:TesseractAPI}).Tesseract;
+    if(existing?.createWorker){resolve(existing);return;}
+    const script=document.createElement('script');
+    script.src=chrome.runtime.getURL('ocr/tesseract.min.js');
+    script.async=true;
+    script.addEventListener('load',()=>{
+      const api=(globalThis as unknown as {Tesseract?:TesseractAPI}).Tesseract;
+      if(api?.createWorker)resolve(api);
+      else reject(new Error('Packaged local OCR engine did not initialize.'));
+    },{once:true});
+    script.addEventListener('error',()=>reject(new Error('Packaged OCR assets are missing or unavailable.')),{once:true});
+    document.head.append(script);
+  }).catch(error=>{offlineScript=undefined;throw error;});
+  return offlineScript;
+}
+async function localTesseract(canvas:OffscreenCanvas,signal:AbortSignal):Promise<string[]>{
+  signal.throwIfAborted();
+  const api=await offlineEngine();
+  signal.throwIfAborted();
+  const ocrOrigin=chrome.runtime.getURL('ocr/');
+  const worker=await api.createWorker('eng',1,{
+    workerPath:ocrOrigin+'worker.min.js',
+    corePath:ocrOrigin,
+    langPath:ocrOrigin.slice(0,-1),
+    workerBlobURL:false,
+    cacheMethod:'none',
+  });
+  const cancel=()=>{void worker.terminate().catch(()=>{});};
+  signal.addEventListener('abort',cancel,{once:true});
+  try{
+    signal.throwIfAborted();
+    const image=await canvas.convertToBlob({type:'image/png'});
+    signal.throwIfAborted();
+    const result=await worker.recognize(image);
+    signal.throwIfAborted();
+    return (result.data.text??'').slice(0,5000).split(/\r?\n/).map(s=>s.trim()).filter(Boolean).slice(0,60);
+  }finally{
+    signal.removeEventListener('abort',cancel);
+    await worker.terminate().catch(()=>{});
+  }
+}
+
 export interface LocalLabelReading {barcodes:string[];gtins:string[];textLines:string[];textAvailable:boolean;barcodeAvailable:boolean}
 type Detection={rawValue?:string;rawText?:string;};
 type Constructor<T>={new():T;create?:()=>Promise<T>};
@@ -46,7 +96,21 @@ export async function readLocalLabel(file:File,signal:AbortSignal):Promise<Local
     };
     const barcodes=await detect(api.BarcodeDetector);
     const text=await detect(api.TextDetector);
-    return collectLocalLabelResults(barcodes.values.map(v=>v.rawValue),text.values.map(v=>v.rawText),
-      text.supported,barcodes.supported);
+    // Native platform OCR is optional in Chrome. A bundled Tesseract engine
+    // supplies a fully offline fallback with no user account or CDN requests.
+    let lines=text.values.map(v=>v.rawText);
+    let ocrAvailable=text.supported;
+    if(!ocrAvailable){
+      try{
+        lines=await localTesseract(canvas,signal);
+        ocrAvailable=true;
+      }catch(error){
+        signal.throwIfAborted();
+        if(error instanceof Error && /missing|unavailable|initialize/.test(error.message)) throw error;
+        // OCR failure is visible as unavailable; barcode recognition still works.
+      }
+    }
+    return collectLocalLabelResults(barcodes.values.map(v=>v.rawValue),lines,
+      ocrAvailable,barcodes.supported);
   }finally{bitmap.close();}
 }
