@@ -40,7 +40,7 @@ test('regulated lots are strict, fixed-width and require both available lot and 
 
 test('a precise lot match cannot override an excluded model, differing brand or official serial requirement',()=>{
   const scoped:RegulatoryRecord={...record,lotNumbers:['LOT-EXACT'],excludedModels:['X-101'],requiresOfficialSerialCheck:true};
-  const product={brand:'Acme',model:'X100',lot:'LOT-EXACT'};
+  const product={gtin:'012345678905',brand:'Acme',model:'X100',lot:'LOT-EXACT'};
   assert.equal(matchRegulatoryRecord(product,scoped)?.coverage,'unresolved');
   assert.equal(matchRegulatoryRecord({...product,model:'X101'},scoped)?.coverage,'excluded');
   assert.equal(matchRegulatoryRecord({...product,lot:'lot-exact'},scoped)?.coverage,'excluded');
