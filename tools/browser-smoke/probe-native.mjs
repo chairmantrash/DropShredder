@@ -200,7 +200,9 @@ try {
     await test('N09', 'Genuine Chrome Allow enables host access and the isolated automatic script', async () => {
       await native.click('#auto-protection');
       assert.equal(await native.evaluate("document.querySelector('#auto-protection').disabled"), true);
-      await pause(300); await native.screenshot('native-permission-second-prompt.png');
+      // The first 300ms capture on 08dc76a4 showed Allow disabled. Wait for
+      // Chrome's anti-accidental-acceptance delay, then preserve enabled UI.
+      await pause(2500); await native.screenshot('native-permission-second-prompt.png');
       execFileSync('xdotool', ['key', 'Tab', 'Return']);
       await until(() => native.evaluate("!document.querySelector('#auto-protection').disabled"), 'native allowance');
       granted = await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] }));
@@ -209,6 +211,7 @@ try {
       const scripts = await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts());
       assert.equal(scripts.length, 1); assert.equal(scripts[0].id, 'dropshredder-auto-shopping-v1'); assert.equal(scripts[0].world, 'ISOLATED');
       settled = true; report.permissionExploration.status = 'EXPLICIT NATIVE DENY THEN ALLOW OBSERVED';
+      report.notTested = report.notTested.filter(item => !item.startsWith('Explicit operator accept/deny'));
       report.permissionExploration.afterDecision = { granted, scripts };
       await native.screenshot('native-permission-allowed.png');
     });
@@ -223,7 +226,9 @@ try {
       await native.click('#scan'); await until(() => native.evaluate("!document.querySelector('#scan').disabled"), 'full scan', 20000);
       const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent,exportDisabled:document.querySelector('#export-report').disabled})");
       assert.match(state.status, /^Scan complete for fixture.example.test/);
-      const scan = JSON.parse(state.raw); assert.equal(scan.product.title, 'Fixture mug'); assert.equal(state.exportDisabled, false);
+      const scan = JSON.parse(state.raw); assert.equal(scan.product.title, 'Fixture mug');
+      assert.equal(scan.product.sku, 'FIXTURE-MUG-001'); assert.equal(scan.product.price, 12);
+      assert.equal(state.exportDisabled, false);
       await native.screenshot('native-fixture-scan.png'); return { status: state.status, product: scan.product, scope: 'Owned fixture, no merchant accuracy/explicit prompt acceptance claim' };
     });
     if (headed) {
@@ -249,6 +254,8 @@ try {
       });
       await test('N14', 'Granted fixture scans cause no uncaught errors or external investigations', async () => {
         assert.deepEqual(errors, []); assert.deepEqual(externalRequests, []);
+        report.finalPermissionState = { granted: await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })),
+          scripts: await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), features: await features() };
       });
     }
   } else report.productScanBlocked = 'Full scan/toast testing requires genuine Chrome host access; no test override was used.';
