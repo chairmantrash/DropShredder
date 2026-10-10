@@ -1,33 +1,19 @@
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 import type { StoredObservation } from '../storage/history';
-
-function normalize(value:string|undefined):string|undefined{
-  const v=value?.trim().toLowerCase();
-  return v||undefined;
-}
-
-function stableIds(product:ProductSnapshot):Set<string>{
-  return new Set([product.gtin,product.mpn,product.sku,product.asin]
-    .map(normalize)
-    .filter((v):v is string=>Boolean(v)));
-}
+import { compareProductIdentity } from './product-identity';
 
 export function localMerchantNetworkEvidence(
   current:ProductSnapshot,
   history:StoredObservation[],
 ):EvidenceSignal[]{
   const currentDomain=current.domain.toLowerCase().replace(/^www\./,'');
-  const ids=stableIds(current);
-  if(!ids.size) return [];
-
   const matches=new Map<string,string[]>();
-  for(const obs of history){
+  for(const obs of history.slice(0,250)){
     const otherDomain=obs.domain.toLowerCase().replace(/^www\./,'');
     if(otherDomain===currentDomain) continue;
-    const otherIds=stableIds(obs.report.product);
-    const shared=[...ids].filter(id=>otherIds.has(id));
-    if(shared.length) matches.set(otherDomain,shared);
+    const identity=compareProductIdentity(current,obs.report.product);
+    if(identity.compatible && identity.matches.length) matches.set(otherDomain,identity.matches);
   }
 
   if(!matches.size) return [];
@@ -36,11 +22,11 @@ export function localMerchantNetworkEvidence(
   return [{
     id:'CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER',
     family:'identity',
-    severity:'strong',
+    severity:'info',
     confidence:.94,
-    weight:22,
-    title:'Exact product identifier reused across different storefronts',
-    explanation:'The same stable SKU/GTIN/MPN/ASIN has been observed on another merchant domain. This is strong merchant/catalog relationship evidence, although authorized wholesale or shared suppliers can also explain it.',
+    weight:0,
+    title:'Matching typed product identifiers appeared on other stores',
+    explanation:'Matching GTIN, ASIN or brand/model identifiers suggest comparable products, not a common merchant owner. Store-local SKUs are not global identifiers. A legitimate manufacturer can supply unrelated retailers; this carries no merchant-risk weight.',
     observedValue:domains.map(domain=>`${domain}: ${matches.get(domain)!.join(', ')}`).join(' • '),
     independentKey:'merchant-network:shared-product-id',
   }];
@@ -64,8 +50,8 @@ export function crossDomainReferenceEvidence(
     severity:'moderate',
     confidence:.9,
     weight:12,
-    title:'Storefront directly references another merchant domain',
-    explanation:'Visible store content directly references another merchant domain. This can reveal shared operations, copied catalog content, common support infrastructure, or an affiliated brand.',
+    title:'This store points directly to another seller’s website',
+    explanation:'The store’s own page mentions another seller’s website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
     observedValue:[...new Set(refs)].join(', '),
     independentKey:'merchant-network:cross-domain-reference',
   }];

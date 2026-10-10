@@ -1,0 +1,689 @@
+{
+  "task": "DS-031",
+  "status": "VERIFYING \u2014 ENGINEERING SUBSETS PASS; FULL RELEASE/CATEGORY GATES OPEN",
+  "harnessCommit": "cb85efb006a66b65aacade656c8aeaee20f6dec0",
+  "packagedSourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
+  "productionChange": "Three masthead CSS rules only; production manifest, dependencies and forensic logic unchanged from previous reviewed candidate.",
+  "distinctBrowserChecks": 23,
+  "duplicateNativeChecks": 7,
+  "localCoreTests": {
+    "passed": 230,
+    "failed": 0
+  },
+  "runs": [
+    {
+      "id": 37902896120,
+      "name": "DropShredder CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 415,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896120/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896120/logs",
+      "workflow_id": 376429085
+    },
+    {
+      "id": 37902896112,
+      "name": "DropShredder Chromium Runtime",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 21,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896112/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896112/logs",
+      "workflow_id": 379315464
+    },
+    {
+      "id": 37902896127,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 252,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896127/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37902896127/logs",
+      "workflow_id": 376732497
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11603685498,
+      "name": "dropshredder-headed-permission-evidence",
+      "size_in_bytes": 898318,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603685498",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603685498/zip",
+      "expired": false,
+      "created_at": "2026-10-09T08:07:26Z",
+      "expires_at": "2026-11-08T08:07:25Z",
+      "updated_at": "2026-10-09T08:07:26Z",
+      "digest": "sha256:cc78d2e9b46dfb1f0fe4aa397725cf01656b7fba282f14946bd179918e1b5f8c",
+      "workflow_run": {
+        "id": 37902896112,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/runtime-reconciliation-20261009",
+        "head_sha": "cb85efb006a66b65aacade656c8aeaee20f6dec0"
+      }
+    },
+    {
+      "id": 11603580250,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "size_in_bytes": 1028024,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603580250",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603580250/zip",
+      "expired": false,
+      "created_at": "2026-10-09T08:06:53Z",
+      "expires_at": "2026-11-08T08:06:52Z",
+      "updated_at": "2026-10-09T08:06:53Z",
+      "digest": "sha256:e0af24d2c77019f3afac85f0b76fca86ee69908defdfdcbd2b11eaed2f9b2aa6",
+      "workflow_run": {
+        "id": 37902896112,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/runtime-reconciliation-20261009",
+        "head_sha": "cb85efb006a66b65aacade656c8aeaee20f6dec0"
+      }
+    },
+    {
+      "id": 11603056085,
+      "name": "dropshredder-native-panel-evidence",
+      "size_in_bytes": 203005,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603056085",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11603056085/zip",
+      "expired": false,
+      "created_at": "2026-10-09T08:06:57Z",
+      "expires_at": "2026-11-08T08:06:57Z",
+      "updated_at": "2026-10-09T08:06:57Z",
+      "digest": "sha256:cd03ce57a869f03900d91ff43ae2281185f296170a898f4fe931805760da2ae1",
+      "workflow_run": {
+        "id": 37902896112,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/runtime-reconciliation-20261009",
+        "head_sha": "cb85efb006a66b65aacade656c8aeaee20f6dec0"
+      }
+    }
+  ],
+  "reports": {
+    "packaged": {
+      "sourceCommit": "cb85efb006a66b65aacade656c8aeaee20f6dec0",
+      "startedAt": "2026-10-09T08:06:48.417Z",
+      "mode": "headless Chromium / automated packaged runtime",
+      "status": "PASS \u2014 AUTOMATED RUNTIME SUBSET",
+      "tests": [
+        {
+          "id": "R01",
+          "description": "Packaged bytes match the reviewed candidate",
+          "status": "PASS",
+          "elapsedMs": 5,
+          "details": {
+            "files": 14,
+            "packagedSourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422"
+          }
+        },
+        {
+          "id": "R02",
+          "description": "Unmodified MV3 extension and service worker load in Chromium",
+          "status": "PASS",
+          "elapsedMs": 726,
+          "details": {
+            "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+            "version": "0.2.0",
+            "browser": "Chrome/156.0.8078.4"
+          }
+        },
+        {
+          "id": "R03",
+          "description": "Panel document renders and optional host access starts absent",
+          "status": "PASS",
+          "elapsedMs": 314
+        },
+        {
+          "id": "R04",
+          "description": "Unsupported extension-page scan returns without a report",
+          "status": "PASS",
+          "elapsedMs": 57,
+          "details": {
+            "visibleStatus": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome\u2019s extension controls, then click CHECK THIS PRODUCT again."
+          }
+        },
+        {
+          "id": "R05",
+          "description": "Regular-tab settings requests fail closed outside the native panel",
+          "status": "PASS",
+          "elapsedMs": 73,
+          "details": {
+            "scope": "Regular tab is rejected by sender.tab guard; native-side-panel saving is exercised by the separate native diagnostic."
+          }
+        },
+        {
+          "id": "R06",
+          "description": "Display controls apply, persist, and reset without erasing features",
+          "status": "PASS",
+          "elapsedMs": 667
+        },
+        {
+          "id": "R07",
+          "description": "No optional content script or network investigation before consent",
+          "status": "PASS",
+          "elapsedMs": 1628,
+          "details": {
+            "scope": "Owned fulfilled HTTPS fixture; no post-grant detection or live merchant claim"
+          }
+        },
+        {
+          "id": "R08",
+          "description": "Display reset and default feature state survive full profile restart",
+          "status": "PASS",
+          "elapsedMs": 680
+        },
+        {
+          "id": "R09",
+          "description": "No uncaught panel errors or unsolicited extension network requests",
+          "status": "PASS",
+          "elapsedMs": 0
+        }
+      ],
+      "errors": [],
+      "extensionRequests": [],
+      "notTested": [
+        "Full independent A01-D06 desktop QA protocol",
+        "Native toolbar opening and native side-panel mounting (panel document is opened in a tab)",
+        "Native host permission accept/deny prompts and post-grant scan/toast flows",
+        "Live marketplace accuracy, privacy under granted access, RDAP/CPSC live endpoints",
+        "Context menus, SPA target changes, search batches and model/category accuracy"
+      ],
+      "packagedSourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "os": "linux 6.17.0-1022-azure",
+      "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+      "largeTextLayouts": [
+        {
+          "viewport": 320,
+          "content": 320,
+          "rowWidth": 300,
+          "titleWidth": 300,
+          "titleBottom": -323.9375,
+          "badgeTop": 0,
+          "badgeWidth": 0
+        },
+        {
+          "viewport": 380,
+          "content": 380,
+          "rowWidth": 352,
+          "titleWidth": 352,
+          "titleBottom": -357.625,
+          "badgeTop": 0,
+          "badgeWidth": 0
+        },
+        {
+          "viewport": 420,
+          "content": 420,
+          "rowWidth": 384,
+          "titleWidth": 384,
+          "titleBottom": -357.625,
+          "badgeTop": -345.625,
+          "badgeWidth": 249.546875
+        },
+        {
+          "viewport": 640,
+          "content": 640,
+          "rowWidth": 604,
+          "titleWidth": 342.453125,
+          "titleBottom": -269.625,
+          "badgeTop": -360,
+          "badgeWidth": 249.546875
+        }
+      ],
+      "finishedAt": "2026-10-09T08:06:52.569Z"
+    },
+    "headlessNative": {
+      "sourceCommit": "cb85efb006a66b65aacade656c8aeaee20f6dec0",
+      "startedAt": "2026-10-09T08:06:43.315Z",
+      "mode": "headless Chromium",
+      "status": "PASS \u2014 NATIVE RUNTIME SUBSET",
+      "tests": [
+        {
+          "id": "N01",
+          "description": "Reviewed package mounts in the native side panel without host grants",
+          "status": "PASS",
+          "elapsedMs": 787,
+          "details": {
+            "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+            "files": 14
+          }
+        },
+        {
+          "id": "N02",
+          "description": "Trusted native source-hunt toggle saves through the background writer",
+          "status": "PASS",
+          "elapsedMs": 530
+        },
+        {
+          "id": "N03",
+          "description": "Native origin and tone changes preserve the previous feature patch",
+          "status": "PASS",
+          "elapsedMs": 550
+        },
+        {
+          "id": "N04",
+          "description": "Nondefault preferences survive a full native-profile restart",
+          "status": "PASS",
+          "elapsedMs": 585
+        },
+        {
+          "id": "N05",
+          "description": "Native product scan fails closed without host access",
+          "status": "PASS",
+          "elapsedMs": 365,
+          "details": {
+            "status": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome\u2019s extension controls, then click CHECK THIS PRODUCT again.",
+            "raw": "",
+            "exportDisabled": true
+          }
+        },
+        {
+          "id": "N06",
+          "description": "Native remove-access control is safe without grants and preserves other preferences",
+          "status": "PASS",
+          "elapsedMs": 521,
+          "details": {
+            "status": "DropShredder didn\u2019t have any extra site access to remove.",
+            "scope": "No-grant removal, not revocation of an accepted grant"
+          }
+        },
+        {
+          "id": "N07",
+          "description": "Native checks produce no uncaught errors or external investigations",
+          "status": "PASS",
+          "elapsedMs": 0
+        }
+      ],
+      "errors": [],
+      "externalRequests": [],
+      "notTested": [
+        "Independent A01-D06 desktop QA",
+        "Explicit operator accept/deny of native Chrome permission UI",
+        "Live merchant/category accuracy",
+        "Concurrent panels, malformed storage, SPA/search/context menus, RDAP/CPSC"
+      ],
+      "packagedSourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "actionOptions": {
+        "enabled": true,
+        "path": "sidepanel.html"
+      },
+      "actionTargets": [
+        {
+          "type": "service_worker",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+        },
+        {
+          "type": "page",
+          "url": "about:blank"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/"
+        },
+        {
+          "type": "page",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+        }
+      ],
+      "permissionExploration": {
+        "status": "NATIVE PROMPT PENDING \u2014 AUTOMATION LIMITATION",
+        "settled": false,
+        "granted": false,
+        "ui": {
+          "checked": true,
+          "disabled": true,
+          "status": "Asking Chrome to allow automatic product alerts\u2026"
+        },
+        "scripts": [],
+        "targets": [
+          {
+            "type": "service_worker",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/"
+          },
+          {
+            "type": "page",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+          },
+          {
+            "type": "page",
+            "url": "https://fixture.example.com/products/mug"
+          }
+        ]
+      },
+      "productScanBlocked": "Full scan/toast testing requires genuine Chrome host access; no test override was used.",
+      "finishedAt": "2026-10-09T08:06:56.991Z",
+      "testsPassed": 7
+    },
+    "headedNative": {
+      "sourceCommit": "cb85efb006a66b65aacade656c8aeaee20f6dec0",
+      "startedAt": "2026-10-09T08:06:48.065Z",
+      "mode": "headed Chromium / Xvfb",
+      "status": "PASS \u2014 NATIVE RUNTIME SUBSET",
+      "tests": [
+        {
+          "id": "N01",
+          "description": "Reviewed package mounts in the native side panel without host grants",
+          "status": "PASS",
+          "elapsedMs": 2452,
+          "details": {
+            "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+            "files": 14
+          }
+        },
+        {
+          "id": "N02",
+          "description": "Trusted native source-hunt toggle saves through the background writer",
+          "status": "PASS",
+          "elapsedMs": 953
+        },
+        {
+          "id": "N03",
+          "description": "Native origin and tone changes preserve the previous feature patch",
+          "status": "PASS",
+          "elapsedMs": 1196
+        },
+        {
+          "id": "N04",
+          "description": "Nondefault preferences survive a full native-profile restart",
+          "status": "PASS",
+          "elapsedMs": 776
+        },
+        {
+          "id": "N05",
+          "description": "Native product scan fails closed without host access",
+          "status": "PASS",
+          "elapsedMs": 523,
+          "details": {
+            "status": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome\u2019s extension controls, then click CHECK THIS PRODUCT again.",
+            "raw": "",
+            "exportDisabled": true
+          }
+        },
+        {
+          "id": "N06",
+          "description": "Native remove-access control is safe without grants and preserves other preferences",
+          "status": "PASS",
+          "elapsedMs": 934,
+          "details": {
+            "status": "DropShredder didn\u2019t have any extra site access to remove.",
+            "scope": "No-grant removal, not revocation of an accepted grant"
+          }
+        },
+        {
+          "id": "N07",
+          "description": "Native checks produce no uncaught errors or external investigations",
+          "status": "PASS",
+          "elapsedMs": 0
+        },
+        {
+          "id": "N08",
+          "description": "Genuine Chrome Deny leaves monitoring and host access off",
+          "status": "PASS",
+          "elapsedMs": 151
+        },
+        {
+          "id": "N09",
+          "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+          "status": "PASS",
+          "elapsedMs": 3210
+        },
+        {
+          "id": "N10",
+          "description": "Owned product fixture gets exactly one automatic alert after consent",
+          "status": "PASS",
+          "elapsedMs": 887
+        },
+        {
+          "id": "N11",
+          "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+          "status": "PASS",
+          "elapsedMs": 565,
+          "details": {
+            "status": "Scan complete for fixture.example.com.",
+            "product": {
+              "capturedAt": "2026-10-09T08:07:10.080Z",
+              "claims": [],
+              "currency": "USD",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "imageUrls": [],
+              "jsonLdProductCount": 1,
+              "pageSignals": [],
+              "price": 12,
+              "sku": "FIXTURE-MUG-001",
+              "specifications": {},
+              "title": "Fixture mug",
+              "url": "https://fixture.example.com/products/mug",
+              "variantId": "FIXTURE-MUG-001",
+              "technicalFingerprint": "fixture-mug-001"
+            },
+            "scope": "Owned fixture, no merchant accuracy/explicit prompt acceptance claim"
+          }
+        },
+        {
+          "id": "N12",
+          "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+          "status": "PASS",
+          "elapsedMs": 9656,
+          "details": {
+            "status": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages.",
+            "raw": ""
+          }
+        },
+        {
+          "id": "N13",
+          "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+          "status": "PASS",
+          "elapsedMs": 5112
+        },
+        {
+          "id": "N14",
+          "description": "Granted fixture scans cause no uncaught errors or external investigations",
+          "status": "PASS",
+          "elapsedMs": 4
+        }
+      ],
+      "errors": [],
+      "externalRequests": [],
+      "notTested": [
+        "Independent A01-D06 desktop QA",
+        "Live merchant/category accuracy",
+        "Concurrent panels, malformed storage, SPA/search/context menus, RDAP/CPSC"
+      ],
+      "packagedSourceCommit": "4fd0b24c8cb5a11009d14bb1833b39656a210422",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "actionOptions": {
+        "enabled": true,
+        "path": "sidepanel.html"
+      },
+      "actionTargets": [
+        {
+          "type": "service_worker",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+        },
+        {
+          "type": "page",
+          "url": "about:blank"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/"
+        },
+        {
+          "type": "page",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+        }
+      ],
+      "nativeDesktopGeometry": {
+        "bounds": {
+          "left": 10,
+          "top": 10,
+          "width": 1288,
+          "height": 851,
+          "windowState": "normal"
+        },
+        "viewport": {
+          "width": 360,
+          "height": 716
+        },
+        "insetRight": 9,
+        "insetBottom": 8
+      },
+      "permissionExploration": {
+        "status": "EXPLICIT NATIVE DENY THEN ALLOW OBSERVED",
+        "settled": false,
+        "granted": false,
+        "ui": {
+          "checked": true,
+          "disabled": true,
+          "status": "Asking Chrome to allow automatic product alerts\u2026"
+        },
+        "scripts": [],
+        "targets": [
+          {
+            "type": "service_worker",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/"
+          },
+          {
+            "type": "page",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+          },
+          {
+            "type": "page",
+            "url": "https://fixture.example.com/products/mug"
+          }
+        ],
+        "afterDecision": {
+          "granted": true,
+          "scripts": [
+            {
+              "allFrames": false,
+              "id": "dropshredder-auto-shopping-v1",
+              "js": [
+                "content-scripts/auto.js"
+              ],
+              "matchOriginAsFallback": false,
+              "matches": [
+                "https://*/*"
+              ],
+              "persistAcrossSessions": true,
+              "runAt": "document_idle",
+              "world": "ISOLATED"
+            }
+          ]
+        }
+      },
+      "finalPermissionState": {
+        "granted": false,
+        "scripts": [],
+        "features": {
+          "autoProtection": false,
+          "autoSourceHunt": true,
+          "preferMadeInUSA": true,
+          "toneMode": "nuclear"
+        }
+      },
+      "finishedAt": "2026-10-09T08:07:25.200Z",
+      "testsPassed": 14
+    }
+  },
+  "visualFinding": {
+    "status": "FIXED \u2014 BOUNDED REFLOW CHECKED",
+    "widths": [
+      320,
+      380,
+      420,
+      640
+    ],
+    "textScale": 130,
+    "theme": "light",
+    "evidence": "panel-large-*.png",
+    "review": "420px title uses full heading width with badge below; 320/640 screenshots inspected. Other display/keyboard states not fully certified."
+  },
+  "historicalAttempts": [
+    {
+      "harness": "9118e004",
+      "run": 37900392874,
+      "finding": "Product-tab action context did not expose native panel. Blank-tab mounting/action readiness fixed the harness."
+    },
+    {
+      "harness": "08dc76a4",
+      "run": 37901246909,
+      "finding": "Deny passed; Allow was still disabled at 300ms. Runner now waits 2500ms before native keyboard decision."
+    },
+    {
+      "harness": "92d5d3c4 / 661a6ac8 / c484251e",
+      "finding": "Headed CDP scroll/hit testing and observed window height affected input. X11 pointer mapping now checks visibility, bounds and exact insets; failures were retained."
+    },
+    {
+      "harness": "dae212fe",
+      "run": 37902311234,
+      "finding": "Deny/Allow passed, but positive fixture lacked an individual product detail section; correct classifier abstention. Fixture corrected, detector unchanged."
+    },
+    {
+      "harness": "d077aa86",
+      "run": 37902586315,
+      "finding": "Toast/title/SKU/price passed; .test origin correctly failed public-evidence guard so export stayed disabled. Reserved example.com routed fixture used for positive report-controls check."
+    }
+  ],
+  "remaining": [
+    "Independent A01\u2013D06 desktop protocol",
+    "Live merchant/category false-positive, miss and abstention evaluation",
+    "Correct-tab/SPA transitions and in-flight target/revocation cases",
+    "Search chooser/context-menu/keyboard batches",
+    "Actual export download and redaction checks",
+    "RDAP/CPSC consent, cancellation, network failures and live endpoint checks",
+    "Concurrent native panels and malformed storage",
+    "Non-URL selected variant attribution",
+    "DS-032\u2013DS-034 research application tasks remain READY"
+  ]
+}

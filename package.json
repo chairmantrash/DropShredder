@@ -1,21 +1,36 @@
 {
   "name": "dropshredder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "engines": {
+    "node": ">=22 <23"
+  },
   "type": "module",
   "scripts": {
     "dev": "wxt",
     "build": "wxt build",
     "zip": "wxt zip",
-    "prepare": "wxt prepare",
+    "prepare": "node scripts/package-ocr-models.mjs && wxt prepare",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/**/*.test.ts"
+    "test": "node --import tsx --test tests/*.test.ts",
+    "release:audit": "node scripts/release-audit.mjs",
+    "audit:security": "node scripts/security-audit.mjs",
+    "audit:performance": "node scripts/performance-audit.mjs",
+    "lint:data": "node --import tsx scripts/data-lint.ts",
+    "audit:professional": "node --import tsx scripts/professionalism-audit.ts",
+    "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs",
+    "audit:localization": "node --import tsx scripts/localization-audit.ts",
+    "prebuild": "node scripts/package-ocr-models.mjs"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.323",
-    "typescript": "^5.9.0",
-    "wxt": "0.21.4",
-    "tsx": "^4.20.6",
-    "@types/node": "^22.18.10"
+    "@types/chrome": "0.0.323",
+    "@types/node": "22.18.10",
+    "linkedom": "0.18.12",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "wxt": "0.21.4"
+  },
+  "dependencies": {
+    "tldts": "7.4.18"
   }
 }

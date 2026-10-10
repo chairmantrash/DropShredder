@@ -1,0 +1,93 @@
+{
+  "task": "DS-030",
+  "verifiedAt": "2026-10-09T05:37:59.563714+00:00",
+  "base": "0c826f9dc5c02f65760a203469bc218dd75fd9ba",
+  "branch": "feature/runtime-reconciliation-20261009",
+  "node": "22.20.0",
+  "cleanLockedInstall": true,
+  "tests": {
+    "passed": 230,
+    "failed": 0,
+    "skipped": 0,
+    "newFocusedTests": 15
+  },
+  "checks": {
+    "typecheck": "passed",
+    "security": "passed",
+    "chromeStaticConformance": "passed",
+    "dataLint": "passed",
+    "professionalism": "passed-with-existing-module-size-and-reviewed-dependency-warnings",
+    "productionZip": "passed",
+    "releaseAudit": "passed",
+    "staticPerformanceBudget": "passed"
+  },
+  "browser": {
+    "status": "NOT RUN \u2014 no real desktop Chrome executable available",
+    "testCount": 0,
+    "requiredProtocol": "workplane/evals/WORK-AGENT-TEST-PROMPT-20261009.md"
+  },
+  "newHeadCI": "not claimed; existing CI requires a PR or main push",
+  "package": {
+    "files": 14,
+    "unpackedBytes": 542890,
+    "zipBytes": 205024,
+    "zipSha256": "96e162524ad4cb1b368c020eacbafd0086ea1c84792c1368fe6b681fce6271be",
+    "manifest": {
+      "manifest_version": 3,
+      "name": "DropShredder",
+      "description": "Local-first commerce forensics and product provenance analysis.",
+      "version": "0.2.0",
+      "icons": {
+        "16": "icon/16.png",
+        "32": "icon/32.png",
+        "48": "icon/48.png",
+        "128": "icon/128.png"
+      },
+      "minimum_chrome_version": "133",
+      "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+      },
+      "permissions": [
+        "scripting",
+        "storage",
+        "contextMenus",
+        "sidePanel"
+      ],
+      "optional_host_permissions": [
+        "https://*/*"
+      ],
+      "action": {
+        "default_title": "Open DropShredder",
+        "default_icon": {
+          "16": "icon/16.png",
+          "32": "icon/32.png"
+        }
+      },
+      "background": {
+        "service_worker": "background.js"
+      },
+      "side_panel": {
+        "default_path": "sidepanel.html"
+      }
+    }
+  },
+  "dependencyAudit": {
+    "reportedAdvisories": 0,
+    "source": "npm audit registry snapshot 2026-10-09, not a security guarantee"
+  },
+  "research": {
+    "recordsReconciled": 174,
+    "pendingTaskPackets": [
+      "DS-031",
+      "DS-032",
+      "DS-033",
+      "DS-034"
+    ]
+  },
+  "limits": [
+    "URL-based variant selection; non-URL chosen variants remain unresolved",
+    "IANA/PSL snapshots need controlled freshness; unknown/HTTP-only and redirected registry endpoints abstain",
+    "Actual Chrome service-worker IPC, native dialog/focus, permission/revocation, UI and latency unverified",
+    "No physical product accuracy or full source/model/provider availability claim"
+  ]
+}

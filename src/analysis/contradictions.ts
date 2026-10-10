@@ -1,5 +1,6 @@
 import type { Contradiction, EvidenceSignal } from '../types/evidence';
 import type { ExtractedClaim } from './claims';
+import { sameJurisdiction } from './merchant-origin';
 
 export interface DomainAgeObservation {
   registeredAt?:string;
@@ -30,7 +31,7 @@ export function businessAgeContradictions(
     claim:claim.text,
     observation:`Domain registration observed in ${registeredYear} via ${domain.source}`,
     confidence:.88,
-    explanation:'The storefront claims an operating history materially older than the observed domain registration. A business may have changed domains, so corroboration is required before treating this as deception.',
+    explanation:'The store says it has been around longer than this website. It may have changed websites, so check before assuming the claim is false.',
     independentKey:'business-age-domain',
   }];
 }
@@ -42,9 +43,7 @@ export function fulfillmentContradictions(
   const claim=claims.find(c=>c.kind==='ships-from' && c.normalizedValue);
   if(!claim?.normalizedValue || !observation.origin) return [];
 
-  const claimed=claim.normalizedValue.toLowerCase();
-  const observed=observation.origin.toLowerCase();
-  if(claimed.includes(observed) || observed.includes(claimed)) return [];
+  if(sameJurisdiction(claim.normalizedValue,observation.origin)) return [];
 
   return [{
     id:'FULFILLMENT_ORIGIN_CONFLICT',
@@ -60,12 +59,12 @@ export function contradictionEvidence(items:Contradiction[]):EvidenceSignal[] {
   return items.map(item=>({
     id:item.id,
     family:item.id.includes('FULFILLMENT')?'fulfillment':'claims',
-    severity:'strong',
+    severity:item.id==='BUSINESS_AGE_CONFLICT'?'info':'strong',
     confidence:item.confidence,
-    weight:24,
-    title:'Seller claim conflicts with observed evidence',
+    weight:item.id==='BUSINESS_AGE_CONFLICT'?0:24,
+    title:item.id==='BUSINESS_AGE_CONFLICT'?'Website age differs from the claimed business age':'The seller’s story doesn’t line up',
     explanation:item.explanation,
-    observedValue:`Claim: ${item.claim} | Observation: ${item.observation}`,
+    observedValue:`Seller says: ${item.claim} | We found: ${item.observation}`,
     independentKey:item.independentKey,
   }));
 }

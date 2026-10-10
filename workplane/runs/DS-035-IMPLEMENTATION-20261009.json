@@ -1,0 +1,65 @@
+{
+  "task": "DS-035",
+  "status": "ENGINEERING_IMPLEMENTED_AND_VERIFIED; INDEPENDENT_RELEASE_QA_PENDING",
+  "verifiedDate": "2026-10-09",
+  "repository": "chairmantrash/DropShredder",
+  "branch": "release/security-performance-hardening",
+  "releasePr": 9,
+  "releasePrState": "OPEN_DRAFT_UNMERGED_TO_MAIN",
+  "productionSourceCommit": "f8b74a93f520a8d2982083283cfa6a9869a89143",
+  "productionSourceTree": "d321522960a91a446aa6bd46a20f2526e06b8388",
+  "verificationCommit": "c18953c641972f7330b12c765c2747a76433fa10",
+  "packagedFiles": 14,
+  "buildInventory": "tools/browser-smoke/candidate-build-info.json",
+  "checks": {
+    "coreTestsPassed": 255,
+    "coreTestsFailed": 0,
+    "packagedChromium": 9,
+    "distinctNativeHeadedChromium": 27,
+    "distinctBrowserChecks": 36,
+    "independentReleaseA01D06": "NOT_RUN",
+    "calibratedCategoryAccuracy": "NOT_ESTABLISHED"
+  },
+  "workflows": [
+    {
+      "name": "DropShredder CI",
+      "id": 37917272765,
+      "result": "success"
+    },
+    {
+      "name": "CodeQL",
+      "id": 37917272754,
+      "result": "success"
+    },
+    {
+      "name": "DropShredder Chromium Runtime",
+      "id": 37917272818,
+      "result": "success",
+      "jobs": "3/3 success"
+    }
+  ],
+  "qaArtifact": {
+    "name": "dropshredder-unpacked-qa",
+    "id": 11610420835,
+    "runId": 37917272818,
+    "kind": "QA_ONLY",
+    "expiresAt": "2026-11-08T10:24:02Z"
+  },
+  "implemented": [
+    "Explicit bounded named option swatches / selected variant disambiguation and matching report selection invalidation",
+    "Exact fixed-width lot and serial notice scope with unknown or excluded results, no private serial harvesting",
+    "Fast passive evidence toast not suppressed solely because the evidence severity gate is met",
+    "Do not forward signed/token-bearing image URLs to remote reverse-image tools; retain explicit user destination selection",
+    "Regression coverage for ambiguous variants, selected-swatches, strict scope matching and image URL privacy"
+  ],
+  "notClaimed": [
+    "Real merchant false positive/false negative calibration",
+    "External issuer or feed authentication rights review",
+    "Native multi-panel and full context-menu independent QA",
+    "Live RDAP/CPSC provider/scope validation",
+    "Graphical OS file picker and malformed browser-storage acceptance",
+    "Auto-refresh/key rotation or OCR/embeddings in shipped beta",
+    "Public Chrome Web Store publication or main merge"
+  ],
+  "releaseGate": "Do not merge PR9 into main or publish without independent A01-D06, calibrated category measurements and explicit owner authorization"
+}

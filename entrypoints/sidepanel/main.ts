@@ -1,21 +1,26 @@
+import {hasSensitiveCommerceSurface} from '../../src/security/sensitive-surface';
+import {COMMERCE_LANGUAGE_KIT} from '../../src/languages/commerce-kit';
+import { tr, localizeDocument, errorText, uiDirection } from '../../src/i18n/index';
+import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
 import { calculateVerdict } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
-import { getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
+import { clearObservationHistory, getObservations, getRecentObservationsAll, productIdentityKey, saveObservation } from '../../src/storage/history';
 import { analyzeHistory } from '../../src/analysis/history-signals';
 import { analyzeReviewProvenance } from '../../src/analysis/review-provenance';
+import { reviewIntegrity } from '../../src/analysis/review-integrity';
 import type { ReviewSnapshot } from '../../src/types/review';
 import { extractClaims } from '../../src/analysis/claims';
 import { buildProductFingerprint } from '../../src/forensics/product-fingerprint';
-import { analyzeEtsyPage } from '../../src/adapters/etsy';
+import { analyzeEtsyPage, isEtsyDomain } from '../../src/adapters/etsy';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../../src/deep-hunt/search-urls';
 import { captureImageFingerprint } from '../../src/forensics/image-acquisition';
 import { imageHistoryEvidence } from '../../src/forensics/image-history';
 import { lookupDomainRdap } from '../../src/osint/rdap';
 import { businessAgeContradictions, contradictionEvidence } from '../../src/analysis/contradictions';
-import { loadFeatureSettings, saveFeatureSettings } from '../../src/settings/features';
+import { loadFeatureSettings, updateFeatureSettings } from '../../src/settings/features';
 import { indexedSourceEvidence } from '../../src/analysis/source-match';
 import { reputationSearchUrls } from '../../src/reputation/reputation-search';
 import { analyzeReturnPolicy } from '../../src/analysis/return-policy';
@@ -24,7 +29,6 @@ import { parseFulfillmentObservation } from '../../src/analysis/fulfillment-obse
 import { fulfillmentContradictions } from '../../src/analysis/contradictions';
 import { analyzeMerchantOrigin, type SiteTextPage } from '../../src/analysis/merchant-origin';
 import { catalogEvidence, type CatalogSnapshot } from '../../src/analysis/catalog-signals';
-import { fetchTrustpilotObservation } from '../../src/reputation/trustpilot';
 import { analyzeReputationObservations } from '../../src/reputation/complaint-analysis';
 import { qualityClaimEvidence } from '../../src/analysis/quality-claims';
 import { reviewDiscrepancyEvidence, type HostedReviewSummary } from '../../src/reputation/review-discrepancy';
@@ -33,7 +37,21 @@ import { buildSupplyChainProfile, detectPaymentProcessors } from '../../src/anal
 import { merchantNetworkEvidence, merchantNetworkForDomain } from '../../src/intelligence/merchant-networks';
 import { crossDomainReferenceEvidence, localMerchantNetworkEvidence } from '../../src/analysis/merchant-network';
 import { amazonCloneClusterEvidence, type AmazonSearchCard } from '../../src/analysis/amazon-clone-clusters';
+import { pageSafety } from '../../src/security/page-safety';
+import { toneCopy, type ToneMode } from '../../src/ui/tone';
+import { renderShopperReport } from '../../src/ui/report-renderer';
+import { extractPageScan, type PageScanResult } from '../../src/extraction/page-scan';
+import { activeWebTab, authorizeChromePage, documentTarget, isCurrentChromePage, type AuthorizedChromePage } from '../../src/runtime/chrome-page';
+import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../../src/runtime/auto-registration';
+import { loadUserLists } from '../../src/intelligence/user-lists';
+import { approximateImportedProductLeads, importedEntityRoleGraph, importedProductLeads } from '../../src/analysis/product-leads';
+import { setReportGuard } from '../../src/ui/report-guard';
+import {currentReportAllowed} from '../../src/ui/report-guard';
+import {assessNorthAmerica,listingOriginClaims} from '../../src/analysis/north-america-origin';
+import {mountNorthAmericaControls} from '../../src/ui/north-america-controls';
+import {mountStandingControls} from '../../src/ui/business-standing-controls';
 
+localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
 const summary=document.querySelector<HTMLElement>('#summary');
@@ -45,304 +63,204 @@ const huntImage=document.querySelector<HTMLButtonElement>('#hunt-image');
 const huntStore=document.querySelector<HTMLButtonElement>('#hunt-store');
 const checkDomain=document.querySelector<HTMLButtonElement>('#check-domain');
 const autoSourceHunt=document.querySelector<HTMLInputElement>('#auto-source-hunt');
-const autoReputationSweep=document.querySelector<HTMLInputElement>('#auto-reputation-sweep');
+const autoProtection=document.querySelector<HTMLInputElement>('#auto-protection');
+const autoProtectionStatus=document.querySelector<HTMLElement>('#auto-protection-status');
 const preferMadeInUSA=document.querySelector<HTMLInputElement>('#prefer-made-in-usa');
 const reputationSweep=document.querySelector<HTMLButtonElement>('#reputation-sweep');
 const policyCheck=document.querySelector<HTMLButtonElement>('#policy-check');
 const fulfillmentCheck=document.querySelector<HTMLButtonElement>('#fulfillment-check');
+const clearHistory=document.querySelector<HTMLButtonElement>('#clear-history');
+const revokeOptionalAccess=document.querySelector<HTMLButtonElement>('#revoke-optional-access');
+const buildMeta=document.querySelector<HTMLElement>('#build-meta');
+const toneMode=document.querySelector<HTMLSelectElement>('#tone-mode');
+const evidenceHeading=document.querySelector<HTMLElement>('#evidence-heading');
 let lastReport:DropShredderReport|undefined;
+let reportPage:AuthorizedChromePage|undefined;
+let scanningTabId:number|undefined;
+let scanEpoch=0;
+let domainRequest:AbortController|undefined;
+const originControls=mountNorthAmericaControls(()=>lastReport,assessment=>{if(lastReport){lastReport={...lastReport,northAmerica:assessment};renderReport(lastReport);}},currentReportAllowed);
+const standingControls=mountStandingControls(()=>lastReport?.product.url,currentReportAllowed);
+const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
+function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
+cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
+
+// The side panel outlives tabs and documents. Never reuse a report after navigation.
+function invalidatePageReport(message=tr('The page changed. Check this product again.')):void {
+  originControls.reset();
+  standingControls.reset();
+  stopDomainLookup();
+  document.querySelector('#ds-search-chooser')?.remove();
+  scanEpoch++;
+  lastReport=undefined;
+  reportPage=undefined;
+  scanningTabId=undefined;
+  if(scanButton) scanButton.disabled=false;
+  if(huntActions) huntActions.hidden=true;
+  if(summary) summary.replaceChildren();
+  if(evidenceList) evidenceList.replaceChildren();
+  if(raw) raw.replaceChildren();
+  if(status) status.textContent=message;
+}
+chrome.tabs.onActivated.addListener(({tabId})=>{
+  if((scanningTabId!==undefined && scanningTabId!==tabId) || (reportPage && reportPage.tabId!==tabId)){
+    invalidatePageReport();
+  }
+});
+chrome.tabs.onUpdated.addListener((tabId,change)=>{
+  if((tabId===scanningTabId || tabId===reportPage?.tabId) &&
+    (change.status==='loading' || (Boolean(change.url) && change.url!==reportPage?.url))){
+    invalidatePageReport();
+  }
+});
+chrome.permissions.onRemoved.addListener(permission=>{
+  if(permission.origins?.length && (scanningTabId!==undefined || reportPage)) invalidatePageReport(tr('Site access changed. Check this product again.'));
+});
+
+async function verifiedReportPage(report:DropShredderReport):Promise<AuthorizedChromePage>{
+  const page=reportPage;
+  if(!page || lastReport!==report || !(await isCurrentChromePage(page)) || lastReport!==report){
+    invalidatePageReport();
+    throw new Error('The page changed. Check this product again.');
+  }
+  return page;
+}
+setReportGuard(async()=>{const report=lastReport;if(!report) return false;await verifiedReportPage(report);return lastReport===report;});
+
+let currentTone:ToneMode='professional';
+function applyTone(mode:ToneMode):void{
+  currentTone=mode;
+  const copy=toneCopy(mode);
+  if(scanButton) scanButton.textContent=copy.scan;
+  if(evidenceHeading) evidenceHeading.textContent=copy.evidenceHeading;
+}
+if(buildMeta) buildMeta.textContent=tr('DropShredder $1 • Private by design • No account needed',chrome.runtime.getManifest().version);
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
-  if(autoReputationSweep) autoReputationSweep.checked=settings.autoReputationSweep;
+  if(autoProtection){
+    autoProtection.checked=settings.autoProtection;
+    if(settings.autoProtection){
+      void chrome.permissions.contains({origins:[AUTO_PATTERN]}).then(granted=>{
+        if(!granted && autoProtection){
+          autoProtection.checked=false;
+          if(autoProtectionStatus) autoProtectionStatus.textContent=tr('Automatic alerts need Chrome site permission. Switch on to allow it.');
+        }
+      });
+    }
+  }
   if(preferMadeInUSA) preferMadeInUSA.checked=settings.preferMadeInUSA;
+  if(toneMode) toneMode.value=settings.toneMode;
+  applyTone(settings.toneMode);
+});
+
+autoProtection?.addEventListener('change',()=>{
+  if(!autoProtection) return;
+  const wanted=autoProtection.checked;
+  autoProtection.disabled=true;
+  if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
+    ? tr('Asking Chrome to allow automatic product alerts…')
+    : tr('Turning off automatic alerts…');
+  // Permission request MUST be invoked directly in the click/change gesture.
+  const grant=wanted?chrome.permissions.request({origins:[AUTO_PATTERN]}):Promise.resolve(false);
+  void grant.then(async allowed=>{
+    if(wanted && !allowed){
+      if(autoProtection) autoProtection.checked=false;
+      if(autoProtectionStatus) autoProtectionStatus.textContent=tr('Chrome permission was not granted. Manual checks still work.');
+      return;
+    }
+    // Turn the saved gate off before unregistering so already-injected tabs
+    // reject alerts even when Chrome's registration cleanup races a worker.
+    if(wanted) await setAutoContentRegistration(true);
+    await updateFeatureSettings({autoProtection:wanted});
+    if(!wanted) await setAutoContentRegistration(false);
+    if(wanted){
+      // Newly enabled protection should check the currently visible product page too.
+      const tab=await activeWebTab();
+      if(tab?.id){
+        void chrome.scripting.executeScript({
+          target:{tabId:tab.id},
+          world:'ISOLATED',
+          files:['content-scripts/auto.js'],
+        }).catch(()=>{});
+      }
+    }
+    if(!wanted) await chrome.permissions.remove({origins:[AUTO_PATTERN]});
+    if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
+      ? tr('Automatic alerts are on for supported shopping pages. Other pages stay quiet.')
+      : tr('Automatic alerts are off. Extra broad site access removed.');
+  }).catch(error=>{
+    if(autoProtectionStatus) autoProtectionStatus.textContent=error instanceof Error?errorText(error):tr('Could not update automatic alerts.');
+    if(autoProtection) autoProtection.checked=!wanted;
+  }).finally(()=>{if(autoProtection) autoProtection.disabled=false;});
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,autoSourceHunt:autoSourceHunt.checked})
-  );
+  const wanted=autoSourceHunt.checked;
+  void updateFeatureSettings({autoSourceHunt:wanted}).catch(()=>{autoSourceHunt.checked=!wanted;if(status) status.textContent=tr('Could not save source-hunt setting.');});
 });
 
 preferMadeInUSA?.addEventListener('change',()=>{
-  void loadFeatureSettings().then(settings=>
-    saveFeatureSettings({...settings,preferMadeInUSA:preferMadeInUSA.checked})
-  );
+  const wanted=preferMadeInUSA.checked;
+  void updateFeatureSettings({preferMadeInUSA:wanted}).catch(()=>{preferMadeInUSA.checked=!wanted;if(status) status.textContent=tr('Could not save origin preference.');});
 });
 
-autoReputationSweep?.addEventListener('change',()=>{
-  void (async()=>{
-    if(autoReputationSweep.checked){
-      const origin='https://www.trustpilot.com/*';
-      const granted=await chrome.permissions.contains({origins:[origin]})
-        || await chrome.permissions.request({origins:[origin]});
-      if(!granted){
-        autoReputationSweep.checked=false;
-        if(status) status.textContent='Auto Reputation Sweep needs optional Trustpilot access.';
-      }
-    }
-    const settings=await loadFeatureSettings();
-    await saveFeatureSettings({...settings,autoReputationSweep:autoReputationSweep.checked});
-  })();
+toneMode?.addEventListener('change',()=>{
+  const next=(toneMode.value==='aggressive'||toneMode.value==='nuclear')?toneMode.value:'professional';
+  applyTone(next);
+  void updateFeatureSettings({toneMode:next}).catch(()=>{if(status) status.textContent=tr('Could not save tone preference.');});
+  if(lastReport) renderReport(lastReport);
 });
 
 function renderReport(report: DropShredderReport): void {
-  if (!summary || !evidenceList || !raw) return;
+  if(!summary || !evidenceList || !raw) return;
   lastReport=report;
   if(huntActions) huntActions.hidden=false;
-  const score=report.verdict.massResellLikelihood;
-  summary.innerHTML=`
-    <div class="metric"><span>Mass-resell likelihood</span><strong>${score===null?'UNKNOWN':score+'%'}</strong></div>
-    <div class="metric"><span>Dropship likelihood</span><strong>${report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'%'}</strong></div>
-    <div class="metric"><span>Deception risk</span><strong>${report.verdict.deceptionRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Merchant risk</span><strong>${report.verdict.merchantRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Manipulation risk</span><strong>${report.verdict.manipulationRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Fulfillment risk</span><strong>${report.verdict.fulfillmentRisk.toUpperCase()}</strong></div>
-    <div class="metric"><span>Supply chain</span><strong>${report.supplyChain?.label ?? 'UNKNOWN'}</strong></div>
-    <div class="metric"><span>Payment / banking chain</span><strong>${report.supplyChain?.paymentChainLabel ?? 'UNKNOWN'}</strong></div>
-    <div class="gate">${report.supplyChain?.preferenceNote ?? ''}</div>
-    <div class="gate">${report.verdict.reason}</div>`;
-
-  evidenceList.innerHTML='';
-  if (!report.evidence.length) {
-    evidenceList.innerHTML='<div class="empty">No meaningful passive evidence yet. Deep Hunt will add provenance, supplier, domain, review, and merchant-network evidence.</div>';
-  } else {
-    for (const item of report.evidence) {
-      const row=document.createElement('article');
-      row.className='evidence-row';
-
-      const head=document.createElement('div');
-      head.className='evidence-head';
-      const severity=document.createElement('span');
-      severity.textContent=item.severity.toUpperCase();
-      const title=document.createElement('strong');
-      title.textContent=item.title;
-      head.append(severity,title);
-
-      const explanation=document.createElement('p');
-      explanation.textContent=item.explanation;
-
-      row.append(head,explanation);
-      if(item.observedValue){
-        const observed=document.createElement('code');
-        observed.textContent=item.observedValue;
-        row.append(observed);
-      }
-      evidenceList.append(row);
-    }
-  }
-
-  raw.textContent=JSON.stringify(report,null,2);
-  raw.hidden=false;
+  renderShopperReport(report,{summary,evidenceList,raw},currentTone);
 }
 
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
+  standingControls.reset();
+  const epoch=++scanEpoch;
   scanButton.disabled=true;
-  status.textContent='Inspecting this page locally…';
+  lastReport=undefined;
+  reportPage=undefined;
+  if(huntActions) huntActions.hidden=true;
+  if(summary) summary.replaceChildren();
+  if(evidenceList) evidenceList.replaceChildren();
+  if(raw) raw.replaceChildren();
+  status.textContent=tr('Checking the listing for things worth a second look…');
 
   try {
-    const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-    if (!tab?.id) throw new Error('No active tab is available.');
+    const tab=await activeWebTab();
+    if (!tab?.id) throw new Error('Open the product page you want to check, then try again.');
+    if(epoch!==scanEpoch) return;
+    scanningTabId=tab.id;
+    const page=await authorizeChromePage(tab);
+    if(!page) throw new Error('Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.');
+    const safety=pageSafety(page.url);
+    if(!safety.allowed) throw new Error(safety.reason ?? 'DropShredder won’t scan this kind of page.');
+
+    const [sensitiveSurface]=await chrome.scripting.executeScript({
+      target:documentTarget(page),
+      func:hasSensitiveCommerceSurface,
+      args:[COMMERCE_LANGUAGE_KIT.privateFormParts],
+    });
+    if(sensitiveSurface?.result){
+      throw new Error('This looks like a sign-in or payment page, so DropShredder is staying out of it.');
+    }
 
     const [execution]=await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
-      func:()=>{
-        const meta=(selector:string):string|undefined =>
-          document.querySelector<HTMLMetaElement>(selector)?.content?.trim() || undefined;
-        const canonical=document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href || undefined;
-
-        const jsonNodes: Record<string, unknown>[]=[];
-        const walk=(value:unknown):void=>{
-          if (Array.isArray(value)) { value.forEach(walk); return; }
-          if (!value || typeof value!=='object') return;
-          const record=value as Record<string,unknown>;
-          jsonNodes.push(record);
-          if (Array.isArray(record['@graph'])) walk(record['@graph']);
-        };
-        for (const script of document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')) {
-          try { walk(JSON.parse(script.textContent || 'null')); } catch {}
-        }
-        const product=jsonNodes.find(node=>{
-          const t=node['@type'];
-          return t==='Product' || (Array.isArray(t) && t.includes('Product'));
-        });
-        const asRecord=(v:unknown):Record<string,unknown>|undefined =>
-          v && typeof v==='object' && !Array.isArray(v) ? v as Record<string,unknown> : undefined;
-        const first=(v:unknown):string|undefined=>{
-          if (typeof v==='string') return v.trim() || undefined;
-          if (Array.isArray(v)) return v.find(x=>typeof x==='string') as string|undefined;
-          return undefined;
-        };
-        const offer=asRecord(Array.isArray(product?.offers)?product?.offers[0]:product?.offers);
-        const brand=asRecord(product?.brand);
-        const seller=asRecord(offer?.seller ?? product?.seller);
-        const aggregateNode=asRecord(product?.aggregateRating)
-          ?? asRecord(jsonNodes.find(node=>Boolean(node.aggregateRating))?.aggregateRating);
-        const hostedRating=Number(aggregateNode?.ratingValue) || undefined;
-        const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
-        const imageValue=product?.image;
-        const structuredImages=Array.isArray(imageValue)
-          ? imageValue.filter((x):x is string=>typeof x==='string')
-          : typeof imageValue==='string'?[imageValue]:[];
-        const amazonAsin=/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})(?:[/?]|$)/i.exec(location.pathname)?.[1]?.toUpperCase();
-        const amazonSeller=(
-          document.querySelector<HTMLElement>('#sellerProfileTriggerId')?.innerText
-          || document.querySelector<HTMLElement>('#merchant-info a')?.innerText
-          || document.querySelector<HTMLElement>('#tabular-buybox-truncate-1 .a-truncate-full')?.innerText
-          || ''
-        ).replace(/\s+/g,' ').trim() || undefined;
-
-        const additionalProperties=Array.isArray(product?.additionalProperty)
-          ? product?.additionalProperty
-          : product?.additionalProperty ? [product.additionalProperty] : [];
-        const specifications:Record<string,string>={};
-        for(const entry of additionalProperties){
-          const record=asRecord(entry);
-          const name=first(record?.name);
-          const value=first(record?.value);
-          if(name && value && Object.keys(specifications).length<40) specifications[name]=value;
-        }
-
-        const pageText=(document.body?.innerText || '').slice(0,120000);
-        const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
-
-        const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
-          const haystack=(a.pathname+' '+(a.innerText||'')).toLowerCase();
-          if(/about|our story|who we are/.test(haystack)) return 'about';
-          if(/shipping|delivery/.test(haystack)) return 'shipping';
-          if(/return|refund|exchange/.test(haystack)) return 'returns';
-          if(/contact/.test(haystack)) return 'contact';
-          return undefined;
-        };
-        const siteLinks=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
-          .map(a=>{
-            try{
-              const url=new URL(a.href,location.href);
-              const kind=classifyLink(a);
-              return url.origin===location.origin && kind ? {kind,url:url.href} : undefined;
-            }catch{return undefined;}
-          })
-          .filter((v):v is {kind:'about'|'shipping'|'returns'|'contact';url:string}=>Boolean(v))
-          .filter((v,i,arr)=>arr.findIndex(x=>x.kind===v.kind)===i)
-          .slice(0,4);
-
-        const cardSelectors=[
-          '[class*="product-card"]','[class*="product_card"]','[class*="product-item"]',
-          '[class*="product_item"]','[data-product-id]','li[class*="product"]'
-        ];
-        const cards=[...new Set(cardSelectors.flatMap(selector=>[...document.querySelectorAll<HTMLElement>(selector)]))]
-          .filter(card=>card.innerText.trim().length>0)
-          .slice(0,200);
-        const saleCards=cards.filter(card=>
-          Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
-          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(card.innerText)
-        );
-        const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
-
-        const amazonSearchCards:AmazonSearchCard[]=[...document.querySelectorAll<HTMLElement>('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')]
-          .slice(0,160)
-          .map(card=>{
-            const asin=(card.dataset.asin || '').trim().toUpperCase();
-            const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim();
-            const image=card.querySelector<HTMLImageElement>('img.s-image, img[data-image-latency]');
-            const priceText=card.querySelector<HTMLElement>('.a-price .a-offscreen')?.innerText || '';
-            const price=Number(priceText.replace(/[^0-9.]/g,'')) || undefined;
-            return {
-              asin,
-              title,
-              imageUrl:image?.currentSrc || image?.src,
-              price,
-            };
-          })
-          .filter(card=>/^[A-Z0-9]{10}$/.test(card.asin) && Boolean(card.title));
-
-        const reviews=[...document.querySelectorAll<HTMLElement>('[data-hook="review"]')]
-          .slice(0,80)
-          .map((review,index)=>{
-            const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim();
-            const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
-            const ratingMatch=ratingText.match(/([1-5](?:\.\d)?)/);
-            return {
-              id:review.id || `visible-review-${index}`,
-              platform:'amazon',
-              rating:ratingMatch ? Number(ratingMatch[1]) : undefined,
-              title:text('[data-hook="review-title"]'),
-              body:text('[data-hook="review-body"], [data-hook="reviewText"], [data-hook="reviewRichContentContainer"]'),
-              date:text('[data-hook="review-date"]') || undefined,
-              verified:Boolean(review.querySelector('[data-hook="avp-badge"]')),
-              helpfulCount:Number((text('[data-hook="helpful-vote-statement"]').match(/\d+/)?.[0])) || undefined,
-              reviewerName:text('.a-profile-name') || undefined,
-            };
-          })
-          .filter(review=>review.body);
-
-        return {
-          product:{
-            url:location.href,
-            domain:location.hostname,
-            canonicalUrl:canonical,
-            title:first(product?.name) || meta('meta[property="og:title"]') || document.title?.trim() || undefined,
-            description:first(product?.description) || meta('meta[property="og:description"]') || meta('meta[name="description"]'),
-            price:Number(offer?.price) || undefined,
-            currency:first(offer?.priceCurrency),
-            brand:first(brand?.name ?? product?.brand),
-            seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
-            sku:first(product?.sku),
-            asin:amazonAsin,
-            mpn:first(product?.mpn),
-            gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
-            imageUrls:[...new Set([...structuredImages,...[...document.images].map(i=>i.currentSrc||i.src).filter(Boolean)])].slice(0,30),
-            jsonLdProductCount:jsonNodes.filter(node=>{
-              const t=node['@type'];
-              return t==='Product' || (Array.isArray(t) && t.includes('Product'));
-            }).length,
-            capturedAt:new Date().toISOString(),
-            shippingText:shippingMatch?.[0],
-            claims:[],
-            specifications,
-            pageSignals:[
-              ...(('Shopify' in window || [...document.scripts].some(s=>s.src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
-                ? ['platform:shopify'] : []),
-              ...((document.body?.classList.contains('woocommerce') || [...document.scripts].some(s=>/wc-(?:cart|checkout|add-to-cart)/i.test(s.src)))
-                ? ['platform:woocommerce'] : []),
-              ...(([...document.scripts].some(s=>s.src.includes('bigcommerce.com')) || document.querySelector('[data-content-region]'))
-                ? ['platform:bigcommerce'] : []),
-              ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
-                ? ['platform:magento'] : []),
-              ...(([...document.scripts].some(s=>/myshopline\.com|shoplineapp\.com/i.test(s.src))
-                || [...document.images].some(i=>/myshopline\.com/i.test(i.currentSrc||i.src))
-                || document.querySelector('link[href*="myshopline.com"], meta[content*="SHOPLINE"]'))
-                ? ['platform:shopline'] : []),
-              ...(document.querySelector('#looxReviews, .loox-rating') || [...document.scripts].some(s=>s.src.includes('loox.io/widget/loox.js'))
-                ? ['review-platform:loox'] : []),
-              ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
-                ? ['review-platform:judgeme'] : []),
-              ...([...document.scripts].some(s=>s.src.includes('track123.com/track123-widget.min.js') || s.src.includes('shp.track123.com/tracking-page/build/widget.min.js'))
-                || document.querySelector('#track123-tracking-widget, track123-tracking-widget')
-                ? ['tracking-platform:track123'] : []),
-              ...([...document.scripts].some(s=>s.src.includes('parcelpanel.com/assets/tracking/track-page.js') || s.src.includes('shopify-edd.parcelpanel.com/loader.js'))
-                || document.querySelector('#pp-tracking-page-app, #pp-tracking-shop, parcelpanel-edd')
-                ? ['tracking-platform:parcelpanel'] : []),
-            ],
-          },
-          pageText,
-          reviews,
-          siteLinks,
-          catalog,
-          hostedReviews: hostedRating ? {
-            rating: hostedRating,
-            reviewCount: hostedReviewCount,
-            source:'Store-hosted structured reviews',
-          } : undefined,
-          scriptSources:[...document.scripts].map(s=>s.src).filter(Boolean).slice(0,300),
-          htmlSignature:(document.head?.innerHTML || '').slice(0,80000)+' '+(document.body?.className || ''),
-          amazonSearchCards,
-        };
-      },
+      target:documentTarget(page),
+      world:'ISOLATED',
+      func:extractPageScan,
+      args:[COMMERCE_LANGUAGE_KIT],
     });
 
-    const result=execution?.result as {product:ProductSnapshot;pageText:string;reviews:ReviewSnapshot[];siteLinks:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>;catalog:CatalogSnapshot;hostedReviews?:HostedReviewSummary;scriptSources:string[];htmlSignature:string;amazonSearchCards:AmazonSearchCard[]}|undefined;
+    const result=execution?.result as PageScanResult|undefined;
     if (!result) throw new Error('The page did not return a scan result.');
+    if(result.product.url!==page.url) throw new Error('The page changed while DropShredder was checking it. Try the scan again on the finished product page.');
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
 
     const platformMatches=detectCommercePlatforms({
       scripts:result.scriptSources,
@@ -374,6 +292,7 @@ async function scanActivePage(): Promise<void> {
     };
 
     const evidence=runPassiveRules(result.product,result.pageText);
+    try{const lists=(await loadUserLists()).lists;evidence.push(...importedProductLeads(result.product,lists),...approximateImportedProductLeads(result.product,lists),...importedEntityRoleGraph(result.product,lists));}catch{/* Optional local references do not block a scan. */}
     evidence.push(...amazonCloneClusterEvidence(result.amazonSearchCards));
     evidence.push(...merchantNetworkEvidence(result.product.domain));
     evidence.push(...catalogEvidence(result.catalog));
@@ -395,21 +314,45 @@ async function scanActivePage(): Promise<void> {
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
-          target:{tabId:tab.id},
+          target:documentTarget(page),
+          world:'ISOLATED',
           args:[result.siteLinks],
           func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
-            const pages:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}>=[];
-            for(const link of links.slice(0,4)){
+            const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
               try{
-                const response=await fetch(link.url,{credentials:'same-origin',cache:'force-cache'});
-                if(!response.ok) continue;
-                const html=await response.text();
+                const response=await fetch(link.url,{
+                  credentials:'omit',
+                  cache:'force-cache',
+                  signal:AbortSignal.timeout(3500),
+                });
+                if(!response.ok) return undefined;
+                const length=Number(response.headers.get('content-length') || 0);
+                if(length>2_000_000) return undefined;
+                if(new URL(response.url).origin!==location.origin || !response.body) return undefined;
+                const reader=response.body.getReader();
+                const decoder=new TextDecoder();
+                let html='',size=0;
+                try{
+                  while(true){
+                    const {done,value}=await reader.read();
+                    if(done) break;
+                    size+=value.byteLength;
+                    if(size>2_000_000) return undefined;
+                    html+=decoder.decode(value,{stream:true});
+                  }
+                  html+=decoder.decode();
+                }finally{
+                  void reader.cancel().catch(()=>{});
+                }
                 const doc=new DOMParser().parseFromString(html,'text/html');
                 const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
-                if(text) pages.push({...link,text});
-              }catch{}
-            }
-            return pages;
+                return text ? {...link,text} : undefined;
+              }catch{
+                return undefined;
+              }
+            };
+            const results=await Promise.all(links.slice(0,4).map(fetchPage));
+            return results.filter((page):page is {kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}=>Boolean(page));
           },
         });
         sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
@@ -429,8 +372,8 @@ async function scanActivePage(): Promise<void> {
     if(fingerprint.identifiers.length){
       evidence.push({
         id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
-        title:'Stable product identifiers recovered',
-        explanation:'Stable identifiers improve upstream matching and chronology checks. Their presence is informational, not negative evidence.',
+        title:'Product ID found',
+        explanation:'This ID can help us match the exact product on other listings. Finding one is not a warning by itself.',
         observedValue:fingerprint.identifiers.slice(0,6).join(', '),
         independentKey:'product-identifiers',
       });
@@ -441,7 +384,7 @@ async function scanActivePage(): Promise<void> {
         productTitle:result.product.title,
       }));
     }
-    if (/(^|\\.)etsy\\.com$/i.test(result.product.domain)) {
+    if (isEtsyDomain(result.product.domain)) {
       const etsy=analyzeEtsyPage(result.pageText);
       result.product={...result.product,...etsy.productPatch,claims:[...new Set([...(result.product.claims ?? []),...etsy.claims])]};
       evidence.push(...etsy.evidence);
@@ -481,8 +424,8 @@ async function scanActivePage(): Promise<void> {
         severity:'info',
         confidence:.95,
         weight:0,
-        title:'Does not appear to match Made in USA preference',
-        explanation:'The identified merchant/manufacturing/fulfillment/return chain includes material international components. This is a shopper preference notice, not evidence of wrongdoing.',
+        title:'Does not appear to match your Made in USA preference',
+        explanation:'Parts of the product, seller, shipping or return path appear to involve other countries. That is a preference note, not a warning by itself.',
         observedValue:supplyChain.label,
         independentKey:'made-in-usa-preference',
       });
@@ -500,6 +443,8 @@ async function scanActivePage(): Promise<void> {
       contradictions:[],
       verdict:calculateVerdict(evidence),
       supplyChain,
+      northAmerica:assessNorthAmerica(result.product,listingOriginClaims(result.product,result.pageText,sitePages)),
+      reviewIntegrity:result.reviews.length ? reviewIntegrity(result.reviews,result.product.title) : undefined,
     };
 
     try {
@@ -542,95 +487,160 @@ async function scanActivePage(): Promise<void> {
         }
       }
 
-      if(settings.autoReputationSweep){
-        try{
-          const observation=await fetchTrustpilotObservation(report.product.domain);
-          if(observation){
-            const reputationEvidence=[
-              ...analyzeReputationObservations([observation]),
-              ...qualityClaimEvidence(result.pageText,[observation]),
-              ...reviewDiscrepancyEvidence(result.hostedReviews,observation),
-            ];
-            if(reputationEvidence.length){
-              const combined=[
-                ...report.evidence.filter(existing=>!reputationEvidence.some(item=>item.independentKey===existing.independentKey)),
-                ...reputationEvidence,
-              ];
-              report={...report,evidence:combined,verdict:calculateVerdict(combined)};
-            }
-          }
-        }catch(reputationError){
-          console.warn('DropShredder: automatic Trustpilot sweep failed',reputationError);
-        }
-      }
     } catch (historyError) {
       console.warn('DropShredder: local history/source-index read failed', historyError);
     }
 
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
+    reportPage=page;
     renderReport(report);
 
     try {
-      await saveObservation(report);
+      if(epoch===scanEpoch && await isCurrentChromePage(page)) await saveObservation(report);
     } catch (storageError) {
       console.warn('DropShredder: local history write failed', storageError);
     }
 
     await chrome.scripting.executeScript({
-      target:{tabId:tab.id},
-      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed],
-      func:(score:number|null,count:number,severe:boolean)=>{
+      target:documentTarget(page),
+      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,{...toneCopy(currentTone),noVerdict:tr('DROPSHREDDER • NO VERDICT'),dismiss:tr('Dismiss DropShredder warning'),direction:uiDirection(),detail:tr('Mass-resell evidence score: $1/100 • Signals: $2 • $3',report.verdict.massResellLikelihood??tr('UNKNOWN'),report.evidence.length,report.verdict.severeWarningAllowed?tr('Independent evidence gate satisfied.'):tr('Evidence gate not satisfied; this is not a severe accusation.'))},page.url],
+      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string;noVerdict:string;dismiss:string;direction:string;detail:string},expectedUrl:string)=>{
+        if(location.href!==expectedUrl) return false;
         document.getElementById('dropshredder-stamp-host')?.remove();
         const host=document.createElement('div');
         host.id='dropshredder-stamp-host';
         host.style.cssText='all:initial;position:fixed;right:16px;top:96px;z-index:2147483647;';
         const shadow=host.attachShadow({mode:'open'});
         const headline=severe
-          ? '⚠ STRONG DROPSHIP / RESELL EVIDENCE'
-          : count>0 ? '⚠ DROPSHREDDER SIGNALS FOUND' : 'DROPSHREDDER • NO VERDICT';
-        shadow.innerHTML=`<style>
+          ? `⚠ ${copy.severeWarning}`
+          : count>0 ? `⚠ ${copy.signalsFound}` : copy.noVerdict;
+        const style=document.createElement('style');
+        style.textContent=`
           .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
             box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:system-ui,sans-serif;padding:14px}
           .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
           .headline{font-size:15px;font-weight:950;line-height:1.15}
           .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
-        </style><div class="box"><div class="brand">DROP SHREDDER</div><div class="headline">${headline}</div>
-        <div class="detail">${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${count} signal(s)<br>
-        ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}</div></div>`;
+        `;
+        const box=document.createElement('div');
+        box.className='box';box.dir=copy.direction;
+        const brand=document.createElement('div');
+        brand.className='brand';
+        brand.textContent='DROP SHREDDER';
+        const headlineEl=document.createElement('div');
+        headlineEl.className='headline';
+        headlineEl.textContent=headline;
+        const close=document.createElement('button');
+        close.type='button';
+        close.setAttribute('aria-label',copy.dismiss);
+        close.textContent='×';
+        close.style.cssText='all:initial;position:absolute;right:8px;top:5px;color:#b9b9c0;font:700 18px system-ui;cursor:pointer;padding:4px';
+        close.addEventListener('click',()=>host.remove());
+
+        const detail=document.createElement('div');
+        detail.className='detail';
+        detail.textContent=copy.detail;
+        box.style.position='relative';
+        box.append(close,brand,headlineEl,detail);
+        shadow.append(style,box);
         document.documentElement.append(host);
+        return true;
       },
     });
-
-    status.textContent=`Scan complete for ${result.product.domain}.`;
+    if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
+    scanningTabId=undefined;
+    status.textContent=tr('Scan complete for $1.',result.product.domain);
   } catch (error) {
-    status.textContent=error instanceof Error?error.message:String(error);
+    if(epoch===scanEpoch){
+      lastReport=undefined;
+      reportPage=undefined;
+      scanningTabId=undefined;
+      if(huntActions) huntActions.hidden=true;
+      status.textContent=errorText(error);
+    }
   } finally {
-    scanButton.disabled=false;
+    if(epoch===scanEpoch) scanButton.disabled=false;
   }
 }
 
 scanButton?.addEventListener('click',()=>void scanActivePage());
 
-async function openSearches(urls:Record<string,string>):Promise<void>{
-  for(const url of Object.values(urls)) await chrome.tabs.create({url,active:false});
+// A toast click opens Chrome's panel via a user gesture. The short-lived intent
+// is in session storage across worker restarts, not in service-worker globals.
+let consumingAutoPanelIntent=false;
+async function consumeAutoPanelIntent():Promise<boolean>{
+  if(consumingAutoPanelIntent) return true;
+  consumingAutoPanelIntent=true;
+  try{
+  const value=(await chrome.storage.session.get(AUTO_PANEL_INTENT))[AUTO_PANEL_INTENT] as
+    {tabId?:number;documentId?:string;createdAt?:number}|undefined;
+  if(!value || !value.tabId || !value.documentId || !value.createdAt ||
+    Date.now()-value.createdAt>15_000) return false;
+  const tab=await activeWebTab();
+  if(tab?.id!==value.tabId) return false;
+  await chrome.storage.session.remove(AUTO_PANEL_INTENT);
+  try{
+    const [probe]=await chrome.scripting.executeScript({
+      target:{tabId:value.tabId,documentIds:[value.documentId]},
+      world:'ISOLATED',func:()=>location.href,
+    });
+    if(probe?.documentId!==value.documentId) return true;
+    await scanActivePage();
+  }catch{
+    if(status) status.textContent=tr('The product page changed. Click CHECK THIS PRODUCT to try again.');
+  }
+  return true;
+  }finally{
+    consumingAutoPanelIntent=false;
+  }
 }
 
-huntSources?.addEventListener('click',()=>{
-  const title=lastReport?.product.title;
-  if(title) void openSearches(productSearchUrls(title));
+// Already-open panels do not reload when Chrome calls sidePanel.open again.
+chrome.runtime.onMessage.addListener((message:unknown)=>{
+  if(!message || typeof message!=='object') return;
+  const received=message as Record<string,unknown>;
+  if(received.type==='DS_AUTO_PANEL_READY' && received.version===1){
+    void consumeAutoPanelIntent().catch(()=>{});
+  }
 });
-huntImage?.addEventListener('click',()=>{
-  const image=lastReport?.product.imageUrls[0];
+// A newly opened panel might load after the worker's notification; session
+// storage is the authoritative fallback, with one short bounded retry.
+void (async()=>{
+  try{
+    if(!(await consumeAutoPanelIntent())){
+      await new Promise(resolve=>setTimeout(resolve,250));
+      await consumeAutoPanelIntent();
+    }
+  }catch{}
+})();
+
+async function openSearches(urls:Record<string,string>,maxTabs=8):Promise<void>{
+  showSearchChooser(urls);
+}
+
+huntSources?.addEventListener('click',()=>void (async()=>{
+  const report=lastReport;
+  if(!report) return;
+  try{
+    await verifiedReportPage(report);
+    if(report.product.title) await openSearches(productSearchUrls(report.product.title));
+  }catch(error){if(status) status.textContent=errorText(error);}
+})());
+huntImage?.addEventListener('click',async()=>{
+  const report=lastReport;
+  const pageAtClick=reportPage;
+  const image=report?.product.imageUrls[0];
   if(!image){
-    void openSearches(imageSearchUrls());
+    await openSearches(imageSearchUrls());
     return;
   }
 
-  void (async()=>{
-    if(status) status.textContent='Fingerprinting the selected image locally…';
-    try {
+  if(status) status.textContent=tr('Checking whether this product image shows up elsewhere…');
+  try {
       const fingerprint=await captureImageFingerprint(image);
-      if(fingerprint && lastReport){
-        const existing=lastReport.product.imageFingerprints ?? [];
+      if(fingerprint && report){
+        await verifiedReportPage(report);
+        const existing=report.product.imageFingerprints ?? [];
         const nextEvidence={
           id:'LOCAL_IMAGE_FINGERPRINT',
           family:'provenance' as const,
@@ -643,10 +653,10 @@ huntImage?.addEventListener('click',()=>{
           independentKey:`image-fingerprint:${fingerprint.sha256}`,
         };
         const nextProduct={
-          ...lastReport.product,
+          ...report.product,
           imageFingerprints:[...existing.filter(item=>item.url!==image),fingerprint],
         };
-        let nextEvidenceList=[...lastReport.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence];
+        let nextEvidenceList=[...report.evidence.filter(e=>e.independentKey!==nextEvidence.independentKey),nextEvidence];
 
         try{
           const allHistory=await getRecentObservationsAll(250);
@@ -661,8 +671,9 @@ huntImage?.addEventListener('click',()=>{
           console.warn('DropShredder: cross-domain image history comparison failed',historyError);
         }
 
+        await verifiedReportPage(report);
         lastReport={
-          ...lastReport,
+          ...report,
           product:nextProduct,
           evidence:nextEvidenceList,
           verdict:calculateVerdict(nextEvidenceList),
@@ -670,29 +681,37 @@ huntImage?.addEventListener('click',()=>{
         renderReport(lastReport);
         try { await saveObservation(lastReport); } catch {}
       }
-    } catch(error){
-      console.warn('DropShredder: image fingerprinting failed',error);
-    } finally {
-      if(status) status.textContent='Image hunt launched.';
+  } catch(error){
+    console.warn('DropShredder: image fingerprinting failed',error);
+  } finally {
+    // The user explicitly requested a public reverse-image search, even if local hashing failed.
+    if(pageAtClick && reportPage===pageAtClick){
+      if(status) status.textContent=tr('Image search opened. See who else is using this picture.');
       await openSearches(imageSearchUrls(image));
     }
-  })();
+  }
 });
-huntStore?.addEventListener('click',()=>{
-  const domain=lastReport?.product.domain;
-  if(domain) void openSearches(merchantSearchUrls(domain));
-});
-
-
-checkDomain?.addEventListener('click',()=>{
+huntStore?.addEventListener('click',()=>void (async()=>{
   const report=lastReport;
-  if(!report || !status) return;
-  void (async()=>{
-    status.textContent='Checking public RDAP registration data…';
-    try{
-      const rdap=await lookupDomainRdap(report.product.domain);
+  if(!report) return;
+  try{
+    await verifiedReportPage(report);
+    await openSearches(merchantSearchUrls(report.product.domain));
+  }catch(error){if(status) status.textContent=errorText(error);}
+})());
+
+
+checkDomain?.addEventListener('click',async()=>{
+  const report=lastReport;
+  if(!report || !status || domainRequest) return;
+  const active=new AbortController();domainRequest=active;checkDomain.disabled=true;if(cancelDomain) cancelDomain.disabled=false;
+  status.textContent=tr('Checking how long this website has been around…');
+  try{
+      const rdap=await lookupDomainRdap(report.product.domain,active.signal);
+      if(domainRequest!==active) return;
+      await verifiedReportPage(report);
       if(!rdap){
-        status.textContent='RDAP check cancelled or unavailable.';
+        status.textContent=tr('Couldn’t confirm this website’s age right now.');
         return;
       }
 
@@ -709,8 +728,10 @@ checkDomain?.addEventListener('click',()=>{
         confidence:.98,
         weight:0,
         title:'Domain registration chronology retrieved',
-        explanation:'Public RDAP domain chronology is informational by itself. It becomes relevant when it conflicts with an explicit seller business-age claim.',
+        explanation:'Registration dates describe the registered domain, not the age or credibility of the business.',
+        provenance:{sourceUrl:rdap.source,observedAt:rdap.retrievedAt,method:'Explicit public RDAP lookup'},
         observedValue:[
+          `registered domain ${rdap.domain}`,
           rdap.registeredAt ? `registered ${rdap.registeredAt.slice(0,10)}` : undefined,
           rdap.registrar ? `registrar ${rdap.registrar}` : undefined,
         ].filter(Boolean).join(' • ') || 'RDAP record retrieved',
@@ -734,76 +755,95 @@ checkDomain?.addEventListener('click',()=>{
       lastReport=next;
       renderReport(next);
       try{ await saveObservation(next); }catch{}
-      status.textContent=contradictions.length
-        ? 'Domain chronology conflicts with a seller claim. Review the evidence.'
-        : 'Domain chronology checked. No business-age contradiction found.';
-    }catch(error){
-      status.textContent=error instanceof Error ? error.message : String(error);
-    }
-  })();
+      status.textContent=tr('Domain registration information retrieved. It does not establish the business’s age.');
+  }catch(error){
+    if(domainRequest===active) status.textContent=active.signal.aborted?tr('Domain lookup canceled.'):errorText(error);
+  }finally{
+    if(domainRequest===active) stopDomainLookup();
+  }
 });
 
 
-reputationSweep?.addEventListener('click',()=>{
+reputationSweep?.addEventListener('click',()=>void (async()=>{
   const report=lastReport;
   if(!report) return;
-  const target={
-    merchantName:report.merchant.businessName || report.merchant.sellerName,
-    domain:report.merchant.domain,
-  };
-  void openSearches(reputationSearchUrls(target));
-  if(status) status.textContent='Public reputation searches launched across Trustpilot, Sitejabber, ConsumerAffairs, BBB, Google reviews, and Reddit.';
-});
+  try{
+    await verifiedReportPage(report);
+    const target={
+      merchantName:report.merchant.businessName || report.merchant.sellerName,
+      domain:report.merchant.domain,
+    };
+    await openSearches(reputationSearchUrls(target));
+    if(status) status.textContent=tr('Buyer-review searches opened. Compare the complaints before you trust the store.');
+  }catch(error){if(status) status.textContent=errorText(error);}
+})());
 
 
 policyCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Looking for a same-site return/refund policy…';
+    status.textContent=tr('Reading the return policy for expensive catches and hoops…');
     try{
-      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-      if(!tab?.id) throw new Error('No active tab is available.');
+      const page=await verifiedReportPage(report);
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:documentTarget(page),
         func:()=>{
-          const policyLink=[...document.querySelectorAll<HTMLAnchorElement>('a[href]')]
-            .map(a=>({href:a.href,text:(a.innerText||'').replace(/\s+/g,' ').trim()}))
-            .find(item=>{
-              try{
-                const url=new URL(item.href,location.href);
-                if(url.origin!==location.origin) return false;
-                return /return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+item.text);
-              }catch{return false;}
-            });
-          return policyLink?.href;
+          const anchors=document.getElementsByTagName('a');
+          for(let i=0;i<Math.min(anchors.length,1200);i++){
+            const a=anchors.item(i);
+            if(!a?.href) continue;
+            try{
+              const url=new URL(a.href,location.href);
+              if(url.origin!==location.origin || url.href.length>2048) continue;
+              if(/return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+(a.innerText||'').slice(0,250))) return url.href;
+            }catch{}
+          }
+          return undefined;
         },
       });
 
       const policyUrl=result?.result as string|undefined;
       if(!policyUrl){
-        status.textContent='No same-site return/refund policy link was found.';
+        status.textContent=tr('Couldn’t find a clear return or refund policy on this store.');
         return;
       }
 
       const [policyResult]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:documentTarget(page),
         args:[policyUrl],
         func:async(url:string)=>{
-          const response=await fetch(url,{credentials:'same-origin',cache:'no-store'});
-          if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
-          const html=await response.text();
+          const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
+          if(!response.ok) throw new Error(tr('Policy fetch failed: HTTP $1',response.status));
+          const length=Number(response.headers.get('content-length')||0);
+          if(length>2_000_000 || new URL(response.url).origin!==location.origin || !response.body) return undefined;
+          const reader=response.body.getReader();
+          const decoder=new TextDecoder();
+          let html='',size=0;
+          try{
+            while(true){
+              const {done,value}=await reader.read();
+              if(done) break;
+              size+=value.byteLength;
+              if(size>2_000_000) return undefined;
+              html+=decoder.decode(value,{stream:true});
+            }
+            html+=decoder.decode();
+          }finally{
+            void reader.cancel().catch(()=>{});
+          }
           const doc=new DOMParser().parseFromString(html,'text/html');
           return (doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
         },
       });
       const text=policyResult?.result as string|undefined;
-      if(!text) throw new Error('Return/refund policy page did not return readable text.');
+      if(!text) throw new Error('The return policy couldn’t be read clearly enough to judge.');
       const findings=analyzeReturnPolicy(text);
+      await verifiedReportPage(report);
 
       if(!findings.length){
-        status.textContent='Return/refund policy checked. No targeted friction patterns found.';
+        status.textContent=tr('No obvious return-policy traps stood out.');
         return;
       }
 
@@ -815,9 +855,9 @@ policyCheck?.addEventListener('click',()=>{
       lastReport=next;
       renderReport(next);
       try{await saveObservation(next);}catch{}
-      status.textContent=`Return/refund policy checked: ${findings.length} relevant friction signal(s) found.`;
+      status.textContent=tr('Return-policy findings to review before buying: $1.',findings.length);
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }
   })();
 });
@@ -827,26 +867,41 @@ fulfillmentCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Reading explicit fulfillment evidence from the active page…';
+    status.textContent=tr('Checking where the order actually appears to ship from…');
     try{
-      const [tab]=await chrome.tabs.query({active:true,currentWindow:true});
-      if(!tab?.id) throw new Error('No active tab is available.');
+      const page=await verifiedReportPage(report);
 
       const [result]=await chrome.scripting.executeScript({
-        target:{tabId:tab.id},
+        target:documentTarget(page),
+        world:'ISOLATED',
         func:()=>({
-          text:(document.body?.innerText || '').replace(/\s+/g,' ').slice(0,50000),
+          text:(()=>{
+            if(!document.body) return '';
+            const pieces:string[]=[];
+            const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+            let nodes=0,chars=0;
+            while(nodes<3000 && chars<50000){
+              const node=walker.nextNode();
+              if(!node) break;
+              nodes++;
+              if(node.parentElement?.closest('script,style,input,textarea,[contenteditable="true"],[hidden]')) continue;
+              const value=(node.nodeValue||'').replace(/\s+/g,' ').trim().slice(0,1000);
+              if(value){pieces.push(value);chars+=value.length+1;}
+            }
+            return pieces.join(' ').slice(0,50000);
+          })(),
           url:location.href,
         }),
       });
-      const page=result?.result as {text:string;url:string}|undefined;
-      if(!page?.text) throw new Error('No readable tracking/fulfillment text was found.');
+      const fulfillmentPage=result?.result as {text:string;url:string}|undefined;
+      await verifiedReportPage(report);
+      if(!fulfillmentPage?.text) throw new Error('Couldn’t find enough shipping information on this page to tell.');
 
-      const observation=parseFulfillmentObservation(page.text);
+      const observation=parseFulfillmentObservation(fulfillmentPage.text);
       if(!observation.origin){
         status.textContent=observation.carrier
-          ? `Carrier ${observation.carrier} detected, but no explicit shipment origin was found. No contradiction scored.`
-          : 'No explicit shipment origin was found. No contradiction scored.';
+          ? tr('Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.',observation.carrier)
+          : tr('The page doesn’t clearly say where the order ships from.');
         return;
       }
 
@@ -855,7 +910,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
         origin:observation.origin,
         carrier:observation.carrier,
         routeText:observation.routeText,
-        source:page.url,
+        source:fulfillmentPage.url,
       });
       const added=contradictionEvidence(contradictions);
       const originInfo={
@@ -891,10 +946,54 @@ fulfillmentCheck?.addEventListener('click',()=>{
       renderReport(next);
       try{await saveObservation(next);}catch{}
       status.textContent=contradictions.length
-        ? 'Fulfillment evidence conflicts with an explicit seller shipping-origin claim.'
-        : 'Fulfillment origin recorded. No seller-origin contradiction found.';
+        ? tr('Where the order ships from doesn’t match the seller’s claim. Check the receipts.')
+        : tr('The shipping origin doesn’t contradict what the seller says.');
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
+    }
+  })();
+});
+
+
+clearHistory?.addEventListener('click',()=>{
+  if(!status) return;
+  void (async()=>{
+    clearHistory.disabled=true;
+    try{
+      await clearObservationHistory();
+      status.textContent=tr('Your saved DropShredder scan history is deleted.');
+    }catch(error){
+      status.textContent=errorText(error);
+    }finally{
+      clearHistory.disabled=false;
+    }
+  })();
+});
+
+
+revokeOptionalAccess?.addEventListener('click',()=>{
+  if(!status) return;
+  void (async()=>{
+    revokeOptionalAccess.disabled=true;
+    try{
+      // The opt-in setting is the first and definitive protection gate.
+      // Cleanup may race the worker's permissions.onRemoved reconciliation.
+      await updateFeatureSettings({autoProtection:false});
+      if(autoProtection) autoProtection.checked=false;
+      const granted=await chrome.permissions.getAll();
+      const origins=(granted.origins ?? []).filter(origin=>origin.startsWith('https://'));
+      if(origins.length) await chrome.permissions.remove({origins});
+      await setAutoContentRegistration(false);
+      const remaining=(await chrome.permissions.getAll()).origins ?? [];
+      if(remaining.some(origin=>origin.startsWith('https://')))
+        throw new Error('Chrome kept a site permission; check extension site access.');
+      status.textContent=origins.length
+        ? tr('Extra site access removed.')
+        : tr('DropShredder didn’t have any extra site access to remove.');
+    }catch(error){
+      status.textContent=errorText(error);
+    }finally{
+      revokeOptionalAccess.disabled=false;
     }
   })();
 });

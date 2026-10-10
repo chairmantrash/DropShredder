@@ -1,0 +1,425 @@
+{
+  "version": 1,
+  "date": "2026-10-10",
+  "task": "DS-042",
+  "baseline": "f2007ca0b80266770c97637ae261fb51d99c7e5e",
+  "scope": "All existing research-note topic families audited. Fresh source review is topic-level, with failures preserved; no claim that every page, merchant or paper was fully reread or independently reproduced.",
+  "noteCount": 38,
+  "sourcePresenceCounts": {
+    "body-unreadable": 1,
+    "page-retrieved": 51,
+    "primary-search-result": 39,
+    "retrieval-failed": 7
+  },
+  "topicFamilies": [
+    {
+      "id": "marketplace-policy",
+      "title": "Marketplace policies and permitted fulfillment"
+    },
+    {
+      "id": "enablement",
+      "title": "Sourcing, import, automation, private labels and agent tooling"
+    },
+    {
+      "id": "review-provenance",
+      "title": "Reviews, imports, translation, incentives and suppression"
+    },
+    {
+      "id": "competitor-tools",
+      "title": "Consumer tools, seller extensions, open-source clean-room and retirement"
+    },
+    {
+      "id": "manufacturers-networks",
+      "title": "Legal operators, manufacturers, aliases and dated network edges"
+    },
+    {
+      "id": "regional-origin",
+      "title": "Canada/Mexico techniques, regional outlets, origin and trade"
+    },
+    {
+      "id": "category-safety",
+      "title": "Retail categories, furniture/pets, recalls and certification"
+    },
+    {
+      "id": "public-apis",
+      "title": "Public/free APIs, quotas, privacy and endpoint acceptance"
+    },
+    {
+      "id": "research-methods",
+      "title": "Matching, multimodal evidence, material prediction, calibration and injection"
+    },
+    {
+      "id": "runtime-quality",
+      "title": "Extension privacy/security/performance, scope, stability and professionalization"
+    },
+    {
+      "id": "localization",
+      "title": "Language kits, detection, offline OCR and multilingual attribution"
+    },
+    {
+      "id": "maintenance",
+      "title": "Intelligence sweep, source expiry and update safety"
+    }
+  ],
+  "notes": [
+    {
+      "path": "brain/research/2026-10-06-AMAZON-WALMART-POLICY-BASELINE.md",
+      "topics": [
+        "marketplace-policy"
+      ],
+      "title": "Amazon and Walmart marketplace policy baseline — 2026-10-06",
+      "previousSourceCount": 4,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-06-DROPSHIP-TOOLING-INTELLIGENCE.md",
+      "topics": [
+        "enablement"
+      ],
+      "title": "Dropshipping capability intelligence — 2026-10-06",
+      "previousSourceCount": 21,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-06-ETSY-POLICY-BASELINE.md",
+      "topics": [
+        "marketplace-policy"
+      ],
+      "title": "Etsy policy baseline — 2026-10-06",
+      "previousSourceCount": 5,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-ADDITIONAL-STOREFRONTS.md",
+      "topics": [
+        "marketplace-policy"
+      ],
+      "title": "Additional storefronts: concealed sourcing and evidence gaps",
+      "previousSourceCount": 40,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-DEFENSIVE-INTELLIGENCE.md",
+      "topics": [
+        "research-methods"
+      ],
+      "title": "DropShredder defensive intelligence — 2026-10-08",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-ENHANCEMENT-AUDIT.md",
+      "topics": [
+        "category-safety"
+      ],
+      "title": "DropShredder research enhancement audit — 2026-10-08",
+      "previousSourceCount": 6,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-EXISTING-TOOLS.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "DropShredder — existing tools and capability gaps",
+      "previousSourceCount": 50,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-FULLSTACK-GAP-AUDIT.md",
+      "topics": [
+        "public-apis"
+      ],
+      "title": "DropShredder — second gap-closing audit, 2026-10-08",
+      "previousSourceCount": 19,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-FURNITURE-PETS.md",
+      "topics": [
+        "category-safety"
+      ],
+      "title": "DropShredder — furniture and pet-product evidence expansion",
+      "previousSourceCount": 24,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-GITHUB-REDDIT-OPEN-SOURCE-LANDSCAPE.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "GitHub + Reddit open-source research for DropShredder — 2026-10-08",
+      "previousSourceCount": 27,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-MANUFACTURER-NETWORKS.md",
+      "topics": [
+        "manufacturers-networks"
+      ],
+      "title": "DropShredder — manufacturer networks, identifiers and history",
+      "previousSourceCount": 39,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "topics": [
+        "research-methods"
+      ],
+      "title": "DropShredder — research beyond the existing workplane",
+      "previousSourceCount": 29,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-RETAIL-CATEGORY-GAPS.md",
+      "topics": [
+        "category-safety"
+      ],
+      "title": "DropShredder — popular retail category detection gaps",
+      "previousSourceCount": 22,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-08-SHOPPING-PAGE-DETECTION.md",
+      "topics": [
+        "runtime-quality"
+      ],
+      "title": "Automatic shopping-page detection — primary-source research (2026-10-08)",
+      "previousSourceCount": 12,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-10-LANGUAGE-KITS.md",
+      "topics": [
+        "localization"
+      ],
+      "title": "Language kits — primary-source research, 2026-10-10",
+      "previousSourceCount": 12,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-10-MULTILINGUAL-DETECTION.md",
+      "topics": [
+        "localization"
+      ],
+      "title": "Merchant-language detection research (DS-040)",
+      "previousSourceCount": 7,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/2026-10-10-NORTH-AMERICA-COMMERCE.md",
+      "topics": [
+        "regional-origin"
+      ],
+      "title": "Canadian and Mexican dropshipping, sourcing networks and North American origin",
+      "previousSourceCount": 43,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/ADJACENT-EXTENSION-ANALYSIS-2026-10-06.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "Adjacent extension analysis — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/AI-VIBE-CODING-PROFESSIONALIZATION-2026-10-07.md",
+      "topics": [
+        "runtime-quality"
+      ],
+      "title": "AI / Vibe Coding Professionalization Research — 2026-10-07",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/AMAZON-MARKETPLACE-EXTENSION-CLEANROOM-2026-10-06.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "Amazon / marketplace extension clean-room analysis — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/COMMERCE-PLATFORM-SUPPLY-CHAIN-INTELLIGENCE-2026-10-06.md",
+      "topics": [
+        "enablement"
+      ],
+      "title": "Commerce platform and supply-chain intelligence — 2026-10-06",
+      "previousSourceCount": 13,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/COMPETITOR-ADJACENT-WATCHLIST.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "Competitor / adjacent-tool watchlist",
+      "previousSourceCount": 3,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/CORE-DETECTION-METHODS-AND-FREE-API-MAP-2026-10-07.md",
+      "topics": [
+        "public-apis"
+      ],
+      "title": "Core Detection Methods + Free/Public API Map — 2026-10-07",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/DROPSHIPPER-ENABLEMENT-BASELINE-2026-10-06.md",
+      "topics": [
+        "enablement"
+      ],
+      "title": "Dropshipper enablement intelligence baseline — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/DROPSHIPPING-ECOSYSTEM-COMBAT-INTELLIGENCE-2026-10-06.md",
+      "topics": [
+        "enablement"
+      ],
+      "title": "Dropshipping ecosystem combat intelligence — Tapstitch, Gelato, TrendTrack, Iubenda — 2026-10-06",
+      "previousSourceCount": 4,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/FAKE-REVIEW-ADVERSARY-RESEARCH-2026-10-07.md",
+      "topics": [
+        "review-provenance"
+      ],
+      "title": "Fake Review Adversary Research — 2026-10-07",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/FREE-PUBLIC-API-INTELLIGENCE-2026-10-06.md",
+      "topics": [
+        "public-apis"
+      ],
+      "title": "Free/Public API Intelligence Baseline — 2026-10-06",
+      "previousSourceCount": 9,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/FULL-SPECTRUM-SCOPE-REDUNDANCY-AUDIT-2026-10-07.md",
+      "topics": [
+        "runtime-quality"
+      ],
+      "title": "DropShredder full-spectrum scope and redundancy audit — 2026-10-07",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/HAREMPANTS-SUREDESIGN-MERCHANT-NETWORK-2026-10-06.md",
+      "topics": [
+        "manufacturers-networks"
+      ],
+      "title": "Merchant network case study: HaremPants / Sure Design — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/SCAM-QUALITY-DETECTION-ARCHITECTURE-2026-10-06.md",
+      "topics": [
+        "runtime-quality"
+      ],
+      "title": "DropShredder Scam + Low-Quality Detection Architecture — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/SELLER-TOOL-EXTENSION-CLEANROOM-2026-10-06.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "Seller-tool extension clean-room analysis — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/SPYTREND-EXTENSION-CLEANROOM-2026-10-06.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "SpyTrend extension clean-room analysis — 2026-10-06",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/SPYTREND-PUBLIC-INTELLIGENCE-2026-10-06.md",
+      "topics": [
+        "competitor-tools"
+      ],
+      "title": "SpyTrend public intelligence baseline — 2026-10-06",
+      "previousSourceCount": 9,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/STABILITY-GAPS-DEEPENING-2026-10-07.md",
+      "topics": [
+        "runtime-quality"
+      ],
+      "title": "DropShredder Stability Gaps — Deepening Plan (2026-10-07)",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/TECHNICAL-SIGNATURE-SOURCES.md",
+      "topics": [
+        "maintenance"
+      ],
+      "title": "Technical signature sources",
+      "previousSourceCount": 2,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/WEEKLY-INTEL-PROTOCOL.md",
+      "topics": [
+        "maintenance"
+      ],
+      "title": "Weekly dropshipping intelligence sweep",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/WEEKLY-INTEL-WATCHLIST.md",
+      "topics": [
+        "maintenance"
+      ],
+      "title": "Weekly intelligence watchlist",
+      "previousSourceCount": 0,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    },
+    {
+      "path": "brain/research/ZENDROP-COMBAT-INTELLIGENCE-2026-10-06.md",
+      "topics": [
+        "enablement"
+      ],
+      "title": "Zendrop combat intelligence — 2026-10-06",
+      "previousSourceCount": 12,
+      "disposition": "Topic refreshed against cited primary sources in DS-042 report. Legacy per-record verification dates retained; this does not authenticate every legacy statement or bundled record."
+    }
+  ],
+  "implementation": [
+    "six separate standing dimensions",
+    "reviewed evidence-based standing rating with abstention",
+    "exact legal entity/domain/role/listing binding",
+    "source-owned categories, host allowlist and link-only reuse restrictions",
+    "dated lifecycle supersession and equal-date conflict refusal",
+    "25-source manual research directory",
+    "32 authored messages in eight locales",
+    "build inventory removes environment-dependent Node/zlib field"
+  ],
+  "held": [
+    "No blanket good/bad company whitelist",
+    "No country/host/provider automatic accusation",
+    "No ML trust probability or transferred paper benchmark accuracy",
+    "No bureau/paid feed scraper or new background network request",
+    "No paper model dependency, new permission, public release or main merge"
+  ]
+}

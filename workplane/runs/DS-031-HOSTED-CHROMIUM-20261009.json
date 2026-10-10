@@ -1,0 +1,214 @@
+{
+  "task": "DS-031",
+  "status": "VERIFYING \u2014 METHODS PROVEN; FULL QA OPEN",
+  "harnessCommit": "ef1e7914ceb73a6b268f7d252f84b3b6d25b42be",
+  "packagedSourceCommit": "764e892a2cdddcfc8ac08f70d159d3e965fe9181",
+  "browserRuntimeRun": "https://github.com/chairmantrash/DropShredder/actions/runs/37892420697",
+  "ciRun": "https://github.com/chairmantrash/DropShredder/actions/runs/37892420670",
+  "codeqlRun": "https://github.com/chairmantrash/DropShredder/actions/runs/37892420550",
+  "allThreeRuns": "success",
+  "runtime": {
+    "sourceCommit": "ef1e7914ceb73a6b268f7d252f84b3b6d25b42be",
+    "startedAt": "2026-10-09T06:13:55.451Z",
+    "mode": "headless Chromium / automated packaged runtime",
+    "status": "PASS \u2014 AUTOMATED RUNTIME SUBSET",
+    "tests": [
+      {
+        "id": "R01",
+        "description": "Packaged bytes match the reviewed candidate",
+        "status": "PASS",
+        "elapsedMs": 3,
+        "details": {
+          "files": 14,
+          "packagedSourceCommit": "764e892a2cdddcfc8ac08f70d159d3e965fe9181"
+        }
+      },
+      {
+        "id": "R02",
+        "description": "Unmodified MV3 extension and service worker load in Chromium",
+        "status": "PASS",
+        "elapsedMs": 975,
+        "details": {
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "version": "0.2.0",
+          "browser": "Chrome/156.0.8078.4"
+        }
+      },
+      {
+        "id": "R03",
+        "description": "Panel document renders and optional host access starts absent",
+        "status": "PASS",
+        "elapsedMs": 179
+      },
+      {
+        "id": "R04",
+        "description": "Unsupported extension-page scan returns without a report",
+        "status": "PASS",
+        "elapsedMs": 45,
+        "details": {
+          "visibleStatus": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome\u2019s extension controls, then click CHECK THIS PRODUCT again."
+        }
+      },
+      {
+        "id": "R05",
+        "description": "Regular-tab settings requests fail closed outside the native panel",
+        "status": "PASS",
+        "elapsedMs": 63,
+        "details": {
+          "scope": "Regular tab is rejected by sender.tab guard; native-side-panel saving is exercised by the separate native diagnostic."
+        }
+      },
+      {
+        "id": "R06",
+        "description": "Display controls apply, persist, and reset without erasing features",
+        "status": "PASS",
+        "elapsedMs": 237
+      },
+      {
+        "id": "R07",
+        "description": "No optional content script or network investigation before consent",
+        "status": "PASS",
+        "elapsedMs": 1585,
+        "details": {
+          "scope": "Owned fulfilled HTTPS fixture; no post-grant detection or live merchant claim"
+        }
+      },
+      {
+        "id": "R08",
+        "description": "Display reset and default feature state survive full profile restart",
+        "status": "PASS",
+        "elapsedMs": 508
+      },
+      {
+        "id": "R09",
+        "description": "No uncaught panel errors or unsolicited extension network requests",
+        "status": "PASS",
+        "elapsedMs": 0
+      }
+    ],
+    "errors": [],
+    "extensionRequests": [],
+    "notTested": [
+      "Full independent A01-D06 desktop QA protocol",
+      "Native toolbar opening and native side-panel mounting (panel document is opened in a tab)",
+      "Native host permission accept/deny prompts and post-grant scan/toast flows",
+      "Live marketplace accuracy, privacy under granted access, RDAP/CPSC live endpoints",
+      "Context menus, SPA target changes, search batches and model/category accuracy"
+    ],
+    "packagedSourceCommit": "764e892a2cdddcfc8ac08f70d159d3e965fe9181",
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.4",
+      "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75"
+    },
+    "os": "linux 6.17.0-1022-azure",
+    "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+    "finishedAt": "2026-10-09T06:13:59.047Z"
+  },
+  "nativeDiagnostic": {
+    "status": "NATIVE TARGET OBSERVED \u2014 DIAGNOSTIC",
+    "purpose": "Native action/side-panel diagnostic only",
+    "testsPassed": 0,
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.4",
+      "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75"
+    },
+    "options": {
+      "enabled": true,
+      "path": "sidepanel.html"
+    },
+    "targets": [
+      {
+        "targetId": "C3D302922518AE8BBDC99C0591B52353",
+        "type": "service_worker",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+      },
+      {
+        "targetId": "8FF3F1622173B4AF254C9FB0994F8675",
+        "type": "page",
+        "url": "about:blank"
+      },
+      {
+        "targetId": "C265AFF8E6A69FA3B264631ACCBC4C4D",
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+      },
+      {
+        "targetId": "7E22CFE1B3DBACAF325F3AAFF665995F",
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/"
+      },
+      {
+        "targetId": "82CFEA04D255CA39B3A2CC2A32233612",
+        "type": "page",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+      }
+    ],
+    "nativePanelTargetFound": true,
+    "exposedPanelPages": 0,
+    "scanButtonPresent": true,
+    "nativeFeatureSaved": true,
+    "nativeFeatureControl": {
+      "checked": true,
+      "status": "Ready when you are."
+    }
+  },
+  "artifacts": [
+    {
+      "id": 11599016396,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "size_in_bytes": 361913,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11599016396",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11599016396/zip",
+      "expired": false,
+      "created_at": "2026-10-09T06:14:00Z",
+      "expires_at": "2026-11-08T06:13:59Z",
+      "updated_at": "2026-10-09T06:14:00Z",
+      "digest": "sha256:3ddd46d7b21bc96725fcc7f9481846e427b921e70c0d38938838eb6be2b9a3fa",
+      "workflow_run": {
+        "id": 37892420697,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/runtime-reconciliation-20261009",
+        "head_sha": "ef1e7914ceb73a6b268f7d252f84b3b6d25b42be"
+      }
+    },
+    {
+      "id": 11598609296,
+      "name": "dropshredder-native-action-diagnostic",
+      "size_in_bytes": 40983,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11598609296",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11598609296/zip",
+      "expired": false,
+      "created_at": "2026-10-09T06:14:02Z",
+      "expires_at": "2026-11-08T06:14:01Z",
+      "updated_at": "2026-10-09T06:14:02Z",
+      "digest": "sha256:c423227906f4d6a6800ced0e2b3b652c163af8d71cb6fce0df4fc76fc264e9b5",
+      "workflow_run": {
+        "id": 37892420697,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/runtime-reconciliation-20261009",
+        "head_sha": "ef1e7914ceb73a6b268f7d252f84b3b6d25b42be"
+      }
+    }
+  ],
+  "visualFinding": {
+    "status": "OPEN",
+    "description": "At 420px viewport and 130% text, the masthead privacy badge forces the title/brand into a very narrow column; words and final punctuation wrap awkwardly. Runtime R06 checks preferences, not visual layout acceptance.",
+    "evidence": "panel-light-large.png"
+  },
+  "remaining": [
+    "Native permission accept/deny/revoke and live product scans/toasts",
+    "Correct-target and SPA lifecycle, CPSC/RDAP, chooser/context menus, exports",
+    "Multi-window native settings concurrency and all preference restart cases",
+    "Large-text/narrow masthead reflow fix and visual regression validation",
+    "Representative category false-positive/miss/abstention evaluation",
+    "Full independent real desktop A01-D06 protocol"
+  ]
+}

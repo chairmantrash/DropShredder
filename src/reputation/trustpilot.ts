@@ -58,17 +58,3 @@ export function parseTrustpilotHtml(html:string,url:string):ReputationObservatio
     url,
   };
 }
-
-export async function fetchTrustpilotObservation(domain:string):Promise<ReputationObservation|undefined>{
-  const host='https://www.trustpilot.com/*';
-  const granted=await chrome.permissions.contains({origins:[host]})
-    || await chrome.permissions.request({origins:[host]});
-  if(!granted) return undefined;
-
-  const normalized=domain.toLowerCase().replace(/^www\./,'');
-  const url=`https://www.trustpilot.com/review/${encodeURIComponent(normalized)}`;
-  const response=await fetch(url,{credentials:'omit',cache:'no-store'});
-  if(response.status===404) return undefined;
-  if(!response.ok) throw new Error(`Trustpilot lookup failed: HTTP ${response.status}`);
-  return parseTrustpilotHtml(await response.text(),url);
-}

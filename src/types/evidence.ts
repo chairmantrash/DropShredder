@@ -9,7 +9,9 @@ export type EvidenceFamily =
   | 'catalog'
   | 'technology'
   | 'identity'
-  | 'claims';
+  | 'claims'
+  | 'quality'
+  | 'safety';
 
 export interface EvidenceSignal {
   id: string;
@@ -21,6 +23,10 @@ export interface EvidenceSignal {
   explanation: string;
   observedValue?: string;
   independentKey: string;
+  /** Shared observation ancestry; different rule IDs do not make it independent. */
+  correlationKeys?: string[];
+  sourceKey?: string;
+  provenance?: {sourceUrl:string;observedAt:string;method:string};
 }
 
 export interface Contradiction {

@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CA-MX",
+  "reviewedAt": "2026-10-10",
+  "policy": "Research/source leads only; no global merchant trust, product origin guarantee or geography risk weight.",
+  "outlets": [
+    {
+      "id": "canada-origin",
+      "name": "Competition Bureau",
+      "countries": [
+        "CA"
+      ],
+      "kind": "authority",
+      "sourceUrl": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/made-canada-claims",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Non-food Canadian origin claims: qualified Made in Canada and Product of Canada have different tests.",
+      "limit": "Neither threshold establishes 100% regional inputs, seller or dispatch."
+    },
+    {
+      "id": "canada-food",
+      "name": "Canadian Food Inspection Agency",
+      "countries": [
+        "CA"
+      ],
+      "kind": "authority",
+      "sourceUrl": "https://inspection.canada.ca/en/food-labels/labelling/industry/origin-claims",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Food origin guidance is distinct from non-food cost guidelines.",
+      "limit": "Food-origin claims may allow minor imported inputs and imported packaging."
+    },
+    {
+      "id": "usa-origin",
+      "name": "Federal Trade Commission",
+      "countries": [
+        "US"
+      ],
+      "kind": "authority",
+      "sourceUrl": "https://www.ftc.gov/business-guidance/resources/complying-made-usa-standard",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Unqualified Made in USA requires all or virtually all domestic content and processing.",
+      "limit": "Negligible foreign content may be allowed; no seller/dispatch proof."
+    },
+    {
+      "id": "mexico-origin",
+      "name": "Secretaría de Economía / Hecho en México",
+      "countries": [
+        "MX"
+      ],
+      "kind": "authority",
+      "sourceUrl": "https://sidof.segob.gob.mx/notas/docFuente/5749333",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "2025 certification rules allow manufacture in Mexico regardless of input origin.",
+      "limit": "Mark authorization is not a bill of materials or an all-regional guarantee."
+    },
+    {
+      "id": "denue",
+      "name": "INEGI DENUE",
+      "countries": [
+        "MX"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://www.inegi.org.mx/servicios/api_denue.html",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Establishment identity, activity and location discovery; API requires registration token.",
+      "limit": "An establishment record cannot authenticate a product, seller affiliation or material origin. No API integrated."
+    },
+    {
+      "id": "profeco",
+      "name": "PROFECO virtual-store monitoring",
+      "countries": [
+        "MX"
+      ],
+      "kind": "authority",
+      "sourceUrl": "https://www.gob.mx/profeco/documentos/monitoreo-de-tiendas-virtuales-114564",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Consumer lookup of dated online-store disclosure checks.",
+      "limit": "Results have commercial/advertising reuse restrictions. Link only; no copied ratings, endorsements or trust badge."
+    },
+    {
+      "id": "ised",
+      "name": "ISED company directories",
+      "countries": [
+        "CA"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://ised-isde.canada.ca/site/industrial-category/en/company-directories",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Government portal links to Canadian supplier directories.",
+      "limit": "Listed firms need exact entity and product verification; directory is not certification."
+    },
+    {
+      "id": "otexa",
+      "name": "US OTEXA sourcing directory",
+      "countries": [
+        "US"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://www.trade.gov/made-usa-directory",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "US textile/apparel/footwear supply-chain vendors with a US manufacturing or assembly plant.",
+      "limit": "Voluntary listings are not government endorsements or FTC compliance guarantees."
+    },
+    {
+      "id": "thomas",
+      "name": "Thomas supplier discovery",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://help.thomasnet.com/supplier-badging",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Thomas explains its North American business/contact/capability validation badge.",
+      "limit": "Operating in North America does not establish all-regional input origin for every SKU."
+    },
+    {
+      "id": "aam",
+      "name": "Alliance for American Manufacturing directory",
+      "countries": [
+        "US"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://www.americanmanufacturing.org/made-in-america/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Company discovery for domestic manufacturing operations.",
+      "limit": "Relies on company information and expressly does not review individual product origin compliance."
+    },
+    {
+      "id": "madeinca",
+      "name": "Made in CA",
+      "countries": [
+        "CA"
+      ],
+      "kind": "directory",
+      "sourceUrl": "https://madeinca.ca/about-us/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Independent Canadian product and business discovery with ownership/manufacture distinctions.",
+      "limit": "Community/editorial information; verify exact products. No directory database copied."
+    },
+    {
+      "id": "lacasse",
+      "name": "Groupe Lacasse",
+      "countries": [
+        "CA"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://www.groupelacasse.com/en/company.html",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Manufacturer describes business/institutional furniture operations and Saint-Pie, Québec headquarters.",
+      "limit": "Manufacturer lead only; materials, components, seller and shipping still require SKU-specific records."
+    },
+    {
+      "id": "cinsa",
+      "name": "Cinsa / Santa Anita",
+      "countries": [
+        "MX"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://www.cinsa.com/mx",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Manufacturer describes Mexican enamelware/aluminium/porcelain production and brands.",
+      "limit": "Brand-wide marketing cannot prove every component, packaging or selected retail listing."
+    },
+    {
+      "id": "flexi",
+      "name": "Grupo Flexi",
+      "countries": [
+        "MX",
+        "US"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://somos.flexi.com.mx/historia/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Manufacturer history discloses footwear production/distribution, Quirelli and US retail expansion.",
+      "limit": "History is not current stock or all-SKU origin evidence; verify seller and model."
+    },
+    {
+      "id": "vitromex",
+      "name": "Vitromex",
+      "countries": [
+        "MX"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://vitromex.com.mx/nosotros",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Manufacturer reports ceramic-covering production facilities in Mexican states.",
+      "limit": "Plant presence is not all-local raw-material or exact tile/batch authentication."
+    },
+    {
+      "id": "lodge",
+      "name": "Lodge Cast Iron",
+      "countries": [
+        "US"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://www.lodgecastiron.com/pages/lodge-cast-iron-product-guide-1",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Seasoned iron/steel and USA Enamel are distinguished from Essential Enamel imported from China or Vietnam.",
+      "limit": "Mixed catalogue: never transfer a domestic claim across collections; exact SKU, packaging and fulfillment unknown."
+    },
+    {
+      "id": "vermontglove",
+      "name": "Vermont Glove",
+      "countries": [
+        "US"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://vermontglove.com/pages/made-in-usa",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Maker describes glove manufacture in Randolph and an almost entirely domestic supply chain.",
+      "limit": "Almost entirely is not 100%. Require complete component/packaging evidence."
+    },
+    {
+      "id": "dropcommerce",
+      "name": "DropCommerce",
+      "countries": [
+        "CA",
+        "US"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://www.dropcommerce.com/suppliers/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Supplier network requires US/Canada dispatch and explicitly accepts overseas sourcing.",
+      "limit": "Domestic supplier/warehouse status does not establish manufacturing origin."
+    },
+    {
+      "id": "spocket",
+      "name": "Spocket",
+      "countries": [
+        "CA",
+        "US"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://www.spocket.co/about-us",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Vancouver-based provider describes global supplier network and commerce integrations.",
+      "limit": "Its supplier vetting is not DropShredder verification of every product or downstream store."
+    },
+    {
+      "id": "syncee",
+      "name": "Syncee",
+      "countries": [
+        "CA",
+        "US"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://syncee.com/blog/drop-shipping/dropshippers-from-canada/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Canadian supplier discovery and major commerce-platform integrations.",
+      "limit": "Ships-from filters and provider supplier reviews do not authenticate materials or exact seller ties."
+    },
+    {
+      "id": "dropi-import",
+      "name": "Dropi import app",
+      "countries": [
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://dropi.com.mx/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Mexican-facing app discloses AliExpress, FForder, CJ and SourcinBox integrations.",
+      "limit": "Do not conflate this import app with the separately documented Dropi logistics ecosystem."
+    },
+    {
+      "id": "dropi-logistics",
+      "name": "Dropi logistics ecosystem",
+      "countries": [
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://dropi.co/mx/servicio-logistico",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider describes warehousing, inventory, packaging, carrier connections and Mexico coverage.",
+      "limit": "Provider membership/logistics does not prove input origin or misconduct. MX site COD copy has Colombia wording; country-specific availability needs confirmation."
+    },
+    {
+      "id": "tiendanube",
+      "name": "Tiendanube",
+      "countries": [
+        "MX"
+      ],
+      "kind": "platform",
+      "sourceUrl": "https://ayuda.tiendanube.com/es_MX/dropshipping/como-integrar-dropi-mx-con-mi-tiendanube",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Official Dropi tutorial documents AliExpress imports, review import, Google Translate and inventory/order sync.",
+      "limit": "Platform/CDN/template presence remains neutral; imported review provenance must be product-scoped."
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "platform",
+      "sourceUrl": "https://www.shopify.com/es/blog/118436485-guia-para-hacer-dropshipping-con-aliexpress",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Official guidance describes supplier-to-customer fulfillment and avoiding supplier ads/invoices in packages.",
+      "limit": "Blind packaging and Shopify presence do not prove deception; verify actual seller claims and sources."
+    },
+    {
+      "id": "woocommerce",
+      "name": "WooCommerce",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "platform",
+      "sourceUrl": "https://woocommerce.com/document/woocommerce-dropshipping/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Official extension documentation describes supplier order notifications and blind packing slips.",
+      "limit": "The platform also supports local suppliers; no hosting/platform-based risk inference."
+    },
+    {
+      "id": "cj",
+      "name": "CJdropshipping",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://www.cjdropshipping.com/blogs/cj-news/CJ-s-Global-Warehouses",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider describes China sourcing hubs plus partner overseas warehouses.",
+      "limit": "Owned vs partner facilities and live SKU availability differ. No historic warehouse count treated as current inventory."
+    },
+    {
+      "id": "nihao",
+      "name": "Nihaojewelry",
+      "countries": [
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://www.nihaojewelry.com/about-us",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider states Hangzhou headquarters, Yiwu dispatch and China/Mexico warehouses with factory sourcing.",
+      "limit": "Statements are provider disclosures; local Mexican inventory is not Mexican manufacturing."
+    },
+    {
+      "id": "sourcinbox",
+      "name": "SourcinBox",
+      "countries": [
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://help.sourcinbox.com/en/article/a-general-introduction-of-sourcinbox-1ihp1q5/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider describes direct Chinese manufacturer/factory sourcing, customization and fulfillment.",
+      "limit": "MX relevance is via Dropi app integration, not an independently established Mexican warehouse or merchant ownership."
+    },
+    {
+      "id": "hypersku",
+      "name": "HyperSKU",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://www.hypersku.com/sourcing/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider describes China supplier sourcing and customization.",
+      "limit": "Cross-border research lead only; no Mexican/Canadian factory or warehouse asserted."
+    },
+    {
+      "id": "dsers",
+      "name": "DSers",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://help.dsers.com/what-is-dsers-a-quick-overview-for-beginners/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider describes official AliExpress/Alibaba/1688 API order/import integrations.",
+      "limit": "Tool presence cannot prove use by a particular storefront."
+    },
+    {
+      "id": "printful",
+      "name": "Printful",
+      "countries": [
+        "CA",
+        "US",
+        "MX"
+      ],
+      "kind": "supplier-network",
+      "sourceUrl": "https://help.printful.com/hc/en-us/articles/50265275089041-Where-are-the-Printful-fulfillment-centers-located",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Provider lists US, Toronto-area and Tijuana fulfillment; Mexico orders can be transferred for US domestic shipping.",
+      "limit": "Printing/decoration and domestic first carrier label do not establish blank-material manufacture or first physical dispatch."
+    },
+    {
+      "id": "canadawest",
+      "name": "Canada West Boots",
+      "countries": [
+        "CA"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://www.canadawestboots.com/",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Maker describes Winnipeg footwear production and an authorized retailer network; homepage states direct sales only through factory outlet.",
+      "limit": "Check current authorized retailer links and exact boot model. Leather, sole, steel and packaging sources remain unverified."
+    },
+    {
+      "id": "meyer",
+      "name": "Meyer Canada",
+      "countries": [
+        "CA"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://meyercanada.ca/pages/about",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "PEI cookware factory within a group that also discloses China, Thailand, Italy and US factories.",
+      "limit": "Select the Canadian line and exact SKU; global company ownership and a PEI warehouse do not prove all-local metal/component sourcing."
+    },
+    {
+      "id": "redland",
+      "name": "Red Land Cotton",
+      "countries": [
+        "US"
+      ],
+      "kind": "manufacturer",
+      "sourceUrl": "https://www.redlandcotton.com/pages/faq",
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90,
+      "summary": "Maker describes Alabama cotton and category-specific US spinning, weaving, dyeing, sewing and distribution routes.",
+      "limit": "Substantive manufacturer disclosure, still not an independent BOM audit of every thread, fastener, package or selected shipment."
+    }
+  ],
+  "relationships": [
+    {
+      "fromId": "tiendanube",
+      "toId": "dropi-import",
+      "relation": "documented app integration",
+      "sourceUrl": "https://ayuda.tiendanube.com/es_MX/dropshipping/como-integrar-dropi-mx-con-mi-tiendanube",
+      "reviewedAt": "2026-10-10",
+      "confidence": "provider-disclosed",
+      "riskWeight": 0
+    },
+    {
+      "fromId": "dropi-import",
+      "toId": "cj",
+      "relation": "documented catalogue integration",
+      "sourceUrl": "https://dropi.com.mx/",
+      "reviewedAt": "2026-10-10",
+      "confidence": "provider-disclosed",
+      "riskWeight": 0
+    },
+    {
+      "fromId": "dropi-import",
+      "toId": "sourcinbox",
+      "relation": "documented catalogue integration",
+      "sourceUrl": "https://dropi.com.mx/",
+      "reviewedAt": "2026-10-10",
+      "confidence": "provider-disclosed",
+      "riskWeight": 0
+    },
+    {
+      "fromId": "shopify",
+      "toId": "dsers",
+      "relation": "documented AliExpress import/order workflow",
+      "sourceUrl": "https://www.shopify.com/blog/117607173-the-definitive-guide-to-dropshipping-with-aliexpress",
+      "reviewedAt": "2026-10-10",
+      "confidence": "provider-disclosed",
+      "riskWeight": 0
+    },
+    {
+      "fromId": "flexi",
+      "toId": "flexi",
+      "relation": "provider history reports retail expansion from Mexico to US",
+      "sourceUrl": "https://somos.flexi.com.mx/historia/",
+      "reviewedAt": "2026-10-10",
+      "confidence": "provider-disclosed",
+      "riskWeight": 0
+    }
+  ]
+}

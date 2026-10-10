@@ -1,3 +1,4 @@
+import {commerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 
@@ -8,7 +9,8 @@ export interface WalmartAdapterResult {
 
 export function analyzeWalmartPage(pageText: string): WalmartAdapterResult {
   const evidence: EvidenceSignal[]=[];
-  const soldMatch=pageText.match(/sold(?:\s+and\s+shipped)?\s+by\s+([^\n]{2,120})/i);
+  const matching=commerceText(pageText);
+  const soldMatch=matching.match(/sold(?:\s+and\s+shipped)?\s+by\s+([^\n]{2,120})/i)?.canonical;
 
   if (soldMatch?.[1]) {
     evidence.push({
@@ -19,14 +21,14 @@ export function analyzeWalmartPage(pageText: string): WalmartAdapterResult {
       weight:0,
       title:'Walmart Marketplace seller disclosure detected',
       explanation:'Marketplace seller identity is useful for merchant correlation and business-verification checks, but third-party seller status alone carries no accusation weight.',
-      observedValue:soldMatch[1].trim().slice(0,120),
+      observedValue:matching.original(soldMatch.index+soldMatch[0].lastIndexOf(soldMatch[1]),soldMatch[1].length).trim().slice(0,120),
       independentKey:'walmart-seller-disclosure',
     });
   }
 
   return {
     productPatch:{
-      seller:soldMatch?.[1]?.trim(),
+      seller:soldMatch?.[1]?matching.original(soldMatch.index+soldMatch[0].lastIndexOf(soldMatch[1]),soldMatch[1].length).trim():undefined,
       pageSignals:soldMatch?.[1] ? ['walmart:seller-disclosure'] : [],
     },
     evidence,

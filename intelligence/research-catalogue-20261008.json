@@ -1,0 +1,742 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-08",
+  "baseCommit": "1507b551c8526b52a7201f3331f765f1735ff847",
+  "policy": {
+    "countryOrNationalityRiskWeight": 0,
+    "toolPresenceRiskWeight": 0,
+    "supplierPresenceProvesQuality": false,
+    "fuzzyMatchProvesIdentity": false,
+    "noResultProvesTrust": false,
+    "automaticExternalRequestsAllowed": false,
+    "runtimeRulePromotion": "requires independent evidence and fixtures"
+  },
+  "findings": [
+    {
+      "id": "CHR-001",
+      "category": "chrome",
+      "title": "User gestures govern side panel opening",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/reference/api/sidePanel"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Chrome documents sidePanel.open as Chrome 116+ and requiring a user action; tabId selects a tab-specific panel, windowId a window-level panel. Application: preserve.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-002",
+      "category": "chrome",
+      "title": "Service workers are disposable",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/develop/concepts/service-workers/lifecycle"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Workers normally terminate after idle periods; globals disappear. Application: use durable/session state appropriate to consent versus pending scan state, bounded operations, and.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-003",
+      "category": "chrome",
+      "title": "Package executable dependencies",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/develop/migrate/remote-hosted-code"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "MV3 remote-hosted-code restrictions cover JavaScript and WASM. Application: package OCR/ML executables; use validated inert research-data updates rather than downloaded code. UserScripts/debugger are.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-004",
+      "category": "chrome",
+      "title": "Offscreen work has explicit limits",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/reference/api/offscreen"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Offscreen documents can support DOM work; their extension API access is limited to runtime and their page must be bundled. Application: consider.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "ORI-001",
+      "category": "authority",
+      "title": "Archived workplane is superseded for runtime status",
+      "sourceUrls": [],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Archived workplane is superseded for runtime status.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none",
+      "sourcePaths": [
+        "AGENTS.md",
+        "brain/authority/PRODUCT-CONTRACT.md",
+        "brain/authority/EVIDENCE-POLICY.md",
+        "workplane/CURRENT-STATE.md"
+      ]
+    },
+    {
+      "id": "CHR-005",
+      "category": "chrome",
+      "title": "Bind document identity as well as tab identity",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/reference/api/webNavigation",
+        "https://developer.chrome.com/docs/extensions/reference/api/permissions"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Documents change while frame IDs can persist. Recommendation: use tab/document plus route/product revision for asynchronous results; SPA route transitions can remain in.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-006",
+      "category": "chrome",
+      "title": "Isolated content scripts are still untrusted inputs",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/develop/concepts/network-requests",
+        "https://developer.chrome.com/docs/extensions/mv3/security"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Extension host grants allow extension-origin requests; content scripts remain constrained by the page origin. Recommendation: narrow a privileged fetch broker to validated.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "EVA-001",
+      "category": "evasion",
+      "title": "Blind shipping erases visible supplier cues",
+      "sourceUrls": [
+        "https://www.shopify.com/blog/blind-shipping/",
+        "https://usadrop.com/blind-dropshipping-ship-without-revealing-supplier/",
+        "https://cjdropshipping.com/blogs/dropshipping-knowledge/Start-Dropshipping-on-Amazon"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Providers describe neutral packaging, branded labels/inserts, and removal of supplier invoices. Application: absence of an upstream name on a parcel or storefront.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "EVA-002",
+      "category": "evasion",
+      "title": "Supplier imagery can be transformed",
+      "sourceUrls": [
+        "https://shotbg.com/use-cases/dropshipping",
+        "https://utilpix.com/blog/dropshipping-product-photos-guide"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Vendors market background cleanup and branded visual consistency. Application: evaluate crop/background-robust product similarity and image/text/spec fusion. An image resemblance remains a candidate.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "ORI-002",
+      "category": "authority",
+      "title": "Current release source loaded",
+      "sourceUrls": [],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Current release source loaded.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none",
+      "sourcePaths": [
+        "AGENTS.md",
+        "brain/authority/PRODUCT-CONTRACT.md",
+        "brain/authority/EVIDENCE-POLICY.md",
+        "workplane/CURRENT-STATE.md"
+      ]
+    },
+    {
+      "id": "EVA-003",
+      "category": "evasion",
+      "title": "Branded tracking and upstream sourcing are explicit public advice",
+      "sourceUrls": [
+        "https://piratify.io/blog-posts/dropship-without-showing-aliexpress-branding-eykm"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "The vendor promotes branded tracking, substituted return presentation, and sourcing beyond AliExpress through upstream marketplaces. This is a public supplier-obscuring tutorial, not.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "SUP-001",
+      "category": "supply-chain",
+      "title": "Apparel provider catalogue, not a bad-quality blacklist",
+      "sourceUrls": [
+        "https://www.dear-lover.com/",
+        "https://www.trendsi.com/private-labeling",
+        "https://www.ccwholesaleclothing.com/faq",
+        "https://www.printful.com/uk/blog/white-label-clothing"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Dear-Lover publicly offers direct-to-consumer dropshipping and brand-label customization; Trendsi offers rebranded apparel with supplied product media; CC Wholesale names its My Online.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-001",
+      "category": "tools",
+      "title": "Local inference is feasible but optional",
+      "sourceUrls": [
+        "https://huggingface.co/docs/transformers.js/guides/webgpu",
+        "https://onnxruntime.ai/docs/get-started/with-javascript/web.html",
+        "https://huggingface.co/blog/transformersjs-chrome-extension"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Transformers.js and ONNX Runtime Web document browser inference; Hugging Face has a current MV3 extension reference. Recommendation: evaluate quantized local embeddings only.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-007",
+      "category": "chrome",
+      "title": "New Chrome features must retain the 133 baseline",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/whats-new"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Chrome lists structured clone messaging and browser namespace in 148, tab-strip menus in 150, publicSuffix in 153, and sidePanel.getLayout in 140. These.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-001",
+      "category": "academic",
+      "title": "Dark-pattern research is methodological evidence",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2501.13351"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "DPGuard uses multimodal detection and a unified taxonomy. Application: explicit taxonomic labels and separate observations from inferred intent. Its commercial-model approach is.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-002",
+      "category": "academic",
+      "title": "Multimodal product deduplication is a promising candidate",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2509.15858"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Use image/text/attribute fusion as a research lead for deduplication under rewritten titles and changed photography. Clothing lookalikes and variants demand hard negatives..",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "SUP-002",
+      "category": "supply-chain",
+      "title": "One named apparel operator verified from its own disclosure",
+      "sourceUrls": [
+        "https://www.dear-lover.com/page/about-dear-lover-wholesale",
+        "https://www.dear-lover.com/page/privacy-and-cookies-policy"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "The company identifies Quanzhou Shiying Clothes Co., Ltd. as operator. These are two first-party pages, not independent corroboration of manufacturing quality or.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "SUP-003",
+      "category": "supply-chain",
+      "title": "Wholesale7 has an explicit apparel dropship programme",
+      "sourceUrls": [
+        "https://www.wholesale7.net/about-us_a15.html",
+        "https://www.wholesale7.net/faq_detail.php"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "The provider describes direct shipment of seller-selected products to customers and neutral/no-promotional packaging. Suitable as an upstream apparel comparison candidate after final.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "QLT-001",
+      "category": "quality",
+      "title": "Concrete garment safety testing exists",
+      "sourceUrls": [
+        "https://www.greenpeace.org/eu-unit/issues/pollution/47807/new-report-hazardous-chemicals-in-shein-clothing-continue-to-violate-eu-limits/",
+        "https://www.greenpeace.org/static/planet4-sweden-stateless/2025/11/059bc831-20251118_shameonyoushein.pdf"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Greenpeace reports 18 of 56 purchased products exceeded its stated EU chemical limits. This is a tested sample, not population prevalence or.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "QLT-002",
+      "category": "quality",
+      "title": "Consumer group tests and manipulation dossiers are separate evidence",
+      "sourceUrls": [
+        "https://www.beuc.eu/reports/tests-temu-products-by-consumer-groups",
+        "https://www.beuc.eu/sites/default/files/publications/BEUC-X-2025-051_How_fast_fashion_giant_SHEIN_uses_dark_patterns.pdf"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "BEUC aggregates member testing and documents commerce-design concerns. These are leads to the original test/report and precise affected item, not blanket quality.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-008",
+      "category": "chrome",
+      "title": "Native public suffix support is 153+ and permissioned",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/reference/api/publicSuffix"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Chrome documents publicSuffix.getDomain for registrable-domain calculation with a publicSuffix permission. Application: avoid na\u00efve last-two-label grouping and false shared-merchant matches on hosted subdomains..",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-003",
+      "category": "academic",
+      "title": "Newer catalogue VLM adaptation needs category-aware evaluation",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2602.11733"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Research focuses on attribute-rich noisy commerce data and multi-image understanding. Use it to evaluate product matching around structured attributes; do not add.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-004",
+      "category": "academic",
+      "title": "Visual dark-pattern detection needs domain limits",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2512.18269"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "A screenshot detection model is a possible explicit inspection tool, not proof of intent or a source of truth about scarcity. Its.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-009",
+      "category": "chrome",
+      "title": "Structured clone copies richer data and changes sanitation semantics",
+      "sourceUrls": [
+        "https://developer.chrome.com/blog/structured-clone-messaging"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Chrome 148 supports opt-in message_serialization=structured_clone; earlier versions retain JSON. The guide states buffers are copied rather than transferred, SharedArrayBuffer is unsupported, and.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-002",
+      "category": "tools",
+      "title": "Tesseract.js is a local OCR candidate",
+      "sourceUrls": [
+        "https://github.com/naptha/tesseract.js/",
+        "https://github.com/naptha/tesseract.js/blob/master/package.json"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Project identifies Apache-2.0 licensing and browser/WASM support. Reuse one worker during a bounded OCR session, then terminate it. Candidate use: shopper-selected garment-label/spec-table.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-003",
+      "category": "tools",
+      "title": "Public-suffix fallback candidate",
+      "sourceUrls": [
+        "https://github.com/remusao/tldts"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "MIT-licensed tldts is a candidate fallback for Chrome 133 domain grouping. Verify private suffix handling deliberately for hosted shops; pin version and.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "SUP-004",
+      "category": "supply-chain",
+      "title": "FondMart documents rebranding and direct fulfillment",
+      "sourceUrls": [
+        "https://fondmart.com/private-label.html/",
+        "https://fondmart.com/dropshipping.html"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "The provider markets garment labels, tags, packaging and direct customer shipment. Catalogue as apparel upstream candidate; retain provider claim status. Its advertised.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-005",
+      "category": "academic",
+      "title": "Fake reviews can incorporate product knowledge",
+      "sourceUrls": [
+        "https://aclanthology.org/2025.ranlp-1.78/"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Fake reviews can incorporate product knowledge.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-006",
+      "category": "academic",
+      "title": "Fresh bilingual matching benchmark includes clothing",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2609.37713"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Billiger.de Products covers thirteen categories and German/English/cross-language matching. Application: evaluate clothing hard negatives, unseen entities and cross-language product-copy changes; do not rely.",
+      "status": "search-only-follow-up",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-007",
+      "category": "academic",
+      "title": "Fashion matching benefits from human confirmation",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2403.11593"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "The fashion-specific multimodal study addresses distribution shift and human review. Application: present high-similarity candidates with distinguishing attributes for shopper comparison. Do not.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-008",
+      "category": "academic",
+      "title": "Variant identity is different from duplicate identity",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2410.02779"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "VARM separates variant relationships from same-product entity resolution. Application: track size/color/material/bundle variants and prevent legitimate shared reviews from being labelled review hijacking.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-009",
+      "category": "academic",
+      "title": "Review authenticity cannot be established by prose alone",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2506.13313"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Review authenticity cannot be established by prose alone.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-004",
+      "category": "tools",
+      "title": "DINOv3 has a separate model license",
+      "sourceUrls": [
+        "https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "DINOv3 has a separate model license.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-010",
+      "category": "chrome",
+      "title": "End-to-end framework choice can hide worker-lifecycle bugs",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/how-to/test/end-to-end-testing",
+        "https://developer.chrome.com/docs/extensions/how-to/test/puppeteer"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Chrome documents real packaged-extension automation and notes attached debuggers can prevent normal worker termination. Application: run both instrumented tests and genuine idle/restart.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "EVA-004",
+      "category": "evasion",
+      "title": "Tracking-origin concealment is a documented feature",
+      "sourceUrls": [
+        "https://docs.parcelpanel.com/shopify/getting-started/dropshipping/"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "The current docs use CWILL Tracking naming and describe a dropshipping mode that hides origin details and permits tracking-text translation. Record branding.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "EVA-005",
+      "category": "evasion",
+      "title": "Even specification fields can be edited",
+      "sourceUrls": [
+        "https://help.autods.com/en/articles/12699792-products-and-drafts-pages-manage-filter-and-edit-your-listings"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "AutoDS documents crop/flip/rotate/mask/filter editing and editable supplier-imported specification fields, including model, material and origin. Defense: preserve independent source observations and contradictory material.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-005",
+      "category": "tools",
+      "title": "Schema validation and dependency decisions",
+      "sourceUrls": [
+        "https://github.com/ajv-validator/ajv/blob/master/LICENSE",
+        "https://github.com/Microsoft/onnxruntime/blob/main/LICENSE"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "Ajv and ONNX Runtime identify MIT licenses. Ajv is a candidate for build-time validation of inert intelligence updates; compile validators at build.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "CHR-011",
+      "category": "chrome",
+      "title": "Keep research-to-runtime status explicit",
+      "sourceUrls": [],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Six source candidates were added on the isolated research branch; catalogue presence alone does not create a verdict. Source matching still requires.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none",
+      "sourcePaths": [
+        "src/intelligence/source-index.ts",
+        "workplane/tasks/DS-RESEARCH-20261008.md"
+      ]
+    },
+    {
+      "id": "CHR-012",
+      "category": "chrome",
+      "title": "Review data access scope explicitly",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/extensions/reference/api/storage"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "summary": "Choose durable consent versus short-lived operation state deliberately and review content-script access to storage. Keep merchant/research data separate from sensitive session context..",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "TOOL-006",
+      "category": "tools",
+      "title": "Use current RDAP bootstrap, not guessed endpoints",
+      "sourceUrls": [
+        "https://data.iana.org/rdap/dns.json",
+        "https://www.icann.org/en/contracted-parties/registry-operators/resources/registration-data-access-protocol"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "IANA publishes registry endpoints; the returned bootstrap displayed publication 2026-09-30. Candidate improvement: validated HTTPS-only bounded endpoint selection, consent, caching and failure-to-unknown behavior..",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    },
+    {
+      "id": "PAP-010",
+      "category": "academic",
+      "title": "Dark-pattern model performance varies by class",
+      "sourceUrls": [
+        "https://arxiv.org/html/2501.13351v3"
+      ],
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2027-01-06",
+      "summary": "DPGuard has weak results on several rare categories and excludes two rare categories from its evaluation set. Application: require per-category precision/recall and.",
+      "status": "documented-research-not-runtime-validated",
+      "standaloneRiskWeight": 0,
+      "runtimeRulePromotion": "none"
+    }
+  ],
+  "publicTrainingWatch": [
+    {
+      "id": "piratify-supplier-obscuring",
+      "url": "https://piratify.io/blog-posts/dropship-without-showing-aliexpress-branding-eykm",
+      "displayedPublication": "2026-08-28",
+      "retrievedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "role": "public vendor tutorial",
+      "observation": "Branded tracking, private-label fulfillment and upstream marketplaces are promoted to limit visible supplier clues.",
+      "limits": "A public capability tutorial does not prove fraud, legal compliance, product quality or use by a particular merchant.",
+      "standaloneRiskWeight": 0
+    },
+    {
+      "id": "sourcingpioneer-blind-fulfillment",
+      "url": "https://sourcingpioneer.com/blind-dropshipping-from-china-how-to-remove-supplier-invoices-guide/",
+      "retrievedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "role": "public vendor tutorial",
+      "observation": "Promotes invoice/label removal and branded packaging.",
+      "limits": "Illustrative scenario and marketing performance claims were not independently verified. No operational outcome or merchant relationship is asserted.",
+      "standaloneRiskWeight": 0
+    }
+  ],
+  "researchDepth": {
+    "methodsReviewed": [
+      "https://arxiv.org/html/2509.15858v2",
+      "https://arxiv.org/html/2602.11733v1",
+      "https://arxiv.org/html/2501.13351v3"
+    ],
+    "primaryMetadataReviewed": [
+      "https://arxiv.org/abs/2602.11733",
+      "https://arxiv.org/abs/2501.13351",
+      "https://arxiv.org/abs/2512.18269",
+      "https://aclanthology.org/2025.ranlp-1.78/",
+      "https://arxiv.org/abs/2506.13313",
+      "https://arxiv.org/abs/2403.11593",
+      "https://arxiv.org/abs/2410.02779"
+    ],
+    "searchOnly": [
+      "https://arxiv.org/abs/2609.37713"
+    ],
+    "limits": "Selected framework/method/evaluation sections inspected for three papers. Full-paper, datasets, licenses and local hardware benchmarking still require review before model adoption."
+  },
+  "sourceCandidateAdditions": [
+    {
+      "id": "dear-lover",
+      "domain": "dear-lover.com",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://www.dear-lover.com/page/about-dear-lover-wholesale"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    },
+    {
+      "id": "trendsi",
+      "domain": "trendsi.com",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://www.trendsi.com/private-labeling"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    },
+    {
+      "id": "fondmart",
+      "domain": "fondmart.com",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://fondmart.com/private-label.html/"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    },
+    {
+      "id": "wholesale7",
+      "domain": "wholesale7.net",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://www.wholesale7.net/faq_detail.php"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    },
+    {
+      "id": "cc-wholesale-clothing",
+      "domain": "ccwholesaleclothing.com",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://www.ccwholesaleclothing.com/faq"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    },
+    {
+      "id": "usadrop",
+      "domain": "usadrop.com",
+      "reviewedAt": "2026-10-08",
+      "reviewDueAt": "2026-11-07",
+      "sourceUrls": [
+        "https://usadrop.com/blind-dropshipping-ship-without-revealing-supplier/"
+      ],
+      "evidenceType": "first-party programme disclosure",
+      "riskWeightForPresence": 0,
+      "qualityStatus": "not-tested",
+      "merchantAttributionStatus": "no downstream relationship asserted"
+    }
+  ]
+}

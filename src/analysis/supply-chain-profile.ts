@@ -1,6 +1,8 @@
-import type { SiteTextPage } from './merchant-origin';
+import {commerceText} from '../languages/commerce-text';
+import { jurisdictionHits, type SiteTextPage } from './merchant-origin';
 
 export type SupplyChainRole='merchant'|'manufacture'|'fulfillment'|'returns'|'payment';
+// Legacy keys retained for the active panel preference consumer; human labels state partial coverage.
 export type SupplyChainClass='unknown'|'us-origin-claimed'|'mixed-us-international'|'predominantly-international'|'known-chain-entirely-international';
 
 export interface SupplyChainNode {
@@ -21,49 +23,16 @@ export interface SupplyChainProfile {
   paymentChainLabel:string;
 }
 
-const COUNTRY_ALIASES:Record<string,string[]>={
-  'United States':['United States','USA','U.S.','US'],
-  'China':['China','PRC'],
-  'Hong Kong':['Hong Kong'],
-  'Thailand':['Thailand'],
-  'Vietnam':['Vietnam'],
-  'India':['India'],
-  'Pakistan':['Pakistan'],
-  'Bangladesh':['Bangladesh'],
-  'Turkey':['Turkey','Türkiye'],
-  'United Kingdom':['United Kingdom','UK','U.K.'],
-  'Canada':['Canada'],
-  'Australia':['Australia'],
-  'Germany':['Germany'],
-  'France':['France'],
-  'Italy':['Italy'],
-  'Spain':['Spain'],
-  'Netherlands':['Netherlands'],
-  'Poland':['Poland'],
-  'Singapore':['Singapore'],
-  'Taiwan':['Taiwan'],
-  'South Korea':['South Korea','Korea'],
-  'Japan':['Japan'],
-  'Mexico':['Mexico'],
-  'Brazil':['Brazil'],
-  'Portugal':['Portugal'],
-  'Indonesia':['Indonesia'],
-  'Malaysia':['Malaysia'],
-};
-
-function escape(value:string):string{return value.replace(/[.*+?^$\{\}()|[\]\\]/g,'\\$&');}
-
-function countryFromText(text:string):string|undefined{
-  for(const [canonical,aliases] of Object.entries(COUNTRY_ALIASES)){
-    if(aliases.some(alias=>new RegExp(`\\b${escape(alias)}\\b`,'i').test(text))) return canonical;
-  }
-  return undefined;
+function countryFromText(text:string):string|undefined {
+  const countries=jurisdictionHits(text);
+  return countries.length===1?countries[0]:undefined;
 }
 
 function matchedPhrase(text:string,patterns:RegExp[]):{phrase:string;country?:string}|undefined{
+  const matching=commerceText(text);
   for(const pattern of patterns){
-    const m=text.match(pattern);
-    if(m?.[0]) return {phrase:m[0].replace(/\s+/g,' ').trim().slice(0,240),country:countryFromText(m[0])};
+    const hit=matching.match(pattern),m=hit?.canonical;
+    if(m?.[0]) return {phrase:hit!.original.replace(/\s+/g,' ').trim().slice(0,240),country:countryFromText(m[0])};
   }
   return undefined;
 }
@@ -91,31 +60,40 @@ export function buildSupplyChainProfile(input:{
   paymentProcessors?:string[];
 }):SupplyChainProfile{
   const nodes:SupplyChainNode[]=[];
-  const about=input.pages.filter(p=>p.kind==='about'||p.kind==='contact').map(p=>p.text).join(' ');
-  const shipping=input.pages.filter(p=>p.kind==='shipping').map(p=>p.text).join(' ');
-  const returns=input.pages.filter(p=>p.kind==='returns').map(p=>p.text).join(' ');
-  const all=[input.mainPageText,about,shipping,returns].join(' ');
+  const pages=input.pages.slice(0,4).map(p=>({...p,text:p.text.slice(0,80_000)}));
+  const main=input.mainPageText.slice(0,100_000);
+  const about=pages.filter(p=>p.kind==='about'||p.kind==='contact').map(p=>p.text).join(' ');
+  const shipping=pages.filter(p=>p.kind==='shipping').map(p=>p.text).join(' ');
+  const returns=pages.filter(p=>p.kind==='returns').map(p=>p.text).join(' ');
+  const all=[main,about,shipping,returns].join(' ');
 
-  const merchant=matchedPhrase(about,[
-    /(?:we are|we're|company is|headquartered|based)\s+(?:in|out of)\s+[^.]{2,120}/i,
-    /(?:registered office|business address|company address)[:\s-]+[^.]{2,180}/i,
+  const merchant=matchedPhrase(about||main,[
+    /(?:we are|we're|company is|headquartered|based)\s+(?:in|out of)\s+[^.;!?\n]{2,120}/i,
+    /(?:registered office|business address|company address)[:\s-]+[^.;!?\n]{2,180}/i,
   ]);
   if(merchant) nodes.push({role:'merchant',country:merchant.country,detail:merchant.phrase,confidence:.82,source:'About/Contact'});
 
   const manufacture=matchedPhrase(all,[
-    /(?:made|manufactured|produced|crafted|handmade)\s+in\s+[^.]{2,100}/i,
-    /(?:manufactured|produced)\s+by\s+[^.]{2,120}/i,
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+made in\b/i,
+    /(?:made|manufactured|produced|crafted|handmade)\s+in\s+[^.;!?\n]{2,100}/i,
+    /(?:manufactured|produced)\s+by\s+[^.;!?\n]{2,120}/i,
   ]);
   if(manufacture) nodes.push({role:'manufacture',country:manufacture.country,detail:manufacture.phrase,confidence:.8,source:'Merchant claim'});
 
   const fulfillment=matchedPhrase(shipping||all,[
-    /(?:orders?\s+)?(?:ship|ships|shipped|shipping|fulfilled)\s+(?:directly\s+)?from\s+[^.]{2,100}/i,
-    /(?:warehouse|fulfillment center)\s+(?:is|located)?\s*(?:in|at)\s+[^.]{2,100}/i,
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+ships from\b/i,
+    /(?:orders?\s+)?(?:ship|ships|shipped|shipping|fulfilled)\s+(?:directly\s+)?from\s+[^.;!?\n]{2,100}/i,
+    /(?:warehouse|fulfillment center)\s+(?:is|located)?\s*(?:in|at)\s+[^.;!?\n]{2,100}/i,
   ]);
   if(fulfillment) nodes.push({role:'fulfillment',country:fulfillment.country,detail:fulfillment.phrase,confidence:.78,source:'Shipping policy'});
 
-  const returnCountry=countryFromText(returns);
-  if(returnCountry) nodes.push({role:'returns',country:returnCountry,detail:'Return policy/address references '+returnCountry,confidence:.84,source:'Return policy'});
+  const returnPhrase=matchedPhrase(returns,[
+    /(?:return address|return destination)[:\s-]+[^.;!?\n]{2,180}/i,
+    /(?:send|ship)\s+(?:your\s+)?returns?\s+to\s+[^.;!?\n]{2,180}/i,
+    /returns?\s+(?:accepted|handled)\s+in\s+[^.;!?\n]{2,120}/i,
+  ]);
+  const returnCountry=returnPhrase?.country;
+  if(returnCountry) nodes.push({role:'returns',country:returnCountry,detail:returnPhrase?.phrase,confidence:.84,source:'Return policy'});
 
   const paymentProcessors=input.paymentProcessors ?? [];
   for(const processor of paymentProcessors){
@@ -135,10 +113,10 @@ export function buildSupplyChainProfile(input:{
     label=foreign>0?'SUPPLY CHAIN: MIXED U.S. / INTERNATIONAL':'U.S. MANUFACTURE CLAIMED';
   }else if(foreign>=3 && us===0){
     classification='known-chain-entirely-international';
-    label='KNOWN COMMERCE CHAIN: ENTIRELY INTERNATIONAL';
+    label='DISCLOSED ROLES OUTSIDE U.S. • REST OF CHAIN UNKNOWN';
   }else if(foreign>=2 && us===0){
     classification='predominantly-international';
-    label='COMMERCE CHAIN: PREDOMINANTLY INTERNATIONAL';
+    label='MULTIPLE DISCLOSED ROLES OUTSIDE U.S.';
   }else if(foreign>0 && us>0){
     classification='mixed-us-international';
     label='SUPPLY CHAIN: MIXED U.S. / INTERNATIONAL';
@@ -152,7 +130,7 @@ export function buildSupplyChainProfile(input:{
     : classification==='mixed-us-international'
       ? 'This does not appear to be an entirely U.S. supply chain. “Ships from USA” or a U.S. business address does not establish U.S. manufacture.'
       : classification==='predominantly-international'||classification==='known-chain-entirely-international'
-        ? 'For shoppers prioritizing Made in America products, the identified commerce chain is primarily or entirely outside the United States.'
+        ? 'The identified roles are outside the United States. Unobserved roles and upstream factories remain unknown; these disclosures do not establish the entire supply chain.'
         : 'There is not enough origin evidence to determine whether this product meets a Made in USA preference.';
 
   const merchantNode=material.find(n=>n.role==='merchant');

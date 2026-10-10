@@ -1,0 +1,141 @@
+name: DropShredder Chromium Runtime
+
+on:
+  pull_request:
+    branches: [main, release/security-performance-hardening]
+    paths:
+      - 'tools/browser-smoke/**'
+      - '.github/workflows/browser-smoke.yml'
+      - 'src/**'
+      - 'entrypoints/**'
+      - 'public/**'
+      - 'intelligence/**'
+      - 'wxt.config.ts'
+      - 'package*.json'
+
+permissions:
+  contents: read
+
+jobs:
+  localized-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y fonts-noto-core fonts-noto-cjk
+      - name: Verify seven native offline Chrome language packs and RTL reflow
+        timeout-minutes: 5
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/locales.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-localization-evidence
+          path: browser-smoke-results/
+          retention-days: 30
+  packaged-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install and build production package
+        run: |
+          npm ci
+          npm run build
+      - name: Print read-only clean package fingerprint inventory
+        run: node tools/browser-smoke/inventory.mjs
+      - name: Install isolated browser test tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Run Chromium with the reviewed packaged extension
+        timeout-minutes: 3
+        env:
+          DS_BROWSER_HEADLESS: '1'
+        run: node tools/browser-smoke/run.mjs
+      - name: Stage exact-head unpacked QA candidate
+        run: |
+          mkdir -p qa-candidate/DropShredder-Unpacked
+          cp -a .output/chrome-mv3/. qa-candidate/DropShredder-Unpacked/
+          cp tools/browser-smoke/candidate-build-info.json qa-candidate/BUILD-INFO.json
+      - name: Preserve exact-head QA candidate (testing only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-unpacked-qa
+          path: qa-candidate/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Preserve browser evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-chromium-runtime-evidence
+          path: browser-smoke-results/
+          if-no-files-found: warn
+          retention-days: 30
+  native-panel-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Verify native panel and explore genuine host permission request
+        timeout-minutes: 4
+        run: node tools/browser-smoke/probe-native.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-native-panel-evidence
+          path: browser-smoke-results/
+          retention-days: 30
+  headed-permission-diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+      - name: Capture genuine Chrome host-permission dialog on Xvfb desktop
+        timeout-minutes: 10
+        env:
+          DS_NATIVE_HEADED: '1'
+          DS_LIVE_SURFACES: '1'
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-headed-permission-evidence
+          path: browser-smoke-results/
+          retention-days: 30

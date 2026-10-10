@@ -1,7 +1,10 @@
+import {commerceText,localizedNegation} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 
 export interface ReputationObservation {
   source:string;
+  scope?:'merchant'|'product';
+  subjectId?:string;
   rating?:number;
   reviewCount?:number;
   complaintCount?:number;
@@ -10,15 +13,42 @@ export interface ReputationObservation {
   url:string;
 }
 
-const DROPSHIP_COMPLAINT_TERMS=[
-  'dropship','drop ship','aliexpress','temu','cheap quality','poor quality','not as described',
-  'never arrived','shipping delay','refund','return refused','customer service','wrong item',
-  'fake tracking','tracking never updated','different product','counterfeit'
-];
-
-function complaintTermHits(text:string):number{
-  const normalized=text.toLowerCase();
-  return DROPSHIP_COMPLAINT_TERMS.filter(term=>normalized.includes(term)).length;
+const COMPLAINT_TERMS=['cheap quality','poor quality','not as described','never arrived','shipping delay','refund refused',
+  'refund denied','no refund','return refused','poor customer service','wrong item','fake tracking','tracking never updated','different product','counterfeit'];
+export function reputationSourceKey(obs:ReputationObservation):string {
+  try{const host=new URL(obs.url).hostname.toLowerCase();
+    for(const name of ['trustpilot','sitejabber','consumeraffairs','bbb','reddit'])
+      if(host===name+'.com'||host.endsWith('.'+name+'.com')||host===name+'.org'||host.endsWith('.'+name+'.org')) return name;
+  }catch{}
+  return obs.source.trim().toLowerCase().replace(/[^a-z0-9]+/g,'');
+}
+export function complaintPhraseHit(text:string,terms=COMPLAINT_TERMS):boolean {
+  const matching=commerceText(text,2000),normalized=matching.text.toLowerCase();
+  return terms.some(term=>{
+    const at=normalized.indexOf(term);if(at<0) return false;
+    if(/\b(?:not|no|never)\s+(?:really\s+)?$/.test(normalized.slice(Math.max(0,at-25),at))) return false;
+    if(/quality|material|flimsy|junk|stitch|rip|fray/.test(term)){
+      const original=matching.original(at,term.length),context=matching.original(Math.max(0,at-30),term.length+65);
+      const clause=context.split(/[.;!?。！？।]/).find(part=>part.includes(original))??original;
+      if(localizedNegation(clause)) return false;
+    }
+    return true;
+  });
+}
+export function validatedReputationObservations(input:ReputationObservation[]):ReputationObservation[] {
+  const count=(v:number|undefined)=>Number.isInteger(v)&&v!>=0&&v!<=1_000_000_000?v:undefined;
+  const out=new Map<string,ReputationObservation>();
+  for(const original of input.slice(0,50)){
+    const key=reputationSourceKey(original);if(!key) continue;
+    const obs={...original,rating:Number.isFinite(original.rating)&&original.rating!>=0&&original.rating!<=5?original.rating:undefined,
+      reviewCount:count(original.reviewCount),complaintCount:count(original.complaintCount),
+      negativeShare:Number.isFinite(original.negativeShare)&&original.negativeShare!>=0&&original.negativeShare!<=1?original.negativeShare:undefined,
+      snippets:[...new Map((original.snippets??[]).slice(0,30).map(v=>{
+        const text=v.slice(0,1000).replace(/\s+/g,' ').trim();return [text.normalize('NFKC').toLowerCase(),text];
+      })).values()]};
+    const old=out.get(key);if(!old||(obs.reviewCount??0)>(old.reviewCount??0)) out.set(key,obs);
+  }
+  return [...out.values()];
 }
 
 function observationSummary(obs:ReputationObservation):string{
@@ -35,24 +65,12 @@ function observationSummary(obs:ReputationObservation):string{
 
 export function analyzeReputationObservations(observations:ReputationObservation[]):EvidenceSignal[]{
   const out:EvidenceSignal[]=[];
-  // Multiple pages on one review platform count as one source, not
-  // independent corroboration. Prefer the observation with more reviews.
-  const perSource=new Map<string,ReputationObservation>();
-  for(const observation of observations){
-    const key=observation.source.trim().toLowerCase();
-    if(!key) continue;
-    const old=perSource.get(key);
-    if(!old || (observation.reviewCount ?? 0)>(old.reviewCount ?? 0)){
-      perSource.set(key,observation);
-    }
-  }
-  const negativeSources=[...perSource.values()].filter(obs=>{
-    const text=(obs.snippets ?? []).join(' ');
-    const termHits=complaintTermHits(text);
-    return (typeof obs.rating==='number' && obs.reviewCount && obs.reviewCount>=20 && obs.rating<=2.5)
-      || (typeof obs.negativeShare==='number' && obs.reviewCount && obs.reviewCount>=30 && obs.negativeShare>=.20)
-      || (typeof obs.complaintCount==='number' && obs.complaintCount>=10)
-      || (termHits>=3 && (obs.snippets?.length ?? 0)>=3);
+  const negativeSources=validatedReputationObservations(observations).filter(obs=>{
+    const snippets=(obs.snippets??[]).filter(snippet=>complaintPhraseHit(snippet));
+    return (obs.rating!==undefined && (obs.reviewCount??0)>=20 && obs.rating<=2.5)
+      || (obs.negativeShare!==undefined && (obs.reviewCount??0)>=30 && obs.negativeShare>=.20)
+      || (obs.complaintCount!==undefined && obs.complaintCount>=10)
+      || snippets.length>=3;
   });
 
   if(negativeSources.length===1){
@@ -63,10 +81,11 @@ export function analyzeReputationObservations(observations:ReputationObservation
       severity:'moderate',
       confidence:.68,
       weight:8,
-      title:'Public reputation source shows substantial complaints',
-      explanation:'One independent public review/complaint source shows a notable concentration of negative feedback, low ratings, or a high one-star share. Review platforms can be incomplete or biased, so one source is corroborative rather than conclusive.',
+      title:'A lot of buyers are complaining',
+      explanation:'One outside review source shows a meaningful pile-up of bad ratings or complaints. Any single review site can be skewed, so check another source before making the call.',
       observedValue:[source.source,observationSummary(source)].filter(Boolean).join(' • '),
-      independentKey:`reputation:${source.source}`,
+      independentKey:`reputation:${reputationSourceKey(source)}`,
+      correlationKeys:['reputation:'+reputationSourceKey(source)],
     });
   }
 
@@ -77,10 +96,11 @@ export function analyzeReputationObservations(observations:ReputationObservation
       severity:'strong',
       confidence:.86,
       weight:20,
-      title:'Multiple independent reputation sources show substantial complaints',
-      explanation:'Two or more public review/complaint sources independently show elevated negative feedback. This is a merchant-quality/risk signal and does not by itself prove dropshipping or provenance deception.',
+      title:'Complaints show up in more than one place',
+      explanation:'Bad feedback is showing up across more than one outside source. That is a stronger warning about the store, but it still does not prove the product is dropshipped or that the seller lied about where it came from.',
       observedValue:negativeSources.map(s=>`${s.source}: ${observationSummary(s)}`).join(' | '),
       independentKey:'reputation:multi-source',
+      correlationKeys:negativeSources.map(source=>'reputation:'+reputationSourceKey(source)),
     });
   }
 

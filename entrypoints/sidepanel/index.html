@@ -7,46 +7,241 @@
   </head>
   <body>
     <main id="app">
-      <header>
-        <div class="eyebrow">DROP SHREDDER</div>
-        <h1>Commerce forensics</h1>
-        <p>Local-first. No account. No telemetry. Show the receipts.</p>
+      <header class="masthead">
+        <div class="brand-row">
+          <div>
+            <div class="eyebrow">DROPSHREDDER</div>
+            <h1>Know what you’re really buying.</h1>
+          </div>
+          <span class="privacy-badge">STAYS ON YOUR DEVICE</span>
+        </div>
+        <p class="lede">Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you.</p>
       </header>
-      <button id="scan" type="button">HUNT THIS SHIT</button>
-      <section class="feature-toggles">
-        <label class="toggle-row">
-          <span><strong>Auto Source Hunt</strong><small>Check DropShredder's indexed supplier/marketplace history on every scan.</small></span>
-          <input id="auto-source-hunt" type="checkbox" />
+
+      <section class="scan-card" aria-labelledby="scan-heading">
+        <div class="section-kicker" id="scan-heading">CHECK BEFORE YOU BUY</div>
+        <button id="scan" type="button">CHECK THIS PRODUCT</button>
+        <p class="scan-disclosure">Manual full checks stay on your chosen page. Automatic product alerts run only if you enable them. No checks on account, checkout or payment pages.</p>
+        <label class="toggle-row" for="auto-protection">
+          <span><strong>Automatic product alerts</strong><small>See a short verdict on actual shopping listings. Requires one-time Chrome permission for HTTPS sites. No alerts on unrelated browsing, search results or checkout.</small></span>
+          <input id="auto-protection" type="checkbox" />
         </label>
-        <label class="toggle-row">
-          <span><strong>Auto Reputation Sweep</strong><small>Check the store's public Trustpilot profile on every scan. Requires one-time optional access.</small></span>
-          <input id="auto-reputation-sweep" type="checkbox" />
-        </label>
-        <label class="toggle-row">
-          <span><strong>Prefer Made in USA</strong><small>Show a separate origin-preference warning when the identified commerce chain is predominantly international.</small></span>
-          <input id="prefer-made-in-usa" type="checkbox" />
-        </label>
+        <p id="auto-protection-status" class="scan-disclosure" role="status"></p>
+        <p id="status" class="status" role="status" aria-live="polite">Ready when you are.</p>
       </section>
-      <p id="status" class="status">Ready to inspect the active page.</p>
-      <section id="summary" class="summary"></section>
-      <section id="hunt-actions" class="hunt-actions" hidden>
-        <button id="hunt-sources" class="secondary" type="button">HUNT SOURCES</button>
-        <button id="hunt-image" class="secondary" type="button">HUNT IMAGE</button>
-        <button id="hunt-store" class="secondary" type="button">HUNT STORE</button>
-        <button id="check-domain" class="secondary" type="button">CHECK DOMAIN AGE</button>
-        <button id="reputation-sweep" class="secondary" type="button">REPUTATION SWEEP</button>
-        <button id="policy-check" class="secondary" type="button">CHECK RETURN POLICY</button>
-        <button id="fulfillment-check" class="secondary" type="button">CHECK TRACKING / FULFILLMENT</button>
+
+      <section id="summary-section" class="result-section" aria-labelledby="verdict-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">WHAT WE FOUND</div>
+            <h2 id="verdict-heading">Should you trust this listing?</h2>
+          </div>
+        </div>
+        <div id="summary" class="summary">
+          <div class="empty-state">Scan the product to see what’s behind the listing.</div>
+        </div>
       </section>
-      <section>
-        <h2>THE RECEIPTS</h2>
-        <div id="evidence" class="evidence"></div>
+
+      <section id="hunt-actions" class="investigation" hidden aria-labelledby="investigation-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">DIG DEEPER</div>
+            <h2 id="investigation-heading">Check the story</h2>
+          </div>
+          <span class="section-note">Optional</span>
+        </div>
+        <div class="hunt-actions">
+          <button id="hunt-sources" class="secondary" type="button">FIND OTHER SELLERS</button>
+          <button id="hunt-image" class="secondary" type="button">SEARCH THIS IMAGE</button>
+          <button id="hunt-store" class="secondary" type="button">CHECK THIS STORE</button>
+          <button id="check-domain" class="secondary" type="button">HOW OLD IS THIS SITE?</button>
+          <button id="cancel-domain" class="secondary" type="button" disabled>CANCEL DOMAIN LOOKUP</button>
+          <button id="reputation-sweep" class="secondary" type="button">WHAT ARE BUYERS SAYING?</button>
+          <button id="policy-check" class="secondary" type="button">CHECK THE FINE PRINT</button>
+          <button id="fulfillment-check" class="secondary wide" type="button">WHERE DOES IT REALLY SHIP FROM?</button>
+        </div>
       </section>
-      <details>
-        <summary>Raw evidence report</summary>
+
+      <section class="evidence-section" aria-labelledby="evidence-heading">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">THE RECEIPTS</div>
+            <h2 id="evidence-heading">Evidence</h2>
+          </div>
+        </div>
+        <div class="evidence-tools">
+          <label for="evidence-query">Find in evidence</label>
+          <input id="evidence-query" type="search" maxlength="100" placeholder="Search source, claim or observation" />
+          <label for="evidence-filter">Show evidence</label>
+          <select id="evidence-filter"><option value="all">All evidence</option><option value="warnings">Warning signals</option><option value="context">Informational context</option></select>
+          <p id="evidence-count" class="status" role="status" aria-live="polite">No scan yet.</p>
+        </div>
+        <div id="evidence" class="evidence">
+          <div class="empty-state">Nothing to show yet. Scan the product and we’ll show you what stood out.</div>
+        </div>
+      </section>
+
+      <details class="recall-panel">
+        <summary>Search official recall notices</summary>
+        <p class="scan-disclosure">Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety.</p>
+        <div class="evidence-tools">
+          <label for="recall-field">Search field</label>
+          <select id="recall-field"><option value="RecallTitle">Notice title / brand</option><option value="ProductName">Product name</option><option value="UPC">UPC / GTIN</option></select>
+          <label for="recall-query">Query to share with CPSC</label>
+          <input id="recall-query" type="text" maxlength="100" autocomplete="off" />
+          <button id="recall-lookup" class="secondary" type="button" disabled>SEARCH CPSC NOTICES</button>
+          <button id="recall-cancel" class="secondary" type="button" disabled>CANCEL LOOKUP</button>
+          <p id="recall-status" class="status" role="status" aria-live="polite"></p>
+        </div>
+        <div id="recall-results" class="evidence"></div>
+      </details>
+
+      <details class="label-reader-panel">
+        <summary>Read a product label locally (barcode and OCR)</summary>
+        <p class="scan-disclosure">Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts.</p>
+        <label for="label-image">Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)</label>
+        <label for="label-language">OCR language</label>
+        <select id="label-language" aria-label="OCR language">
+          <option value="eng">English</option><option value="chi_sim">简体中文</option>
+          <option value="hin">हिन्दी</option><option value="spa">Español</option>
+          <option value="ara">العربية</option><option value="fra">Français</option>
+          <option value="ben">বাংলা</option><option value="por">Português</option>
+        </select>
+        <p class="scan-disclosure">Choose the language printed on the label. Offline OCR may misread text; it never changes seller scores.</p>
+        <input id="label-image" type="file" accept="image/png,image/jpeg,image/webp" />
+        <button id="label-read" class="secondary" type="button">READ LABEL ON DEVICE</button>
+        <p id="label-status" class="status" role="status"></p>
+        <div id="label-results" class="evidence" aria-live="polite"></div>
+      </details>
+      <details class="origin-panel">
+        <summary>Made, sold and shipped in North America</summary>
+        <p class="scan-disclosure">Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain.</p>
+        <label for="origin-file">Preview product origin evidence (JSON, maximum 50 KB)</label>
+        <input id="origin-file" type="file" accept="application/json,.json" />
+        <div id="origin-preview" class="evidence"></div>
+        <label for="origin-reviewed"><input id="origin-reviewed" type="checkbox" /> I reviewed the linked documents for this exact product, seller and shipment.</label>
+        <button id="origin-apply" class="secondary" type="button" disabled>APPLY REVIEWED ORIGIN EVIDENCE</button>
+        <button id="origin-clear" class="secondary" type="button">CLEAR ORIGIN EVIDENCE</button>
+        <p id="origin-status" class="status" role="status"></p>
+        <p class="scan-disclosure">Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance.</p>
+      </details>
+      <details id="regional-directory-panel" class="origin-panel">
+        <summary>North American sources and commerce map</summary>
+        <p class="scan-disclosure">Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language.</p>
+        <label for="origin-country">Country references</label>
+        <select id="origin-country"><option value="">All three countries</option><option value="CA">Canada</option><option value="US">United States</option><option value="MX">Mexico</option></select>
+        <div id="origin-directory" class="evidence"></div>
+      </details>
+      <details class="intelligence-panel">
+        <summary>Your product reference lists</summary>
+        <p class="scan-disclosure">Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent.</p>
+        <div class="evidence-tools">
+          <label for="list-file">Preview a local JSON list (up to 800 KB / 500 records)</label><input id="list-file" type="file" accept="application/json,.json" />
+          <label for="list-url">Public HTTPS feed URL</label><input id="list-url" type="url" maxlength="2048" autocomplete="off" placeholder="https://publisher.example.com/products.json" />
+          <button id="list-fetch" class="secondary" type="button">FETCH PREVIEW</button><button id="list-cancel" class="secondary" type="button" disabled>CANCEL FETCH</button>
+          <label for="list-subscribe"><input id="list-subscribe" type="checkbox" /> Save this feed as a subscription</label>
+          <label class="toggle-row" for="list-auto-weekly"><span>Check signed, trusted subscriptions weekly in the background</span><input id="list-auto-weekly" type="checkbox" /></label>
+          <p id="list-weekly-status" class="scan-disclosure" role="status">Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers.</p>
+          <p>Saved feeds show when a weekly refresh is due. Unsigned feeds require manual review; signed subscriptions update only after you opt in. Expired lists stop matching.</p>
+          <div id="list-preview" class="evidence"></div><button id="list-save" class="secondary" type="button" disabled>ADD REVIEWED LIST</button>
+          <p id="list-status" class="status" role="status" aria-live="polite"></p>
+          <div id="saved-lists" class="evidence"></div><button id="list-clear" class="secondary" type="button">DELETE USER LISTS & PUBLISHER KEYS</button>
+        </div>
+        <details><summary>Trust a publisher signing key</summary>
+          <p>Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads.</p>
+          <label for="publisher-key">Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)</label><textarea id="publisher-key" maxlength="2000" rows="4" spellcheck="false"></textarea>
+          <button id="publisher-preview" class="secondary" type="button">REVIEW KEY</button><p id="publisher-key-status" class="status" role="status"></p><button id="publisher-pin" class="secondary" type="button" disabled>TRUST REVIEWED KEY</button>
+        </details>
+      </details>
+
+      <details class="standing-panel">
+        <summary>Merchant and manufacturer standing</summary>
+        <p class="scan-disclosure">Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate.</p>
+        <label for="standing-role">Entity role</label><select id="standing-role"><option value="merchant">Merchant</option><option value="manufacturer">Manufacturer</option><option value="shipper">Shipper</option></select>
+        <label for="standing-name">Exact legal entity name</label><input id="standing-name" type="text" maxlength="200" autocomplete="off" />
+        <label for="standing-domain">Entity website domain</label><input id="standing-domain" type="text" maxlength="253" autocomplete="off" />
+        <p class="scan-disclosure">Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship.</p>
+        <label for="standing-file">Standing evidence JSON, up to 40 KB</label><input id="standing-file" type="file" accept="application/json,.json" />
+        <div id="standing-preview" class="evidence"></div>
+        <label><input id="standing-reviewed" type="checkbox" /> I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing.</label>
+        <button id="standing-apply" class="secondary" type="button" disabled>ASSESS STANDING</button><button id="standing-clear" class="secondary" type="button">CLEAR STANDING</button>
+        <p id="standing-status" class="status" role="status"></p><div id="standing-result" class="evidence" aria-live="polite"></div>
+        <details id="standing-directory-panel"><summary>Standing research sources</summary>
+          <label for="standing-filter">Research category</label><select id="standing-filter"><option value="">All categories</option><option value="identity">Legal identity</option><option value="consumer">Consumer standing</option><option value="enforcement">Enforcement and restrictions</option><option value="trade">Trade records</option><option value="sustainability">Supply-chain assessments</option><option value="litigation">Litigation and court cases</option><option value="product">Product certification and recalls</option></select>
+          <div id="standing-directory" class="evidence"></div>
+        </details>
+      </details>
+      <details class="brave-panel">
+        <summary>Optional live supplier search with your own API key</summary>
+        <p class="scan-disclosure">No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations.</p>
+        <label for="brave-key">Brave Search API key (not stored)</label><input id="brave-key" type="password" maxlength="256" autocomplete="off" spellcheck="false" />
+        <label for="brave-query">Your supplier or product search phrase</label><input id="brave-query" type="text" maxlength="180" autocomplete="off" spellcheck="false" placeholder="Brand model or quoted product title" />
+        <button id="brave-search" class="secondary" type="button">SEARCH USING MY KEY</button><button id="brave-cancel" class="secondary" type="button" disabled>CANCEL</button>
+        <p id="brave-status" class="status" role="status"></p><div id="brave-results" class="evidence"></div>
+      </details>
+      <details class="entity-panel">
+        <summary>Check a legal entity identifier</summary>
+        <p class="scan-disclosure">Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store.</p>
+        <div class="evidence-tools">
+          <label for="entity-lei">20-character LEI from the entity’s own records</label><input id="entity-lei" type="text" maxlength="20" autocomplete="off" spellcheck="false" />
+          <button id="entity-lookup" class="secondary" type="button">LOOK UP THIS LEI</button><button id="entity-cancel" class="secondary" type="button" disabled>CANCEL LOOKUP</button>
+          <p id="entity-status" class="status" role="status" aria-live="polite"></p><div id="entity-results" class="evidence"></div>
+        </div>
+      </details>
+
+      <details class="appearance-panel">
+        <summary>Customize your display</summary>
+        <div class="evidence-tools">
+          <label for="display-theme">Theme</label><select id="display-theme"><option value="dark">Dark</option><option value="light">Light</option><option value="system">Follow system</option></select>
+          <label for="display-density">Spacing</label><select id="display-density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select>
+          <label for="display-scale">Text size</label><select id="display-scale"><option value="100">Standard</option><option value="115">Larger</option><option value="130">Largest</option></select>
+          <button id="reset-display" class="secondary" type="button">RESET APPEARANCE</button>
+        </div>
+      </details>
+
+      <details class="settings-panel">
+        <summary>How DropShredder checks products</summary>
+        <p class="scan-disclosure">Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Offline OCR supports English and all seven interface languages; choose the label language before reading.</p>
+        <section class="feature-toggles">
+          <label class="toggle-row">
+            <span><strong>Look for the same product elsewhere</strong><small>Automatically check whether DropShredder has seen matching products on other stores or marketplaces.</small></span>
+            <input id="auto-source-hunt" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span><strong>Prefer Made in USA</strong><small>Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious.</small></span>
+            <input id="prefer-made-in-usa" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span><strong>Attitude</strong><small>Choose how hard DropShredder talks. What counts as evidence never changes.</small></span>
+            <select id="tone-mode" aria-label="Language tone">
+              <option value="professional">Professional</option>
+              <option value="aggressive">Aggressive</option>
+              <option value="nuclear">Nuclear</option>
+            </select>
+          </label>
+        </section>
+      </details>
+
+      <details class="technical-panel">
+        <summary>See the full scan details</summary>
         <pre id="raw" class="result" hidden></pre>
       </details>
+
+      <details class="local-data">
+        <summary>Your privacy & saved scan history</summary>
+        <div class="privacy-tools">
+          <p>Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history.</p>
+          <button id="export-report" class="secondary" type="button" disabled>EXPORT CURRENT SCAN</button>
+          <p>Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it.</p>
+          <p id="controls-status" class="status" role="status" aria-live="polite"></p>
+          <button id="clear-history" class="secondary" type="button">DELETE MY SCAN HISTORY</button>
+          <button id="revoke-optional-access" class="secondary" type="button">REMOVE EXTRA SITE ACCESS</button>
+        </div>
+      </details>
+
+      <footer id="build-meta" class="build-meta"></footer>
     </main>
     <script type="module" src="./main.ts"></script>
+    <script type="module" src="./controls.ts"></script>
   </body>
 </html>

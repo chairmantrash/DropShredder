@@ -1,0 +1,856 @@
+{
+  "task": "DS-037",
+  "date": "2026-10-09",
+  "status": "IMPLEMENTATION COMPLETE; LIVE BETA STARTED; RELEASE ACCEPTANCE OPEN",
+  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+  "testedHarness": "fe22e27b44424273d4b465d8af5cafbc40178bdb",
+  "coreTests": {
+    "passed": 267,
+    "failed": 0,
+    "skipped": 0
+  },
+  "workflows": [
+    {
+      "name": "Chromium Runtime",
+      "id": 37979165995,
+      "status": "success"
+    },
+    {
+      "name": "CI",
+      "id": 37979166327,
+      "status": "success"
+    },
+    {
+      "name": "CodeQL",
+      "id": 37979166013,
+      "status": "success"
+    }
+  ],
+  "distinctBrowserChecks": {
+    "packaged": 9,
+    "headedNative": 29,
+    "total": 38,
+    "headlessNativeRepeatsExcluded": true
+  },
+  "artifacts": [
+    {
+      "id": 11640001725,
+      "name": "dropshredder-headed-permission-evidence"
+    },
+    {
+      "id": 11640825265,
+      "name": "dropshredder-chromium-runtime-evidence"
+    },
+    {
+      "id": 11639549937,
+      "name": "dropshredder-unpacked-qa"
+    }
+  ],
+  "scopeCorrection": "Raw per-run notTested templates retain obsolete RDAP/CPSC-live and earlier native-case exclusions; use actual executed checks and liveProviders fields. Both live endpoints ran successfully in this headed job. Category accuracy and official unit safety attribution remain untested.",
+  "evidenceAccess": "Decoded job logs retrieved and inspected. Hosted screenshots preserved; local screenshot archive download returned HTTP403, so visual screenshot review was not performed in this continuation.",
+  "remaining": [
+    "Independent A01-D06 protocol, including full toast click/dismissal and marketplace/homepage exclusion matrix",
+    "Concurrent native panels and complete native context-menu UI",
+    "Graphical operating-system file-picker and malformed Chrome-storage cases",
+    "Representative merchant/product-disjoint precision, recall, abstention and category calibration",
+    "Independent photographed-label OCR/barcode accuracy and engine compatibility across supported Chrome versions",
+    "Signed automatic refresh over elapsed weekly lifecycle and genuine publisher onboarding/key rotation policy",
+    "Optional paid-key Brave live request; no user provider key supplied",
+    "Large real-page performance/CPU/memory sampling and Chrome133 compatibility",
+    "Blocked Etsy and Noctua observations"
+  ],
+  "release": "Draft PR9 retained; main unchanged; no publication",
+  "packaged": {
+    "sourceCommit": "fe22e27b44424273d4b465d8af5cafbc40178bdb",
+    "startedAt": "2026-10-09T19:17:46.419Z",
+    "mode": "headless Chromium / automated packaged runtime",
+    "status": "PASS — AUTOMATED RUNTIME SUBSET",
+    "tests": [
+      {
+        "id": "R01",
+        "description": "Packaged bytes match the reviewed candidate",
+        "status": "PASS",
+        "elapsedMs": 68,
+        "details": {
+          "files": 34,
+          "packagedSourceCommit": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6"
+        }
+      },
+      {
+        "id": "R02",
+        "description": "Unmodified MV3 extension and service worker load in Chromium",
+        "status": "PASS",
+        "elapsedMs": 544,
+        "details": {
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "version": "0.2.0",
+          "browser": "Chrome/156.0.8078.4"
+        }
+      },
+      {
+        "id": "R03",
+        "description": "Panel document renders and optional host access starts absent",
+        "status": "PASS",
+        "elapsedMs": 347
+      },
+      {
+        "id": "R04",
+        "description": "Unsupported extension-page scan returns without a report",
+        "status": "PASS",
+        "elapsedMs": 56,
+        "details": {
+          "visibleStatus": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again."
+        }
+      },
+      {
+        "id": "R05",
+        "description": "Regular-tab settings requests fail closed outside the native panel",
+        "status": "PASS",
+        "elapsedMs": 69,
+        "details": {
+          "scope": "Regular tab is rejected by sender.tab guard; native-side-panel saving is exercised by the separate native diagnostic."
+        }
+      },
+      {
+        "id": "R06",
+        "description": "Display controls apply, persist, and reset without erasing features",
+        "status": "PASS",
+        "elapsedMs": 699
+      },
+      {
+        "id": "R07",
+        "description": "No optional content script or network investigation before consent",
+        "status": "PASS",
+        "elapsedMs": 1619,
+        "details": {
+          "scope": "Owned fulfilled HTTPS fixture; no post-grant detection or live merchant claim"
+        }
+      },
+      {
+        "id": "R08",
+        "description": "Display reset and default feature state survive full profile restart",
+        "status": "PASS",
+        "elapsedMs": 673
+      },
+      {
+        "id": "R09",
+        "description": "No uncaught panel errors or unsolicited extension network requests",
+        "status": "PASS",
+        "elapsedMs": 0
+      }
+    ],
+    "errors": [],
+    "extensionRequests": [],
+    "notTested": [
+      "Full independent A01-D06 desktop QA protocol",
+      "Native toolbar opening and native side-panel mounting (panel document is opened in a tab)",
+      "Native host permission accept/deny prompts and post-grant scan/toast flows",
+      "Live marketplace accuracy, privacy under granted access, RDAP/CPSC live endpoints",
+      "Context menus, SPA target changes, search batches and model/category accuracy"
+    ],
+    "packagedSourceCommit": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.4",
+      "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75"
+    },
+    "os": "linux 6.17.0-1022-azure",
+    "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+    "largeTextLayouts": [
+      {
+        "viewport": 320,
+        "content": 320,
+        "rowWidth": 300,
+        "titleWidth": 300,
+        "titleBottom": -640.9375,
+        "badgeTop": 0,
+        "badgeWidth": 0
+      },
+      {
+        "viewport": 380,
+        "content": 380,
+        "rowWidth": 352,
+        "titleWidth": 352,
+        "titleBottom": -674.625,
+        "badgeTop": 0,
+        "badgeWidth": 0
+      },
+      {
+        "viewport": 420,
+        "content": 420,
+        "rowWidth": 384,
+        "titleWidth": 384,
+        "titleBottom": -674.625,
+        "badgeTop": -662.625,
+        "badgeWidth": 249.546875
+      },
+      {
+        "viewport": 640,
+        "content": 640,
+        "rowWidth": 604,
+        "titleWidth": 342.453125,
+        "titleBottom": -542.625,
+        "badgeTop": -633,
+        "badgeWidth": 249.546875
+      }
+    ],
+    "finishedAt": "2026-10-09T19:17:50.497Z"
+  },
+  "headed": {
+    "sourceCommit": "fe22e27b44424273d4b465d8af5cafbc40178bdb",
+    "startedAt": "2026-10-09T19:17:47.693Z",
+    "mode": "headed Chromium / Xvfb",
+    "status": "PASS — NATIVE RUNTIME SUBSET",
+    "tests": [
+      {
+        "id": "N01",
+        "description": "Reviewed package mounts in the native side panel without host grants",
+        "status": "PASS",
+        "elapsedMs": 1257,
+        "details": {
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "files": 34
+        }
+      },
+      {
+        "id": "N02",
+        "description": "Trusted native source-hunt toggle saves through the background writer",
+        "status": "PASS",
+        "elapsedMs": 931
+      },
+      {
+        "id": "N03",
+        "description": "Native origin and tone changes preserve the previous feature patch",
+        "status": "PASS",
+        "elapsedMs": 1235
+      },
+      {
+        "id": "N04",
+        "description": "Nondefault preferences survive a full native-profile restart",
+        "status": "PASS",
+        "elapsedMs": 948
+      },
+      {
+        "id": "N05",
+        "description": "Native product scan fails closed without host access",
+        "status": "PASS",
+        "elapsedMs": 510,
+        "details": {
+          "status": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.",
+          "raw": "",
+          "exportDisabled": true
+        }
+      },
+      {
+        "id": "N06",
+        "description": "Native remove-access control is safe without grants and preserves other preferences",
+        "status": "PASS",
+        "elapsedMs": 924,
+        "details": {
+          "status": "DropShredder didn’t have any extra site access to remove.",
+          "scope": "No-grant removal, not revocation of an accepted grant"
+        }
+      },
+      {
+        "id": "N07",
+        "description": "Native checks produce no uncaught errors or external investigations",
+        "status": "PASS",
+        "elapsedMs": 0
+      },
+      {
+        "id": "N08",
+        "description": "Genuine Chrome Deny leaves monitoring and host access off",
+        "status": "PASS",
+        "elapsedMs": 117
+      },
+      {
+        "id": "N09",
+        "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+        "status": "PASS",
+        "elapsedMs": 3153
+      },
+      {
+        "id": "N10",
+        "description": "Owned product fixture gets exactly one automatic alert after consent",
+        "status": "PASS",
+        "elapsedMs": 860
+      },
+      {
+        "id": "N11",
+        "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+        "status": "PASS",
+        "elapsedMs": 639,
+        "details": {
+          "status": "Scan complete for fixture.example.com.",
+          "product": {
+            "capturedAt": "2026-10-09T19:18:08.518Z",
+            "claims": [],
+            "currency": "USD",
+            "domain": "fixture.example.com",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": true,
+              "structuredIdentityResolved": true
+            },
+            "gtin": "012345678905",
+            "imageUrls": [],
+            "jsonLdProductCount": 1,
+            "pageSignals": [],
+            "price": 12,
+            "sku": "FIXTURE-MUG-001",
+            "specifications": {},
+            "title": "Fixture mug",
+            "url": "https://fixture.example.com/products/mug",
+            "variantId": "FIXTURE-MUG-001",
+            "technicalFingerprint": "012345678905|fixture-mug-001"
+          },
+          "scope": "Owned fixture, no merchant accuracy/explicit prompt acceptance claim"
+        }
+      },
+      {
+        "id": "N15",
+        "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields",
+        "status": "PASS",
+        "elapsedMs": 1023,
+        "details": {
+          "filename": "DropShredder-current-scan.json",
+          "bytes": 1631,
+          "product": {
+            "url": "https://fixture.example.com/products/mug",
+            "title": "Fixture mug",
+            "brand": "",
+            "model": "",
+            "gtin": "012345678905",
+            "capturedAt": "2026-10-09T19:18:09.184Z"
+          }
+        }
+      },
+      {
+        "id": "N16",
+        "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports",
+        "status": "PASS",
+        "elapsedMs": 6614,
+        "details": {
+          "status": "This looks like a sign-in or payment page, so DropShredder is staying out of it.",
+          "raw": ""
+        }
+      },
+      {
+        "id": "N17",
+        "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it",
+        "status": "PASS",
+        "elapsedMs": 3586
+      },
+      {
+        "id": "N18",
+        "description": "Rapid tab switching invalidates reports and scans the actual active product tab",
+        "status": "PASS",
+        "elapsedMs": 1067
+      },
+      {
+        "id": "N19",
+        "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs",
+        "status": "PASS",
+        "elapsedMs": 3931
+      },
+      {
+        "id": "N20",
+        "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection",
+        "status": "PASS",
+        "elapsedMs": 1964
+      },
+      {
+        "id": "N25",
+        "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title",
+        "status": "PASS",
+        "elapsedMs": 1024,
+        "details": {
+          "scope": "Owned intercepted Amazon page; live store remains separately observed"
+        }
+      },
+      {
+        "id": "N21",
+        "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational",
+        "status": "PASS",
+        "elapsedMs": 4431,
+        "details": {
+          "scope": "Owned intercepted RDAP response, not live provider accuracy"
+        }
+      },
+      {
+        "id": "N22",
+        "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query",
+        "status": "PASS",
+        "elapsedMs": 4904,
+        "details": {
+          "scope": "Owned intercepted CPSC notice, exact unit still unverified"
+        }
+      },
+      {
+        "id": "N23",
+        "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls",
+        "status": "PASS",
+        "elapsedMs": 5671
+      },
+      {
+        "id": "N26",
+        "description": "Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions",
+        "status": "PASS",
+        "elapsedMs": 3508,
+        "details": {
+          "scope": "Ephemeral owned Ed25519 test key; genuine native panel controls; no real issuer authenticated",
+          "signedVersion": 4
+        }
+      },
+      {
+        "id": "N27",
+        "description": "Chrome file-input dispatch previews JSON without saving and rejects malformed local files",
+        "status": "PASS",
+        "elapsedMs": 294,
+        "details": {
+          "scope": "Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested"
+        }
+      },
+      {
+        "id": "N28",
+        "description": "Packaged local OCR engine and language data exist without making a remote request at panel startup",
+        "status": "PASS",
+        "elapsedMs": 45,
+        "details": {
+          "files": [
+            {
+              "path": "ocr/tesseract.min.js",
+              "bytes": 62953
+            },
+            {
+              "path": "ocr/worker.min.js",
+              "bytes": 111280
+            },
+            {
+              "path": "ocr/eng.traineddata.gz",
+              "bytes": 1976293
+            },
+            {
+              "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm.js",
+              "bytes": 3905767
+            },
+            {
+              "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm",
+              "bytes": 2862266
+            }
+          ],
+          "scope": "Packaged local assets, not accuracy or photographed-label recognition"
+        }
+      },
+      {
+        "id": "N29",
+        "description": "Actual native panel invokes bundled offline OCR on a synthetic local image",
+        "status": "PASS",
+        "elapsedMs": 551,
+        "details": {
+          "scope": "Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested",
+          "output": "0 barcode(s) read; 1 text line(s). Barcode support: unavailable. OCR support: available.Recognized text (unverified): PRODUCT 12345Search sources for this text"
+        }
+      },
+      {
+        "id": "N24",
+        "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict",
+        "status": "PASS",
+        "elapsedMs": 2320,
+        "details": {
+          "endpoint": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+          "scope": "Live public CC0 identity record only; not merchant/product attribution"
+        }
+      },
+      {
+        "id": "N12",
+        "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+        "status": "PASS",
+        "elapsedMs": 9700,
+        "details": {
+          "status": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages.",
+          "raw": ""
+        }
+      },
+      {
+        "id": "N13",
+        "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+        "status": "PASS",
+        "elapsedMs": 5077
+      },
+      {
+        "id": "N14",
+        "description": "Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins",
+        "status": "PASS",
+        "elapsedMs": 4
+      }
+    ],
+    "errors": [],
+    "externalRequests": [
+      "https://rdap.verisign.com",
+      "https://rdap.verisign.com",
+      "https://rdap.verisign.com",
+      "https://www.saferproducts.gov",
+      "https://www.saferproducts.gov",
+      "https://www.saferproducts.gov",
+      "https://publisher.example.com",
+      "https://publisher.example.com",
+      "https://publisher.example.com",
+      "https://publisher.example.com",
+      "https://api.gleif.org",
+      "https://rdap.verisign.com",
+      "https://www.saferproducts.gov"
+    ],
+    "providerRequests": [
+      {
+        "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+        "mode": "delay",
+        "at": "2026-10-09T19:18:28.953Z"
+      },
+      {
+        "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+        "mode": "error",
+        "at": "2026-10-09T19:18:31.974Z"
+      },
+      {
+        "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:32.434Z"
+      },
+      {
+        "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+        "mode": "delay",
+        "at": "2026-10-09T19:18:33.855Z"
+      },
+      {
+        "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+        "mode": "error",
+        "at": "2026-10-09T19:18:36.877Z"
+      },
+      {
+        "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:37.338Z"
+      },
+      {
+        "url": "https://publisher.example.com/products.json",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:39.251Z"
+      },
+      {
+        "url": "https://publisher.example.com/products.json",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:40.634Z"
+      },
+      {
+        "url": "https://publisher.example.com/products.json",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:42.015Z"
+      },
+      {
+        "url": "https://publisher.example.com/products.json",
+        "mode": "normal",
+        "at": "2026-10-09T19:18:45.521Z"
+      }
+    ],
+    "notTested": [
+      "Independent A01-D06 desktop QA",
+      "Live merchant/category accuracy",
+      "Concurrent native panels; malformed storage tested in core, not browser; native context-menu UI; live-store accuracy; RDAP/CPSC live endpoints"
+    ],
+    "packagedSourceCommit": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.4",
+      "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75"
+    },
+    "actionOptions": {
+      "enabled": true,
+      "path": "sidepanel.html"
+    },
+    "actionTargets": [
+      {
+        "type": "service_worker",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+      },
+      {
+        "type": "page",
+        "url": "about:blank"
+      },
+      {
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+      },
+      {
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/"
+      },
+      {
+        "type": "page",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+      }
+    ],
+    "nativeDesktopGeometry": {
+      "bounds": {
+        "left": 10,
+        "top": 10,
+        "width": 1288,
+        "height": 851,
+        "windowState": "normal"
+      },
+      "viewport": {
+        "width": 360,
+        "height": 716
+      },
+      "insetRight": 9,
+      "insetBottom": 8
+    },
+    "permissionExploration": {
+      "status": "EXPLICIT NATIVE DENY THEN ALLOW OBSERVED",
+      "settled": false,
+      "granted": false,
+      "ui": {
+        "checked": true,
+        "disabled": true,
+        "status": "Asking Chrome to allow automatic product alerts…"
+      },
+      "scripts": [],
+      "targets": [
+        {
+          "type": "service_worker",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/"
+        },
+        {
+          "type": "page",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+        },
+        {
+          "type": "page",
+          "url": "https://fixture.example.com/products/mug"
+        }
+      ],
+      "afterDecision": {
+        "granted": true,
+        "scripts": [
+          {
+            "allFrames": false,
+            "id": "dropshredder-auto-shopping-v1",
+            "js": [
+              "content-scripts/auto.js"
+            ],
+            "matchOriginAsFallback": false,
+            "matches": [
+              "https://*/*"
+            ],
+            "persistAcrossSessions": true,
+            "runAt": "document_idle",
+            "world": "ISOLATED"
+          }
+        ]
+      }
+    },
+    "liveProviders": [
+      {
+        "id": "BETA-P01",
+        "endpoint": "https://rdap.verisign.com/net/v1/domain/example.net",
+        "status": "OBSERVED_RESPONSE",
+        "scope": "Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy",
+        "uiMessage": "Domain registration information retrieved. It does not establish the business’s age.",
+        "observation": "registered domain example.net • registered 1995-08-31 • registrar RESERVED-Internet Assigned Numbers Authority",
+        "elapsedMs": 460
+      },
+      {
+        "id": "BETA-P02",
+        "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+        "query": "RecallTitle=Anker",
+        "status": "OBSERVED_RESPONSE",
+        "uiMessage": "8 candidate notice(s), retrieved 2026-10-09T19:18:52.353Z. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+        "notices": [
+          {
+            "title": "Trankerloop Baby Bath Seats Recalled Due to Risk of Serious Injury or Death to Children from Drowning; Violates Mandatory Standard for Infant Bath Seats",
+            "url": "https://www.cpsc.gov/Recalls/2026/Trankerloop-Baby-Bath-Seats-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Drowning-Violates-Mandatory-Standard-for-Infant-Bath-Seats"
+          },
+          {
+            "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+            "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+          },
+          {
+            "title": "Anker Soundcore Lithium-Ion Battery Powered Bluetooth Speakers Recalled Due to Fire Hazard; Sold Exclusively on Amazon.com by Anker Innovations",
+            "url": "https://www.cpsc.gov/Recalls/2025/Anker-Soundcore-Lithium-Ion-Battery-Powered-Bluetooth-Speakers-Recalled-Due-to-Fire-Hazard-Sold-Exclusively-on-Amazon-com-by-Anker-Innovations"
+          },
+          {
+            "title": "Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+            "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+          },
+          {
+            "title": "Anker EverFrost Lithium-Ion Battery Powered Coolers Recalled Due to Battery Fire Hazard; Manufactured by Anker Innovations",
+            "url": "https://www.cpsc.gov/Recalls/2024/Anker-EverFrost-Lithium-Ion-Battery-Powered-Coolers-Recalled-Due-to-Battery-Fire-Hazard-Manufactured-by-Anker-Innovations"
+          },
+          {
+            "title": "Fantasia Trading Recalls Anker Power Banks Due to Fire Hazard",
+            "url": "https://www.cpsc.gov/Recalls/2023/Fantasia-Trading-Recalls-Anker-Power-Banks-Due-to-Fire-Hazard"
+          },
+          {
+            "title": "Anker Play Products Recalls Bolt Foldable Children's Scooters Due to Violation of Federal Lead Paint Ban; Lead Poisoning Hazard",
+            "url": "https://www.cpsc.gov/Recalls/2023/Anker-Play-Products-Recalls-Bolt-Foldable-Childrens-Scooters-Due-to-Violation-of-Federal-Lead-Paint-Ban-Lead-Poisoning-Hazard"
+          },
+          {
+            "title": "Anker Play Products Recalls 10-in-1 Incredible Inventions Science Kit Due to Violation of the Federal Lead Paint Ban",
+            "url": "https://www.cpsc.gov/Recalls/2021/Anker-Play-Products-Recalls-10-in-1-Incredible-Inventions-Science-Kit-Due-to-Violation-of-the-Federal-Lead-Paint-Ban"
+          }
+        ],
+        "scope": "Live incomplete candidate feed; no unit or product safety verification"
+      }
+    ],
+    "liveSurfaces": [
+      {
+        "kind": "direct manufacturer / cooling fan",
+        "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+        "expected": "NF-A12x25",
+        "startedAt": "2026-10-09T19:18:52.480Z",
+        "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+        "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+        "httpStatus": 429,
+        "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+        "finishedAt": "2026-10-09T19:18:55.124Z"
+      },
+      {
+        "kind": "Amazon / cooling fan",
+        "url": "https://www.amazon.com/dp/B0FC636JBS",
+        "expected": "Noctua",
+        "startedAt": "2026-10-09T19:18:55.124Z",
+        "status": "OBSERVED_SCAN",
+        "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+        "httpStatus": 200,
+        "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+        "panelStatus": "Scan complete for www.amazon.com.",
+        "product": {
+          "url": "https://www.amazon.com/dp/B0FC636JBS",
+          "title": "Noctua NF-A12x25 G2 PWM, High-Performance Quiet Fan 120mm",
+          "asin": "B0FC636JBS",
+          "extraction": {
+            "method": "page metadata; structured identity unresolved",
+            "offerResolved": false,
+            "structuredIdentityResolved": false
+          }
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "unknown",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "No accusation-weighted evidence is available yet."
+        },
+        "evidence": [
+          {
+            "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+            "severity": "info",
+            "weight": 0
+          },
+          {
+            "id": "EXPLICIT_ORIGIN_CLAIMS",
+            "severity": "info",
+            "weight": 0
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "severity": "info",
+            "weight": 0
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "severity": "info",
+            "weight": 0
+          }
+        ],
+        "finishedAt": "2026-10-09T19:19:00.455Z"
+      },
+      {
+        "kind": "Etsy / ceramic mug",
+        "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+        "expected": "Mug",
+        "startedAt": "2026-10-09T19:19:00.455Z",
+        "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+        "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+        "httpStatus": 403,
+        "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+        "finishedAt": "2026-10-09T19:19:02.787Z"
+      },
+      {
+        "kind": "Walmart / construction toy",
+        "url": "https://www.walmart.com/ip/41004055",
+        "expected": "LEGO",
+        "startedAt": "2026-10-09T19:19:02.787Z",
+        "status": "OBSERVED_SCAN",
+        "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+        "httpStatus": 200,
+        "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "panelStatus": "Scan complete for www.walmart.com.",
+        "product": {
+          "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+          "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+          "extraction": {
+            "method": "page metadata; structured identity unresolved",
+            "offerResolved": false,
+            "structuredIdentityResolved": false
+          }
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "unknown",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "No accusation-weighted evidence is available yet."
+        },
+        "evidence": [
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "severity": "info",
+            "weight": 0
+          }
+        ],
+        "finishedAt": "2026-10-09T19:19:08.710Z"
+      }
+    ],
+    "approvedRequestOrigins": [
+      "https://publisher.example.com",
+      "https://rdap.verisign.com",
+      "https://www.saferproducts.gov",
+      "https://api.gleif.org",
+      "https://www.amazon.com",
+      "https://www.walmart.com"
+    ],
+    "finalPermissionState": {
+      "granted": false,
+      "scripts": [],
+      "features": {
+        "autoProtection": false,
+        "autoSourceHunt": true,
+        "preferMadeInUSA": true,
+        "toneMode": "nuclear",
+        "weeklyIntelligenceUpdates": false
+      }
+    },
+    "finishedAt": "2026-10-09T19:19:23.491Z",
+    "testsPassed": 29
+  }
+}
+

@@ -1,0 +1,2048 @@
+{
+  "m_1lc7ekh": {
+    "message": "DropShredder",
+    "description": "DropShredder"
+  },
+  "m_2925tt": {
+    "message": "DROPSHREDDER",
+    "description": "DROPSHREDDER"
+  },
+  "m_ji2c74": {
+    "message": "জানুন আপনি আসলে কী কিনছেন।",
+    "description": "Know what you’re really buying."
+  },
+  "m_59j625": {
+    "message": "আপনার ডিভাইসেই থাকে",
+    "description": "STAYS ON YOUR DEVICE"
+  },
+  "m_1hmprdl": {
+    "message": "খরচ করার আগে নতুন লেবেল লাগানো পণ্য, সন্দেহজনক দোকানের দাবি, গোপন উৎস ও ফেরতের ঝামেলা শনাক্ত করুন।",
+    "description": "Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you."
+  },
+  "m_zs3td9": {
+    "message": "কেনার আগে যাচাই করুন",
+    "description": "CHECK BEFORE YOU BUY"
+  },
+  "m_lncga2": {
+    "message": "এই পণ্য যাচাই করুন",
+    "description": "CHECK THIS PRODUCT"
+  },
+  "m_41wtn1": {
+    "message": "সম্পূর্ণ ম্যানুয়াল যাচাই শুধু আপনার বেছে নেওয়া পৃষ্ঠাতেই হয়। চালু করলেই স্বয়ংক্রিয় পণ্য সতর্কতা কাজ করে। অ্যাকাউন্ট, চেকআউট বা পেমেন্ট পৃষ্ঠা যাচাই করা হয় না।",
+    "description": "Manual full checks stay on your chosen page. Automatic product alerts run only if you enable them. No checks on account, checkout or payment pages."
+  },
+  "m_z4x6cq": {
+    "message": "স্বয়ংক্রিয় পণ্য সতর্কতা",
+    "description": "Automatic product alerts"
+  },
+  "m_z8ewuy": {
+    "message": "কেনা যায় এমন পণ্য পৃষ্ঠায় সংক্ষিপ্ত ফল দেখুন। HTTPS সাইটের জন্য একবার Chrome-এর অনুমতি লাগে। অন্য ব্রাউজিং, অনুসন্ধানের ফল বা চেকআউটে সতর্কতা আসে না।",
+    "description": "See a short verdict on actual shopping listings. Requires one-time Chrome permission for HTTPS sites. No alerts on unrelated browsing, search results or checkout."
+  },
+  "m_pkbcu1": {
+    "message": "আপনি প্রস্তুত হলেই শুরু।",
+    "description": "Ready when you are."
+  },
+  "m_70y5yt": {
+    "message": "আমরা যা পেয়েছি",
+    "description": "WHAT WE FOUND"
+  },
+  "m_1mhc312": {
+    "message": "এই তালিকায় কি ভরসা করা যায়?",
+    "description": "Should you trust this listing?"
+  },
+  "m_1uudnl7": {
+    "message": "তালিকার পেছনের তথ্য জানতে পণ্য যাচাই করুন।",
+    "description": "Scan the product to see what’s behind the listing."
+  },
+  "m_1j7m3j4": {
+    "message": "আরও অনুসন্ধান করুন",
+    "description": "DIG DEEPER"
+  },
+  "m_1gbpn41": {
+    "message": "দাবি যাচাই করুন",
+    "description": "Check the story"
+  },
+  "m_1yfbac9": {
+    "message": "ঐচ্ছিক",
+    "description": "Optional"
+  },
+  "m_19gtzfo": {
+    "message": "অন্য বিক্রেতা খুঁজুন",
+    "description": "FIND OTHER SELLERS"
+  },
+  "m_bdga72": {
+    "message": "এই ছবি খুঁজুন",
+    "description": "SEARCH THIS IMAGE"
+  },
+  "m_bqvucs": {
+    "message": "এই দোকান যাচাই করুন",
+    "description": "CHECK THIS STORE"
+  },
+  "m_1amk2vc": {
+    "message": "এই সাইট কত পুরোনো?",
+    "description": "HOW OLD IS THIS SITE?"
+  },
+  "m_rzfddd": {
+    "message": "ডোমেইন অনুসন্ধান বাতিল করুন",
+    "description": "CANCEL DOMAIN LOOKUP"
+  },
+  "m_1ca3m79": {
+    "message": "ক্রেতারা কী বলছেন?",
+    "description": "WHAT ARE BUYERS SAYING?"
+  },
+  "m_6gyim3": {
+    "message": "শর্তের খুঁটিনাটি যাচাই করুন",
+    "description": "CHECK THE FINE PRINT"
+  },
+  "m_60fw70": {
+    "message": "আসলে কোথা থেকে পাঠানো হয়?",
+    "description": "WHERE DOES IT REALLY SHIP FROM?"
+  },
+  "m_3hli5t": {
+    "message": "প্রমাণ",
+    "description": "THE RECEIPTS"
+  },
+  "m_1wt8chw": {
+    "message": "প্রমাণ",
+    "description": "Evidence"
+  },
+  "m_1raf0ku": {
+    "message": "প্রমাণে খুঁজুন",
+    "description": "Find in evidence"
+  },
+  "m_9k7mr1": {
+    "message": "উৎস, দাবি বা পর্যবেক্ষণ খুঁজুন",
+    "description": "Search source, claim or observation"
+  },
+  "m_p4sts9": {
+    "message": "প্রমাণ দেখান",
+    "description": "Show evidence"
+  },
+  "m_o7e91d": {
+    "message": "সব প্রমাণ",
+    "description": "All evidence"
+  },
+  "m_8fo0va": {
+    "message": "সতর্কতার সংকেত",
+    "description": "Warning signals"
+  },
+  "m_1pop2xv": {
+    "message": "পটভূমির তথ্য",
+    "description": "Informational context"
+  },
+  "m_1lmvk2d": {
+    "message": "এখনও যাচাই হয়নি।",
+    "description": "No scan yet."
+  },
+  "m_rou9gm": {
+    "message": "এখনও কিছু দেখানোর নেই। পণ্য যাচাই করলে গুরুত্বপূর্ণ বিষয়গুলো দেখাব।",
+    "description": "Nothing to show yet. Scan the product and we’ll show you what stood out."
+  },
+  "m_szn3su": {
+    "message": "সরকারি প্রত্যাহারের বিজ্ঞপ্তি খুঁজুন",
+    "description": "Search official recall notices"
+  },
+  "m_18lpqhi": {
+    "message": "ঐচ্ছিক সরকারি CPSC অনুসন্ধান। Chrome-এর অনুমতির পর শুধু আপনার বেছে নেওয়া প্রশ্ন SaferProducts.gov-এ পাঠায়। চাবি বা অ্যাকাউন্ট লাগে না। সম্ভাব্য বিজ্ঞপ্তি আপনার পণ্য প্রত্যাহার হয়েছে বলে প্রমাণ করে না; খালি ফলও নিরাপত্তার প্রমাণ নয়।",
+    "description": "Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety."
+  },
+  "m_10ziq51": {
+    "message": "অনুসন্ধানের ক্ষেত্র",
+    "description": "Search field"
+  },
+  "m_1rvf3gr": {
+    "message": "বিজ্ঞপ্তির শিরোনাম / ব্র্যান্ড",
+    "description": "Notice title / brand"
+  },
+  "m_6vzi67": {
+    "message": "পণ্যের নাম",
+    "description": "Product name"
+  },
+  "m_a61vw": {
+    "message": "UPC / GTIN",
+    "description": "UPC / GTIN"
+  },
+  "m_zdcsua": {
+    "message": "CPSC-কে পাঠানোর প্রশ্ন",
+    "description": "Query to share with CPSC"
+  },
+  "m_uad37n": {
+    "message": "CPSC বিজ্ঞপ্তি খুঁজুন",
+    "description": "SEARCH CPSC NOTICES"
+  },
+  "m_1pk9ld3": {
+    "message": "অনুসন্ধান বাতিল করুন",
+    "description": "CANCEL LOOKUP"
+  },
+  "m_1kk4z4r": {
+    "message": "ডিভাইসে পণ্যের লেবেল পড়ুন (বারকোড ও OCR)",
+    "description": "Read a product label locally (barcode and OCR)"
+  },
+  "m_1hevz1e": {
+    "message": "ডিভাইস থেকে ছবি বাছুন। Chrome স্থানীয় শনাক্তকারী দিলে কোড ও লেখা ডিভাইসেই পড়া হয়; কিছু আপলোড, সংরক্ষণ বা সেবাদাতাকে পাঠানো হয় না। নিজস্ব শনাক্তকরণ না থাকলে প্যাকেজের স্থানীয় Tesseract ইঞ্জিন শুধু আপনার অনুরোধে চালু হয়। CDN, ছবি আপলোড বা বাধ্যতামূলক অ্যাকাউন্ট নেই।",
+    "description": "Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts."
+  },
+  "m_uo805c": {
+    "message": "পণ্যের লেবেল বা মোড়কের ছবি (PNG, JPEG, WebP; সর্বোচ্চ 8 MB)",
+    "description": "Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)"
+  },
+  "m_113ko8q": {
+    "message": "ডিভাইসে লেবেল পড়ুন",
+    "description": "READ LABEL ON DEVICE"
+  },
+  "m_b2uwd9": {
+    "message": "আপনার পণ্যের তথ্যসূত্রের তালিকা",
+    "description": "Your product reference lists"
+  },
+  "m_1cmzxjl": {
+    "message": "আপনার নির্বাচিত উৎস থেকে ছোট JSON তালিকা যোগ করুন। মিলে যাওয়া পরিচয় নম্বর শুধু অনুসন্ধানের সূত্র; স্বয়ংক্রিয় অভিযোগ বা স্কোর পরিবর্তন হয় না। ফাইল এখানেই থাকে। ফিডের অনুরোধে প্রকাশক শুধু তার URL পায়; ব্রাউজিং ইতিহাস পায় না।",
+    "description": "Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent."
+  },
+  "m_1m23tj5": {
+    "message": "স্থানীয় JSON তালিকার পূর্বরূপ (সর্বোচ্চ 800 KB / 500 রেকর্ড)",
+    "description": "Preview a local JSON list (up to 800 KB / 500 records)"
+  },
+  "m_17k3x2m": {
+    "message": "উন্মুক্ত HTTPS ফিডের URL",
+    "description": "Public HTTPS feed URL"
+  },
+  "m_ntfvum": {
+    "message": "https://publisher.example.com/products.json",
+    "description": "https://publisher.example.com/products.json"
+  },
+  "m_q10f2r": {
+    "message": "পূর্বরূপ আনুন",
+    "description": "FETCH PREVIEW"
+  },
+  "m_1fko2hr": {
+    "message": "আনা বাতিল করুন",
+    "description": "CANCEL FETCH"
+  },
+  "m_1pufoy0": {
+    "message": "এই ফিড সাবস্ক্রিপশন হিসেবে রাখুন",
+    "description": "Save this feed as a subscription"
+  },
+  "m_37tact": {
+    "message": "বিশ্বস্ত স্বাক্ষরিত সাবস্ক্রিপশন প্রতি সপ্তাহে পটভূমিতে যাচাই করুন",
+    "description": "Check signed, trusted subscriptions weekly in the background"
+  },
+  "m_1a08h1b": {
+    "message": "শুরুতে বন্ধ। আগে থেকে পিন করা প্রকাশকের চাবি ও অনুমোদিত সাইট অ্যাক্সেস থাকা স্বাক্ষরিত ফিডই স্বয়ংক্রিয়ভাবে হালনাগাদ হয়। অজানা প্রকাশককে স্বয়ংক্রিয় অনুরোধ যায় না।",
+    "description": "Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers."
+  },
+  "m_1ol6f7o": {
+    "message": "সংরক্ষিত ফিডে সাপ্তাহিক হালনাগাদের সময় দেখায়। স্বাক্ষরবিহীন ফিডে ম্যানুয়াল পর্যালোচনা লাগে; স্বাক্ষরিত সাবস্ক্রিপশন আপনার সম্মতির পরই হালনাগাদ হয়। মেয়াদোত্তীর্ণ তালিকা আর মেলানো হয় না।",
+    "description": "Saved feeds show when a weekly refresh is due. Unsigned feeds require manual review; signed subscriptions update only after you opt in. Expired lists stop matching."
+  },
+  "m_hs6fa3": {
+    "message": "পর্যালোচিত তালিকা যোগ করুন",
+    "description": "ADD REVIEWED LIST"
+  },
+  "m_1n519qu": {
+    "message": "নিজস্ব তালিকা ও প্রকাশকের চাবি মুছুন",
+    "description": "DELETE USER LISTS & PUBLISHER KEYS"
+  },
+  "m_1ni7fa2": {
+    "message": "প্রকাশকের স্বাক্ষরের চাবি বিশ্বাস করুন",
+    "description": "Trust a publisher signing key"
+  },
+  "m_cc9a31": {
+    "message": "শুধু বিশ্বস্ত প্রকাশকের কাছ থেকে স্বাধীনভাবে পাওয়া চাবি পিন করুন। চাবি বদলানো আপনার নিজস্ব বিশ্বাসের সিদ্ধান্ত। স্বাক্ষর শুধু নিশ্চিত করে ওই চাবি তথ্যটিতে স্বাক্ষর করেছে, পণ্যের দাবির সত্যতা নয়। স্বাক্ষরবিহীন তালিকা অযাচাইকৃত সূত্রই থাকে।",
+    "description": "Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads."
+  },
+  "m_y1yl": {
+    "message": "প্রকাশকের চাবির JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)",
+    "description": "Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)"
+  },
+  "m_1o3yzhm": {
+    "message": "চাবি পর্যালোচনা করুন",
+    "description": "REVIEW KEY"
+  },
+  "m_1xd1cw9": {
+    "message": "পর্যালোচিত চাবি বিশ্বাস করুন",
+    "description": "TRUST REVIEWED KEY"
+  },
+  "m_muq699": {
+    "message": "নিজস্ব API চাবি দিয়ে ঐচ্ছিক সরাসরি সরবরাহকারী অনুসন্ধান",
+    "description": "Optional live supplier search with your own API key"
+  },
+  "m_1j5njnl": {
+    "message": "DropShredder-এর জন্য অ্যাকাউন্ট লাগে না। আগে থেকে Brave Search API চাবি থাকলে একটি ম্যানুয়াল ওয়েব অনুসন্ধান করতে পারেন। Brave এখন পরিকল্পনা সক্রিয় করা ও পেমেন্ট তথ্য চায় এবং বরাদ্দের বেশি ব্যবহার করলে চার্জ হতে পারে; বর্তমান শর্ত দেখুন। চাবি শুধু এই অনুরোধের সময় প্যানেলের মেমোরিতে থাকে; সংরক্ষণ, লগ বা রপ্তানি হয় না এবং Brave-এর সরকারি HTTPS API ছাড়া কোথাও যায় না। ফল অনুসন্ধানের সূত্র, বিক্রেতার বিরুদ্ধে অভিযোগ নয়।",
+    "description": "No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations."
+  },
+  "m_1gxfmb7": {
+    "message": "Brave Search API চাবি (সংরক্ষিত হয় না)",
+    "description": "Brave Search API key (not stored)"
+  },
+  "m_1ou34t": {
+    "message": "সরবরাহকারী বা পণ্য খোঁজার বাক্য",
+    "description": "Your supplier or product search phrase"
+  },
+  "m_1u3uljx": {
+    "message": "ব্র্যান্ড মডেল বা উদ্ধৃত পণ্যের নাম",
+    "description": "Brand model or quoted product title"
+  },
+  "m_9vh2l2": {
+    "message": "আমার চাবি দিয়ে খুঁজুন",
+    "description": "SEARCH USING MY KEY"
+  },
+  "m_n0uwgr": {
+    "message": "বাতিল",
+    "description": "CANCEL"
+  },
+  "m_19iouhv": {
+    "message": "আইনি সত্তার পরিচয় নম্বর যাচাই করুন",
+    "description": "Check a legal entity identifier"
+  },
+  "m_zahq7i": {
+    "message": "ঐচ্ছিক বিনামূল্যের GLEIF অনুসন্ধান, চাবি বা অ্যাকাউন্ট লাগে না। Chrome-এর অনুমতির পর শুধু আপনার দেওয়া LEI পাঠায়। সত্তার রেকর্ড পণ্যের মান, নিরাপত্তা বা দোকানের মালিকানা প্রমাণ করে না।",
+    "description": "Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store."
+  },
+  "m_17idllr": {
+    "message": "সত্তার নিজস্ব রেকর্ডের ২০ অক্ষরের LEI",
+    "description": "20-character LEI from the entity’s own records"
+  },
+  "m_y038ob": {
+    "message": "এই LEI খুঁজুন",
+    "description": "LOOK UP THIS LEI"
+  },
+  "m_1470vqp": {
+    "message": "প্রদর্শন নিজের মতো সাজান",
+    "description": "Customize your display"
+  },
+  "m_ltytua": {
+    "message": "থিম",
+    "description": "Theme"
+  },
+  "m_j8m6w5": {
+    "message": "গাঢ়",
+    "description": "Dark"
+  },
+  "m_12iob7z": {
+    "message": "হালকা",
+    "description": "Light"
+  },
+  "m_1gxthe9": {
+    "message": "সিস্টেম অনুযায়ী",
+    "description": "Follow system"
+  },
+  "m_11l55em": {
+    "message": "ব্যবধান",
+    "description": "Spacing"
+  },
+  "m_arcia7": {
+    "message": "আরামদায়ক",
+    "description": "Comfortable"
+  },
+  "m_1f846fa": {
+    "message": "ঘন",
+    "description": "Compact"
+  },
+  "m_c7nuir": {
+    "message": "লেখার আকার",
+    "description": "Text size"
+  },
+  "m_vuco": {
+    "message": "সাধারণ",
+    "description": "Standard"
+  },
+  "m_rytaky": {
+    "message": "বড়",
+    "description": "Larger"
+  },
+  "m_mb8wcj": {
+    "message": "সবচেয়ে বড়",
+    "description": "Largest"
+  },
+  "m_1jaohwy": {
+    "message": "প্রদর্শন পুনঃস্থাপন করুন",
+    "description": "RESET APPEARANCE"
+  },
+  "m_wtcnfc": {
+    "message": "DropShredder কীভাবে পণ্য যাচাই করে",
+    "description": "How DropShredder checks products"
+  },
+  "m_11vohzj": {
+    "message": "অন্যত্র একই পণ্য খুঁজুন",
+    "description": "Look for the same product elsewhere"
+  },
+  "m_7zynn1": {
+    "message": "DropShredder অন্য দোকান বা বাজারে একই পণ্য দেখেছে কি না স্বয়ংক্রিয়ভাবে যাচাই করুন।",
+    "description": "Automatically check whether DropShredder has seen matching products on other stores or marketplaces."
+  },
+  "m_10t4jnc": {
+    "message": "যুক্তরাষ্ট্রে তৈরি পণ্য পছন্দ করুন",
+    "description": "Prefer Made in USA"
+  },
+  "m_15tsb6": {
+    "message": "উৎসের তথ্য এই পছন্দের সঙ্গে না মিললে জানান। শুধু দেশ কোনো পণ্যকে সন্দেহজনক করে না।",
+    "description": "Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious."
+  },
+  "m_16l6r9r": {
+    "message": "ভঙ্গি",
+    "description": "Attitude"
+  },
+  "m_1jiouy": {
+    "message": "DropShredder কতটা কড়াভাবে বলবে বাছুন। প্রমাণের মানদণ্ড কখনও বদলায় না।",
+    "description": "Choose how hard DropShredder talks. What counts as evidence never changes."
+  },
+  "m_5om5q5": {
+    "message": "ভাষার ভঙ্গি",
+    "description": "Language tone"
+  },
+  "m_1wvex2a": {
+    "message": "পেশাদার",
+    "description": "Professional"
+  },
+  "m_13qqf6x": {
+    "message": "কড়া",
+    "description": "Aggressive"
+  },
+  "m_196kse9": {
+    "message": "অত্যন্ত কড়া",
+    "description": "Nuclear"
+  },
+  "m_8vzqmb": {
+    "message": "সম্পূর্ণ যাচাইয়ের তথ্য দেখুন",
+    "description": "See the full scan details"
+  },
+  "m_mksmeg": {
+    "message": "গোপনীয়তা ও সংরক্ষিত যাচাইয়ের ইতিহাস",
+    "description": "Your privacy & saved scan history"
+  },
+  "m_tvlulz": {
+    "message": "যাচাইয়ের ইতিহাস এই ডিভাইসে থাকে। DropShredder শুধু একই পণ্য ও দোকানের ধরন শনাক্ত করার প্রয়োজনীয় তথ্য রাখে এবং পুরোনো ইতিহাস স্বয়ংক্রিয়ভাবে সরায়।",
+    "description": "Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history."
+  },
+  "m_o4p5o7": {
+    "message": "বর্তমান যাচাই রপ্তানি করুন",
+    "description": "EXPORT CURRENT SCAN"
+  },
+  "m_vncaug": {
+    "message": "সীমিত প্রমাণের সারাংশ রপ্তানি করে। URL-এর প্রশ্ন ও অংশ, মূল পর্যালোচনা, ছবি, বিক্রেতার মূল যোগাযোগের তথ্য ও সম্পূর্ণ পৃষ্ঠার লেখা বাদ থাকে। ভাগ করার আগে ফাইল দেখুন।",
+    "description": "Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it."
+  },
+  "m_152gx2t": {
+    "message": "আমার যাচাইয়ের ইতিহাস মুছুন",
+    "description": "DELETE MY SCAN HISTORY"
+  },
+  "m_tpyna0": {
+    "message": "অতিরিক্ত সাইট অ্যাক্সেস সরান",
+    "description": "REMOVE EXTRA SITE ACCESS"
+  },
+  "m_1q47tiz": {
+    "message": "DropShredder অনুসন্ধান",
+    "description": "DropShredder searches"
+  },
+  "m_1lp99za": {
+    "message": "আপনার বেছে নেওয়া অনুসন্ধান প্রস্তুত হচ্ছে…",
+    "description": "Preparing your selected research…"
+  },
+  "m_ahoh6q": {
+    "message": "ডোমেইন অনুসন্ধান বাতিল হয়েছে।",
+    "description": "Domain lookup canceled."
+  },
+  "m_3syb2g": {
+    "message": "পৃষ্ঠা বদলেছে। পণ্য আবার যাচাই করুন।",
+    "description": "The page changed. Check this product again."
+  },
+  "m_4l5lcp": {
+    "message": "সাইট অ্যাক্সেস বদলেছে। পণ্য আবার যাচাই করুন।",
+    "description": "Site access changed. Check this product again."
+  },
+  "m_1jeob1z": {
+    "message": "স্বয়ংক্রিয় সতর্কতায় Chrome-এর অনুমতি লাগে। অনুমতি দিতে চালু করুন।",
+    "description": "Automatic alerts need Chrome site permission. Switch on to allow it."
+  },
+  "m_ks3g9n": {
+    "message": "স্বয়ংক্রিয় সতর্কতার জন্য Chrome-এর অনুমতি চাওয়া হচ্ছে…",
+    "description": "Asking Chrome to allow automatic product alerts…"
+  },
+  "m_nzo33j": {
+    "message": "স্বয়ংক্রিয় সতর্কতা বন্ধ হচ্ছে…",
+    "description": "Turning off automatic alerts…"
+  },
+  "m_1lqqqzl": {
+    "message": "Chrome-এর অনুমতি মেলেনি। ম্যানুয়াল যাচাই এখনও করা যায়।",
+    "description": "Chrome permission was not granted. Manual checks still work."
+  },
+  "m_447iiq": {
+    "message": "সমর্থিত কেনাকাটার পৃষ্ঠায় স্বয়ংক্রিয় সতর্কতা চালু। অন্য পৃষ্ঠায় সতর্কতা নেই।",
+    "description": "Automatic alerts are on for supported shopping pages. Other pages stay quiet."
+  },
+  "m_1iijkzr": {
+    "message": "স্বয়ংক্রিয় সতর্কতা বন্ধ। অতিরিক্ত বিস্তৃত সাইট অ্যাক্সেস সরানো হয়েছে।",
+    "description": "Automatic alerts are off. Extra broad site access removed."
+  },
+  "m_1hlqcms": {
+    "message": "স্বয়ংক্রিয় সতর্কতা হালনাগাদ করা যায়নি।",
+    "description": "Could not update automatic alerts."
+  },
+  "m_yy0bq1": {
+    "message": "উৎস অনুসন্ধানের সেটিং রাখা যায়নি।",
+    "description": "Could not save source-hunt setting."
+  },
+  "m_s43reb": {
+    "message": "উৎসের পছন্দ রাখা যায়নি।",
+    "description": "Could not save origin preference."
+  },
+  "m_lw7ro1": {
+    "message": "ভঙ্গির পছন্দ রাখা যায়নি।",
+    "description": "Could not save tone preference."
+  },
+  "m_181mp38": {
+    "message": "তালিকার কোন বিষয় আরও দেখা দরকার তা যাচাই হচ্ছে…",
+    "description": "Checking the listing for things worth a second look…"
+  },
+  "m_jrtjds": {
+    "message": "পণ্যের পৃষ্ঠা খুলে আবার চেষ্টা করুন।",
+    "description": "Open the product page you want to check, then try again."
+  },
+  "m_vcmc3b": {
+    "message": "এই সাইটের জন্য Chrome-এর অনুমতি লাগে। এক্সটেনশনের নিয়ন্ত্রণে DropShredder-কে অনুমতি দিয়ে আবার পণ্য যাচাই করুন।",
+    "description": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again."
+  },
+  "m_tfloyf": {
+    "message": "DropShredder এই ধরনের পৃষ্ঠা যাচাই করে না।",
+    "description": "DropShredder won’t scan this kind of page."
+  },
+  "m_tk6fct": {
+    "message": "এটি লগইন বা পেমেন্ট পৃষ্ঠা মনে হচ্ছে, তাই DropShredder যাচাই করবে না।",
+    "description": "This looks like a sign-in or payment page, so DropShredder is staying out of it."
+  },
+  "m_cnz7p4": {
+    "message": "পৃষ্ঠা যাচাইয়ের ফল দেয়নি।",
+    "description": "The page did not return a scan result."
+  },
+  "m_izff0z": {
+    "message": "যাচাইয়ের সময় পৃষ্ঠা বদলেছে। পণ্যের পৃষ্ঠা প্রস্তুত হলে আবার যাচাই করুন।",
+    "description": "The page changed while DropShredder was checking it. Try the scan again on the finished product page."
+  },
+  "m_xl7g11": {
+    "message": "যাচাইয়ের সময় পৃষ্ঠা বদলেছে। আবার চেষ্টা করুন।",
+    "description": "The page changed while DropShredder was checking it. Try again."
+  },
+  "m_f3orb7": {
+    "message": "DROPSHREDDER • এখনও সিদ্ধান্ত নেই",
+    "description": "DROPSHREDDER • NO VERDICT"
+  },
+  "m_7nc3gp": {
+    "message": "DROP SHREDDER",
+    "description": "DROP SHREDDER"
+  },
+  "m_a3z3xl": {
+    "message": "DropShredder সতর্কতা বন্ধ করুন",
+    "description": "Dismiss DropShredder warning"
+  },
+  "m_16fc5or": {
+    "message": "ব্যাপক পুনর্বিক্রয়ের সম্ভাবনা: অজানা",
+    "description": "Mass-resell likelihood: UNKNOWN"
+  },
+  "m_1v9rhql": {
+    "message": "স্বাধীন প্রমাণের শর্ত পূরণ হয়েছে।",
+    "description": "Independent evidence gate satisfied."
+  },
+  "m_1i9447f": {
+    "message": "প্রমাণের শর্ত পূরণ হয়নি; এটি গুরুতর অভিযোগ নয়।",
+    "description": "Evidence gate not satisfied; this is not a severe accusation."
+  },
+  "m_sl3mdl": {
+    "message": "পণ্যের পৃষ্ঠা বদলেছে। আবার পণ্য যাচাই করুন।",
+    "description": "The product page changed. Click CHECK THIS PRODUCT to try again."
+  },
+  "m_16dib4x": {
+    "message": "এই পণ্যের ছবি অন্যত্র আছে কি না দেখা হচ্ছে…",
+    "description": "Checking whether this product image shows up elsewhere…"
+  },
+  "m_1vmh6tj": {
+    "message": "ছবির অনুসন্ধান খুলেছে। আর কে এই ছবি ব্যবহার করে দেখুন।",
+    "description": "Image search opened. See who else is using this picture."
+  },
+  "m_16a6z13": {
+    "message": "ওয়েবসাইট কত পুরোনো তা দেখা হচ্ছে…",
+    "description": "Checking how long this website has been around…"
+  },
+  "m_mzbzeb": {
+    "message": "এখন সাইটের বয়স নিশ্চিত করা যায়নি।",
+    "description": "Couldn’t confirm this website’s age right now."
+  },
+  "m_fl321w": {
+    "message": "ডোমেইনের নিবন্ধনের তথ্য মিলেছে। এটি ব্যবসার বয়স নির্ধারণ করে না।",
+    "description": "Domain registration information retrieved. It does not establish the business’s age."
+  },
+  "m_vek09w": {
+    "message": "ক্রেতার পর্যালোচনার অনুসন্ধান খুলেছে। ভরসা করার আগে অভিযোগ তুলনা করুন।",
+    "description": "Buyer-review searches opened. Compare the complaints before you trust the store."
+  },
+  "m_3tggsf": {
+    "message": "ফেরতের নীতিতে খরচ ও কঠিন শর্ত দেখা হচ্ছে…",
+    "description": "Reading the return policy for expensive catches and hoops…"
+  },
+  "m_1i9vxbn": {
+    "message": "স্পষ্ট ফেরত বা টাকা ফেরতের নীতি পাওয়া যায়নি।",
+    "description": "Couldn’t find a clear return or refund policy on this store."
+  },
+  "m_159127j": {
+    "message": "মূল্যায়নের মতো স্পষ্ট করে ফেরতের নীতি পড়া যায়নি।",
+    "description": "The return policy couldn’t be read clearly enough to judge."
+  },
+  "m_1prohyv": {
+    "message": "ফেরতের নীতিতে স্পষ্ট ফাঁদ দেখা যায়নি।",
+    "description": "No obvious return-policy traps stood out."
+  },
+  "m_19txq4b": {
+    "message": "অর্ডার আসলে কোথা থেকে পাঠানো হয় তা দেখা হচ্ছে…",
+    "description": "Checking where the order actually appears to ship from…"
+  },
+  "m_jlgbqw": {
+    "message": "এই পৃষ্ঠায় বোঝার মতো যথেষ্ট শিপিং তথ্য নেই।",
+    "description": "Couldn’t find enough shipping information on this page to tell."
+  },
+  "m_vgippz": {
+    "message": "পৃষ্ঠা স্পষ্ট করে পাঠানোর স্থান জানায় না।",
+    "description": "The page doesn’t clearly say where the order ships from."
+  },
+  "m_s5usub": {
+    "message": "পাঠানোর উৎস বিক্রেতার দাবির সঙ্গে মেলে না। প্রমাণ দেখুন।",
+    "description": "Where the order ships from doesn’t match the seller’s claim. Check the receipts."
+  },
+  "m_q7pqev": {
+    "message": "পাঠানোর উৎস বিক্রেতার দাবির বিরোধী নয়।",
+    "description": "The shipping origin doesn’t contradict what the seller says."
+  },
+  "m_see8qp": {
+    "message": "সংরক্ষিত DropShredder যাচাইয়ের ইতিহাস মুছে গেছে।",
+    "description": "Your saved DropShredder scan history is deleted."
+  },
+  "m_hds76z": {
+    "message": "Chrome একটি সাইটের অনুমতি রেখেছে; এক্সটেনশনের সাইট অ্যাক্সেস দেখুন।",
+    "description": "Chrome kept a site permission; check extension site access."
+  },
+  "m_1sjsuxw": {
+    "message": "অতিরিক্ত সাইট অ্যাক্সেস সরানো হয়েছে।",
+    "description": "Extra site access removed."
+  },
+  "m_fcvv8f": {
+    "message": "সরানোর মতো অতিরিক্ত সাইট অ্যাক্সেস ছিল না।",
+    "description": "DropShredder didn’t have any extra site access to remove."
+  },
+  "m_1vjmm3n": {
+    "message": "DropShredder-এর সম্পূর্ণ পণ্য বিশ্লেষণ খুলুন",
+    "description": "Open DropShredder full product analysis"
+  },
+  "m_1vrhsbs": {
+    "message": "DROPSHREDDER • দ্রুত যাচাই",
+    "description": "DROPSHREDDER • QUICK CHECK"
+  },
+  "m_1e6wthl": {
+    "message": "কয়েকটি বিষয় যাচাই করা দরকার",
+    "description": "Several things to check"
+  },
+  "m_1fyj2th": {
+    "message": "একটি বিষয় যাচাই করা দরকার",
+    "description": "Something worth checking"
+  },
+  "m_4ommz5": {
+    "message": "এখনও যথেষ্ট প্রমাণ নেই",
+    "description": "Not enough evidence yet"
+  },
+  "m_ih25l1": {
+    "message": "দ্রুত যাচাইয়ে স্কোরের সংকেত মেলেনি। বিক্রেতার বিশ্বাসযোগ্যতা এখনও অজানা।",
+    "description": "This quick check found no scored signals. Seller trust is still unknown."
+  },
+  "m_10duoh3": {
+    "message": "উল্লিখিত মূল্য: ",
+    "description": "Listed price: "
+  },
+  "m_13089c7": {
+    "message": "উল্লিখিত বিক্রেতা: ",
+    "description": "Seller listed as: "
+  },
+  "m_1nilydh": {
+    "message": "বিক্রেতার বিশ্বাসযোগ্যতা: অযাচাইকৃত",
+    "description": "Seller trust: NOT VERIFIED"
+  },
+  "m_44zzng": {
+    "message": "সম্পূর্ণ যাচাই খুলুন →",
+    "description": "Open full check →"
+  },
+  "m_h4xaam": {
+    "message": "সম্পূর্ণ যাচাই খুলছে…",
+    "description": "Opening full check…"
+  },
+  "m_z571pb": {
+    "message": "প্যানেল খোলা যায়নি। DropShredder-এর টুলবার আইকন ব্যবহার করুন।",
+    "description": "Could not open panel. Use the DropShredder toolbar icon."
+  },
+  "m_9cz0wm": {
+    "message": "DropShredder দ্রুত যাচাই বন্ধ করুন",
+    "description": "Dismiss DropShredder quick check"
+  },
+  "m_xmwzf0": {
+    "message": "পণ্যের তালিকা",
+    "description": "Product listing"
+  },
+  "m_84sfyf": {
+    "message": "এই পণ্য অনুসন্ধান করুন",
+    "description": "Hunt this product"
+  },
+  "m_1gesjvp": {
+    "message": "এই ছবি অনুসন্ধান করুন",
+    "description": "Hunt this image"
+  },
+  "m_1kcxou1": {
+    "message": "এই দোকান অনুসন্ধান করুন",
+    "description": "Hunt this store"
+  },
+  "m_61pi2o": {
+    "message": "স্থানীয় তালিকা হালনাগাদ ব্যর্থ।",
+    "description": "Local list update failed."
+  },
+  "m_1vu1nys": {
+    "message": "এই অনুসন্ধান বাছাইয়ের মেয়াদ শেষ। নতুন অনুসন্ধান শুরু করুন।",
+    "description": "This search selection expired. Start another hunt."
+  },
+  "m_17fd97q": {
+    "message": "মেয়াদোত্তীর্ণ — চালু করা যায় না",
+    "description": "EXPIRED — cannot activate"
+  },
+  "m_11c22st": {
+    "message": "স্বাক্ষরবিহীন — তথ্য ও প্রকাশকের পরিচয় অযাচাইকৃত",
+    "description": "UNSIGNED — facts and publisher identity unverified"
+  },
+  "m_1njq2ce": {
+    "message": "পূর্বরূপে প্রথম ২০ রেকর্ড দেখায়। যোগ করার আগে পুরো JSON দেখুন।",
+    "description": "Preview shows the first 20 records. Review the full JSON before adding this list."
+  },
+  "m_1tncca7": {
+    "message": "পূর্বরূপ প্রস্তুত। তালিকা স্থানীয় থাকে ও সতর্কতার শর্ত বদলায় না।",
+    "description": "Preview ready. Adding a list keeps it local and does not change warning thresholds."
+  },
+  "m_ir787x": {
+    "message": "সাপ্তাহিক স্বাক্ষরিত ফিড যাচাই চালু। শুধু আগে অনুমোদিত, স্বাক্ষরিত ও পিন করা চাবির সাবস্ক্রিপশন; নতুন অনুমতি চাওয়া হবে না।",
+    "description": "Weekly signed-feed checks enabled. Only previously authorized, signed, pinned-key subscriptions are eligible; no new permission prompts."
+  },
+  "m_1cik44t": {
+    "message": "স্বয়ংক্রিয় ফিড যাচাই বন্ধ; সংরক্ষিত তালিকা অপরিবর্তিত।",
+    "description": "Automatic feed checks disabled; saved lists are unchanged."
+  },
+  "m_1sn6fve": {
+    "message": "মেয়াদ শেষ; মিল খোঁজা বন্ধ",
+    "description": "expired; matching disabled"
+  },
+  "m_h4yktt": {
+    "message": "শুধু তথ্যসূত্র",
+    "description": "reference leads only"
+  },
+  "m_1aydb8f": {
+    "message": " • সাপ্তাহিক হালনাগাদ বাকি",
+    "description": " • weekly refresh due"
+  },
+  "m_1dlxs0u": {
+    "message": "আগের সংস্করণ ফিরিয়ে আনুন",
+    "description": "Restore previous version"
+  },
+  "m_1k8ubhb": {
+    "message": "হালনাগাদের ফিড বাছুন",
+    "description": "Select feed for refresh"
+  },
+  "m_1162pm7": {
+    "message": "ফিড বেছে নেওয়া হয়েছে। নতুন কপির জন্য পূর্বরূপ আনুন; এখনও অনুরোধ যায়নি।",
+    "description": "Feed selected. Click Fetch preview to request a new copy; no request has been sent."
+  },
+  "m_1487ipv": {
+    "message": "নিজস্ব তালিকা নেই।",
+    "description": "No user-added lists."
+  },
+  "m_j6jpxv": {
+    "message": "800 KB-এর ছোট JSON ফাইল বাছুন।",
+    "description": "Choose a JSON file smaller than 800 KB."
+  },
+  "m_1a89qs1": {
+    "message": "সাবস্ক্রিপশন রাখার আগে ফিডের পূর্বরূপ আনুন।",
+    "description": "Fetch a feed preview before saving a subscription."
+  },
+  "m_1ckw75p": {
+    "message": "বেছে নেওয়া ফিডের অ্যাক্সেস চাওয়া হচ্ছে…",
+    "description": "Requesting access to the feed you chose…"
+  },
+  "m_9ndhxa": {
+    "message": "অ্যাক্সেস মেলেনি বা সরানো হয়েছে। কোনো তালিকা চালু হয়নি।",
+    "description": "Access was not granted or was removed. No list activated."
+  },
+  "m_b30axq": {
+    "message": "ফিড আনা বাতিল হয়েছে।",
+    "description": "Feed fetch canceled."
+  },
+  "m_ylvcom": {
+    "message": "তালিকা স্থানীয়ভাবে যোগ হয়েছে। স্বয়ংক্রিয় হালনাগাদের জন্য আলাদা সম্মতি ও স্বাধীনভাবে পিন করা চাবি লাগে; স্বাক্ষরবিহীন ফিড ম্যানুয়াল থাকে।",
+    "description": "List added locally. Automatic updates require separate opt-in and an independently pinned signing key; unsigned feeds stay manual."
+  },
+  "m_b3ooko": {
+    "message": "নিজস্ব তালিকা, আগের সংস্করণ, সাবস্ক্রিপশন ও প্রকাশকের চাবি সরানো হয়েছে।",
+    "description": "User lists, previous versions, subscriptions and publisher keys removed."
+  },
+  "m_vsozru": {
+    "message": "প্রকাশকের চাবি পিন হয়েছে। এই চাবি দিয়ে যাচাই করতে স্বাক্ষরিত ফিডের পূর্বরূপ আবার দেখুন।",
+    "description": "Publisher key pinned. Re-preview signed feeds to verify with this key."
+  },
+  "m_a4ybee": {
+    "message": "GLEIF-এ বেছে নেওয়া নির্দিষ্ট LEI খোঁজা হচ্ছে…",
+    "description": "Requesting the exact LEI you chose from GLEIF…"
+  },
+  "m_2p96yy": {
+    "message": "অ্যাক্সেস মেলেনি বা সরানো হয়েছে।",
+    "description": "Access was not granted or was removed."
+  },
+  "m_15bn3ws": {
+    "message": "দেওয়া হয়নি",
+    "description": "not supplied"
+  },
+  "m_1d9vgj8": {
+    "message": "মূল GLEIF রেকর্ড",
+    "description": "Original GLEIF record"
+  },
+  "m_egy7au": {
+    "message": "শুধু আইনি পরিচয়ের রেকর্ড। এটি সত্তাকে এই বিক্রেতা, প্রস্তুতকারক বা পণ্যের সঙ্গে যুক্ত করে না এবং নিরাপত্তা বা মান প্রমাণ করে না। GLEIF তথ্য: CC0; DropShredder-এর সম্পর্ক নেই।",
+    "description": "Legal identity record only. This does not link the entity to this seller, manufacturer or product, and does not establish safety or quality. GLEIF data: CC0; DropShredder is unaffiliated."
+  },
+  "m_kiztdr": {
+    "message": "সত্তার অনুসন্ধান বাতিল হয়েছে।",
+    "description": "Entity lookup canceled."
+  },
+  "m_z2nhdi": {
+    "message": "ডিভাইসে লেবেল পড়ুন বেছে না নেওয়া পর্যন্ত ফাইল প্রক্রিয়াকরণ হয় না।",
+    "description": "No file processed until you select READ LABEL ON DEVICE."
+  },
+  "m_1tr5y1i": {
+    "message": "আগে পণ্যের লেবেলের ছবি বাছুন।",
+    "description": "Choose a product-label image first."
+  },
+  "m_1cxwm2h": {
+    "message": "ছবি ডিভাইসে পড়া হচ্ছে। কোনো ছবি সার্ভারে যায় না।",
+    "description": "Reading image locally. No image is sent to a server."
+  },
+  "m_17auqbe": {
+    "message": "এই Chrome সংস্করণে নেই",
+    "description": "unavailable in this Chrome build"
+  },
+  "m_ybs0hj": {
+    "message": "পড়ার মতো অক্ষর মেলেনি। স্পষ্ট ছবি বা ম্যানুয়াল অনুসন্ধান চেষ্টা করুন।",
+    "description": "No readable characters were found. Try a sharper label image or search manually."
+  },
+  "m_qak25s": {
+    "message": "শনাক্ত লেখা (অযাচাইকৃত): ",
+    "description": "Recognized text (unverified): "
+  },
+  "m_1bhulbi": {
+    "message": "চেকসাম সঠিক বারকোড (স্বাধীনভাবে যাচাই করা নয়): ",
+    "description": "Checksum-valid barcode values (not independently verified): "
+  },
+  "m_se06x7": {
+    "message": "এই লেখার উৎস খুঁজুন",
+    "description": "Search sources for this text"
+  },
+  "m_1i1yy2f": {
+    "message": "স্থানীয় বিশ্লেষণ শেষ। OCR/GTIN শনাক্তকরণে ভুল হতে পারে এবং বিক্রেতার স্কোর বদলায় না।",
+    "description": "Local analysis complete. OCR/GTIN recognition may contain errors and never changes seller scores."
+  },
+  "m_19muah": {
+    "message": "স্থানীয় পাঠক নেই।",
+    "description": "Local reader unavailable."
+  },
+  "m_120gkpi": {
+    "message": "🔎 DropShredder দিয়ে যাচাই করুন",
+    "description": "🔎 Check with DropShredder"
+  },
+  "m_1wcavm4": {
+    "message": "DropShredder যাচাইয়ের জন্য এই পণ্য খুলুন",
+    "description": "Open this product listing for a DropShredder check"
+  },
+  "m_m2xy6t": {
+    "message": "এই তালিকা অযাচাইকৃত। প্রমাণভিত্তিক যাচাই করতে পণ্য খুলুন।",
+    "description": "This listing has not been verified. Open the product for an evidence-based check."
+  },
+  "m_ajjry2": {
+    "message": "অনুসন্ধান বাতিল। API চাবি রাখা হয়নি।",
+    "description": "Search canceled. The API key is not saved."
+  },
+  "m_wj0t70": {
+    "message": "একটি স্পষ্ট Brave Search প্রশ্ন পাঠানো হচ্ছে। ব্রাউজিং ইতিহাস যায় না।",
+    "description": "Requesting one explicit Brave Search query. No browser history is transmitted."
+  },
+  "m_7o5jb8": {
+    "message": "অনুমতি প্রত্যাখ্যাত বা বাতিল; অনুরোধ যায়নি।",
+    "description": "Permission denied or canceled; no request sent."
+  },
+  "m_8rp9l3": {
+    "message": "ফল নেই। নেতিবাচক সিদ্ধান্ত নেওয়া যায় না।",
+    "description": "No results. No negative inference can be made."
+  },
+  "m_1nt43sp": {
+    "message": "ওয়েব অনুসন্ধান নেই।",
+    "description": "Web search unavailable."
+  },
+  "m_194fh44": {
+    "message": "অ্যাক্সেস সরানোর সময় অনুসন্ধান বাতিল। API চাবি রাখা হয়নি।",
+    "description": "Search canceled while site access is removed. The API key is not saved."
+  },
+  "m_2yzy77": {
+    "message": "প্যানেলের চেহারা বদলেছে, রাখা যায়নি।",
+    "description": "Appearance changed for this panel; saving it was unavailable."
+  },
+  "m_jego5b": {
+    "message": "সংরক্ষিত প্রদর্শন নেই। সাধারণ প্রদর্শন ব্যবহার করা যায়।",
+    "description": "Saved appearance is unavailable. Default display is still usable."
+  },
+  "m_goz0xo": {
+    "message": " — ফিল্টারে সিদ্ধান্ত বদলায় না",
+    "description": " — filters do not change the verdict"
+  },
+  "m_10zaq0w": {
+    "message": "ফল সম্ভাব্য বিজ্ঞপ্তি; সরকারি বিজ্ঞপ্তিতে মডেল, সিরিয়াল ও সংশ্লিষ্ট ইউনিট মিলিয়ে দেখুন।",
+    "description": "Results are candidate notices; confirm exact model, serial and unit scope in the official notice."
+  },
+  "m_6x5dun": {
+    "message": "পৃষ্ঠা বদলেছে। রপ্তানির আগে পণ্য আবার যাচাই করুন।",
+    "description": "The page changed. Check this product again before exporting."
+  },
+  "m_1mgubrw": {
+    "message": "বর্তমান যাচাই রপ্তানি প্রস্তুত। মূল পর্যালোচনা, ছবি, যোগাযোগের তথ্য ও পুরো লেখা বাদ।",
+    "description": "Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded."
+  },
+  "m_1ihj8nx": {
+    "message": "প্রত্যাহারের অনুসন্ধান বাতিল।",
+    "description": "Recall lookup canceled."
+  },
+  "m_1iwy4vi": {
+    "message": "সরকারি CPSC প্রত্যাহার সেবায় আপনার প্রশ্ন খোঁজা হচ্ছে…",
+    "description": "Checking the query you chose with the public CPSC recall service…"
+  },
+  "m_1nwf7sq": {
+    "message": "Chrome-এর অ্যাক্সেস মেলেনি। প্রত্যাহারের অনুরোধ যায়নি।",
+    "description": "Chrome access was not granted. No recall request was sent."
+  },
+  "m_1k9b6w6": {
+    "message": "তারিখ নেই",
+    "description": "date not supplied"
+  },
+  "m_10yqw7k": {
+    "message": "মডেল উল্লেখ আছে; ইউনিটের পরিধি অযাচাইকৃত",
+    "description": "model token mentioned; unit scope unverified"
+  },
+  "m_1qm7t4h": {
+    "message": "অনুসন্ধানের সম্ভাব্য ফল; পরিচয় অযাচাইকৃত",
+    "description": "retrieval candidate; product identity unverified"
+  },
+  "m_1xfzhsk": {
+    "message": " — ফলের সীমা পৌঁছেছে",
+    "description": " — results capped"
+  },
+  "m_1tt1pl3": {
+    "message": "এই প্রশ্নে সম্ভাব্য বিজ্ঞপ্তি নেই। সেবা ও প্রশ্নে বিজ্ঞপ্তি বাদ যেতে পারে; এটি নিরাপত্তার ছাড়পত্র নয়।",
+    "description": "No candidates returned for this query. The service and query can miss notices; this is not a safety clearance."
+  },
+  "m_1s87f86": {
+    "message": "প্রত্যাহারের অনুসন্ধান নেই।",
+    "description": "Recall lookup unavailable."
+  },
+  "m_tuo7sd": {
+    "message": "অ্যাক্সেস সরানোর সময় প্রত্যাহারের অনুসন্ধান বাতিল।",
+    "description": "Recall lookup canceled while site access is removed."
+  },
+  "m_qzhfaz": {
+    "message": "যাচাই করা তালিকা",
+    "description": "Scanned listing"
+  },
+  "m_74hcuk": {
+    "message": "ব্যাপক পুনর্বিক্রয়ের প্রমাণের স্কোর",
+    "description": "Mass-resell evidence score"
+  },
+  "m_j5rupt": {
+    "message": "ড্রপশিপিংয়ের প্রমাণের স্কোর",
+    "description": "Dropship evidence score"
+  },
+  "m_1wfjfwj": {
+    "message": "বিভ্রান্তিকর দাবি",
+    "description": "Misleading claims"
+  },
+  "m_7f3bys": {
+    "message": "দোকানের সতর্কতার সংকেত",
+    "description": "Store warning signs"
+  },
+  "m_13cm4b4": {
+    "message": "পর্যালোচনা / বিক্রির কৌশল",
+    "description": "Review / sales tricks"
+  },
+  "m_t5i9hp": {
+    "message": "শিপিংয়ের সমস্যা",
+    "description": "Shipping headaches"
+  },
+  "m_1uks3wg": {
+    "message": "সম্ভাব্য উৎস",
+    "description": "Where it appears to come from"
+  },
+  "m_11wa5": {
+    "message": "পেমেন্ট প্রক্রিয়াকারী",
+    "description": "Who handles the payment"
+  },
+  "m_1jul7sb": {
+    "message": "স্কোর শনাক্ত প্রমাণের সারাংশ; মাপা সম্ভাবনা বা পণ্যের মানের রেটিং নয়।",
+    "description": "Scores summarize detected evidence; they are not measured probabilities or product-quality ratings."
+  },
+  "m_149g8wc": {
+    "message": "খেয়াল করুন",
+    "description": "WATCH THIS"
+  },
+  "m_1vtd8im": {
+    "message": "ছোট সংকেত",
+    "description": "SMALL FLAG"
+  },
+  "m_b8pujm": {
+    "message": "উৎস ও পদ্ধতি",
+    "description": "Source and method"
+  },
+  "m_a2rmeg": {
+    "message": "এই শনাক্তকারী উৎসের URL বা নিষ্কাশনের পদ্ধতি রাখেনি।",
+    "description": "This detector did not record a source URL or extraction method."
+  },
+  "m_1au1a8v": {
+    "message": "খোলার অনুসন্ধান বাছুন",
+    "description": "Choose searches to open"
+  },
+  "m_1qnmdp3": {
+    "message": "বাহ্যিক অনুসন্ধানে প্রশ্ন নির্বাচিত ইঞ্জিনে যায়। একসঙ্গে সর্বোচ্চ ৮টি খুলুন।",
+    "description": "External searches share the query with the selected search engine. Open up to 8 at a time."
+  },
+  "m_4xn7ie": {
+    "message": "বেছে নেওয়া অনুসন্ধান খুলুন",
+    "description": "Open selected searches"
+  },
+  "m_1fj2xc8": {
+    "message": "১ থেকে ৮টি অনুসন্ধান বাছুন।",
+    "description": "Choose between 1 and 8 searches."
+  },
+  "m_1a03ner": {
+    "message": "একটি অনুসন্ধান খোলেনি। না খোলা অনুসন্ধান এখনও আছে।",
+    "description": "A search could not open. Unopened searches remain available."
+  },
+  "m_1pa9zoy": {
+    "message": "⚠ ড্রপশিপিং / পুনর্বিক্রয়ের জোরালো প্রমাণ",
+    "description": "⚠ STRONG DROPSHIP / RESELL EVIDENCE"
+  },
+  "m_17on8ti": {
+    "message": "স্বাধীন প্রমাণের শ্রেণি গুরুতর সতর্কতার সীমা পেরিয়েছে।",
+    "description": "Independent evidence families crossed the severe-warning gate."
+  },
+  "m_qa2g1w": {
+    "message": "⚠ কিছু গরমিল মনে হচ্ছে",
+    "description": "⚠ SOMETHING SMELLS OFF"
+  },
+  "m_1ok95zu": {
+    "message": "ঝুঁকির সংকেত আছে, তবে গুরুতর অভিযোগের যথেষ্ট প্রমাণ নেই।",
+    "description": "Risk signals detected, but the evidence is not strong enough for a severe accusation."
+  },
+  "m_196lx5e": {
+    "message": "DROPSHREDDER • সংকেত মিলেছে",
+    "description": "DROPSHREDDER • SIGNALS FOUND"
+  },
+  "m_1g6z073": {
+    "message": "শুধু দুর্বল বা মাঝারি সংকেত। এটি অনুসন্ধানের পরামর্শ, সিদ্ধান্ত নয়।",
+    "description": "Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict."
+  },
+  "m_usd9bd": {
+    "message": "এখনও অর্থবহ প্রাথমিক প্রমাণ নেই। গভীর অনুসন্ধানে উৎস ও বিক্রেতার পরিচয় দেখা যায়।",
+    "description": "No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity."
+  },
+  "m_1udoc23": {
+    "message": "এই জঘন্য জিনিস ছিঁড়ে দেখুন",
+    "description": "SHRED THIS SHIT"
+  },
+  "m_1ru4mwq": {
+    "message": "এই নাও জঘন্য সত্যের প্রমাণ",
+    "description": "THE FUCKING RECEIPTS"
+  },
+  "m_bmi36g": {
+    "message": "এখনও শক্ত প্রমাণ নেই। এই দোকানকে টাকা দেওয়ার আগে আরও খুঁজুন।",
+    "description": "Nothing solid yet. Keep digging before you give this store your money."
+  },
+  "m_re2gif": {
+    "message": "DROPSHREDDER কিছু ধরেছে",
+    "description": "DROPSHREDDER CAUGHT SOMETHING"
+  },
+  "m_8eqvig": {
+    "message": "এই তালিকায় পুনর্বিক্রয় / ড্রপশিপিংয়ের গুরুতর সংকেত আছে",
+    "description": "THIS LISTING HAS SERIOUS RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_n8lez9": {
+    "message": "এই বাজে জিনিস যাচাই করুন",
+    "description": "CHECK THIS SHIT"
+  },
+  "m_jku2d7": {
+    "message": "এখনও শক্ত প্রমাণ নেই। বিক্রির কথা বিশ্বাসের আগে আরও খুঁজুন।",
+    "description": "Nothing solid yet. Dig deeper before you trust the sales pitch."
+  },
+  "m_1etuljh": {
+    "message": "DROPSHREDDER সতর্কতার সংকেত পেয়েছে",
+    "description": "DROPSHREDDER FOUND RED FLAGS"
+  },
+  "m_pdtbad": {
+    "message": "পুনর্বিক্রয় / ড্রপশিপিংয়ের জোরালো সংকেত",
+    "description": "STRONG RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_8b27l4": {
+    "message": "যা নজরে পড়েছে",
+    "description": "WHAT STOOD OUT"
+  },
+  "m_e3qmz": {
+    "message": "এখনও শক্ত প্রমাণ নেই। তালিকায় ভরসা করার আগে আরও খুঁজতে পারেন।",
+    "description": "Nothing solid yet. You can dig deeper before deciding whether the listing deserves your trust."
+  },
+  "m_er0hmn": {
+    "message": "DROPSHREDDER যাচাই করার মতো বিষয় পেয়েছে",
+    "description": "DROPSHREDDER FOUND SOMETHING WORTH CHECKING"
+  },
+  "m_1uq9kwn": {
+    "message": "পুনর্বিক্রয় / ড্রপশিপিংয়ের জোরালো সংকেত",
+    "description": "STRONG RESELL / DROPSHIP WARNING SIGNS"
+  },
+  "m_1aku595": {
+    "message": "স্থানীয়ভাবে বাণিজ্য ও পণ্যের উৎস বিশ্লেষণ।",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "m_1qj5k8r": {
+    "message": "DropShredder খুলুন",
+    "description": "Open DropShredder"
+  },
+  "m_12wv6je": {
+    "message": "ইন্টারফেসের ভাষা Chrome অনুযায়ী। প্রযুক্তিগত প্রমাণের মন্তব্য ও মূল রপ্তানিতে মূল লেখা থাকে। প্যাকেজের OCR ইংরেজি লেখা পড়ে।",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Packaged OCR reads English text."
+  },
+  "m_qhjvpw": {
+    "message": "শনাক্তকারীর মন্তব্য (মূল ভাষা)",
+    "description": "Detector notes (original language)"
+  },
+  "m_10j58ar": {
+    "message": "DropShredder $arg1$ • গোপনীয়তা বজায় রাখে • অ্যাকাউন্ট লাগে না",
+    "description": "DropShredder $1 • Private by design • No account needed",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1sscdoz": {
+    "message": "$arg1$-এর যাচাই শেষ।",
+    "description": "Scan complete for $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_zz0wd1": {
+    "message": "কেনার আগে ফেরতের নীতিতে দেখার বিষয়: $arg1$।",
+    "description": "Return-policy findings to review before buying: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1tgjts7": {
+    "message": "বাহক $arg1$ পাওয়া গেছে, তবে স্পষ্ট পাঠানোর উৎস নেই। গরমিলের স্কোর হয়নি।",
+    "description": "Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1ptgjet": {
+    "message": "নীতি আনা ব্যর্থ: HTTP $arg1$",
+    "description": "Policy fetch failed: HTTP $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1umunh4": {
+    "message": "উল্লিখিত মূল্য: $arg1$",
+    "description": "Listed price: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_673z20": {
+    "message": "উল্লিখিত বিক্রেতা: $arg1$",
+    "description": "Seller listed as: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1f7bzd7": {
+    "message": "$arg1$ • $arg2$ • সংগৃহীত $arg3$",
+    "description": "$1 • $2 • captured $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_1o1yof0": {
+    "message": "দেখানো রেটিং: $arg1$; চিহ্নিত দৃশ্যমান পর্যালোচনার পরে: $arg2$।",
+    "description": "Rating shown: $1; after flagged visible reviews: $2.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1kg4e3m": {
+    "message": "কম তারকার সাধারণ অভিযোগ: $arg1$।",
+    "description": "Common low-star complaints: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1vd7g02": {
+    "message": "পর্যালোচনা যাচাই: $arg1$/$arg2$ দৃশ্যমান পর্যালোচনায় সংকেত মেলেনি।$arg3$$arg4$",
+    "description": "Review check: $1/$2 visible reviews did not trigger our checks.$3$4",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_m1msr6": {
+    "message": "$arg1$ • পর্যবেক্ষণ $arg2$",
+    "description": "$1 • observed $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1upynrn": {
+    "message": "উৎস খুলুন: $arg1$",
+    "description": "Open source: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_2047wl": {
+    "message": "$arg1$টির মধ্যে প্রথম ৩০০টি দেখানো হচ্ছে। বাকিগুলো সম্পূর্ণ তথ্যে আছে।",
+    "description": "Showing the first 300 of $1 items. Full scan details contain the remaining items.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1b73ffu": {
+    "message": "$arg2$টির মধ্যে $arg1$টি দেখানো হয়েছে$arg3$।",
+    "description": "$1 of $2 displayed items shown$3.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_ajkrjj": {
+    "message": "বিজ্ঞপ্তি $arg1$ • $arg2$ • $arg3$",
+    "description": "Notice $1 • $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_8vwz1y": {
+    "message": "সম্ভাব্য বিজ্ঞপ্তি: $arg1$; সংগৃহীত $arg2$$arg3$। আংশিক লেখার অনুসন্ধানে অন্য ব্র্যান্ড আসতে পারে। প্রতিটি সরকারি বিজ্ঞপ্তি মিলিয়ে দেখুন; স্কোর বদলায় না।",
+    "description": "Candidate notices: $1; retrieved $2$3. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_d89ct1": {
+    "message": "$arg1$টি অনুসন্ধান খুলেছে। বাকি $arg2$টি।",
+    "description": "Opened $1 searches. $2 remaining.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_11nhyfc": {
+    "message": "সম্ভাব্য উৎস: $arg1$। পরিচয় দেওয়ার আগে মূল দেখুন; সিদ্ধান্ত বদলায়নি।",
+    "description": "Source candidates: $1. Check originals before attribution; no verdict changed.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1oyfgbf": {
+    "message": "পড়া বারকোড: $arg1$; লেখার লাইন: $arg2$। বারকোড সুবিধা: $arg3$। OCR সুবিধা: $arg4$।",
+    "description": "Barcodes read: $1; text lines: $2. Barcode support: $3. OCR support: $4.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_qlsa5y": {
+    "message": "বারকোড: $arg1$",
+    "description": "Barcode: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_19l0liv": {
+    "message": "শনাক্ত লেখা (অযাচাইকৃত): $arg1$",
+    "description": "Recognized text (unverified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1r8u2jh": {
+    "message": "চেকসাম সঠিক বারকোড (স্বাধীনভাবে যাচাই করা নয়): $arg1$",
+    "description": "Checksum-valid barcode values (not independently verified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_8dviar": {
+    "message": "পিন করা চাবি $arg1$ দিয়ে স্বাক্ষর যাচাই হয়েছে; তথ্য এখনও অযাচাইকৃত",
+    "description": "Signature checked against your pinned key $1; facts remain unverified",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1pvmmcm": {
+    "message": "$arg1$ • সংস্করণ $arg2$ • $arg3$ রেকর্ড • প্রকাশ $arg4$ • মেয়াদ শেষ $arg5$ • লাইসেন্স $arg6$ • $arg7$",
+    "description": "$1 • version $2 • $3 records • published $4 • expires $5 • license $6 • $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1y9jypi": {
+    "message": "$arg1$ • v$arg2$ • $arg3$ রেকর্ড • $arg4$$arg5$",
+    "description": "$1 • v$2 • $3 records • $4$5",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      }
+    }
+  },
+  "m_nvlwxh": {
+    "message": "$arg1$ / $arg2$ • $arg3$ • base64url চাবির SHA-256: $arg4$। স্বাধীন প্রকাশকের মাধ্যমে যাচাই করুন। পিন বা বদল আপনার সিদ্ধান্ত; অভিযোগের সত্যতা নিশ্চিত হয় না।",
+    "description": "$1 / $2 • $3 • SHA-256 of base64url key: $4. Verify this key through an independent publisher channel. Pinning or replacing it is your trust decision; it does not validate allegations.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_k3870i": {
+    "message": "$arg1$ • LEI $arg2$ • $arg3$ • সত্তা $arg4$ • নিবন্ধন $arg5$ • হালনাগাদ $arg6$ • সংগৃহীত $arg7$",
+    "description": "$1 • LEI $2 • $3 • entity $4 • registration $5 • updated $6 • retrieved $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1dbdstp": {
+    "message": "পুনর্বিক্রয়ের প্রমাণের স্কোর: $arg1$/100 • সংকেত: $arg2$ • $arg3$",
+    "description": "Mass-resell evidence score: $1/100 • Signals: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_tbzvyx": {
+    "message": "অজানা",
+    "description": "UNKNOWN"
+  },
+  "m_1mbceap": {
+    "message": "কম",
+    "description": "LOW"
+  },
+  "m_1dfjx12": {
+    "message": "মাঝারি",
+    "description": "MEDIUM"
+  },
+  "m_y6hdz1": {
+    "message": "বেশি",
+    "description": "HIGH"
+  },
+  "m_pr8pgc": {
+    "message": "সরাসরি",
+    "description": "DIRECT"
+  },
+  "m_rkyqd6": {
+    "message": "জোরালো",
+    "description": "STRONG"
+  },
+  "m_aphutn": {
+    "message": "তথ্য",
+    "description": "FYI"
+  },
+  "m_skramw": {
+    "message": "আছে",
+    "description": "available"
+  },
+  "m_13ml53d": {
+    "message": "নেই",
+    "description": "unavailable"
+  },
+  "m_tkexoc": {
+    "message": "বাতিল হয়েছে।",
+    "description": "Canceled."
+  },
+  "m_9c35st": {
+    "message": "সরান",
+    "description": "Remove"
+  },
+  "m_1l0xxoj": {
+    "message": "বন্ধ করুন",
+    "description": "Close"
+  },
+  "m_srveqq": {
+    "message": "সক্রিয় ওয়েব পৃষ্ঠা নেই।",
+    "description": "No active web page is available."
+  },
+  "m_1687ptr": {
+    "message": "সক্রিয় পৃষ্ঠার URL সমর্থিত নয়।",
+    "description": "The active page URL is not supported."
+  },
+  "m_a60if4": {
+    "message": "DropShredder শুধু সাধারণ HTTP/HTTPS বাণিজ্য পৃষ্ঠা যাচাই করে।",
+    "description": "DropShredder only scans ordinary HTTP/HTTPS commerce pages."
+  },
+  "m_1usa14u": {
+    "message": "DropShredder অ্যাকাউন্ট, ইমেইল, চেকআউট বা পেমেন্ট সেবা যাচাই করে না।",
+    "description": "DropShredder does not scan account, email, checkout or payment services."
+  },
+  "m_akhvd4": {
+    "message": "DropShredder অ্যাকাউন্ট, লগইন, পেমেন্ট, বিল, ঠিকানা বা অর্ডারের ইতিহাসের পৃষ্ঠা যাচাই করে না।",
+    "description": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages."
+  },
+  "m_mrljgd": {
+    "message": "কাজ শেষ হয়নি। তথ্য (মূল ভাষা): $arg1$",
+    "description": "Action could not complete. Details (original language): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_5mv5og": {
+    "message": "মাঝারি",
+    "description": "MODERATE"
+  },
+  "m_lzjy3u": {
+    "message": "স্বাধীন উৎস ও সরবরাহের প্রমাণ গুরুতর সতর্কতার শর্ত পূরণ করে।",
+    "description": "Independent provenance/fulfillment evidence satisfies the severe-warning gate."
+  },
+  "m_1kfh8e3": {
+    "message": "গুরুতর স্বয়ংক্রিয় অভিযোগের জন্য পণ্যের প্রমাণ এখনও যথেষ্ট স্বাধীন বা শক্ত নয়।",
+    "description": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+  },
+  "m_1t1mzwk": {
+    "message": "ঝুঁকির সংকেত আছে, তবে কোনোটিই পণ্যের উৎস বা ড্রপশিপিং প্রমাণ করে না।",
+    "description": "Risk signals exist, but none establish product provenance or dropshipping."
+  },
+  "m_12v6pfe": {
+    "message": "এখনও অভিযোগের ওজনযুক্ত প্রমাণ নেই।",
+    "description": "No accusation-weighted evidence is available yet."
+  },
+  "extension_description": {
+    "message": "স্থানীয়ভাবে বাণিজ্য ও পণ্যের উৎস বিশ্লেষণ।",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "open_extension": {
+    "message": "DropShredder খুলুন",
+    "description": "Open DropShredder"
+  },
+  "locale_code": {
+    "message": "bn",
+    "description": "Resolved packaged UI locale, including fallback; do not translate."
+  },
+  "m_c2lr2r": {
+    "message": "OCR ভাষা",
+    "description": "OCR language"
+  },
+  "m_1ihxfp0": {
+    "message": "লেবেলে মুদ্রিত ভাষা বেছে নিন। অফলাইন OCR ভুল পড়তে পারে; এটি বিক্রেতার স্কোর বদলায় না।",
+    "description": "Choose the language printed on the label. Offline OCR may misread text; it never changes seller scores."
+  },
+  "m_1spcrti": {
+    "message": "ইন্টারফেসের ভাষা Chrome অনুযায়ী চলে। প্রযুক্তিগত প্রমাণের টীকা ও মূল রপ্তানি আগের ভাষায় থাকে। অফলাইন OCR ইংরেজি এবং সাতটি ইন্টারফেস ভাষা সমর্থন করে; পড়ার আগে লেবেলের ভাষা বেছে নিন।",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Offline OCR supports English and all seven interface languages; choose the label language before reading."
+  },
+  "m_7nql6j": {
+    "message": "English",
+    "description": "English"
+  },
+  "m_ubceys": {
+    "message": "简体中文",
+    "description": "简体中文"
+  },
+  "m_p82r5w": {
+    "message": "हिन्दी",
+    "description": "हिन्दी"
+  },
+  "m_773xpa": {
+    "message": "Español",
+    "description": "Español"
+  },
+  "m_1agd4ix": {
+    "message": "العربية",
+    "description": "العربية"
+  },
+  "m_1x2mspi": {
+    "message": "Français",
+    "description": "Français"
+  },
+  "m_17megcz": {
+    "message": "বাংলা",
+    "description": "বাংলা"
+  },
+  "m_ao59nm": {
+    "message": "Português",
+    "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "50 KB-এর ছোট উৎসস্থানের JSON ফাইল বেছে নিন।",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "উৎস নথি খুলে পর্যালোচনা করুন, তারপর বর্তমান পণ্যে প্রয়োগ করুন। শুধু ফাইল বা স্বাক্ষর দিয়ে উৎসস্থান যাচাই হয় না।",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "উৎসস্থানের ফাইল অবৈধ। স্কিমা ও প্রকাশ্য উৎস URL পরীক্ষা করুন।",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "উৎসস্থানের প্রমাণ প্রয়োগের আগে বর্তমান পণ্য পরীক্ষা করুন।",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "উৎসস্থানের মূল্যায়ন প্রয়োগ হয়েছে। বিক্রেতার সতর্কতা স্কোর অপরিবর্তিত।",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "পর্যালোচনা $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "তথ্যসূত্রের মেয়াদ এখনো বৈধ",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "পুরোনো তথ্যসূত্র — উৎস আবার পরীক্ষা করুন",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "উৎসস্থানের দাবি — যাচাই করা হয়নি",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "আংশিক উৎসস্থানের প্রমাণ",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "উত্তর আমেরিকার শৃঙ্খল নথিভুক্ত",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "যুক্তরাষ্ট্র / কানাডা / মেক্সিকোর বাইরে নথিভুক্ত ধাপ",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "পরস্পরবিরোধী উৎসস্থানের প্রমাণ",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "উত্তর আমেরিকায় তৈরি, বিক্রি ও পাঠানো",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "পরিধি: যুক্তরাষ্ট্র / কানাডা / মেক্সিকো। নথিভুক্ত মানে ব্যবহারকারীর পর্যালোচিত উৎস, স্বাধীন সনদ নয়। সব ধাপের প্রমাণ থাকতে হবে; অনুপস্থিত প্রমাণ অজানা থাকে।",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "পণ্যের উৎসস্থানের ধাপ ও উৎসের দাবি",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "কাঁচামাল",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "উপাদান ও যন্ত্রাংশ",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "প্রক্রিয়াকরণ",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "চূড়ান্ত সংযোজন",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "প্যাকেজিং",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "বিক্রয়ের দায়িত্বপ্রাপ্ত বিক্রেতা",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "প্রথম বাস্তব প্রেরণ",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "বিক্রয়ের গন্তব্য",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$: $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "পরিধি: যুক্তরাষ্ট্র, কানাডা ও মেক্সিকো। উপকরণ, যন্ত্রাংশ, প্রক্রিয়াকরণ, সংযোজন, প্যাকেজিং, বিক্রেতা, প্রেরণ ও গন্তব্য আলাদাভাবে পরীক্ষা করা হয়। দোকানের দাবি ও স্থানীয় গুদাম পুরো শৃঙ্খল প্রমাণ করে না।",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "পণ্যের উৎসস্থানের প্রমাণের পূর্বরূপ (JSON, সর্বোচ্চ 50 KB)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "আমি এই নির্দিষ্ট পণ্য, বিক্রেতা ও চালানের লিঙ্ক করা নথি পর্যালোচনা করেছি।",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "পর্যালোচিত উৎসস্থানের প্রমাণ প্রয়োগ করুন",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "উৎসস্থানের প্রমাণ মুছুন",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "ফাইল মুছে ফেলা বা পৃষ্ঠা পরিবর্তন না হওয়া পর্যন্ত প্যানেলের মেমরিতে থাকে। প্রমাণ প্রয়োগ করলে শুধু এই প্রতিবেদন বদলায়। নথিভুক্ত উৎসস্থান আপনার উৎস পর্যালোচনা নির্দেশ করে; DropShredder স্বাধীনভাবে উৎসের সত্যতা, পণ্যের গুণমান বা লেবেলিংয়ের আইনি নিয়ম মানা প্রত্যয়িত করে না।",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "উত্তর আমেরিকার উৎস ও বাণিজ্য মানচিত্র",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "উৎস ও নির্মাতার অনুসন্ধান সূত্র, বিশ্বস্ত দোকানের তালিকা নয়। সঠিক পণ্য ও বিক্রেতা পরীক্ষা করুন। উৎস খুললে স্বাভাবিক ব্রাউজার অনুরোধ যায়; ডিরেক্টরি স্বয়ংক্রিয়ভাবে অনুরোধ পাঠায় না। তথ্যসূত্রের নোট মূল ভাষায় থাকে।",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "দেশের তথ্যসূত্র",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "তিনটি দেশই",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "কানাডা",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "যুক্তরাষ্ট্র",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "মেক্সিকো",
+    "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "বিক্রেতা ও প্রস্তুতকারকের সুনাম",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "ভোক্তা সংস্থা, পরিচয়, সরকারি ব্যবস্থা, বাণিজ্য, স্থায়িত্ব ও পণ্যের নথি আলাদাভাবে যাচাই করুন। অনুকূল সুনাম শুধু আপনার যাচাই করা উৎসের মধ্যে সীমিত; এটি নিশ্চয়তা বা পণ্যের উৎপত্তির সনদ নয়।",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "প্রতিষ্ঠানের ভূমিকা",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "বিক্রেতা",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "প্রস্তুতকারক",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "প্রতিষ্ঠানের সঠিক আইনি নাম",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "প্রতিষ্ঠানের ওয়েবসাইটের ডোমেন",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "নিশ্চিত করুন যে এই প্রতিষ্ঠান বর্তমান পণ্য বিক্রি বা তৈরি করে। একই ধরনের নাম, ভাগ করা হোস্টিং ও সহযোগী প্রতিষ্ঠান এই সম্পর্ক প্রমাণ করে না।",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "সুনামের প্রমাণের JSON, সর্বোচ্চ 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "আমি মূল নথি পড়েছি এবং সঠিক প্রতিষ্ঠান, বর্তমান অবস্থা, পরিধি ও এই তালিকার সঙ্গে সম্পর্ক যাচাই করেছি।",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "সুনাম মূল্যায়ন করুন",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "সুনাম মুছুন",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "সুনাম গবেষণার উৎস",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "গবেষণার বিভাগ",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "সব বিভাগ",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "আইনি পরিচয়",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "ভোক্তাদের কাছে সুনাম",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "সরকারি ব্যবস্থা ও নিষেধাজ্ঞা",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "বাণিজ্য নথি",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "সরবরাহ শৃঙ্খলের মূল্যায়ন",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "পণ্যের সনদ ও প্রত্যাহার",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "যাচাই করা উৎসে অনুকূল প্রমাণ",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "যাচাই করা উৎসে প্রতিকূল নথি",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "মিশ্র বা অমীমাংসিত সুনাম",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "সুনামের প্রমাণ অপর্যাপ্ত",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "সুনাম যাচাই করা হয়নি",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "সুনামের ফাইল অবৈধ। আকার, কাঠামো ও উৎসের পরিধি যাচাই করুন।",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "নথি খুলে সঠিক আইনি প্রতিষ্ঠান ও এই তালিকার সঙ্গে তার সম্পর্ক যাচাই করুন।",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "সুনাম মূল্যায়নের আগে বর্তমান পণ্য যাচাই করুন।",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ বর্তমান নথি • $arg2$ বাদ দেওয়া নথি • $arg3$ প্রকাশক গোষ্ঠী",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "অজানা",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "সুনাম শুধু ব্যবহারকারী যাচাই করেছেন। এটি পণ্য, বাণিজ্যিক নিয়ম মেনে চলা বা ভবিষ্যতের কাজের নিশ্চয়তা দেয় না। বিক্রেতার সতর্কতা স্কোর অপরিবর্তিত।",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "পরিবহনকারী",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "মামলা ও আদালতের কার্যক্রম",
+    "description": "Litigation and court cases"
+  }
+}

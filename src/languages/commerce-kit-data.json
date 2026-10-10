@@ -1,0 +1,2878 @@
+{
+  "locales": [
+    "zh",
+    "hi",
+    "es",
+    "ar",
+    "fr",
+    "bn",
+    "pt"
+  ],
+  "phrases": [
+    [
+      "add to cart",
+      [
+        "加入购物车",
+        "加入购物袋"
+      ],
+      [
+        "कार्ट में जोड़ें",
+        "कार्ट में डालें"
+      ],
+      [
+        "añadir al carrito",
+        "agregar al carrito",
+        "añadir a la bolsa"
+      ],
+      [
+        "أضف إلى السلة",
+        "إضافة إلى السلة",
+        "أضف إلى حقيبة التسوق",
+        "أضف إلى عربة التسوق"
+      ],
+      [
+        "ajouter au panier"
+      ],
+      [
+        "কার্টে যোগ করুন"
+      ],
+      [
+        "adicionar ao carrinho"
+      ]
+    ],
+    [
+      "buy now",
+      [
+        "立即购买",
+        "购买"
+      ],
+      [
+        "अभी खरीदें",
+        "अभी ख़रीदें",
+        "खरीदें"
+      ],
+      [
+        "comprar ahora"
+      ],
+      [
+        "اشتر الآن"
+      ],
+      [
+        "acheter maintenant"
+      ],
+      [
+        "এখন কিনুন",
+        "কিনুন"
+      ],
+      [
+        "comprar agora"
+      ]
+    ],
+    [
+      "preorder",
+      [
+        "预购"
+      ],
+      [
+        "प्रीऑर्डर"
+      ],
+      [
+        "precomprar",
+        "reservar ahora"
+      ],
+      [
+        "طلب مسبق"
+      ],
+      [
+        "précommander"
+      ],
+      [
+        "প্রি-অর্ডার"
+      ],
+      [
+        "pré-venda"
+      ]
+    ],
+    [
+      "handmade",
+      [
+        "手工制作",
+        "手工制造"
+      ],
+      [
+        "हस्तनिर्मित",
+        "हाथ से बना"
+      ],
+      [
+        "hecho a mano",
+        "artesanal"
+      ],
+      [
+        "مصنوع يدويًا",
+        "مصنوع يدويا"
+      ],
+      [
+        "fait main",
+        "fabriqué à la main"
+      ],
+      [
+        "হাতে তৈরি"
+      ],
+      [
+        "feito à mão",
+        "artesanal"
+      ]
+    ],
+    [
+      "our original design",
+      [
+        "我们原创设计",
+        "原创设计"
+      ],
+      [
+        "हमारा मूल डिज़ाइन"
+      ],
+      [
+        "nuestro diseño original"
+      ],
+      [
+        "تصميمنا الأصلي"
+      ],
+      [
+        "notre création originale",
+        "notre design original"
+      ],
+      [
+        "আমাদের নিজস্ব নকশা"
+      ],
+      [
+        "nosso design original"
+      ]
+    ],
+    [
+      "production partner",
+      [
+        "生产合作伙伴"
+      ],
+      [
+        "उत्पादन भागीदार"
+      ],
+      [
+        "socio de producción"
+      ],
+      [
+        "شريك الإنتاج"
+      ],
+      [
+        "partenaire de production"
+      ],
+      [
+        "উৎপাদন অংশীদার"
+      ],
+      [
+        "parceiro de produção"
+      ]
+    ],
+    [
+      "premium quality",
+      [
+        "优质",
+        "高品质"
+      ],
+      [
+        "उच्च गुणवत्ता"
+      ],
+      [
+        "calidad premium",
+        "alta calidad"
+      ],
+      [
+        "جودة عالية"
+      ],
+      [
+        "qualité supérieure",
+        "haute qualité"
+      ],
+      [
+        "উন্নত মানের",
+        "উচ্চ মানের"
+      ],
+      [
+        "alta qualidade",
+        "qualidade premium"
+      ]
+    ],
+    [
+      "made to last",
+      [
+        "经久耐用"
+      ],
+      [
+        "लंबे समय तक चलने वाला"
+      ],
+      [
+        "hecho para durar"
+      ],
+      [
+        "مصنوع ليدوم"
+      ],
+      [
+        "conçu pour durer"
+      ],
+      [
+        "দীর্ঘস্থায়ী"
+      ],
+      [
+        "feito para durar"
+      ]
+    ],
+    [
+      "durable",
+      [
+        "耐用"
+      ],
+      [
+        "टिकाऊ"
+      ],
+      [
+        "duradero"
+      ],
+      [
+        "متين"
+      ],
+      [
+        "durable"
+      ],
+      [
+        "টেকসই"
+      ],
+      [
+        "durável"
+      ]
+    ],
+    [
+      "poor quality",
+      [
+        "质量差",
+        "劣质"
+      ],
+      [
+        "खराब गुणवत्ता"
+      ],
+      [
+        "mala calidad"
+      ],
+      [
+        "جودة رديئة"
+      ],
+      [
+        "mauvaise qualité"
+      ],
+      [
+        "নিম্নমানের",
+        "খারাপ মানের"
+      ],
+      [
+        "má qualidade",
+        "baixa qualidade"
+      ]
+    ],
+    [
+      "cheap material",
+      [
+        "廉价材料"
+      ],
+      [
+        "घटिया सामग्री"
+      ],
+      [
+        "material barato"
+      ],
+      [
+        "مواد رخيصة"
+      ],
+      [
+        "matériau bon marché"
+      ],
+      [
+        "সস্তা উপাদান"
+      ],
+      [
+        "material barato"
+      ]
+    ],
+    [
+      "broken",
+      [
+        "坏了",
+        "破损"
+      ],
+      [
+        "टूट गया",
+        "टूटा हुआ"
+      ],
+      [
+        "roto",
+        "rota"
+      ],
+      [
+        "مكسور"
+      ],
+      [
+        "cassé",
+        "cassée"
+      ],
+      [
+        "ভেঙে গেছে"
+      ],
+      [
+        "quebrado",
+        "quebrada"
+      ]
+    ],
+    [
+      "fell apart",
+      [
+        "散架"
+      ],
+      [
+        "बिखर गया"
+      ],
+      [
+        "se deshizo"
+      ],
+      [
+        "تفكك"
+      ],
+      [
+        "tombé en morceaux"
+      ],
+      [
+        "খুলে গেছে"
+      ],
+      [
+        "se desfez"
+      ]
+    ],
+    [
+      "never arrived",
+      [
+        "从未收到",
+        "未送达"
+      ],
+      [
+        "कभी नहीं पहुँचा"
+      ],
+      [
+        "nunca llegó"
+      ],
+      [
+        "لم يصل"
+      ],
+      [
+        "jamais arrivé"
+      ],
+      [
+        "কখনও পৌঁছায়নি"
+      ],
+      [
+        "nunca chegou"
+      ]
+    ],
+    [
+      "not as described",
+      [
+        "与描述不符"
+      ],
+      [
+        "विवरण के अनुसार नहीं"
+      ],
+      [
+        "no coincide con la descripción"
+      ],
+      [
+        "غير مطابق للوصف"
+      ],
+      [
+        "non conforme à la description"
+      ],
+      [
+        "বর্ণনার সঙ্গে মেলে না"
+      ],
+      [
+        "não corresponde à descrição"
+      ]
+    ],
+    [
+      "wrong item",
+      [
+        "发错商品"
+      ],
+      [
+        "गलत सामान"
+      ],
+      [
+        "artículo equivocado"
+      ],
+      [
+        "منتج خاطئ"
+      ],
+      [
+        "mauvais article"
+      ],
+      [
+        "ভুল পণ্য"
+      ],
+      [
+        "produto errado"
+      ]
+    ],
+    [
+      "refund refused",
+      [
+        "拒绝退款"
+      ],
+      [
+        "धनवापसी अस्वीकार"
+      ],
+      [
+        "reembolso rechazado"
+      ],
+      [
+        "رفض الاسترداد"
+      ],
+      [
+        "remboursement refusé"
+      ],
+      [
+        "ফেরত প্রত্যাখ্যান"
+      ],
+      [
+        "reembolso recusado"
+      ]
+    ],
+    [
+      "no refund",
+      [
+        "不退款"
+      ],
+      [
+        "कोई धनवापसी नहीं"
+      ],
+      [
+        "sin reembolso"
+      ],
+      [
+        "لا استرداد"
+      ],
+      [
+        "aucun remboursement"
+      ],
+      [
+        "কোনও অর্থ ফেরত নেই"
+      ],
+      [
+        "sem reembolso"
+      ]
+    ],
+    [
+      "customer service",
+      [
+        "客户服务"
+      ],
+      [
+        "ग्राहक सेवा"
+      ],
+      [
+        "servicio al cliente"
+      ],
+      [
+        "خدمة العملاء"
+      ],
+      [
+        "service client"
+      ],
+      [
+        "গ্রাহক সেবা"
+      ],
+      [
+        "atendimento ao cliente"
+      ]
+    ],
+    [
+      "shipping delay",
+      [
+        "发货延误"
+      ],
+      [
+        "शिपिंग में देरी"
+      ],
+      [
+        "retraso del envío"
+      ],
+      [
+        "تأخر الشحن"
+      ],
+      [
+        "retard de livraison"
+      ],
+      [
+        "সরবরাহে দেরি"
+      ],
+      [
+        "atraso na entrega"
+      ]
+    ],
+    [
+      "overheating",
+      [
+        "过热"
+      ],
+      [
+        "अत्यधिक गर्म"
+      ],
+      [
+        "sobrecalentamiento"
+      ],
+      [
+        "ارتفاع الحرارة"
+      ],
+      [
+        "surchauffe"
+      ],
+      [
+        "অতিরিক্ত গরম"
+      ],
+      [
+        "superaquecimento"
+      ]
+    ],
+    [
+      "missing parts",
+      [
+        "缺少零件"
+      ],
+      [
+        "पुर्जे गायब"
+      ],
+      [
+        "faltan piezas"
+      ],
+      [
+        "أجزاء مفقودة"
+      ],
+      [
+        "pièces manquantes"
+      ],
+      [
+        "যন্ত্রাংশ নেই"
+      ],
+      [
+        "peças faltando"
+      ]
+    ],
+    [
+      "free product",
+      [
+        "免费产品"
+      ],
+      [
+        "मुफ़्त उत्पाद",
+        "मुफ्त उत्पाद"
+      ],
+      [
+        "producto gratis"
+      ],
+      [
+        "منتج مجاني"
+      ],
+      [
+        "produit gratuit"
+      ],
+      [
+        "বিনামূল্যে পণ্য"
+      ],
+      [
+        "produto grátis"
+      ]
+    ],
+    [
+      "in exchange for review",
+      [
+        "换取评价"
+      ],
+      [
+        "समीक्षा के बदले"
+      ],
+      [
+        "a cambio de una reseña"
+      ],
+      [
+        "مقابل تقييم"
+      ],
+      [
+        "en échange d'un avis"
+      ],
+      [
+        "রিভিউয়ের বিনিময়ে"
+      ],
+      [
+        "em troca de uma avaliação"
+      ]
+    ],
+    [
+      "excellent",
+      [
+        "非常好",
+        "优秀"
+      ],
+      [
+        "उत्कृष्ट"
+      ],
+      [
+        "excelente"
+      ],
+      [
+        "ممتاز"
+      ],
+      [
+        "excellent"
+      ],
+      [
+        "চমৎকার"
+      ],
+      [
+        "excelente"
+      ]
+    ],
+    [
+      "perfect",
+      [
+        "完美"
+      ],
+      [
+        "बिल्कुल सही"
+      ],
+      [
+        "perfecto",
+        "perfecta"
+      ],
+      [
+        "مثالي"
+      ],
+      [
+        "parfait",
+        "parfaite"
+      ],
+      [
+        "নিখুঁত"
+      ],
+      [
+        "perfeito",
+        "perfeita"
+      ]
+    ],
+    [
+      "terrible",
+      [
+        "糟糕"
+      ],
+      [
+        "बहुत खराब"
+      ],
+      [
+        "terrible"
+      ],
+      [
+        "سيئ للغاية"
+      ],
+      [
+        "horrible"
+      ],
+      [
+        "ভয়ানক"
+      ],
+      [
+        "terrível"
+      ]
+    ],
+    [
+      "useless",
+      [
+        "没用"
+      ],
+      [
+        "बेकार"
+      ],
+      [
+        "inútil"
+      ],
+      [
+        "عديم الفائدة"
+      ],
+      [
+        "inutile"
+      ],
+      [
+        "অকেজো"
+      ],
+      [
+        "inútil"
+      ]
+    ],
+    [
+      "international return",
+      [
+        "国际退货"
+      ],
+      [
+        "अंतरराष्ट्रीय वापसी"
+      ],
+      [
+        "devolución internacional"
+      ],
+      [
+        "إرجاع دولي"
+      ],
+      [
+        "retour international"
+      ],
+      [
+        "আন্তর্জাতিক ফেরত"
+      ],
+      [
+        "devolução internacional"
+      ]
+    ],
+    [
+      "return address",
+      [
+        "退货地址"
+      ],
+      [
+        "वापसी का पता"
+      ],
+      [
+        "dirección de devolución"
+      ],
+      [
+        "عنوان الإرجاع"
+      ],
+      [
+        "adresse de retour"
+      ],
+      [
+        "ফেরতের ঠিকানা"
+      ],
+      [
+        "endereço de devolução"
+      ]
+    ],
+    [
+      "return instructions",
+      [
+        "退货说明"
+      ],
+      [
+        "वापसी के निर्देश"
+      ],
+      [
+        "instrucciones de devolución"
+      ],
+      [
+        "تعليمات الإرجاع"
+      ],
+      [
+        "instructions de retour"
+      ],
+      [
+        "ফেরতের নির্দেশনা"
+      ],
+      [
+        "instruções de devolução"
+      ]
+    ],
+    [
+      "restocking fee",
+      [
+        "补货费",
+        "重新入库费"
+      ],
+      [
+        "रीस्टॉकिंग शुल्क"
+      ],
+      [
+        "tarifa de reposición",
+        "cargo de reposición"
+      ],
+      [
+        "رسوم إعادة التخزين"
+      ],
+      [
+        "frais de restockage"
+      ],
+      [
+        "পুনঃমজুত ফি"
+      ],
+      [
+        "taxa de reposição"
+      ]
+    ],
+    [
+      "all sales are final",
+      [
+        "所有销售均为最终销售"
+      ],
+      [
+        "सभी बिक्री अंतिम हैं"
+      ],
+      [
+        "todas las ventas son finales"
+      ],
+      [
+        "جميع المبيعات نهائية"
+      ],
+      [
+        "toutes les ventes sont définitives"
+      ],
+      [
+        "সব বিক্রয় চূড়ান্ত"
+      ],
+      [
+        "todas as vendas são finais"
+      ]
+    ],
+    [
+      "no returns or exchanges",
+      [
+        "不接受退换货"
+      ],
+      [
+        "वापसी या विनिमय नहीं"
+      ],
+      [
+        "sin devoluciones ni cambios"
+      ],
+      [
+        "لا إرجاع أو استبدال"
+      ],
+      [
+        "ni retour ni échange"
+      ],
+      [
+        "ফেরত বা বিনিময় নেই"
+      ],
+      [
+        "sem devoluções ou trocas"
+      ]
+    ],
+    [
+      "limited time",
+      [
+        "限时"
+      ],
+      [
+        "सीमित समय"
+      ],
+      [
+        "tiempo limitado"
+      ],
+      [
+        "وقت محدود"
+      ],
+      [
+        "durée limitée"
+      ],
+      [
+        "সীমিত সময়"
+      ],
+      [
+        "tempo limitado"
+      ]
+    ],
+    [
+      "sale ends today",
+      [
+        "促销今天结束"
+      ],
+      [
+        "सेल आज समाप्त"
+      ],
+      [
+        "la oferta termina hoy"
+      ],
+      [
+        "ينتهي العرض اليوم"
+      ],
+      [
+        "offre se termine aujourd'hui"
+      ],
+      [
+        "অফার আজ শেষ"
+      ],
+      [
+        "oferta termina hoje"
+      ]
+    ],
+    [
+      "hurry",
+      [
+        "赶快"
+      ],
+      [
+        "जल्दी करें"
+      ],
+      [
+        "date prisa"
+      ],
+      [
+        "أسرع"
+      ],
+      [
+        "dépêchez-vous"
+      ],
+      [
+        "তাড়াতাড়ি করুন"
+      ],
+      [
+        "corra"
+      ]
+    ],
+    [
+      "shipping",
+      [
+        "配送",
+        "发货",
+        "运输"
+      ],
+      [
+        "शिपिंग",
+        "वितरण"
+      ],
+      [
+        "envío"
+      ],
+      [
+        "الشحن"
+      ],
+      [
+        "expédition"
+      ],
+      [
+        "শিপিং",
+        "সরবরাহ"
+      ],
+      [
+        "envio"
+      ]
+    ],
+    [
+      "delivery",
+      [
+        "送货",
+        "交付"
+      ],
+      [
+        "डिलीवरी"
+      ],
+      [
+        "entrega"
+      ],
+      [
+        "التوصيل"
+      ],
+      [
+        "livraison"
+      ],
+      [
+        "ডেলিভারি"
+      ],
+      [
+        "entrega"
+      ]
+    ],
+    [
+      "business days",
+      [
+        "工作日"
+      ],
+      [
+        "कार्य दिवस"
+      ],
+      [
+        "días laborables",
+        "días hábiles"
+      ],
+      [
+        "أيام عمل"
+      ],
+      [
+        "jours ouvrables",
+        "jours ouvrés"
+      ],
+      [
+        "কর্মদিবস"
+      ],
+      [
+        "dias úteis"
+      ]
+    ],
+    [
+      "days",
+      [
+        "天"
+      ],
+      [
+        "दिन"
+      ],
+      [
+        "días"
+      ],
+      [
+        "أيام",
+        "يوما",
+        "يومًا"
+      ],
+      [
+        "jours"
+      ],
+      [
+        "দিন",
+        "দিনের"
+      ],
+      [
+        "dias"
+      ]
+    ],
+    [
+      "returns",
+      [
+        "退货"
+      ],
+      [
+        "वापसी"
+      ],
+      [
+        "devoluciones",
+        "devolución"
+      ],
+      [
+        "الإرجاع",
+        "إرجاع"
+      ],
+      [
+        "retours",
+        "retour"
+      ],
+      [
+        "ফেরত"
+      ],
+      [
+        "devoluções",
+        "devolução"
+      ]
+    ],
+    [
+      "refund",
+      [
+        "退款"
+      ],
+      [
+        "धनवापसी"
+      ],
+      [
+        "reembolso"
+      ],
+      [
+        "استرداد"
+      ],
+      [
+        "remboursement"
+      ],
+      [
+        "অর্থ ফেরত"
+      ],
+      [
+        "reembolso"
+      ]
+    ],
+    [
+      "contact",
+      [
+        "联系我们",
+        "联系"
+      ],
+      [
+        "संपर्क करें",
+        "संपर्क"
+      ],
+      [
+        "contacto",
+        "contactar"
+      ],
+      [
+        "اتصل بنا",
+        "اتصل"
+      ],
+      [
+        "contactez-nous",
+        "contact"
+      ],
+      [
+        "যোগাযোগ"
+      ],
+      [
+        "contato",
+        "contacto"
+      ]
+    ],
+    [
+      "about",
+      [
+        "关于我们"
+      ],
+      [
+        "हमारे बारे में"
+      ],
+      [
+        "sobre nosotros"
+      ],
+      [
+        "من نحن"
+      ],
+      [
+        "à propos",
+        "qui sommes-nous"
+      ],
+      [
+        "আমাদের সম্পর্কে"
+      ],
+      [
+        "sobre nós"
+      ]
+    ],
+    [
+      "customer pays",
+      [
+        "客户支付",
+        "买家承担"
+      ],
+      [
+        "ग्राहक भुगतान करता है"
+      ],
+      [
+        "el cliente paga",
+        "el comprador paga"
+      ],
+      [
+        "يدفع العميل"
+      ],
+      [
+        "le client paie"
+      ],
+      [
+        "ক্রেতা পরিশোধ করে"
+      ],
+      [
+        "o cliente paga"
+      ]
+    ],
+    [
+      "international",
+      [
+        "国际"
+      ],
+      [
+        "अंतरराष्ट्रीय"
+      ],
+      [
+        "internacional"
+      ],
+      [
+        "دولي"
+      ],
+      [
+        "international"
+      ],
+      [
+        "আন্তর্জাতিক"
+      ],
+      [
+        "internacional"
+      ]
+    ],
+    [
+      "within",
+      [
+        "在",
+        "内"
+      ],
+      [
+        "भीतर"
+      ],
+      [
+        "dentro de"
+      ],
+      [
+        "خلال"
+      ],
+      [
+        "sous",
+        "dans"
+      ],
+      [
+        "মধ্যে"
+      ],
+      [
+        "dentro de"
+      ]
+    ],
+    [
+      "since",
+      [
+        "成立于"
+      ],
+      [
+        "स्थापित"
+      ],
+      [
+        "desde"
+      ],
+      [
+        "منذ"
+      ],
+      [
+        "depuis"
+      ],
+      [
+        "প্রতিষ্ঠিত"
+      ],
+      [
+        "desde"
+      ]
+    ],
+    [
+      "manufactured by",
+      [
+        "制造商为",
+        "由制造"
+      ],
+      [
+        "द्वारा निर्मित"
+      ],
+      [
+        "fabricado por"
+      ],
+      [
+        "مصنع بواسطة"
+      ],
+      [
+        "fabriqué par"
+      ],
+      [
+        "দ্বারা নির্মিত"
+      ],
+      [
+        "fabricado por"
+      ]
+    ],
+    [
+      "ships from",
+      [
+        "发货地",
+        "从发货"
+      ],
+      [
+        "यहाँ से भेजा जाता है"
+      ],
+      [
+        "se envía desde",
+        "envíos desde"
+      ],
+      [
+        "يشحن من"
+      ],
+      [
+        "expédié depuis"
+      ],
+      [
+        "পাঠানো হয় এখান থেকে"
+      ],
+      [
+        "enviado de",
+        "envios de"
+      ]
+    ],
+    [
+      "made in",
+      [
+        "制造于",
+        "产地"
+      ],
+      [
+        "में बना"
+      ],
+      [
+        "hecho en",
+        "fabricado en"
+      ],
+      [
+        "صنع في"
+      ],
+      [
+        "fabriqué en"
+      ],
+      [
+        "তৈরি হয়েছে"
+      ],
+      [
+        "fabricado em",
+        "feito em"
+      ]
+    ],
+    [
+      "based in",
+      [
+        "位于"
+      ],
+      [
+        "स्थित"
+      ],
+      [
+        "con sede en"
+      ],
+      [
+        "مقرنا في"
+      ],
+      [
+        "basé en"
+      ],
+      [
+        "অবস্থিত"
+      ],
+      [
+        "sediado em"
+      ]
+    ],
+    [
+      "origin",
+      [
+        "始发地"
+      ],
+      [
+        "मूल स्थान"
+      ],
+      [
+        "origen"
+      ],
+      [
+        "المنشأ"
+      ],
+      [
+        "origine"
+      ],
+      [
+        "উৎপত্তিস্থল"
+      ],
+      [
+        "origem"
+      ]
+    ],
+    [
+      "subscription",
+      [
+        "订阅"
+      ],
+      [
+        "सदस्यता"
+      ],
+      [
+        "suscripción"
+      ],
+      [
+        "اشتراك"
+      ],
+      [
+        "abonnement"
+      ],
+      [
+        "সাবস্ক্রিপশন"
+      ],
+      [
+        "assinatura"
+      ]
+    ],
+    [
+      "sale",
+      [
+        "特价",
+        "折扣"
+      ],
+      [
+        "सेल"
+      ],
+      [
+        "oferta"
+      ],
+      [
+        "عرض"
+      ],
+      [
+        "soldes"
+      ],
+      [
+        "অফার"
+      ],
+      [
+        "oferta"
+      ]
+    ],
+    [
+      "certificate",
+      [
+        "证书"
+      ],
+      [
+        "प्रमाणपत्र"
+      ],
+      [
+        "certificado"
+      ],
+      [
+        "شهادة"
+      ],
+      [
+        "certificat"
+      ],
+      [
+        "সনদ"
+      ],
+      [
+        "certificado"
+      ]
+    ],
+    [
+      "certified",
+      [
+        "认证"
+      ],
+      [
+        "प्रमाणित"
+      ],
+      [
+        "certificado"
+      ],
+      [
+        "معتمد"
+      ],
+      [
+        "certifié"
+      ],
+      [
+        "প্রত্যয়িত"
+      ],
+      [
+        "certificado"
+      ]
+    ],
+    [
+      "component",
+      [
+        "部件"
+      ],
+      [
+        "घटक"
+      ],
+      [
+        "componente"
+      ],
+      [
+        "مكون"
+      ],
+      [
+        "composant"
+      ],
+      [
+        "উপাদান"
+      ],
+      [
+        "componente"
+      ]
+    ],
+    [
+      "finished product",
+      [
+        "成品"
+      ],
+      [
+        "तैयार उत्पाद"
+      ],
+      [
+        "producto terminado"
+      ],
+      [
+        "منتج نهائي"
+      ],
+      [
+        "produit fini"
+      ],
+      [
+        "সম্পূর্ণ পণ্য"
+      ],
+      [
+        "produto acabado"
+      ]
+    ],
+    [
+      "power bank",
+      [
+        "充电宝",
+        "移动电源"
+      ],
+      [
+        "पावर बैंक"
+      ],
+      [
+        "batería externa"
+      ],
+      [
+        "بطارية محمولة"
+      ],
+      [
+        "batterie externe"
+      ],
+      [
+        "পাওয়ার ব্যাংক"
+      ],
+      [
+        "bateria portátil"
+      ]
+    ],
+    [
+      "case",
+      [
+        "保护壳"
+      ],
+      [
+        "कवर"
+      ],
+      [
+        "funda"
+      ],
+      [
+        "غطاء"
+      ],
+      [
+        "coque"
+      ],
+      [
+        "কভার"
+      ],
+      [
+        "capa"
+      ]
+    ],
+    [
+      "mini fridge",
+      [
+        "迷你冰箱"
+      ],
+      [
+        "मिनी फ्रिज"
+      ],
+      [
+        "mini nevera"
+      ],
+      [
+        "ثلاجة صغيرة"
+      ],
+      [
+        "mini réfrigérateur"
+      ],
+      [
+        "মিনি ফ্রিজ"
+      ],
+      [
+        "mini geladeira"
+      ]
+    ],
+    [
+      "color",
+      [
+        "颜色"
+      ],
+      [
+        "रंग"
+      ],
+      [
+        "color"
+      ],
+      [
+        "لون"
+      ],
+      [
+        "couleur"
+      ],
+      [
+        "রং"
+      ],
+      [
+        "cor"
+      ]
+    ],
+    [
+      "size",
+      [
+        "尺寸"
+      ],
+      [
+        "आकार"
+      ],
+      [
+        "talla",
+        "tamaño"
+      ],
+      [
+        "مقاس",
+        "حجم"
+      ],
+      [
+        "taille"
+      ],
+      [
+        "আকার"
+      ],
+      [
+        "tamanho"
+      ]
+    ],
+    [
+      "capacity",
+      [
+        "容量"
+      ],
+      [
+        "क्षमता"
+      ],
+      [
+        "capacidad"
+      ],
+      [
+        "سعة"
+      ],
+      [
+        "capacité"
+      ],
+      [
+        "ধারণক্ষমতা"
+      ],
+      [
+        "capacidade"
+      ]
+    ],
+    [
+      "material",
+      [
+        "材料",
+        "材质"
+      ],
+      [
+        "सामग्री"
+      ],
+      [
+        "material"
+      ],
+      [
+        "مادة"
+      ],
+      [
+        "matière",
+        "matériau"
+      ],
+      [
+        "উপকরণ"
+      ],
+      [
+        "material"
+      ]
+    ],
+    [
+      "cotton",
+      [
+        "棉",
+        "纯棉"
+      ],
+      [
+        "कपास",
+        "सूती"
+      ],
+      [
+        "algodón"
+      ],
+      [
+        "قطن"
+      ],
+      [
+        "coton"
+      ],
+      [
+        "তুলা",
+        "সুতি"
+      ],
+      [
+        "algodão"
+      ]
+    ],
+    [
+      "polyester",
+      [
+        "聚酯纤维",
+        "涤纶"
+      ],
+      [
+        "पॉलिएस्टर"
+      ],
+      [
+        "poliéster"
+      ],
+      [
+        "بوليستر"
+      ],
+      [
+        "polyester"
+      ],
+      [
+        "পলিয়েস্টার"
+      ],
+      [
+        "poliéster"
+      ]
+    ],
+    [
+      "plastic",
+      [
+        "塑料"
+      ],
+      [
+        "प्लास्टिक"
+      ],
+      [
+        "plástico"
+      ],
+      [
+        "بلاستيك"
+      ],
+      [
+        "plastique"
+      ],
+      [
+        "প্লাস্টিক"
+      ],
+      [
+        "plástico"
+      ]
+    ],
+    [
+      "stainless steel",
+      [
+        "不锈钢"
+      ],
+      [
+        "स्टेनलेस स्टील"
+      ],
+      [
+        "acero inoxidable"
+      ],
+      [
+        "فولاذ مقاوم للصدأ"
+      ],
+      [
+        "acier inoxydable"
+      ],
+      [
+        "স্টেইনলেস স্টিল"
+      ],
+      [
+        "aço inoxidável"
+      ]
+    ],
+    [
+      "wood",
+      [
+        "木材",
+        "木质"
+      ],
+      [
+        "लकड़ी"
+      ],
+      [
+        "madera"
+      ],
+      [
+        "خشب"
+      ],
+      [
+        "bois"
+      ],
+      [
+        "কাঠ"
+      ],
+      [
+        "madeira"
+      ]
+    ],
+    [
+      "ceramic",
+      [
+        "陶瓷"
+      ],
+      [
+        "सिरेमिक"
+      ],
+      [
+        "cerámica"
+      ],
+      [
+        "سيراميك"
+      ],
+      [
+        "céramique"
+      ],
+      [
+        "সিরামিক"
+      ],
+      [
+        "cerâmica"
+      ]
+    ],
+    [
+      "leather",
+      [
+        "皮革"
+      ],
+      [
+        "चमड़ा"
+      ],
+      [
+        "cuero"
+      ],
+      [
+        "جلد"
+      ],
+      [
+        "cuir"
+      ],
+      [
+        "চামড়া"
+      ],
+      [
+        "couro"
+      ]
+    ],
+    [
+      "necklace",
+      [
+        "项链"
+      ],
+      [
+        "हार"
+      ],
+      [
+        "collar"
+      ],
+      [
+        "قلادة"
+      ],
+      [
+        "collier"
+      ],
+      [
+        "হার"
+      ],
+      [
+        "colar"
+      ]
+    ],
+    [
+      "bracelet",
+      [
+        "手链"
+      ],
+      [
+        "कंगन"
+      ],
+      [
+        "pulsera"
+      ],
+      [
+        "سوار"
+      ],
+      [
+        "bracelet"
+      ],
+      [
+        "বালা"
+      ],
+      [
+        "pulseira"
+      ]
+    ],
+    [
+      "earrings",
+      [
+        "耳环"
+      ],
+      [
+        "झुमके"
+      ],
+      [
+        "pendientes"
+      ],
+      [
+        "أقراط"
+      ],
+      [
+        "boucles d'oreilles"
+      ],
+      [
+        "কানের দুল"
+      ],
+      [
+        "brincos"
+      ]
+    ],
+    [
+      "phone case",
+      [
+        "手机壳"
+      ],
+      [
+        "फोन कवर"
+      ],
+      [
+        "funda de teléfono"
+      ],
+      [
+        "غطاء هاتف"
+      ],
+      [
+        "coque de téléphone"
+      ],
+      [
+        "ফোন কভার"
+      ],
+      [
+        "capa de celular"
+      ]
+    ],
+    [
+      "shirt",
+      [
+        "衬衫"
+      ],
+      [
+        "कमीज़",
+        "शर्ट"
+      ],
+      [
+        "camisa"
+      ],
+      [
+        "قميص"
+      ],
+      [
+        "chemise"
+      ],
+      [
+        "শার্ট"
+      ],
+      [
+        "camisa"
+      ]
+    ],
+    [
+      "shoes",
+      [
+        "鞋子"
+      ],
+      [
+        "जूते"
+      ],
+      [
+        "zapatos"
+      ],
+      [
+        "أحذية"
+      ],
+      [
+        "chaussures"
+      ],
+      [
+        "জুতা"
+      ],
+      [
+        "sapatos"
+      ]
+    ],
+    [
+      "lamp",
+      [
+        "台灯",
+        "灯具"
+      ],
+      [
+        "लैंप"
+      ],
+      [
+        "lámpara"
+      ],
+      [
+        "مصباح"
+      ],
+      [
+        "lampe"
+      ],
+      [
+        "বাতি"
+      ],
+      [
+        "lâmpada"
+      ]
+    ],
+    [
+      "charger",
+      [
+        "充电器"
+      ],
+      [
+        "चार्जर"
+      ],
+      [
+        "cargador"
+      ],
+      [
+        "شاحن"
+      ],
+      [
+        "chargeur"
+      ],
+      [
+        "চার্জার"
+      ],
+      [
+        "carregador"
+      ]
+    ],
+    [
+      "vacuum",
+      [
+        "吸尘器"
+      ],
+      [
+        "वैक्यूम क्लीनर"
+      ],
+      [
+        "aspiradora"
+      ],
+      [
+        "مكنسة كهربائية"
+      ],
+      [
+        "aspirateur"
+      ],
+      [
+        "ভ্যাকুয়াম ক্লিনার"
+      ],
+      [
+        "aspirador"
+      ]
+    ],
+    [
+      "blender",
+      [
+        "搅拌机"
+      ],
+      [
+        "ब्लेंडर"
+      ],
+      [
+        "licuadora"
+      ],
+      [
+        "خلاط"
+      ],
+      [
+        "mixeur"
+      ],
+      [
+        "ব্লেন্ডার"
+      ],
+      [
+        "liquidificador"
+      ]
+    ],
+    [
+      "dress",
+      [
+        "连衣裙"
+      ],
+      [
+        "ड्रेस"
+      ],
+      [
+        "vestido"
+      ],
+      [
+        "فستان"
+      ],
+      [
+        "robe"
+      ],
+      [
+        "পোশাক"
+      ],
+      [
+        "vestido"
+      ]
+    ],
+    [
+      "jacket",
+      [
+        "夹克"
+      ],
+      [
+        "जैकेट"
+      ],
+      [
+        "chaqueta"
+      ],
+      [
+        "سترة"
+      ],
+      [
+        "veste"
+      ],
+      [
+        "জ্যাকেট"
+      ],
+      [
+        "jaqueta"
+      ]
+    ],
+    [
+      "watch",
+      [
+        "手表"
+      ],
+      [
+        "घड़ी"
+      ],
+      [
+        "reloj"
+      ],
+      [
+        "ساعة يد"
+      ],
+      [
+        "montre"
+      ],
+      [
+        "ঘড়ি"
+      ],
+      [
+        "relógio"
+      ]
+    ],
+    [
+      "China",
+      [
+        "中国"
+      ],
+      [
+        "चीन"
+      ],
+      [
+        "China"
+      ],
+      [
+        "الصين"
+      ],
+      [
+        "Chine"
+      ],
+      [
+        "চীন"
+      ],
+      [
+        "China"
+      ]
+    ],
+    [
+      "United States",
+      [
+        "美国"
+      ],
+      [
+        "संयुक्त राज्य अमेरिका"
+      ],
+      [
+        "Estados Unidos"
+      ],
+      [
+        "الولايات المتحدة"
+      ],
+      [
+        "États-Unis"
+      ],
+      [
+        "মার্কিন যুক্তরাষ্ট্র"
+      ],
+      [
+        "Estados Unidos"
+      ]
+    ],
+    [
+      "India",
+      [
+        "印度"
+      ],
+      [
+        "भारत"
+      ],
+      [
+        "India"
+      ],
+      [
+        "الهند"
+      ],
+      [
+        "Inde"
+      ],
+      [
+        "ভারত"
+      ],
+      [
+        "Índia"
+      ]
+    ],
+    [
+      "Bangladesh",
+      [
+        "孟加拉国"
+      ],
+      [
+        "बांग्लादेश"
+      ],
+      [
+        "Bangladés"
+      ],
+      [
+        "بنغلاديش"
+      ],
+      [
+        "Bangladesh"
+      ],
+      [
+        "বাংলাদেশ"
+      ],
+      [
+        "Bangladesh"
+      ]
+    ],
+    [
+      "France",
+      [
+        "法国"
+      ],
+      [
+        "फ्रांस"
+      ],
+      [
+        "Francia"
+      ],
+      [
+        "فرنسا"
+      ],
+      [
+        "France"
+      ],
+      [
+        "ফ্রান্স"
+      ],
+      [
+        "França"
+      ]
+    ],
+    [
+      "Brazil",
+      [
+        "巴西"
+      ],
+      [
+        "ब्राज़ील"
+      ],
+      [
+        "Brasil"
+      ],
+      [
+        "البرازيل"
+      ],
+      [
+        "Brésil"
+      ],
+      [
+        "ব্রাজিল"
+      ],
+      [
+        "Brasil"
+      ]
+    ],
+    [
+      "Portugal",
+      [
+        "葡萄牙"
+      ],
+      [
+        "पुर्तगाल"
+      ],
+      [
+        "Portugal"
+      ],
+      [
+        "البرتغال"
+      ],
+      [
+        "Portugal"
+      ],
+      [
+        "পর্তুগাল"
+      ],
+      [
+        "Portugal"
+      ]
+    ],
+    [
+      "Spain",
+      [
+        "西班牙"
+      ],
+      [
+        "स्पेन"
+      ],
+      [
+        "España"
+      ],
+      [
+        "إسبانيا"
+      ],
+      [
+        "Espagne"
+      ],
+      [
+        "স্পেন"
+      ],
+      [
+        "Espanha"
+      ]
+    ],
+    [
+      "not",
+      [
+        "不",
+        "不是"
+      ],
+      [
+        "नहीं"
+      ],
+      [
+        "no"
+      ],
+      [
+        "ليس",
+        "ليست"
+      ],
+      [
+        "pas",
+        "ne pas"
+      ],
+      [
+        "নয়",
+        "না"
+      ],
+      [
+        "não"
+      ]
+    ],
+    [
+      "without",
+      [
+        "没有"
+      ],
+      [
+        "बिना"
+      ],
+      [
+        "sin"
+      ],
+      [
+        "بدون"
+      ],
+      [
+        "sans"
+      ],
+      [
+        "ছাড়া"
+      ],
+      [
+        "sem"
+      ]
+    ],
+    [
+      "sold by",
+      [
+        "销售方",
+        "卖家"
+      ],
+      [
+        "विक्रेता",
+        "द्वारा बेचा गया"
+      ],
+      [
+        "vendido por"
+      ],
+      [
+        "يباع بواسطة",
+        "البائع"
+      ],
+      [
+        "vendu par"
+      ],
+      [
+        "বিক্রেতা",
+        "বিক্রি করে"
+      ],
+      [
+        "vendido por"
+      ]
+    ],
+    [
+      "ships from",
+      [
+        "发货地点"
+      ],
+      [
+        "से भेजा जाता है",
+        "से भेजा गया"
+      ],
+      [
+        "enviado desde"
+      ],
+      [
+        "الشحن من"
+      ],
+      [
+        "expédié de"
+      ],
+      [
+        "থেকে পাঠানো হয়"
+      ],
+      [
+        "enviado por"
+      ]
+    ],
+    [
+      "made in",
+      [
+        "生产于"
+      ],
+      [
+        "निर्मित"
+      ],
+      [
+        "producido en"
+      ],
+      [
+        "مصنوع في"
+      ],
+      [
+        "produit en"
+      ],
+      [
+        "নির্মিত"
+      ],
+      [
+        "produzido em"
+      ]
+    ],
+    [
+      "kg",
+      [
+        "千克",
+        "公斤"
+      ],
+      [
+        "किलोग्राम"
+      ],
+      [
+        "kilogramos"
+      ],
+      [
+        "كيلوغرام"
+      ],
+      [
+        "kilogrammes"
+      ],
+      [
+        "কিলোগ্রাম"
+      ],
+      [
+        "quilogramas"
+      ]
+    ],
+    [
+      "cm",
+      [
+        "厘米"
+      ],
+      [
+        "सेंटीमीटर"
+      ],
+      [
+        "centímetros"
+      ],
+      [
+        "سنتيمتر"
+      ],
+      [
+        "centimètres"
+      ],
+      [
+        "সেন্টিমিটার"
+      ],
+      [
+        "centímetros"
+      ]
+    ],
+    [
+      "to",
+      [
+        "至",
+        "到"
+      ],
+      [
+        "से"
+      ],
+      [
+        "a"
+      ],
+      [
+        "إلى"
+      ],
+      [
+        "à"
+      ],
+      [
+        "থেকে"
+      ],
+      [
+        "a"
+      ]
+    ],
+    [
+      "red",
+      [
+        "红色"
+      ],
+      [
+        "लाल"
+      ],
+      [
+        "rojo",
+        "roja"
+      ],
+      [
+        "أحمر"
+      ],
+      [
+        "rouge"
+      ],
+      [
+        "লাল"
+      ],
+      [
+        "vermelho",
+        "vermelha"
+      ]
+    ],
+    [
+      "blue",
+      [
+        "蓝色"
+      ],
+      [
+        "नीला"
+      ],
+      [
+        "azul"
+      ],
+      [
+        "أزرق"
+      ],
+      [
+        "bleu",
+        "bleue"
+      ],
+      [
+        "নীল"
+      ],
+      [
+        "azul"
+      ]
+    ],
+    [
+      "black",
+      [
+        "黑色"
+      ],
+      [
+        "काला"
+      ],
+      [
+        "negro",
+        "negra"
+      ],
+      [
+        "أسود"
+      ],
+      [
+        "noir",
+        "noire"
+      ],
+      [
+        "কালো"
+      ],
+      [
+        "preto",
+        "preta"
+      ]
+    ],
+    [
+      "white",
+      [
+        "白色"
+      ],
+      [
+        "सफेद"
+      ],
+      [
+        "blanco",
+        "blanca"
+      ],
+      [
+        "أبيض"
+      ],
+      [
+        "blanc",
+        "blanche"
+      ],
+      [
+        "সাদা"
+      ],
+      [
+        "branco",
+        "branca"
+      ]
+    ]
+  ],
+  "paths": {
+    "product": [
+      "产品",
+      "商品",
+      "उत्पाद",
+      "producto",
+      "productos",
+      "منتج",
+      "منتجات",
+      "produit",
+      "produits",
+      "পণ্য",
+      "produto",
+      "produtos"
+    ],
+    "collection": [
+      "搜索",
+      "分类",
+      "集合",
+      "खोज",
+      "संग्रह",
+      "buscar",
+      "busqueda",
+      "colecciones",
+      "categorias",
+      "بحث",
+      "مجموعات",
+      "فئات",
+      "recherche",
+      "collections",
+      "catégories",
+      "অনুসন্ধান",
+      "সংগ্রহ",
+      "busca",
+      "pesquisa",
+      "colecoes",
+      "coleções",
+      "categorias"
+    ],
+    "editorial": [
+      "博客",
+      "新闻",
+      "文章",
+      "ब्लॉग",
+      "समाचार",
+      "noticias",
+      "articulos",
+      "مقالات",
+      "أخبار",
+      "actualites",
+      "actualités",
+      "নিবন্ধ",
+      "সংবাদ",
+      "noticias",
+      "notícias",
+      "artigos"
+    ],
+    "sensitive": [
+      "结账",
+      "结算",
+      "账户",
+      "帐户",
+      "登录",
+      "购物车",
+      "订单",
+      "支付",
+      "खाता",
+      "लॉगिन",
+      "भुगतान",
+      "कार्ट",
+      "cuenta",
+      "iniciar-sesion",
+      "iniciar-sesión",
+      "pago",
+      "pagos",
+      "carrito",
+      "pedidos",
+      "حساب",
+      "تسجيل-الدخول",
+      "الدفع",
+      "سلة",
+      "طلبات",
+      "compte",
+      "connexion",
+      "paiement",
+      "panier",
+      "commandes",
+      "অ্যাকাউন্ট",
+      "প্রবেশ",
+      "পেমেন্ট",
+      "কার্ট",
+      "conta",
+      "entrar",
+      "pagamento",
+      "carrinho",
+      "pedidos"
+    ]
+  },
+  "variants": {
+    "color": [
+      "colour",
+      "颜色",
+      "रंग",
+      "color",
+      "لون",
+      "couleur",
+      "রং",
+      "cor"
+    ],
+    "size": [
+      "尺寸",
+      "आकार",
+      "talla",
+      "tamaño",
+      "مقاس",
+      "حجم",
+      "taille",
+      "আকার",
+      "tamanho"
+    ],
+    "capacity": [
+      "容量",
+      "क्षमता",
+      "capacidad",
+      "سعة",
+      "capacité",
+      "ধারণক্ষমতা",
+      "capacidade"
+    ],
+    "material": [
+      "材料",
+      "材质",
+      "सामग्री",
+      "material",
+      "مادة",
+      "matière",
+      "matériau",
+      "উপকরণ",
+      "material"
+    ]
+  },
+  "dynamic": [
+    [
+      "仅剩\\s*(\\d+)\\s*(?:件)?",
+      "only $1 left"
+    ],
+    [
+      "केवल\\s*(\\d+)\\s*(?:बचे|शेष)",
+      "only $1 left"
+    ],
+    [
+      "(?:solo quedan|quedan solo)\\s*(\\d+)",
+      "only $1 left"
+    ],
+    [
+      "(?:بقي|متبقي)\\s*(\\d+)\\s*فقط",
+      "only $1 left"
+    ],
+    [
+      "il ne reste que\\s*(\\d+)",
+      "only $1 left"
+    ],
+    [
+      "মাত্র\\s*(\\d+)\\s*(?:টি)?\\s*বাকি",
+      "only $1 left"
+    ],
+    [
+      "(?:restam apenas|apenas)\\s*(\\d+)(?:\\s+restantes)?",
+      "only $1 left"
+    ]
+  ],
+  "privateFormParts": [
+    "结账",
+    "结算",
+    "登录",
+    "支付",
+    "लॉगिन",
+    "भुगतान",
+    "iniciar-sesion",
+    "iniciar-sesión",
+    "pago",
+    "pagos",
+    "تسجيل-الدخول",
+    "الدفع",
+    "connexion",
+    "paiement",
+    "প্রবেশ",
+    "পেমেন্ট",
+    "entrar",
+    "pagamento"
+  ]
+}

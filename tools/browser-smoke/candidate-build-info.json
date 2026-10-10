@@ -1,0 +1,263 @@
+{
+  "sourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
+  "sourceTree": "3a5b2a8483e6ea11707d78d6d54ee7c1d2bfbf26",
+  "version": "0.2.0",
+  "reviewedChange": "DS-042/043: audited prior research families, user-reviewed session-only merchant/manufacturer/shipper standing; seven dimensions/32 sources; exact scope and case-party/category/status/freshness gates; no new permissions/backend/warning score; deterministic OCR manifest environment metadata without OCR model or assertion changes. Restores ten complete source destinations with unchanged native two-batch assertions.",
+  "buildFiles": [
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19974,
+      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
+    },
+    {
+      "path": "_locales/ar/messages.json",
+      "bytes": 82144,
+      "sha256": "b4080aeea834823f8ce215072fc1500d727b779406d5d7e4194fd361d810c925"
+    },
+    {
+      "path": "_locales/bn/messages.json",
+      "bytes": 100856,
+      "sha256": "abcb354ba72c06c41ba1b3ebd72359dbb1d3008a824b33675834be6652589766"
+    },
+    {
+      "path": "_locales/en/messages.json",
+      "bytes": 73230,
+      "sha256": "d59c51367ea7c88cd99f6074ff9192052283ef2b2870b5199581f8929577d73e"
+    },
+    {
+      "path": "_locales/es/messages.json",
+      "bytes": 75009,
+      "sha256": "9fd01c302ea9625bf574dc445418e7bbdf7c34305d8e51ba9133daa1a469b3d4"
+    },
+    {
+      "path": "_locales/fr/messages.json",
+      "bytes": 76520,
+      "sha256": "fe9622e2ec0451f7a1c023beeee28949fabe7db6e693343e8fc700f851ef50c3"
+    },
+    {
+      "path": "_locales/hi/messages.json",
+      "bytes": 100767,
+      "sha256": "c9f4fe3c146d607eef648115e0a4b768a7096d54428225b9e43a51893f787e6e"
+    },
+    {
+      "path": "_locales/pt_BR/messages.json",
+      "bytes": 75030,
+      "sha256": "c7c199a461f464024c630d7926da182f086ee351fae7c123967b7754d329f1ec"
+    },
+    {
+      "path": "_locales/zh_CN/messages.json",
+      "bytes": 71785,
+      "sha256": "5735a1fc7a0e193e467eacdc081ab1455be43bfd3defe2f4315f6692cb5ff543"
+    },
+    {
+      "path": "assets/sidepanel-CA7A_2G3.css",
+      "bytes": 10816,
+      "sha256": "6c203d4ae888045a5ee28f4c364db3b28e7e527064f01b21d91615855c691298"
+    },
+    {
+      "path": "background.js",
+      "bytes": 50466,
+      "sha256": "504faaed0ac4fbffc52c9e55e40ae7c2f19c628e7841171b95824255f2f41ae6"
+    },
+    {
+      "path": "chunks/search-BSs1uToS.js",
+      "bytes": 445,
+      "sha256": "fe88de109053ca59623bf48006b0c1fed159c3884efc110dabb00e5dacb42a85"
+    },
+    {
+      "path": "chunks/search-chooser-DQ05wBu8.js",
+      "bytes": 3900,
+      "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
+    },
+    {
+      "path": "chunks/sidepanel-Vz-B8VmM.js",
+      "bytes": 565047,
+      "sha256": "dc26d5c90365c013dddd71557f9e5c3f59fea5fa4ab548db66069492ec5d71f2"
+    },
+    {
+      "path": "content-scripts/auto.js",
+      "bytes": 72762,
+      "sha256": "be37ef0491e31ffad1cdab3fcf01bb94ac1ee88fe58e2c5e8d57e27ea592157b"
+    },
+    {
+      "path": "icon/128.png",
+      "bytes": 825,
+      "sha256": "5d71bfcb0a26b95861a0abd6d4476b0617d14a56545e6f30f39d16cd5dd2f934"
+    },
+    {
+      "path": "icon/16.png",
+      "bytes": 186,
+      "sha256": "7cf46112e601ecd34689f3b810b19e3fa87b57c1c3c09f85c8433831f968608e"
+    },
+    {
+      "path": "icon/32.png",
+      "bytes": 287,
+      "sha256": "3f9cd29efd325bf4c32d30cbb978691e01105e7e54e0ec1c29c29adad6b9fe6a"
+    },
+    {
+      "path": "icon/48.png",
+      "bytes": 380,
+      "sha256": "66a39d8c9481c8567b2d8a235a63aa1a6674da09b62d6b608480fbb68e56b08e"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 674,
+      "sha256": "a07d5fa66c5bb069b841ed860f7cdf655f9597181afdda11114735908d764228"
+    },
+    {
+      "path": "ocr/LANGUAGE-MODELS.json",
+      "bytes": 4282,
+      "sha256": "1c9418063a475042603c093d27d86fa8f1c157d0df18974e4112496469cc83e5"
+    },
+    {
+      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-JS.txt",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "ocr/PROVENANCE.txt",
+      "bytes": 1147,
+      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
+    },
+    {
+      "path": "ocr/ara.traineddata.gz",
+      "bytes": 715721,
+      "sha256": "588433010757ee22481757818f3cbf610cda08357b9f1376498b819a70a1701b"
+    },
+    {
+      "path": "ocr/ben.traineddata.gz",
+      "bytes": 548295,
+      "sha256": "cbd28158c88920a0e4e4e0518fe752aa035b16f71f150cf6f6cb76d03063dfaa"
+    },
+    {
+      "path": "ocr/chi_sim.traineddata.gz",
+      "bytes": 1722294,
+      "sha256": "9f98e06ec77da375022f6cb1935189461f15f2ad7034f0efe1a32aabd159a184"
+    },
+    {
+      "path": "ocr/eng.traineddata.gz",
+      "bytes": 1976293,
+      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
+    },
+    {
+      "path": "ocr/fra.traineddata.gz",
+      "bytes": 605839,
+      "sha256": "e326558d598ca84ca3b8816ffe19676b2d957b25d090ca0f5dbb93ffa3943bfc"
+    },
+    {
+      "path": "ocr/hin.traineddata.gz",
+      "bytes": 920821,
+      "sha256": "2e8e4516ac16abcdbca15377cca8ba90da8931f5b54510bb758931965baf61c2"
+    },
+    {
+      "path": "ocr/por.traineddata.gz",
+      "bytes": 998523,
+      "sha256": "8b875b5cedb7fc753eb01173df3b469c694c8bcb649180a351a13ebd18ab1832"
+    },
+    {
+      "path": "ocr/spa.traineddata.gz",
+      "bytes": 1125535,
+      "sha256": "bd6a522423eea13e0b4b58d38c3e62af1c6304f19f8059d4477a3fff8e2ff5cb"
+    },
+    {
+      "path": "ocr/tesseract-core-lstm.wasm",
+      "bytes": 2855361,
+      "sha256": "66b17df6e20c5329a17ffa9c202a47eaa3e32500b253d4c7f38e7f2bc01457c3"
+    },
+    {
+      "path": "ocr/tesseract-core-lstm.wasm.js",
+      "bytes": 3896484,
+      "sha256": "eef5f8b2f8e20e150680b20adaec4a60babafee3adbe8a94583c81fee46e8680"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm",
+      "bytes": 2862266,
+      "sha256": "7985c92d4c64e7267d24cadffe1b2a1da6bf8aa55fdcaf953fe94fe122a24545"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "bytes": 3905767,
+      "sha256": "861a536cf9ef8e63cb644d57bab39c388f37f7d6b6f60024b741c5f6b39a59b3"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd.wasm",
+      "bytes": 3456075,
+      "sha256": "45f8c9b516df326b6ae6b493ed3a6289df5cbd10490e7b6ff8bf5b12ea42d1da"
+    },
+    {
+      "path": "ocr/tesseract-core-relaxedsimd.wasm.js",
+      "bytes": 4697227,
+      "sha256": "843074aa5bad1cc6421b74a86201768ced9f244795e4d81435435a61a40ce535"
+    },
+    {
+      "path": "ocr/tesseract-core-simd-lstm.wasm",
+      "bytes": 2857601,
+      "sha256": "34e8d50cac216427d86bf397d610fdd9f49492539bbcdfbfccc4eda20c810bea"
+    },
+    {
+      "path": "ocr/tesseract-core-simd-lstm.wasm.js",
+      "bytes": 3899472,
+      "sha256": "c58b46a4c796c0b8afccf77591d5b875b6896b45d402bbce8caa6f5362447b38"
+    },
+    {
+      "path": "ocr/tesseract-core-simd.wasm",
+      "bytes": 3451410,
+      "sha256": "7d237a13edfeb0fa2f104744fccde0a00e0c076c3e23b7a8fc7af75ec9af2c3e"
+    },
+    {
+      "path": "ocr/tesseract-core-simd.wasm.js",
+      "bytes": 4690932,
+      "sha256": "6b61ef4e911b5cf57e656bbfe983d6e2b3711a02dd164154ddda064566e8e09d"
+    },
+    {
+      "path": "ocr/tesseract-core.wasm",
+      "bytes": 3449168,
+      "sha256": "c7f5ace62ac0ad065e71e9c6725f1d7cdf82e7eda8fba532cbb9563964da7098"
+    },
+    {
+      "path": "ocr/tesseract-core.wasm.js",
+      "bytes": 4687944,
+      "sha256": "0bc6ce3e5fbbd0cd89706cf2fd70960e3372f4f01ee24265b26990808aaeb286"
+    },
+    {
+      "path": "ocr/tesseract.min.js",
+      "bytes": 62953,
+      "sha256": "00fa50915e6224635c57f44f1737a9a4d1761d38e8b7471261a55fdd6fd27f9d"
+    },
+    {
+      "path": "ocr/tesseract.min.js.LICENSE.txt",
+      "bytes": 149,
+      "sha256": "cdf963ced7d25a0f98901a547647b4d6e2dbe0197fd78c87a059a87b0e542fe2"
+    },
+    {
+      "path": "ocr/worker.min.js",
+      "bytes": 111280,
+      "sha256": "5e53cfc8aaaafa9631ea2a566d7004c6e3303c3c1fcbdc3668ba9141c83cd482"
+    },
+    {
+      "path": "ocr/worker.min.js.LICENSE.txt",
+      "bytes": 466,
+      "sha256": "45f54171aeaa1d10c0c1a66f374b7bba1f02472b1487fbe892eec04f840002ac"
+    },
+    {
+      "path": "search.html",
+      "bytes": 724,
+      "sha256": "caa6fbee3248fa67418fb63d3c4d0c23952b6f0c7b59de2c4d6ba8de063d57ee"
+    },
+    {
+      "path": "sidepanel.html",
+      "bytes": 20685,
+      "sha256": "22c0ec73b8bed90073a5956ade27b34e36416fc2c1a711fd3c6315c7e281f99d"
+    }
+  ]
+}

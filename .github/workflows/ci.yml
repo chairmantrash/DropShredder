@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, release/security-performance-hardening]
 
 permissions:
   contents: read
@@ -20,20 +20,34 @@ jobs:
         with:
           node-version: 22
       - name: Install
-        run: npm install
+        run: npm ci
       - name: Typecheck
         run: npm run typecheck
+      - name: Security audit
+        run: npm run audit:security
+      - name: Chrome runtime conformance audit
+        run: npm run audit:chrome-runtime
+      - name: Intelligence data lint
+        run: npm run lint:data
+      - name: Offline language catalog audit
+        run: npm run audit:localization
+      - name: Professional AI-assisted engineering audit
+        run: npm run audit:professional
       - name: Test forensic core
         run: npm test
       - name: Build extension
         run: npm run build
       - name: Build Chrome Store zip
         run: npm run zip
+      - name: Audit generated extension
+        run: npm run release:audit
+      - name: Performance audit
+        run: npm run audit:performance
       - name: Package Chrome Store zip
         uses: actions/upload-artifact@v4
         with:
           name: dropshredder-chrome-store
-          path: .output/dropshredder-0.1.0-chrome.zip
+          path: .output/*-chrome.zip
           include-hidden-files: true
           if-no-files-found: error
       - name: Package unpacked build

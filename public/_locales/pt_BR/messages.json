@@ -1,0 +1,2048 @@
+{
+  "m_1lc7ekh": {
+    "message": "DropShredder",
+    "description": "DropShredder"
+  },
+  "m_2925tt": {
+    "message": "DROPSHREDDER",
+    "description": "DROPSHREDDER"
+  },
+  "m_ji2c74": {
+    "message": "Saiba o que você realmente está comprando.",
+    "description": "Know what you’re really buying."
+  },
+  "m_59j625": {
+    "message": "FICA NO SEU DISPOSITIVO",
+    "description": "STAYS ON YOUR DEVICE"
+  },
+  "m_1hmprdl": {
+    "message": "Identifique produtos com marcas trocadas, alegações suspeitas, origens ocultas e problemas de devolução antes de gastar.",
+    "description": "Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you."
+  },
+  "m_zs3td9": {
+    "message": "VERIFIQUE ANTES DE COMPRAR",
+    "description": "CHECK BEFORE YOU BUY"
+  },
+  "m_lncga2": {
+    "message": "VERIFICAR ESTE PRODUTO",
+    "description": "CHECK THIS PRODUCT"
+  },
+  "m_41wtn1": {
+    "message": "As verificações manuais completas ficam na página escolhida. Os alertas automáticos só funcionam se você os ativar. Páginas de conta, finalização da compra e pagamento não são verificadas.",
+    "description": "Manual full checks stay on your chosen page. Automatic product alerts run only if you enable them. No checks on account, checkout or payment pages."
+  },
+  "m_z4x6cq": {
+    "message": "Alertas automáticos de produtos",
+    "description": "Automatic product alerts"
+  },
+  "m_z8ewuy": {
+    "message": "Veja um resultado breve em páginas de produtos disponíveis para compra. Requer permissão do Chrome para sites HTTPS uma vez. Sem alertas em outras navegações, resultados de busca ou pagamento.",
+    "description": "See a short verdict on actual shopping listings. Requires one-time Chrome permission for HTTPS sites. No alerts on unrelated browsing, search results or checkout."
+  },
+  "m_pkbcu1": {
+    "message": "Pronto quando você estiver.",
+    "description": "Ready when you are."
+  },
+  "m_70y5yt": {
+    "message": "O QUE ENCONTRAMOS",
+    "description": "WHAT WE FOUND"
+  },
+  "m_1mhc312": {
+    "message": "Você pode confiar neste anúncio?",
+    "description": "Should you trust this listing?"
+  },
+  "m_1uudnl7": {
+    "message": "Verifique o produto para entender o que está por trás do anúncio.",
+    "description": "Scan the product to see what’s behind the listing."
+  },
+  "m_1j7m3j4": {
+    "message": "INVESTIGUE MAIS",
+    "description": "DIG DEEPER"
+  },
+  "m_1gbpn41": {
+    "message": "Confira as alegações",
+    "description": "Check the story"
+  },
+  "m_1yfbac9": {
+    "message": "Opcional",
+    "description": "Optional"
+  },
+  "m_19gtzfo": {
+    "message": "ENCONTRAR OUTROS VENDEDORES",
+    "description": "FIND OTHER SELLERS"
+  },
+  "m_bdga72": {
+    "message": "PESQUISAR ESTA IMAGEM",
+    "description": "SEARCH THIS IMAGE"
+  },
+  "m_bqvucs": {
+    "message": "VERIFICAR ESTA LOJA",
+    "description": "CHECK THIS STORE"
+  },
+  "m_1amk2vc": {
+    "message": "HÁ QUANTO TEMPO ESTE SITE EXISTE?",
+    "description": "HOW OLD IS THIS SITE?"
+  },
+  "m_rzfddd": {
+    "message": "CANCELAR CONSULTA DO DOMÍNIO",
+    "description": "CANCEL DOMAIN LOOKUP"
+  },
+  "m_1ca3m79": {
+    "message": "O QUE OS COMPRADORES DIZEM?",
+    "description": "WHAT ARE BUYERS SAYING?"
+  },
+  "m_6gyim3": {
+    "message": "VERIFICAR AS LETRAS MIÚDAS",
+    "description": "CHECK THE FINE PRINT"
+  },
+  "m_60fw70": {
+    "message": "DE ONDE É REALMENTE ENVIADO?",
+    "description": "WHERE DOES IT REALLY SHIP FROM?"
+  },
+  "m_3hli5t": {
+    "message": "AS EVIDÊNCIAS",
+    "description": "THE RECEIPTS"
+  },
+  "m_1wt8chw": {
+    "message": "Evidências",
+    "description": "Evidence"
+  },
+  "m_1raf0ku": {
+    "message": "Buscar nas evidências",
+    "description": "Find in evidence"
+  },
+  "m_9k7mr1": {
+    "message": "Buscar fonte, alegação ou observação",
+    "description": "Search source, claim or observation"
+  },
+  "m_p4sts9": {
+    "message": "Mostrar evidências",
+    "description": "Show evidence"
+  },
+  "m_o7e91d": {
+    "message": "Todas as evidências",
+    "description": "All evidence"
+  },
+  "m_8fo0va": {
+    "message": "Sinais de alerta",
+    "description": "Warning signals"
+  },
+  "m_1pop2xv": {
+    "message": "Contexto informativo",
+    "description": "Informational context"
+  },
+  "m_1lmvk2d": {
+    "message": "Nenhuma verificação ainda.",
+    "description": "No scan yet."
+  },
+  "m_rou9gm": {
+    "message": "Nada para mostrar ainda. Verifique o produto para ver o que chamou atenção.",
+    "description": "Nothing to show yet. Scan the product and we’ll show you what stood out."
+  },
+  "m_szn3su": {
+    "message": "Buscar avisos oficiais de recall",
+    "description": "Search official recall notices"
+  },
+  "m_18lpqhi": {
+    "message": "Consulta pública opcional à CPSC. Após a permissão do Chrome, envia apenas a busca escolhida ao SaferProducts.gov. Sem chave ou conta. Candidatos não confirmam recall da sua unidade; resultado vazio não comprova segurança.",
+    "description": "Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety."
+  },
+  "m_10ziq51": {
+    "message": "Campo de busca",
+    "description": "Search field"
+  },
+  "m_1rvf3gr": {
+    "message": "Título do aviso / marca",
+    "description": "Notice title / brand"
+  },
+  "m_6vzi67": {
+    "message": "Nome do produto",
+    "description": "Product name"
+  },
+  "m_a61vw": {
+    "message": "UPC / GTIN",
+    "description": "UPC / GTIN"
+  },
+  "m_zdcsua": {
+    "message": "Busca a compartilhar com a CPSC",
+    "description": "Query to share with CPSC"
+  },
+  "m_uad37n": {
+    "message": "BUSCAR AVISOS DA CPSC",
+    "description": "SEARCH CPSC NOTICES"
+  },
+  "m_1pk9ld3": {
+    "message": "CANCELAR CONSULTA",
+    "description": "CANCEL LOOKUP"
+  },
+  "m_1kk4z4r": {
+    "message": "Ler rótulo localmente (código de barras e OCR)",
+    "description": "Read a product label locally (barcode and OCR)"
+  },
+  "m_1hevz1e": {
+    "message": "Escolha uma imagem do seu dispositivo. Códigos e texto são lidos localmente quando o Chrome oferece um detector; nada é enviado, salvo ou compartilhado com um provedor. Sem reconhecimento nativo, o Tesseract local incluído é carregado somente quando você solicita a leitura. Sem CDN, upload de imagens ou contas obrigatórias.",
+    "description": "Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts."
+  },
+  "m_uo805c": {
+    "message": "Foto do rótulo ou embalagem (PNG, JPEG, WebP; máximo de 8 MB)",
+    "description": "Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)"
+  },
+  "m_113ko8q": {
+    "message": "LER RÓTULO NO DISPOSITIVO",
+    "description": "READ LABEL ON DEVICE"
+  },
+  "m_b2uwd9": {
+    "message": "Suas listas de referência de produtos",
+    "description": "Your product reference lists"
+  },
+  "m_1cmzxjl": {
+    "message": "Adicione pequenas listas JSON de fontes escolhidas. Identificadores correspondentes são pistas de investigação, sem acusações automáticas ou alterações de pontuação. Os arquivos ficam aqui. A solicitação de um feed compartilha apenas sua URL com o editor; não envia histórico de navegação.",
+    "description": "Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent."
+  },
+  "m_1m23tj5": {
+    "message": "Prévia de uma lista JSON local (até 800 KB / 500 registros)",
+    "description": "Preview a local JSON list (up to 800 KB / 500 records)"
+  },
+  "m_17k3x2m": {
+    "message": "URL HTTPS pública do feed",
+    "description": "Public HTTPS feed URL"
+  },
+  "m_ntfvum": {
+    "message": "https://publisher.example.com/products.json",
+    "description": "https://publisher.example.com/products.json"
+  },
+  "m_q10f2r": {
+    "message": "BUSCAR PRÉVIA",
+    "description": "FETCH PREVIEW"
+  },
+  "m_1fko2hr": {
+    "message": "CANCELAR BUSCA",
+    "description": "CANCEL FETCH"
+  },
+  "m_1pufoy0": {
+    "message": "Salvar este feed como assinatura",
+    "description": "Save this feed as a subscription"
+  },
+  "m_37tact": {
+    "message": "Verificar assinaturas confiáveis e assinadas semanalmente em segundo plano",
+    "description": "Check signed, trusted subscriptions weekly in the background"
+  },
+  "m_1a08h1b": {
+    "message": "Desativado por padrão. Só atualizam automaticamente feeds assinados com chave do editor já fixada e acesso ao site já autorizado. Sem solicitações automáticas a editores desconhecidos.",
+    "description": "Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers."
+  },
+  "m_1ol6f7o": {
+    "message": "Feeds salvos mostram quando a atualização semanal está pendente. Feeds sem assinatura exigem revisão manual; assinaturas verificadas só atualizam após sua ativação. Listas vencidas deixam de participar das correspondências.",
+    "description": "Saved feeds show when a weekly refresh is due. Unsigned feeds require manual review; signed subscriptions update only after you opt in. Expired lists stop matching."
+  },
+  "m_hs6fa3": {
+    "message": "ADICIONAR LISTA REVISADA",
+    "description": "ADD REVIEWED LIST"
+  },
+  "m_1n519qu": {
+    "message": "EXCLUIR LISTAS E CHAVES DE EDITORES",
+    "description": "DELETE USER LISTS & PUBLISHER KEYS"
+  },
+  "m_1ni7fa2": {
+    "message": "Confiar em uma chave de assinatura do editor",
+    "description": "Trust a publisher signing key"
+  },
+  "m_cc9a31": {
+    "message": "Fixe apenas chaves obtidas por um canal independente de um editor confiável. Trocar uma chave é uma decisão manual de confiança. A assinatura confirma que a chave assinou os dados, não os fatos do produto. Listas sem assinatura continuam sendo pistas não verificadas.",
+    "description": "Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads."
+  },
+  "m_y1yl": {
+    "message": "JSON da chave do editor: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)",
+    "description": "Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)"
+  },
+  "m_1o3yzhm": {
+    "message": "REVISAR CHAVE",
+    "description": "REVIEW KEY"
+  },
+  "m_1xd1cw9": {
+    "message": "CONFIAR NA CHAVE REVISADA",
+    "description": "TRUST REVIEWED KEY"
+  },
+  "m_muq699": {
+    "message": "Busca opcional de fornecedores com sua chave de API",
+    "description": "Optional live supplier search with your own API key"
+  },
+  "m_1j5njnl": {
+    "message": "DropShredder não exige conta. Com uma chave Brave Search API existente, você pode fazer uma busca manual. O Brave atualmente exige ativar um plano e dados de pagamento e pode cobrar além dos créditos: confira os termos. A chave fica só na memória deste painel durante a solicitação; nunca é salva, registrada, exportada ou enviada além da API HTTPS oficial do Brave. Resultados são pistas, não acusações.",
+    "description": "No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations."
+  },
+  "m_1gxfmb7": {
+    "message": "Chave Brave Search API (não armazenada)",
+    "description": "Brave Search API key (not stored)"
+  },
+  "m_1ou34t": {
+    "message": "Sua busca de fornecedor ou produto",
+    "description": "Your supplier or product search phrase"
+  },
+  "m_1u3uljx": {
+    "message": "Marca, modelo ou título do produto entre aspas",
+    "description": "Brand model or quoted product title"
+  },
+  "m_9vh2l2": {
+    "message": "BUSCAR COM MINHA CHAVE",
+    "description": "SEARCH USING MY KEY"
+  },
+  "m_n0uwgr": {
+    "message": "CANCELAR",
+    "description": "CANCEL"
+  },
+  "m_19iouhv": {
+    "message": "Consultar um identificador de entidade legal",
+    "description": "Check a legal entity identifier"
+  },
+  "m_zahq7i": {
+    "message": "Consulta GLEIF opcional e gratuita, sem chave ou conta. Envia apenas o LEI digitado após a permissão do Chrome. Um registro não comprova qualidade, segurança ou propriedade de uma loja.",
+    "description": "Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store."
+  },
+  "m_17idllr": {
+    "message": "LEI de 20 caracteres dos registros da entidade",
+    "description": "20-character LEI from the entity’s own records"
+  },
+  "m_y038ob": {
+    "message": "CONSULTAR ESTE LEI",
+    "description": "LOOK UP THIS LEI"
+  },
+  "m_1470vqp": {
+    "message": "Personalizar a exibição",
+    "description": "Customize your display"
+  },
+  "m_ltytua": {
+    "message": "Tema",
+    "description": "Theme"
+  },
+  "m_j8m6w5": {
+    "message": "Escuro",
+    "description": "Dark"
+  },
+  "m_12iob7z": {
+    "message": "Claro",
+    "description": "Light"
+  },
+  "m_1gxthe9": {
+    "message": "Seguir o sistema",
+    "description": "Follow system"
+  },
+  "m_11l55em": {
+    "message": "Espaçamento",
+    "description": "Spacing"
+  },
+  "m_arcia7": {
+    "message": "Confortável",
+    "description": "Comfortable"
+  },
+  "m_1f846fa": {
+    "message": "Compacto",
+    "description": "Compact"
+  },
+  "m_c7nuir": {
+    "message": "Tamanho do texto",
+    "description": "Text size"
+  },
+  "m_vuco": {
+    "message": "Padrão",
+    "description": "Standard"
+  },
+  "m_rytaky": {
+    "message": "Maior",
+    "description": "Larger"
+  },
+  "m_mb8wcj": {
+    "message": "Máximo",
+    "description": "Largest"
+  },
+  "m_1jaohwy": {
+    "message": "REDEFINIR APARÊNCIA",
+    "description": "RESET APPEARANCE"
+  },
+  "m_wtcnfc": {
+    "message": "Como o DropShredder verifica produtos",
+    "description": "How DropShredder checks products"
+  },
+  "m_11vohzj": {
+    "message": "Procurar o mesmo produto em outros lugares",
+    "description": "Look for the same product elsewhere"
+  },
+  "m_7zynn1": {
+    "message": "Verificar automaticamente se o DropShredder já viu produtos correspondentes em outras lojas ou marketplaces.",
+    "description": "Automatically check whether DropShredder has seen matching products on other stores or marketplaces."
+  },
+  "m_10t4jnc": {
+    "message": "Preferir produtos feitos nos EUA",
+    "description": "Prefer Made in USA"
+  },
+  "m_15tsb6": {
+    "message": "Avisar quando as informações de origem não atendem à preferência. O país por si só nunca torna um produto suspeito.",
+    "description": "Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious."
+  },
+  "m_16l6r9r": {
+    "message": "Tom",
+    "description": "Attitude"
+  },
+  "m_1jiouy": {
+    "message": "Escolha a intensidade do tom do DropShredder. Os critérios de evidência nunca mudam.",
+    "description": "Choose how hard DropShredder talks. What counts as evidence never changes."
+  },
+  "m_5om5q5": {
+    "message": "Tom da linguagem",
+    "description": "Language tone"
+  },
+  "m_1wvex2a": {
+    "message": "Profissional",
+    "description": "Professional"
+  },
+  "m_13qqf6x": {
+    "message": "Agressivo",
+    "description": "Aggressive"
+  },
+  "m_196kse9": {
+    "message": "Explosivo",
+    "description": "Nuclear"
+  },
+  "m_8vzqmb": {
+    "message": "Ver detalhes completos",
+    "description": "See the full scan details"
+  },
+  "m_mksmeg": {
+    "message": "Privacidade e histórico salvo",
+    "description": "Your privacy & saved scan history"
+  },
+  "m_tvlulz": {
+    "message": "Seu histórico fica neste dispositivo. DropShredder guarda apenas o necessário para identificar produtos repetidos e padrões de lojas e elimina registros antigos automaticamente.",
+    "description": "Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history."
+  },
+  "m_o4p5o7": {
+    "message": "EXPORTAR VERIFICAÇÃO ATUAL",
+    "description": "EXPORT CURRENT SCAN"
+  },
+  "m_vncaug": {
+    "message": "Exporta um resumo limitado das evidências. Exclui parâmetros e fragmentos de URL, avaliações brutas, imagens, contatos brutos do vendedor e texto completo da página. Revise antes de compartilhar.",
+    "description": "Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it."
+  },
+  "m_152gx2t": {
+    "message": "EXCLUIR MEU HISTÓRICO",
+    "description": "DELETE MY SCAN HISTORY"
+  },
+  "m_tpyna0": {
+    "message": "REMOVER ACESSO EXTRA A SITES",
+    "description": "REMOVE EXTRA SITE ACCESS"
+  },
+  "m_1q47tiz": {
+    "message": "Buscas do DropShredder",
+    "description": "DropShredder searches"
+  },
+  "m_1lp99za": {
+    "message": "Preparando a pesquisa escolhida…",
+    "description": "Preparing your selected research…"
+  },
+  "m_ahoh6q": {
+    "message": "Consulta do domínio cancelada.",
+    "description": "Domain lookup canceled."
+  },
+  "m_3syb2g": {
+    "message": "A página mudou. Verifique o produto novamente.",
+    "description": "The page changed. Check this product again."
+  },
+  "m_4l5lcp": {
+    "message": "O acesso ao site mudou. Verifique o produto novamente.",
+    "description": "Site access changed. Check this product again."
+  },
+  "m_1jeob1z": {
+    "message": "Alertas precisam de permissão do Chrome. Ative para autorizar.",
+    "description": "Automatic alerts need Chrome site permission. Switch on to allow it."
+  },
+  "m_ks3g9n": {
+    "message": "Solicitando permissão ao Chrome para alertas automáticos…",
+    "description": "Asking Chrome to allow automatic product alerts…"
+  },
+  "m_nzo33j": {
+    "message": "Desativando alertas automáticos…",
+    "description": "Turning off automatic alerts…"
+  },
+  "m_1lqqqzl": {
+    "message": "Permissão do Chrome não concedida. As verificações manuais continuam disponíveis.",
+    "description": "Chrome permission was not granted. Manual checks still work."
+  },
+  "m_447iiq": {
+    "message": "Alertas ativados nas páginas de compra compatíveis. Outras páginas ficam sem alertas.",
+    "description": "Automatic alerts are on for supported shopping pages. Other pages stay quiet."
+  },
+  "m_1iijkzr": {
+    "message": "Alertas desativados. Acesso amplo adicional removido.",
+    "description": "Automatic alerts are off. Extra broad site access removed."
+  },
+  "m_1hlqcms": {
+    "message": "Não foi possível atualizar os alertas.",
+    "description": "Could not update automatic alerts."
+  },
+  "m_yy0bq1": {
+    "message": "Não foi possível salvar a busca de fontes.",
+    "description": "Could not save source-hunt setting."
+  },
+  "m_s43reb": {
+    "message": "Não foi possível salvar a preferência de origem.",
+    "description": "Could not save origin preference."
+  },
+  "m_lw7ro1": {
+    "message": "Não foi possível salvar o tom.",
+    "description": "Could not save tone preference."
+  },
+  "m_181mp38": {
+    "message": "Verificando pontos do anúncio que merecem atenção…",
+    "description": "Checking the listing for things worth a second look…"
+  },
+  "m_jrtjds": {
+    "message": "Abra a página do produto e tente novamente.",
+    "description": "Open the product page you want to check, then try again."
+  },
+  "m_vcmc3b": {
+    "message": "O Chrome precisa de permissão para este site. Permita o DropShredder nos controles de extensões e verifique o produto novamente.",
+    "description": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again."
+  },
+  "m_tfloyf": {
+    "message": "DropShredder não verifica este tipo de página.",
+    "description": "DropShredder won’t scan this kind of page."
+  },
+  "m_tk6fct": {
+    "message": "Parece uma página de login ou pagamento. DropShredder não a verifica.",
+    "description": "This looks like a sign-in or payment page, so DropShredder is staying out of it."
+  },
+  "m_cnz7p4": {
+    "message": "A página não retornou um resultado.",
+    "description": "The page did not return a scan result."
+  },
+  "m_izff0z": {
+    "message": "A página mudou durante a verificação. Tente novamente quando o produto terminar de carregar.",
+    "description": "The page changed while DropShredder was checking it. Try the scan again on the finished product page."
+  },
+  "m_xl7g11": {
+    "message": "A página mudou durante a verificação. Tente novamente.",
+    "description": "The page changed while DropShredder was checking it. Try again."
+  },
+  "m_f3orb7": {
+    "message": "DROPSHREDDER • SEM VEREDITO",
+    "description": "DROPSHREDDER • NO VERDICT"
+  },
+  "m_7nc3gp": {
+    "message": "DROP SHREDDER",
+    "description": "DROP SHREDDER"
+  },
+  "m_a3z3xl": {
+    "message": "Fechar aviso do DropShredder",
+    "description": "Dismiss DropShredder warning"
+  },
+  "m_16fc5or": {
+    "message": "Possibilidade de revenda em massa: DESCONHECIDA",
+    "description": "Mass-resell likelihood: UNKNOWN"
+  },
+  "m_1v9rhql": {
+    "message": "O limite de evidências independentes foi atingido.",
+    "description": "Independent evidence gate satisfied."
+  },
+  "m_1i9447f": {
+    "message": "O limite não foi atingido; isto não é uma acusação grave.",
+    "description": "Evidence gate not satisfied; this is not a severe accusation."
+  },
+  "m_sl3mdl": {
+    "message": "A página do produto mudou. Verifique novamente.",
+    "description": "The product page changed. Click CHECK THIS PRODUCT to try again."
+  },
+  "m_16dib4x": {
+    "message": "Verificando se esta imagem aparece em outros lugares…",
+    "description": "Checking whether this product image shows up elsewhere…"
+  },
+  "m_1vmh6tj": {
+    "message": "Busca de imagem aberta. Veja quem mais usa esta foto.",
+    "description": "Image search opened. See who else is using this picture."
+  },
+  "m_16a6z13": {
+    "message": "Verificando a idade do site…",
+    "description": "Checking how long this website has been around…"
+  },
+  "m_mzbzeb": {
+    "message": "Não foi possível confirmar a idade agora.",
+    "description": "Couldn’t confirm this website’s age right now."
+  },
+  "m_fl321w": {
+    "message": "Informações do domínio obtidas. Elas não determinam a idade da empresa.",
+    "description": "Domain registration information retrieved. It does not establish the business’s age."
+  },
+  "m_vek09w": {
+    "message": "Buscas de avaliações abertas. Compare reclamações antes de confiar.",
+    "description": "Buyer-review searches opened. Compare the complaints before you trust the store."
+  },
+  "m_3tggsf": {
+    "message": "Lendo custos e obstáculos da política de devolução…",
+    "description": "Reading the return policy for expensive catches and hoops…"
+  },
+  "m_1i9vxbn": {
+    "message": "Não foi encontrada uma política clara de devolução ou reembolso.",
+    "description": "Couldn’t find a clear return or refund policy on this store."
+  },
+  "m_159127j": {
+    "message": "Não foi possível ler a política com clareza suficiente para avaliar.",
+    "description": "The return policy couldn’t be read clearly enough to judge."
+  },
+  "m_1prohyv": {
+    "message": "Nenhuma armadilha evidente na política de devolução.",
+    "description": "No obvious return-policy traps stood out."
+  },
+  "m_19txq4b": {
+    "message": "Verificando de onde o pedido parece ser enviado…",
+    "description": "Checking where the order actually appears to ship from…"
+  },
+  "m_jlgbqw": {
+    "message": "Não há informações de envio suficientes nesta página.",
+    "description": "Couldn’t find enough shipping information on this page to tell."
+  },
+  "m_vgippz": {
+    "message": "A página não informa claramente a origem do envio.",
+    "description": "The page doesn’t clearly say where the order ships from."
+  },
+  "m_s5usub": {
+    "message": "A origem do envio não corresponde à alegação do vendedor. Confira as evidências.",
+    "description": "Where the order ships from doesn’t match the seller’s claim. Check the receipts."
+  },
+  "m_q7pqev": {
+    "message": "A origem do envio não contradiz o vendedor.",
+    "description": "The shipping origin doesn’t contradict what the seller says."
+  },
+  "m_see8qp": {
+    "message": "Histórico salvo do DropShredder excluído.",
+    "description": "Your saved DropShredder scan history is deleted."
+  },
+  "m_hds76z": {
+    "message": "O Chrome manteve uma permissão; confira o acesso a sites da extensão.",
+    "description": "Chrome kept a site permission; check extension site access."
+  },
+  "m_1sjsuxw": {
+    "message": "Acesso extra a sites removido.",
+    "description": "Extra site access removed."
+  },
+  "m_fcvv8f": {
+    "message": "DropShredder não tinha acesso extra para remover.",
+    "description": "DropShredder didn’t have any extra site access to remove."
+  },
+  "m_1vjmm3n": {
+    "message": "Abrir análise completa do DropShredder",
+    "description": "Open DropShredder full product analysis"
+  },
+  "m_1vrhsbs": {
+    "message": "DROPSHREDDER • VERIFICAÇÃO RÁPIDA",
+    "description": "DROPSHREDDER • QUICK CHECK"
+  },
+  "m_1e6wthl": {
+    "message": "Vários pontos para verificar",
+    "description": "Several things to check"
+  },
+  "m_1fyj2th": {
+    "message": "Um ponto merece atenção",
+    "description": "Something worth checking"
+  },
+  "m_4ommz5": {
+    "message": "Ainda não há evidências suficientes",
+    "description": "Not enough evidence yet"
+  },
+  "m_ih25l1": {
+    "message": "A verificação rápida não encontrou sinais pontuados. A confiança no vendedor permanece desconhecida.",
+    "description": "This quick check found no scored signals. Seller trust is still unknown."
+  },
+  "m_10duoh3": {
+    "message": "Preço anunciado: ",
+    "description": "Listed price: "
+  },
+  "m_13089c7": {
+    "message": "Vendedor informado: ",
+    "description": "Seller listed as: "
+  },
+  "m_1nilydh": {
+    "message": "Confiança no vendedor: NÃO VERIFICADA",
+    "description": "Seller trust: NOT VERIFIED"
+  },
+  "m_44zzng": {
+    "message": "Abrir verificação completa →",
+    "description": "Open full check →"
+  },
+  "m_h4xaam": {
+    "message": "Abrindo verificação completa…",
+    "description": "Opening full check…"
+  },
+  "m_z571pb": {
+    "message": "Não foi possível abrir o painel. Use o ícone do DropShredder.",
+    "description": "Could not open panel. Use the DropShredder toolbar icon."
+  },
+  "m_9cz0wm": {
+    "message": "Fechar verificação rápida do DropShredder",
+    "description": "Dismiss DropShredder quick check"
+  },
+  "m_xmwzf0": {
+    "message": "Anúncio de produto",
+    "description": "Product listing"
+  },
+  "m_84sfyf": {
+    "message": "Investigar este produto",
+    "description": "Hunt this product"
+  },
+  "m_1gesjvp": {
+    "message": "Investigar esta imagem",
+    "description": "Hunt this image"
+  },
+  "m_1kcxou1": {
+    "message": "Investigar esta loja",
+    "description": "Hunt this store"
+  },
+  "m_61pi2o": {
+    "message": "Falha ao atualizar a lista local.",
+    "description": "Local list update failed."
+  },
+  "m_1vu1nys": {
+    "message": "Esta seleção expirou. Inicie outra busca.",
+    "description": "This search selection expired. Start another hunt."
+  },
+  "m_17fd97q": {
+    "message": "VENCIDA — não pode ser ativada",
+    "description": "EXPIRED — cannot activate"
+  },
+  "m_11c22st": {
+    "message": "SEM ASSINATURA — fatos e identidade do editor não verificados",
+    "description": "UNSIGNED — facts and publisher identity unverified"
+  },
+  "m_1njq2ce": {
+    "message": "A prévia mostra os primeiros 20 registros. Revise o JSON completo antes de adicionar.",
+    "description": "Preview shows the first 20 records. Review the full JSON before adding this list."
+  },
+  "m_1tncca7": {
+    "message": "Prévia pronta. A lista fica local e não muda os limites de alerta.",
+    "description": "Preview ready. Adding a list keeps it local and does not change warning thresholds."
+  },
+  "m_ir787x": {
+    "message": "Verificações semanais ativadas. Apenas assinaturas já autorizadas, assinadas e com chave fixada; sem novos pedidos de permissão.",
+    "description": "Weekly signed-feed checks enabled. Only previously authorized, signed, pinned-key subscriptions are eligible; no new permission prompts."
+  },
+  "m_1cik44t": {
+    "message": "Verificações automáticas desativadas; listas sem alterações.",
+    "description": "Automatic feed checks disabled; saved lists are unchanged."
+  },
+  "m_1sn6fve": {
+    "message": "vencida; correspondências desativadas",
+    "description": "expired; matching disabled"
+  },
+  "m_h4yktt": {
+    "message": "apenas pistas de referência",
+    "description": "reference leads only"
+  },
+  "m_1aydb8f": {
+    "message": " • atualização semanal pendente",
+    "description": " • weekly refresh due"
+  },
+  "m_1dlxs0u": {
+    "message": "Restaurar versão anterior",
+    "description": "Restore previous version"
+  },
+  "m_1k8ubhb": {
+    "message": "Selecionar feed para atualizar",
+    "description": "Select feed for refresh"
+  },
+  "m_1162pm7": {
+    "message": "Feed selecionado. Busque a prévia para solicitar uma cópia; nenhuma solicitação foi enviada.",
+    "description": "Feed selected. Click Fetch preview to request a new copy; no request has been sent."
+  },
+  "m_1487ipv": {
+    "message": "Nenhuma lista adicionada.",
+    "description": "No user-added lists."
+  },
+  "m_j6jpxv": {
+    "message": "Escolha um JSON menor que 800 KB.",
+    "description": "Choose a JSON file smaller than 800 KB."
+  },
+  "m_1a89qs1": {
+    "message": "Busque uma prévia antes de salvar a assinatura.",
+    "description": "Fetch a feed preview before saving a subscription."
+  },
+  "m_1ckw75p": {
+    "message": "Solicitando acesso ao feed escolhido…",
+    "description": "Requesting access to the feed you chose…"
+  },
+  "m_9ndhxa": {
+    "message": "Acesso não concedido ou removido. Nenhuma lista ativada.",
+    "description": "Access was not granted or was removed. No list activated."
+  },
+  "m_b30axq": {
+    "message": "Busca do feed cancelada.",
+    "description": "Feed fetch canceled."
+  },
+  "m_ylvcom": {
+    "message": "Lista adicionada localmente. Atualizações automáticas exigem ativação separada e chave fixada independentemente; feeds sem assinatura continuam manuais.",
+    "description": "List added locally. Automatic updates require separate opt-in and an independently pinned signing key; unsigned feeds stay manual."
+  },
+  "m_b3ooko": {
+    "message": "Listas, versões anteriores, assinaturas e chaves removidas.",
+    "description": "User lists, previous versions, subscriptions and publisher keys removed."
+  },
+  "m_vsozru": {
+    "message": "Chave fixada. Veja novamente a prévia dos feeds assinados para verificar com ela.",
+    "description": "Publisher key pinned. Re-preview signed feeds to verify with this key."
+  },
+  "m_a4ybee": {
+    "message": "Consultando o LEI exato na GLEIF…",
+    "description": "Requesting the exact LEI you chose from GLEIF…"
+  },
+  "m_2p96yy": {
+    "message": "Acesso não concedido ou removido.",
+    "description": "Access was not granted or was removed."
+  },
+  "m_15bn3ws": {
+    "message": "não informado",
+    "description": "not supplied"
+  },
+  "m_1d9vgj8": {
+    "message": "Registro original da GLEIF",
+    "description": "Original GLEIF record"
+  },
+  "m_egy7au": {
+    "message": "Apenas um registro de identidade legal. Não vincula a entidade a este vendedor, fabricante ou produto, nem comprova segurança ou qualidade. Dados GLEIF: CC0; DropShredder não é afiliado.",
+    "description": "Legal identity record only. This does not link the entity to this seller, manufacturer or product, and does not establish safety or quality. GLEIF data: CC0; DropShredder is unaffiliated."
+  },
+  "m_kiztdr": {
+    "message": "Consulta de entidade cancelada.",
+    "description": "Entity lookup canceled."
+  },
+  "m_z2nhdi": {
+    "message": "Nenhum arquivo é processado até você escolher Ler rótulo no dispositivo.",
+    "description": "No file processed until you select READ LABEL ON DEVICE."
+  },
+  "m_1tr5y1i": {
+    "message": "Escolha primeiro uma imagem do rótulo.",
+    "description": "Choose a product-label image first."
+  },
+  "m_1cxwm2h": {
+    "message": "Lendo a imagem localmente. Nada é enviado a um servidor.",
+    "description": "Reading image locally. No image is sent to a server."
+  },
+  "m_17auqbe": {
+    "message": "indisponível nesta versão do Chrome",
+    "description": "unavailable in this Chrome build"
+  },
+  "m_ybs0hj": {
+    "message": "Nenhum caractere legível. Tente uma foto mais nítida ou busque manualmente.",
+    "description": "No readable characters were found. Try a sharper label image or search manually."
+  },
+  "m_qak25s": {
+    "message": "Texto reconhecido (não verificado): ",
+    "description": "Recognized text (unverified): "
+  },
+  "m_1bhulbi": {
+    "message": "Códigos com checksum válido (sem verificação independente): ",
+    "description": "Checksum-valid barcode values (not independently verified): "
+  },
+  "m_se06x7": {
+    "message": "Buscar fontes deste texto",
+    "description": "Search sources for this text"
+  },
+  "m_1i1yy2f": {
+    "message": "Análise local concluída. OCR/GTIN pode conter erros e nunca muda a pontuação do vendedor.",
+    "description": "Local analysis complete. OCR/GTIN recognition may contain errors and never changes seller scores."
+  },
+  "m_19muah": {
+    "message": "Leitor local indisponível.",
+    "description": "Local reader unavailable."
+  },
+  "m_120gkpi": {
+    "message": "🔎 Verificar com DropShredder",
+    "description": "🔎 Check with DropShredder"
+  },
+  "m_1wcavm4": {
+    "message": "Abrir este produto para verificar com DropShredder",
+    "description": "Open this product listing for a DropShredder check"
+  },
+  "m_m2xy6t": {
+    "message": "Anúncio não verificado. Abra o produto para uma verificação baseada em evidências.",
+    "description": "This listing has not been verified. Open the product for an evidence-based check."
+  },
+  "m_ajjry2": {
+    "message": "Busca cancelada. A chave de API não é salva.",
+    "description": "Search canceled. The API key is not saved."
+  },
+  "m_wj0t70": {
+    "message": "Solicitando uma consulta explícita ao Brave Search. Nenhum histórico é enviado.",
+    "description": "Requesting one explicit Brave Search query. No browser history is transmitted."
+  },
+  "m_7o5jb8": {
+    "message": "Permissão negada ou cancelada; nenhuma solicitação enviada.",
+    "description": "Permission denied or canceled; no request sent."
+  },
+  "m_8rp9l3": {
+    "message": "Nenhum resultado. Não permite inferência negativa.",
+    "description": "No results. No negative inference can be made."
+  },
+  "m_1nt43sp": {
+    "message": "Busca na web indisponível.",
+    "description": "Web search unavailable."
+  },
+  "m_194fh44": {
+    "message": "Busca cancelada ao remover acesso. A chave não é salva.",
+    "description": "Search canceled while site access is removed. The API key is not saved."
+  },
+  "m_2yzy77": {
+    "message": "Aparência alterada neste painel, mas não foi possível salvar.",
+    "description": "Appearance changed for this panel; saving it was unavailable."
+  },
+  "m_jego5b": {
+    "message": "Aparência salva indisponível. A exibição padrão continua utilizável.",
+    "description": "Saved appearance is unavailable. Default display is still usable."
+  },
+  "m_goz0xo": {
+    "message": " — filtros não mudam o veredito",
+    "description": " — filters do not change the verdict"
+  },
+  "m_10zaq0w": {
+    "message": "São avisos candidatos; confirme modelo, série e unidades abrangidas no aviso oficial.",
+    "description": "Results are candidate notices; confirm exact model, serial and unit scope in the official notice."
+  },
+  "m_6x5dun": {
+    "message": "A página mudou. Verifique antes de exportar.",
+    "description": "The page changed. Check this product again before exporting."
+  },
+  "m_1mgubrw": {
+    "message": "Exportação pronta. Exclui avaliações, imagens, contatos brutos e texto completo.",
+    "description": "Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded."
+  },
+  "m_1ihj8nx": {
+    "message": "Consulta de recall cancelada.",
+    "description": "Recall lookup canceled."
+  },
+  "m_1iwy4vi": {
+    "message": "Consultando sua busca no serviço público da CPSC…",
+    "description": "Checking the query you chose with the public CPSC recall service…"
+  },
+  "m_1nwf7sq": {
+    "message": "Acesso do Chrome não concedido. Nenhuma consulta enviada.",
+    "description": "Chrome access was not granted. No recall request was sent."
+  },
+  "m_1k9b6w6": {
+    "message": "data não informada",
+    "description": "date not supplied"
+  },
+  "m_10yqw7k": {
+    "message": "modelo mencionado; unidades não verificadas",
+    "description": "model token mentioned; unit scope unverified"
+  },
+  "m_1qm7t4h": {
+    "message": "candidato de busca; identidade não verificada",
+    "description": "retrieval candidate; product identity unverified"
+  },
+  "m_1xfzhsk": {
+    "message": " — resultados limitados",
+    "description": " — results capped"
+  },
+  "m_1tt1pl3": {
+    "message": "Nenhum candidato nesta busca. O serviço e a consulta podem omitir avisos; isto não é uma garantia de segurança.",
+    "description": "No candidates returned for this query. The service and query can miss notices; this is not a safety clearance."
+  },
+  "m_1s87f86": {
+    "message": "Consulta de recall indisponível.",
+    "description": "Recall lookup unavailable."
+  },
+  "m_tuo7sd": {
+    "message": "Consulta de recall cancelada ao remover acesso.",
+    "description": "Recall lookup canceled while site access is removed."
+  },
+  "m_qzhfaz": {
+    "message": "Anúncio verificado",
+    "description": "Scanned listing"
+  },
+  "m_74hcuk": {
+    "message": "Pontuação de evidências de revenda em massa",
+    "description": "Mass-resell evidence score"
+  },
+  "m_j5rupt": {
+    "message": "Pontuação de evidências de dropshipping",
+    "description": "Dropship evidence score"
+  },
+  "m_1wfjfwj": {
+    "message": "Alegações enganosas",
+    "description": "Misleading claims"
+  },
+  "m_7f3bys": {
+    "message": "Sinais de alerta da loja",
+    "description": "Store warning signs"
+  },
+  "m_13cm4b4": {
+    "message": "Truques de avaliações / vendas",
+    "description": "Review / sales tricks"
+  },
+  "m_t5i9hp": {
+    "message": "Problemas de envio",
+    "description": "Shipping headaches"
+  },
+  "m_1uks3wg": {
+    "message": "Origem aparente",
+    "description": "Where it appears to come from"
+  },
+  "m_11wa5": {
+    "message": "Quem processa o pagamento",
+    "description": "Who handles the payment"
+  },
+  "m_1jul7sb": {
+    "message": "As pontuações resumem evidências detectadas; não são probabilidades medidas nem notas de qualidade.",
+    "description": "Scores summarize detected evidence; they are not measured probabilities or product-quality ratings."
+  },
+  "m_149g8wc": {
+    "message": "ATENÇÃO",
+    "description": "WATCH THIS"
+  },
+  "m_1vtd8im": {
+    "message": "SINAL LEVE",
+    "description": "SMALL FLAG"
+  },
+  "m_b8pujm": {
+    "message": "Fonte e método",
+    "description": "Source and method"
+  },
+  "m_a2rmeg": {
+    "message": "Este detector não registrou URL nem método de extração.",
+    "description": "This detector did not record a source URL or extraction method."
+  },
+  "m_1au1a8v": {
+    "message": "Escolher buscas para abrir",
+    "description": "Choose searches to open"
+  },
+  "m_1qnmdp3": {
+    "message": "Buscas externas compartilham a consulta com o mecanismo escolhido. Abra até 8 por vez.",
+    "description": "External searches share the query with the selected search engine. Open up to 8 at a time."
+  },
+  "m_4xn7ie": {
+    "message": "Abrir buscas selecionadas",
+    "description": "Open selected searches"
+  },
+  "m_1fj2xc8": {
+    "message": "Escolha entre 1 e 8 buscas.",
+    "description": "Choose between 1 and 8 searches."
+  },
+  "m_1a03ner": {
+    "message": "Uma busca não abriu. As buscas restantes continuam disponíveis.",
+    "description": "A search could not open. Unopened searches remain available."
+  },
+  "m_1pa9zoy": {
+    "message": "⚠ EVIDÊNCIAS FORTES DE DROPSHIPPING / REVENDA",
+    "description": "⚠ STRONG DROPSHIP / RESELL EVIDENCE"
+  },
+  "m_17on8ti": {
+    "message": "As famílias independentes ultrapassaram o limite de alerta grave.",
+    "description": "Independent evidence families crossed the severe-warning gate."
+  },
+  "m_qa2g1w": {
+    "message": "⚠ ALGO PARECE ESTRANHO",
+    "description": "⚠ SOMETHING SMELLS OFF"
+  },
+  "m_1ok95zu": {
+    "message": "Há sinais de risco, mas evidências insuficientes para uma acusação grave.",
+    "description": "Risk signals detected, but the evidence is not strong enough for a severe accusation."
+  },
+  "m_196lx5e": {
+    "message": "DROPSHREDDER • SINAIS ENCONTRADOS",
+    "description": "DROPSHREDDER • SIGNALS FOUND"
+  },
+  "m_1g6z073": {
+    "message": "Apenas indicadores fracos ou moderados. Um convite a investigar, não um veredito.",
+    "description": "Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict."
+  },
+  "m_usd9bd": {
+    "message": "Ainda sem evidências passivas significativas. A investigação pode verificar origem e identidade.",
+    "description": "No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity."
+  },
+  "m_1udoc23": {
+    "message": "DETONAR ESTA MERDA",
+    "description": "SHRED THIS SHIT"
+  },
+  "m_1ru4mwq": {
+    "message": "AS PORRAS DAS EVIDÊNCIAS",
+    "description": "THE FUCKING RECEIPTS"
+  },
+  "m_bmi36g": {
+    "message": "Nada sólido ainda. Investigue mais antes de dar seu dinheiro a esta loja.",
+    "description": "Nothing solid yet. Keep digging before you give this store your money."
+  },
+  "m_re2gif": {
+    "message": "DROPSHREDDER PEGOU ALGO",
+    "description": "DROPSHREDDER CAUGHT SOMETHING"
+  },
+  "m_8eqvig": {
+    "message": "ESTE ANÚNCIO TEM ALERTAS GRAVES DE REVENDA / DROPSHIPPING",
+    "description": "THIS LISTING HAS SERIOUS RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_n8lez9": {
+    "message": "VERIFICAR ESTA MERDA",
+    "description": "CHECK THIS SHIT"
+  },
+  "m_jku2d7": {
+    "message": "Nada sólido ainda. Investigue antes de confiar no discurso de venda.",
+    "description": "Nothing solid yet. Dig deeper before you trust the sales pitch."
+  },
+  "m_1etuljh": {
+    "message": "DROPSHREDDER ENCONTROU ALERTAS",
+    "description": "DROPSHREDDER FOUND RED FLAGS"
+  },
+  "m_pdtbad": {
+    "message": "SINAIS FORTES DE REVENDA / DROPSHIPPING",
+    "description": "STRONG RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_8b27l4": {
+    "message": "O QUE CHAMOU ATENÇÃO",
+    "description": "WHAT STOOD OUT"
+  },
+  "m_e3qmz": {
+    "message": "Ainda não há nada sólido. Você pode investigar mais antes de confiar no anúncio.",
+    "description": "Nothing solid yet. You can dig deeper before deciding whether the listing deserves your trust."
+  },
+  "m_er0hmn": {
+    "message": "DROPSHREDDER ENCONTROU ALGO PARA VERIFICAR",
+    "description": "DROPSHREDDER FOUND SOMETHING WORTH CHECKING"
+  },
+  "m_1uq9kwn": {
+    "message": "SINAIS FORTES DE REVENDA / DROPSHIPPING",
+    "description": "STRONG RESELL / DROPSHIP WARNING SIGNS"
+  },
+  "m_1aku595": {
+    "message": "Análise local de comércio e origem de produtos.",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "m_1qj5k8r": {
+    "message": "Abrir DropShredder",
+    "description": "Open DropShredder"
+  },
+  "m_12wv6je": {
+    "message": "O idioma acompanha o Chrome. Anotações técnicas e exportações mantêm o texto original. O OCR incluído lê texto em inglês.",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Packaged OCR reads English text."
+  },
+  "m_qhjvpw": {
+    "message": "Notas do detector (idioma original)",
+    "description": "Detector notes (original language)"
+  },
+  "m_10j58ar": {
+    "message": "DropShredder $arg1$ • Privacidade por padrão • Sem conta",
+    "description": "DropShredder $1 • Private by design • No account needed",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1sscdoz": {
+    "message": "Verificação de $arg1$ concluída.",
+    "description": "Scan complete for $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_zz0wd1": {
+    "message": "Pontos da política de devolução para revisar antes de comprar: $arg1$.",
+    "description": "Return-policy findings to review before buying: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1tgjts7": {
+    "message": "Transportadora $arg1$ detectada, mas sem origem explícita. Nenhuma contradição pontuada.",
+    "description": "Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1ptgjet": {
+    "message": "Falha ao buscar política: HTTP $arg1$",
+    "description": "Policy fetch failed: HTTP $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1umunh4": {
+    "message": "Preço anunciado: $arg1$",
+    "description": "Listed price: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_673z20": {
+    "message": "Vendedor informado: $arg1$",
+    "description": "Seller listed as: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1f7bzd7": {
+    "message": "$arg1$ • $arg2$ • registrado em $arg3$",
+    "description": "$1 • $2 • captured $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_1o1yof0": {
+    "message": "Nota exibida: $arg1$; após avaliações visíveis sinalizadas: $arg2$.",
+    "description": "Rating shown: $1; after flagged visible reviews: $2.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1kg4e3m": {
+    "message": "Reclamações frequentes de notas baixas: $arg1$.",
+    "description": "Common low-star complaints: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1vd7g02": {
+    "message": "Verificação: $arg1$/$arg2$ avaliações visíveis não acionaram nossos controles.$arg3$$arg4$",
+    "description": "Review check: $1/$2 visible reviews did not trigger our checks.$3$4",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_m1msr6": {
+    "message": "$arg1$ • observado em $arg2$",
+    "description": "$1 • observed $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1upynrn": {
+    "message": "Abrir fonte: $arg1$",
+    "description": "Open source: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_2047wl": {
+    "message": "Mostrando os primeiros 300 de $arg1$ itens. Os demais estão nos detalhes completos.",
+    "description": "Showing the first 300 of $1 items. Full scan details contain the remaining items.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1b73ffu": {
+    "message": "Mostrando $arg1$ de $arg2$ itens$arg3$.",
+    "description": "$1 of $2 displayed items shown$3.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_ajkrjj": {
+    "message": "Aviso $arg1$ • $arg2$ • $arg3$",
+    "description": "Notice $1 • $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_8vwz1y": {
+    "message": "Avisos candidatos: $arg1$; obtidos em $arg2$$arg3$. Buscas parciais podem incluir marcas não relacionadas. Confirme cada aviso; nenhum resultado muda a pontuação.",
+    "description": "Candidate notices: $1; retrieved $2$3. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_d89ct1": {
+    "message": "Buscas abertas: $arg1$. Restantes: $arg2$.",
+    "description": "Opened $1 searches. $2 remaining.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_11nhyfc": {
+    "message": "Fontes candidatas: $arg1$. Confira os originais antes de atribuir; veredito inalterado.",
+    "description": "Source candidates: $1. Check originals before attribution; no verdict changed.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1oyfgbf": {
+    "message": "Códigos lidos: $arg1$; linhas: $arg2$. Suporte a código: $arg3$. Suporte OCR: $arg4$.",
+    "description": "Barcodes read: $1; text lines: $2. Barcode support: $3. OCR support: $4.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_qlsa5y": {
+    "message": "Código de barras: $arg1$",
+    "description": "Barcode: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_19l0liv": {
+    "message": "Texto reconhecido (não verificado): $arg1$",
+    "description": "Recognized text (unverified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1r8u2jh": {
+    "message": "Códigos com checksum válido (sem verificação independente): $arg1$",
+    "description": "Checksum-valid barcode values (not independently verified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_8dviar": {
+    "message": "Assinatura conferida com sua chave fixada $arg1$; fatos não verificados",
+    "description": "Signature checked against your pinned key $1; facts remain unverified",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1pvmmcm": {
+    "message": "$arg1$ • versão $arg2$ • registros: $arg3$ • publicado $arg4$ • vence $arg5$ • licença $arg6$ • $arg7$",
+    "description": "$1 • version $2 • $3 records • published $4 • expires $5 • license $6 • $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1y9jypi": {
+    "message": "$arg1$ • v$arg2$ • registros: $arg3$ • $arg4$$arg5$",
+    "description": "$1 • v$2 • $3 records • $4$5",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      }
+    }
+  },
+  "m_nvlwxh": {
+    "message": "$arg1$ / $arg2$ • $arg3$ • SHA-256 da chave base64url: $arg4$. Verifique por um canal independente. Fixar ou trocar é sua decisão; não valida acusações.",
+    "description": "$1 / $2 • $3 • SHA-256 of base64url key: $4. Verify this key through an independent publisher channel. Pinning or replacing it is your trust decision; it does not validate allegations.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_k3870i": {
+    "message": "$arg1$ • LEI $arg2$ • $arg3$ • entidade $arg4$ • registro $arg5$ • atualizado $arg6$ • obtido $arg7$",
+    "description": "$1 • LEI $2 • $3 • entity $4 • registration $5 • updated $6 • retrieved $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1dbdstp": {
+    "message": "Pontuação de evidências de revenda: $arg1$/100 • Sinais: $arg2$ • $arg3$",
+    "description": "Mass-resell evidence score: $1/100 • Signals: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_tbzvyx": {
+    "message": "DESCONHECIDO",
+    "description": "UNKNOWN"
+  },
+  "m_1mbceap": {
+    "message": "BAIXO",
+    "description": "LOW"
+  },
+  "m_1dfjx12": {
+    "message": "MÉDIO",
+    "description": "MEDIUM"
+  },
+  "m_y6hdz1": {
+    "message": "ALTO",
+    "description": "HIGH"
+  },
+  "m_pr8pgc": {
+    "message": "DIRETA",
+    "description": "DIRECT"
+  },
+  "m_rkyqd6": {
+    "message": "FORTE",
+    "description": "STRONG"
+  },
+  "m_aphutn": {
+    "message": "INFORMAÇÃO",
+    "description": "FYI"
+  },
+  "m_skramw": {
+    "message": "disponível",
+    "description": "available"
+  },
+  "m_13ml53d": {
+    "message": "indisponível",
+    "description": "unavailable"
+  },
+  "m_tkexoc": {
+    "message": "Cancelado.",
+    "description": "Canceled."
+  },
+  "m_9c35st": {
+    "message": "Remover",
+    "description": "Remove"
+  },
+  "m_1l0xxoj": {
+    "message": "Fechar",
+    "description": "Close"
+  },
+  "m_srveqq": {
+    "message": "Nenhuma página web ativa disponível.",
+    "description": "No active web page is available."
+  },
+  "m_1687ptr": {
+    "message": "A URL ativa não é compatível.",
+    "description": "The active page URL is not supported."
+  },
+  "m_a60if4": {
+    "message": "DropShredder só verifica páginas comerciais HTTP/HTTPS comuns.",
+    "description": "DropShredder only scans ordinary HTTP/HTTPS commerce pages."
+  },
+  "m_1usa14u": {
+    "message": "DropShredder não verifica serviços de conta, e-mail, compra ou pagamento.",
+    "description": "DropShredder does not scan account, email, checkout or payment services."
+  },
+  "m_akhvd4": {
+    "message": "DropShredder não verifica páginas de conta, autenticação, pagamento, cobrança, endereços ou histórico de pedidos.",
+    "description": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages."
+  },
+  "m_mrljgd": {
+    "message": "A ação não foi concluída. Detalhes (idioma original): $arg1$",
+    "description": "Action could not complete. Details (original language): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_5mv5og": {
+    "message": "MODERADO",
+    "description": "MODERATE"
+  },
+  "m_lzjy3u": {
+    "message": "Evidências independentes de origem e entrega atingem o limite de alerta grave.",
+    "description": "Independent provenance/fulfillment evidence satisfies the severe-warning gate."
+  },
+  "m_1kfh8e3": {
+    "message": "As evidências ainda não são independentes ou fortes o suficiente para uma acusação automática grave.",
+    "description": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+  },
+  "m_1t1mzwk": {
+    "message": "Há sinais de risco, mas nenhum estabelece a origem ou dropshipping.",
+    "description": "Risk signals exist, but none establish product provenance or dropshipping."
+  },
+  "m_12v6pfe": {
+    "message": "Ainda não há evidências ponderadas para acusações.",
+    "description": "No accusation-weighted evidence is available yet."
+  },
+  "extension_description": {
+    "message": "Análise local de comércio e origem de produtos.",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "open_extension": {
+    "message": "Abrir DropShredder",
+    "description": "Open DropShredder"
+  },
+  "locale_code": {
+    "message": "pt-BR",
+    "description": "Resolved packaged UI locale, including fallback; do not translate."
+  },
+  "m_c2lr2r": {
+    "message": "Idioma do OCR",
+    "description": "OCR language"
+  },
+  "m_1ihxfp0": {
+    "message": "Escolha o idioma impresso na etiqueta. O OCR offline pode interpretar o texto incorretamente; ele nunca altera as pontuações do vendedor.",
+    "description": "Choose the language printed on the label. Offline OCR may misread text; it never changes seller scores."
+  },
+  "m_1spcrti": {
+    "message": "O idioma da interface segue o Chrome. As anotações técnicas e exportações brutas mantêm o texto original. O OCR offline suporta inglês e os sete idiomas da interface; escolha o idioma da etiqueta antes da leitura.",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Offline OCR supports English and all seven interface languages; choose the label language before reading."
+  },
+  "m_7nql6j": {
+    "message": "English",
+    "description": "English"
+  },
+  "m_ubceys": {
+    "message": "简体中文",
+    "description": "简体中文"
+  },
+  "m_p82r5w": {
+    "message": "हिन्दी",
+    "description": "हिन्दी"
+  },
+  "m_773xpa": {
+    "message": "Español",
+    "description": "Español"
+  },
+  "m_1agd4ix": {
+    "message": "العربية",
+    "description": "العربية"
+  },
+  "m_1x2mspi": {
+    "message": "Français",
+    "description": "Français"
+  },
+  "m_17megcz": {
+    "message": "বাংলা",
+    "description": "বাংলা"
+  },
+  "m_ao59nm": {
+    "message": "Português",
+    "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "Escolha um arquivo JSON de origem menor que 50 KB.",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "Abra e revise os documentos de origem e aplique-os ao produto atual. Um arquivo ou assinatura, por si só, não verifica a origem.",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "Arquivo de origem inválido. Confira o esquema e as URLs públicas das fontes.",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "Confira o produto atual antes de aplicar evidências de origem.",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "Avaliação de origem aplicada. As pontuações de alerta do vendedor não mudam.",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "Revisado em $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "Referência dentro do prazo de validade",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "Referência desatualizada — confira a fonte novamente",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "Origem declarada — não verificada",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "Evidências parciais de origem",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "Cadeia norte-americana documentada",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "Etapa documentada fora dos EUA / Canadá / México",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "Evidências de origem conflitantes",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "Fabricado, vendido e enviado na América do Norte",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "Escopo: EUA / Canadá / México. Documentado significa fontes revisadas pelo usuário, não certificação independente. Todas as etapas devem estar cobertas; evidências ausentes permanecem desconhecidas.",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "Etapas de origem do produto e declarações das fontes",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "Matérias-primas",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "Componentes e ingredientes",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "Processamento",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "Montagem final",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "Embalagem",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "Vendedor responsável pela venda",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "Primeiro despacho físico",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "Destino da venda",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$: $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "Escopo: Estados Unidos, Canadá e México. Materiais, componentes, processamento, montagem, embalagem, vendedor, despacho e destino são verificados separadamente. Declarações da loja e depósitos locais não comprovam toda a cadeia.",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "Prévia das evidências de origem do produto (JSON, máximo 50 KB)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "Revisei os documentos vinculados para este produto, vendedor e envio exatos.",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "APLICAR EVIDÊNCIAS DE ORIGEM REVISADAS",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "LIMPAR EVIDÊNCIAS DE ORIGEM",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "Os arquivos ficam na memória do painel até serem apagados ou a página mudar. Aplicar evidências atualiza apenas este relatório. A origem documentada reflete sua revisão; o DropShredder não certifica de forma independente a autenticidade das fontes, a qualidade do produto ou a conformidade legal da rotulagem.",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "Fontes norte-americanas e mapa comercial",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "Referências de fontes e fabricantes, não uma lista de lojas confiáveis. Confira o produto e vendedor exatos. Abrir uma fonte envia uma solicitação normal do navegador; o diretório não faz solicitações automáticas. As notas mantêm o idioma original.",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "Referências por país",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "Os três países",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "Canadá",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "Estados Unidos",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "México",
+    "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "Reputação de comerciantes e fabricantes",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "Analise separadamente registros de órgãos de consumidores, identidade, medidas oficiais, comércio, sustentabilidade e produtos. Uma avaliação favorável se limita às fontes analisadas; não é garantia nem certificado de origem.",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "Função da entidade",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "Comerciante",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "Fabricante",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "Nome jurídico exato da entidade",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "Domínio do site da entidade",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "Confirme que esta entidade vende ou fabrica o produto atual. Nomes semelhantes, hospedagem compartilhada e empresas afiliadas não comprovam essa relação.",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "Provas de reputação em JSON, até 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "Analisei os registros originais e verifiquei a entidade exata, o estado atual, o escopo e sua relação com este anúncio.",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "AVALIAR REPUTAÇÃO",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "LIMPAR REPUTAÇÃO",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "Fontes para pesquisar reputação",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "Categoria de pesquisa",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "Todas as categorias",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "Identidade jurídica",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "Reputação entre consumidores",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "Medidas oficiais e restrições",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "Registros comerciais",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "Avaliações da cadeia de fornecimento",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "Certificação e recolhimento de produtos",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "Provas favoráveis nas fontes analisadas",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "Registro desfavorável nas fontes analisadas",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "Reputação mista ou não resolvida",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "Provas de reputação insuficientes",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "Reputação não analisada",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "Arquivo de reputação inválido. Verifique tamanho, esquema e escopo das fontes.",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "Abra os registros e confirme a entidade jurídica exata e sua relação com este anúncio.",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "Verifique o produto atual antes de avaliar a reputação.",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ registros atuais • $arg2$ registros excluídos • $arg3$ grupos de publicadores",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "Desconhecido",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "Reputação analisada somente pelo usuário. Não certifica produtos, conformidade comercial nem desempenho futuro. As pontuações de alerta do vendedor não mudam.",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "Transportadora",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "Litígios e processos judiciais",
+    "description": "Litigation and court cases"
+  }
+}
