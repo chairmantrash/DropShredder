@@ -1,0 +1,83 @@
+{
+  "task": "DS-042/043",
+  "date": "2026-10-10",
+  "status": "VERIFYING",
+  "baseline": "f2007ca0b80266770c97637ae261fb51d99c7e5e",
+  "sourceCommit": "b8fa9f02e6311c0cb8557f1fe3fd34f7dd0a1f94",
+  "sourceTree": "a7c79fe092927f030e6576b2d65fca391ff1596f",
+  "local": {
+    "coreTests": 386,
+    "failed": 0,
+    "skipped": 0,
+    "catalogs": 8,
+    "messagesEach": 419,
+    "checks": [
+      "typecheck",
+      "security",
+      "static Chrome runtime",
+      "data lint",
+      "localization",
+      "professionalism",
+      "build",
+      "zip",
+      "release package",
+      "performance",
+      "git diff check"
+    ]
+  },
+  "package": {
+    "files": 51,
+    "bytes": 54939856,
+    "zip": [
+      {
+        "path": ".output/dropshredder-0.2.0-chrome.zip",
+        "bytes": 25848549,
+        "sha256": "d646c0b1e25fc44d0388c6ef7e7d36e5a80ebd1fff918b50dd7fdcf2cd263486"
+      }
+    ]
+  },
+  "sourceAudit": {
+    "previousNotes": 38,
+    "topicFamilies": 12,
+    "references": 98,
+    "pageRetrieved": 51,
+    "primarySearchResult": 39,
+    "retrievalFailed": 7,
+    "bodyUnreadable": 1,
+    "litigationReferences": 15
+  },
+  "implemented": {
+    "standingSources": 32,
+    "dimensions": 7,
+    "sourceRequestsAutomatic": 0,
+    "warningScoreContribution": 0,
+    "recordPersistence": false,
+    "litigationFreshnessDays": 7
+  },
+  "scheduledMaintenance": {
+    "litigation": "enabled; Monday morning",
+    "otherIntelligence": "enabled; Tuesday morning",
+    "timezone": "America/Chicago",
+    "scope": "Research tasks, not extension background crawler or automatic installed-catalog distribution"
+  },
+  "hosted": {
+    "status": "PENDING",
+    "passes": 0
+  },
+  "previousHosted": {
+    "commit": "f2007ca0b80266770c97637ae261fb51d99c7e5e",
+    "runtimeRun": 38043891154,
+    "status": "BLOCKED before runtime by OCR inventory builder-environment fingerprint mismatch; zero package/native passes",
+    "localizedGroupsPassed": 7,
+    "ci": "success",
+    "codeql": "success"
+  },
+  "remaining": [
+    "Exact new-candidate hosted runtime checks",
+    "DS-040 original-engineer Hindi OCR identifier repair and unchanged assertion",
+    "Independent A01\u2013D06 acceptance",
+    "Representative real seller/product/category/source calibration and authenticity",
+    "Native speaker/legal copy review",
+    "No main merge, release tagging or store submission authorized"
+  ]
+}
