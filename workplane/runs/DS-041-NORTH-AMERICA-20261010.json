@@ -1,0 +1,71 @@
+{
+  "task": "DS-041",
+  "date": "2026-10-10",
+  "status": "IMPLEMENTED-NATIVE-VERIFICATION-PENDING",
+  "baseline": "4db19df098009cc14a07ba61e6c02e2fa490389b",
+  "sourceCommit": "a80617685ad796e35cc815f79b356ab4c72c775d",
+  "sourceTree": "7c2fec8dffa55b7d7938d2b7792d22431075be3f",
+  "node": "22.18.0",
+  "tests": {
+    "core": {
+      "passed": 364,
+      "failed": 0,
+      "skipped": 0
+    },
+    "newCoreAndDOM": 27,
+    "typecheck": "PASS",
+    "security": "PASS",
+    "chromeStatic": "PASS",
+    "data": "PASS",
+    "localization": {
+      "passed": true,
+      "catalogs": 8,
+      "messages": 385,
+      "newMessages": 38
+    },
+    "professionalism": "PASS with existing size/runtime-dependency warnings",
+    "buildZip": "PASS",
+    "releasePackage": "PASS",
+    "performanceStatic": "PASS",
+    "diffCheck": "PASS",
+    "native": "PENDING new exact-build N30/N31; existing O-hin unchanged"
+  },
+  "package": {
+    "files": 51,
+    "bytes": 54864218,
+    "zipBytes": 25830054,
+    "zipSha256": "1cf4ae3004c9da6342b9be7184cee309f8d4cc94c4ed760268e42c8e294e9fee",
+    "inventory": "tools/browser-smoke/candidate-build-info.json"
+  },
+  "research": {
+    "datedReferences": 34,
+    "sourcedEdges": 5,
+    "scoredEdges": 0,
+    "sourceIndexEntries": 47,
+    "newSourceEntries": 10
+  },
+  "features": [
+    "separate eight-stage US/CA/MX origin assessment",
+    "claim-only scans and exact EN/ES/FR quotations",
+    "local source-reviewed dossier preview/apply/clear/navigation guard",
+    "explicit identity and 180-day freshness/coverage refusal",
+    "safe current-report export",
+    "country-filtered reference/relationship map",
+    "regional neutral marketplace navigation",
+    "bounded regional/provider source queries"
+  ],
+  "limitations": [
+    "JSON/source kinds/complete fields are author assertions; deliberate review is not independent authenticity certification",
+    "No real product or merchant has been certified entirely regional",
+    "No new native or live regional accuracy result claimed yet",
+    "Representative regional/category, native-speaker, legal-copy, source authentication and actual shipping acceptance still required",
+    "DS-040 Hindi MODEL12345 OCR error remains blocked with original strict assertion",
+    "No new permission, dependency, backend, automatic document retrieval, allegation or public release"
+  ],
+  "publication": {
+    "mainUnchanged": true,
+    "pr9": "draft/unmerged",
+    "tag": false,
+    "storeSubmission": false
+  }
+}

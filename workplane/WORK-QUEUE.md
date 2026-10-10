@@ -63,3 +63,5 @@ Source implementation and constraints: `workplane/tasks/DS-035.md`. The owner su
 Current evidence: production `cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6`, tested harness `fe22e27b44424273d4b465d8af5cafbc40178bdb`. Exact **34-file** package, **267** core tests, **9 packaged +29 headed native =38 distinct** real Chrome156 checks; repeated headless checks excluded. DS-037-LIVE-BETA-20261009.json retains executed IDs, screenshots, live providers and blocked surfaces. Independent acceptance/category accuracy remains open; earlier queue rows do not prove completion of their broad test criteria. DS-021 is an ongoing maintenance responsibility, not evidence of an installed scheduled crawler.
 
 | DS-041 | P1 | Canada/Mexico research, sourcing map and eight-stage North American origin utility | VERIFYING | /root — implementation complete; exact-build/native and real-product authentication gates explicit |
+
+DS-041 checkpoint:364 core tests/27 new, eight385-message catalogs,51files/54,864,218bytes. Source a80617685ad796e35cc815f79b356ab4c72c775d; native verification pending. Exact receipt: workplane/runs/DS-041-NORTH-AMERICA-20261010.json.

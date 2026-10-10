@@ -1,48 +1,48 @@
 {
-  "sourceCommit": "ba9c51a74a9d914d5e75710902bfb1c4a431dbe5",
-  "sourceTree": "caeb4cddb0cab400597dd423cbf340d3a3cb5935",
+  "sourceCommit": "a80617685ad796e35cc815f79b356ab4c72c775d",
+  "sourceTree": "7c2fec8dffa55b7d7938d2b7792d22431075be3f",
   "version": "0.2.0",
-  "reviewedChange": "DS-040 adds finite offline merchant-language detection and original-language evidence preservation, localized prices/dates/variants and sensitive-page gates for Chinese, Hindi, Spanish, Arabic, French, Bengali and Portuguese with English regression. Seven pinned, hash-checked OCR models are packaged at build time. No runtime model downloads, image uploads, new permissions, severity-threshold or geographic-weight changes.",
+  "reviewedChange": "DS-041: Canada/Mexico provider/source map, separate user-reviewed eight-stage US/CA/MX product origin, exact listing/seller/variant binding, bounded session-only dossiers and safe export, neutral regional navigation and search sources. No independent certification, automatic source requests, new permissions or geography score; original DS-040 Hindi OCR failure/assertion unchanged.",
   "buildFiles": [
     {
       "path": "_locales/ar/messages.json",
-      "bytes": 68175,
-      "sha256": "f64cc25d427c85b1b94a470014192fc477d880e96f1bb9a2d051d665903b8350"
+      "bytes": 76068,
+      "sha256": "145c926d60b47d2286d639b985a21af23baab75b13340736da4c31541fb18f63"
     },
     {
       "path": "_locales/bn/messages.json",
-      "bytes": 83454,
-      "sha256": "6374ee8312768c19e8daa31bdbea7ca8c03ec006c31df0dec254f642f86f5207"
+      "bytes": 93451,
+      "sha256": "39abbb9bc85c9e38b5dcec61e11f7fada9578291c61df7b0883c04fa9ce15c34"
     },
     {
       "path": "_locales/en/messages.json",
-      "bytes": 61171,
-      "sha256": "302595a2aec0eb5866b9f57b25a5485f3044697dd8bc3cfea3c7e67ef19ae4c8"
+      "bytes": 67914,
+      "sha256": "a609372df397e0b9258774dc34e31a0e47e748265d32fb679ec04443775800f1"
     },
     {
       "path": "_locales/es/messages.json",
-      "bytes": 62295,
-      "sha256": "fc325a2049fa34a7331bb18ef5c8587048899f893ecf5ebdf206b463876a9309"
+      "bytes": 69411,
+      "sha256": "7d5c3bf64a2f7351ecd6968cf5d9186d647d4b04a9012f3f5f14a5983961c52d"
     },
     {
       "path": "_locales/fr/messages.json",
-      "bytes": 63610,
-      "sha256": "b5cb209fb29ad7c3031f19fa0c3a75d86dcb3931060a8f963c2f87b534885f35"
+      "bytes": 70873,
+      "sha256": "a42aeff87352ccdcd53cb6b3741dc7de869dd807a9490070c907e0d173a3e484"
     },
     {
       "path": "_locales/hi/messages.json",
-      "bytes": 83217,
-      "sha256": "c9ab438d5518c84376c5fa5c86f22da1e73ae35eb806d34e6a8dad9e9033174f"
+      "bytes": 93281,
+      "sha256": "b6b8b9cb1c5c9cf9386a7cd7866c1da47601919b759c63715225dea1868b7d31"
     },
     {
       "path": "_locales/pt_BR/messages.json",
-      "bytes": 62393,
-      "sha256": "8c78f02e9b46627ddb8d6c0a7b191207d2216b98a3a8c12113272aa8d7bada87"
+      "bytes": 69478,
+      "sha256": "1f2f86fb7d82febe481281c8d405a584920083dff2061e8c0c5bb6a20f7ca819"
     },
     {
       "path": "_locales/zh_CN/messages.json",
-      "bytes": 60044,
-      "sha256": "11619354fbf021cc8ba85793cd03887347cac80994ea344ee2cb832f47968d80"
+      "bytes": 66689,
+      "sha256": "efd6849fe22b66dafb1bfe2837056b3c6623803d1b81c23c6b6174b313309946"
     },
     {
       "path": "assets/sidepanel-CA7A_2G3.css",
@@ -51,8 +51,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 47816,
-      "sha256": "9a58d721219606624e71da2eeaaf89c5815aaae26c92f086b9512c0ecc7b4e00"
+      "bytes": 50449,
+      "sha256": "3a618f88248937b19a0ffb1d01c22abc87dd3f4f097d816d421b39697aa458a6"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -65,14 +65,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-BxFSmzjM.js",
-      "bytes": 510216,
-      "sha256": "f9f4c3b58249e908cb3ed866143b5866b7f19689040ee1cec5872a5b94b405a8"
+      "path": "chunks/sidepanel-Cj0v7fue.js",
+      "bytes": 539720,
+      "sha256": "4b815ec69e38392154a128e2c11cb22825bf95f73f1097220302b990e6f188c5"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 72711,
-      "sha256": "2fab6f275528f921fade0f756e9d1d0935d4e970ebafeea5bf7b9f09d3760cbe"
+      "bytes": 72762,
+      "sha256": "be37ef0491e31ffad1cdab3fcf01bb94ac1ee88fe58e2c5e8d57e27ea592157b"
     },
     {
       "path": "icon/128.png",
@@ -132,7 +132,7 @@
     {
       "path": "ocr/LANGUAGE-MODELS.json",
       "bytes": 4646,
-      "sha256": "bb723e16c654d11f4cb27e1ccad3cb2157a933e4d7ac35dd734d02d398f5f6a4"
+      "sha256": "0c87c19356871c979db69920de4ce32e0f99ce1c84e55f6196ebfb657c825a40"
     },
     {
       "path": "ocr/LICENSE-TESSDATA-FAST.txt",
@@ -251,8 +251,8 @@
     },
     {
       "path": "sidepanel.html",
-      "bytes": 16067,
-      "sha256": "e46ce3f1ab5c0cf33cdae0f81e09f1a38421db941eb6599cf521199cdc6d55b1"
+      "bytes": 18169,
+      "sha256": "51e77cf92121fd92b619de4aca7f8121f7877c934eb4b53c33c98946aee54edc"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
