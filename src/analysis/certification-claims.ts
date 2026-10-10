@@ -1,3 +1,4 @@
+import {commerceText} from '../languages/commerce-text';
 import type { ProductSnapshot } from '../types/product';
 import type { EvidenceSignal } from '../types/evidence';
 
@@ -19,15 +20,16 @@ const ISSUERS=[
 export function extractCertificationClaims(product:ProductSnapshot):CertificationClaim[] {
   // Restrict scope to product metadata; unrelated footer badges must not certify the item.
   const text=[product.title?.slice(0,1000),product.description?.slice(0,7000)].filter(Boolean).join('\n');
+  const matching=commerceText(text,9000);
   return ISSUERS.flatMap(issuer=>{
-    const match=issuer.pattern.exec(text);
+    const match=issuer.pattern.exec(matching.text);
     if(!match) return [];
-    if(issuer.standard==='FDA cosmetic registration' && !/\b(?:cosmetic|skin|serum|lipstick|moisturi[sz]er|beauty|face\s+cream)\b/i.test(text)) return [];
-    const excerpt=text.slice(Math.max(0,match.index-80),match.index+250);
+    if(issuer.standard==='FDA cosmetic registration' && !/\b(?:cosmetic|skin|serum|lipstick|moisturi[sz]er|beauty|face\s+cream)\b/i.test(matching.text)) return [];
+    const excerpt=matching.text.slice(Math.max(0,match.index-80),match.index+250);
     const rawIdentifier=/(?:certificate|label|licen[cs]e)(?:\s+(?:number|no\.?))?\s*[:#]\s*([A-Za-z0-9][A-Za-z0-9.\/-]{2,60})/i.exec(excerpt)?.[1];
     const subject=/\b(?:fabric|thread|button|zipper|component|material)\b/i.test(excerpt)?'component':
       /\b(?:whole|finished|entire)\s+(?:product|garment|item)\b/i.test(excerpt)?'finished-product':'unspecified';
-    return [{standard:issuer.standard,rawClaim:excerpt.trim(),rawIdentifier,subject,status:'claim-only' as const,lookupUrl:issuer.url}];
+    return [{standard:issuer.standard,rawClaim:matching.original(Math.max(0,match.index-80),330).trim(),rawIdentifier,subject,status:'claim-only' as const,lookupUrl:issuer.url}];
   });
 }
 

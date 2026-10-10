@@ -1,3 +1,5 @@
+import {hasSensitiveCommerceSurface} from '../../src/security/sensitive-surface';
+import {COMMERCE_LANGUAGE_KIT} from '../../src/languages/commerce-kit';
 import { tr, localizeDocument, errorText, uiDirection } from '../../src/i18n/index';
 import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
@@ -232,15 +234,8 @@ async function scanActivePage(): Promise<void> {
 
     const [sensitiveSurface]=await chrome.scripting.executeScript({
       target:documentTarget(page),
-      func:()=>Boolean(document.querySelector([
-        'input[type="password"]',
-        'input[autocomplete="cc-number"]',
-        'input[autocomplete="cc-csc"]',
-        'input[autocomplete="current-password"]',
-        'input[autocomplete="new-password"]',
-        'form[action*="checkout" i]',
-        'form[action*="payment" i]',
-      ].join(','))),
+      func:hasSensitiveCommerceSurface,
+      args:[COMMERCE_LANGUAGE_KIT.privateFormParts],
     });
     if(sensitiveSurface?.result){
       throw new Error('This looks like a sign-in or payment page, so DropShredder is staying out of it.');
@@ -250,6 +245,7 @@ async function scanActivePage(): Promise<void> {
       target:documentTarget(page),
       world:'ISOLATED',
       func:extractPageScan,
+      args:[COMMERCE_LANGUAGE_KIT],
     });
 
     const result=execution?.result as PageScanResult|undefined;

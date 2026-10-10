@@ -113,7 +113,7 @@ jobs:
           retention-days: 30
   headed-permission-diagnostic:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -126,9 +126,9 @@ jobs:
           npm run build
           npm ci --prefix tools/browser-smoke
           node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
-          sudo apt-get install -y scrot xdotool
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
       - name: Capture genuine Chrome host-permission dialog on Xvfb desktop
-        timeout-minutes: 8
+        timeout-minutes: 10
         env:
           DS_NATIVE_HEADED: '1'
           DS_LIVE_SURFACES: '1'

@@ -36,3 +36,5 @@ No merge or Store submission was performed by DS-038.
 
 DS-039 adds localized runtime bytes: require its fresh fingerprint/Chrome receipts rather than applying unchanged-runtime DS-038 evidence to it. Review translations with native speakers and localized consent/full scans before declaring language acceptance. Existing DS-038 screenshot crops predate this UI disclosure addition; refresh affected current-UI assets from the new build before submission.
 
+
+DS-040 candidate adds multilingual merchant detection and seven selected offline OCR models (51files). Refresh affected OCR/settings screenshots and review the new merchant-language/browser receipt before acceptance; older34/42-file inventories and DS-039 passes do not certify these new bytes. Multilingual fixtures/synthetic OCR cannot certify category or photograph accuracy.

@@ -1,3 +1,4 @@
+import {canonicalCommerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 import { matchRegulatoryRecord, type RegulatoryRecord } from './regulatory-match';
@@ -17,7 +18,7 @@ export const FOCUSED_SAFETY_RECORDS:RegulatoryRecord[]=[
 ];
 
 export function focusedSafetyEvidence(product:ProductSnapshot):EvidenceSignal[] {
-  const title=(product.title??'').slice(0,1000);
+  const title=canonicalCommerceText(product.title??'',1000);
   if(/\b(?:case|cover|sleeve|stand|replacement|cable|adapter)\b/i.test(title)) return [];
   const out:EvidenceSignal[]=[],seen=new Set<string>();
   for(const record of FOCUSED_SAFETY_RECORDS){

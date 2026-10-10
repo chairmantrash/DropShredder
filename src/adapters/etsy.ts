@@ -1,3 +1,4 @@
+import {canonicalCommerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 
@@ -22,6 +23,7 @@ const PRODUCTION_PARTNER_PATTERNS = [
 ];
 
 export function analyzeEtsyPage(pageText: string): EtsyAdapterResult {
+  pageText=canonicalCommerceText(pageText);
   const claims: string[] = [];
   const evidence: EvidenceSignal[] = [];
 

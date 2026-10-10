@@ -1,3 +1,4 @@
+import {commerceText,localizedNegation} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 
 export interface ReputationObservation {
@@ -22,10 +23,16 @@ export function reputationSourceKey(obs:ReputationObservation):string {
   return obs.source.trim().toLowerCase().replace(/[^a-z0-9]+/g,'');
 }
 export function complaintPhraseHit(text:string,terms=COMPLAINT_TERMS):boolean {
-  const normalized=text.slice(0,2000).normalize('NFKC').toLowerCase();
+  const matching=commerceText(text,2000),normalized=matching.text.toLowerCase();
   return terms.some(term=>{
     const at=normalized.indexOf(term);if(at<0) return false;
-    return !/\b(?:not|no|never)\s+(?:really\s+)?$/.test(normalized.slice(Math.max(0,at-25),at));
+    if(/\b(?:not|no|never)\s+(?:really\s+)?$/.test(normalized.slice(Math.max(0,at-25),at))) return false;
+    if(/quality|material|flimsy|junk|stitch|rip|fray/.test(term)){
+      const original=matching.original(at,term.length),context=matching.original(Math.max(0,at-30),term.length+65);
+      const clause=context.split(/[.;!?。！？।]/).find(part=>part.includes(original))??original;
+      if(localizedNegation(clause)) return false;
+    }
+    return true;
   });
 }
 export function validatedReputationObservations(input:ReputationObservation[]):ReputationObservation[] {

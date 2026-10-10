@@ -10,7 +10,7 @@
     "dev": "wxt",
     "build": "wxt build",
     "zip": "wxt zip",
-    "prepare": "wxt prepare",
+    "prepare": "node scripts/package-ocr-models.mjs && wxt prepare",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
     "release:audit": "node scripts/release-audit.mjs",
@@ -19,7 +19,8 @@
     "lint:data": "node --import tsx scripts/data-lint.ts",
     "audit:professional": "node --import tsx scripts/professionalism-audit.ts",
     "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs",
-    "audit:localization": "node --import tsx scripts/localization-audit.ts"
+    "audit:localization": "node --import tsx scripts/localization-audit.ts",
+    "prebuild": "node scripts/package-ocr-models.mjs"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",

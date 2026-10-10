@@ -1,0 +1,65 @@
+[
+  {
+    "language": "chi_sim",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/chi_sim.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 2469156,
+    "originalSha256": "a5fcb6f0db1e1d6d8522f39db4e848f05984669172e584e8d76b6b3141e1f730"
+  },
+  {
+    "language": "hin",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/hin.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 1122751,
+    "originalSha256": "4c73ffc59d497c186b19d1e90f5d721d678ea6b2e277b719bee4e2af12271825"
+  },
+  {
+    "language": "spa",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/spa.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 2294433,
+    "originalSha256": "6f2e04d02774a18f01bed44b1111f2cd7f3ba7ac9dc4373cd3f898a40ea6b464"
+  },
+  {
+    "language": "ara",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/ara.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 1432056,
+    "originalSha256": "e3206d3dc87fd50c24a0fb9f01838615911d25168f4e64415244b67d2bb3e729"
+  },
+  {
+    "language": "fra",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/fra.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 1130365,
+    "originalSha256": "ced037562e8c80c13122dece28dd477d399af80911a28791a66a63ac1e3445ca"
+  },
+  {
+    "language": "ben",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/ben.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 855841,
+    "originalSha256": "31163084c279aaebd376216f0c3d5c17ad4b5fee8db49dae79c20000b5de5964"
+  },
+  {
+    "language": "por",
+    "sourceUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/por.traineddata",
+    "upstreamCommit": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "retrievedAt": "2026-10-10",
+    "license": "Apache-2.0",
+    "originalBytes": 1982756,
+    "originalSha256": "c4932b937207a9514b7514d518b931a99938c02a28a5a5a553f8599ed58b7deb"
+  }
+]

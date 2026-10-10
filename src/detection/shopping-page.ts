@@ -1,3 +1,5 @@
+import {COMMERCE_LANGUAGE_KIT} from '../languages/commerce-kit';
+import {localizedPath} from '../languages/commerce-text';
 import {pageSafety} from '../security/page-safety';
 
 export interface ShoppingPageFacts {
@@ -36,19 +38,20 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
   let u:URL;
   try{u=new URL(f.url);}catch{return no('general','Invalid URL');}
   if(u.protocol!=='https:' && u.protocol!=='http:') return no('general','Not a web page');
-  const path=u.pathname.toLowerCase().replace(/\/+$/,'')||'/';
-  if(path==='/') return no('general','Store or website home page');
+  const path=localizedPath(u.pathname).replace(/\/+$/,'')||'/';
+  if(path==='/' || path.split('/').filter(Boolean).every(part=>/^(?:en|zh|hi|es|ar|fr|bn|pt)(?:-[a-z]{2})?$/.test(part))) return no('general','Store or website home page');
   const segments=path.split('/').filter(Boolean);
   const marketplaceDetail=/(?:^|\/)(?:dp|gp\/product)\/[a-z0-9]{10}(?:\/|$)/i.test(path)
     || /(?:^|\/)listing\/\d+(?:\/|$)/i.test(path)
     || /(?:^|\/)ip\/(?:[^/]+\/)?\d{7,}(?:\/|$)/i.test(path);
   const productPath=marketplaceDetail || segments.some((part,i)=>
-    /^(?:products?|item|sku)$/.test(part) && i<segments.length-1 &&
+    (/^(?:products?|item|sku)$/.test(part)||COMMERCE_LANGUAGE_KIT.paths.product.includes(part)) && i<segments.length-1 &&
     !/^(?:reviews?|search|categories|collections)$/.test(segments[i+1]||'')
   ) || /\/(?:p|pd)\/[a-z0-9][a-z0-9_-]{4,}/i.test(path);
   const collectionPath=/(?:^|\/)(?:search|s|collections?|categories|category|catalog|shop|stores|browse|results|sale|deals|clearance|promotions)(?:\/|$)/.test(path)
+    || segments.some(part=>COMMERCE_LANGUAGE_KIT.paths.collection.includes(part))
     || u.searchParams.has('search_query') || u.searchParams.has('searchTerm');
-  const editorialPath=/(?:^|\/)(?:blog|blogs|news|articles?|stories|guides|tutorials|reviews|editorial|magazine)(?:\/|$)/.test(path);
+  const editorialPath=segments.some(part=>COMMERCE_LANGUAGE_KIT.paths.editorial.includes(part)) || /(?:^|\/)(?:blog|blogs|news|articles?|stories|guides|tutorials|reviews|editorial|magazine)(?:\/|$)/.test(path);
   if(editorialPath && !marketplaceDetail) return no('general','Editorial page');
   if(collectionPath && !productPath) return no('collection','Collection or search page');
   if(f.structuredArticle && !productPath && !marketplaceDetail) return no('general','Article, not a sales listing');
@@ -58,7 +61,7 @@ export function classifyShoppingPage(f:ShoppingPageFacts):PageClassification {
   const identity=Boolean(f.structuredProduct || f.ogProduct || productPath);
   const buying=Boolean(f.purchaseAction);
   const price=Boolean(f.visiblePrice || f.structuredOffer);
-  const detail=Boolean(f.productDetail && f.title && f.title.trim().length>=4);
+  const detail=Boolean(f.productDetail && f.title && (f.title.trim().length>=4||(/[\p{Script=Han}]/u.test(f.title)&&f.title.trim().length>=2)));
   const score=(f.structuredProduct?3:0)+(f.ogProduct?2:0)+(productPath?2:0)
     +(buying?3:0)+(price?2:0)+(detail?2:0);
   const reasons:string[]=[];

@@ -1,3 +1,4 @@
+import {commerceTokens} from '../languages/commerce-text';
 /**
  * Deterministic 192-dimensional local subword-vector search.
  * Feature-hashing preserves fuzzy lexical identity (spelling, word forms)
@@ -5,12 +6,10 @@
  * Scores are retrieval similarity, NEVER probabilities or fraud evidence.
  */
 export const LOCAL_VECTOR_DIM=192;
-const tokens=(v:string):string[]=>(v??'').normalize('NFKC').toLocaleLowerCase('en')
-  .replace(/[\u200b-\u200d\u2060\ufeff]/g,'')
-  .split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>=3&&x.length<=35).slice(0,80);
+const tokens=(v:string):string[]=>commerceTokens(v,2000).filter(x=>(x.length>=3||/\p{Script=Han}/u.test(x))&&x.length<=35).slice(0,80);
 export function localTextVector(value:string):Float32Array {
   const v=new Float32Array(LOCAL_VECTOR_DIM),terms=tokens(value.slice(0,2000));
-  const important=new Set(terms.filter(x=>x.length>=4));
+  const important=new Set(terms.filter(x=>x.length>=4||/\p{Script=Han}/u.test(x)));
   for(const token of important){
     const features=[token,...Array.from({length:Math.max(0,token.length-2)},(_,i)=>token.slice(i,i+3))];
     for(const feature of features.slice(0,80)){

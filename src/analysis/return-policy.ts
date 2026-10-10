@@ -1,3 +1,4 @@
+import {commerceText,localizedNegation} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 
 export interface ReturnPolicyFinding {
@@ -68,15 +69,23 @@ const patterns=[
 ];
 
 export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
-  const normalized=text.slice(0,100000).replace(/\s+/g,' ');
+  const matching=commerceText(text);
+  const normalized=matching.text.replace(/\s/g,' ');
   const out:EvidenceSignal[]=[];
+  const reordered=/\b([1-7])\s+(?:business\s+)?days\s+[^.;!?。！？]{0,18}within\s+[^.;!?。！？]{0,18}returns?\b/i;
+  const reorderedHit=matching.match(reordered);
+  if(reorderedHit&&!localizedNegation(reorderedHit.original)) out.push({id:'VERY_SHORT_RETURN_WINDOW',family:'merchant',severity:'moderate',confidence:.78,weight:9,title:'Very short return window',explanation:'The policy appears to give you seven days or less to return the item. That is a tight window, especially if delivery is slow.',observedValue:reorderedHit.original.slice(0,220),independentKey:'return-short-window',sourceKey:'return-policy-observation'});
 
   for(const p of patterns){
-    const match=normalized.match(p.regex);
+    const hit=matching.match(p.regex);
+    const match=hit?.canonical;
     if(!match) continue;
     const before=normalized.slice(Math.max(0,(match.index??0)-30),match.index);
     if(/\b(?:no|not|never|without|do not|does not|will not)\s+(?:a\s+|any\s+|charge\s+|pay\s+|have\s+|need\s+)?$/i.test(before)) continue;
     if(p.id==='INTERNATIONAL_RETURN_AT_CUSTOMER_COST' && /\bnot\s+(?:responsible|required)|\b(?:will|do)\s+not\s+pay/i.test(match[0])) continue;
+    const context=matching.original(Math.max(0,match.index-30),match[0].length+60);
+    const clause=context.split(/[.;!?。！？।]/).find(part=>part.includes(hit!.original))??hit!.original;
+    if(p.id!=='FINAL_SALE_BROAD'&&localizedNegation(clause)) continue;
     let severity:EvidenceSignal['severity']=p.severity;
     let weight=severity==='moderate'?9:severity==='weak'?4:0;
 
@@ -89,6 +98,7 @@ export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
       }
     }
 
+    if(out.some(e=>e.id===p.id)) continue;
     out.push({
       id:p.id,
       family:'merchant',
@@ -97,7 +107,7 @@ export function analyzeReturnPolicy(text:string):EvidenceSignal[]{
       weight,
       title:p.title,
       explanation:p.explanation,
-      observedValue:match[0].slice(0,220),
+      observedValue:hit!.original.slice(0,220),
       independentKey:p.key,
       sourceKey:'return-policy-observation',
     });

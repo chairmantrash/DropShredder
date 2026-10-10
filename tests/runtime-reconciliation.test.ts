@@ -1,3 +1,4 @@
+import {COMMERCE_LANGUAGE_KIT} from '../src/languages/commerce-kit';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parseHTML } from 'linkedom';
@@ -22,7 +23,7 @@ function scan(nodes:unknown,href?:string,controls=''){
   if(controls){const holder=doc.createElement('div');holder.innerHTML=controls;doc.querySelector('main')?.append(holder);}
   const values={document:doc,window:w,location:new URL(url),NodeFilter:{SHOW_TEXT:4,SHOW_ELEMENT:1},HTMLElement:w.HTMLElement};
   const old=Object.fromEntries(Object.keys(values).map(k=>[k,g[k]]));Object.assign(g,values);
-  try{return extractPageScan();}finally{for(const k of Object.keys(values)) if(old[k]===undefined) delete g[k];else g[k]=old[k];}
+  try{return extractPageScan(COMMERCE_LANGUAGE_KIT);}finally{for(const k of Object.keys(values)) if(old[k]===undefined) delete g[k];else g[k]=old[k];}
 }
 const product=(name='Target Lamp',url='https://shop.example/products/lamp',price=29)=>({'@type':'Product',name,url,sku:name,image:`https://images.example/${name}.jpg`,offers:{'@type':'Offer',price,priceCurrency:'USD'},aggregateRating:{ratingValue:4.8,reviewCount:100}});
 

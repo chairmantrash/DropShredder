@@ -1,3 +1,4 @@
+import {commerceTokens} from '../languages/commerce-text';
 import { normalizeGtin, normalizeProductIdentifier } from '../analysis/product-identity';
 
 export type RegulatoryAuthority='CPSC'|'FDA'|'NHTSA';
@@ -24,7 +25,7 @@ export interface RegulatoryMatch {
   reasons:string[];
 }
 const id=normalizeProductIdentifier;
-const words=(value:string|undefined)=>new Set((value??'').slice(0,4000).normalize('NFKC').toLowerCase().split(/[^a-z0-9]+/).filter(x=>x.length>=4));
+const words=(value:string|undefined)=>new Set(commerceTokens(value??'').filter(x=>x.length>=4||/\p{Script=Han}/u.test(x)));
 function overlap(a:Set<string>,b:Set<string>){
   let n=0;for(const x of a)if(b.has(x))n++;
   return a.size&&b.size?n/Math.max(a.size,b.size):0;

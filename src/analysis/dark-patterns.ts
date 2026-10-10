@@ -1,3 +1,4 @@
+import {canonicalCommerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 
 export interface DarkPatternSnapshot {
@@ -59,7 +60,7 @@ export function darkPatternHistoryEvidence(current:DarkPatternSnapshot,previous:
     });
   }
 
-  if(current.subscriptionText&&/subscribe|subscription|recurring|every\s+(?:month|week|\d+\s+days)/i.test(current.subscriptionText)){
+  if(current.subscriptionText&&/subscribe|subscription|recurring|every\s+(?:month|week|\d+\s+days)/i.test(canonicalCommerceText(current.subscriptionText,1000))){
     out.push({
       id:'SUBSCRIPTION_DISCLOSURE',family:'pricing',severity:'info',confidence:.75,weight:0,
       title:'Recurring purchase language found',

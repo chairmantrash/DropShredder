@@ -14,3 +14,8 @@ test('label parser never invents OCR when unavailable',()=>{
  const r=collectLocalLabelResults([],[],false,false);
  assert.deepEqual(r.barcodes,[]);assert.equal(r.textAvailable,false);
 });
+
+test('unsupported OCR model cannot decode or fetch an image',async()=>{
+ const {readLocalLabel}=await import('../src/forensics/local-label-reader');
+ await assert.rejects(readLocalLabel(new File(['pixels'],'fixture.png',{type:'image/png'}),new AbortController().signal,'remote-model' as never),/Unsupported/);
+});

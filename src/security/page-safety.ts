@@ -1,3 +1,5 @@
+import {COMMERCE_LANGUAGE_KIT} from '../languages/commerce-kit';
+import {localizedPath} from '../languages/commerce-text';
 const SENSITIVE_PATH_PARTS=[
   'checkout','checkouts','account','accounts','login','log-in','signin','sign-in',
   'auth','oauth','payment','payments','billing','wallet','orders','order-history',
@@ -38,8 +40,8 @@ export function pageSafety(urlValue:string|undefined):PageSafetyResult{
     return {allowed:false,reason:'DropShredder does not scan account, email, checkout or payment services.'};
   }
 
-  const parts=url.pathname.toLowerCase().split('/').filter(Boolean);
-  if(parts.some(part=>SENSITIVE_PATH_PARTS.some(blocked=>part===blocked || part.startsWith(blocked+'-')))){
+  const parts=localizedPath(url.pathname).split('/').filter(Boolean);
+  if(parts.some(part=>[...SENSITIVE_PATH_PARTS,...COMMERCE_LANGUAGE_KIT.paths.sensitive].some(blocked=>part===blocked || part.startsWith(blocked+'-')))){
     return {
       allowed:false,
       reason:'DropShredder does not scan account, authentication, payment, billing, address, or order-history pages.',

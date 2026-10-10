@@ -1,3 +1,4 @@
+import {hasSensitiveCommerceSurface} from '../src/security/sensitive-surface';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parseHTML } from 'linkedom';
@@ -52,7 +53,7 @@ test('current-page check rejects tab switches, SPA navigation, document changes 
   let selectionStamp='initial';
   install({
     tabs:{query:async()=>[{id:tabId}]},
-    scripting:{executeScript:async({func}:{func:unknown})=>[{documentId,result:func===chromeProductSelectionStamp?selectionStamp:{url,sensitive}}]},
+    scripting:{executeScript:async({func}:{func:unknown})=>[{documentId,result:func===chromeProductSelectionStamp?selectionStamp:func===hasSensitiveCommerceSurface?sensitive:{url,sensitive}}]},
   });
   assert.equal(await isCurrentChromePage(page),true);
   selectionStamp='changed variant';assert.equal(await isCurrentChromePage(page),false);selectionStamp='initial';

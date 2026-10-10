@@ -1,3 +1,5 @@
+import {hasSensitiveCommerceSurface} from '../security/sensitive-surface';
+import {COMMERCE_LANGUAGE_KIT} from '../languages/commerce-kit';
 export interface AuthorizedChromePage {
   tab:chrome.tabs.Tab;
   tabId:number;
@@ -6,14 +8,14 @@ export interface AuthorizedChromePage {
   selectionStamp?:string;
 }
 /** Read only product-selection fields, never form credentials or arbitrary inputs. */
-export function chromeProductSelectionStamp():string{
+export function chromeProductSelectionStamp(variantNames:string[]=[]):string{
   const values:string[]=[document.querySelector('main h1')?.textContent?.slice(0,500)??''];
   // Match the explicit-control contract in extractPageScan. A route may
   // preserve its URL while a real selected swatch/button changes SKU/price.
   const selector='main select[name],main select[data-option-name],main input[type="radio"][name]:checked,main input[type="radio"][data-option-name]:checked,main [data-option-name][aria-pressed="true"],main [data-option-name][aria-checked="true"]';
   for(const control of [...document.querySelectorAll<HTMLElement>(selector)].slice(0,40)){
     const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
-    if(!/^(?:options\[)?(?:color|colour|size|capacity|material|variant|sku)\]?$/i.test(name)
+    if(!(/^(?:options\[)?(?:color|colour|size|capacity|material|variant|sku)\]?$/i.test(name)||variantNames.includes(name.normalize('NFKC').toLowerCase().replace(/^options\[/,'').replace(/\]$/,'')))
       ||control.hasAttribute('disabled')||control.getAttribute('aria-disabled')==='true') continue;
     const value=control.tagName==='INPUT' || control.tagName==='SELECT'
       ?(control as HTMLInputElement|HTMLSelectElement).value:control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
@@ -42,7 +44,7 @@ export async function authorizeChromePage(tab:chrome.tabs.Tab):Promise<Authorize
       func:()=>location.href,
     });
     if(typeof probe?.result!=='string'||!probe.documentId) return undefined;
-    const [selection]=await chrome.scripting.executeScript({target:{tabId:tab.id,documentIds:[probe.documentId]},world:'ISOLATED',func:chromeProductSelectionStamp});
+    const [selection]=await chrome.scripting.executeScript({target:{tabId:tab.id,documentIds:[probe.documentId]},world:'ISOLATED',func:chromeProductSelectionStamp,args:[Object.values(COMMERCE_LANGUAGE_KIT.variants).flat()]});
     if(typeof selection?.result!=='string'||selection.documentId!==probe.documentId) return undefined;
     return {tab,tabId:tab.id,url:probe.result,documentId:probe.documentId,selectionStamp:selection.result};
   }catch{
@@ -83,7 +85,9 @@ export async function isCurrentChromePage(page:AuthorizedChromePage):Promise<boo
       }),
     });
     if(probe?.documentId!==page.documentId||probe?.result?.url!==page.url||probe?.result?.sensitive) return false;
-    const [selection]=await chrome.scripting.executeScript({target:documentTarget(page),world:'ISOLATED',func:chromeProductSelectionStamp});
+    const [privateSurface]=await chrome.scripting.executeScript({target:documentTarget(page),world:'ISOLATED',func:hasSensitiveCommerceSurface,args:[COMMERCE_LANGUAGE_KIT.privateFormParts]});
+    if(privateSurface?.result) return false;
+    const [selection]=await chrome.scripting.executeScript({target:documentTarget(page),world:'ISOLATED',func:chromeProductSelectionStamp,args:[Object.values(COMMERCE_LANGUAGE_KIT.variants).flat()]});
     return selection?.documentId===page.documentId && selection?.result===page.selectionStamp && probe?.documentId===page.documentId
       && probe?.result?.url===page.url
       && !probe?.result?.sensitive;

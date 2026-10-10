@@ -1,3 +1,4 @@
+import {COMMERCE_LANGUAGE_KIT} from '../src/languages/commerce-kit';
 import { tr, uiDirection } from '../src/i18n/index';
 import {detectShoppingPage} from '../src/detection/page-facts';
 import {extractPageScan} from '../src/extraction/page-scan';
@@ -126,7 +127,7 @@ export default defineContentScript({
       }catch{return;}
       // No external requests. Only previously guarded, bounded, packaged forensic logic.
       let scan:ReturnType<typeof extractPageScan>;
-      try{scan=extractPageScan();}catch{return;}
+      try{scan=extractPageScan(COMMERCE_LANGUAGE_KIT);}catch{return;}
       if(id!==sequence || location.href!==url || !detectShoppingPage(document,url).showToast) return;
       const evidence=runPassiveRules(scan.product,scan.pageText);
       const verdict=calculateVerdict(evidence);

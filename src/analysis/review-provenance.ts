@@ -1,3 +1,4 @@
+import {reviewDateMillis} from '../languages/commerce-date';
 import type { EvidenceSignal } from '../types/evidence';
 import type { ReviewAnalysisInput, ReviewSnapshot } from '../types/review';
 import { reviewDuplicatePairs, reviewHasIncentiveLanguage, reviewMaxWindowShare, reviewMentionsMismatchedCategory } from './review-primitives';
@@ -58,7 +59,7 @@ export function analyzeReviewProvenance(input:ReviewAnalysisInput): EvidenceSign
 
   if(input.listingCreatedAt){
     const listingTime=Date.parse(input.listingCreatedAt);
-    const predating=reviews.filter(r=>r.date && Date.parse(r.date)<listingTime-86400000).length;
+    const predating=reviews.filter(r=>r.date && reviewDateMillis(r.date)<listingTime-86400000).length;
     if(Number.isFinite(listingTime) && predating>=2){
       out.push({
         id:'REVIEWS_PREDATE_LISTING',family:'reviews',severity:'strong',confidence:.86,weight:22,

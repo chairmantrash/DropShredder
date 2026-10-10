@@ -1,5 +1,8 @@
 import { normalizeGtin } from '../analysis/product-identity';
 
+export const OCR_LANGUAGES=['eng','chi_sim','hin','spa','ara','fra','ben','por'] as const;
+export type OcrLanguage=typeof OCR_LANGUAGES[number];
+
 type TesseractAPI={createWorker:(lang:string,oem:number,opts:Record<string,unknown>)=>Promise<{
   recognize:(image:Blob)=>Promise<{data:{text?:string}}>;
   terminate:()=>Promise<unknown>;
@@ -23,12 +26,12 @@ function offlineEngine():Promise<TesseractAPI>{
   }).catch(error=>{offlineScript=undefined;throw error;});
   return offlineScript;
 }
-async function localTesseract(canvas:OffscreenCanvas,signal:AbortSignal):Promise<string[]>{
+async function localTesseract(canvas:OffscreenCanvas,signal:AbortSignal,language:OcrLanguage):Promise<string[]>{
   signal.throwIfAborted();
   const api=await offlineEngine();
   signal.throwIfAborted();
   const ocrOrigin=chrome.runtime.getURL('ocr/');
-  const worker=await api.createWorker('eng',1,{
+  const worker=await api.createWorker(language==='eng'?'eng':language+'+eng',1,{
     workerPath:ocrOrigin+'worker.min.js',
     corePath:ocrOrigin,
     langPath:ocrOrigin.slice(0,-1),
@@ -67,7 +70,8 @@ export function collectLocalLabelResults(codes:unknown[],lines:unknown[],textAva
  * platform detectors, never transmit pixels, persist images or probe page fields.
  * Shape Detection is capability-gated: browser support is not assumed.
  */
-export async function readLocalLabel(file:File,signal:AbortSignal):Promise<LocalLabelReading>{
+export async function readLocalLabel(file:File,signal:AbortSignal,language:OcrLanguage='eng'):Promise<LocalLabelReading>{
+  if(!OCR_LANGUAGES.includes(language)) throw new Error('Unsupported offline OCR language.');
   if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size<1||file.size>8_000_000)
     throw new Error('Choose a supported image under 8 MB.');
   signal.throwIfAborted();
@@ -100,9 +104,9 @@ export async function readLocalLabel(file:File,signal:AbortSignal):Promise<Local
     // supplies a fully offline fallback with no user account or CDN requests.
     let lines=text.values.map(v=>v.rawText);
     let ocrAvailable=text.supported;
-    if(!ocrAvailable){
+    if(!ocrAvailable||language!=='eng'){
       try{
-        lines=await localTesseract(canvas,signal);
+        lines=await localTesseract(canvas,signal,language);
         ocrAvailable=true;
       }catch(error){
         signal.throwIfAborted();

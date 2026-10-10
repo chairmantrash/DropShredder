@@ -113,6 +113,6 @@ The optional GLEIF lookup sends only the exact LEI the shopper enters, after Chr
 
 ## Optional local label recognition and result badges
 
-Selected PNG/JPEG/WebP label photos are processed on device after READ LABEL ON DEVICE. Tesseract JavaScript/worker/WASM and English language data are bundled with the extension and loaded lazily; no model/CDN request or photo upload occurs. Images are not saved in history or exports. Recognized text and barcode values are unverified; an explicit source-search action can open searches for that chosen text.
+Selected PNG/JPEG/WebP label photos are processed on device after READ LABEL ON DEVICE. Tesseract JavaScript/worker/WASM and English plus seven selected-language models are bundled with the extension and loaded lazily; no model/CDN request or photo upload occurs. Images are not saved in history or exports. Recognized text and barcode values are unverified; an explicit source-search action can open searches for that chosen text.
 
 With automatic protection enabled and Chrome host access granted, neutral marketplace search-result links can be added locally on Amazon/Etsy/Walmart searches. They link to the original product listing, do not assert wrongdoing and do not automatically investigate remote suppliers. The public extension uses no neural model, remote inference or developer analytics.

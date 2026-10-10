@@ -1,3 +1,5 @@
+import {reviewDateMillis} from '../languages/commerce-date';
+import {canonicalCommerceText} from '../languages/commerce-text';
 import type { ReviewSnapshot } from '../types/review';
 import { normalizeReviewText, reviewHasIncentiveLanguage, reviewMentionsMismatchedCategory, reviewTextSimilarity } from './review-primitives';
 
@@ -61,7 +63,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   }
 
   // Review bursts: only mark reviews when at least 6 dated reviews exist in a 3-day window.
-  const dated=usable.map((r,i)=>({i,t:r.date?Date.parse(r.date):NaN})).filter(x=>Number.isFinite(x.t)).sort((a,b)=>a.t-b.t);
+  const dated=usable.map((r,i)=>({i,t:r.date?reviewDateMillis(r.date):NaN})).filter(x=>Number.isFinite(x.t)).sort((a,b)=>a.t-b.t);
   for(let start=0,end=0;start<dated.length;start++){
     if(end<start)end=start;
     while(end<dated.length&&dated[end]!.t-dated[start]!.t<=3*86400000)end++;
@@ -94,7 +96,7 @@ export function reviewIntegrity(reviews:ReviewSnapshot[],productTitle?:string):R
   const adjustedRating=adjusted.length?adjusted.reduce((a,x)=>a+(x.r.rating??0),0)/adjusted.length:undefined;
   const lowStar=usable.filter((r,index)=>typeof r.rating==='number' && r.rating<=2 && items[index]!.suspicion<.5);
   const commonComplaints=complaints.map(group=>{
-    const count=lowStar.filter(r=>group.patterns.some(p=>p.test((r.title??'')+' '+r.body))).length;
+    const count=lowStar.filter(r=>group.patterns.some(p=>p.test(canonicalCommerceText((r.title??'')+' '+r.body,5000)))).length;
     return {id:group.id,label:group.label,count,share:lowStar.length?Math.round(count/lowStar.length*100):0};
   }).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,5);
   const total=usable.length,flagged=flaggedItems.length,passed=passedItems.length;

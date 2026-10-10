@@ -1,3 +1,4 @@
+import type {CommerceLanguageKit} from '../languages/commerce-kit';
 import type { ProductSnapshot } from '../types/product';
 import type { ReviewSnapshot } from '../types/review';
 import type { CatalogSnapshot } from '../analysis/catalog-signals';
@@ -20,7 +21,41 @@ export interface PageScanResult {
  * Runs inside Chrome's ISOLATED extension world.
  * Keep this function self-contained: chrome.scripting serializes the function body.
  */
-export function extractPageScan():PageScanResult {
+export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
+  const normalizeDigits=(v:string)=>v.normalize('NFKC').replace(/[\u061c\u200b\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff]/g,'').replace(/[٠-٩۰-۹०-९০-৯]/g,c=>String(c.charCodeAt(0)-[0x660,0x6f0,0x966,0x9e6].find(n=>c.charCodeAt(0)>=n&&c.charCodeAt(0)<n+10)!));
+  const aliases=new Map<string,string>();
+  for(const [key,...langs] of kit.phrases) for(const alias of langs.flat()) if((alias.length>1||/\p{Script=Han}/u.test(alias))&&alias.toLowerCase()!==key.toLowerCase()) aliases.set(alias.toLowerCase(),key);
+  const escape=(v:string)=>v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const phrasePattern=new RegExp([...aliases.keys()].sort((a,b)=>b.length-a.length).map(escape).join('|'),'giu');
+  const matching=(v:string)=>normalizeDigits(v).replace(phrasePattern,(m:string,offset:number,input:string)=>{
+    if(!/\p{Script=Han}/u.test(m)&&(/[\p{L}\p{M}\p{N}]/u.test(input[offset-1]??'')||/[\p{L}\p{M}\p{N}]/u.test(input[offset+m.length]??''))) return m;
+    return ' '+aliases.get(m.toLowerCase())+' ';
+  });
+  const variantKey=(v:string)=>Object.entries(kit.variants).find(([key,aliases])=>key===v||aliases.includes(v))?.[0];
+  const pageLanguage=(document.documentElement.lang||'').replace('_','-');
+  const visibleNumber=(value:string):number|undefined=>{
+    let text=normalizeDigits(value).trim();
+    // Numeric displays may contain currency, but ranges/multiple amounts remain unresolved.
+    const parts=text.match(/[0-9]+(?:[.,\u066b\u066c\u00a0\u202f ]*[0-9]+)*/g);
+    if(parts?.length!==1) return undefined;
+    text=parts[0]!.trim().replace(/[\u00a0\u202f ]/g,'').replace(/\u066c/g,',').replace(/\u066b/g,'.');
+    let decimal:string|undefined;
+    try{decimal=pageLanguage?new Intl.NumberFormat(pageLanguage).formatToParts(1.5).find(p=>p.type==='decimal')?.value:undefined;}catch{return undefined;}
+    if(decimal){
+      const point=decimal==='٫'?'.':decimal,group=point===','?'.':',';
+      const integer=text.split(point)[0]!,groups=integer.split(group);
+      if(groups.length>1){
+        const indian=/^(?:hi|bn)(?:-|$)/i.test(pageLanguage);
+        if(groups[0]!.length>3||groups.at(-1)!.length!==3||groups.slice(1,-1).some(part=>part.length!==(indian?2:3))) return undefined;
+      }
+    }
+    if(decimal===',') text=text.replace(/\./g,'').replace(',','.');
+    else if(decimal==='.'||decimal==='٫') text=text.replace(/,/g,'');
+    else if(/[.,]\d{3}$/.test(text)||text.includes(',')&&text.includes('.')) return undefined;
+    else text=text.replace(',','.');
+    if(!/^\d+(?:\.\d{1,3})?$/.test(text)) return undefined;
+    const n=Number(text);return Number.isFinite(n)&&n>=0?n:undefined;
+  };
   const LIMITS={images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000} as const;
   // These limits cap WORK as well as output. Slicing a giant DOM result afterwards is not a work limit.
   const MAX_JSON_SCRIPTS=40, MAX_JSON_BYTES=60_000, MAX_JSON_NODES=120, MAX_JSON_DEPTH=8;
@@ -77,6 +112,8 @@ export function extractPageScan():PageScanResult {
         const visibleTitle=amazonProduct
           ? bounded(document.querySelector('#productTitle')?.textContent||meta('meta[property="og:title"]')||document.title||undefined,500)
           : bounded(document.querySelector('h1')?.textContent||undefined,500);
+        const translatedPage=document.documentElement.classList.contains('translated-ltr')||document.documentElement.classList.contains('translated-rtl');
+        const originalMetaTitle=meta('meta[property="og:title"]');
         const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
         let product:Record<string,unknown>|undefined=exact.length===1?exact[0]:undefined;
         let selectedByControls=false;
@@ -91,19 +128,19 @@ export function extractPageScan():PageScanResult {
         const selector='main select[name],main select[data-option-name],main input[type="radio"][name]:checked,main input[type="radio"][data-option-name]:checked,main [data-option-name][aria-pressed="true"],main [data-option-name][aria-checked="true"]';
         for(const control of [...document.querySelectorAll<HTMLElement>(selector)].slice(0,40)){
           const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
-          const match=/^(?:options\[)?(color|colour|size|capacity|material)\]?$/i.exec(name);
-          if(!match || control.hasAttribute('disabled') || control.getAttribute('aria-disabled')==='true') continue;
+          const key=variantKey(name.normalize('NFKC').toLowerCase().replace(/^options\[/,'').replace(/\]$/,''));
+          if(!key || control.hasAttribute('disabled') || control.getAttribute('aria-disabled')==='true') continue;
           const value=control.tagName==='INPUT' || control.tagName==='SELECT'
             ? (control as HTMLInputElement|HTMLSelectElement).value : control.getAttribute('data-option-value')||control.getAttribute('value')||control.getAttribute('aria-label')||control.textContent?.slice(0,100)||'';
           if(!value || value.length>200) continue;
-          const key=match[1]!.toLowerCase()==='colour'?'color':match[1]!.toLowerCase(),normalized=named(value);
+          const normalized=named(matching(value));
           if(!normalized) continue;
           if(selected[key]&&selected[key]!==normalized) conflictingControls=true;
           selected[key]=normalized;
         }
         if(groups.length===1&&!conflictingControls&&Object.keys(selected).length){
           const children=Array.isArray(groups[0]!.hasVariant)?groups[0]!.hasVariant:[];
-          const candidates=products.filter(node=>children.includes(node)&&Object.entries(selected).every(([key,value])=>named(node[key]??(key==='color'?node.colour:undefined))===value));
+          const candidates=products.filter(node=>children.includes(node)&&Object.entries(selected).every(([key,value])=>named(matching(String(node[key]??(key==='color'?node.colour:undefined)??'')))===value));
           if(candidates.length===1){
             const candidate=candidates[0]!;
             // A selected control never overrides a different exact URL match.
@@ -114,7 +151,7 @@ export function extractPageScan():PageScanResult {
         // A canonical parent cannot choose between variants, nor override a variant URL.
         if(!product && !exact.length && products.length===1){
           const only=products[0]!, urls=ownUrls(only);
-          if(!Array.from(new URL(location.href).searchParams.keys()).some(key=>/^(?:variant|sku|color|colour|size)$/i.test(key)) && !urls.length && visibleTitle && named(only.name)===named(visibleTitle)) product=only;
+          if(!Array.from(new URL(location.href).searchParams.keys()).some(key=>/^(?:variant|sku|color|colour|size)$/i.test(key)) && !urls.length && visibleTitle && (named(only.name)===named(visibleTitle)||(translatedPage&&originalMetaTitle&&named(only.name)===named(originalMetaTitle)))) product=only;
         }
         const asRecord=(v:unknown):Record<string,unknown>|undefined =>
           v && typeof v==='object' && !Array.isArray(v) ? v as Record<string,unknown> : undefined;
@@ -129,8 +166,8 @@ export function extractPageScan():PageScanResult {
         const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
         const aggregateNode=asRecord(product?.aggregateRating);
-        const hostedRating=Number(aggregateNode?.ratingValue) || undefined;
-        const hostedReviewCount=Number(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount) || undefined;
+        const hostedRating=typeof aggregateNode?.ratingValue==='number'?aggregateNode.ratingValue:visibleNumber(String(aggregateNode?.ratingValue??''));
+        const hostedReviewCount=visibleNumber(String(aggregateNode?.reviewCount ?? aggregateNode?.ratingCount??''));
         const imageValue=product?.image;
         const structuredImages=Array.isArray(imageValue)
           ? imageValue.slice(0,60).filter((x):x is string=>typeof x==='string').map(x=>x.slice(0,2048))
@@ -185,10 +222,13 @@ export function extractPageScan():PageScanResult {
           }
         }
         const pageText=pagePieces.join(' ').slice(0,LIMITS.pageText);
-        const shippingMatch=pageText.match(/(?:shipping|delivery)[^\n]{0,100}(?:\d+\s*(?:-|to|–)\s*\d+\s+(?:business\s+)?days)/i);
+        const shippingPattern=/(?:shipping|delivery)[^.;!?。！？]{0,120}\d+[\s-]*(?:-|to|–|से|থেকে|إلى|à|a|至)[\s-]*\d+[^.;!?。！？]{0,35}(?:business\s+)?days/i;
+        const shippingMatch=pagePieces.find(piece=>shippingPattern.test(matching(piece)));
+        const shippingText=shippingMatch?.slice(0,220);
 
         const classifyLink=(a:HTMLAnchorElement):'about'|'shipping'|'returns'|'contact'|undefined=>{
-          const haystack=(a.pathname.slice(0,500)+' '+(a.innerText||'').slice(0,250)).toLowerCase();
+          let path=a.pathname.slice(0,500);try{path=decodeURIComponent(path);}catch{}
+          const haystack=matching(path+' '+(a.innerText||a.textContent||'').slice(0,250)).toLowerCase();
           if(/about|our story|who we are/.test(haystack)) return 'about';
           if(/shipping|delivery/.test(haystack)) return 'shipping';
           if(/return|refund|exchange/.test(haystack)) return 'returns';
@@ -218,6 +258,7 @@ export function extractPageScan():PageScanResult {
         const cards:HTMLElement[]=[];
         const amazonElements:HTMLElement[]=[];
         const reviewElements:HTMLElement[]=[];
+        const priceElements:HTMLElement[]=[];
         if(document.body){
           const elementWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_ELEMENT);
           let visitedElements=0;
@@ -227,6 +268,7 @@ export function extractPageScan():PageScanResult {
             if(!element) break;
             visitedElements++;
             if(!(element instanceof HTMLElement)) continue;
+            if(priceElements.length<4&&element.matches('[itemprop="price"],.product-price,[data-product-price]')&&element.closest('main')) priceElements.push(element);
             if(cards.length<LIMITS.cards && element.matches(cardSelector)) cards.push(element);
             if(amazonElements.length<LIMITS.amazonCards && element.matches('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')) amazonElements.push(element);
             if(reviewElements.length<LIMITS.reviews && element.matches('[data-hook="review"]')) reviewElements.push(element);
@@ -234,7 +276,7 @@ export function extractPageScan():PageScanResult {
         }
         const saleCards=cards.filter(card=>
           Boolean(card.querySelector('del,s,[class*="compare"],[class*="was-price"],[class*="sale-price"]'))
-          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test((card.innerText||'').slice(0,1500))
+          || /\b(?:sale|save\s+\d+%|\d+%\s+off)\b/i.test(matching((card.innerText||'').slice(0,1500)))
         );
         const catalog={cardCount:cards.length,saleCardCount:saleCards.length};
 
@@ -244,7 +286,7 @@ export function extractPageScan():PageScanResult {
             const title=(card.querySelector<HTMLElement>('h2, [data-cy="title-recipe"] h2')?.innerText || '').replace(/\s+/g,' ').trim().slice(0,500);
             const image=card.querySelector<HTMLImageElement>('img.s-image, img[data-image-latency]');
             const priceText=card.querySelector<HTMLElement>('.a-price .a-offscreen')?.innerText || '';
-            const price=Number(priceText.replace(/[^0-9.]/g,'')) || undefined;
+            const price=visibleNumber(priceText);
             return {
               asin,
               title,
@@ -254,20 +296,27 @@ export function extractPageScan():PageScanResult {
           })
           .filter(card=>/^[A-Z0-9]{10}$/.test(card.asin) && Boolean(card.title));
 
+        const currentPrices=priceElements;
+        const currencyMeta=meta('meta[property="product:price:currency"]')||document.querySelector('[itemprop="priceCurrency"]')?.getAttribute('content')||first(offer?.priceCurrency);
+        const explicitCurrency=currencyMeta&&/^[A-Z]{3}$/.test(currencyMeta)?currencyMeta:undefined;
+        const priceNode=currentPrices.length===1?currentPrices[0]:undefined;
+        const priceContent=priceNode?.getAttribute('content');
+        const visiblePrice=priceNode?priceContent&&/^\d+(?:\.\d+)?$/.test(priceContent)?Number(priceContent):visibleNumber(priceNode.textContent??''):undefined;
+        const boundVisiblePrice=explicitCurrency&&(product||products.length===0)&&currentPrices.length===1?visiblePrice:undefined;
         const reviews=reviewElements
           .map((review,index)=>{
             const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim().slice(0,4000);
             const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
-            const ratingMatch=ratingText.match(/([1-5](?:\.\d)?)/);
+            const ratingMatch=normalizeDigits(ratingText).match(/([1-5](?:[.,٫]\d)?)/);
             return {
               id:review.id || `visible-review-${index}`,
               platform:'amazon',
-              rating:ratingMatch ? Number(ratingMatch[1]) : undefined,
+              rating:ratingMatch ? Number(ratingMatch[1]!.replace(/[،,٫]/g,'.')) : undefined,
               title:text('[data-hook="review-title"]'),
               body:text('[data-hook="review-body"], [data-hook="reviewText"], [data-hook="reviewRichContentContainer"]'),
               date:text('[data-hook="review-date"]') || undefined,
               verified:Boolean(review.querySelector('[data-hook="avp-badge"]')),
-              helpfulCount:Number((text('[data-hook="helpful-vote-statement"]').match(/\d+/)?.[0])) || undefined,
+              helpfulCount:Number((normalizeDigits(text('[data-hook="helpful-vote-statement"]')).match(/\d+/)?.[0])) || undefined,
               reviewerName:text('.a-profile-name') || undefined,
             };
           })
@@ -278,10 +327,10 @@ export function extractPageScan():PageScanResult {
             url:location.href,
             domain:location.hostname,
             canonicalUrl:canonical,
-            title:first(product?.name) || visibleTitle || meta('meta[property="og:title"]') || document.title?.trim() || undefined,
+            title:(translatedPage?visibleTitle:undefined)||first(product?.name) || visibleTitle || meta('meta[property="og:title"]') || document.title?.trim() || undefined,
             description:first(product?.description) || meta('meta[property="og:description"]') || meta('meta[name="description"]'),
-            price:offer && ((typeof offer.price==='number' && Number.isFinite(offer.price) && offer.price>=0) || (typeof offer.price==='string' && /^\d+(?:\.\d+)?$/.test(offer.price.trim())))?Number(offer.price):undefined,
-            currency:first(offer?.priceCurrency),
+            price:offer && ((typeof offer.price==='number' && Number.isFinite(offer.price) && offer.price>=0) || (typeof offer.price==='string' && /^\d+(?:\.\d+)?$/.test(offer.price.trim())))?Number(offer.price):boundVisiblePrice,
+            currency:first(offer?.priceCurrency)||explicitCurrency,
             brand:first(brand?.name ?? product?.brand),
             seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
             sku:first(product?.sku),
@@ -294,11 +343,11 @@ export function extractPageScan():PageScanResult {
               return t==='Product' || (Array.isArray(t) && t.includes('Product'));
             }).length,
             capturedAt:new Date().toISOString(),
-            shippingText:shippingMatch?.[0],
+            shippingText,
             claims:[],
             specifications,
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
-            extraction:{method:product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer)},
+            extraction:{method:product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
             pageSignals:[
               ...(('Shopify' in window || scriptSources.some(src=>src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
                 ? ['platform:shopify'] : []),

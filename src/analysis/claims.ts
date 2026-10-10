@@ -1,3 +1,4 @@
+import {commerceText,localizedNegation} from '../languages/commerce-text';
 export type ClaimKind=
   | 'business-age'
   | 'handmade'
@@ -22,6 +23,8 @@ interface Pattern {
 }
 
 const PATTERNS:Pattern[]=[
+  {kind:'made-in',regex:/\b(China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+made in\b/i,value:m=>m[1]},
+  {kind:'ships-from',regex:/\b(China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+ships from\b/i,value:m=>m[1]},
   {kind:'business-age',regex:/\b(?:since|est(?:ablished)?\.?\s*)(19\d{2}|20\d{2})\b/i,value:m=>m[1]},
   {kind:'handmade',regex:/\b(?:handmade|handcrafted|crafted\s+by\s+(?:us|me|our\s+team)|made\s+by\s+(?:us|me))\b/i},
   {kind:'original-design',regex:/\b(?:designed\s+by\s+us|our\s+original\s+design|designed\s+in-house|proprietary\s+design)\b/i},
@@ -34,12 +37,17 @@ const PATTERNS:Pattern[]=[
 
 export function extractClaims(pageText:string):ExtractedClaim[] {
   const out:ExtractedClaim[]=[];
+  const matching=commerceText(pageText);
   for(const pattern of PATTERNS){
-    const match=pageText.match(pattern.regex);
-    if(!match) continue;
+    const hit=matching.match(pattern.regex);
+    const match=hit?.canonical;
+    if(!match||out.some(c=>c.kind===pattern.kind)) continue;
+    const context=matching.original(Math.max(0,match.index-25),match[0].length+55);
+    const clause=context.split(/[.;!?。！？।]/).find(part=>part.includes(hit!.original))??hit!.original;
+    if(pattern.kind!=='scarcity'&&localizedNegation(clause)) continue;
     out.push({
       kind:pattern.kind,
-      text:match[0].slice(0,220),
+      text:hit!.original.slice(0,220),
       normalizedValue:pattern.value?.(match),
       confidence:pattern.kind==='made-in' || pattern.kind==='ships-from' ? .7 : .82,
     });

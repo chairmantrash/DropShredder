@@ -100,6 +100,14 @@
         <summary>Read a product label locally (barcode and OCR)</summary>
         <p class="scan-disclosure">Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts.</p>
         <label for="label-image">Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)</label>
+        <label for="label-language">OCR language</label>
+        <select id="label-language" aria-label="OCR language">
+          <option value="eng">English</option><option value="chi_sim">简体中文</option>
+          <option value="hin">हिन्दी</option><option value="spa">Español</option>
+          <option value="ara">العربية</option><option value="fra">Français</option>
+          <option value="ben">বাংলা</option><option value="por">Português</option>
+        </select>
+        <p class="scan-disclosure">Choose the language printed on the label. Offline OCR may misread text; it never changes seller scores.</p>
         <input id="label-image" type="file" accept="image/png,image/jpeg,image/webp" />
         <button id="label-read" class="secondary" type="button">READ LABEL ON DEVICE</button>
         <p id="label-status" class="status" role="status"></p>
@@ -157,7 +165,7 @@
 
       <details class="settings-panel">
         <summary>How DropShredder checks products</summary>
-        <p class="scan-disclosure">Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Packaged OCR reads English text.</p>
+        <p class="scan-disclosure">Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Offline OCR supports English and all seven interface languages; choose the label language before reading.</p>
         <section class="feature-toggles">
           <label class="toggle-row">
             <span><strong>Look for the same product elsewhere</strong><small>Automatically check whether DropShredder has seen matching products on other stores or marketplaces.</small></span>

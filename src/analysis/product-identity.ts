@@ -1,3 +1,4 @@
+import {canonicalCommerceText,variantKey} from '../languages/commerce-text';
 /** Normalization is retrieval support, not verification of a seller-authored identifier. */
 export interface ProductIdentityInput {
   gtin?:string;
@@ -52,8 +53,8 @@ export function compareProductIdentity(a:ProductIdentityInput,b:ProductIdentityI
       normalizeProductIdentifier(a.variantId)!==normalizeProductIdentifier(b.variantId)) conflicts.push('variant');
   for(const key of ['color','size','capacity','material']){
     const get=(v:ProductIdentityInput)=>Object.entries(v.specifications??{}).slice(0,40)
-      .find(([name])=>(name.toLowerCase()==='colour'?'color':name.toLowerCase())===key)?.[1];
-    const left=normalizeProductIdentifier(get(a)),right=normalizeProductIdentifier(get(b));
+      .find(([name])=>variantKey(name)===key)?.[1];
+    const left=normalizeProductIdentifier(canonicalCommerceText(get(a)??'',200)),right=normalizeProductIdentifier(canonicalCommerceText(get(b)??'',200));
     if(left && right && left!==right) conflicts.push(`variant:${key}`);
   }
   return {matches,conflicts,compatible:conflicts.length===0};

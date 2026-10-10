@@ -3,7 +3,7 @@ export interface ProductSnapshot {
   domain: string;
   canonicalUrl?: string;
   variantId?: string;
-  extraction?: {method:string;structuredIdentityResolved:boolean;offerResolved:boolean};
+  extraction?: {method:string;structuredIdentityResolved:boolean;offerResolved:boolean;originalStructuredTitle?:string};
   title?: string;
   description?: string;
   price?: number;

@@ -1,3 +1,4 @@
+import {commerceText, localizedNegation} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 import { marketplacePolicyEvidence } from './marketplace-policy';
@@ -10,7 +11,7 @@ const scarcityPatterns=[
   /limited\s+time/i,
   /hurry(?:!+)?/i,
 ];
-const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–)\s*(?:1[5-9]|2\d|3\d)\s+(?:business\s+)?days\b/i;
+const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–|से|থেকে|إلى|à|a|至)\s*(?:1[5-9]|2\d|3\d)\s+(?:business\s+)?days\b/i;
 
 export function runPassiveRules(product: ProductSnapshot, pageText: string): EvidenceSignal[] {
   const out: EvidenceSignal[]=[...marketplacePolicyEvidence(product),...certificationClaimEvidence(product),...focusedSafetyEvidence(product)];
@@ -55,7 +56,7 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     }
   }
 
-  if (product.shippingText && longShipping.test(product.shippingText)) {
+  if (product.shippingText && longShipping.test(commerceText(product.shippingText,1000).text) && !localizedNegation(product.shippingText)) {
     out.push({
       id:'LONG_SHIPPING_WINDOW', family:'fulfillment', severity:'moderate', confidence:.75, weight:10,
       title:'Delivery may take a while',
@@ -64,8 +65,9 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
     });
   }
 
+  const matching=commerceText(pageText);
   const scarcity=scarcityPatterns
-    .map(pattern=>pageText.match(pattern)?.[0])
+    .map(pattern=>matching.match(pattern)?.original)
     .find((value):value is string=>Boolean(value));
   if (scarcity) {
     out.push({

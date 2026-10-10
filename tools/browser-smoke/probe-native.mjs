@@ -1,3 +1,4 @@
+import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, sign } from 'node:crypto';
@@ -159,6 +160,7 @@ async function openNative() {
       (url.includes('/delayed')?'<a href="/slow-policy">Return policy</a>':'')+
       '<script type="application/ld+json">'+JSON.stringify(structured)+'</script>'});
   });
+  if(headed) await installMultilingualFixtures(context);
   browserCdp = await context.browser().newBrowserCDPSession(); report.browser = await browserCdp.send('Browser.getVersion');
   // Match the already-proven blank-tab action method first. Navigation comes
   // after native mounting, so a routed fixture cannot alter the action context.
@@ -533,6 +535,7 @@ try {
           entry.finishedAt=new Date().toISOString();report.liveSurfaces.push(entry);
         }
       }
+      await runMultilingualSuite({page,native,worker,context,test,until,pause,output});
       await test('N12', 'Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses', async () => {
         await page.goto('https://fixture.example.com/journal/mugs'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);

@@ -1,3 +1,4 @@
+import {commerceText,canonicalCommerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 export type SitePageKind='about'|'shipping'|'returns'|'contact'|'other';
 export interface SiteTextPage {kind:SitePageKind;url:string;text:string}
@@ -16,7 +17,7 @@ const COUNTRIES:Record<string,string[]>={
   Indonesia:['Indonesia'],Malaysia:['Malaysia'],
 };
 export function jurisdictionHits(text:string):string[] {
-  const bounded=text.slice(0,100_000).normalize('NFKC');
+  const bounded=canonicalCommerceText(text);
   const out:string[]=[];
   for(const [country,aliases] of Object.entries(COUNTRIES)){
     const found=aliases.some(alias=>{
@@ -38,8 +39,8 @@ export function sameJurisdiction(a:string,b:string):boolean {
 }
 function extractClaim(text:string,patterns:RegExp[]):string|undefined {
   for(const pattern of patterns){
-    const match=pattern.exec(text);
-    if(match?.[0]) return match[0].replace(/\s+/g,' ').trim().slice(0,240);
+    const match=commerceText(text).match(pattern)?.original;
+    if(match) return match.replace(/\s+/g,' ').trim().slice(0,240);
   }
 }
 export function analyzeMerchantOrigin(mainPageText:string,pages:SiteTextPage[]):MerchantOriginResult {
@@ -53,10 +54,12 @@ export function analyzeMerchantOrigin(mainPageText:string,pages:SiteTextPage[]):
     /(?:registered office|business address|company address)[:\s-]+[^.;!?\n]{3,180}/i,
   ]);
   const madeClaim=extractClaim(all,[
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+made in\b/i,
     /(?:made|handmade|manufactured|crafted|produced)\s+in\s+[^.;!?\n]{2,100}/i,
     /(?:made|handmade|crafted)\s+by\s+(?:local\s+)?[^.;!?\n]{3,100}(?:artisans?|makers?|workers?)/i,
   ]);
   const shipsClaim=extractClaim(all,[
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+ships from\b/i,
     /(?:ships?|shipping|fulfilled|orders?\s+ship)\s+(?:directly\s+)?from\s+[^.;!?\n]{2,100}/i,
   ]);
   if(allCountries.length) evidence.push({

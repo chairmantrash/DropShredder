@@ -1,7 +1,7 @@
 # DropShredder — Chrome Web Store submission copy
 Prepared October 9,2026; candidate 0.2.0. Not submitted. See RELEASE-CHECKLIST.md for acceptance and authorization.
 
-DS-039 update2026-10-10: offline interface packs add Simplified Chinese, Hindi, Spanish, Arabic, French, Bengali and Brazilian Portuguese alongside English, following Chrome's display language. Original technical evidence annotations/raw exports remain in their original wording; bundled OCR remains English. Language review is separate from accuracy acceptance. See TRANSLATIONS.md.
+DS-039 update2026-10-10: offline interface packs add Simplified Chinese, Hindi, Spanish, Arabic, French, Bengali and Brazilian Portuguese alongside English, following Chrome's display language. Original technical evidence annotations/raw exports remain in their original wording; offline OCR offers all eight explicitly selected languages. Language review is separate from accuracy acceptance. See TRANSLATIONS.md.
 
 ## Name
 DropShredder
@@ -20,7 +20,7 @@ Optional tools let you:
 - open chosen supplier, reputation or reverse-image search destinations;
 - retrieve public domain-registration chronology and an exact legal-entity identifier;
 - search official recall candidates and confirm model/serial/lot applicability at the official source;
-- read a selected product-label image locally using packaged English OCR, with native barcode detection where Chrome supports it;
+- read a selected product-label image locally using packaged English and seven selected-language OCR models, with native barcode detection where Chrome supports it;
 - preview and save small source-linked reference lists; separately opt into weekly updates for already-authorized signed feeds with independently pinned publisher keys;
 - perform a one-shot Brave supplier search with your own temporary API key. A provider plan may cost money; this optional tool is never required for the standard extension.
 
@@ -39,7 +39,7 @@ No invented publisher email or Store item ID.
 ## Permissions / performance disclosures
 Required: scripting, storage, contextMenus, sidePanel, alarms. Optional HTTPS origins are requested only for chosen functions; automatic detection needs separate broad-host consent. Alarms run optional preauthorized signed-feed checks, not continuous page crawling. No history/cookies/debugger/webRequest/native-messaging permission.
 
-No remotely hosted executable code: OCR JavaScript, worker, WASM and English data are packaged and loaded lazily. Inert signed JSON is reference data. Passive product checks perform no external research. Full page text/collections, same-site enrichment, network requests, local history and tab fan-out are bounded. The exact candidate is 34 files / 47,483,460bytes unpacked; standard browsing does not load OCR engines. Tested Chrome156 evidence does not prove every supported version's behavior.
+No remotely hosted executable code: OCR JavaScript, worker, WASM and eight language models are packaged and loaded lazily. Inert signed JSON is reference data. Passive product checks perform no external research. Full page text/collections, same-site enrichment, network requests, local history and tab fan-out are bounded. The exact candidate is 51 files / approximately52.24MiB (DS-040; exact bytes in current fingerprint) unpacked; standard browsing does not load OCR engines. Tested Chrome156 evidence does not prove every supported version's behavior.
 
 ## Assets
 - store-assets/icon-128.png

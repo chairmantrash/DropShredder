@@ -1,5 +1,7 @@
 # Work queue
 
+Current owner-directed DS-040 multilingual merchant-page parity: RUNNING, claimed by /root;337 core checks/local gates pass on51-file package. New native/browser evidence pending; no prior build-pass substitution. See task packet.
+
 Current owner-directed addition2026-10-10: DS-039 offline localization DONE (bounded engineering scope). Seven additions plus English,336messages/pack;278core/45distinct Chrome156 checks pass on the42-file package. Independent language/release acceptance remains separate. Consult DS-039/TRANSLATIONS.md for exact new-build Chrome/packaging evidence. Public release remains held.
 
 | ID | Priority | Task | Status | Owner | Depends on |

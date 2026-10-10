@@ -1,16 +1,18 @@
 import { tr, errorText } from '../i18n/index';
-import { readLocalLabel } from '../forensics/local-label-reader';
+import { readLocalLabel,OCR_LANGUAGES,type OcrLanguage } from '../forensics/local-label-reader';
 import { productSearchUrls } from '../deep-hunt/search-urls';
 import { showSearchChooser } from './search-chooser';
 
 export function mountLocalLabelControls(doc:Document=document):void{
   const input=doc.getElementById('label-image') as HTMLInputElement|null;
+  const language=doc.getElementById('label-language') as HTMLSelectElement|null;
   const button=doc.getElementById('label-read') as HTMLButtonElement|null;
   const status=doc.getElementById('label-status');
   const output=doc.getElementById('label-results');
   let reading:AbortController|undefined;
   if(!input||!button||!status||!output)return;
   input.addEventListener('change',()=>{reading?.abort();reading=undefined;output.replaceChildren();status.textContent=tr('No file processed until you select READ LABEL ON DEVICE.');button.disabled=false;});
+  language?.addEventListener('change',()=>{reading?.abort();reading=undefined;output.replaceChildren();status.textContent=tr('No file processed until you select READ LABEL ON DEVICE.');button.disabled=false;});
   button.addEventListener('click',()=>{
     if(reading)return;
     const file=input.files?.[0];
@@ -18,7 +20,9 @@ export function mountLocalLabelControls(doc:Document=document):void{
     const controller=new AbortController();reading=controller;button.disabled=true;
     status.textContent=tr('Reading image locally. No image is sent to a server.');
     output.replaceChildren();
-    void readLocalLabel(file,controller.signal).then(result=>{
+    const selected=language?.value??'eng';
+    const model=OCR_LANGUAGES.includes(selected as OcrLanguage)?selected as OcrLanguage:'eng';
+    void readLocalLabel(file,controller.signal,model).then(result=>{
       if(reading!==controller)return;
       const summary=doc.createElement('p');
       summary.textContent=tr('Barcodes read: $1; text lines: $2. Barcode support: $3. OCR support: $4.',result.barcodes.length,result.textLines.length,result.barcodeAvailable?tr('available'):tr('unavailable'),result.textAvailable?tr('available'):tr('unavailable in this Chrome build'));

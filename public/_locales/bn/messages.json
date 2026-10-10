@@ -1674,5 +1674,49 @@
   "locale_code": {
     "message": "bn",
     "description": "Resolved packaged UI locale, including fallback; do not translate."
+  },
+  "m_c2lr2r": {
+    "message": "OCR ভাষা",
+    "description": "OCR language"
+  },
+  "m_1ihxfp0": {
+    "message": "লেবেলে মুদ্রিত ভাষা বেছে নিন। অফলাইন OCR ভুল পড়তে পারে; এটি বিক্রেতার স্কোর বদলায় না।",
+    "description": "Choose the language printed on the label. Offline OCR may misread text; it never changes seller scores."
+  },
+  "m_1spcrti": {
+    "message": "ইন্টারফেসের ভাষা Chrome অনুযায়ী চলে। প্রযুক্তিগত প্রমাণের টীকা ও মূল রপ্তানি আগের ভাষায় থাকে। অফলাইন OCR ইংরেজি এবং সাতটি ইন্টারফেস ভাষা সমর্থন করে; পড়ার আগে লেবেলের ভাষা বেছে নিন।",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Offline OCR supports English and all seven interface languages; choose the label language before reading."
+  },
+  "m_7nql6j": {
+    "message": "English",
+    "description": "English"
+  },
+  "m_ubceys": {
+    "message": "简体中文",
+    "description": "简体中文"
+  },
+  "m_p82r5w": {
+    "message": "हिन्दी",
+    "description": "हिन्दी"
+  },
+  "m_773xpa": {
+    "message": "Español",
+    "description": "Español"
+  },
+  "m_1agd4ix": {
+    "message": "العربية",
+    "description": "العربية"
+  },
+  "m_1x2mspi": {
+    "message": "Français",
+    "description": "Français"
+  },
+  "m_17megcz": {
+    "message": "বাংলা",
+    "description": "বাংলা"
+  },
+  "m_ao59nm": {
+    "message": "Português",
+    "description": "Português"
   }
 }

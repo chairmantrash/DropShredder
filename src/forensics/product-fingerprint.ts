@@ -1,3 +1,4 @@
+import {canonicalCommerceText,commerceTokens} from '../languages/commerce-text';
 import { normalizeGtin, normalizeProductIdentifier } from '../analysis/product-identity';
 
 const MARKETING_STOPWORDS=new Set([
@@ -15,11 +16,11 @@ const MATERIALS=[
 ];
 
 function normalizeText(value:string):string {
-  return value
+  return canonicalCommerceText(value,10000)
     .normalize('NFKC')
     .toLowerCase()
     .replace(/[×x]/g,'x')
-    .replace(/[^a-z0-9.°+\-\s]/g,' ')
+    .replace(/[^\p{L}\p{M}\p{N}.°+\-\s]/gu,' ')
     .replace(/\s+/g,' ')
     .trim();
 }
@@ -104,13 +105,13 @@ export interface ExactProductFingerprint {
 }
 
 const normalizeExactText=(value:string|undefined)=>
-  value?.normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()||undefined;
-const normalizeExactIdentifier=(value:string|undefined)=>normalizeExactText(value)?.replace(/[^a-z0-9]/g,'');
+  value?.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{M}\p{N}]+/gu,' ').trim()||undefined;
+const normalizeExactIdentifier=normalizeProductIdentifier;
 
 export function buildExactProductFingerprint(input:ExactProductFingerprintInput):ExactProductFingerprint {
-  const titleTokens=[...new Set((normalizeExactText(input.title)??'').split(' ').filter(token=>token.length>=3))].sort().slice(0,40);
+  const titleTokens=[...new Set(commerceTokens(input.title??'').filter(token=>token.length>=3||/\p{Script=Han}/u.test(token)))].sort().slice(0,40);
   const specTokens=Object.entries(input.specs??{})
-    .map(([key,value])=>`${normalizeExactText(key)}=${normalizeExactText(String(value))}`)
+    .map(([key,value])=>`${normalizeExactText(canonicalCommerceText(key,200))}=${normalizeExactText(String(value))}`)
     .filter(Boolean)
     .sort()
     .slice(0,50);

@@ -1,3 +1,4 @@
+import {commerceText} from '../languages/commerce-text';
 import { jurisdictionHits, type SiteTextPage } from './merchant-origin';
 
 export type SupplyChainRole='merchant'|'manufacture'|'fulfillment'|'returns'|'payment';
@@ -28,9 +29,10 @@ function countryFromText(text:string):string|undefined {
 }
 
 function matchedPhrase(text:string,patterns:RegExp[]):{phrase:string;country?:string}|undefined{
+  const matching=commerceText(text);
   for(const pattern of patterns){
-    const m=text.match(pattern);
-    if(m?.[0]) return {phrase:m[0].replace(/\s+/g,' ').trim().slice(0,240),country:countryFromText(m[0])};
+    const hit=matching.match(pattern),m=hit?.canonical;
+    if(m?.[0]) return {phrase:hit!.original.replace(/\s+/g,' ').trim().slice(0,240),country:countryFromText(m[0])};
   }
   return undefined;
 }
@@ -72,12 +74,14 @@ export function buildSupplyChainProfile(input:{
   if(merchant) nodes.push({role:'merchant',country:merchant.country,detail:merchant.phrase,confidence:.82,source:'About/Contact'});
 
   const manufacture=matchedPhrase(all,[
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+made in\b/i,
     /(?:made|manufactured|produced|crafted|handmade)\s+in\s+[^.;!?\n]{2,100}/i,
     /(?:manufactured|produced)\s+by\s+[^.;!?\n]{2,120}/i,
   ]);
   if(manufacture) nodes.push({role:'manufacture',country:manufacture.country,detail:manufacture.phrase,confidence:.8,source:'Merchant claim'});
 
   const fulfillment=matchedPhrase(shipping||all,[
+    /\b(?:China|United States|India|Bangladesh|France|Brazil|Portugal|Spain)\s+ships from\b/i,
     /(?:orders?\s+)?(?:ship|ships|shipped|shipping|fulfilled)\s+(?:directly\s+)?from\s+[^.;!?\n]{2,100}/i,
     /(?:warehouse|fulfillment center)\s+(?:is|located)?\s*(?:in|at)\s+[^.;!?\n]{2,100}/i,
   ]);

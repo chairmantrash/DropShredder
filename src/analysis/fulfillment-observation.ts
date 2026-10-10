@@ -1,3 +1,4 @@
+import {commerceText} from '../languages/commerce-text';
 export interface ParsedFulfillmentObservation {
   origin?:string;
   carrier?:string;
@@ -15,7 +16,8 @@ const CARRIER_PATTERNS=[
 ];
 
 export function parseFulfillmentObservation(text:string):ParsedFulfillmentObservation {
-  const normalized=text.replace(/\s+/g,' ').slice(0,50000);
+  const matching=commerceText(text,50000);
+  const normalized=matching.text.replace(/\s/g,' ');
   let origin:string|undefined;
   for(const pattern of ORIGIN_PATTERNS){
     const match=normalized.match(pattern);
@@ -37,7 +39,7 @@ export function parseFulfillmentObservation(text:string):ParsedFulfillmentObserv
   return {
     origin,
     carrier,
-    routeText:origin ? normalized.slice(0,260) : undefined,
+    routeText:origin ? text.replace(/\s+/g,' ').slice(0,260) : undefined,
     confidence:origin ? .76 : carrier ? .45 : 0,
   };
 }

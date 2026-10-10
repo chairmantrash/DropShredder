@@ -1,3 +1,4 @@
+import {canonicalCommerceText} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 
 export interface DefectObservation {
@@ -38,7 +39,7 @@ export function defectConsensusEvidence(observations:DefectObservation[]):Eviden
 
   const out:EvidenceSignal[]=[];
   for(const family of DEFECTS){
-    const matches=[...unique.values()].filter(o=>family.patterns.some(p=>p.test(o.text)));
+    const matches=[...unique.values()].filter(o=>family.patterns.some(p=>p.test(canonicalCommerceText(o.text,5000))));
     const sources=new Set(matches.map(m=>m.source));
     if(matches.length<2||sources.size<2) continue;
 

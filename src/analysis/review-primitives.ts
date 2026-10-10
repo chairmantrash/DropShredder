@@ -1,3 +1,5 @@
+import {reviewDateMillis} from '../languages/commerce-date';
+import {canonicalCommerceText,commerceTokens} from '../languages/commerce-text';
 import type { ReviewSnapshot } from '../types/review';
 export const REVIEW_MISMATCH_TERMS=[
   'necklace','bracelet','earrings','handbag','purse','phone case','shirt','shoes',
@@ -12,11 +14,11 @@ export const REVIEW_INCENTIVE_PATTERNS=[
 ] as const;
 
 export function normalizeReviewText(text:string):string {
-  return text.toLowerCase().replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+  return canonicalCommerceText(text,5000).toLowerCase().replace(/[^\p{L}\p{M}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
 }
 
 export function reviewTokenSet(text:string):Set<string> {
-  return new Set(normalizeReviewText(text).split(' ').filter(token=>token.length>=4));
+  return new Set(commerceTokens(text).filter(token=>token.length>=4||/\p{Script=Han}/u.test(token)));
 }
 
 export function reviewTextSimilarity(a:string,b:string):number {
@@ -35,7 +37,7 @@ export function reviewMentionsMismatchedCategory(productTitle:string|undefined,t
 }
 
 export function reviewHasIncentiveLanguage(text:string):boolean {
-  return REVIEW_INCENTIVE_PATTERNS.some(pattern=>pattern.test(text));
+  return REVIEW_INCENTIVE_PATTERNS.some(pattern=>pattern.test(canonicalCommerceText(text,5000)));
 }
 
 
@@ -56,7 +58,7 @@ export function reviewDuplicatePairs(reviews:readonly ReviewSnapshot[],limit=80)
 
 export function reviewMaxWindowShare(reviews:readonly ReviewSnapshot[],days:number):number {
   const dates=reviews
-    .map(review=>review.date?Date.parse(review.date):NaN)
+    .map(review=>review.date?reviewDateMillis(review.date):NaN)
     .filter(Number.isFinite)
     .sort((a,b)=>a-b);
   if(dates.length<5) return 0;

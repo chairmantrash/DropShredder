@@ -1,11 +1,7 @@
+import {hasSensitiveCommerceSurface} from '../security/sensitive-surface';
+import {COMMERCE_LANGUAGE_KIT} from '../languages/commerce-kit';
+import {canonicalCommerceText,normalizeCommerceCharacters,commerceTokens} from '../languages/commerce-text';
 import {classifyShoppingPage,type ShoppingPageFacts} from '../detection/shopping-page';
-
-const BLOCKED_FIELDS=[
-  'input[type="password"]','input[autocomplete="cc-number"]',
-  'input[autocomplete="cc-csc"]','input[autocomplete="current-password"]',
-  'input[autocomplete="new-password"]','input[name*="cardnumber" i]',
-  'form[action*="checkout" i]','form[action*="payment" i]',
-];
 
 function safeType(node:unknown):string[]{
   if(!node || typeof node!=='object') return [];
@@ -18,7 +14,7 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   const facts:ShoppingPageFacts={
     url:href,
     title:doc.querySelector('h1')?.textContent?.trim().slice(0,180),
-    hasSensitiveFields:Boolean(doc.querySelector(BLOCKED_FIELDS.join(','))),
+    hasSensitiveFields:hasSensitiveCommerceSurface(COMMERCE_LANGUAGE_KIT.privateFormParts,doc),
   };
   // Never inspect scripts, prices or text on sensitive surfaces.
   if(facts.hasSensitiveFields) return facts;
@@ -65,13 +61,19 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
     'a[href*="/shop/buy"]','a[href*="/checkout/"]',
     '[id="add-to-cart-button"]','[id="buy-now-button"]',
   ];
-  let purchase=Boolean(doc.querySelector(purchaseSelectors.join(',')));
+  const activeControl=(el:Element|null):boolean=>{
+    if(!el||el.hasAttribute('disabled')||el.getAttribute('aria-disabled')==='true'||el.closest('[hidden],[aria-hidden="true"]')) return false;
+    const style=doc.defaultView?.getComputedStyle?.(el);
+    return style?.display!=='none'&&style?.visibility!=='hidden';
+  };
+  let purchase=activeControl(doc.querySelector(purchaseSelectors.join(',')));
   if(!purchase){
     const groups=[doc.getElementsByTagName('button'),doc.getElementsByTagName('a')];
     for(const controls of groups){
       for(let i=0;i<Math.min(controls.length,50);i++){
         const el=controls.item(i);
-        const phrase=(el?.getAttribute('aria-label')||el?.textContent||'').trim().slice(0,80);
+        if(!activeControl(el)) continue;
+        const phrase=canonicalCommerceText((el?.getAttribute('aria-label')||el?.textContent||'').trim().slice(0,80),80).trim();
         if(/^(?:buy(?:\s+now)?|add to (?:cart|bag)|pre-?order|purchase|add to basket)(?:\s|$)/i.test(phrase)){
           purchase=true;break;
         }
@@ -84,17 +86,17 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   const price=doc.querySelector<HTMLElement>('[itemprop="price"],[data-price],.product-price,.price,[class*="price"],.a-price .a-offscreen,[class*="product-price"]');
   const metaPrice=doc.querySelector<HTMLMetaElement>('meta[property="product:price:amount"]');
   const priceText=(price?.textContent||metaPrice?.content||'').trim().slice(0,70);
-  facts.visiblePrice=/(?:[$€£¥]\s*\d|\d[\d,.]*\s*(?:USD|EUR|GBP|CAD|AUD))/i.test(priceText);
+  facts.visiblePrice=/(?:[$€£¥₹৳]|(?:USD|EUR|GBP|CAD|AUD|CNY|INR|BDT|BRL|SAR|AED)|د\.?إ|ر\.?س)[\s\S]{0,20}\d|\d[\d.,\s]*\s*(?:[$€£¥₹৳]|USD|EUR|GBP|CAD|AUD|CNY|INR|BDT|BRL|SAR|AED|د\.?إ|ر\.?س)/i.test(normalizeCommerceCharacters(priceText));
 
   // A title alone is not product identity. Require an individual product visual/detail section.
   facts.productDetail=Boolean(facts.title && (
     doc.querySelector('[itemprop="image"],[data-testid="product-image"],[class*="product-gallery"],[id*="product-image"],.product__media,meta[property="og:image"]')
     || doc.querySelector('main h1,article h1')
   ));
-  const words=(facts.title||'').toLowerCase().split(/[^a-z0-9]+/).filter(w=>w.length>1).slice(0,12);
+  const words=commerceTokens(facts.title||'',180).filter(w=>w.length>1).slice(0,12);
   for(let n=0;n<Math.min(doc.images.length,60) && words.length>=2;n++){
     const alt=(doc.images.item(n)?.alt||'').toLowerCase();
-    const altWords=new Set(alt.split(/[^a-z0-9]+/).filter(w=>w.length>1));
+    const altWords=new Set(commerceTokens(alt,500).filter(w=>w.length>1));
     if(words.filter(w=>altWords.has(w)).length>=2){facts.focusedHero=true;break;}
   }
   const possibleCards=doc.getElementsByClassName('product-card').length+

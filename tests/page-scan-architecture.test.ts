@@ -8,7 +8,7 @@ test('page scanner is packaged outside the sidepanel controller',async()=>{
  assert.match(panel,/func:extractPageScan/);
  assert.match(panel,/world:'ISOLATED'/);
  assert.doesNotMatch(panel,/querySelectorAll<HTMLScriptElement>\('script\[type="application\/ld\+json"\]'\)/);
- assert.match(scanner,/export function extractPageScan\(\):PageScanResult/);
+ assert.match(scanner,/export function extractPageScan\(kit:CommerceLanguageKit\):PageScanResult/);
 });
 
 test('scan aborts if navigation changes the document during authorization and extraction',async()=>{

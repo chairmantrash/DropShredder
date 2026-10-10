@@ -1,3 +1,4 @@
+import {commerceText,localizedNegation} from '../languages/commerce-text';
 import type { EvidenceSignal } from '../types/evidence';
 import { complaintPhraseHit, reputationSourceKey, validatedReputationObservations, type ReputationObservation } from '../reputation/complaint-analysis';
 
@@ -21,9 +22,14 @@ const QUALITY_COMPLAINTS=[
 ];
 
 function claimMatch(text:string):string|undefined{
+  const matching=commerceText(text);
   for(const pattern of QUALITY_CLAIMS){
-    const match=text.match(pattern);
-    if(match?.[0]) return match[0];
+    const match=matching.match(pattern);
+    if(match){
+      const context=matching.original(Math.max(0,match.canonical.index-25),match.canonical[0].length+55);
+      const clause=context.split(/[.;!?。！？।]/).find(part=>part.includes(match.original))??match.original;
+      if(!localizedNegation(clause)) return match.original;
+    }
   }
   return undefined;
 }
