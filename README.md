@@ -119,3 +119,5 @@ The optional OCR assets dominate unpacked size (about 45 MiB before license/code
 North American provenance utility: explicit manual reports separate eight product/sale stages within US/Canada/Mexico. A local source-reviewed dossier can document the exact chain; store/warehouse/label claims never grant independent certification. See [origin evidence and source map](NORTH-AMERICA-ORIGIN.md).
 
 Business and litigation standing: separate user-reviewed, session-only entity records across seven categories, with 32 source references. BBB/accreditation, identity, restrictions, trade, supply-chain audits, product certification and lawsuits have different scopes. See [standing utility](BUSINESS-STANDING.md) and [litigation access audit](brain/research/2026-10-10-LITIGATION-RESEARCH.md).
+
+Source refresh cadence, scope and correction rules: [intelligence maintenance](INTELLIGENCE-MAINTENANCE.md).

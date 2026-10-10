@@ -1,7 +1,7 @@
 {
   "task": "DS-041",
   "date": "2026-10-10",
-  "status": "IMPLEMENTED-NATIVE-VERIFICATION-PENDING",
+  "status": "IMPLEMENTED-BOUNDED-NATIVE-PASS-ON-SUCCESSOR",
   "baseline": "4db19df098009cc14a07ba61e6c02e2fa490389b",
   "sourceCommit": "a80617685ad796e35cc815f79b356ab4c72c775d",
   "sourceTree": "7c2fec8dffa55b7d7938d2b7792d22431075be3f",
@@ -57,7 +57,6 @@
   "limitations": [
     "JSON/source kinds/complete fields are author assertions; deliberate review is not independent authenticity certification",
     "No real product or merchant has been certified entirely regional",
-    "No new native or live regional accuracy result claimed yet",
     "Representative regional/category, native-speaker, legal-copy, source authentication and actual shipping acceptance still required",
     "DS-040 Hindi MODEL12345 OCR error remains blocked with original strict assertion",
     "No new permission, dependency, backend, automatic document retrieval, allegation or public release"
@@ -67,5 +66,18 @@
     "pr9": "draft/unmerged",
     "tag": false,
     "storeSubmission": false
+  },
+  "successorVerification": {
+    "sourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
+    "sourceTree": "3a5b2a8483e6ea11707d78d6d54ee7c1d2bfbf26",
+    "testHead": "9d79f4140704b7140d052b7b4a9d25a295f8c046",
+    "runtimeRun": 38046448478,
+    "passed": [
+      "N30",
+      "N31"
+    ],
+    "nativeReport": "workplane/runs/DS-042-043-NATIVE-REPORT-20261010.json",
+    "scope": "Exact composed successor package; synthetic origin documents and local directory behavior, no real product/company authenticated",
+    "remainingFailure": "DS-040 O-hin"
   }
 }

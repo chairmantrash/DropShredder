@@ -1,7 +1,7 @@
 {
   "task": "DS-042/043",
   "date": "2026-10-10",
-  "status": "VERIFYING",
+  "status": "IMPLEMENTED-BOUNDED-NATIVE-QA-PASS-RELEASE-BLOCKED",
   "baseline": "f2007ca0b80266770c97637ae261fb51d99c7e5e",
   "sourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
   "sourceTree": "3a5b2a8483e6ea11707d78d6d54ee7c1d2bfbf26",
@@ -61,8 +61,131 @@
     "scope": "Research tasks, not extension background crawler or automatic installed-catalog distribution"
   },
   "hosted": {
-    "status": "PENDING",
-    "passes": 0
+    "runtimeRun": 38046448478,
+    "status": "FAILED at existing DS-040 O-hin; requested feature checks passed",
+    "ciRun": 38046448474,
+    "ci": "success",
+    "codeqlRun": 38046448499,
+    "codeql": "success",
+    "browser": "Chromium 156.0.8078.4",
+    "packageFingerprint": "All51 files matched pinned candidate",
+    "packagedPasses": 9,
+    "headedPasses": 57,
+    "localeGroupsPassed": 7,
+    "headlessDuplicatePasses": 7,
+    "distinctPasses": 73,
+    "passedIds": [
+      "N01",
+      "N02",
+      "N03",
+      "N04",
+      "N05",
+      "N06",
+      "N07",
+      "N08",
+      "N09",
+      "N10",
+      "N11",
+      "N15",
+      "N16",
+      "N17",
+      "N18",
+      "N19",
+      "N20",
+      "N25",
+      "N21",
+      "N22",
+      "N23",
+      "N26",
+      "N27",
+      "N30",
+      "N31",
+      "N32",
+      "N33",
+      "N28",
+      "N29",
+      "N24",
+      "M-en",
+      "P-en",
+      "Q-en",
+      "M-zh",
+      "P-zh",
+      "Q-zh",
+      "M-hi",
+      "P-hi",
+      "Q-hi",
+      "M-es",
+      "P-es",
+      "Q-es",
+      "M-ar",
+      "P-ar",
+      "Q-ar",
+      "M-fr",
+      "P-fr",
+      "Q-fr",
+      "M-bn",
+      "P-bn",
+      "Q-bn",
+      "M-pt-BR",
+      "P-pt-BR",
+      "Q-pt-BR",
+      "M-browser-translated",
+      "M-large",
+      "O-chi_sim"
+    ],
+    "newNativePassed": [
+      "N30",
+      "N31",
+      "N32",
+      "N33"
+    ],
+    "failedId": "O-hin",
+    "expected": "MODEL12345",
+    "actual": "|॥0/05। 42345",
+    "notExecutedAfterStop": [
+      "O-spa",
+      "O-ara",
+      "O-fra",
+      "O-ben",
+      "O-por",
+      "N12",
+      "N13",
+      "N14"
+    ],
+    "nativeReport": "workplane/runs/DS-042-043-NATIVE-REPORT-20261010.json",
+    "artifacts": [
+      {
+        "id": 11668220388,
+        "name": "headed evidence",
+        "sha256": "ff4e42d0fc84fdf2d181a5ad71ae38443f02f9a27e532563ad136a5c69779770"
+      },
+      {
+        "id": 11666629337,
+        "name": "exact unpacked QA candidate",
+        "sha256": "eef3d05f4ef78ebdfeba19c8c04682e8a05972e948ab5846069e00137e704ef4"
+      }
+    ],
+    "visualReview": {
+      "scope": "Four bounded actual native desktop captures downloaded, ZIP digest checked and visually inspected; readable scoped cards/controls, no horizontal overflow apparent in these frames. Synthetic owned records only; not full visual acceptance or source authenticity.",
+      "screenshots": [
+        {
+          "file": "native-business-standing.png",
+          "sha256": "3dfc7c37bfabfeb195d186f87a602662127d8a5589554937eb82df25f0fc8d12"
+        },
+        {
+          "file": "native-litigation-standing.png",
+          "sha256": "d7dad05999ae521f4d572af81c98e700a6772589db1149d8fa19185ed324167c"
+        },
+        {
+          "file": "native-north-america-origin.png",
+          "sha256": "5c09900e75e3e4ab572435a1a059d00362a7b2e0022f9dbf3c3e4b9f37a5f398"
+        },
+        {
+          "file": "native-north-america-map.png",
+          "sha256": "c4de882711d57346f119abfa239f6d988bad9463b09001561048dfe8cd60ab4b"
+        }
+      ]
+    }
   },
   "previousHosted": {
     "commit": "f2007ca0b80266770c97637ae261fb51d99c7e5e",
@@ -73,12 +196,13 @@
     "codeql": "success"
   },
   "remaining": [
-    "Exact new-candidate hosted runtime checks",
     "DS-040 original-engineer Hindi OCR identifier repair and unchanged assertion",
-    "Independent A01\u2013D06 acceptance",
+    "Independent A01–D06 acceptance",
     "Representative real seller/product/category/source calibration and authenticity",
     "Native speaker/legal copy review",
-    "No main merge, release tagging or store submission authorized"
+    "No main merge, release tagging or store submission authorized",
+    "Independent actual source/case matching, representative seller/category calibration; weekly task execution/source availability not yet observed",
+    "Hosted artifact binaries expire after30days; complete native text report preserved in Git"
   ],
   "attempts": [
     {
@@ -119,5 +243,6 @@
       "failure": "N33: pending case result passed internally, but overwriting and CDP-reselecting the same file path did not trigger a new preview; timeout at vacated case preview",
       "fix": "Use distinct updated file path for the actual new file selection. Existing review-reset and vacated-result assertions unchanged; production source/package unchanged."
     }
-  ]
+  ],
+  "testHead": "9d79f4140704b7140d052b7b4a9d25a295f8c046"
 }
