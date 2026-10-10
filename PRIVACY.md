@@ -116,3 +116,11 @@ The optional GLEIF lookup sends only the exact LEI the shopper enters, after Chr
 Selected PNG/JPEG/WebP label photos are processed on device after READ LABEL ON DEVICE. Tesseract JavaScript/worker/WASM and English plus seven selected-language models are bundled with the extension and loaded lazily; no model/CDN request or photo upload occurs. Images are not saved in history or exports. Recognized text and barcode values are unverified; an explicit source-search action can open searches for that chosen text.
 
 With automatic protection enabled and Chrome host access granted, neutral marketplace search-result links can be added locally on Amazon/Etsy/Walmart searches. They link to the original product listing, do not assert wrongdoing and do not automatically investigate remote suppliers. The public extension uses no neural model, remote inference or developer analytics.
+
+## North American origin evidence and references
+
+The optional origin utility reads a shopper-selected local JSON file into side-panel memory only, up to 50 KB. It does not upload or automatically save the file, retrieve linked documents, authenticate sources or request a new permission. The shopper opens public source links and reviews them explicitly. Normal source navigation shares ordinary browser/network metadata with that source.
+
+A deliberate apply action attaches the bounded assessment, role countries and sanitized public source URLs to the current report; an explicit report export includes that assessment. It does not rewrite earlier history or save the dossier. Full scans may save their initial claim-only origin assessment through ordinary local observation history. Navigation or **CLEAR ORIGIN EVIDENCE** discards the session dossier and review checkbox. No purchaser/shipping address is required: evidence only records a destination country. Avoid private source records or personal information when preparing evidence.
+
+The packaged regional source directory loads locally when expanded. It makes no automatic network requests or scheduled refresh. Source references retain their original language and distinguish authority/directory/provider/manufacturer scope.

@@ -1718,5 +1718,181 @@
   "m_ao59nm": {
     "message": "Português",
     "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "50 KB-এর ছোট উৎসস্থানের JSON ফাইল বেছে নিন।",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "উৎস নথি খুলে পর্যালোচনা করুন, তারপর বর্তমান পণ্যে প্রয়োগ করুন। শুধু ফাইল বা স্বাক্ষর দিয়ে উৎসস্থান যাচাই হয় না।",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "উৎসস্থানের ফাইল অবৈধ। স্কিমা ও প্রকাশ্য উৎস URL পরীক্ষা করুন।",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "উৎসস্থানের প্রমাণ প্রয়োগের আগে বর্তমান পণ্য পরীক্ষা করুন।",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "উৎসস্থানের মূল্যায়ন প্রয়োগ হয়েছে। বিক্রেতার সতর্কতা স্কোর অপরিবর্তিত।",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "পর্যালোচনা $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "তথ্যসূত্রের মেয়াদ এখনো বৈধ",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "পুরোনো তথ্যসূত্র — উৎস আবার পরীক্ষা করুন",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "উৎসস্থানের দাবি — যাচাই করা হয়নি",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "আংশিক উৎসস্থানের প্রমাণ",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "উত্তর আমেরিকার শৃঙ্খল নথিভুক্ত",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "যুক্তরাষ্ট্র / কানাডা / মেক্সিকোর বাইরে নথিভুক্ত ধাপ",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "পরস্পরবিরোধী উৎসস্থানের প্রমাণ",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "উত্তর আমেরিকায় তৈরি, বিক্রি ও পাঠানো",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "পরিধি: যুক্তরাষ্ট্র / কানাডা / মেক্সিকো। নথিভুক্ত মানে ব্যবহারকারীর পর্যালোচিত উৎস, স্বাধীন সনদ নয়। সব ধাপের প্রমাণ থাকতে হবে; অনুপস্থিত প্রমাণ অজানা থাকে।",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "পণ্যের উৎসস্থানের ধাপ ও উৎসের দাবি",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "কাঁচামাল",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "উপাদান ও যন্ত্রাংশ",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "প্রক্রিয়াকরণ",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "চূড়ান্ত সংযোজন",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "প্যাকেজিং",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "বিক্রয়ের দায়িত্বপ্রাপ্ত বিক্রেতা",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "প্রথম বাস্তব প্রেরণ",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "বিক্রয়ের গন্তব্য",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$: $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "পরিধি: যুক্তরাষ্ট্র, কানাডা ও মেক্সিকো। উপকরণ, যন্ত্রাংশ, প্রক্রিয়াকরণ, সংযোজন, প্যাকেজিং, বিক্রেতা, প্রেরণ ও গন্তব্য আলাদাভাবে পরীক্ষা করা হয়। দোকানের দাবি ও স্থানীয় গুদাম পুরো শৃঙ্খল প্রমাণ করে না।",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "পণ্যের উৎসস্থানের প্রমাণের পূর্বরূপ (JSON, সর্বোচ্চ 50 KB)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "আমি এই নির্দিষ্ট পণ্য, বিক্রেতা ও চালানের লিঙ্ক করা নথি পর্যালোচনা করেছি।",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "পর্যালোচিত উৎসস্থানের প্রমাণ প্রয়োগ করুন",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "উৎসস্থানের প্রমাণ মুছুন",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "ফাইল মুছে ফেলা বা পৃষ্ঠা পরিবর্তন না হওয়া পর্যন্ত প্যানেলের মেমরিতে থাকে। প্রমাণ প্রয়োগ করলে শুধু এই প্রতিবেদন বদলায়। নথিভুক্ত উৎসস্থান আপনার উৎস পর্যালোচনা নির্দেশ করে; DropShredder স্বাধীনভাবে উৎসের সত্যতা, পণ্যের গুণমান বা লেবেলিংয়ের আইনি নিয়ম মানা প্রত্যয়িত করে না।",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "উত্তর আমেরিকার উৎস ও বাণিজ্য মানচিত্র",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "উৎস ও নির্মাতার অনুসন্ধান সূত্র, বিশ্বস্ত দোকানের তালিকা নয়। সঠিক পণ্য ও বিক্রেতা পরীক্ষা করুন। উৎস খুললে স্বাভাবিক ব্রাউজার অনুরোধ যায়; ডিরেক্টরি স্বয়ংক্রিয়ভাবে অনুরোধ পাঠায় না। তথ্যসূত্রের নোট মূল ভাষায় থাকে।",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "দেশের তথ্যসূত্র",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "তিনটি দেশই",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "কানাডা",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "যুক্তরাষ্ট্র",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "মেক্সিকো",
+    "description": "Mexico"
   }
 }

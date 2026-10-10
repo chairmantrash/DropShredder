@@ -50,3 +50,11 @@ Do not promote a candidate with unresolved licenses/terms into a runtime corpus.
 - Exact official notice URLs in src/intelligence/focused-safety.ts
 - Actual installed/pinned licenses and public/THIRD-PARTY-NOTICES.txt; public/ocr/PROVENANCE.txt
 
+
+## DS-041 North American reference addition — reviewed October 10, 2026
+
+`intelligence/north-america-commerce-20261010.json` is imported into the manual panel as 34 project-authored source/outlet summaries and five explicitly sourced, unscored relationship leads. It contains primary source URLs, actual review date, 90-day reference windows and limits; no proprietary directory database, trade manifest, reviews, product photos, logos, contact corpus, legal standard text or certification artwork is copied. Provider facts remain provider disclosures. It adds no global reliable-merchant whitelist, product certificate or automated source review.
+
+PROFECO virtual-store results explicitly restrict commercial/advertising reuse. The panel links to its public consumer lookup/description only; no results, scores or official endorsement are incorporated. INEGI DENUE API requires registration and is not integrated; directory/reference URLs do not authorize unrestricted API/data reuse. AAM/OTEXA/Thomas/Made in CA discovery standards do not establish 100% product origin. Source names/URLs and independently authored short facts do not grant reuse rights in linked content. New user origin dossiers are reviewed locally and remain unverified as to source authenticity.
+
+Source index now includes 47 neutral comparison entries, including regional Amazon/Walmart/Mercado Libre and disclosed import/sourcing providers. Deep Hunt preserves its existing ten-destination bound using at most ten site clauses per query; the chooser still opens at most eight selected tabs at a time. Native/live regional platform support is limited to separately recorded tests.

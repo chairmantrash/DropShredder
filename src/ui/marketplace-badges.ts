@@ -8,10 +8,10 @@ export function marketplaceResultsKind(href:string):Venue|undefined{
   try{
     const u=new URL(href),host=u.hostname.toLowerCase(),p=u.pathname.toLowerCase();
     if(u.protocol!=='https:'||u.username||u.password) return undefined;
-    if(/^(?:www\.)?amazon\.(?:com|ca|de|fr|it|es|in|co\.uk|co\.jp|com\.au)$/.test(host)
+    if(/^(?:www\.)?amazon\.(?:com|ca|de|fr|it|es|in|co\.uk|co\.jp|com\.au|com\.mx)$/.test(host)
       && (/^\/s(?:\/|$)/.test(p)||p==='/gp/search')) return 'amazon';
     if(/^(?:www\.)?etsy\.com$/.test(host)&&(/^\/search(?:\/|$)/.test(p)||/^\/market(?:\/|$)/.test(p))) return 'etsy';
-    if(/^(?:www\.)?walmart\.com$/.test(host)&&/^\/search(?:\/|$)/.test(p)) return 'walmart';
+    if(/^(?:www\.)?walmart\.(?:com|ca|com\.mx)$/.test(host)&&/^\/(?:en\/|fr\/)?search(?:\/|$)/.test(p)) return 'walmart';
   }catch{}
   return undefined;
 }
@@ -19,7 +19,7 @@ export function marketplaceResultsKind(href:string):Venue|undefined{
 function resultPath(path:string,venue:Venue):boolean{
   if(venue==='amazon') return /^\/(?:[^/]+\/)?(?:dp|gp\/product)\/[A-Z0-9]{10}(?:\/|$)/i.test(path);
   if(venue==='etsy') return /^\/listing\/\d{6,15}(?:\/|$)/i.test(path);
-  return /^\/ip\/(?:[^/]+\/)?\d{5,20}(?:\/|$)/i.test(path);
+  return /^\/(?:en\/|fr\/)?ip\/(?:[^/]+\/)?\d{5,20}(?:\/|$)/i.test(path);
 }
 export function removeMarketplaceBadges(doc:Document):void{
   for(const item of [...doc.querySelectorAll<HTMLElement>('[data-dropshredder-result-label]')].slice(0,48)) item.remove();

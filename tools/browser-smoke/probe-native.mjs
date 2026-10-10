@@ -152,6 +152,7 @@ async function openNative() {
     const url=route.request().url();
     if(url.includes('/slow-policy')) return void(async()=>{await pause(2000);await route.fulfill({contentType:'text/html',body:'<p>Return policy: returns accepted within 30 days.</p>'});})().catch(()=>{});
     const product={"@context":"https://schema.org","@type":"Product",name:"Fixture mug",sku:"FIXTURE-MUG-001",gtin:"012345678905",offers:{"@type":"Offer",price:"12.00",priceCurrency:"USD",availability:"https://schema.org/InStock"}};
+    if(url.includes('/origin')) product.offers.seller={"@type":"Organization",name:'Owned Origin Seller'};
     const variant=url.includes('/variants');
     const structured=variant?{"@type":"ProductGroup",name:"Fixture mug",url:"https://fixture.example.com/products/variants",hasVariant:[{...product,sku:'RED-MUG',color:'red',offers:{price:10,priceCurrency:'USD'}},{...product,sku:'BLUE-MUG',color:'blue',offers:{price:20,priceCurrency:'USD'}}]}:product;
     return route.fulfill({contentType:'text/html',body:url.includes('/journal/')?'<title>Owned article</title><article><h1>How mugs are made</h1><p>No item for sale.</p></article>':
@@ -423,6 +424,33 @@ try {
         assert.equal(after,0);
         await native.screenshot('native-local-file-preview-refusal.png');
         return {scope:'Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested'};
+      });
+      await test('N30','Native origin file requires user review, exact seller/product scope and eight fresh stages without score changes',async()=>{
+        const state=await scanFixture('https://fixture.example.com/products/origin'),data=JSON.parse(state.raw),p=data.product;
+        assert.equal(p.seller,'Owned Origin Seller');assert.equal(data.northAmerica.status,'UNKNOWN');
+        const stages=['materials','components','processing','assembly','packaging','seller','dispatch','destination'];
+        const kinds=['bill-of-materials','bill-of-materials','manufacturing-record','manufacturing-record','bill-of-materials','entity-record','carrier-pickup','delivery-record'];
+        const dossier={schemaVersion:1,listingUrl:p.url,seller:p.seller,identity:{gtin:p.gtin,variantId:p.variantId??'',specifications:p.specifications??{}},documents:stages.map((stage,i)=>({stage,countries:[i===0?'CA':i===3?'MX':'US'],coverage:'complete',kind:kinds[i],sourceUrl:'https://records.example.com/'+stage,observedAt:new Date(Date.now()-86400000).toISOString(),expiresAt:new Date(Date.now()+7*86400000).toISOString(),detail:'Owned synthetic evidence fixture, not real product proof.'}))};
+        const filename=path.join(output,'origin-owned.json');await fs.writeFile(filename,JSON.stringify(dossier));
+        await native.click('details:has(#origin-file) > summary');await native.setFiles('#origin-file',[filename]);
+        await until(()=>native.evaluate("document.querySelectorAll('#origin-preview a').length===8"),'origin preview');
+        assert.equal(await native.evaluate("document.querySelector('#origin-apply').disabled"),true);
+        await native.click('#origin-reviewed');await native.click('#origin-apply');
+        await until(()=>native.evaluate("JSON.parse(document.querySelector('#raw').textContent).northAmerica.status==='DOCUMENTED'"),'documented user review');
+        const after=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent"));assert.deepEqual(after.verdict,data.verdict);assert.equal(after.northAmerica.reviewedByUser,true);
+        assert.match(await native.evaluate("document.querySelector('#summary').textContent"),/not independent certification/);
+        await native.screenshot('native-north-america-origin.png');
+        await page.goto('https://fixture.example.com/products/second');await until(()=>native.evaluate("document.querySelector('#raw').textContent===''") ,'origin page change');
+        assert.equal(await native.evaluate("document.querySelector('#origin-reviewed').checked"),false);assert.equal(await native.evaluate("document.querySelector('#origin-apply').disabled"),true);
+        return {scope:'Real native panel / CDP file input on owned synthetic source records; no source authentication or OS picker claim'};
+      });
+      await test('N31','Native regional map filters Mexico without source requests or trust scores',async()=>{
+        const before=externalRequests.length;await native.click('#regional-directory-panel > summary');
+        await until(()=>native.evaluate("document.querySelectorAll('#origin-directory article').length===34"),'regional directory');
+        await native.click('#origin-country');await native.key('End','End',35);await native.key('Enter','Enter',13);
+        await until(()=>native.evaluate("document.querySelector('#origin-country').value==='MX'"),'Mexico filter');
+        const names=await native.evaluate("Array.from(document.querySelectorAll('#origin-directory strong')).map(e=>e.textContent)");assert.ok(names.includes('Cinsa / Santa Anita'));assert.ok(!names.includes('Vermont Glove'));assert.equal(externalRequests.length,before);
+        await native.screenshot('native-north-america-map.png');return {records:34,filtered:names.length,automaticSourceRequests:0};
       });
       await test('N28','Packaged local OCR engine and language data exist without making a remote request at panel startup',async()=>{
         const paths=['ocr/tesseract.min.js','ocr/worker.min.js','ocr/eng.traineddata.gz','ocr/tesseract-core-relaxedsimd-lstm.wasm.js','ocr/tesseract-core-relaxedsimd-lstm.wasm'];

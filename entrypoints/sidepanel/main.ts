@@ -46,6 +46,9 @@ import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../
 import { loadUserLists } from '../../src/intelligence/user-lists';
 import { approximateImportedProductLeads, importedEntityRoleGraph, importedProductLeads } from '../../src/analysis/product-leads';
 import { setReportGuard } from '../../src/ui/report-guard';
+import {currentReportAllowed} from '../../src/ui/report-guard';
+import {assessNorthAmerica,listingOriginClaims} from '../../src/analysis/north-america-origin';
+import {mountNorthAmericaControls} from '../../src/ui/north-america-controls';
 
 localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -75,12 +78,14 @@ let reportPage:AuthorizedChromePage|undefined;
 let scanningTabId:number|undefined;
 let scanEpoch=0;
 let domainRequest:AbortController|undefined;
+const originControls=mountNorthAmericaControls(()=>lastReport,assessment=>{if(lastReport){lastReport={...lastReport,northAmerica:assessment};renderReport(lastReport);}},currentReportAllowed);
 const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
 function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
 cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
 
 // The side panel outlives tabs and documents. Never reuse a report after navigation.
 function invalidatePageReport(message=tr('The page changed. Check this product again.')):void {
+  originControls.reset();
   stopDomainLookup();
   document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
@@ -434,6 +439,7 @@ async function scanActivePage(): Promise<void> {
       contradictions:[],
       verdict:calculateVerdict(evidence),
       supplyChain,
+      northAmerica:assessNorthAmerica(result.product,listingOriginClaims(result.product,result.pageText,sitePages)),
       reviewIntegrity:result.reviews.length ? reviewIntegrity(result.reviews,result.product.title) : undefined,
     };
 

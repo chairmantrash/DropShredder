@@ -1,5 +1,7 @@
 # Work queue
 
+Current owner addition DS-041: Canada/Mexico research and North American origin utility implemented; exact-build/native verification in progress. 34 dated source/outlet records and five neutral disclosed relationships. DS-040 Hindi OCR remains independently blocked; its failure is not repaired or suppressed.
+
 Current owner-directed DS-040: BLOCKED by O-hin mixed-script OCR correctness. Fresh337core/CI/CodeQL and69distinct Chromium156 checks pass on51files; all eight merchant-page groups pass, but the suite stops at Hindi OCR. Reproduced unchanged; no repair or pass substitution. See DS-040 handoff and full run receipt.
 
 Current owner-directed addition2026-10-10: DS-039 offline localization DONE (bounded engineering scope). Seven additions plus English,336messages/pack;278core/45distinct Chrome156 checks pass on the42-file package. Independent language/release acceptance remains separate. Consult DS-039/TRANSLATIONS.md for exact new-build Chrome/packaging evidence. Public release remains held.
@@ -59,3 +61,5 @@ Source implementation and constraints: `workplane/tasks/DS-035.md`. The owner su
 | DS-038 | P1 | Records, provenance, store/privacy and distribution materials | DONE-PREPARATION | /root — assets/docs verified; acceptance/owner release authorization pending |
 
 Current evidence: production `cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6`, tested harness `fe22e27b44424273d4b465d8af5cafbc40178bdb`. Exact **34-file** package, **267** core tests, **9 packaged +29 headed native =38 distinct** real Chrome156 checks; repeated headless checks excluded. DS-037-LIVE-BETA-20261009.json retains executed IDs, screenshots, live providers and blocked surfaces. Independent acceptance/category accuracy remains open; earlier queue rows do not prove completion of their broad test criteria. DS-021 is an ongoing maintenance responsibility, not evidence of an installed scheduled crawler.
+
+| DS-041 | P1 | Canada/Mexico research, sourcing map and eight-stage North American origin utility | VERIFYING | /root — implementation complete; exact-build/native and real-product authentication gates explicit |

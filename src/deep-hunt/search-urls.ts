@@ -19,8 +19,10 @@ function domainGroups():Array<{label:string;domains:string[]}>{
         .filter(source=>classesForGroup.has(source.sourceClass))
         .flatMap(source=>source.queryDomains)
     )];
-    for(let i=0;i<domains.length;i+=6){
-      groups.push({label:`${label}-${Math.floor(i/6)+1}`,domains:domains.slice(i,i+6)});
+    // Ten compact site clauses retain regional coverage without increasing
+    // the destination count or the chooser's eight-at-a-time tab limit.
+    for(let i=0;i<domains.length;i+=10){
+      groups.push({label:`${label}-${Math.floor(i/10)+1}`,domains:domains.slice(i,i+10)});
     }
   }
   return groups;

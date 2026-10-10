@@ -1718,5 +1718,181 @@
   "m_ao59nm": {
     "message": "Português",
     "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "اختر ملف JSON للمنشأ أصغر من 50 كيلوبايت.",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "افتح مستندات المصادر وراجعها، ثم طبّقها على المنتج الحالي. الملف أو التوقيع وحده لا يتحقق من المنشأ.",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "ملف المنشأ غير صالح. تحقق من البنية وروابط المصادر العامة.",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "تحقق من المنتج الحالي قبل تطبيق أدلة المنشأ.",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "تم تطبيق تقييم المنشأ. درجات التحذير الخاصة بالبائع لم تتغير.",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "تمت المراجعة $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "المرجع ضمن فترة الصلاحية",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "مرجع قديم — أعد التحقق من المصدر",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "منشأ مُدّعى — غير متحقق منه",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "أدلة منشأ جزئية",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "سلسلة أمريكا الشمالية موثقة",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "مرحلة موثقة خارج الولايات المتحدة / كندا / المكسيك",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "أدلة منشأ متعارضة",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "صُنع وبيع وشُحن في أمريكا الشمالية",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "النطاق: الولايات المتحدة / كندا / المكسيك. التوثيق يعني مصادر راجعها المستخدم، وليس شهادة مستقلة. يجب تغطية كل المراحل؛ الأدلة الناقصة تبقى غير معروفة.",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "مراحل منشأ المنتج وادعاءات المصادر",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "المواد الخام",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "المكونات والمقادير",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "المعالجة",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "التجميع النهائي",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "التغليف",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "البائع المسؤول عن البيع",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "أول إرسال فعلي",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "وجهة البيع",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$: $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "النطاق: الولايات المتحدة وكندا والمكسيك. تُفحص المواد والمكونات والمعالجة والتجميع والتغليف والبائع والإرسال والوجهة بشكل منفصل. ادعاءات المتجر والمستودعات المحلية لا تثبت السلسلة بأكملها.",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "معاينة أدلة منشأ المنتج (JSON، بحد أقصى 50 كيلوبايت)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "راجعت المستندات المرتبطة بهذا المنتج والبائع والشحنة تحديدًا.",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "تطبيق أدلة المنشأ التي تمت مراجعتها",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "مسح أدلة المنشأ",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "تبقى الملفات في ذاكرة اللوحة حتى مسحها أو تغير الصفحة. تطبيق الأدلة يحدث هذا التقرير فقط. المنشأ الموثق يعكس مراجعتك للمصادر؛ لا يصادق DropShredder بشكل مستقل على أصالة المصادر أو جودة المنتج أو الامتثال القانوني للوسم.",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "مصادر أمريكا الشمالية وخريطة التجارة",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "خيوط بحث عن المصادر والمصنعين، وليست قائمة متاجر موثوقة. تحقق من المنتج والبائع تحديدًا. فتح مصدر يرسل طلب متصفح عاديًا؛ لا تُرسل طلبات الدليل تلقائيًا. تحتفظ ملاحظات المراجع بلغتها الأصلية.",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "مراجع البلدان",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "البلدان الثلاثة",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "كندا",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "الولايات المتحدة",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "المكسيك",
+    "description": "Mexico"
   }
 }

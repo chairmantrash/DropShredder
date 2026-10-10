@@ -3,6 +3,7 @@ import type { DropShredderReport } from '../types/report';
 import type { ToneMode } from './tone';
 import { toneCopy } from './tone';
 import { publicEvidenceUrl } from '../security/public-url';
+import {validOriginAssessment,type OriginStatus} from '../analysis/north-america-origin';
 
 export interface ReportRenderTargets {
   summary:HTMLElement;
@@ -48,6 +49,19 @@ export function renderShopperReport(report:DropShredderReport,targets:ReportRend
   metric(tr('Shipping headaches'),report.verdict.fulfillmentRisk.toUpperCase());
   metric(tr('Where it appears to come from'),report.supplyChain?.label ?? 'UNKNOWN');
   metric(tr('Who handles the payment'),report.supplyChain?.paymentChainLabel ?? 'UNKNOWN');
+  if(validOriginAssessment(report.northAmerica)){
+    const origin=report.northAmerica;
+    const labels:Record<OriginStatus,string>={UNKNOWN:tr('UNKNOWN'),CLAIMED:tr('Origin claimed — not verified'),PARTIAL:tr('Partial origin evidence'),DOCUMENTED:tr('North American chain documented'),OUTSIDE_REGION:tr('Documented stage outside US / Canada / Mexico'),CONFLICTING:tr('Conflicting origin evidence')};
+    metric(tr('Made, sold and shipped in North America'),labels[origin.status]);
+    const note=document.createElement('p');note.className='gate';note.textContent=tr('US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown.');summary.append(note);
+    const details=document.createElement('details');const label=document.createElement('summary');label.textContent=tr('Product origin stages and source claims');details.append(label);
+    const names={materials:tr('Raw materials'),components:tr('Components and ingredients'),processing:tr('Processing'),assembly:tr('Final assembly'),packaging:tr('Packaging'),seller:tr('Seller of record'),dispatch:tr('First physical dispatch'),destination:tr('Sale destination')};
+    for(const stage of origin.stages){const p=document.createElement('p');p.textContent=tr('$1: $2 • $3',names[stage.stage],labels[stage.status],stage.countries.join(', ')||tr('UNKNOWN'));details.append(p);
+      for(const source of stage.sources){const a=document.createElement('a');a.href=source;a.textContent=tr('Open source: $1',new URL(source).hostname);a.target='_blank';a.rel='noopener noreferrer';details.append(a,document.createElement('br'));}
+    }
+    for(const claim of origin.claims){const p=document.createElement('p');p.textContent=`${claim.scope} / ${claim.stage}: ${claim.quote}`;p.dir='auto';const a=document.createElement('a');a.href=claim.sourceUrl;a.textContent=tr('Open source: $1',new URL(claim.sourceUrl).hostname);a.target='_blank';a.rel='noopener noreferrer';p.append(' ',a);details.append(p);}
+    const reason=document.createElement('p');reason.textContent=origin.reason;reason.dir='auto';details.append(reason);summary.append(details);
+  }
   for(const message of [tr('Scores summarize detected evidence; they are not measured probabilities or product-quality ratings.'),report.supplyChain?.preferenceNote,report.verdict.reason]){
     if(!message) continue;
     const gate=document.createElement('div');

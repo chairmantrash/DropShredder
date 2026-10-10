@@ -54,3 +54,6 @@ Sources/transforms/fixture limits: store-assets/ASSET-MANIFEST.json. These use a
 
 ## Release gates
 All existing automated gates plus independent acceptance must pass for the accepted runtime bytes. Ensure current privacy form matches implementation, notices retained, support/policy URL accessible, screenshots current and owner authorization recorded before merge/submission/publication. See RELEASE-CHECKLIST.md; this preparation does not publish the extension.
+
+### DS-041 origin utility copy (acceptance pending)
+Investigate where a product is made, sold and dispatched across the United States, Canada and Mexico. Eight separate origin stages keep store claims, imported inputs, seller identity and shipment evidence distinct. Add a local evidence file, review its source documents and inspect what is documented or still unknown. A dated sourcing map provides direct maker, provider and public-reference leads. This is a source-review aid, not independent certification or a guarantee of product quality or legal labeling compliance. No trusted-retailer badge is granted from directory membership.

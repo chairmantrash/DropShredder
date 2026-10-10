@@ -115,3 +115,5 @@ Start there with [START-HERE.md](START-HERE.md).
 A separate internal-only diagnostic build exists for development. It exports sanitized local diagnostic cases to help convert missed detections into new fixtures and rules. It is intentionally isolated from the public Store release and is not telemetry.
 
 The optional OCR assets dominate unpacked size (about 45 MiB before license/code overhead); they are loaded only for a selected local photo. Exact package sizes/hashes are in `tools/browser-smoke/candidate-build-info.json`. No main merge or Chrome Web Store publication is authorized by engineering completion.
+
+North American provenance utility: explicit manual reports separate eight product/sale stages within US/Canada/Mexico. A local source-reviewed dossier can document the exact chain; store/warehouse/label claims never grant independent certification. See [origin evidence and source map](NORTH-AMERICA-ORIGIN.md).

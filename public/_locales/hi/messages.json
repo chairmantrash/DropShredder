@@ -1718,5 +1718,181 @@
   "m_ao59nm": {
     "message": "Português",
     "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "50 KB से छोटी मूल-स्थान JSON फ़ाइल चुनें।",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "स्रोत दस्तावेज़ खोलकर समीक्षा करें, फिर वर्तमान उत्पाद पर लागू करें। केवल फ़ाइल या हस्ताक्षर से मूल-स्थान सत्यापित नहीं होता।",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "मूल-स्थान फ़ाइल अमान्य है। स्कीमा और सार्वजनिक स्रोत URL जाँचें।",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "मूल-स्थान प्रमाण लागू करने से पहले वर्तमान उत्पाद जाँचें।",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "मूल-स्थान आकलन लागू किया गया। विक्रेता चेतावनी स्कोर अपरिवर्तित हैं।",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "समीक्षा $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "संदर्भ की वैधता अवधि जारी है",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "पुराना संदर्भ — स्रोत दोबारा जाँचें",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "मूल-स्थान का दावा — सत्यापित नहीं",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "आंशिक मूल-स्थान प्रमाण",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "उत्तर अमेरिकी श्रृंखला के दस्तावेज़ उपलब्ध",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "अमेरिका / कनाडा / मेक्सिको के बाहर दस्तावेज़ित चरण",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "परस्पर विरोधी मूल-स्थान प्रमाण",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "उत्तर अमेरिका में निर्मित, बेचा और भेजा गया",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "दायरा: अमेरिका / कनाडा / मेक्सिको। दस्तावेज़ित का अर्थ उपयोगकर्ता द्वारा समीक्षित स्रोत है, स्वतंत्र प्रमाणन नहीं। सभी चरणों के प्रमाण चाहिए; अनुपलब्ध प्रमाण अज्ञात रहते हैं।",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "उत्पाद के मूल-स्थान चरण और स्रोत के दावे",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "कच्चा माल",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "घटक और सामग्री",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "प्रसंस्करण",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "अंतिम संयोजन",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "पैकेजिंग",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "बिक्री के लिए जिम्मेदार विक्रेता",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "पहला वास्तविक प्रेषण",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "बिक्री का गंतव्य",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$: $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "दायरा: संयुक्त राज्य अमेरिका, कनाडा और मेक्सिको। माल, घटक, प्रसंस्करण, संयोजन, पैकेजिंग, विक्रेता, प्रेषण और गंतव्य अलग-अलग जाँचे जाते हैं। स्टोर के दावे और स्थानीय गोदाम पूरी श्रृंखला सिद्ध नहीं करते।",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "उत्पाद मूल-स्थान प्रमाण का पूर्वावलोकन (JSON, अधिकतम 50 KB)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "मैंने इसी उत्पाद, विक्रेता और खेप के लिंक किए गए दस्तावेज़ों की समीक्षा की है।",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "समीक्षित मूल-स्थान प्रमाण लागू करें",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "मूल-स्थान प्रमाण मिटाएँ",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "फ़ाइलें पैनल की स्मृति में रहती हैं जब तक उन्हें मिटाया न जाए या पृष्ठ बदल न जाए। प्रमाण लागू करने से केवल यह रिपोर्ट अपडेट होती है। दस्तावेज़ित मूल-स्थान आपकी स्रोत समीक्षा दर्शाता है; DropShredder स्रोत की प्रामाणिकता, उत्पाद की गुणवत्ता या लेबलिंग की कानूनी अनुपालना को स्वतंत्र रूप से प्रमाणित नहीं करता।",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "उत्तर अमेरिकी स्रोत और वाणिज्य मानचित्र",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "स्रोत और निर्माता के संकेत, विश्वसनीय स्टोरों की सूची नहीं। सटीक उत्पाद और विक्रेता जाँचें। स्रोत खोलने पर सामान्य ब्राउज़र अनुरोध जाता है; निर्देशिका अनुरोध अपने-आप नहीं चलते। संदर्भ नोट अपनी मूल भाषा में रहते हैं।",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "देश के संदर्भ",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "तीनों देश",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "कनाडा",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "संयुक्त राज्य अमेरिका",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "मेक्सिको",
+    "description": "Mexico"
   }
 }

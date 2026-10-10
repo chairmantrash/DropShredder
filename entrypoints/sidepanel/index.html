@@ -113,6 +113,25 @@
         <p id="label-status" class="status" role="status"></p>
         <div id="label-results" class="evidence" aria-live="polite"></div>
       </details>
+      <details class="origin-panel">
+        <summary>Made, sold and shipped in North America</summary>
+        <p class="scan-disclosure">Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain.</p>
+        <label for="origin-file">Preview product origin evidence (JSON, maximum 50 KB)</label>
+        <input id="origin-file" type="file" accept="application/json,.json" />
+        <div id="origin-preview" class="evidence"></div>
+        <label for="origin-reviewed"><input id="origin-reviewed" type="checkbox" /> I reviewed the linked documents for this exact product, seller and shipment.</label>
+        <button id="origin-apply" class="secondary" type="button" disabled>APPLY REVIEWED ORIGIN EVIDENCE</button>
+        <button id="origin-clear" class="secondary" type="button">CLEAR ORIGIN EVIDENCE</button>
+        <p id="origin-status" class="status" role="status"></p>
+        <p class="scan-disclosure">Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance.</p>
+      </details>
+      <details id="regional-directory-panel" class="origin-panel">
+        <summary>North American sources and commerce map</summary>
+        <p class="scan-disclosure">Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language.</p>
+        <label for="origin-country">Country references</label>
+        <select id="origin-country"><option value="">All three countries</option><option value="CA">Canada</option><option value="US">United States</option><option value="MX">Mexico</option></select>
+        <div id="origin-directory" class="evidence"></div>
+      </details>
       <details class="intelligence-panel">
         <summary>Your product reference lists</summary>
         <p class="scan-disclosure">Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent.</p>

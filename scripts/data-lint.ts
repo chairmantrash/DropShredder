@@ -3,9 +3,11 @@ import { SOURCE_INDEX } from '../src/intelligence/source-index';
 import { MERCHANT_NETWORKS, merchantNetworkIsFresh } from '../src/intelligence/merchant-networks';
 import { COMMERCE_PLATFORMS } from '../src/intelligence/commerce-platforms';
 import { validateRegistry, type SignatureRegistry } from '../src/intelligence/signature-registry';
+import {validateRegionalDirectory} from '../src/intelligence/north-america-directory';
 
 const errors:string[]=[];
 const warnings:string[]=[];
+if(!validateRegionalDirectory()) errors.push('Invalid North American directory or relationship provenance');
 
 function unique(values:string[],label:string):void{
   const seen=new Set<string>();

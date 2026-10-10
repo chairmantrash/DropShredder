@@ -1718,5 +1718,181 @@
   "m_ao59nm": {
     "message": "Português",
     "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "Choisissez un fichier JSON d’origine de moins de 50 Ko.",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "Ouvrez et examinez les documents sources, puis appliquez-les au produit actuel. Un fichier ou une signature ne vérifie pas à lui seul l’origine.",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "Fichier d’origine invalide. Vérifiez le schéma et les URL publiques des sources.",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "Vérifiez le produit actuel avant d’appliquer les preuves d’origine.",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "Évaluation d’origine appliquée. Les scores d’alerte du vendeur restent inchangés.",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "Examiné le $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "Référence dans sa période de validité",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "Référence périmée — revérifiez la source",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "Origine déclarée — non vérifiée",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "Preuves d’origine partielles",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "Chaîne nord-américaine documentée",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "Étape documentée hors des États-Unis / Canada / Mexique",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "Preuves d’origine contradictoires",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "Fabriqué, vendu et expédié en Amérique du Nord",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "Périmètre : États-Unis / Canada / Mexique. Documenté signifie sources examinées par l’utilisateur, pas certification indépendante. Toutes les étapes doivent être couvertes ; les preuves absentes restent inconnues.",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "Étapes d’origine du produit et déclarations des sources",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "Matières premières",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "Composants et ingrédients",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "Transformation",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "Assemblage final",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "Emballage",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "Vendeur responsable de la vente",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "Premier départ physique",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "Destination de la vente",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$ : $arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "Périmètre : États-Unis, Canada et Mexique. Matières, composants, transformation, assemblage, emballage, vendeur, départ et destination sont examinés séparément. Les déclarations du magasin et les entrepôts locaux ne prouvent pas toute la chaîne.",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "Aperçu des preuves d’origine du produit (JSON, maximum 50 Ko)",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "J’ai examiné les documents liés pour ce produit, ce vendeur et cet envoi précis.",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "APPLIQUER LES PREUVES D’ORIGINE EXAMINÉES",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "EFFACER LES PREUVES D’ORIGINE",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "Les fichiers restent dans la mémoire du panneau jusqu’à leur effacement ou au changement de page. L’application des preuves ne met à jour que ce rapport. L’origine documentée reflète votre examen ; DropShredder ne certifie pas indépendamment l’authenticité des sources, la qualité du produit ou la conformité légale de l’étiquetage.",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "Sources nord-américaines et carte commerciale",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "Pistes de sources et de fabricants, pas liste de magasins de confiance. Vérifiez le produit et le vendeur précis. Ouvrir une source envoie une requête normale du navigateur ; aucune requête du répertoire n’est automatique. Les notes conservent leur langue d’origine.",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "Références par pays",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "Les trois pays",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "Canada",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "États-Unis",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "Mexique",
+    "description": "Mexico"
   }
 }

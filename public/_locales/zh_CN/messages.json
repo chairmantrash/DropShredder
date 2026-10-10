@@ -1718,5 +1718,181 @@
   "m_ao59nm": {
     "message": "Português",
     "description": "Português"
+  },
+  "m_7lr4uy": {
+    "message": "请选择小于 50 KB 的产地 JSON 文件。",
+    "description": "Choose an origin JSON file smaller than 50 KB."
+  },
+  "m_44gihb": {
+    "message": "打开并审阅来源文件，然后将其应用于当前商品。仅有文件或签名不能验证产地。",
+    "description": "Open and review the source documents, then apply to the current product. A file or signature alone does not verify origin."
+  },
+  "m_1vls6pb": {
+    "message": "产地文件无效。请检查格式和公开来源网址。",
+    "description": "Invalid origin file. Check the schema and public source URLs."
+  },
+  "m_1u3waju": {
+    "message": "应用产地证据前，请检查当前商品。",
+    "description": "Check the current product before applying origin evidence."
+  },
+  "m_1ue8rsl": {
+    "message": "已应用产地评估。卖家的警示分数保持不变。",
+    "description": "Origin assessment applied. Seller warning scores are unchanged."
+  },
+  "m_1dasntt": {
+    "message": "审阅日期 $arg1$ • $arg2$",
+    "description": "Reviewed $1 • $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      }
+    }
+  },
+  "m_1aer9mp": {
+    "message": "参考资料仍在有效期内",
+    "description": "Current reference window"
+  },
+  "m_1d82kcx": {
+    "message": "参考资料已过期 — 请重新核查来源",
+    "description": "Stale reference — recheck source"
+  },
+  "m_bzdvtd": {
+    "message": "产地为声明 — 未经验证",
+    "description": "Origin claimed — not verified"
+  },
+  "m_1u1h8h9": {
+    "message": "产地证据不完整",
+    "description": "Partial origin evidence"
+  },
+  "m_1yowl8x": {
+    "message": "北美供应与销售链已有文件记录",
+    "description": "North American chain documented"
+  },
+  "m_e2o7av": {
+    "message": "有文件记录的环节位于美国 / 加拿大 / 墨西哥以外",
+    "description": "Documented stage outside US / Canada / Mexico"
+  },
+  "m_bknodm": {
+    "message": "产地证据相互冲突",
+    "description": "Conflicting origin evidence"
+  },
+  "m_522ky8": {
+    "message": "在北美制造、销售和发货",
+    "description": "Made, sold and shipped in North America"
+  },
+  "m_vxc1oo": {
+    "message": "范围：美国 / 加拿大 / 墨西哥。有文件记录表示用户已审阅来源，并非独立认证。所有环节都必须有证据；缺少证据的环节仍为未知。",
+    "description": "US / Canada / Mexico scope. Documented means user-reviewed sources, not independent certification. All stages must be covered; missing evidence stays unknown."
+  },
+  "m_bupace": {
+    "message": "商品产地环节和来源声明",
+    "description": "Product origin stages and source claims"
+  },
+  "m_cifcvf": {
+    "message": "原材料",
+    "description": "Raw materials"
+  },
+  "m_9f8n20": {
+    "message": "零部件和配料",
+    "description": "Components and ingredients"
+  },
+  "m_emytwm": {
+    "message": "加工",
+    "description": "Processing"
+  },
+  "m_svxvo5": {
+    "message": "最终组装",
+    "description": "Final assembly"
+  },
+  "m_81avi4": {
+    "message": "包装",
+    "description": "Packaging"
+  },
+  "m_ofoe3s": {
+    "message": "负责销售的卖家",
+    "description": "Seller of record"
+  },
+  "m_tnmre4": {
+    "message": "首次实际发货地",
+    "description": "First physical dispatch"
+  },
+  "m_8lpw9q": {
+    "message": "销售目的地",
+    "description": "Sale destination"
+  },
+  "m_1uogkwl": {
+    "message": "$arg1$：$arg2$ • $arg3$",
+    "description": "$1: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_1cq5jno": {
+    "message": "范围：美国、加拿大和墨西哥。分别检查材料、零部件、加工、组装、包装、卖家、发货地和目的地。店铺声明和本地仓库不能证明整条链。",
+    "description": "Scope: United States, Canada and Mexico. Materials, components, processing, assembly, packaging, seller, dispatch and destination are checked separately. Store claims and local warehouses do not prove the whole chain."
+  },
+  "m_z67i32": {
+    "message": "预览商品产地证据（JSON，最大 50 KB）",
+    "description": "Preview product origin evidence (JSON, maximum 50 KB)"
+  },
+  "m_1ikec0g": {
+    "message": "我已审阅此具体商品、卖家和货件所对应的链接文件。",
+    "description": "I reviewed the linked documents for this exact product, seller and shipment."
+  },
+  "m_1gl2fc3": {
+    "message": "应用已审阅的产地证据",
+    "description": "APPLY REVIEWED ORIGIN EVIDENCE"
+  },
+  "m_snfwr9": {
+    "message": "清除产地证据",
+    "description": "CLEAR ORIGIN EVIDENCE"
+  },
+  "m_170zmcl": {
+    "message": "文件仅保留在面板内存中，直到清除或页面变化。应用证据只更新此报告。有文件记录的产地反映您的来源审阅；DropShredder 不会独立认证来源真实性、商品质量或标签法律合规性。",
+    "description": "Files stay in panel memory until cleared or the page changes. Applying evidence updates this report only. Documented origin reflects your source review; DropShredder does not independently certify source authenticity, product quality or legal labeling compliance."
+  },
+  "m_p9edha": {
+    "message": "北美来源与商业关系图",
+    "description": "North American sources and commerce map"
+  },
+  "m_4zmt4c": {
+    "message": "提供来源和制造商线索，并非可信店铺名单。请核查具体商品和卖家。打开来源会发送正常浏览器请求；目录不会自动发送请求。参考注释保留原始语言。",
+    "description": "Source and manufacturer leads, not a trusted-store whitelist. Check the exact product and seller. Opening a source shares a normal browser request; no directory request runs automatically. Reference notes retain their original language."
+  },
+  "m_1vmtesh": {
+    "message": "国家参考资料",
+    "description": "Country references"
+  },
+  "m_6wh2p2": {
+    "message": "全部三个国家",
+    "description": "All three countries"
+  },
+  "m_psd8fv": {
+    "message": "加拿大",
+    "description": "Canada"
+  },
+  "m_7tkm24": {
+    "message": "美国",
+    "description": "United States"
+  },
+  "m_cabrx2": {
+    "message": "墨西哥",
+    "description": "Mexico"
   }
 }

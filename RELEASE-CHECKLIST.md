@@ -36,3 +36,11 @@ DS-039 adds localized runtime bytes: require its fresh fingerprint/Chrome receip
 
 
 DS-040 candidate adds multilingual merchant detection and seven selected offline OCR models (51files). Refresh affected OCR/settings screenshots and review the new merchant-language/browser receipt before acceptance; older34/42-file inventories and DS-039 passes do not certify these new bytes. Multilingual fixtures/synthetic OCR cannot certify category or photograph accuracy.
+
+## DS-041 regional utility acceptance
+- [ ] Native exact-build origin-file preview/review/apply/clear/navigation/export and directory links; no automatic external requests.
+- [ ] Representative Canadian English/French and Mexican Spanish marketplaces/manufacturer catalogues; separate product/seller/variant/dispatch scope and false-origin review.
+- [ ] Native-speaker/legal-copy review of 38 new origin/directory messages; no certified/100% claims from source types or legal logos alone.
+- [ ] Source authenticity and complete real-product/actual-shipment dossiers; no proof inferred from fixture passes.
+- [ ] Refresh store screenshots affected by the origin utility before submission.
+DS-040 O-hin remains a separate blocker. Existing independent A01–D06 and release authorization requirements remain in force.

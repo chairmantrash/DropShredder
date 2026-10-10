@@ -10,6 +10,16 @@ export interface SourceIndexEntry {
 }
 
 export const SOURCE_INDEX:SourceIndexEntry[]=[
+  {id:'amazon-ca',name:'Amazon Canada',domains:['amazon.ca'],sourceClass:'retail',queryDomains:['amazon.ca'],notes:'Regional product comparison only; third-party seller, manufacture and dispatch are separate. Reviewed 2026-10-10.'},
+  {id:'amazon-mx',name:'Amazon Mexico',domains:['amazon.com.mx'],sourceClass:'retail',queryDomains:['amazon.com.mx'],notes:'Regional product comparison only; no marketplace trust or origin guarantee. Reviewed 2026-10-10.'},
+  {id:'walmart-ca',name:'Walmart Canada',domains:['walmart.ca'],sourceClass:'retail',queryDomains:['walmart.ca'],notes:'Regional product comparison; exact seller/product and fulfillment must be checked separately. Reviewed 2026-10-10.'},
+  {id:'walmart-mx',name:'Walmart Mexico',domains:['walmart.com.mx'],sourceClass:'retail',queryDomains:['walmart.com.mx'],notes:'Regional product comparison; generic extraction rather than independently validated regional adapter. Reviewed 2026-10-10.'},
+  {id:'mercadolibre-mx',name:'Mercado Libre Mexico',domains:['mercadolibre.com.mx'],sourceClass:'marketplace',queryDomains:['mercadolibre.com.mx'],notes:'Regional comparison candidate; Full fulfillment does not prove Mexican manufacture. No dedicated adapter/badges claimed. Reviewed 2026-10-10.'},
+  {id:'dropcommerce',name:'DropCommerce',domains:['dropcommerce.com'],sourceClass:'supplier-network',queryDomains:['dropcommerce.com'],notes:'US/Canada shipping suppliers may source overseas; see https://www.dropcommerce.com/suppliers/ . Informational only, reviewed 2026-10-10.'},
+  {id:'dropi-import',name:'Dropi import app',domains:['dropi.com.mx'],sourceClass:'supplier-network',queryDomains:['dropi.com.mx'],notes:'Disclosed AliExpress/CJ/FForder/SourcinBox imports. Not conflated with Dropi logistics. Informational only, reviewed 2026-10-10: https://dropi.com.mx/'},
+  {id:'nihaojewelry',name:'Nihaojewelry',domains:['nihaojewelry.com'],sourceClass:'wholesale',queryDomains:['nihaojewelry.com'],notes:'Provider discloses China sourcing and Mexico warehouse. Local inventory is not local manufacture. Reviewed 2026-10-10: https://www.nihaojewelry.com/about-us'},
+  {id:'sourcinbox',name:'SourcinBox',domains:['sourcinbox.com'],sourceClass:'supplier-network',queryDomains:['sourcinbox.com'],notes:'Provider discloses Chinese factory sourcing/private labels; network presence alone unscored. Reviewed 2026-10-10: https://www.sourcinbox.com/about-us'},
+  {id:'hypersku',name:'HyperSKU',domains:['hypersku.com'],sourceClass:'supplier-network',queryDomains:['hypersku.com'],notes:'China sourcing/fulfillment provider; no downstream seller attribution. Reviewed 2026-10-10: https://www.hypersku.com/sourcing/'},
   {id:'aliexpress',name:'AliExpress',domains:['aliexpress.com'],sourceClass:'marketplace',queryDomains:['aliexpress.com'],notes:'Marketplace/source candidate only; match does not establish copying direction.'},
   {id:'alibaba',name:'Alibaba',domains:['alibaba.com'],sourceClass:'wholesale',queryDomains:['alibaba.com'],notes:'Wholesale/source candidate.'},
   {id:'1688',name:'1688',domains:['1688.com'],sourceClass:'wholesale',queryDomains:['1688.com'],notes:'Wholesale/source candidate.'},

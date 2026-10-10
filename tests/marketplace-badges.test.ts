@@ -34,3 +34,21 @@ test('Etsy and Walmart require individual listing paths inside a product card',(
     assert.ok(!(link.getAttribute('href')??'').includes('secret'));
   }
 });
+
+test('Canadian and Mexican badges remain neutral on scoped regional results',()=>{
+  for(const [url,href,venue] of [
+    ['https://www.amazon.com.mx/s?k=lampara','https://www.amazon.com.mx/dp/B0ABC12345','amazon'],
+    ['https://www.walmart.ca/fr/search?q=lampe','https://www.walmart.ca/fr/ip/lampe/12345678','walmart'],
+    ['https://www.walmart.com.mx/search?q=lampara','https://www.walmart.com.mx/ip/lampara/12345678','walmart'],
+  ]){
+    assert.equal(marketplaceResultsKind(url!),venue);
+    const card=venue==='amazon'?'<section data-component-type="s-search-result">':'<article>';
+    const end=venue==='amazon'?'</section>':'</article>';
+    const {document}=parseHTML('<html><body>'+card+'<a href="'+href+'">Product</a>'+end+'</body></html>');
+    assert.equal(attachMarketplaceBadges(document,url!),1);
+    assert.match(document.querySelector('[data-dropshredder-result-label]')!.getAttribute('title')!,/not been verified/);
+  }
+});
+test('regional marketplace suffix spoofs and unrelated localized paths abstain',()=>{
+  for(const url of ['https://walmart.ca.evil.example.com/search','https://amazon.com.mx.evil.example.com/s','https://walmart.ca/fr/account','https://walmart.com.mx/checkout'])assert.equal(marketplaceResultsKind(url),undefined);
+});
