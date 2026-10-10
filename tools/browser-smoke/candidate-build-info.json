@@ -1,48 +1,48 @@
 {
-  "sourceCommit": "df803fec2c91ee72aedbdc8984a9c99c09ae982a",
-  "sourceTree": "6277ca682cdcdc1b8e4f9c7721880ed97263cdd4",
+  "sourceCommit": "ba9c51a74a9d914d5e75710902bfb1c4a431dbe5",
+  "sourceTree": "caeb4cddb0cab400597dd423cbf340d3a3cb5935",
   "version": "0.2.0",
-  "reviewedChange": "DS-039 adds seven native offline interface translations alongside English, localized metadata/controls/menus/toast/report labels, Arabic RTL and source isolation; no detector weights, permissions, source facts or OCR-model changes. Original technical annotations/raw exports remain unchanged and disclosed.",
+  "reviewedChange": "DS-040 adds finite offline merchant-language detection and original-language evidence preservation, localized prices/dates/variants and sensitive-page gates for Chinese, Hindi, Spanish, Arabic, French, Bengali and Portuguese with English regression. Seven pinned, hash-checked OCR models are packaged at build time. No runtime model downloads, image uploads, new permissions, severity-threshold or geographic-weight changes.",
   "buildFiles": [
     {
       "path": "_locales/ar/messages.json",
-      "bytes": 66498,
-      "sha256": "c249b0a911d2e75f13aa6c5684297678c23957947b8143db743a59fc55fdf6a6"
+      "bytes": 68175,
+      "sha256": "f64cc25d427c85b1b94a470014192fc477d880e96f1bb9a2d051d665903b8350"
     },
     {
       "path": "_locales/bn/messages.json",
-      "bytes": 81534,
-      "sha256": "dc700a214f03ed1efc9cf5cc568efc2f78123a5d3a362092512c93ab3de4dc4a"
+      "bytes": 83454,
+      "sha256": "6374ee8312768c19e8daa31bdbea7ca8c03ec006c31df0dec254f642f86f5207"
     },
     {
       "path": "_locales/en/messages.json",
-      "bytes": 59632,
-      "sha256": "fb4f42214618221b33d0ba89f4afacdc38c4ed5f19716e03a8ef4f218961fdae"
+      "bytes": 61171,
+      "sha256": "302595a2aec0eb5866b9f57b25a5485f3044697dd8bc3cfea3c7e67ef19ae4c8"
     },
     {
       "path": "_locales/es/messages.json",
-      "bytes": 60712,
-      "sha256": "957a8cf83d87bbc8cc3bf6e90995a72b5c77c5d12e989fa3bbf1982345b82120"
+      "bytes": 62295,
+      "sha256": "fc325a2049fa34a7331bb18ef5c8587048899f893ecf5ebdf206b463876a9309"
     },
     {
       "path": "_locales/fr/messages.json",
-      "bytes": 61997,
-      "sha256": "494fb8699a6e39f45ea0f2a265e14069fd6ee3c6f6c84564b302bd0845f11fc2"
+      "bytes": 63610,
+      "sha256": "b5cb209fb29ad7c3031f19fa0c3a75d86dcb3931060a8f963c2f87b534885f35"
     },
     {
       "path": "_locales/hi/messages.json",
-      "bytes": 81294,
-      "sha256": "3991c901b890b1c62123f39e7ba9f5d7c41491f01bc0accd99439c189eddc52f"
+      "bytes": 83217,
+      "sha256": "c9ab438d5518c84376c5fa5c86f22da1e73ae35eb806d34e6a8dad9e9033174f"
     },
     {
       "path": "_locales/pt_BR/messages.json",
-      "bytes": 60815,
-      "sha256": "ed65a41b20793e2523c30804ddf1ca0ad7c3b6511fffd9cfa0c8133637e9bef0"
+      "bytes": 62393,
+      "sha256": "8c78f02e9b46627ddb8d6c0a7b191207d2216b98a3a8c12113272aa8d7bada87"
     },
     {
       "path": "_locales/zh_CN/messages.json",
-      "bytes": 58577,
-      "sha256": "79c7004104585e6b9d15bae7e620f49c17a87c84dd877c8685918f364d6c675d"
+      "bytes": 60044,
+      "sha256": "11619354fbf021cc8ba85793cd03887347cac80994ea344ee2cb832f47968d80"
     },
     {
       "path": "assets/sidepanel-CA7A_2G3.css",
@@ -51,8 +51,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 25968,
-      "sha256": "6a26e74bbe07cd3936faf11ea9efd5076fe65d1dda6a0470831cca080ba425b5"
+      "bytes": 47816,
+      "sha256": "9a58d721219606624e71da2eeaaf89c5815aaae26c92f086b9512c0ecc7b4e00"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -65,14 +65,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-C3gFIYzB.js",
-      "bytes": 478603,
-      "sha256": "22e1519de39815b87a93b2b425b1f242bcf105208b651bb8897b8b131a55d85c"
+      "path": "chunks/sidepanel-BxFSmzjM.js",
+      "bytes": 510216,
+      "sha256": "f9f4c3b58249e908cb3ed866143b5866b7f19689040ee1cec5872a5b94b405a8"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 45124,
-      "sha256": "cc659ba6292d02412eb5e0defed547969accc47e27ff2f7d605ed8e35e01c923"
+      "bytes": 72711,
+      "sha256": "2fab6f275528f921fade0f756e9d1d0935d4e970ebafeea5bf7b9f09d3760cbe"
     },
     {
       "path": "icon/128.png",
@@ -100,9 +100,44 @@
       "sha256": "a07d5fa66c5bb069b841ed860f7cdf655f9597181afdda11114735908d764228"
     },
     {
+      "path": "ocr/ara.traineddata.gz",
+      "bytes": 715721,
+      "sha256": "588433010757ee22481757818f3cbf610cda08357b9f1376498b819a70a1701b"
+    },
+    {
+      "path": "ocr/ben.traineddata.gz",
+      "bytes": 548295,
+      "sha256": "cbd28158c88920a0e4e4e0518fe752aa035b16f71f150cf6f6cb76d03063dfaa"
+    },
+    {
+      "path": "ocr/chi_sim.traineddata.gz",
+      "bytes": 1722294,
+      "sha256": "9f98e06ec77da375022f6cb1935189461f15f2ad7034f0efe1a32aabd159a184"
+    },
+    {
       "path": "ocr/eng.traineddata.gz",
       "bytes": 1976293,
       "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
+    },
+    {
+      "path": "ocr/fra.traineddata.gz",
+      "bytes": 605839,
+      "sha256": "e326558d598ca84ca3b8816ffe19676b2d957b25d090ca0f5dbb93ffa3943bfc"
+    },
+    {
+      "path": "ocr/hin.traineddata.gz",
+      "bytes": 920821,
+      "sha256": "2e8e4516ac16abcdbca15377cca8ba90da8931f5b54510bb758931965baf61c2"
+    },
+    {
+      "path": "ocr/LANGUAGE-MODELS.json",
+      "bytes": 4646,
+      "sha256": "bb723e16c654d11f4cb27e1ccad3cb2157a933e4d7ac35dd734d02d398f5f6a4"
+    },
+    {
+      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
     {
       "path": "ocr/LICENSE-TESSERACT-CORE.txt",
@@ -115,9 +150,19 @@
       "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
     },
     {
+      "path": "ocr/por.traineddata.gz",
+      "bytes": 998523,
+      "sha256": "8b875b5cedb7fc753eb01173df3b469c694c8bcb649180a351a13ebd18ab1832"
+    },
+    {
       "path": "ocr/PROVENANCE.txt",
-      "bytes": 633,
-      "sha256": "5337b16032cb60ee34f6be33450b7cb841c8557799347d48599795f4042d214f"
+      "bytes": 1147,
+      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
+    },
+    {
+      "path": "ocr/spa.traineddata.gz",
+      "bytes": 1125535,
+      "sha256": "bd6a522423eea13e0b4b58d38c3e62af1c6304f19f8059d4477a3fff8e2ff5cb"
     },
     {
       "path": "ocr/tesseract-core-lstm.wasm",
@@ -206,13 +251,13 @@
     },
     {
       "path": "sidepanel.html",
-      "bytes": 15340,
-      "sha256": "688f68d52a0b6196375c7f227dcc744df15264936c96063323eb3e03607bf82e"
+      "bytes": 16067,
+      "sha256": "e46ce3f1ab5c0cf33cdae0f81e09f1a38421db941eb6599cf521199cdc6d55b1"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19620,
-      "sha256": "3540193ac79688fef6d062cfc607d0f9cc1ac80f05d8a02433d179551be344d1"
+      "bytes": 19974,
+      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
     }
   ]
 }
