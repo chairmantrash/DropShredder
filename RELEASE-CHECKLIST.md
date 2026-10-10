@@ -10,11 +10,9 @@ Prepared October 9,2026. State: PREPARED; acceptance and owner release authoriza
 - DS-037 exact build/test/live receipt and DS-038 preparation receipt.
 - DISTRIBUTION-REVIEW-20261009.zip: docs/asset review packet, not an accepted extension release.
 
-## Accepted-build identity
-Current tested runtime source: cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6.
-Tested harness: fe22e27b44424273d4b465d8af5cafbc40178bdb.
-Exact candidate: 34 files, 47,483,460 bytes, 267 core tests and 38 distinct engineering browser checks. CI37979166327/CodeQL37979166013/Chrome37979165995 succeeded.
-Current version 0.2.0 and minimum Chrome 133 are candidate metadata, not a promise of supported-version accuracy verified on every Chrome version.
+## Current candidate identity — not accepted
+DS-040 production ba9c51a74a9d914d5e75710902bfb1c4a431dbe5; tested harness b9d6bad55ac5f9d81a5300eae498e1ee4ac87774.
+Exact candidate:51files,54,767,122bytes.337core/CI/CodeQL and69distinct Chromium156 checks pass; full native suite is BLOCKED at Hindi OCR O-hin (one unchanged reproduction pending). Historical34/42-file receipts do not certify this candidate. See DS-040 run and handoff. Refresh affected current-UI OCR/settings assets before any submission. Version0.2.0/minimumChrome133 remain metadata; Chrome133 is not exercised here.
 
 Independent A01-D06, representative precision/recall/abstention, real-photo OCR, native browser edges and performance acceptance remain open. Keep failures/blocked cases visible. No severe unsupported accusation, wrong-page scan, private data capture or serious performance issue may be waived silently.
 

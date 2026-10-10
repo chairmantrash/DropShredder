@@ -13,7 +13,7 @@ Help shoppers investigate public product listings and seller claims with locally
 - optional https://*/*: Ask Chrome for selected scan/image/public API/feed origins. Broad HTTPS access is requested only for optional automatic product detection/neutral marketplace links. No required all-sites grant; revocation controls stop eligible features.
 
 ## Remote code
-Select “No, I am not using remote code.” JavaScript, Tesseract worker, WASM and English data are packaged. Optional remote JSON is inert reference data, not instructions/JavaScript. wasm-unsafe-eval permits packaged WASM compilation, not downloaded JS. Do not call lazy packaged assets remote code.
+Select “No, I am not using remote code.” JavaScript, Tesseract worker, WASM and English/Chinese/Hindi/Spanish/Arabic/French/Bengali/Portuguese OCR data are packaged. Model originals are acquired from immutable, SHA-256-checked sources only when building; selected label reading makes no runtime model request. Optional remote JSON is inert reference data, not instructions/JavaScript. wasm-unsafe-eval permits packaged WASM compilation, not downloaded JS. Do not call lazy packaged assets remote code.
 
 ## Data categories — conservative disclosure draft
 The live Dashboard wording is the final form authority. Use the following complete handling map; do not select a blanket “no data handling” solely because the developer receives nothing.
