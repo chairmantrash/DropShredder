@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "मेक्सिको",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "विक्रेता और निर्माता की प्रतिष्ठा",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "उपभोक्ता संस्थाओं, पहचान, प्रवर्तन, व्यापार, स्थिरता और उत्पादों के रिकॉर्ड अलग-अलग जाँचें। अनुकूल प्रतिष्ठा केवल आपके जाँचे हुए स्रोतों तक सीमित है; यह गारंटी या उत्पाद के मूल का प्रमाणपत्र नहीं है।",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "इकाई की भूमिका",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "विक्रेता",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "निर्माता",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "कानूनी इकाई का सटीक नाम",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "इकाई की वेबसाइट का डोमेन",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "पुष्टि करें कि यह इकाई वर्तमान उत्पाद बेचती या बनाती है। मिलते-जुलते नाम, साझा होस्टिंग और संबद्ध कंपनियाँ यह संबंध सिद्ध नहीं करतीं।",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "प्रतिष्ठा प्रमाण JSON, अधिकतम 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "मैंने मूल रिकॉर्ड देखे और सटीक इकाई, वर्तमान स्थिति, दायरा तथा इस लिस्टिंग से संबंध जाँचा।",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "प्रतिष्ठा का आकलन करें",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "प्रतिष्ठा साफ़ करें",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "प्रतिष्ठा शोध के स्रोत",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "शोध श्रेणी",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "सभी श्रेणियाँ",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "कानूनी पहचान",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "उपभोक्ता प्रतिष्ठा",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "प्रवर्तन और प्रतिबंध",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "व्यापार रिकॉर्ड",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "आपूर्ति शृंखला आकलन",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "उत्पाद प्रमाणन और वापसी सूचना",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "जाँचे हुए स्रोतों में अनुकूल प्रमाण",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "जाँचे हुए स्रोतों में प्रतिकूल रिकॉर्ड",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "मिश्रित या अनसुलझी प्रतिष्ठा",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "प्रतिष्ठा के अपर्याप्त प्रमाण",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "प्रतिष्ठा की जाँच नहीं हुई",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "प्रतिष्ठा फ़ाइल अमान्य है। आकार, स्कीमा और स्रोतों का दायरा जाँचें।",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "रिकॉर्ड खोलें और सटीक कानूनी इकाई तथा इस लिस्टिंग से उसका संबंध जाँचें।",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "प्रतिष्ठा के आकलन से पहले वर्तमान उत्पाद जाँचें।",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ वर्तमान रिकॉर्ड • $arg2$ बाहर किए गए रिकॉर्ड • $arg3$ प्रकाशक समूह",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "अज्ञात",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "प्रतिष्ठा की जाँच केवल उपयोगकर्ता ने की है। यह उत्पाद, व्यापार अनुपालन या भविष्य के प्रदर्शन को प्रमाणित नहीं करती। विक्रेता चेतावनी स्कोर नहीं बदले।",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "शिपिंग कंपनी",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "मुकदमे और अदालती मामले",
+    "description": "Litigation and court cases"
   }
 }

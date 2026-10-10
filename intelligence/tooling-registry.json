@@ -70,7 +70,9 @@
       ],
       "detectionImplications": [
         "review count does not imply listing-native provenance",
-        "test product/review mismatch, chronology, duplication, and disclosure"
+        "test product/review mismatch, chronology, duplication, and disclosure",
+        "Imported reviewer names, country flags and normalized relative dates can be rewritten/defaulted; do not independently infer native purchase, reviewer nationality or product origin.",
+        "Review import, translation and migration remain informational; explicit disclosure, product mismatch and independent chronology evidence are required."
       ]
     },
     {

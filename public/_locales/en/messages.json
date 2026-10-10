@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "Mexico",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "Merchant and manufacturer standing",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate.",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "Entity role",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "Merchant",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "Manufacturer",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "Exact legal entity name",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "Entity website domain",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship.",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "Standing evidence JSON, up to 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing.",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "ASSESS STANDING",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "CLEAR STANDING",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "Standing research sources",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "Research category",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "All categories",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "Legal identity",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "Consumer standing",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "Enforcement and restrictions",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "Trade records",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "Supply-chain assessments",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "Product certification and recalls",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "Favorable evidence in reviewed sources",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "Adverse record in reviewed sources",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "Mixed or unresolved standing",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "Insufficient standing evidence",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "Standing not reviewed",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "Invalid standing file. Check its size, schema and source scope.",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "Open the records and confirm the exact legal entity and its relationship to this listing.",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "Check the current product before assessing standing.",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ current records • $arg2$ excluded records • $arg3$ publisher families",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "Unknown",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged.",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "Shipper",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "Litigation and court cases",
+    "description": "Litigation and court cases"
   }
 }

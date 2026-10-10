@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "México",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "Reputação de comerciantes e fabricantes",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "Analise separadamente registros de órgãos de consumidores, identidade, medidas oficiais, comércio, sustentabilidade e produtos. Uma avaliação favorável se limita às fontes analisadas; não é garantia nem certificado de origem.",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "Função da entidade",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "Comerciante",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "Fabricante",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "Nome jurídico exato da entidade",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "Domínio do site da entidade",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "Confirme que esta entidade vende ou fabrica o produto atual. Nomes semelhantes, hospedagem compartilhada e empresas afiliadas não comprovam essa relação.",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "Provas de reputação em JSON, até 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "Analisei os registros originais e verifiquei a entidade exata, o estado atual, o escopo e sua relação com este anúncio.",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "AVALIAR REPUTAÇÃO",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "LIMPAR REPUTAÇÃO",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "Fontes para pesquisar reputação",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "Categoria de pesquisa",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "Todas as categorias",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "Identidade jurídica",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "Reputação entre consumidores",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "Medidas oficiais e restrições",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "Registros comerciais",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "Avaliações da cadeia de fornecimento",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "Certificação e recolhimento de produtos",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "Provas favoráveis nas fontes analisadas",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "Registro desfavorável nas fontes analisadas",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "Reputação mista ou não resolvida",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "Provas de reputação insuficientes",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "Reputação não analisada",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "Arquivo de reputação inválido. Verifique tamanho, esquema e escopo das fontes.",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "Abra os registros e confirme a entidade jurídica exata e sua relação com este anúncio.",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "Verifique o produto atual antes de avaliar a reputação.",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ registros atuais • $arg2$ registros excluídos • $arg3$ grupos de publicadores",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "Desconhecido",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "Reputação analisada somente pelo usuário. Não certifica produtos, conformidade comercial nem desempenho futuro. As pontuações de alerta do vendedor não mudam.",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "Transportadora",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "Litígios e processos judiciais",
+    "description": "Litigation and court cases"
   }
 }

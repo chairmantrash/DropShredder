@@ -65,3 +65,6 @@ Current evidence: production `cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6`, tested 
 | DS-041 | P1 | Canada/Mexico research, sourcing map and eight-stage North American origin utility | VERIFYING | /root — implementation complete; exact-build/native and real-product authentication gates explicit |
 
 DS-041 checkpoint:364 core tests/27 new, eight385-message catalogs,51files/54,864,218bytes. Source a80617685ad796e35cc815f79b356ab4c72c775d; native verification pending. Exact receipt: workplane/runs/DS-041-NORTH-AMERICA-20261010.json.
+
+| DS-042 | P1 | Prior research audit and entity standing categories | VERIFYING | /root —386 core local pass; exact hosted candidate pending |
+| DS-043 | P1 | Litigation sources, relevant-party status and regular refresh | VERIFYING | /root —strict local scope/status tests pass; weekly maintenance enabled |

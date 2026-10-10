@@ -35,7 +35,10 @@ for(const model of models){
   await fs.mkdir(path.dirname(target),{recursive:true});
   await fs.writeFile(target,packed);
  }
- records.push({...model,packagedBytes:packed.length,packagedSha256:hash(packed),transform:'lossless deterministic gzip, mtime=0; no model edits',builder:'Node '+process.versions.node+' / zlib '+process.versions.zlib});
+ // Environment versions belong in the build log, not the hashed runtime inventory.
+ // The compressed and original bytes remain independently pinned below.
+ records.push({...model,packagedBytes:packed.length,packagedSha256:hash(packed),transform:'lossless deterministic gzip, mtime=0; no model edits'});
  console.log('Verified packaged OCR data: '+model.language+' '+packed.length+' bytes');
 }
 await fs.writeFile(path.join(root,'public/ocr/LANGUAGE-MODELS.json'),JSON.stringify(records,null,2)+'\n');
+console.log('OCR packaging environment: Node '+process.versions.node+' / zlib '+process.versions.zlib);

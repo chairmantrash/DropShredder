@@ -49,6 +49,7 @@ import { setReportGuard } from '../../src/ui/report-guard';
 import {currentReportAllowed} from '../../src/ui/report-guard';
 import {assessNorthAmerica,listingOriginClaims} from '../../src/analysis/north-america-origin';
 import {mountNorthAmericaControls} from '../../src/ui/north-america-controls';
+import {mountStandingControls} from '../../src/ui/business-standing-controls';
 
 localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -79,6 +80,7 @@ let scanningTabId:number|undefined;
 let scanEpoch=0;
 let domainRequest:AbortController|undefined;
 const originControls=mountNorthAmericaControls(()=>lastReport,assessment=>{if(lastReport){lastReport={...lastReport,northAmerica:assessment};renderReport(lastReport);}},currentReportAllowed);
+const standingControls=mountStandingControls(()=>lastReport?.product.url,currentReportAllowed);
 const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
 function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
 cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
@@ -86,6 +88,7 @@ cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status
 // The side panel outlives tabs and documents. Never reuse a report after navigation.
 function invalidatePageReport(message=tr('The page changed. Check this product again.')):void {
   originControls.reset();
+  standingControls.reset();
   stopDomainLookup();
   document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
@@ -217,6 +220,7 @@ function renderReport(report: DropShredderReport): void {
 
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
+  standingControls.reset();
   const epoch=++scanEpoch;
   scanButton.disabled=true;
   lastReport=undefined;

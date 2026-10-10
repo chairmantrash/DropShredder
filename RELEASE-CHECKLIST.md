@@ -44,3 +44,5 @@ DS-040 candidate adds multilingual merchant detection and seven selected offline
 - [ ] Source authenticity and complete real-product/actual-shipment dossiers; no proof inferred from fixture passes.
 - [ ] Refresh store screenshots affected by the origin utility before submission.
 DS-040 O-hin remains a separate blocker. Existing independent A01–D06 and release authorization requirements remain in force.
+
+DS-042/043: review exact candidate standing/litigation controls and seven-day stale behavior; source licenses/access and exact-party scope must be checked before machine ingestion. Refresh standing/origin screenshots and obtain native-language/legal-copy review. Scheduled research maintenance does not replace the release acceptance gates. DS-040 Hindi OCR remains separately blocked until original-engineer repair and unchanged assertion pass.

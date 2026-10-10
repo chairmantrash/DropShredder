@@ -1,0 +1,719 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-10",
+  "policy": {
+    "automaticRiskWeight": 0,
+    "companyWideTradeCertification": false,
+    "independentVerification": false,
+    "reuse": "Reference links and authored summaries; no bureau/paid score feed or logo bundled"
+  },
+  "sources": [
+    {
+      "id": "bbb",
+      "name": "Better Business Bureau",
+      "url": "https://www.bbb.org/about/overview-of-ratings",
+      "hosts": [
+        "bbb.org"
+      ],
+      "dimensions": [
+        "consumer"
+      ],
+      "outcomes": [
+        "rating",
+        "unresolved-pattern",
+        "resolved",
+        "no-record"
+      ],
+      "publisherFamily": "bbb",
+      "summary": "Letter ratings, accreditation, customer stars and complaint resolution are distinct.",
+      "limit": "No rating or no accreditation is neutral. Reviews do not determine letter grades; ratings are not guarantees.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "ftc",
+      "name": "FTC legal cases",
+      "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings",
+      "hosts": [
+        "ftc.gov"
+      ],
+      "dimensions": [
+        "enforcement"
+      ],
+      "outcomes": [
+        "final-order",
+        "allegation",
+        "warning",
+        "resolved"
+      ],
+      "publisherFamily": "ftc",
+      "summary": "Case timelines distinguish complaints, proposed settlements, final orders and refunds.",
+      "limit": "Record exact named defendant, date and outcome; allegations and warnings are not final findings.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "canada-competition",
+      "name": "Competition Bureau Canada",
+      "url": "https://competition-bureau.canada.ca/",
+      "hosts": [
+        "competition-bureau.canada.ca"
+      ],
+      "dimensions": [
+        "enforcement"
+      ],
+      "outcomes": [
+        "final-order",
+        "allegation",
+        "warning",
+        "resolved"
+      ],
+      "publisherFamily": "canada-competition",
+      "summary": "Official competition and deceptive-marketing enforcement research.",
+      "limit": "Homepage discovery does not establish a case; match legal subject and final procedural outcome.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "cbp-enforcement",
+      "name": "CBP forced-labor actions",
+      "url": "https://www.cbp.gov/trade/forced-labor/frequently-asked-questions",
+      "hosts": [
+        "cbp.gov"
+      ],
+      "dimensions": [
+        "enforcement"
+      ],
+      "outcomes": [
+        "active-restriction",
+        "finding",
+        "warning",
+        "resolved"
+      ],
+      "publisherFamily": "cbp",
+      "summary": "Withhold Release Orders and Findings have distinct evidentiary bases and commodity scopes.",
+      "limit": "Check active/modified/revoked/superseded status. WROs are not conclusive forced-labor findings.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "ofac",
+      "name": "OFAC sanctions search",
+      "url": "https://sanctionssearch.ofac.treas.gov/",
+      "hosts": [
+        "treasury.gov"
+      ],
+      "dimensions": [
+        "enforcement"
+      ],
+      "outcomes": [
+        "active-restriction",
+        "resolved"
+      ],
+      "publisherFamily": "ofac",
+      "summary": "Official sanctions candidate screening.",
+      "limit": "Name similarity is not risk probability. Confirm identifiers, program and applicability; no match is not clearance.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "csl",
+      "name": "Consolidated Screening List",
+      "url": "https://www.trade.gov/consolidated-screening-list",
+      "hosts": [
+        "trade.gov"
+      ],
+      "dimensions": [
+        "enforcement"
+      ],
+      "outcomes": [],
+      "publisherFamily": "csl",
+      "summary": "Commerce, State and Treasury export-screening records.",
+      "limit": "Link only: return to original agency. A duplicate OFAC record adds no independent corroboration.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "gleif",
+      "name": "GLEIF legal identity",
+      "url": "https://www.gleif.org/en/lei-data/gleif-api",
+      "hosts": [
+        "gleif.org"
+      ],
+      "dimensions": [
+        "identity"
+      ],
+      "outcomes": [
+        "active-entity",
+        "inactive-entity",
+        "no-record"
+      ],
+      "publisherFamily": "gleif",
+      "summary": "Exact LEI records resolve legal identity and entity status.",
+      "limit": "Issued/lapsed LEI registration and entity active/inactive are different fields; identity is not good conduct.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90
+    },
+    {
+      "id": "sec",
+      "name": "SEC EDGAR",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "hosts": [
+        "sec.gov"
+      ],
+      "dimensions": [
+        "identity"
+      ],
+      "outcomes": [
+        "active-entity",
+        "inactive-entity",
+        "no-record"
+      ],
+      "publisherFamily": "sec",
+      "summary": "CIK, filings, former names and corporate structure.",
+      "limit": "A filing or ticker alone does not prove active legal status or ownership of a merchant domain.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90
+    },
+    {
+      "id": "canada-registries",
+      "name": "Corporations Canada",
+      "url": "https://ised-isde.canada.ca/site/corporations-canada/en",
+      "hosts": [
+        "ised-isde.canada.ca"
+      ],
+      "dimensions": [
+        "identity"
+      ],
+      "outcomes": [
+        "active-entity",
+        "inactive-entity",
+        "no-record"
+      ],
+      "publisherFamily": "canada-registries",
+      "summary": "Federal corporation identity discovery.",
+      "limit": "No federal result does not prove nonregistration; provincial records may be needed.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90
+    },
+    {
+      "id": "denue",
+      "name": "INEGI DENUE",
+      "url": "https://www.inegi.org.mx/app/mapa/denue/default.aspx",
+      "hosts": [
+        "inegi.org.mx"
+      ],
+      "dimensions": [
+        "identity"
+      ],
+      "outcomes": [],
+      "publisherFamily": "inegi",
+      "summary": "Mexican establishment/location discovery.",
+      "limit": "Presence is not corporate standing or product-origin certification; API token may be required.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 90
+    },
+    {
+      "id": "profeco-buro",
+      "name": "PROFECO Buró Comercial",
+      "url": "https://burocomercial.profeco.gob.mx/",
+      "hosts": [
+        "profeco.gob.mx"
+      ],
+      "dimensions": [
+        "consumer"
+      ],
+      "outcomes": [],
+      "publisherFamily": "profeco",
+      "summary": "Complaint outcomes and stated reporting-period coverage.",
+      "limit": "Link only: commercial/advertising reuse restrictions. Absence can reflect confidentiality, partial coverage or capture errors.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "profeco-digital",
+      "name": "PROFECO Distintivo Digital",
+      "url": "https://distintivodigital.profeco.gob.mx/",
+      "hosts": [
+        "profeco.gob.mx"
+      ],
+      "dimensions": [
+        "consumer"
+      ],
+      "outcomes": [],
+      "publisherFamily": "profeco",
+      "summary": "Responsible e-commerce provider roster; Digital Distinction and Code of Ethics are distinct.",
+      "limit": "Link only pending reuse clearance. Does not establish origin, universal product safety or tariff compliance.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "profeco-monitor",
+      "name": "PROFECO online-store monitoring",
+      "url": "https://www.gob.mx/profeco/documentos/monitoreo-de-tiendas-virtuales-114564",
+      "hosts": [
+        "gob.mx"
+      ],
+      "dimensions": [
+        "consumer"
+      ],
+      "outcomes": [],
+      "publisherFamily": "profeco",
+      "summary": "Periodic e-commerce information/consumer-rights monitoring.",
+      "limit": "Link only: stated results cannot be used by businesses for advertising or commercial purposes.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "usmca",
+      "name": "USMCA official guidance",
+      "url": "https://www.help.cbp.gov/s/article/Article-1736",
+      "hosts": [
+        "cbp.gov"
+      ],
+      "dimensions": [
+        "trade"
+      ],
+      "outcomes": [
+        "scoped-trade-record",
+        "unresolved"
+      ],
+      "publisherFamily": "cbp",
+      "summary": "Goods/transaction origin certification with required data elements.",
+      "limit": "No company-wide USMCA trust certificate. Foreign inputs may qualify; this does not prove entirely regional origin.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "cross",
+      "name": "CBP CROSS rulings",
+      "url": "https://rulings.cbp.gov/",
+      "hosts": [
+        "cbp.gov"
+      ],
+      "dimensions": [
+        "trade"
+      ],
+      "outcomes": [
+        "scoped-trade-record",
+        "unresolved"
+      ],
+      "publisherFamily": "cbp",
+      "summary": "Product-specific origin/classification rulings.",
+      "limit": "Match model, manufacturing facts, date and current applicability; another product cannot inherit a ruling.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "ecovadis",
+      "name": "EcoVadis",
+      "url": "https://ecovadis.com/blog/ecovadis-medals-and-badges-2/",
+      "hosts": [
+        "ecovadis.com"
+      ],
+      "dimensions": [
+        "sustainability"
+      ],
+      "outcomes": [
+        "scoped-assessment",
+        "unresolved"
+      ],
+      "publisherFamily": "ecovadis",
+      "summary": "Relative sustainability-management ratings; medals have 12-month validity.",
+      "limit": "No product certification or endorsement. Exact entity scope and Recognition Page required.",
+      "access": "public methodology; paid scorecards and sharing terms",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "sedex",
+      "name": "Sedex / SMETA",
+      "url": "https://www.sedex.com/solutions/smeta-audit/",
+      "hosts": [
+        "sedex.com"
+      ],
+      "dimensions": [
+        "sustainability"
+      ],
+      "outcomes": [
+        "scoped-assessment",
+        "unresolved"
+      ],
+      "publisherFamily": "sedex",
+      "summary": "Site social audits and corrective-action tracking.",
+      "limit": "SMETA is not certification or a pass/fail guarantee; approved auditor/site/date/scope matter.",
+      "access": "public guidance; authorized member access to reports",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "amfori",
+      "name": "amfori BSCI",
+      "url": "https://www.amfori.org/amfori-bsci/",
+      "hosts": [
+        "amfori.org"
+      ],
+      "dimensions": [
+        "sustainability"
+      ],
+      "outcomes": [
+        "scoped-assessment",
+        "unresolved"
+      ],
+      "publisherFamily": "amfori",
+      "summary": "Production-site social audits graded A–E with follow-up obligations.",
+      "limit": "Not certification; full reports restricted to members/audited suppliers. Grades are site/date-specific.",
+      "access": "public methodology; restricted full reports",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "bcorp",
+      "name": "B Lab / B Corp directory",
+      "url": "https://www.bcorporation.net/en-us/find-a-b-corp/",
+      "hosts": [
+        "bcorporation.net"
+      ],
+      "dimensions": [
+        "sustainability"
+      ],
+      "outcomes": [],
+      "publisherFamily": "b-lab",
+      "summary": "Official certified-company discovery lead.",
+      "limit": "Directory body unreadable in this audit. Recheck exact legal entity/scope/current status; no origin implication.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "oeko",
+      "name": "OEKO-TEX label check",
+      "url": "https://www.oeko-tex.com/en/label-check",
+      "hosts": [
+        "oeko-tex.com"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [
+        "scoped-certificate",
+        "unresolved"
+      ],
+      "publisherFamily": "oeko",
+      "summary": "Case-sensitive certificate/label lookup and withdrawn-label records.",
+      "limit": "Match scheme, expiry and article scope. No result needs follow-up, not automatic counterfeit labeling.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "gots",
+      "name": "GOTS",
+      "url": "https://global-standard.org/",
+      "hosts": [
+        "global-standard.org",
+        "global-standards.org"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [
+        "scoped-certificate",
+        "unresolved"
+      ],
+      "publisherFamily": "gots",
+      "summary": "Textile scope and transaction certification research.",
+      "limit": "Company scope does not prove shipment origin; v8 general mandatory date is March 2027.",
+      "access": "public references; reproduction/database terms apply",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "ul",
+      "name": "UL Product iQ",
+      "url": "https://productiq.ulprospector.com/en",
+      "hosts": [
+        "ulprospector.com",
+        "ul.com"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [
+        "scoped-certificate",
+        "unresolved"
+      ],
+      "publisherFamily": "ul",
+      "summary": "Official product certification discovery.",
+      "limit": "Model/file/standard scope matters; component recognition is not finished-product certification.",
+      "access": "official lookup; account/access terms may apply",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "certipedia",
+      "name": "TÜV Rheinland Certipedia",
+      "url": "https://www.certipedia.com/",
+      "hosts": [
+        "certipedia.com"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [],
+      "publisherFamily": "tuv",
+      "summary": "Certificate-number discovery lead.",
+      "limit": "Retrieval failed; recheck availability and terms before data integration.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "cpsc",
+      "name": "CPSC recalls",
+      "url": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+      "hosts": [
+        "cpsc.gov"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [
+        "scoped-recall",
+        "resolved"
+      ],
+      "publisherFamily": "cpsc",
+      "summary": "Official recalls and manufacturer/importer aliases.",
+      "limit": "Exact model/serial/lot and remedial scope required; recall is not proof every item or sister brand is unsafe.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "health-canada",
+      "name": "Health Canada recalls",
+      "url": "https://recalls-rappels.canada.ca/en",
+      "hosts": [
+        "recalls-rappels.canada.ca"
+      ],
+      "dimensions": [
+        "product"
+      ],
+      "outcomes": [],
+      "publisherFamily": "health-canada",
+      "summary": "Canadian product recall research lead.",
+      "limit": "Current API/reuse terms remain to be tested; match model/lot/jurisdiction before applying.",
+      "access": "public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 30
+    },
+    {
+      "id": "us-courts",
+      "name": "U.S. federal courts / PACER",
+      "url": "https://pacer.uscourts.gov/find-case",
+      "hosts": [
+        "uscourts.gov"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [
+        "pending",
+        "dismissed",
+        "settled",
+        "appealed",
+        "final-adverse-judgment",
+        "vacated",
+        "closed-no-adverse-finding"
+      ],
+      "publisherFamily": "us-courts",
+      "summary": "Federal dockets and case parties; state courts require separate jurisdiction-specific checks.",
+      "limit": "PACER can charge for searches, including no matches; opinions are free. No automated purchases.",
+      "access": "manual official docket lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "govinfo-opinions",
+      "name": "GovInfo court opinions",
+      "url": "https://www.govinfo.gov/app/collection/USCOURTS",
+      "hosts": [
+        "govinfo.gov"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [
+        "pending",
+        "dismissed",
+        "settled",
+        "appealed",
+        "final-adverse-judgment",
+        "vacated",
+        "closed-no-adverse-finding"
+      ],
+      "publisherFamily": "us-courts",
+      "summary": "Free opinions from participating U.S. federal courts.",
+      "limit": "Opinions are not a complete pending-case docket; confirm subsequent appeal/vacatur.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "canada-federal-court",
+      "name": "Canada Federal Court files",
+      "url": "https://www.fct-cf.ca/en/court-files-and-decisions/court-files",
+      "hosts": [
+        "fct-cf.ca"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [
+        "pending",
+        "dismissed",
+        "settled",
+        "appealed",
+        "final-adverse-judgment",
+        "vacated",
+        "closed-no-adverse-finding"
+      ],
+      "publisherFamily": "canada-federal-court",
+      "summary": "Party-name, court-file and recorded-history research.",
+      "limit": "Federal jurisdiction only; provincial courts differ; latest recorded entry may lag.",
+      "access": "public manual lookup",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "mexico-federal-courts",
+      "name": "Mexico federal case and decision portals",
+      "url": "https://sise.cjf.gob.mx/consultasvp/default.aspx",
+      "hosts": [
+        "cjf.gob.mx",
+        "scjn.gob.mx"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [
+        "pending",
+        "dismissed",
+        "settled",
+        "appealed",
+        "final-adverse-judgment",
+        "vacated",
+        "closed-no-adverse-finding"
+      ],
+      "publisherFamily": "mexico-federal-courts",
+      "summary": "Court/expediente and public-version decision discovery.",
+      "limit": "Public versions may redact parties; portals and state courts are separate. Redacted identity must abstain.",
+      "access": "public manual lookup; dynamic forms",
+      "linkOnly": false,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "courtlistener",
+      "name": "CourtListener / RECAP discovery",
+      "url": "https://www.courtlistener.com/help/",
+      "hosts": [
+        "courtlistener.com",
+        "free.law"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [],
+      "publisherFamily": "us-courts",
+      "summary": "Discover public U.S. opinions and contributed federal dockets; search/docket alerts exist.",
+      "limit": "Incomplete contribution coverage; authenticated alerts have membership limits. RECAP fetch can buy PACER records. Lead only; verify original court.",
+      "access": "Link only; public search / account-dependent API",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "canlii",
+      "name": "CanLII decisions and RSS",
+      "url": "https://www.canlii.org/rss",
+      "hosts": [
+        "canlii.org"
+      ],
+      "dimensions": [
+        "litigation"
+      ],
+      "outcomes": [],
+      "publisherFamily": "canlii",
+      "summary": "Canadian published decisions and bounded RSS discovery.",
+      "limit": "Decisions do not cover all pending cases; automated/large retrieval requires authorized channels under current terms.",
+      "access": "Link only; manual public lookup / RSS discovery",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    },
+    {
+      "id": "fmcsa-safer",
+      "name": "FMCSA SAFER carrier snapshot",
+      "url": "https://safer.fmcsa.dot.gov/CompanySnapshot.aspx",
+      "hosts": [
+        "fmcsa.dot.gov"
+      ],
+      "dimensions": [
+        "identity",
+        "enforcement"
+      ],
+      "outcomes": [],
+      "publisherFamily": "fmcsa",
+      "summary": "Free exact USDOT/MC/MX carrier lookup, safety rating, inspections and crash summaries.",
+      "limit": "FMCSA-registered carriers only, including registered Canadian/Mexican carriers. Safety data is not litigation or delivery-quality proof; no rating is neutral. Import/API terms not validated.",
+      "access": "Link only; public manual lookup",
+      "linkOnly": true,
+      "reviewedAt": "2026-10-10",
+      "freshnessDays": 7
+    }
+  ]
+}

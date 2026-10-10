@@ -4,10 +4,12 @@ import { MERCHANT_NETWORKS, merchantNetworkIsFresh } from '../src/intelligence/m
 import { COMMERCE_PLATFORMS } from '../src/intelligence/commerce-platforms';
 import { validateRegistry, type SignatureRegistry } from '../src/intelligence/signature-registry';
 import {validateRegionalDirectory} from '../src/intelligence/north-america-directory';
+import {validateStandingSources} from '../src/reputation/business-standing';
 
 const errors:string[]=[];
 const warnings:string[]=[];
 if(!validateRegionalDirectory()) errors.push('Invalid North American directory or relationship provenance');
+if(!validateStandingSources()) errors.push('Invalid business-standing source scope or provenance');
 
 function unique(values:string[],label:string):void{
   const seen=new Set<string>();

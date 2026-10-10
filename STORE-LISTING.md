@@ -57,3 +57,5 @@ All existing automated gates plus independent acceptance must pass for the accep
 
 ### DS-041 origin utility copy (acceptance pending)
 Investigate where a product is made, sold and dispatched across the United States, Canada and Mexico. Eight separate origin stages keep store claims, imported inputs, seller identity and shipment evidence distinct. Add a local evidence file, review its source documents and inspect what is documented or still unknown. A dated sourcing map provides direct maker, provider and public-reference leads. This is a source-review aid, not independent certification or a guarantee of product quality or legal labeling compliance. No trusted-retailer badge is granted from directory membership.
+
+Optional standing research separates consumer-bureau, identity, enforcement, trade, supply-chain, product and court-case records. Local source-reviewed metadata assists investigation; it does not certify sellers, establish lawsuit allegations, or change automatic seller-warning scores. No live litigation monitoring or universal North American origin guarantee is promised.

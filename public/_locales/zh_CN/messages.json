@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "墨西哥",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "商家和制造商信誉",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "分别审查消费者机构、身份、执法、贸易、可持续性和产品记录。有利的信誉评级仅限于您审查的来源；它不是保证，也不是产品原产地证书。",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "实体角色",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "商家",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "制造商",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "法律实体的准确名称",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "实体网站域名",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "确认该实体销售或制造当前产品。相似名称、共用托管服务和关联公司不能证明这种关系。",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "信誉证据 JSON，最大 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "我审查了原始记录，并核对了确切实体、当前状态、范围及其与此商品页面的关系。",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "评估信誉",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "清除信誉",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "信誉研究来源",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "研究类别",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "所有类别",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "法律身份",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "消费者信誉",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "执法和限制",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "贸易记录",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "供应链评估",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "产品认证和召回",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "已审查来源中有有利证据",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "已审查来源中有不利记录",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "信誉信息混合或尚未解决",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "信誉证据不足",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "尚未审查信誉",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "信誉文件无效。请检查大小、格式及来源范围。",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "打开记录，确认确切法律实体及其与此商品页面的关系。",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "评估信誉前，请检查当前产品。",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ 条当前记录 • $arg2$ 条排除记录 • $arg3$ 个发布者组",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "未知",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "仅为用户审查的信誉信息。这不认证产品、贸易合规或未来表现。卖家警告分数未改变。",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "承运商",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "诉讼和法院案件",
+    "description": "Litigation and court cases"
   }
 }

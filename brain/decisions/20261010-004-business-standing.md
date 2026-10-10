@@ -1,0 +1,13 @@
+# Decision — scoped business-standing evidence instead of an uncalibrated trust number
+
+Date: 2026-10-10. Owner request: refresh earlier research and implement overall merchant/manufacturer standing, good-standing sources, trade records and adverse-pattern research.
+
+Keep seven dimensions separate: legal identity, consumer standing, enforcement, trade, sustainability, litigation and product. Implement categorical user-reviewed standing with explicit grouping rules, exact legal name/domain/role/current-listing binding, source-owned outcome vocabulary, official-host checks, bounded local files, dated lifecycle supersession, equal-date conflict refusal and visible unknown coverage. JSON ratings/signatures cannot authorize review. No new scorer contribution, merchant blacklist, paid feed, permission, remote parser, automatic source request or imported record persistence.
+
+Favorable display requires current BBB A/B-range evidence plus separate active legal identity; adverse-record display describes a scoped original record rather than predicting future misconduct. Historical orders, proposed settlements, warning letters, active/revoked restrictions, resolved complaints and duplicate snapshots remain distinct. Missing/no-rating/non-accreditation is neutral. Geographic origin, provider presence, unrelated affiliate complaints and trade eligibility never confer either guilt or clearance. Scoring probabilities remain deferred until independent validation.
+
+PROFECO reference links remain useful while results cannot be imported for commercial rating reuse. Restricted source data/paid scores and trademarks are not bundled. The first release is a manual utility, with deliberate confirmation of an entity’s relationship to the current product; authenticity is not independently checked. Scope/freshness/counts are displayed, report/history/export unchanged. See BUSINESS-STANDING.md and DS-042 for rules, exact checks and acceptance limits.
+
+Package reproducibility correction: remove builder Node/zlib strings from the hashed OCR language inventory, retaining environment versions in build logs and retaining all original/packaged model checksums. This fixes a harness fingerprint mismatch; it does not modify models, engine behavior or O-hin correctness assertions.
+
+DS-043 extends exact role binding to shippers and adds court/docket/jurisdiction/party/category metadata. Relevant defendant/respondent pending and appealed cases are unresolved context; dismissed/settled/vacated/plaintiff/unrelated cases are neutral. Seven-day litigation observations and same court/docket/family outcome supersession prevent stale judgment inheritance. Discovery aggregators remain link-only; full court-coverage claims are prohibited.

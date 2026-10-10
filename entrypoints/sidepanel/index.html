@@ -154,6 +154,23 @@
         </details>
       </details>
 
+      <details class="standing-panel">
+        <summary>Merchant and manufacturer standing</summary>
+        <p class="scan-disclosure">Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate.</p>
+        <label for="standing-role">Entity role</label><select id="standing-role"><option value="merchant">Merchant</option><option value="manufacturer">Manufacturer</option><option value="shipper">Shipper</option></select>
+        <label for="standing-name">Exact legal entity name</label><input id="standing-name" type="text" maxlength="200" autocomplete="off" />
+        <label for="standing-domain">Entity website domain</label><input id="standing-domain" type="text" maxlength="253" autocomplete="off" />
+        <p class="scan-disclosure">Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship.</p>
+        <label for="standing-file">Standing evidence JSON, up to 40 KB</label><input id="standing-file" type="file" accept="application/json,.json" />
+        <div id="standing-preview" class="evidence"></div>
+        <label><input id="standing-reviewed" type="checkbox" /> I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing.</label>
+        <button id="standing-apply" class="secondary" type="button" disabled>ASSESS STANDING</button><button id="standing-clear" class="secondary" type="button">CLEAR STANDING</button>
+        <p id="standing-status" class="status" role="status"></p><div id="standing-result" class="evidence" aria-live="polite"></div>
+        <details id="standing-directory-panel"><summary>Standing research sources</summary>
+          <label for="standing-filter">Research category</label><select id="standing-filter"><option value="">All categories</option><option value="identity">Legal identity</option><option value="consumer">Consumer standing</option><option value="enforcement">Enforcement and restrictions</option><option value="trade">Trade records</option><option value="sustainability">Supply-chain assessments</option><option value="litigation">Litigation and court cases</option><option value="product">Product certification and recalls</option></select>
+          <div id="standing-directory" class="evidence"></div>
+        </details>
+      </details>
       <details class="brave-panel">
         <summary>Optional live supplier search with your own API key</summary>
         <p class="scan-disclosure">No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations.</p>

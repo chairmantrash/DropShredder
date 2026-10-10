@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "মেক্সিকো",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "বিক্রেতা ও প্রস্তুতকারকের সুনাম",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "ভোক্তা সংস্থা, পরিচয়, সরকারি ব্যবস্থা, বাণিজ্য, স্থায়িত্ব ও পণ্যের নথি আলাদাভাবে যাচাই করুন। অনুকূল সুনাম শুধু আপনার যাচাই করা উৎসের মধ্যে সীমিত; এটি নিশ্চয়তা বা পণ্যের উৎপত্তির সনদ নয়।",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "প্রতিষ্ঠানের ভূমিকা",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "বিক্রেতা",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "প্রস্তুতকারক",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "প্রতিষ্ঠানের সঠিক আইনি নাম",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "প্রতিষ্ঠানের ওয়েবসাইটের ডোমেন",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "নিশ্চিত করুন যে এই প্রতিষ্ঠান বর্তমান পণ্য বিক্রি বা তৈরি করে। একই ধরনের নাম, ভাগ করা হোস্টিং ও সহযোগী প্রতিষ্ঠান এই সম্পর্ক প্রমাণ করে না।",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "সুনামের প্রমাণের JSON, সর্বোচ্চ 40 KB",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "আমি মূল নথি পড়েছি এবং সঠিক প্রতিষ্ঠান, বর্তমান অবস্থা, পরিধি ও এই তালিকার সঙ্গে সম্পর্ক যাচাই করেছি।",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "সুনাম মূল্যায়ন করুন",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "সুনাম মুছুন",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "সুনাম গবেষণার উৎস",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "গবেষণার বিভাগ",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "সব বিভাগ",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "আইনি পরিচয়",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "ভোক্তাদের কাছে সুনাম",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "সরকারি ব্যবস্থা ও নিষেধাজ্ঞা",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "বাণিজ্য নথি",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "সরবরাহ শৃঙ্খলের মূল্যায়ন",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "পণ্যের সনদ ও প্রত্যাহার",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "যাচাই করা উৎসে অনুকূল প্রমাণ",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "যাচাই করা উৎসে প্রতিকূল নথি",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "মিশ্র বা অমীমাংসিত সুনাম",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "সুনামের প্রমাণ অপর্যাপ্ত",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "সুনাম যাচাই করা হয়নি",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "সুনামের ফাইল অবৈধ। আকার, কাঠামো ও উৎসের পরিধি যাচাই করুন।",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "নথি খুলে সঠিক আইনি প্রতিষ্ঠান ও এই তালিকার সঙ্গে তার সম্পর্ক যাচাই করুন।",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "সুনাম মূল্যায়নের আগে বর্তমান পণ্য যাচাই করুন।",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ বর্তমান নথি • $arg2$ বাদ দেওয়া নথি • $arg3$ প্রকাশক গোষ্ঠী",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "অজানা",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "সুনাম শুধু ব্যবহারকারী যাচাই করেছেন। এটি পণ্য, বাণিজ্যিক নিয়ম মেনে চলা বা ভবিষ্যতের কাজের নিশ্চয়তা দেয় না। বিক্রেতার সতর্কতা স্কোর অপরিবর্তিত।",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "পরিবহনকারী",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "মামলা ও আদালতের কার্যক্রম",
+    "description": "Litigation and court cases"
   }
 }

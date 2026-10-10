@@ -1,0 +1,693 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-10",
+  "scope": "DS-042 source presence ledger; topic coverage is in research-refresh-20261010.json. Search-result evidence and retrieval failure are explicitly distinguished. No full copies, live endpoint test or comprehensive company standing certification.",
+  "sources": [
+    {
+      "url": "https://www.bbb.org/about/overview-of-ratings",
+      "title": "Overview of BBB ratings",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bbb.org/faq/",
+      "title": "Frequently asked questions about BBB",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bbb.org/ca/mb/winnipeg/profile/safety-clothing/canada-west-boots-factory-outlet-0057-25871",
+      "title": "Canada West Boots Factory Outlet | BBB Business Profile | Better Business Bureau",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bbb.org/us/tn/south-pittsburg/profile/producers/lodge-cast-iron-0483-30000406/complaints",
+      "title": "Lodge Cast Iron | BBB Complaints | Better Business Bureau",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bbb.org/business/accreditation/standards",
+      "title": "BBB Accreditation Standards",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://ecovadis.com/Suppliers/",
+      "title": "Supply Chain Sustainability Assessments | EcoVadis",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.sedex.com/solutions/sedex-platform/",
+      "title": "Sedex Platform: Streamline Your Supply Chain Sustainability",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.ecovadis.com/hc/en-us/articles/34621845310994-Methodology-Updates-Q1-2026",
+      "title": "Methodology Updates Q1 2026 – EcoVadis Help Center",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cbp.gov/trade/forced-labor/frequently-asked-questions",
+      "title": "Forced Labor Frequently Asked Questions | U.S. Customs and Border Protection",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cbp.gov/sites/default/files/2025-07/wro-finding_dashboard_data_dictionary.pdf",
+      "title": "U.S. Customs and",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cbp.gov/trade/nafta/guide-customs-procedures/cert-origin",
+      "title": "Chapter 6 - Certificate of Origin | U.S. Customs and Border Protection",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://rulings.cbp.gov/ruling/N357851",
+      "title": "CROSS Ruling",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.help.cbp.gov/s/article/Article-1171?language=en_US",
+      "title": "Importers - I ordered goods from abroad, but the seller said they are being held up by CBP",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://flportal.cbp.gov/",
+      "title": "Login",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://distintivodigital.profeco.gob.mx/",
+      "title": "Distintivo Digital | PROFECO",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gob.mx/profeco/documentos/monitoreo-de-tiendas-virtuales-114564?idiom=es",
+      "title": "Monitoreo de Tiendas Virtuales | Procuraduría Federal del Consumidor | Gobierno | gob.mx",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://distintivodigital.profeco.gob.mx/info-distintivo-digital.php",
+      "title": "Información y Requisitos del Distintivo Digital | Distintivo Digital",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.datos.gob.mx/es/dataset/proveedores_responsables_comercio_electronico/resource/7a1b5ba7-02bb-4429-99b4-c0a3693c2cdb",
+      "title": "Base de datos - datos.gob.mx",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.profeco.gob.mx/tiendasvirtuales/index.html",
+      "title": "Monitoreo de Tiendas Virtuales | PROFECO",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gob.mx/profeco/articulos/distintivo-digital-profeco?idiom=es",
+      "title": "Distintivo Digital Profeco | Procuraduría Federal del Consumidor | Gobierno | gob.mx",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.international.gc.ca/transparency-transparence/national-contact-point-contact-national/report-2025-rapport.aspx?lang=eng",
+      "title": "Canada’s National Contact Point for Responsible Business Conduct Annual Report 2025",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/192-3138-fashion-nova-llc-matter",
+      "title": "Fashion Nova, LLC, In the Matter of | Federal Trade Commission",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2026/04/ftc-announces-made-usa-sweep-including-three-law-enforcement-actions-protect-american-consumers",
+      "title": "FTC Announces “Made in the USA” Sweep, Including Three Law Enforcement Actions to Protect American Consumers and Businesses | Federal Trade Commission",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.etsy.com/hc/en-us/articles/23948763872151-Does-Etsy-Allow-Drop-Shipping-or-Reselling",
+      "title": "Does Etsy Allow Drop Shipping or Reselling? – Etsy Help",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ebay.com/help/selling/listings/dropshipping?id=4176",
+      "title": "Dropshipping and product sourcing | eBay",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://sellercentral.amazon.com/help/hub/reference/external/G201808410",
+      "title": "Amazon",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://marketplacelearn.walmart.com/guides/Policies%20%26%20standards/Account/Walmart-Marketplace-seller-retailer-policies",
+      "title": "Marketplace Learn",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.dsers.com/features",
+      "title": "DSers Features: Sourcing, Automation & Fulfillment",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.autods.com/en/articles/12700275-autods-ai-tools-generate-product-pages-optimize-content-and-create-marketing-assets",
+      "title": "AutoDS AI Tools: generate product pages, optimize content, and create marketing assets | AutoDS Help Center - Empowering your dropshipping growth",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.zendrop.com/",
+      "title": "Zendrop - The #1 high margin dropshipping platform",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://judge.me/help/en/articles/8314178-import-reviews-from-aliexpress",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/complying-consumer-reviews-testimonials-rule-questions-answers",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gleif.org/en/lei-data/gleif-api",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+      "title": "CPSC Recalls Application Program Interface (API) Information | CPSC.gov",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "title": "SEC.gov | EDGAR Application Programming Interfaces (APIs)",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://open.fda.gov/apis/authentication/",
+      "title": "open.fda.gov",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.oeko-tex.com/en/label-check",
+      "title": "OEKO-TEX® Label Check",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://global-standard.org/images/resource-library/documents/standard-and-manual/GOTS_v8.0_signed.pdf",
+      "title": "Global Organic Textile Standard v 8.0",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gs1.org/standards/id-keys/gtin",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bcorporation.net/en-us/find-a-b-corp/",
+      "title": "Find a B Corp",
+      "status": "body-unreadable",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.ecovadis.com/hc/en-us/articles/4408480671506-What-are-the-EcoVadis-medals-and-badges",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.sedex.com/solutions/smeta-audit/",
+      "title": "SMETA Audit: The Global Standard for Social Audits | Responsible Sourcing & Ethical Practices",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.amfori.org/en/solutions/social/amfori-bsci",
+      "title": "amfori BSCI - Business Social Compliance Initiative | amfori",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://productiq.ulprospector.com/en",
+      "title": "Product iQ | UL Solutions",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.certipedia.com/",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.trade.gov/consolidated-screening-list",
+      "title": "Consolidated Screening List",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://sanctionssearch.ofac.treas.gov/",
+      "title": "Sanctions List Search",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.ecovadis.com/hc/en-us/articles/4408793426834-How-can-I-use-my-EcoVadis-medal-or-badge",
+      "title": "How can I use my EcoVadis medal or badge? – EcoVadis Help Center",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://ecovadis.com/blog/ecovadis-medals-and-badges-2/",
+      "title": "EcoVadis Medals and Badges: Levels, Criteria & Meaning | EcoVadis",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://theupdateframework.io/docs/security/",
+      "title": "Security | TUF",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/develop/concepts/activeTab",
+      "title": "The \"activeTab\" permission  |  Chrome Extensions  |  Chrome for Developers",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "title": "PROV-DM: The PROV Data Model",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://specs.webrecorder.net/wacz/1.2.0/",
+      "title": "Web Archive Collection Zipped (WACZ)",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/html/2601.09658v4",
+      "title": "Image2Garment: Simulation-ready Garment Generation from a Single Image",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13143062/",
+      "title": "A hybrid deep-learning-architecture for identifying cotton content in fabric materials - PMC",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://blog.mozilla.org/en/mozilla/building-whats-next/",
+      "title": "Investing in what moves the internet forward",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://github.com/navotvolkgroundup/alibadge",
+      "title": "GitHub - navotvolkgroundup/alibadge: Chrome extension that finds the AliExpress listing a dropship store is reselling, and shows the markup. Measured: 0 false positives on 32 legitimate-brand products. · GitHub",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/cases-and-outcomes?wbdisable=false",
+      "title": "Deceptive marketing practices—Cases and outcomes",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/false-or-misleading-representations-and-deceptive-marketing-practices",
+      "title": "False or Misleading Representations and Deceptive Marketing Practices",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices-digest-volume-1",
+      "title": "The Deceptive Marketing Practices Digest — Volume 1",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://ised-isde.canada.ca/site/corporations-canada/en/search-tips",
+      "title": "Search tips – Corporations Canada",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ised-isde.canada.ca/cc/lgcy/fdrlCrpSrch.html",
+      "title": "Search for a Federal Corporation - Online Filing Centre - Corporations Canada - Corporations - Innovation, Science and Economic Development Canada",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://recalls-rappels.canada.ca/en?initialSessionID=130-5001998-5912636&ld=ASXXSCTUKDirect&page=%2C0&wbdisable=false",
+      "title": "Find recalls, advisories and safety alerts - Canada.ca",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gleif.org/en/lei-data/gleif-api/",
+      "title": "GLEIF API - LEI Data – GLEIF",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gleif.org/en/lei-data/lei-search/more-about-lei-search",
+      "title": "How to use LEI Search - About LEI Search - LEI Search – GLEIF",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.vitals.app/article/6-how-to-import-product-reviews-from-aliexpress",
+      "title": "Importing product reviews from AliExpress - Vitals Help Center",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.vitals.app/article/342-product-reviews-faqs",
+      "title": "Questions about the Product Reviews app - Vitals Help Center",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.vitals.app/article/166-how-to-import-product-reviews-from-another-app",
+      "title": "Importing product reviews from a third-party app - Vitals Help Center",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.alireviews.io/en/article/importing-reviews-from-other-product-review-apps-to-ali-reviews-snqc1u/",
+      "title": "Importing reviews from other product review apps to Ali Reviews | Ali Reviews Helpdesk",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.alireviews.io/en/article/importing-reviews-from-anywhere-like-amazon-aliexpress-temu-ebay-etsy-190q88b/",
+      "title": "Importing reviews from anywhere like Amazon, AliExpress, Temu, eBay, Etsy | Ali Reviews Helpdesk",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://help.alireviews.io/en/article/ali-reviews-app-plans-breakdown-features-pricing-and-limits-1fhje4l/",
+      "title": "Ali Reviews App Plans Breakdown: Features, Pricing, and Limits | Ali Reviews Helpdesk",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.dropship.io/",
+      "title": "Dropship - Discover Winning Products To Sell",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.trendtrack.io/",
+      "title": "TrendTrack - Find What's Winning in Ecom with the Most Accurate Data",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.tapstitch.com/",
+      "title": "Premium Clothing Print-on-Demand & Dropshipping Services | Tapstitch",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.gelato.com/",
+      "title": "Global Print On Demand Platform | Gelato",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.ecwid.com/hc/en-us/articles/115005463865-Dropshipping-and-Ecwid",
+      "title": "Dropshipping and Ecwid – Ecwid Help Center",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.wix.com/en/article/wix-stores-understanding-dropshipping",
+      "title": "Wix Stores: Understanding Dropshipping | Help Center | Wix.com",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://support.squarespace.com/hc/en-us/articles/9052125217293-Sell-custom-merchandise-through-Printful",
+      "title": "Sell custom merchandise through Printful – Squarespace Help Center",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cpsc.gov/Recalls/2026/GigaCloud-Technology-USA-Recalls-Merax-Murphy-Beds-Due-to-Risk-of-Serious-Injury-or-Death-from-Impact-and-Crush-Hazards",
+      "title": "GigaCloud Technology USA Recalls Merax Murphy Beds Due to Risk of Serious Injury or Death from Impact and Crush Hazards | CPSC.gov",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.cpsc.gov/Recalls/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Petgravity-Cat-Toys-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Ingestion-Hazard-Violations-of-Federal-Regulations-for-Consumer-Products-with-Coin-Batteries-Sold-on-Amazon-by-Sanchio-Store",
+      "title": "Source unavailable",
+      "status": "retrieval-failed",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.fda.gov/cosmetics/registration-listing-cosmetic-product-facilities-and-products",
+      "title": "Registration & Listing of Cosmetic Product Facilities and Products | FDA",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.usb.org/products",
+      "title": "Product Search | USB-IF",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.ftc.gov/developer",
+      "title": "FTC for Developers | Federal Trade Commission",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.24704",
+      "title": "[2603.24704] Conformal Selective Prediction with General Risk Control",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.12844",
+      "title": "[2512.12844] Selective Conformal Risk Control",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.06477",
+      "title": "[2608.06477] StepJack: Benchmarking Computer-Use Agent Safety Against Multi-Step Indirect Prompt Injection",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2501.13351",
+      "title": "[2501.13351] 50 Shades of Deceptive Patterns: A Unified Taxonomy, Multimodal Detection, and Security Implications",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.15858",
+      "title": "[2509.15858] Optimizing Product Deduplication in E-Commerce with Multimodal Embeddings",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.11733",
+      "title": "[2602.11733] Adapting Vision-Language Models for E-commerce Understanding at Scale",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.18269",
+      "title": "[2512.18269] Building UI/UX Dataset for Dark Pattern Detection and YOLOv12x-based Real-Time Object Recognition Detection System",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.37713",
+      "title": "[2609.37713] Billiger.de Products: A Bilingual Entity Matching Benchmark",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.bbb.org/us/or/portland/profile/online-retailer/light-in-the-box-1296-22959195",
+      "title": "Light In The Box | BBB Business Profile",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.justfashionnow.com/information/terms-and-conditions",
+      "title": "Terms-and-Conditions | justfashionnow",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.modlily.com/terms-of-use-a92.html",
+      "title": "Website Terms of Use and User Conditions | Modlily",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1523836/000110465926038848/litb-20251231x20f.htm",
+      "title": "LightInTheBox Holding Co., Ltd._December 31, 2025",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.dropcommerce.com/suppliers/",
+      "title": "DropCommerce - Dropshipping for modern entrepreneurs",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://ayuda.tiendanube.com/es_MX/dropshipping/como-integrar-dropi-mx-con-mi-tiendanube",
+      "title": "¿Cómo integrar Dropi con mi Tiendanube? - Tiendanube",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    },
+    {
+      "url": "https://www.nihaojewelry.com/about-us",
+      "title": "About Nihaojewelry | Trusted Wholesale Jewelry Supplier Since 2013",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10",
+      "verification": "Document reference research, not runtime endpoint/provider acceptance or authenticated current company status"
+    }
+  ]
+}

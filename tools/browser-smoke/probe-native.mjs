@@ -452,6 +452,38 @@ try {
         const names=await native.evaluate("Array.from(document.querySelectorAll('#origin-directory strong')).map(e=>e.textContent)");assert.ok(names.includes('Cinsa / Santa Anita'));assert.ok(!names.includes('Vermont Glove'));assert.equal(externalRequests.length,before);
         await native.screenshot('native-north-america-map.png');return {records:34,filtered:names.length,automaticSourceRequests:0};
       });
+      await test('N32','Native standing rating requires source review and entity binding; categories are local and navigation clears the rating',async()=>{
+        const state=await scanFixture('https://fixture.example.com/products/origin'),data=JSON.parse(state.raw),p=data.product,before=externalRequests.length;
+        const target={legalName:'Owned Origin Seller',domain:'fixture.example.com',role:'merchant',listingUrl:p.url};
+        const observedAt=new Date(Date.now()-86400000).toISOString().slice(0,10),eventDate=observedAt;
+        const common={subjectName:target.legalName,subjectDomain:target.domain,observedAt,eventDate,scope:'Owned synthetic legal entity only',detail:'Synthetic browser fixture; no real bureau rating, government record or source authenticity claim.'};
+        const dossier={version:1,target,records:[{...common,sourceId:'bbb',sourceUrl:'https://www.bbb.org/profile/synthetic-owned',recordId:'synthetic-profile',dimension:'consumer',outcome:'rating',grade:'A+',accredited:false},{...common,sourceId:'gleif',sourceUrl:'https://www.gleif.org/synthetic-owned',recordId:'synthetic-lei',dimension:'identity',outcome:'active-entity'}]};
+        const filename=path.join(output,'standing-owned.json');await fs.writeFile(filename,JSON.stringify(dossier));
+        await native.click('details:has(#standing-file) > summary');await native.type('#standing-name',target.legalName);await native.type('#standing-domain',target.domain);await native.setFiles('#standing-file',[filename]);
+        await until(()=>native.evaluate("document.querySelectorAll('#standing-preview a').length===2"),'standing preview');assert.equal(await native.evaluate("document.querySelector('#standing-apply').disabled"),true);
+        await native.click('#standing-reviewed');await native.click('#standing-apply');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent.includes('Favorable evidence')"),'standing rating');
+        assert.match(await native.evaluate("document.querySelector('#standing-status').textContent"),/User-reviewed/);assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,data.verdict);
+        await native.click('#standing-directory-panel > summary');await until(()=>native.evaluate("document.querySelectorAll('#standing-directory article').length===32"),'standing directory');
+        await native.click('#standing-filter');await native.key('End','End',35);await native.key('Enter','Enter',13);await until(()=>native.evaluate("document.querySelector('#standing-filter').value==='product'"),'product category');assert.equal(await native.evaluate("document.querySelectorAll('#standing-directory article').length"),6);
+        assert.equal(externalRequests.length,before);await native.screenshot('native-business-standing.png');
+        await page.goto('https://fixture.example.com/products/second');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent===''") ,'standing reset');assert.equal(await native.evaluate("document.querySelector('#standing-reviewed').checked"),false);
+        return {sources:32,dimensions:7,automaticSourceRequests:0,scope:'User-confirmed entity and synthetic records in real native Chrome panel; no real company certified'};
+      });
+      await test('N33','Native litigation preview shows scope and pending allegations; a later vacatur removes unresolved context',async()=>{
+        const state=await scanFixture('https://fixture.example.com/products/origin'),data=JSON.parse(state.raw),before=externalRequests.length;
+        const target={legalName:'Owned Origin Seller',domain:'fixture.example.com',role:'merchant',listingUrl:data.product.url};
+        const date=new Date(Date.now()-86400000).toISOString().slice(0,10);
+        const record={sourceId:'us-courts',sourceUrl:'https://www.nysd.uscourts.gov/synthetic-owned',recordId:'1:26-cv-00000',subjectName:target.legalName,subjectDomain:target.domain,dimension:'litigation',outcome:'pending',observedAt:date,eventDate:date,detail:'Synthetic allegation only; no real lawsuit or finding.',scope:'Owned synthetic consumer-sale case only',case:{court:'Synthetic District Court',jurisdiction:'US-NY federal',partyRole:'defendant',category:'consumer-sale'}};
+        const filename=path.join(output,'litigation-owned.json');await fs.writeFile(filename,JSON.stringify({version:1,target,records:[record]}));
+        await native.type('#standing-name',target.legalName);await native.type('#standing-domain',target.domain);await native.setFiles('#standing-file',[filename]);
+        await until(()=>native.evaluate("document.querySelector('#standing-preview').textContent.includes('consumer-sale')"),'case metadata preview');
+        await native.click('#standing-reviewed');await native.click('#standing-apply');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent.includes('Mixed or unresolved')"),'pending context');
+        assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,data.verdict);await native.screenshot('native-litigation-standing.png');
+        await fs.writeFile(filename,JSON.stringify({version:1,target,records:[{...record,outcome:'vacated'}]}));await native.setFiles('#standing-file',[filename]);
+        await until(()=>native.evaluate("document.querySelector('#standing-preview').textContent.includes('vacated')"),'vacated case preview');assert.equal(await native.evaluate("document.querySelector('#standing-reviewed').checked"),false);
+        await native.click('#standing-reviewed');await native.click('#standing-apply');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent.includes('Insufficient standing')"),'vacated outcome');assert.equal(externalRequests.length,before);
+        return {scope:'Synthetic docket in actual native panel; no real case authenticity or comprehensive court coverage claimed',automaticSourceRequests:0};
+      });
       await test('N28','Packaged local OCR engine and language data exist without making a remote request at panel startup',async()=>{
         const paths=['ocr/tesseract.min.js','ocr/worker.min.js','ocr/eng.traineddata.gz','ocr/tesseract-core-relaxedsimd-lstm.wasm.js','ocr/tesseract-core-relaxedsimd-lstm.wasm'];
         const inspected=await worker.evaluate(async paths=>{

@@ -1894,5 +1894,155 @@
   "m_cabrx2": {
     "message": "المكسيك",
     "description": "Mexico"
+  },
+  "m_oifxeb": {
+    "message": "سمعة التجار والمصنّعين",
+    "description": "Merchant and manufacturer standing"
+  },
+  "m_1kgb90a": {
+    "message": "راجع سجلات جهات حماية المستهلك والهوية والإجراءات الرسمية والتجارة والاستدامة والمنتجات كلًا على حدة. التقييم الإيجابي يقتصر على المصادر التي راجعتها؛ وليس ضمانًا أو شهادة منشأ للمنتج.",
+    "description": "Review consumer-bureau, identity, enforcement, trade, sustainability and product records separately. A favorable standing rating is limited to the sources you reviewed; it is not a guarantee or a product-origin certificate."
+  },
+  "m_1ucog2e": {
+    "message": "دور الكيان",
+    "description": "Entity role"
+  },
+  "m_t8dq7p": {
+    "message": "تاجر",
+    "description": "Merchant"
+  },
+  "m_xgkfdc": {
+    "message": "مصنّع",
+    "description": "Manufacturer"
+  },
+  "m_1g3n0ij": {
+    "message": "الاسم القانوني الدقيق للكيان",
+    "description": "Exact legal entity name"
+  },
+  "m_ziqtb9": {
+    "message": "نطاق موقع الكيان",
+    "description": "Entity website domain"
+  },
+  "m_80z7qj": {
+    "message": "تأكد أن هذا الكيان يبيع المنتج الحالي أو يصنّعه. الأسماء المتشابهة والاستضافة المشتركة والشركات التابعة لا تثبت هذه العلاقة.",
+    "description": "Confirm that this entity sells or manufactures the current product. Similar names, shared hosting and affiliated companies do not establish that relationship."
+  },
+  "m_7z9o6z": {
+    "message": "أدلة السمعة بصيغة JSON، حتى 40 كيلوبايت",
+    "description": "Standing evidence JSON, up to 40 KB"
+  },
+  "m_1wybzr1": {
+    "message": "راجعت السجلات الأصلية وتحققت من الكيان الدقيق وحالته الحالية ونطاق السجلات وعلاقته بهذا العرض.",
+    "description": "I reviewed the original records and checked the exact entity, current status, scope and relationship to this listing."
+  },
+  "m_1wyzsjd": {
+    "message": "تقييم السمعة",
+    "description": "ASSESS STANDING"
+  },
+  "m_1nbs6ty": {
+    "message": "مسح السمعة",
+    "description": "CLEAR STANDING"
+  },
+  "m_86cbp0": {
+    "message": "مصادر بحث السمعة",
+    "description": "Standing research sources"
+  },
+  "m_pl0x0c": {
+    "message": "فئة البحث",
+    "description": "Research category"
+  },
+  "m_1yt97bk": {
+    "message": "كل الفئات",
+    "description": "All categories"
+  },
+  "m_p8m20s": {
+    "message": "الهوية القانونية",
+    "description": "Legal identity"
+  },
+  "m_hqxhhn": {
+    "message": "السمعة لدى المستهلكين",
+    "description": "Consumer standing"
+  },
+  "m_13vcf9f": {
+    "message": "الإجراءات الرسمية والقيود",
+    "description": "Enforcement and restrictions"
+  },
+  "m_1mb21jf": {
+    "message": "السجلات التجارية",
+    "description": "Trade records"
+  },
+  "m_1nm4lm5": {
+    "message": "تقييمات سلسلة التوريد",
+    "description": "Supply-chain assessments"
+  },
+  "m_1fbxduh": {
+    "message": "شهادات المنتجات واستدعاؤها",
+    "description": "Product certification and recalls"
+  },
+  "m_1k098ga": {
+    "message": "أدلة إيجابية في المصادر المراجعة",
+    "description": "Favorable evidence in reviewed sources"
+  },
+  "m_sh4sn8": {
+    "message": "سجل سلبي في المصادر المراجعة",
+    "description": "Adverse record in reviewed sources"
+  },
+  "m_1wlkgmo": {
+    "message": "سمعة متباينة أو غير محسومة",
+    "description": "Mixed or unresolved standing"
+  },
+  "m_1os3sb7": {
+    "message": "أدلة سمعة غير كافية",
+    "description": "Insufficient standing evidence"
+  },
+  "m_1qw3oh1": {
+    "message": "لم تُراجع السمعة",
+    "description": "Standing not reviewed"
+  },
+  "m_1mjdtuc": {
+    "message": "ملف السمعة غير صالح. تحقق من حجمه وبنيته ونطاق مصادره.",
+    "description": "Invalid standing file. Check its size, schema and source scope."
+  },
+  "m_1eh8g05": {
+    "message": "افتح السجلات وتأكد من الكيان القانوني الدقيق وعلاقته بهذا العرض.",
+    "description": "Open the records and confirm the exact legal entity and its relationship to this listing."
+  },
+  "m_bukoqh": {
+    "message": "تحقق من المنتج الحالي قبل تقييم السمعة.",
+    "description": "Check the current product before assessing standing."
+  },
+  "m_6xfoto": {
+    "message": "$arg1$ سجلات حالية • $arg2$ سجلات مستبعدة • $arg3$ مجموعات ناشرين",
+    "description": "$1 current records • $2 excluded records • $3 publisher families",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "Example"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "Example"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "Example"
+      }
+    }
+  },
+  "m_1kmy72x": {
+    "message": "غير معروف",
+    "description": "Unknown"
+  },
+  "m_muyg1g": {
+    "message": "سمعة راجعها المستخدم فقط. لا تصادق على المنتجات أو الامتثال التجاري أو الأداء المستقبلي. لم تتغير درجات تحذير البائع.",
+    "description": "User-reviewed standing only. This does not certify products, trade compliance or future performance. Seller warning scores are unchanged."
+  },
+  "m_1jz6hse": {
+    "message": "شركة الشحن",
+    "description": "Shipper"
+  },
+  "m_o7pu4o": {
+    "message": "الدعاوى والقضايا القضائية",
+    "description": "Litigation and court cases"
   }
 }
