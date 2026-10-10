@@ -19,10 +19,12 @@ function domainGroups():Array<{label:string;domains:string[]}>{
         .filter(source=>classesForGroup.has(source.sourceClass))
         .flatMap(source=>source.queryDomains)
     )];
-    // Ten compact site clauses retain regional coverage without increasing
-    // the destination count or the chooser's eight-at-a-time tab limit.
-    for(let i=0;i<domains.length;i+=10){
-      groups.push({label:`${label}-${Math.floor(i/10)+1}`,domains:domains.slice(i,i+10)});
+    // Keep regional retail domains together, while supplier/marketplace queries
+    // retain six-clause groups. Current coverage stays at ten destinations;
+    // the chooser still opens at most eight selected searches per batch.
+    const perQuery=label==='retail'?10:6;
+    for(let i=0;i<domains.length;i+=perQuery){
+      groups.push({label:`${label}-${Math.floor(i/perQuery)+1}`,domains:domains.slice(i,i+perQuery)});
     }
   }
   return groups;
