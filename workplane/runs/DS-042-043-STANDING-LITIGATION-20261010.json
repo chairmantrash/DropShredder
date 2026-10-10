@@ -97,6 +97,27 @@
       "failure": "N19: all-class ten-clause grouping yielded eight source destinations; unchanged native test requires ten destinations in 8+2 batches",
       "newFeatureChecks": "N30-N33 not executed",
       "fix": "Retail sources use up to ten clauses; other source classes retain six-clause groups. All source domains preserved; ten total queries; unchanged eight-per-batch and existing native assertions."
+    },
+    {
+      "testHead": "900baeb38eceb6ea7e5653e32f718dbe52be0bc3",
+      "sourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
+      "runtimeRun": 38046209982,
+      "ciRun": 38046209958,
+      "ci": "success",
+      "codeqlRun": 38046210037,
+      "codeql": "success",
+      "packagedPasses": 9,
+      "headedPasses": 26,
+      "localeGroupsPassed": 7,
+      "headlessDuplicatePasses": 7,
+      "distinctPasses": 42,
+      "newFeaturesPassed": [
+        "N30",
+        "N31",
+        "N32"
+      ],
+      "failure": "N33: pending case result passed internally, but overwriting and CDP-reselecting the same file path did not trigger a new preview; timeout at vacated case preview",
+      "fix": "Use distinct updated file path for the actual new file selection. Existing review-reset and vacated-result assertions unchanged; production source/package unchanged."
     }
   ]
 }

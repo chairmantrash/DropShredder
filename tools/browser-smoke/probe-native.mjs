@@ -479,7 +479,7 @@ try {
         await until(()=>native.evaluate("document.querySelector('#standing-preview').textContent.includes('consumer-sale')"),'case metadata preview');
         await native.click('#standing-reviewed');await native.click('#standing-apply');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent.includes('Mixed or unresolved')"),'pending context');
         assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,data.verdict);await native.screenshot('native-litigation-standing.png');
-        await fs.writeFile(filename,JSON.stringify({version:1,target,records:[{...record,outcome:'vacated'}]}));await native.setFiles('#standing-file',[filename]);
+        const updatedFilename=path.join(output,'litigation-vacated-owned.json');await fs.writeFile(updatedFilename,JSON.stringify({version:1,target,records:[{...record,outcome:'vacated'}]}));await native.setFiles('#standing-file',[updatedFilename]);
         await until(()=>native.evaluate("document.querySelector('#standing-preview').textContent.includes('vacated')"),'vacated case preview');assert.equal(await native.evaluate("document.querySelector('#standing-reviewed').checked"),false);
         await native.click('#standing-reviewed');await native.click('#standing-apply');await until(()=>native.evaluate("document.querySelector('#standing-result').textContent.includes('Insufficient standing')"),'vacated outcome');assert.equal(externalRequests.length,before);
         return {scope:'Synthetic docket in actual native panel; no real case authenticity or comprehensive court coverage claimed',automaticSourceRequests:0};
