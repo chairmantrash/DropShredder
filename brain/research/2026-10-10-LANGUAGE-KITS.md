@@ -35,3 +35,9 @@ OCR's packaged model remains English. Localized UI does not expand OCR, language
 - W3C source isolation: https://www.w3.org/International/articles/inline-bidi-markup/index
 - W3C direction: https://www.w3.org/International/questions/qa-html-dir
 - Ethnologue2026 ranking methodology: https://www.ethnologue.com/insights/ethnologue200/ (direct403; indexed methodology accessible, no dataset redistribution)
+
+## Follow-up primary-source checks and observed results
+
+Chrome explicitly documents LANGUAGE on Linux for native locale testing; Accept-Language differs from browser UI language. DS-039 tests native getMessage/getUILanguage in fresh Linux profiles, never merely navigator.language or mocked translations. All7 resolved correctly in Chrome156; Arabic direction and enlarged-text320/420px layout passed without localization requests/host consent. Receipt records exact IDs and limitations.
+
+USITC DICL working paper (2024), Table1, uses Ethnologue21st edition2018 data and separates native/acquired speakers. Its historical ordering differs (including Russian); it supports careful method selection, not an exact2026 ranking or treating country as language. URL: https://www.usitc.gov/sites/default/files/publications/332/working_papers/ghty_2024_dicl_language_database.pdf . No dataset imported. Unicode CLDR maintains locale data for Intl/ICU workflows: https://cldr.unicode.org/ . Use browser-provided locale formatting rather than inventing demographic/grammatical rules. Current count labels use complete messages instead of English suffix construction.
