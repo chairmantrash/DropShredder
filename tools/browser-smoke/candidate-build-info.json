@@ -1,43 +1,78 @@
 {
-  "sourceCommit": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
-  "sourceTree": "3420d4ca675c41b3f8b7be380935c05ffd8c1ef6",
+  "sourceCommit": "df803fec2c91ee72aedbdc8984a9c99c09ae982a",
+  "sourceTree": "6277ca682cdcdc1b8e4f9c7721880ed97263cdd4",
   "version": "0.2.0",
-  "reviewedChange": "DS-037 completed current release assembly: matching Tesseract7/Core7 engines, retained upstream notices, documented provenance, correct privacy disclosures, supplier consent/revocation control guards. Native OCR and live beta results remain separate evidence.",
+  "reviewedChange": "DS-039 adds seven native offline interface translations alongside English, localized metadata/controls/menus/toast/report labels, Arabic RTL and source isolation; no detector weights, permissions, source facts or OCR-model changes. Original technical annotations/raw exports remain unchanged and disclosed.",
   "buildFiles": [
     {
-      "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19620,
-      "sha256": "3540193ac79688fef6d062cfc607d0f9cc1ac80f05d8a02433d179551be344d1"
+      "path": "_locales/ar/messages.json",
+      "bytes": 66498,
+      "sha256": "c249b0a911d2e75f13aa6c5684297678c23957947b8143db743a59fc55fdf6a6"
     },
     {
-      "path": "assets/sidepanel-Bq3TO1x-.css",
-      "bytes": 10301,
-      "sha256": "6dc911fe5c520c5b3de966a4ab50c80a8feed2cc0f8848e747c9aba139ec5c8a"
+      "path": "_locales/bn/messages.json",
+      "bytes": 81534,
+      "sha256": "dc700a214f03ed1efc9cf5cc568efc2f78123a5d3a362092512c93ab3de4dc4a"
+    },
+    {
+      "path": "_locales/en/messages.json",
+      "bytes": 59632,
+      "sha256": "fb4f42214618221b33d0ba89f4afacdc38c4ed5f19716e03a8ef4f218961fdae"
+    },
+    {
+      "path": "_locales/es/messages.json",
+      "bytes": 60712,
+      "sha256": "957a8cf83d87bbc8cc3bf6e90995a72b5c77c5d12e989fa3bbf1982345b82120"
+    },
+    {
+      "path": "_locales/fr/messages.json",
+      "bytes": 61997,
+      "sha256": "494fb8699a6e39f45ea0f2a265e14069fd6ee3c6f6c84564b302bd0845f11fc2"
+    },
+    {
+      "path": "_locales/hi/messages.json",
+      "bytes": 81294,
+      "sha256": "3991c901b890b1c62123f39e7ba9f5d7c41491f01bc0accd99439c189eddc52f"
+    },
+    {
+      "path": "_locales/pt_BR/messages.json",
+      "bytes": 60815,
+      "sha256": "ed65a41b20793e2523c30804ddf1ca0ad7c3b6511fffd9cfa0c8133637e9bef0"
+    },
+    {
+      "path": "_locales/zh_CN/messages.json",
+      "bytes": 58577,
+      "sha256": "79c7004104585e6b9d15bae7e620f49c17a87c84dd877c8685918f364d6c675d"
+    },
+    {
+      "path": "assets/sidepanel-CA7A_2G3.css",
+      "bytes": 10816,
+      "sha256": "6c203d4ae888045a5ee28f4c364db3b28e7e527064f01b21d91615855c691298"
     },
     {
       "path": "background.js",
-      "bytes": 25456,
-      "sha256": "28740ff7442cca4890bba0e154c8ec8078a21be51f5d121dc98e6cfaee6d2bea"
+      "bytes": 25968,
+      "sha256": "6a26e74bbe07cd3936faf11ea9efd5076fe65d1dda6a0470831cca080ba425b5"
     },
     {
-      "path": "chunks/search-VvQDJEw9.js",
-      "bytes": 424,
-      "sha256": "5b1637d8e64baefe115308b5bc845aeac07f8b368fc63e6250bd705d43d7d0ab"
+      "path": "chunks/search-BSs1uToS.js",
+      "bytes": 445,
+      "sha256": "fe88de109053ca59623bf48006b0c1fed159c3884efc110dabb00e5dacb42a85"
     },
     {
-      "path": "chunks/search-chooser-CEmkGmME.js",
-      "bytes": 2731,
-      "sha256": "27a8ddbf0dc9b863af9a31a9ba8ac85c22b68f231dc5e18974af8ff9e77e5598"
+      "path": "chunks/search-chooser-DQ05wBu8.js",
+      "bytes": 3900,
+      "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-DMnHUQKs.js",
-      "bytes": 478071,
-      "sha256": "cd5e05b3a217927f38d1e9e7badab2c0ff4e802bbbac68da8b0307d2036bfede"
+      "path": "chunks/sidepanel-C3gFIYzB.js",
+      "bytes": 478603,
+      "sha256": "22e1519de39815b87a93b2b425b1f242bcf105208b651bb8897b8b131a55d85c"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 44423,
-      "sha256": "6a5ee9206bc58c0d349eede6e21e9eae7c7ac008fdafeff0e6c06a85efb4a0fb"
+      "bytes": 45124,
+      "sha256": "cc659ba6292d02412eb5e0defed547969accc47e27ff2f7d605ed8e35e01c923"
     },
     {
       "path": "icon/128.png",
@@ -61,8 +96,13 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 681,
-      "sha256": "aff66da1c558c339cce26eccc1e94e997eb4b4a0c79cbdd23a7be52f3044b6b2"
+      "bytes": 674,
+      "sha256": "a07d5fa66c5bb069b841ed860f7cdf655f9597181afdda11114735908d764228"
+    },
+    {
+      "path": "ocr/eng.traineddata.gz",
+      "bytes": 1976293,
+      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
     },
     {
       "path": "ocr/LICENSE-TESSERACT-CORE.txt",
@@ -78,11 +118,6 @@
       "path": "ocr/PROVENANCE.txt",
       "bytes": 633,
       "sha256": "5337b16032cb60ee34f6be33450b7cb841c8557799347d48599795f4042d214f"
-    },
-    {
-      "path": "ocr/eng.traineddata.gz",
-      "bytes": 1976293,
-      "sha256": "2a66ec904bc0e7657b27e200a874c01e1bc8a58b756cbbaa9afbae736fa50edc"
     },
     {
       "path": "ocr/tesseract-core-lstm.wasm",
@@ -167,12 +202,17 @@
     {
       "path": "search.html",
       "bytes": 724,
-      "sha256": "9887be5db3bd1ab7e8aed31ae120b2fcad4ce6e0c782a82caa927fa0bc690507"
+      "sha256": "caa6fbee3248fa67418fb63d3c4d0c23952b6f0c7b59de2c4d6ba8de063d57ee"
     },
     {
       "path": "sidepanel.html",
-      "bytes": 15155,
-      "sha256": "ad3a4d05c3ca30dc05897166a188fe33505509c7fe1ecef0b759e30ffac6a677"
+      "bytes": 15340,
+      "sha256": "688f68d52a0b6196375c7f227dcc744df15264936c96063323eb3e03607bf82e"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19620,
+      "sha256": "3540193ac79688fef6d062cfc607d0f9cc1ac80f05d8a02433d179551be344d1"
     }
   ]
 }
