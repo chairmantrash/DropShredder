@@ -1,6 +1,6 @@
 # Work queue
 
-Current owner-directed DS-040: BLOCKED by O-hin mixed-script OCR correctness. Fresh337core/CI/CodeQL and69distinct Chromium156 checks pass on51files; all eight merchant-page groups pass, but the suite stops at Hindi OCR. One unchanged repeat pending; no repair or pass substitution. See DS-040 handoff and full run receipt.
+Current owner-directed DS-040: BLOCKED by O-hin mixed-script OCR correctness. Fresh337core/CI/CodeQL and69distinct Chromium156 checks pass on51files; all eight merchant-page groups pass, but the suite stops at Hindi OCR. Reproduced unchanged; no repair or pass substitution. See DS-040 handoff and full run receipt.
 
 Current owner-directed addition2026-10-10: DS-039 offline localization DONE (bounded engineering scope). Seven additions plus English,336messages/pack;278core/45distinct Chrome156 checks pass on the42-file package. Independent language/release acceptance remains separate. Consult DS-039/TRANSLATIONS.md for exact new-build Chrome/packaging evidence. Public release remains held.
 

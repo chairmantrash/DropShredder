@@ -12,7 +12,7 @@ Prepared October 9,2026. State: PREPARED; acceptance and owner release authoriza
 
 ## Current candidate identity — not accepted
 DS-040 production ba9c51a74a9d914d5e75710902bfb1c4a431dbe5; tested harness b9d6bad55ac5f9d81a5300eae498e1ee4ac87774.
-Exact candidate:51files,54,767,122bytes.337core/CI/CodeQL and69distinct Chromium156 checks pass; full native suite is BLOCKED at Hindi OCR O-hin (one unchanged reproduction pending). Historical34/42-file receipts do not certify this candidate. See DS-040 run and handoff. Refresh affected current-UI OCR/settings assets before any submission. Version0.2.0/minimumChrome133 remain metadata; Chrome133 is not exercised here.
+Exact candidate:51files,54,767,122bytes.337core/CI/CodeQL and69distinct Chromium156 checks pass; full native suite is BLOCKED at Hindi OCR O-hin (reproduced unchanged). Historical34/42-file receipts do not certify this candidate. See DS-040 run and handoff. Refresh affected current-UI OCR/settings assets before any submission. Version0.2.0/minimumChrome133 remain metadata; Chrome133 is not exercised here.
 
 Independent A01-D06, representative precision/recall/abstention, real-photo OCR, native browser edges and performance acceptance remain open. Keep failures/blocked cases visible. No severe unsupported accusation, wrong-page scan, private data capture or serious performance issue may be waived silently.
 
