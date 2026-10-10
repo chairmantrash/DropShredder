@@ -28,7 +28,7 @@ export async function runMultilingualSuite({page,native,worker,context,test,unti
   const url=new URL(`https://fixture.example.com/languages/${f.lang}/detail${f.productPath}`).href;
   await test(`M-${f.lang}`,'Native toast-to-panel and repeated manual scan of an owned original-language product',async()=>{
    await page.goto(url);await page.bringToFront();await page.locator('#dropshredder-auto-verdict').waitFor({state:'visible',timeout:15000});
-   assert.match(await page.locator('#dropshredder-auto-verdict').innerText(),new RegExp(f.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+   assert.match(await page.locator('#dropshredder-auto-verdict button.body').innerText(),new RegExp(f.title.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
    await page.screenshot({path:path.join(output,`merchant-${f.lang}-toast.png`),fullPage:true});
    await page.locator('#dropshredder-auto-verdict button.body').click();
    await until(async()=>{const raw=await native.evaluate("document.querySelector('#raw').textContent");try{return JSON.parse(raw).product.url===url;}catch{return false;}},'exact originating multilingual toast scan',30000);
