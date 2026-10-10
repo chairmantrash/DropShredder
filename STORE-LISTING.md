@@ -1,6 +1,8 @@
 # DropShredder — Chrome Web Store submission copy
 Prepared October 9,2026; candidate 0.2.0. Not submitted. See RELEASE-CHECKLIST.md for acceptance and authorization.
 
+DS-039 update2026-10-10: offline interface packs add Simplified Chinese, Hindi, Spanish, Arabic, French, Bengali and Brazilian Portuguese alongside English, following Chrome's display language. Original technical evidence annotations/raw exports remain in their original wording; bundled OCR remains English. Language review is separate from accuracy acceptance. See TRANSLATIONS.md.
+
 ## Name
 DropShredder
 

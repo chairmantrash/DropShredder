@@ -17,6 +17,31 @@ permissions:
   contents: read
 
 jobs:
+  localized-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y fonts-noto-core fonts-noto-cjk
+      - name: Verify seven native offline Chrome language packs and RTL reflow
+        timeout-minutes: 5
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/locales.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-localization-evidence
+          path: browser-smoke-results/
+          retention-days: 30
   packaged-runtime:
     runs-on: ubuntu-24.04
     timeout-minutes: 12

@@ -18,7 +18,8 @@
     "audit:performance": "node scripts/performance-audit.mjs",
     "lint:data": "node --import tsx scripts/data-lint.ts",
     "audit:professional": "node --import tsx scripts/professionalism-audit.ts",
-    "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs"
+    "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs",
+    "audit:localization": "node --import tsx scripts/localization-audit.ts"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",

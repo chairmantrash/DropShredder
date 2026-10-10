@@ -1,0 +1,1678 @@
+{
+  "m_1lc7ekh": {
+    "message": "DropShredder",
+    "description": "DropShredder"
+  },
+  "m_2925tt": {
+    "message": "DROPSHREDDER",
+    "description": "DROPSHREDDER"
+  },
+  "m_ji2c74": {
+    "message": "了解你真正买到的是什么。",
+    "description": "Know what you’re really buying."
+  },
+  "m_59j625": {
+    "message": "数据保留在你的设备上",
+    "description": "STAYS ON YOUR DEVICE"
+  },
+  "m_1hmprdl": {
+    "message": "在花钱之前，识别换牌商品、可疑店铺宣传、不透明的货源和退货麻烦。",
+    "description": "Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you."
+  },
+  "m_zs3td9": {
+    "message": "购买前检查",
+    "description": "CHECK BEFORE YOU BUY"
+  },
+  "m_lncga2": {
+    "message": "检查此商品",
+    "description": "CHECK THIS PRODUCT"
+  },
+  "m_41wtn1": {
+    "message": "手动完整检查仅针对你选择的页面。自动商品提醒只在你启用后运行。账号、结账和付款页面不会被检查。",
+    "description": "Manual full checks stay on your chosen page. Automatic product alerts run only if you enable them. No checks on account, checkout or payment pages."
+  },
+  "m_z4x6cq": {
+    "message": "自动商品提醒",
+    "description": "Automatic product alerts"
+  },
+  "m_z8ewuy": {
+    "message": "在实际商品购买页面查看简短结论。需要一次性授予 Chrome HTTPS 网站权限。无关浏览、搜索结果或结账页面不会显示提醒。",
+    "description": "See a short verdict on actual shopping listings. Requires one-time Chrome permission for HTTPS sites. No alerts on unrelated browsing, search results or checkout."
+  },
+  "m_pkbcu1": {
+    "message": "准备好后即可开始。",
+    "description": "Ready when you are."
+  },
+  "m_70y5yt": {
+    "message": "检查发现",
+    "description": "WHAT WE FOUND"
+  },
+  "m_1mhc312": {
+    "message": "这条商品信息值得信任吗？",
+    "description": "Should you trust this listing?"
+  },
+  "m_1uudnl7": {
+    "message": "检查商品，了解商品信息背后的情况。",
+    "description": "Scan the product to see what’s behind the listing."
+  },
+  "m_1j7m3j4": {
+    "message": "深入调查",
+    "description": "DIG DEEPER"
+  },
+  "m_1gbpn41": {
+    "message": "核查宣传说法",
+    "description": "Check the story"
+  },
+  "m_1yfbac9": {
+    "message": "可选",
+    "description": "Optional"
+  },
+  "m_19gtzfo": {
+    "message": "查找其他卖家",
+    "description": "FIND OTHER SELLERS"
+  },
+  "m_bdga72": {
+    "message": "搜索此图片",
+    "description": "SEARCH THIS IMAGE"
+  },
+  "m_bqvucs": {
+    "message": "检查此店铺",
+    "description": "CHECK THIS STORE"
+  },
+  "m_1amk2vc": {
+    "message": "这个网站有多久了？",
+    "description": "HOW OLD IS THIS SITE?"
+  },
+  "m_rzfddd": {
+    "message": "取消域名查询",
+    "description": "CANCEL DOMAIN LOOKUP"
+  },
+  "m_1ca3m79": {
+    "message": "买家怎么说？",
+    "description": "WHAT ARE BUYERS SAYING?"
+  },
+  "m_6gyim3": {
+    "message": "检查条款细节",
+    "description": "CHECK THE FINE PRINT"
+  },
+  "m_60fw70": {
+    "message": "实际上从哪里发货？",
+    "description": "WHERE DOES IT REALLY SHIP FROM?"
+  },
+  "m_3hli5t": {
+    "message": "证据记录",
+    "description": "THE RECEIPTS"
+  },
+  "m_1wt8chw": {
+    "message": "证据",
+    "description": "Evidence"
+  },
+  "m_1raf0ku": {
+    "message": "在证据中查找",
+    "description": "Find in evidence"
+  },
+  "m_9k7mr1": {
+    "message": "搜索来源、声明或观察结果",
+    "description": "Search source, claim or observation"
+  },
+  "m_p4sts9": {
+    "message": "显示证据",
+    "description": "Show evidence"
+  },
+  "m_o7e91d": {
+    "message": "全部证据",
+    "description": "All evidence"
+  },
+  "m_8fo0va": {
+    "message": "警示信号",
+    "description": "Warning signals"
+  },
+  "m_1pop2xv": {
+    "message": "参考背景",
+    "description": "Informational context"
+  },
+  "m_1lmvk2d": {
+    "message": "尚未检查。",
+    "description": "No scan yet."
+  },
+  "m_rou9gm": {
+    "message": "尚无内容。检查商品后，我们会展示值得注意的发现。",
+    "description": "Nothing to show yet. Scan the product and we’ll show you what stood out."
+  },
+  "m_szn3su": {
+    "message": "搜索官方召回公告",
+    "description": "Search official recall notices"
+  },
+  "m_18lpqhi": {
+    "message": "可选的公共 CPSC 查询。获得 Chrome 权限后，只将你选择的查询发送到 SaferProducts.gov。无需密钥或账号。候选公告不代表你的商品已被召回；没有结果也不代表安全。",
+    "description": "Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety."
+  },
+  "m_10ziq51": {
+    "message": "搜索字段",
+    "description": "Search field"
+  },
+  "m_1rvf3gr": {
+    "message": "公告标题／品牌",
+    "description": "Notice title / brand"
+  },
+  "m_6vzi67": {
+    "message": "商品名称",
+    "description": "Product name"
+  },
+  "m_a61vw": {
+    "message": "UPC / GTIN",
+    "description": "UPC / GTIN"
+  },
+  "m_zdcsua": {
+    "message": "发送给 CPSC 的查询",
+    "description": "Query to share with CPSC"
+  },
+  "m_uad37n": {
+    "message": "搜索 CPSC 公告",
+    "description": "SEARCH CPSC NOTICES"
+  },
+  "m_1pk9ld3": {
+    "message": "取消查询",
+    "description": "CANCEL LOOKUP"
+  },
+  "m_1kk4z4r": {
+    "message": "在本机读取商品标签（条码和 OCR）",
+    "description": "Read a product label locally (barcode and OCR)"
+  },
+  "m_1hevz1e": {
+    "message": "从设备选择图片。Chrome 提供本地检测器时，商品代码和文字在本机读取；不会上传、保存或发送给服务商。如果 Chrome 没有原生识别功能，仅在你请求检查后加载打包的本地 Tesseract 引擎。无需 CDN、图片上传或强制账号。",
+    "description": "Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts."
+  },
+  "m_uo805c": {
+    "message": "商品标签或包装照片（PNG、JPEG、WebP；最大 8 MB）",
+    "description": "Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)"
+  },
+  "m_113ko8q": {
+    "message": "在设备上读取标签",
+    "description": "READ LABEL ON DEVICE"
+  },
+  "m_b2uwd9": {
+    "message": "你的商品参考列表",
+    "description": "Your product reference lists"
+  },
+  "m_1cmzxjl": {
+    "message": "添加你选择的来源提供的小型 JSON 列表。匹配标识符仅显示调查线索，不自动指控或改变分数。文件保留在本机。请求订阅源时，只向发布者发送该 URL；不发送浏览历史。",
+    "description": "Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent."
+  },
+  "m_1m23tj5": {
+    "message": "预览本地 JSON 列表（最多 800 KB／500 条记录）",
+    "description": "Preview a local JSON list (up to 800 KB / 500 records)"
+  },
+  "m_17k3x2m": {
+    "message": "公开的 HTTPS 订阅源 URL",
+    "description": "Public HTTPS feed URL"
+  },
+  "m_ntfvum": {
+    "message": "https://publisher.example.com/products.json",
+    "description": "https://publisher.example.com/products.json"
+  },
+  "m_q10f2r": {
+    "message": "获取预览",
+    "description": "FETCH PREVIEW"
+  },
+  "m_1fko2hr": {
+    "message": "取消获取",
+    "description": "CANCEL FETCH"
+  },
+  "m_1pufoy0": {
+    "message": "将此订阅源保存为订阅",
+    "description": "Save this feed as a subscription"
+  },
+  "m_37tact": {
+    "message": "每周在后台检查已签名且受信任的订阅",
+    "description": "Check signed, trusted subscriptions weekly in the background"
+  },
+  "m_1a08h1b": {
+    "message": "默认关闭。只有已固定发布者密钥且已授予网站访问权限的签名订阅源才会自动更新。不会自动请求未知发布者。",
+    "description": "Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers."
+  },
+  "m_1ol6f7o": {
+    "message": "保存的订阅源会显示何时需要每周刷新。未签名的订阅源需要手动审核；签名订阅仅在你启用后更新。过期列表不再参与匹配。",
+    "description": "Saved feeds show when a weekly refresh is due. Unsigned feeds require manual review; signed subscriptions update only after you opt in. Expired lists stop matching."
+  },
+  "m_hs6fa3": {
+    "message": "添加已审核列表",
+    "description": "ADD REVIEWED LIST"
+  },
+  "m_1n519qu": {
+    "message": "删除用户列表和发布者密钥",
+    "description": "DELETE USER LISTS & PUBLISHER KEYS"
+  },
+  "m_1ni7fa2": {
+    "message": "信任发布者签名密钥",
+    "description": "Trust a publisher signing key"
+  },
+  "m_cc9a31": {
+    "message": "只固定你从可信发布者独立获取的密钥。替换密钥是你的手动信任决定。签名仅确认该密钥签署了这些数据，不确认商品事实。未签名列表仍是未经核实的线索。",
+    "description": "Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads."
+  },
+  "m_y1yl": {
+    "message": "发布者密钥 JSON：sourceUrl、keyId、issuer、publicKey（Ed25519 base64url）",
+    "description": "Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)"
+  },
+  "m_1o3yzhm": {
+    "message": "审核密钥",
+    "description": "REVIEW KEY"
+  },
+  "m_1xd1cw9": {
+    "message": "信任已审核密钥",
+    "description": "TRUST REVIEWED KEY"
+  },
+  "m_muq699": {
+    "message": "使用自己的 API 密钥进行可选实时供应商搜索",
+    "description": "Optional live supplier search with your own API key"
+  },
+  "m_1j5njnl": {
+    "message": "DropShredder 无需账号。如果你已有 Brave Search API 密钥，可进行一次手动网络搜索。Brave 目前需要开通套餐和付款信息，超出额度可能收费；请先查看现行条款。密钥仅在本次请求期间保存在此面板的内存中，不保存、记录、导出，也不会发送到 Brave 官方 HTTPS API 之外。搜索结果仅是调查线索，不是对商家的指控。",
+    "description": "No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations."
+  },
+  "m_1gxfmb7": {
+    "message": "Brave Search API 密钥（不保存）",
+    "description": "Brave Search API key (not stored)"
+  },
+  "m_1ou34t": {
+    "message": "你的供应商或商品搜索词",
+    "description": "Your supplier or product search phrase"
+  },
+  "m_1u3uljx": {
+    "message": "品牌型号或带引号的商品标题",
+    "description": "Brand model or quoted product title"
+  },
+  "m_9vh2l2": {
+    "message": "使用我的密钥搜索",
+    "description": "SEARCH USING MY KEY"
+  },
+  "m_n0uwgr": {
+    "message": "取消",
+    "description": "CANCEL"
+  },
+  "m_19iouhv": {
+    "message": "查询法律实体标识符",
+    "description": "Check a legal entity identifier"
+  },
+  "m_zahq7i": {
+    "message": "可选的免费 GLEIF 查询，无需密钥或账号。获得 Chrome 权限后，仅发送你输入的 LEI。实体记录不证明商品质量、安全性或店铺所有权。",
+    "description": "Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store."
+  },
+  "m_17idllr": {
+    "message": "来自实体自身记录的 20 位 LEI",
+    "description": "20-character LEI from the entity’s own records"
+  },
+  "m_y038ob": {
+    "message": "查询此 LEI",
+    "description": "LOOK UP THIS LEI"
+  },
+  "m_1470vqp": {
+    "message": "自定义显示",
+    "description": "Customize your display"
+  },
+  "m_ltytua": {
+    "message": "主题",
+    "description": "Theme"
+  },
+  "m_j8m6w5": {
+    "message": "深色",
+    "description": "Dark"
+  },
+  "m_12iob7z": {
+    "message": "浅色",
+    "description": "Light"
+  },
+  "m_1gxthe9": {
+    "message": "跟随系统",
+    "description": "Follow system"
+  },
+  "m_11l55em": {
+    "message": "间距",
+    "description": "Spacing"
+  },
+  "m_arcia7": {
+    "message": "舒适",
+    "description": "Comfortable"
+  },
+  "m_1f846fa": {
+    "message": "紧凑",
+    "description": "Compact"
+  },
+  "m_c7nuir": {
+    "message": "文字大小",
+    "description": "Text size"
+  },
+  "m_vuco": {
+    "message": "标准",
+    "description": "Standard"
+  },
+  "m_rytaky": {
+    "message": "较大",
+    "description": "Larger"
+  },
+  "m_mb8wcj": {
+    "message": "最大",
+    "description": "Largest"
+  },
+  "m_1jaohwy": {
+    "message": "重置外观",
+    "description": "RESET APPEARANCE"
+  },
+  "m_wtcnfc": {
+    "message": "DropShredder 如何检查商品",
+    "description": "How DropShredder checks products"
+  },
+  "m_11vohzj": {
+    "message": "寻找其他地方的同款商品",
+    "description": "Look for the same product elsewhere"
+  },
+  "m_7zynn1": {
+    "message": "自动检查 DropShredder 是否曾在其他店铺或市场见过匹配商品。",
+    "description": "Automatically check whether DropShredder has seen matching products on other stores or marketplaces."
+  },
+  "m_10t4jnc": {
+    "message": "偏好美国制造",
+    "description": "Prefer Made in USA"
+  },
+  "m_15tsb6": {
+    "message": "当现有货源信息不符合此偏好时予以提示。国家本身不会使商品变得可疑。",
+    "description": "Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious."
+  },
+  "m_16l6r9r": {
+    "message": "语气",
+    "description": "Attitude"
+  },
+  "m_1jiouy": {
+    "message": "选择 DropShredder 的表达强度。证据标准始终不变。",
+    "description": "Choose how hard DropShredder talks. What counts as evidence never changes."
+  },
+  "m_5om5q5": {
+    "message": "语言语气",
+    "description": "Language tone"
+  },
+  "m_1wvex2a": {
+    "message": "专业",
+    "description": "Professional"
+  },
+  "m_13qqf6x": {
+    "message": "强硬",
+    "description": "Aggressive"
+  },
+  "m_196kse9": {
+    "message": "极度强硬",
+    "description": "Nuclear"
+  },
+  "m_8vzqmb": {
+    "message": "查看完整检查详情",
+    "description": "See the full scan details"
+  },
+  "m_mksmeg": {
+    "message": "隐私和保存的检查历史",
+    "description": "Your privacy & saved scan history"
+  },
+  "m_tvlulz": {
+    "message": "检查历史保留在此设备上。DropShredder 仅保留识别重复商品和店铺模式所需的信息，并自动清理旧记录。",
+    "description": "Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history."
+  },
+  "m_o4p5o7": {
+    "message": "导出当前检查",
+    "description": "EXPORT CURRENT SCAN"
+  },
+  "m_vncaug": {
+    "message": "导出有限的证据摘要。不包含查询参数、URL 片段、原始评论、图片、商家原始联系记录或完整页面文字。分享前请检查文件。",
+    "description": "Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it."
+  },
+  "m_152gx2t": {
+    "message": "删除我的检查历史",
+    "description": "DELETE MY SCAN HISTORY"
+  },
+  "m_tpyna0": {
+    "message": "移除额外网站访问权限",
+    "description": "REMOVE EXTRA SITE ACCESS"
+  },
+  "m_1q47tiz": {
+    "message": "DropShredder 搜索",
+    "description": "DropShredder searches"
+  },
+  "m_1lp99za": {
+    "message": "正在准备你选择的调查…",
+    "description": "Preparing your selected research…"
+  },
+  "m_ahoh6q": {
+    "message": "域名查询已取消。",
+    "description": "Domain lookup canceled."
+  },
+  "m_3syb2g": {
+    "message": "页面已改变。请重新检查商品。",
+    "description": "The page changed. Check this product again."
+  },
+  "m_4l5lcp": {
+    "message": "网站访问权限已改变。请重新检查商品。",
+    "description": "Site access changed. Check this product again."
+  },
+  "m_1jeob1z": {
+    "message": "自动提醒需要 Chrome 网站权限。请打开开关以授权。",
+    "description": "Automatic alerts need Chrome site permission. Switch on to allow it."
+  },
+  "m_ks3g9n": {
+    "message": "正在请求 Chrome 允许自动商品提醒…",
+    "description": "Asking Chrome to allow automatic product alerts…"
+  },
+  "m_nzo33j": {
+    "message": "正在关闭自动提醒…",
+    "description": "Turning off automatic alerts…"
+  },
+  "m_1lqqqzl": {
+    "message": "未授予 Chrome 权限。手动检查仍可使用。",
+    "description": "Chrome permission was not granted. Manual checks still work."
+  },
+  "m_447iiq": {
+    "message": "自动提醒已在支持的购物页面启用。其他页面保持安静。",
+    "description": "Automatic alerts are on for supported shopping pages. Other pages stay quiet."
+  },
+  "m_1iijkzr": {
+    "message": "自动提醒已关闭。额外的广泛网站访问权限已移除。",
+    "description": "Automatic alerts are off. Extra broad site access removed."
+  },
+  "m_1hlqcms": {
+    "message": "无法更新自动提醒。",
+    "description": "Could not update automatic alerts."
+  },
+  "m_yy0bq1": {
+    "message": "无法保存货源搜索设置。",
+    "description": "Could not save source-hunt setting."
+  },
+  "m_s43reb": {
+    "message": "无法保存产地偏好。",
+    "description": "Could not save origin preference."
+  },
+  "m_lw7ro1": {
+    "message": "无法保存语气偏好。",
+    "description": "Could not save tone preference."
+  },
+  "m_181mp38": {
+    "message": "正在检查商品信息中值得进一步核查的内容…",
+    "description": "Checking the listing for things worth a second look…"
+  },
+  "m_jrtjds": {
+    "message": "请打开要检查的商品页面，然后重试。",
+    "description": "Open the product page you want to check, then try again."
+  },
+  "m_vcmc3b": {
+    "message": "Chrome 需要此网站的权限。在 Chrome 扩展程序控件中为 DropShredder 点击“允许”，然后再次点击“检查此商品”。",
+    "description": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again."
+  },
+  "m_tfloyf": {
+    "message": "DropShredder 不检查此类页面。",
+    "description": "DropShredder won’t scan this kind of page."
+  },
+  "m_tk6fct": {
+    "message": "这似乎是登录或付款页面，DropShredder 不会检查。",
+    "description": "This looks like a sign-in or payment page, so DropShredder is staying out of it."
+  },
+  "m_cnz7p4": {
+    "message": "页面没有返回检查结果。",
+    "description": "The page did not return a scan result."
+  },
+  "m_izff0z": {
+    "message": "检查期间页面发生改变。请在商品页面加载完成后重新检查。",
+    "description": "The page changed while DropShredder was checking it. Try the scan again on the finished product page."
+  },
+  "m_xl7g11": {
+    "message": "检查期间页面发生改变。请重试。",
+    "description": "The page changed while DropShredder was checking it. Try again."
+  },
+  "m_f3orb7": {
+    "message": "DROPSHREDDER • 暂无结论",
+    "description": "DROPSHREDDER • NO VERDICT"
+  },
+  "m_7nc3gp": {
+    "message": "DROP SHREDDER",
+    "description": "DROP SHREDDER"
+  },
+  "m_a3z3xl": {
+    "message": "关闭 DropShredder 警告",
+    "description": "Dismiss DropShredder warning"
+  },
+  "m_16fc5or": {
+    "message": "批量转售可能性：未知",
+    "description": "Mass-resell likelihood: UNKNOWN"
+  },
+  "m_1v9rhql": {
+    "message": "独立证据门槛已满足。",
+    "description": "Independent evidence gate satisfied."
+  },
+  "m_1i9447f": {
+    "message": "证据门槛未满足；这不是严重指控。",
+    "description": "Evidence gate not satisfied; this is not a severe accusation."
+  },
+  "m_sl3mdl": {
+    "message": "商品页面已改变。请再次点击“检查此商品”。",
+    "description": "The product page changed. Click CHECK THIS PRODUCT to try again."
+  },
+  "m_16dib4x": {
+    "message": "正在检查此商品图片是否出现在其他地方…",
+    "description": "Checking whether this product image shows up elsewhere…"
+  },
+  "m_1vmh6tj": {
+    "message": "图片搜索已打开。查看还有谁在使用此图片。",
+    "description": "Image search opened. See who else is using this picture."
+  },
+  "m_16a6z13": {
+    "message": "正在查询网站注册时间…",
+    "description": "Checking how long this website has been around…"
+  },
+  "m_mzbzeb": {
+    "message": "暂时无法确认网站注册时间。",
+    "description": "Couldn’t confirm this website’s age right now."
+  },
+  "m_fl321w": {
+    "message": "已获取域名注册信息。这不代表企业的成立时间。",
+    "description": "Domain registration information retrieved. It does not establish the business’s age."
+  },
+  "m_vek09w": {
+    "message": "买家评论搜索已打开。信任店铺之前，请比较投诉内容。",
+    "description": "Buyer-review searches opened. Compare the complaints before you trust the store."
+  },
+  "m_3tggsf": {
+    "message": "正在检查退货政策中的高额费用和繁琐条件…",
+    "description": "Reading the return policy for expensive catches and hoops…"
+  },
+  "m_1i9vxbn": {
+    "message": "未能找到明确的退货或退款政策。",
+    "description": "Couldn’t find a clear return or refund policy on this store."
+  },
+  "m_159127j": {
+    "message": "退货政策不够清晰，无法判断。",
+    "description": "The return policy couldn’t be read clearly enough to judge."
+  },
+  "m_1prohyv": {
+    "message": "未发现明显的退货政策陷阱。",
+    "description": "No obvious return-policy traps stood out."
+  },
+  "m_19txq4b": {
+    "message": "正在检查订单实际从哪里发货…",
+    "description": "Checking where the order actually appears to ship from…"
+  },
+  "m_jlgbqw": {
+    "message": "此页面的物流信息不足，无法判断。",
+    "description": "Couldn’t find enough shipping information on this page to tell."
+  },
+  "m_vgippz": {
+    "message": "页面没有明确说明发货地。",
+    "description": "The page doesn’t clearly say where the order ships from."
+  },
+  "m_s5usub": {
+    "message": "发货地与卖家声明不符。请查看证据。",
+    "description": "Where the order ships from doesn’t match the seller’s claim. Check the receipts."
+  },
+  "m_q7pqev": {
+    "message": "发货地未与卖家声明冲突。",
+    "description": "The shipping origin doesn’t contradict what the seller says."
+  },
+  "m_see8qp": {
+    "message": "保存的 DropShredder 检查历史已删除。",
+    "description": "Your saved DropShredder scan history is deleted."
+  },
+  "m_hds76z": {
+    "message": "Chrome 保留了一个网站权限；请检查扩展程序的网站访问设置。",
+    "description": "Chrome kept a site permission; check extension site access."
+  },
+  "m_1sjsuxw": {
+    "message": "额外网站访问权限已移除。",
+    "description": "Extra site access removed."
+  },
+  "m_fcvv8f": {
+    "message": "DropShredder 没有需要移除的额外网站权限。",
+    "description": "DropShredder didn’t have any extra site access to remove."
+  },
+  "m_1vjmm3n": {
+    "message": "打开 DropShredder 完整商品分析",
+    "description": "Open DropShredder full product analysis"
+  },
+  "m_1vrhsbs": {
+    "message": "DROPSHREDDER • 快速检查",
+    "description": "DROPSHREDDER • QUICK CHECK"
+  },
+  "m_1e6wthl": {
+    "message": "有多项内容需要核查",
+    "description": "Several things to check"
+  },
+  "m_1fyj2th": {
+    "message": "有值得核查的内容",
+    "description": "Something worth checking"
+  },
+  "m_4ommz5": {
+    "message": "证据暂时不足",
+    "description": "Not enough evidence yet"
+  },
+  "m_ih25l1": {
+    "message": "快速检查未发现计分信号。卖家可信度仍未知。",
+    "description": "This quick check found no scored signals. Seller trust is still unknown."
+  },
+  "m_10duoh3": {
+    "message": "标价：",
+    "description": "Listed price: "
+  },
+  "m_13089c7": {
+    "message": "所列卖家：",
+    "description": "Seller listed as: "
+  },
+  "m_1nilydh": {
+    "message": "卖家可信度：未经核实",
+    "description": "Seller trust: NOT VERIFIED"
+  },
+  "m_44zzng": {
+    "message": "打开完整检查 →",
+    "description": "Open full check →"
+  },
+  "m_h4xaam": {
+    "message": "正在打开完整检查…",
+    "description": "Opening full check…"
+  },
+  "m_z571pb": {
+    "message": "无法打开面板。请使用 DropShredder 工具栏图标。",
+    "description": "Could not open panel. Use the DropShredder toolbar icon."
+  },
+  "m_9cz0wm": {
+    "message": "关闭 DropShredder 快速检查",
+    "description": "Dismiss DropShredder quick check"
+  },
+  "m_xmwzf0": {
+    "message": "商品信息",
+    "description": "Product listing"
+  },
+  "m_84sfyf": {
+    "message": "调查此商品",
+    "description": "Hunt this product"
+  },
+  "m_1gesjvp": {
+    "message": "调查此图片",
+    "description": "Hunt this image"
+  },
+  "m_1kcxou1": {
+    "message": "调查此店铺",
+    "description": "Hunt this store"
+  },
+  "m_61pi2o": {
+    "message": "本地列表更新失败。",
+    "description": "Local list update failed."
+  },
+  "m_1vu1nys": {
+    "message": "此搜索选择已过期。请开始新的调查。",
+    "description": "This search selection expired. Start another hunt."
+  },
+  "m_17fd97q": {
+    "message": "已过期 — 无法启用",
+    "description": "EXPIRED — cannot activate"
+  },
+  "m_11c22st": {
+    "message": "未签名 — 事实和发布者身份未核实",
+    "description": "UNSIGNED — facts and publisher identity unverified"
+  },
+  "m_1njq2ce": {
+    "message": "预览仅显示前 20 条记录。添加前请审核完整 JSON。",
+    "description": "Preview shows the first 20 records. Review the full JSON before adding this list."
+  },
+  "m_1tncca7": {
+    "message": "预览已准备好。添加列表仅保存在本机，不改变警告门槛。",
+    "description": "Preview ready. Adding a list keeps it local and does not change warning thresholds."
+  },
+  "m_ir787x": {
+    "message": "每周签名订阅源检查已启用。仅限已授权、已签名且密钥已固定的订阅；不会请求新权限。",
+    "description": "Weekly signed-feed checks enabled. Only previously authorized, signed, pinned-key subscriptions are eligible; no new permission prompts."
+  },
+  "m_1cik44t": {
+    "message": "自动订阅源检查已关闭；保存的列表不变。",
+    "description": "Automatic feed checks disabled; saved lists are unchanged."
+  },
+  "m_1sn6fve": {
+    "message": "已过期；匹配已关闭",
+    "description": "expired; matching disabled"
+  },
+  "m_h4yktt": {
+    "message": "仅供参考线索",
+    "description": "reference leads only"
+  },
+  "m_1aydb8f": {
+    "message": " • 需要每周刷新",
+    "description": " • weekly refresh due"
+  },
+  "m_1dlxs0u": {
+    "message": "恢复上一版本",
+    "description": "Restore previous version"
+  },
+  "m_1k8ubhb": {
+    "message": "选择要刷新的订阅源",
+    "description": "Select feed for refresh"
+  },
+  "m_1162pm7": {
+    "message": "订阅源已选择。点击“获取预览”请求新副本；尚未发送请求。",
+    "description": "Feed selected. Click Fetch preview to request a new copy; no request has been sent."
+  },
+  "m_1487ipv": {
+    "message": "没有用户添加的列表。",
+    "description": "No user-added lists."
+  },
+  "m_j6jpxv": {
+    "message": "请选择小于 800 KB 的 JSON 文件。",
+    "description": "Choose a JSON file smaller than 800 KB."
+  },
+  "m_1a89qs1": {
+    "message": "保存订阅前，请先获取订阅源预览。",
+    "description": "Fetch a feed preview before saving a subscription."
+  },
+  "m_1ckw75p": {
+    "message": "正在请求访问你选择的订阅源…",
+    "description": "Requesting access to the feed you chose…"
+  },
+  "m_9ndhxa": {
+    "message": "未授予访问权限或权限已移除。没有列表被启用。",
+    "description": "Access was not granted or was removed. No list activated."
+  },
+  "m_b30axq": {
+    "message": "订阅源获取已取消。",
+    "description": "Feed fetch canceled."
+  },
+  "m_ylvcom": {
+    "message": "列表已添加到本机。自动更新需要另行启用和独立固定的签名密钥；未签名的订阅源仍需手动处理。",
+    "description": "List added locally. Automatic updates require separate opt-in and an independently pinned signing key; unsigned feeds stay manual."
+  },
+  "m_b3ooko": {
+    "message": "用户列表、旧版本、订阅和发布者密钥已移除。",
+    "description": "User lists, previous versions, subscriptions and publisher keys removed."
+  },
+  "m_vsozru": {
+    "message": "发布者密钥已固定。请重新预览签名订阅源，用此密钥验证。",
+    "description": "Publisher key pinned. Re-preview signed feeds to verify with this key."
+  },
+  "m_a4ybee": {
+    "message": "正在向 GLEIF 查询你选择的确切 LEI…",
+    "description": "Requesting the exact LEI you chose from GLEIF…"
+  },
+  "m_2p96yy": {
+    "message": "未授予访问权限或权限已移除。",
+    "description": "Access was not granted or was removed."
+  },
+  "m_15bn3ws": {
+    "message": "未提供",
+    "description": "not supplied"
+  },
+  "m_1d9vgj8": {
+    "message": "原始 GLEIF 记录",
+    "description": "Original GLEIF record"
+  },
+  "m_egy7au": {
+    "message": "仅是法律身份记录。它不将实体关联到此卖家、制造商或商品，也不证明安全或质量。GLEIF 数据：CC0；DropShredder 与其无关联。",
+    "description": "Legal identity record only. This does not link the entity to this seller, manufacturer or product, and does not establish safety or quality. GLEIF data: CC0; DropShredder is unaffiliated."
+  },
+  "m_kiztdr": {
+    "message": "实体查询已取消。",
+    "description": "Entity lookup canceled."
+  },
+  "m_z2nhdi": {
+    "message": "在你选择“在设备上读取标签”前，不会处理文件。",
+    "description": "No file processed until you select READ LABEL ON DEVICE."
+  },
+  "m_1tr5y1i": {
+    "message": "请先选择商品标签图片。",
+    "description": "Choose a product-label image first."
+  },
+  "m_1cxwm2h": {
+    "message": "正在本机读取图片。不会向服务器发送图片。",
+    "description": "Reading image locally. No image is sent to a server."
+  },
+  "m_17auqbe": {
+    "message": "此 Chrome 版本不可用",
+    "description": "unavailable in this Chrome build"
+  },
+  "m_ybs0hj": {
+    "message": "未找到可读字符。请尝试更清晰的标签图片或手动搜索。",
+    "description": "No readable characters were found. Try a sharper label image or search manually."
+  },
+  "m_qak25s": {
+    "message": "识别文字（未经核实）：",
+    "description": "Recognized text (unverified): "
+  },
+  "m_1bhulbi": {
+    "message": "校验和有效的条码值（未经独立核实）：",
+    "description": "Checksum-valid barcode values (not independently verified): "
+  },
+  "m_se06x7": {
+    "message": "用此文字搜索来源",
+    "description": "Search sources for this text"
+  },
+  "m_1i1yy2f": {
+    "message": "本地分析已完成。OCR／GTIN 识别可能有误，绝不改变卖家分数。",
+    "description": "Local analysis complete. OCR/GTIN recognition may contain errors and never changes seller scores."
+  },
+  "m_19muah": {
+    "message": "本地读取器不可用。",
+    "description": "Local reader unavailable."
+  },
+  "m_120gkpi": {
+    "message": "🔎 使用 DropShredder 检查",
+    "description": "🔎 Check with DropShredder"
+  },
+  "m_1wcavm4": {
+    "message": "打开此商品信息以供 DropShredder 检查",
+    "description": "Open this product listing for a DropShredder check"
+  },
+  "m_m2xy6t": {
+    "message": "此商品信息未经核实。请打开商品进行基于证据的检查。",
+    "description": "This listing has not been verified. Open the product for an evidence-based check."
+  },
+  "m_ajjry2": {
+    "message": "搜索已取消。API 密钥没有保存。",
+    "description": "Search canceled. The API key is not saved."
+  },
+  "m_wj0t70": {
+    "message": "正在请求一次明确的 Brave Search 查询。不传输浏览历史。",
+    "description": "Requesting one explicit Brave Search query. No browser history is transmitted."
+  },
+  "m_7o5jb8": {
+    "message": "权限被拒绝或操作取消；未发送请求。",
+    "description": "Permission denied or canceled; no request sent."
+  },
+  "m_8rp9l3": {
+    "message": "没有结果。不能据此作出负面推断。",
+    "description": "No results. No negative inference can be made."
+  },
+  "m_1nt43sp": {
+    "message": "网络搜索不可用。",
+    "description": "Web search unavailable."
+  },
+  "m_194fh44": {
+    "message": "移除网站访问权限时搜索已取消。API 密钥没有保存。",
+    "description": "Search canceled while site access is removed. The API key is not saved."
+  },
+  "m_2yzy77": {
+    "message": "此面板的外观已改变，但无法保存。",
+    "description": "Appearance changed for this panel; saving it was unavailable."
+  },
+  "m_jego5b": {
+    "message": "无法读取已保存的外观。默认显示仍可使用。",
+    "description": "Saved appearance is unavailable. Default display is still usable."
+  },
+  "m_goz0xo": {
+    "message": " — 筛选不改变结论",
+    "description": " — filters do not change the verdict"
+  },
+  "m_10zaq0w": {
+    "message": "结果仅是候选公告；请在官方公告中确认确切型号、序列号和适用范围。",
+    "description": "Results are candidate notices; confirm exact model, serial and unit scope in the official notice."
+  },
+  "m_6x5dun": {
+    "message": "页面已改变。导出前请重新检查商品。",
+    "description": "The page changed. Check this product again before exporting."
+  },
+  "m_1mgubrw": {
+    "message": "当前检查导出已准备好。不包含原始评论、图片、原始联系记录或完整页面文字。",
+    "description": "Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded."
+  },
+  "m_1ihj8nx": {
+    "message": "召回查询已取消。",
+    "description": "Recall lookup canceled."
+  },
+  "m_1iwy4vi": {
+    "message": "正在通过公共 CPSC 召回服务查询你选择的内容…",
+    "description": "Checking the query you chose with the public CPSC recall service…"
+  },
+  "m_1nwf7sq": {
+    "message": "未授予 Chrome 访问权限。未发送召回请求。",
+    "description": "Chrome access was not granted. No recall request was sent."
+  },
+  "m_1k9b6w6": {
+    "message": "未提供日期",
+    "description": "date not supplied"
+  },
+  "m_10yqw7k": {
+    "message": "提到了型号文字；商品适用范围未核实",
+    "description": "model token mentioned; unit scope unverified"
+  },
+  "m_1qm7t4h": {
+    "message": "检索候选；商品身份未核实",
+    "description": "retrieval candidate; product identity unverified"
+  },
+  "m_1xfzhsk": {
+    "message": " — 结果已达到上限",
+    "description": " — results capped"
+  },
+  "m_1tt1pl3": {
+    "message": "此查询没有返回候选公告。服务和查询都可能遗漏公告；这不代表安全认证。",
+    "description": "No candidates returned for this query. The service and query can miss notices; this is not a safety clearance."
+  },
+  "m_1s87f86": {
+    "message": "召回查询不可用。",
+    "description": "Recall lookup unavailable."
+  },
+  "m_tuo7sd": {
+    "message": "移除网站访问权限时召回查询已取消。",
+    "description": "Recall lookup canceled while site access is removed."
+  },
+  "m_qzhfaz": {
+    "message": "已检查的商品信息",
+    "description": "Scanned listing"
+  },
+  "m_74hcuk": {
+    "message": "批量转售证据分数",
+    "description": "Mass-resell evidence score"
+  },
+  "m_j5rupt": {
+    "message": "代发货证据分数",
+    "description": "Dropship evidence score"
+  },
+  "m_1wfjfwj": {
+    "message": "误导性声明",
+    "description": "Misleading claims"
+  },
+  "m_7f3bys": {
+    "message": "店铺警示信号",
+    "description": "Store warning signs"
+  },
+  "m_13cm4b4": {
+    "message": "评论／销售手法",
+    "description": "Review / sales tricks"
+  },
+  "m_t5i9hp": {
+    "message": "物流问题",
+    "description": "Shipping headaches"
+  },
+  "m_1uks3wg": {
+    "message": "推测来源",
+    "description": "Where it appears to come from"
+  },
+  "m_11wa5": {
+    "message": "付款处理方",
+    "description": "Who handles the payment"
+  },
+  "m_1jul7sb": {
+    "message": "分数概括检测到的证据；不是测量得到的概率或商品质量评分。",
+    "description": "Scores summarize detected evidence; they are not measured probabilities or product-quality ratings."
+  },
+  "m_149g8wc": {
+    "message": "注意此项",
+    "description": "WATCH THIS"
+  },
+  "m_1vtd8im": {
+    "message": "小信号",
+    "description": "SMALL FLAG"
+  },
+  "m_b8pujm": {
+    "message": "来源与方法",
+    "description": "Source and method"
+  },
+  "m_a2rmeg": {
+    "message": "此检测器未记录来源 URL 或提取方法。",
+    "description": "This detector did not record a source URL or extraction method."
+  },
+  "m_1au1a8v": {
+    "message": "选择要打开的搜索",
+    "description": "Choose searches to open"
+  },
+  "m_1qnmdp3": {
+    "message": "外部搜索会将查询发送给选定的搜索引擎。每次最多打开 8 个。",
+    "description": "External searches share the query with the selected search engine. Open up to 8 at a time."
+  },
+  "m_4xn7ie": {
+    "message": "打开选定搜索",
+    "description": "Open selected searches"
+  },
+  "m_1fj2xc8": {
+    "message": "请选择 1 至 8 个搜索。",
+    "description": "Choose between 1 and 8 searches."
+  },
+  "m_1a03ner": {
+    "message": "一个搜索未能打开。尚未打开的搜索仍可使用。",
+    "description": "A search could not open. Unopened searches remain available."
+  },
+  "m_1pa9zoy": {
+    "message": "⚠ 强烈的代发货／转售证据",
+    "description": "⚠ STRONG DROPSHIP / RESELL EVIDENCE"
+  },
+  "m_17on8ti": {
+    "message": "独立证据类别已达到严重警告门槛。",
+    "description": "Independent evidence families crossed the severe-warning gate."
+  },
+  "m_qa2g1w": {
+    "message": "⚠ 有值得警惕的情况",
+    "description": "⚠ SOMETHING SMELLS OFF"
+  },
+  "m_1ok95zu": {
+    "message": "发现风险信号，但证据不足以作出严重指控。",
+    "description": "Risk signals detected, but the evidence is not strong enough for a severe accusation."
+  },
+  "m_196lx5e": {
+    "message": "DROPSHREDDER • 发现信号",
+    "description": "DROPSHREDDER • SIGNALS FOUND"
+  },
+  "m_1g6z073": {
+    "message": "仅有弱或中等信号。请将其视为调查提示，而非最终结论。",
+    "description": "Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict."
+  },
+  "m_usd9bd": {
+    "message": "暂无有意义的被动证据。深入调查可核查来源和卖家身份。",
+    "description": "No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity."
+  },
+  "m_1udoc23": {
+    "message": "狠狠干碎这破玩意",
+    "description": "SHRED THIS SHIT"
+  },
+  "m_1ru4mwq": {
+    "message": "铁证他妈的在这里",
+    "description": "THE FUCKING RECEIPTS"
+  },
+  "m_bmi36g": {
+    "message": "还没实锤。给这家店钱之前，继续深挖。",
+    "description": "Nothing solid yet. Keep digging before you give this store your money."
+  },
+  "m_re2gif": {
+    "message": "DROPSHREDDER 抓到线索了",
+    "description": "DROPSHREDDER CAUGHT SOMETHING"
+  },
+  "m_8eqvig": {
+    "message": "此商品存在严重转售／代发货警示信号",
+    "description": "THIS LISTING HAS SERIOUS RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_n8lez9": {
+    "message": "查查这破玩意",
+    "description": "CHECK THIS SHIT"
+  },
+  "m_jku2d7": {
+    "message": "还没实锤。相信推销说辞之前，继续调查。",
+    "description": "Nothing solid yet. Dig deeper before you trust the sales pitch."
+  },
+  "m_1etuljh": {
+    "message": "DROPSHREDDER 发现警示信号",
+    "description": "DROPSHREDDER FOUND RED FLAGS"
+  },
+  "m_pdtbad": {
+    "message": "强烈的转售／代发货警示信号",
+    "description": "STRONG RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_8b27l4": {
+    "message": "值得注意的发现",
+    "description": "WHAT STOOD OUT"
+  },
+  "m_e3qmz": {
+    "message": "暂时没有确凿证据。在决定是否信任商品信息之前，你可以进一步调查。",
+    "description": "Nothing solid yet. You can dig deeper before deciding whether the listing deserves your trust."
+  },
+  "m_er0hmn": {
+    "message": "DROPSHREDDER 发现值得核查的内容",
+    "description": "DROPSHREDDER FOUND SOMETHING WORTH CHECKING"
+  },
+  "m_1uq9kwn": {
+    "message": "强烈的转售／代发货警示信号",
+    "description": "STRONG RESELL / DROPSHIP WARNING SIGNS"
+  },
+  "m_1aku595": {
+    "message": "本地优先的商品取证与来源分析。",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "m_1qj5k8r": {
+    "message": "打开 DropShredder",
+    "description": "Open DropShredder"
+  },
+  "m_12wv6je": {
+    "message": "界面语言跟随 Chrome。技术证据注释和原始导出保留原文。打包的 OCR 读取英文文字。",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Packaged OCR reads English text."
+  },
+  "m_qhjvpw": {
+    "message": "检测说明（原文）",
+    "description": "Detector notes (original language)"
+  },
+  "m_10j58ar": {
+    "message": "DropShredder $arg1$ • 隐私优先 • 无需账号",
+    "description": "DropShredder $1 • Private by design • No account needed",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1sscdoz": {
+    "message": "$arg1$ 的检查已完成。",
+    "description": "Scan complete for $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_zz0wd1": {
+    "message": "购买前需审核的退货政策发现：$arg1$。",
+    "description": "Return-policy findings to review before buying: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1tgjts7": {
+    "message": "检测到承运商 $arg1$，但未找到明确发货地。没有计入矛盾分数。",
+    "description": "Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1ptgjet": {
+    "message": "获取政策失败：HTTP $arg1$",
+    "description": "Policy fetch failed: HTTP $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1umunh4": {
+    "message": "标价：$arg1$",
+    "description": "Listed price: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_673z20": {
+    "message": "所列卖家：$arg1$",
+    "description": "Seller listed as: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1f7bzd7": {
+    "message": "$arg1$ • $arg2$ • 记录于 $arg3$",
+    "description": "$1 • $2 • captured $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_1o1yof0": {
+    "message": "显示评分：$arg1$；标记可见评论后：$arg2$。",
+    "description": "Rating shown: $1; after flagged visible reviews: $2.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1kg4e3m": {
+    "message": "常见低星投诉：$arg1$。",
+    "description": "Common low-star complaints: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1vd7g02": {
+    "message": "评论检查：$arg1$/$arg2$ 条可见评论未触发检测。$arg3$$arg4$",
+    "description": "Review check: $1/$2 visible reviews did not trigger our checks.$3$4",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_m1msr6": {
+    "message": "$arg1$ • 观察于 $arg2$",
+    "description": "$1 • observed $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1upynrn": {
+    "message": "打开来源：$arg1$",
+    "description": "Open source: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_2047wl": {
+    "message": "显示 $arg1$ 项中的前 300 项。其余项目见完整检查详情。",
+    "description": "Showing the first 300 of $1 items. Full scan details contain the remaining items.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1b73ffu": {
+    "message": "显示 $arg2$ 项中的 $arg1$ 项$arg3$。",
+    "description": "$1 of $2 displayed items shown$3.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_ajkrjj": {
+    "message": "公告 $arg1$ • $arg2$ • $arg3$",
+    "description": "Notice $1 • $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_8vwz1y": {
+    "message": "候选公告：$arg1$；获取于 $arg2$$arg3$。部分文字搜索可能包含无关品牌。请核对每条官方公告；结果不会改变分数。",
+    "description": "Candidate notices: $1; retrieved $2$3. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_d89ct1": {
+    "message": "已打开 $arg1$ 个搜索。剩余 $arg2$ 个。",
+    "description": "Opened $1 searches. $2 remaining.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_11nhyfc": {
+    "message": "来源候选：$arg1$。归因前请核对原始来源；结论未改变。",
+    "description": "Source candidates: $1. Check originals before attribution; no verdict changed.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1oyfgbf": {
+    "message": "读取条码：$arg1$；文字行数：$arg2$。条码支持：$arg3$。OCR 支持：$arg4$。",
+    "description": "Barcodes read: $1; text lines: $2. Barcode support: $3. OCR support: $4.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_qlsa5y": {
+    "message": "条码：$arg1$",
+    "description": "Barcode: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_19l0liv": {
+    "message": "识别文字（未经核实）：$arg1$",
+    "description": "Recognized text (unverified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1r8u2jh": {
+    "message": "校验和有效的条码值（未经独立核实）：$arg1$",
+    "description": "Checksum-valid barcode values (not independently verified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_8dviar": {
+    "message": "已用你固定的密钥 $arg1$ 检查签名；事实仍未经核实",
+    "description": "Signature checked against your pinned key $1; facts remain unverified",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1pvmmcm": {
+    "message": "$arg1$ • 版本 $arg2$ • $arg3$ 条记录 • 发布 $arg4$ • 到期 $arg5$ • 许可 $arg6$ • $arg7$",
+    "description": "$1 • version $2 • $3 records • published $4 • expires $5 • license $6 • $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1y9jypi": {
+    "message": "$arg1$ • v$arg2$ • $arg3$ 条记录 • $arg4$$arg5$",
+    "description": "$1 • v$2 • $3 records • $4$5",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      }
+    }
+  },
+  "m_nvlwxh": {
+    "message": "$arg1$ / $arg2$ • $arg3$ • base64url 密钥的 SHA-256：$arg4$。通过独立的发布者渠道核实密钥。固定或替换由你决定；这不验证任何指控。",
+    "description": "$1 / $2 • $3 • SHA-256 of base64url key: $4. Verify this key through an independent publisher channel. Pinning or replacing it is your trust decision; it does not validate allegations.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_k3870i": {
+    "message": "$arg1$ • LEI $arg2$ • $arg3$ • 实体 $arg4$ • 注册 $arg5$ • 更新 $arg6$ • 获取 $arg7$",
+    "description": "$1 • LEI $2 • $3 • entity $4 • registration $5 • updated $6 • retrieved $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1dbdstp": {
+    "message": "批量转售证据分数：$arg1$/100 • 信号：$arg2$ • $arg3$",
+    "description": "Mass-resell evidence score: $1/100 • Signals: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_tbzvyx": {
+    "message": "未知",
+    "description": "UNKNOWN"
+  },
+  "m_1mbceap": {
+    "message": "低",
+    "description": "LOW"
+  },
+  "m_1dfjx12": {
+    "message": "中",
+    "description": "MEDIUM"
+  },
+  "m_y6hdz1": {
+    "message": "高",
+    "description": "HIGH"
+  },
+  "m_pr8pgc": {
+    "message": "直接证据",
+    "description": "DIRECT"
+  },
+  "m_rkyqd6": {
+    "message": "强证据",
+    "description": "STRONG"
+  },
+  "m_aphutn": {
+    "message": "参考信息",
+    "description": "FYI"
+  },
+  "m_skramw": {
+    "message": "可用",
+    "description": "available"
+  },
+  "m_13ml53d": {
+    "message": "不可用",
+    "description": "unavailable"
+  },
+  "m_tkexoc": {
+    "message": "已取消。",
+    "description": "Canceled."
+  },
+  "m_9c35st": {
+    "message": "移除",
+    "description": "Remove"
+  },
+  "m_1l0xxoj": {
+    "message": "关闭",
+    "description": "Close"
+  },
+  "m_srveqq": {
+    "message": "没有可用的活动网页。",
+    "description": "No active web page is available."
+  },
+  "m_1687ptr": {
+    "message": "不支持当前页面 URL。",
+    "description": "The active page URL is not supported."
+  },
+  "m_a60if4": {
+    "message": "DropShredder 仅检查普通 HTTP／HTTPS 商业网页。",
+    "description": "DropShredder only scans ordinary HTTP/HTTPS commerce pages."
+  },
+  "m_1usa14u": {
+    "message": "DropShredder 不检查账号、邮件、结账或付款服务。",
+    "description": "DropShredder does not scan account, email, checkout or payment services."
+  },
+  "m_akhvd4": {
+    "message": "DropShredder 不检查账号、认证、付款、账单、地址或订单历史页面。",
+    "description": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages."
+  },
+  "m_mrljgd": {
+    "message": "操作未能完成。详情（原文）：$arg1$",
+    "description": "Action could not complete. Details (original language): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_5mv5og": {
+    "message": "中等",
+    "description": "MODERATE"
+  },
+  "m_lzjy3u": {
+    "message": "独立的来源／履约证据满足严重警告门槛。",
+    "description": "Independent provenance/fulfillment evidence satisfies the severe-warning gate."
+  },
+  "m_1kfh8e3": {
+    "message": "商品证据尚未足够独立或有力，不能作出严重自动指控。",
+    "description": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+  },
+  "m_1t1mzwk": {
+    "message": "存在风险信号，但没有信号证明商品来源或代发货。",
+    "description": "Risk signals exist, but none establish product provenance or dropshipping."
+  },
+  "m_12v6pfe": {
+    "message": "暂无可用于指控计分的证据。",
+    "description": "No accusation-weighted evidence is available yet."
+  },
+  "extension_description": {
+    "message": "本地优先的商品取证与来源分析。",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "open_extension": {
+    "message": "打开 DropShredder",
+    "description": "Open DropShredder"
+  },
+  "locale_code": {
+    "message": "zh-CN",
+    "description": "Resolved packaged UI locale, including fallback; do not translate."
+  }
+}

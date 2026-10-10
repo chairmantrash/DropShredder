@@ -1,3 +1,4 @@
+import { tr, uiDirection } from '../src/i18n/index';
 import {detectShoppingPage} from '../src/detection/page-facts';
 import {extractPageScan} from '../src/extraction/page-scan';
 import {runPassiveRules} from '../src/analysis/passive-rules';
@@ -21,7 +22,7 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPri
     .card{position:relative;width:min(340px,calc(100vw - 36px));border-radius:13px;
       background:#101217;color:#f5f5f8;border:1px solid #49505f;box-shadow:0 10px 35px #0006;
       font:13px/1.4 system-ui,-apple-system,sans-serif;box-sizing:border-box;overflow:hidden}
-    .body{width:100%;text-align:left;background:transparent;color:inherit;border:0;padding:13px 39px 14px 15px;
+    .body{width:100%;text-align:start;background:transparent;color:inherit;border:0;padding:13px 39px 14px 15px;
       display:block;cursor:pointer;font:inherit;box-sizing:border-box}
     .body:hover,.body:focus-visible{background:#202531;outline:2px solid #90b9ff;outline-offset:-3px}
     .brand{font-size:10px;letter-spacing:.12em;font-weight:850;color:#ffb06f}
@@ -34,40 +35,41 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPri
       border:0;font-size:22px;line-height:26px;width:28px;height:28px;border-radius:5px}
     .close:hover,.close:focus-visible{background:#333a4b;color:white}
   `;
-  const card=document.createElement('div');card.className='card';
+  const card=document.createElement('div');card.className='card';card.dir=uiDirection();
   const body=document.createElement('button');body.className='body';body.type='button';
-  body.setAttribute('aria-label','Open DropShredder full product analysis');
-  const brand=document.createElement('div');brand.className='brand';brand.textContent='DROPSHREDDER • QUICK CHECK';
+  body.setAttribute('aria-label',tr('Open DropShredder full product analysis'));
+  const brand=document.createElement('div');brand.className='brand';brand.textContent=tr('DROPSHREDDER • QUICK CHECK');
   const heading=document.createElement('div');heading.className='heading';
-  heading.textContent=findings.length>=2?'Several things to check':findings.length===1?'Something worth checking':'Not enough evidence yet';
-  const product=document.createElement('div');product.className='product';product.textContent=title.slice(0,170);
+  heading.textContent=findings.length>=2?tr('Several things to check'):findings.length===1?tr('Something worth checking'):tr('Not enough evidence yet');
+  const product=document.createElement('div');product.className='product';product.textContent=title.slice(0,170);product.dir='auto';
   const facts=document.createElement('ul');facts.className='facts';
   if(findings.length){
+    const note=document.createElement('li');note.textContent=tr('Detector notes (original language)');facts.append(note);
     for(const item of findings.slice(0,2)){
-      const li=document.createElement('li');li.textContent='• '+item.title.slice(0,150);
+      const li=document.createElement('li');li.textContent='• '+item.title.slice(0,150);li.dir='auto';
       facts.append(li);
     }
   }else{
     const li=document.createElement('li');
-    li.textContent='This quick check found no scored signals. Seller trust is still unknown.';
+    li.textContent=tr('This quick check found no scored signals. Seller trust is still unknown.');
     facts.append(li);
   }
   if(listedPrice){
-    const li=document.createElement('li');li.textContent='Listed price: '+listedPrice.slice(0,50);
+    const li=document.createElement('li');li.textContent=tr('Listed price: $1',listedPrice.slice(0,50));
     facts.append(li);
   }
   if(seller){
-    const li=document.createElement('li');li.textContent='Seller listed as: '+seller.slice(0,80);
+    const li=document.createElement('li');li.textContent=tr('Seller listed as: $1',seller.slice(0,80));
     facts.append(li);
   }
   const trust=document.createElement('div');trust.className='cta';
-  trust.textContent='Seller trust: NOT VERIFIED';
-  const cta=document.createElement('div');cta.className='cta';cta.textContent='Open full check →';
+  trust.textContent=tr('Seller trust: NOT VERIFIED');
+  const cta=document.createElement('div');cta.className='cta';cta.textContent=tr('Open full check →');
   body.append(brand,heading,product,facts,trust,cta);
   body.addEventListener('click',()=>{
     if(location.href!==pageUrl) return;
     body.disabled=true;
-    cta.textContent='Opening full check…';
+    cta.textContent=tr('Opening full check…');
     // Chrome sidePanel.open is invoked by the background from this user gesture.
     void chrome.runtime.sendMessage({type:'DS_AUTO_OPEN',version:1})
       .then((reply:unknown)=>{
@@ -75,16 +77,16 @@ function makeToast(title:string,findings:QuickFinding[],pageUrl:string,listedPri
           host.remove();
         }else{
           body.disabled=false;
-          cta.textContent='Could not open panel. Use the DropShredder toolbar icon.';
+          cta.textContent=tr('Could not open panel. Use the DropShredder toolbar icon.');
         }
       })
       .catch(()=>{
         body.disabled=false;
-        cta.textContent='Could not open panel. Use the DropShredder toolbar icon.';
+        cta.textContent=tr('Could not open panel. Use the DropShredder toolbar icon.');
       });
   });
   const close=document.createElement('button');close.className='close';close.type='button';
-  close.setAttribute('aria-label','Dismiss DropShredder quick check');close.textContent='×';
+  close.setAttribute('aria-label',tr('Dismiss DropShredder quick check'));close.textContent='×';
   close.addEventListener('click',()=>host.remove());
   card.append(body,close);shadow.append(style,card);
   return host;
@@ -140,7 +142,7 @@ export default defineContentScript({
       const price=scan.product.price!==undefined && Number.isFinite(scan.product.price)
         ? [scan.product.currency||'',String(scan.product.price)].filter(Boolean).join(' ')
         : undefined;
-      toast=makeToast(scan.product.title||classification.reasons[0]||'Product listing',findings,url,price,scan.product.seller);
+      toast=makeToast(scan.product.title||classification.reasons[0]||tr('Product listing'),findings,url,price,scan.product.seller);
       document.documentElement.append(toast);
       const shown=toast;
       window.setTimeout(()=>{if(toast===shown) remove();},12000);

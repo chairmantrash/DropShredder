@@ -1,3 +1,4 @@
+import { tr, localizeDocument, errorText, uiDirection } from '../../src/i18n/index';
 import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
 import { calculateVerdict } from '../../src/analysis/evidence-engine';
@@ -44,6 +45,7 @@ import { loadUserLists } from '../../src/intelligence/user-lists';
 import { approximateImportedProductLeads, importedEntityRoleGraph, importedProductLeads } from '../../src/analysis/product-leads';
 import { setReportGuard } from '../../src/ui/report-guard';
 
+localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
 const status=document.querySelector<HTMLElement>('#status');
 const summary=document.querySelector<HTMLElement>('#summary');
@@ -73,10 +75,10 @@ let scanEpoch=0;
 let domainRequest:AbortController|undefined;
 const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
 function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
-cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent='Domain lookup canceled.';});
+cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
 
 // The side panel outlives tabs and documents. Never reuse a report after navigation.
-function invalidatePageReport(message='The page changed. Check this product again.'):void {
+function invalidatePageReport(message=tr('The page changed. Check this product again.')):void {
   stopDomainLookup();
   document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
@@ -102,7 +104,7 @@ chrome.tabs.onUpdated.addListener((tabId,change)=>{
   }
 });
 chrome.permissions.onRemoved.addListener(permission=>{
-  if(permission.origins?.length && (scanningTabId!==undefined || reportPage)) invalidatePageReport('Site access changed. Check this product again.');
+  if(permission.origins?.length && (scanningTabId!==undefined || reportPage)) invalidatePageReport(tr('Site access changed. Check this product again.'));
 });
 
 async function verifiedReportPage(report:DropShredderReport):Promise<AuthorizedChromePage>{
@@ -122,7 +124,7 @@ function applyTone(mode:ToneMode):void{
   if(scanButton) scanButton.textContent=copy.scan;
   if(evidenceHeading) evidenceHeading.textContent=copy.evidenceHeading;
 }
-if(buildMeta) buildMeta.textContent=`DropShredder ${chrome.runtime.getManifest().version} • Private by design • No account needed`;
+if(buildMeta) buildMeta.textContent=tr('DropShredder $1 • Private by design • No account needed',chrome.runtime.getManifest().version);
 void loadFeatureSettings().then(settings=>{
   if(autoSourceHunt) autoSourceHunt.checked=settings.autoSourceHunt;
   if(autoProtection){
@@ -131,7 +133,7 @@ void loadFeatureSettings().then(settings=>{
       void chrome.permissions.contains({origins:[AUTO_PATTERN]}).then(granted=>{
         if(!granted && autoProtection){
           autoProtection.checked=false;
-          if(autoProtectionStatus) autoProtectionStatus.textContent='Automatic alerts need Chrome site permission. Switch on to allow it.';
+          if(autoProtectionStatus) autoProtectionStatus.textContent=tr('Automatic alerts need Chrome site permission. Switch on to allow it.');
         }
       });
     }
@@ -146,14 +148,14 @@ autoProtection?.addEventListener('change',()=>{
   const wanted=autoProtection.checked;
   autoProtection.disabled=true;
   if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
-    ? 'Asking Chrome to allow automatic product alerts…'
-    : 'Turning off automatic alerts…';
+    ? tr('Asking Chrome to allow automatic product alerts…')
+    : tr('Turning off automatic alerts…');
   // Permission request MUST be invoked directly in the click/change gesture.
   const grant=wanted?chrome.permissions.request({origins:[AUTO_PATTERN]}):Promise.resolve(false);
   void grant.then(async allowed=>{
     if(wanted && !allowed){
       if(autoProtection) autoProtection.checked=false;
-      if(autoProtectionStatus) autoProtectionStatus.textContent='Chrome permission was not granted. Manual checks still work.';
+      if(autoProtectionStatus) autoProtectionStatus.textContent=tr('Chrome permission was not granted. Manual checks still work.');
       return;
     }
     // Turn the saved gate off before unregistering so already-injected tabs
@@ -174,28 +176,28 @@ autoProtection?.addEventListener('change',()=>{
     }
     if(!wanted) await chrome.permissions.remove({origins:[AUTO_PATTERN]});
     if(autoProtectionStatus) autoProtectionStatus.textContent=wanted
-      ? 'Automatic alerts are on for supported shopping pages. Other pages stay quiet.'
-      : 'Automatic alerts are off. Extra broad site access removed.';
+      ? tr('Automatic alerts are on for supported shopping pages. Other pages stay quiet.')
+      : tr('Automatic alerts are off. Extra broad site access removed.');
   }).catch(error=>{
-    if(autoProtectionStatus) autoProtectionStatus.textContent=error instanceof Error?error.message:'Could not update automatic alerts.';
+    if(autoProtectionStatus) autoProtectionStatus.textContent=error instanceof Error?errorText(error):tr('Could not update automatic alerts.');
     if(autoProtection) autoProtection.checked=!wanted;
   }).finally(()=>{if(autoProtection) autoProtection.disabled=false;});
 });
 
 autoSourceHunt?.addEventListener('change',()=>{
   const wanted=autoSourceHunt.checked;
-  void updateFeatureSettings({autoSourceHunt:wanted}).catch(()=>{autoSourceHunt.checked=!wanted;if(status) status.textContent='Could not save source-hunt setting.';});
+  void updateFeatureSettings({autoSourceHunt:wanted}).catch(()=>{autoSourceHunt.checked=!wanted;if(status) status.textContent=tr('Could not save source-hunt setting.');});
 });
 
 preferMadeInUSA?.addEventListener('change',()=>{
   const wanted=preferMadeInUSA.checked;
-  void updateFeatureSettings({preferMadeInUSA:wanted}).catch(()=>{preferMadeInUSA.checked=!wanted;if(status) status.textContent='Could not save origin preference.';});
+  void updateFeatureSettings({preferMadeInUSA:wanted}).catch(()=>{preferMadeInUSA.checked=!wanted;if(status) status.textContent=tr('Could not save origin preference.');});
 });
 
 toneMode?.addEventListener('change',()=>{
   const next=(toneMode.value==='aggressive'||toneMode.value==='nuclear')?toneMode.value:'professional';
   applyTone(next);
-  void updateFeatureSettings({toneMode:next}).catch(()=>{if(status) status.textContent='Could not save tone preference.';});
+  void updateFeatureSettings({toneMode:next}).catch(()=>{if(status) status.textContent=tr('Could not save tone preference.');});
   if(lastReport) renderReport(lastReport);
 });
 
@@ -216,7 +218,7 @@ async function scanActivePage(): Promise<void> {
   if(summary) summary.replaceChildren();
   if(evidenceList) evidenceList.replaceChildren();
   if(raw) raw.replaceChildren();
-  status.textContent='Checking the listing for things worth a second look…';
+  status.textContent=tr('Checking the listing for things worth a second look…');
 
   try {
     const tab=await activeWebTab();
@@ -495,8 +497,8 @@ async function scanActivePage(): Promise<void> {
 
     await chrome.scripting.executeScript({
       target:documentTarget(page),
-      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,toneCopy(currentTone),page.url],
-      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string},expectedUrl:string)=>{
+      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,{...toneCopy(currentTone),noVerdict:tr('DROPSHREDDER • NO VERDICT'),dismiss:tr('Dismiss DropShredder warning'),direction:uiDirection(),detail:tr('Mass-resell evidence score: $1/100 • Signals: $2 • $3',report.verdict.massResellLikelihood??tr('UNKNOWN'),report.evidence.length,report.verdict.severeWarningAllowed?tr('Independent evidence gate satisfied.'):tr('Evidence gate not satisfied; this is not a severe accusation.'))},page.url],
+      func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string;noVerdict:string;dismiss:string;direction:string;detail:string},expectedUrl:string)=>{
         if(location.href!==expectedUrl) return false;
         document.getElementById('dropshredder-stamp-host')?.remove();
         const host=document.createElement('div');
@@ -505,7 +507,7 @@ async function scanActivePage(): Promise<void> {
         const shadow=host.attachShadow({mode:'open'});
         const headline=severe
           ? `⚠ ${copy.severeWarning}`
-          : count>0 ? `⚠ ${copy.signalsFound}` : 'DROPSHREDDER • NO VERDICT';
+          : count>0 ? `⚠ ${copy.signalsFound}` : copy.noVerdict;
         const style=document.createElement('style');
         style.textContent=`
           .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
@@ -515,7 +517,7 @@ async function scanActivePage(): Promise<void> {
           .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}
         `;
         const box=document.createElement('div');
-        box.className='box';
+        box.className='box';box.dir=copy.direction;
         const brand=document.createElement('div');
         brand.className='brand';
         brand.textContent='DROP SHREDDER';
@@ -524,15 +526,14 @@ async function scanActivePage(): Promise<void> {
         headlineEl.textContent=headline;
         const close=document.createElement('button');
         close.type='button';
-        close.setAttribute('aria-label','Dismiss DropShredder warning');
+        close.setAttribute('aria-label',copy.dismiss);
         close.textContent='×';
         close.style.cssText='all:initial;position:absolute;right:8px;top:5px;color:#b9b9c0;font:700 18px system-ui;cursor:pointer;padding:4px';
         close.addEventListener('click',()=>host.remove());
 
         const detail=document.createElement('div');
         detail.className='detail';
-        const scoreText=score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`;
-        detail.textContent=`${scoreText} • ${count} signal(s) • ${severe?'Independent evidence gate satisfied.':'Evidence gate not satisfied; this is not a severe accusation.'}`;
+        detail.textContent=copy.detail;
         box.style.position='relative';
         box.append(close,brand,headlineEl,detail);
         shadow.append(style,box);
@@ -542,14 +543,14 @@ async function scanActivePage(): Promise<void> {
     });
     if(epoch!==scanEpoch || !(await isCurrentChromePage(page))) throw new Error('The page changed while DropShredder was checking it. Try again.');
     scanningTabId=undefined;
-    status.textContent=`Scan complete for ${result.product.domain}.`;
+    status.textContent=tr('Scan complete for $1.',result.product.domain);
   } catch (error) {
     if(epoch===scanEpoch){
       lastReport=undefined;
       reportPage=undefined;
       scanningTabId=undefined;
       if(huntActions) huntActions.hidden=true;
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }
   } finally {
     if(epoch===scanEpoch) scanButton.disabled=false;
@@ -580,7 +581,7 @@ async function consumeAutoPanelIntent():Promise<boolean>{
     if(probe?.documentId!==value.documentId) return true;
     await scanActivePage();
   }catch{
-    if(status) status.textContent='The product page changed. Click CHECK THIS PRODUCT to try again.';
+    if(status) status.textContent=tr('The product page changed. Click CHECK THIS PRODUCT to try again.');
   }
   return true;
   }finally{
@@ -617,7 +618,7 @@ huntSources?.addEventListener('click',()=>void (async()=>{
   try{
     await verifiedReportPage(report);
     if(report.product.title) await openSearches(productSearchUrls(report.product.title));
-  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+  }catch(error){if(status) status.textContent=errorText(error);}
 })());
 huntImage?.addEventListener('click',async()=>{
   const report=lastReport;
@@ -628,7 +629,7 @@ huntImage?.addEventListener('click',async()=>{
     return;
   }
 
-  if(status) status.textContent='Checking whether this product image shows up elsewhere…';
+  if(status) status.textContent=tr('Checking whether this product image shows up elsewhere…');
   try {
       const fingerprint=await captureImageFingerprint(image);
       if(fingerprint && report){
@@ -679,7 +680,7 @@ huntImage?.addEventListener('click',async()=>{
   } finally {
     // The user explicitly requested a public reverse-image search, even if local hashing failed.
     if(pageAtClick && reportPage===pageAtClick){
-      if(status) status.textContent='Image search opened. See who else is using this picture.';
+      if(status) status.textContent=tr('Image search opened. See who else is using this picture.');
       await openSearches(imageSearchUrls(image));
     }
   }
@@ -690,7 +691,7 @@ huntStore?.addEventListener('click',()=>void (async()=>{
   try{
     await verifiedReportPage(report);
     await openSearches(merchantSearchUrls(report.product.domain));
-  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+  }catch(error){if(status) status.textContent=errorText(error);}
 })());
 
 
@@ -698,13 +699,13 @@ checkDomain?.addEventListener('click',async()=>{
   const report=lastReport;
   if(!report || !status || domainRequest) return;
   const active=new AbortController();domainRequest=active;checkDomain.disabled=true;if(cancelDomain) cancelDomain.disabled=false;
-  status.textContent='Checking how long this website has been around…';
+  status.textContent=tr('Checking how long this website has been around…');
   try{
       const rdap=await lookupDomainRdap(report.product.domain,active.signal);
       if(domainRequest!==active) return;
       await verifiedReportPage(report);
       if(!rdap){
-        status.textContent='Couldn’t confirm this website’s age right now.';
+        status.textContent=tr('Couldn’t confirm this website’s age right now.');
         return;
       }
 
@@ -748,9 +749,9 @@ checkDomain?.addEventListener('click',async()=>{
       lastReport=next;
       renderReport(next);
       try{ await saveObservation(next); }catch{}
-      status.textContent='Domain registration information retrieved. It does not establish the business’s age.';
+      status.textContent=tr('Domain registration information retrieved. It does not establish the business’s age.');
   }catch(error){
-    if(domainRequest===active) status.textContent=active.signal.aborted?'Domain lookup canceled.':error instanceof Error ? error.message : String(error);
+    if(domainRequest===active) status.textContent=active.signal.aborted?tr('Domain lookup canceled.'):errorText(error);
   }finally{
     if(domainRequest===active) stopDomainLookup();
   }
@@ -767,8 +768,8 @@ reputationSweep?.addEventListener('click',()=>void (async()=>{
       domain:report.merchant.domain,
     };
     await openSearches(reputationSearchUrls(target));
-    if(status) status.textContent='Buyer-review searches opened. Compare the complaints before you trust the store.';
-  }catch(error){if(status) status.textContent=error instanceof Error?error.message:String(error);}
+    if(status) status.textContent=tr('Buyer-review searches opened. Compare the complaints before you trust the store.');
+  }catch(error){if(status) status.textContent=errorText(error);}
 })());
 
 
@@ -776,7 +777,7 @@ policyCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Reading the return policy for expensive catches and hoops…';
+    status.textContent=tr('Reading the return policy for expensive catches and hoops…');
     try{
       const page=await verifiedReportPage(report);
 
@@ -799,7 +800,7 @@ policyCheck?.addEventListener('click',()=>{
 
       const policyUrl=result?.result as string|undefined;
       if(!policyUrl){
-        status.textContent='Couldn’t find a clear return or refund policy on this store.';
+        status.textContent=tr('Couldn’t find a clear return or refund policy on this store.');
         return;
       }
 
@@ -808,7 +809,7 @@ policyCheck?.addEventListener('click',()=>{
         args:[policyUrl],
         func:async(url:string)=>{
           const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
-          if(!response.ok) throw new Error(`Policy fetch failed: HTTP ${response.status}`);
+          if(!response.ok) throw new Error(tr('Policy fetch failed: HTTP $1',response.status));
           const length=Number(response.headers.get('content-length')||0);
           if(length>2_000_000 || new URL(response.url).origin!==location.origin || !response.body) return undefined;
           const reader=response.body.getReader();
@@ -836,7 +837,7 @@ policyCheck?.addEventListener('click',()=>{
       await verifiedReportPage(report);
 
       if(!findings.length){
-        status.textContent='No obvious return-policy traps stood out.';
+        status.textContent=tr('No obvious return-policy traps stood out.');
         return;
       }
 
@@ -848,9 +849,9 @@ policyCheck?.addEventListener('click',()=>{
       lastReport=next;
       renderReport(next);
       try{await saveObservation(next);}catch{}
-      status.textContent=`Found ${findings.length} return-policy catch${findings.length===1?'':'es'} worth reading before you buy.`;
+      status.textContent=tr('Return-policy findings to review before buying: $1.',findings.length);
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }
   })();
 });
@@ -860,7 +861,7 @@ fulfillmentCheck?.addEventListener('click',()=>{
   const report=lastReport;
   if(!report || !status) return;
   void (async()=>{
-    status.textContent='Checking where the order actually appears to ship from…';
+    status.textContent=tr('Checking where the order actually appears to ship from…');
     try{
       const page=await verifiedReportPage(report);
 
@@ -893,8 +894,8 @@ fulfillmentCheck?.addEventListener('click',()=>{
       const observation=parseFulfillmentObservation(fulfillmentPage.text);
       if(!observation.origin){
         status.textContent=observation.carrier
-          ? `Carrier ${observation.carrier} detected, but no explicit shipment origin was found. No contradiction scored.`
-          : 'The page doesn’t clearly say where the order ships from.';
+          ? tr('Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.',observation.carrier)
+          : tr('The page doesn’t clearly say where the order ships from.');
         return;
       }
 
@@ -939,10 +940,10 @@ fulfillmentCheck?.addEventListener('click',()=>{
       renderReport(next);
       try{await saveObservation(next);}catch{}
       status.textContent=contradictions.length
-        ? 'Where the order ships from doesn’t match the seller’s claim. Check the receipts.'
-        : 'The shipping origin doesn’t contradict what the seller says.';
+        ? tr('Where the order ships from doesn’t match the seller’s claim. Check the receipts.')
+        : tr('The shipping origin doesn’t contradict what the seller says.');
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }
   })();
 });
@@ -954,9 +955,9 @@ clearHistory?.addEventListener('click',()=>{
     clearHistory.disabled=true;
     try{
       await clearObservationHistory();
-      status.textContent='Your saved DropShredder scan history is deleted.';
+      status.textContent=tr('Your saved DropShredder scan history is deleted.');
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }finally{
       clearHistory.disabled=false;
     }
@@ -981,10 +982,10 @@ revokeOptionalAccess?.addEventListener('click',()=>{
       if(remaining.some(origin=>origin.startsWith('https://')))
         throw new Error('Chrome kept a site permission; check extension site access.');
       status.textContent=origins.length
-        ? 'Extra site access removed.'
-        : 'DropShredder didn’t have any extra site access to remove.';
+        ? tr('Extra site access removed.')
+        : tr('DropShredder didn’t have any extra site access to remove.');
     }catch(error){
-      status.textContent=error instanceof Error?error.message:String(error);
+      status.textContent=errorText(error);
     }finally{
       revokeOptionalAccess.disabled=false;
     }

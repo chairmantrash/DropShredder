@@ -1,0 +1,1678 @@
+{
+  "m_1lc7ekh": {
+    "message": "DropShredder",
+    "description": "DropShredder"
+  },
+  "m_2925tt": {
+    "message": "DROPSHREDDER",
+    "description": "DROPSHREDDER"
+  },
+  "m_ji2c74": {
+    "message": "اعرف ما تشتريه فعلاً.",
+    "description": "Know what you’re really buying."
+  },
+  "m_59j625": {
+    "message": "يبقى على جهازك",
+    "description": "STAYS ON YOUR DEVICE"
+  },
+  "m_1hmprdl": {
+    "message": "اكتشف المنتجات المعاد تسميتها وادعاءات المتاجر المريبة والمصادر المخفية ومشكلات الإرجاع قبل أن تكلفك المال.",
+    "description": "Catch relabeled products, sketchy store claims, hidden sourcing and return headaches before they cost you."
+  },
+  "m_zs3td9": {
+    "message": "تحقق قبل الشراء",
+    "description": "CHECK BEFORE YOU BUY"
+  },
+  "m_lncga2": {
+    "message": "افحص هذا المنتج",
+    "description": "CHECK THIS PRODUCT"
+  },
+  "m_41wtn1": {
+    "message": "تقتصر الفحوص اليدوية الكاملة على الصفحة التي تختارها. تعمل تنبيهات المنتجات التلقائية فقط عند تفعيلها. لا نفحص صفحات الحساب أو إتمام الشراء أو الدفع.",
+    "description": "Manual full checks stay on your chosen page. Automatic product alerts run only if you enable them. No checks on account, checkout or payment pages."
+  },
+  "m_z4x6cq": {
+    "message": "تنبيهات المنتجات التلقائية",
+    "description": "Automatic product alerts"
+  },
+  "m_z8ewuy": {
+    "message": "شاهد نتيجة مختصرة على صفحات المنتجات القابلة للشراء. يلزم إذن Chrome لمواقع HTTPS مرة واحدة. لا تنبيهات أثناء التصفح غير المتعلق بالتسوق أو في نتائج البحث أو إتمام الشراء.",
+    "description": "See a short verdict on actual shopping listings. Requires one-time Chrome permission for HTTPS sites. No alerts on unrelated browsing, search results or checkout."
+  },
+  "m_pkbcu1": {
+    "message": "جاهز عندما تكون مستعداً.",
+    "description": "Ready when you are."
+  },
+  "m_70y5yt": {
+    "message": "ما وجدناه",
+    "description": "WHAT WE FOUND"
+  },
+  "m_1mhc312": {
+    "message": "هل يمكنك الوثوق بهذا العرض؟",
+    "description": "Should you trust this listing?"
+  },
+  "m_1uudnl7": {
+    "message": "افحص المنتج لمعرفة ما وراء العرض.",
+    "description": "Scan the product to see what’s behind the listing."
+  },
+  "m_1j7m3j4": {
+    "message": "ابحث أكثر",
+    "description": "DIG DEEPER"
+  },
+  "m_1gbpn41": {
+    "message": "تحقق من الادعاءات",
+    "description": "Check the story"
+  },
+  "m_1yfbac9": {
+    "message": "اختياري",
+    "description": "Optional"
+  },
+  "m_19gtzfo": {
+    "message": "ابحث عن بائعين آخرين",
+    "description": "FIND OTHER SELLERS"
+  },
+  "m_bdga72": {
+    "message": "ابحث عن هذه الصورة",
+    "description": "SEARCH THIS IMAGE"
+  },
+  "m_bqvucs": {
+    "message": "افحص هذا المتجر",
+    "description": "CHECK THIS STORE"
+  },
+  "m_1amk2vc": {
+    "message": "ما عمر هذا الموقع؟",
+    "description": "HOW OLD IS THIS SITE?"
+  },
+  "m_rzfddd": {
+    "message": "ألغِ البحث عن النطاق",
+    "description": "CANCEL DOMAIN LOOKUP"
+  },
+  "m_1ca3m79": {
+    "message": "ماذا يقول المشترون؟",
+    "description": "WHAT ARE BUYERS SAYING?"
+  },
+  "m_6gyim3": {
+    "message": "راجع الشروط الدقيقة",
+    "description": "CHECK THE FINE PRINT"
+  },
+  "m_60fw70": {
+    "message": "من أين يُشحن فعلاً؟",
+    "description": "WHERE DOES IT REALLY SHIP FROM?"
+  },
+  "m_3hli5t": {
+    "message": "الأدلة",
+    "description": "THE RECEIPTS"
+  },
+  "m_1wt8chw": {
+    "message": "الأدلة",
+    "description": "Evidence"
+  },
+  "m_1raf0ku": {
+    "message": "ابحث في الأدلة",
+    "description": "Find in evidence"
+  },
+  "m_9k7mr1": {
+    "message": "ابحث عن مصدر أو ادعاء أو ملاحظة",
+    "description": "Search source, claim or observation"
+  },
+  "m_p4sts9": {
+    "message": "عرض الأدلة",
+    "description": "Show evidence"
+  },
+  "m_o7e91d": {
+    "message": "كل الأدلة",
+    "description": "All evidence"
+  },
+  "m_8fo0va": {
+    "message": "إشارات التحذير",
+    "description": "Warning signals"
+  },
+  "m_1pop2xv": {
+    "message": "معلومات سياقية",
+    "description": "Informational context"
+  },
+  "m_1lmvk2d": {
+    "message": "لا فحص بعد.",
+    "description": "No scan yet."
+  },
+  "m_rou9gm": {
+    "message": "لا شيء لعرضه بعد. افحص المنتج وسنعرض ما يستحق الانتباه.",
+    "description": "Nothing to show yet. Scan the product and we’ll show you what stood out."
+  },
+  "m_szn3su": {
+    "message": "ابحث في إشعارات الاستدعاء الرسمية",
+    "description": "Search official recall notices"
+  },
+  "m_18lpqhi": {
+    "message": "بحث عام اختياري لدى CPSC. بعد إذن Chrome، تُرسل عبارتك المختارة فقط إلى SaferProducts.gov. لا مفتاح ولا حساب. النتائج المرشحة لا تثبت استدعاء وحدتك؛ وغياب النتائج لا يثبت السلامة.",
+    "description": "Optional public CPSC lookup. Sends only the query you choose to SaferProducts.gov after Chrome permission. No key or account. Candidates do not establish that your unit is recalled; an empty result does not establish safety."
+  },
+  "m_10ziq51": {
+    "message": "حقل البحث",
+    "description": "Search field"
+  },
+  "m_1rvf3gr": {
+    "message": "عنوان الإشعار / العلامة",
+    "description": "Notice title / brand"
+  },
+  "m_6vzi67": {
+    "message": "اسم المنتج",
+    "description": "Product name"
+  },
+  "m_a61vw": {
+    "message": "UPC / GTIN",
+    "description": "UPC / GTIN"
+  },
+  "m_zdcsua": {
+    "message": "العبارة التي ستُشارك مع CPSC",
+    "description": "Query to share with CPSC"
+  },
+  "m_uad37n": {
+    "message": "ابحث في إشعارات CPSC",
+    "description": "SEARCH CPSC NOTICES"
+  },
+  "m_1pk9ld3": {
+    "message": "ألغِ البحث",
+    "description": "CANCEL LOOKUP"
+  },
+  "m_1kk4z4r": {
+    "message": "اقرأ ملصق المنتج محلياً (الباركود وOCR)",
+    "description": "Read a product label locally (barcode and OCR)"
+  },
+  "m_1hevz1e": {
+    "message": "اختر صورة من جهازك. تُقرأ الرموز والنصوص محلياً عندما يوفر Chrome كاشفاً محلياً؛ لا تُرفع أو تُحفظ أو تُرسل إلى مزود. إذا لم يتوفر التعرف الأصلي، يُحمّل محرك Tesseract المحلي المضمّن فقط عند طلب الفحص. لا CDN ولا رفع صور ولا حسابات إلزامية.",
+    "description": "Choose an image file from your device. Product codes and text are read on-device where Chrome provides a local detector; nothing is uploaded, saved or sent to a provider. If Chrome does not provide native recognition, a packaged on-device Tesseract engine is loaded only after you request a scan. No CDNs, image uploads or mandatory accounts."
+  },
+  "m_uo805c": {
+    "message": "صورة الملصق أو العبوة (PNG، JPEG، WebP؛ حتى 8 MB)",
+    "description": "Product label or packaging photo (PNG, JPEG, WebP; maximum 8 MB)"
+  },
+  "m_113ko8q": {
+    "message": "اقرأ الملصق على الجهاز",
+    "description": "READ LABEL ON DEVICE"
+  },
+  "m_b2uwd9": {
+    "message": "قوائم مراجع المنتجات الخاصة بك",
+    "description": "Your product reference lists"
+  },
+  "m_1cmzxjl": {
+    "message": "أضف قوائم JSON صغيرة من مصادر تختارها. تطابق المعرّفات يقدم خيوط بحث فقط، بلا اتهامات تلقائية أو تغيير درجات. تبقى الملفات هنا. يشارك طلب الخلاصة عنوانها فقط مع ناشرها؛ ولا يُرسل سجل التصفح.",
+    "description": "Add small JSON lists from sources you choose. Matching identifiers show investigation leads, with no automatic accusations or score changes. Files stay here. A feed request shares only its URL with that publisher; no browsing history is sent."
+  },
+  "m_1m23tj5": {
+    "message": "عاين قائمة JSON محلية (حتى 800 KB / 500 سجل)",
+    "description": "Preview a local JSON list (up to 800 KB / 500 records)"
+  },
+  "m_17k3x2m": {
+    "message": "عنوان خلاصة HTTPS عام",
+    "description": "Public HTTPS feed URL"
+  },
+  "m_ntfvum": {
+    "message": "https://publisher.example.com/products.json",
+    "description": "https://publisher.example.com/products.json"
+  },
+  "m_q10f2r": {
+    "message": "اجلب المعاينة",
+    "description": "FETCH PREVIEW"
+  },
+  "m_1fko2hr": {
+    "message": "ألغِ الجلب",
+    "description": "CANCEL FETCH"
+  },
+  "m_1pufoy0": {
+    "message": "احفظ هذه الخلاصة كاشتراك",
+    "description": "Save this feed as a subscription"
+  },
+  "m_37tact": {
+    "message": "افحص الاشتراكات الموقّعة والموثوقة أسبوعياً في الخلفية",
+    "description": "Check signed, trusted subscriptions weekly in the background"
+  },
+  "m_1a08h1b": {
+    "message": "معطل افتراضياً. تتحدث تلقائياً فقط الخلاصات الموقّعة بمفتاح ناشر مثبت مسبقاً مع إذن موقع ممنوح بالفعل. لا طلبات تلقائية إلى ناشرين مجهولين.",
+    "description": "Off by default. Only signed feeds with a previously pinned publisher key and already-granted host access auto-update. No automatic requests to unknown publishers."
+  },
+  "m_1ol6f7o": {
+    "message": "تُظهر الخلاصات المحفوظة موعد التحديث الأسبوعي. تحتاج غير الموقّعة إلى مراجعة يدوية؛ وتتحدث الموقّعة فقط بعد موافقتك. تتوقف مطابقة القوائم المنتهية.",
+    "description": "Saved feeds show when a weekly refresh is due. Unsigned feeds require manual review; signed subscriptions update only after you opt in. Expired lists stop matching."
+  },
+  "m_hs6fa3": {
+    "message": "أضف القائمة المراجَعة",
+    "description": "ADD REVIEWED LIST"
+  },
+  "m_1n519qu": {
+    "message": "احذف قوائم المستخدم ومفاتيح الناشرين",
+    "description": "DELETE USER LISTS & PUBLISHER KEYS"
+  },
+  "m_1ni7fa2": {
+    "message": "ثق بمفتاح توقيع ناشر",
+    "description": "Trust a publisher signing key"
+  },
+  "m_cc9a31": {
+    "message": "ثبّت فقط مفاتيح حصلت عليها بشكل مستقل من ناشر تثق به. استبدال المفتاح قرار ثقة يدوي. يؤكد التوقيع أن المفتاح وقّع هذه البيانات، لا صحة معلومات المنتج. تبقى القوائم غير الموقّعة خيوطاً غير متحققة.",
+    "description": "Only pin keys obtained independently from a publisher you trust. Replacing a key is a manual trust decision. A signature confirms that key signed these bytes; it does not confirm product facts. Unsigned lists remain unverified leads."
+  },
+  "m_y1yl": {
+    "message": "JSON لمفتاح الناشر: sourceUrl، keyId، issuer، publicKey (Ed25519 base64url)",
+    "description": "Publisher key JSON: sourceUrl, keyId, issuer, publicKey (Ed25519 base64url)"
+  },
+  "m_1o3yzhm": {
+    "message": "راجع المفتاح",
+    "description": "REVIEW KEY"
+  },
+  "m_1xd1cw9": {
+    "message": "ثق بالمفتاح المراجَع",
+    "description": "TRUST REVIEWED KEY"
+  },
+  "m_muq699": {
+    "message": "بحث اختياري مباشر عن الموردين بمفتاح API الخاص بك",
+    "description": "Optional live supplier search with your own API key"
+  },
+  "m_1j5njnl": {
+    "message": "لا يحتاج DropShredder إلى حساب. إذا كان لديك مفتاح Brave Search API يمكنك إجراء بحث يدوي واحد. يتطلب Brave حالياً تفعيل خطة وبيانات دفع وقد يفرض رسوماً بعد الرصيد المتاح؛ راجع شروطه. يبقى المفتاح في ذاكرة اللوحة لهذا الطلب فقط؛ ولا يُحفظ أو يُسجل أو يُصدّر أو يُرسل إلا إلى واجهة Brave الرسمية عبر HTTPS. النتائج خيوط بحث وليست اتهامات للتاجر.",
+    "description": "No account is required for DropShredder. If you already have a Brave Search API key, you can run one manual web search. Brave currently requires plan activation/payment details and may charge beyond included credits: check its current terms before using it. Your key is only held in this panel's memory for this request, never saved, logged, exported or sent anywhere except Brave's official HTTPS API. Search results are investigation leads, not merchant accusations."
+  },
+  "m_1gxfmb7": {
+    "message": "مفتاح Brave Search API (لا يُحفظ)",
+    "description": "Brave Search API key (not stored)"
+  },
+  "m_1ou34t": {
+    "message": "عبارة البحث عن المورد أو المنتج",
+    "description": "Your supplier or product search phrase"
+  },
+  "m_1u3uljx": {
+    "message": "العلامة والطراز أو عنوان المنتج المقتبس",
+    "description": "Brand model or quoted product title"
+  },
+  "m_9vh2l2": {
+    "message": "ابحث بمفتاحي",
+    "description": "SEARCH USING MY KEY"
+  },
+  "m_n0uwgr": {
+    "message": "إلغاء",
+    "description": "CANCEL"
+  },
+  "m_19iouhv": {
+    "message": "تحقق من معرّف كيان قانوني",
+    "description": "Check a legal entity identifier"
+  },
+  "m_zahq7i": {
+    "message": "بحث GLEIF مجاني اختياري، بلا مفتاح أو حساب. يرسل LEI الذي تدخله فقط بعد إذن Chrome. سجل الكيان لا يثبت جودة المنتج أو سلامته أو ملكية المتجر.",
+    "description": "Optional free GLEIF lookup, with no key or account. Sends only the LEI you enter after Chrome permission. An entity record does not prove product quality, safety or ownership of a store."
+  },
+  "m_17idllr": {
+    "message": "LEI من 20 محرفاً من سجلات الكيان",
+    "description": "20-character LEI from the entity’s own records"
+  },
+  "m_y038ob": {
+    "message": "ابحث عن هذا LEI",
+    "description": "LOOK UP THIS LEI"
+  },
+  "m_1470vqp": {
+    "message": "خصّص العرض",
+    "description": "Customize your display"
+  },
+  "m_ltytua": {
+    "message": "المظهر",
+    "description": "Theme"
+  },
+  "m_j8m6w5": {
+    "message": "داكن",
+    "description": "Dark"
+  },
+  "m_12iob7z": {
+    "message": "فاتح",
+    "description": "Light"
+  },
+  "m_1gxthe9": {
+    "message": "اتبع النظام",
+    "description": "Follow system"
+  },
+  "m_11l55em": {
+    "message": "التباعد",
+    "description": "Spacing"
+  },
+  "m_arcia7": {
+    "message": "مريح",
+    "description": "Comfortable"
+  },
+  "m_1f846fa": {
+    "message": "مضغوط",
+    "description": "Compact"
+  },
+  "m_c7nuir": {
+    "message": "حجم النص",
+    "description": "Text size"
+  },
+  "m_vuco": {
+    "message": "عادي",
+    "description": "Standard"
+  },
+  "m_rytaky": {
+    "message": "أكبر",
+    "description": "Larger"
+  },
+  "m_mb8wcj": {
+    "message": "الأكبر",
+    "description": "Largest"
+  },
+  "m_1jaohwy": {
+    "message": "أعد ضبط المظهر",
+    "description": "RESET APPEARANCE"
+  },
+  "m_wtcnfc": {
+    "message": "كيف يفحص DropShredder المنتجات",
+    "description": "How DropShredder checks products"
+  },
+  "m_11vohzj": {
+    "message": "ابحث عن المنتج نفسه في مكان آخر",
+    "description": "Look for the same product elsewhere"
+  },
+  "m_7zynn1": {
+    "message": "تحقق تلقائياً مما إذا كان DropShredder قد رصد منتجات مطابقة في متاجر أو أسواق أخرى.",
+    "description": "Automatically check whether DropShredder has seen matching products on other stores or marketplaces."
+  },
+  "m_10t4jnc": {
+    "message": "تفضيل المنتجات المصنوعة في الولايات المتحدة",
+    "description": "Prefer Made in USA"
+  },
+  "m_15tsb6": {
+    "message": "بيّن عندما لا توافق معلومات المصدر المتاحة هذا التفضيل. البلد وحده لا يجعل المنتج مشبوهاً.",
+    "description": "Point out when the available sourcing information doesn’t match this preference. Country alone never makes a product suspicious."
+  },
+  "m_16l6r9r": {
+    "message": "النبرة",
+    "description": "Attitude"
+  },
+  "m_1jiouy": {
+    "message": "اختر حدة كلام DropShredder. معايير الأدلة لا تتغير.",
+    "description": "Choose how hard DropShredder talks. What counts as evidence never changes."
+  },
+  "m_5om5q5": {
+    "message": "نبرة اللغة",
+    "description": "Language tone"
+  },
+  "m_1wvex2a": {
+    "message": "مهني",
+    "description": "Professional"
+  },
+  "m_13qqf6x": {
+    "message": "حاد",
+    "description": "Aggressive"
+  },
+  "m_196kse9": {
+    "message": "شديد الحدة",
+    "description": "Nuclear"
+  },
+  "m_8vzqmb": {
+    "message": "عرض تفاصيل الفحص الكاملة",
+    "description": "See the full scan details"
+  },
+  "m_mksmeg": {
+    "message": "خصوصيتك وسجل الفحوص المحفوظ",
+    "description": "Your privacy & saved scan history"
+  },
+  "m_tvlulz": {
+    "message": "يبقى سجل الفحوص على هذا الجهاز. يحتفظ DropShredder بما يلزم فقط لرصد المنتجات المتكررة وأنماط المتاجر، ويحذف السجل القديم تلقائياً.",
+    "description": "Your scan history stays on this device. DropShredder keeps only what it needs to spot repeat products and store patterns, then automatically trims old history."
+  },
+  "m_o4p5o7": {
+    "message": "صدّر الفحص الحالي",
+    "description": "EXPORT CURRENT SCAN"
+  },
+  "m_vncaug": {
+    "message": "يصدّر ملخص أدلة محدوداً. يستبعد معاملات البحث وأجزاء الروابط والمراجعات الأصلية والصور وسجلات اتصال التاجر الأصلية ونص الصفحة الكامل. راجع الملف قبل مشاركته.",
+    "description": "Exports a bounded evidence summary. Queries, fragments, raw reviews, images, raw merchant contact records and full page text are excluded. Review the file before sharing it."
+  },
+  "m_152gx2t": {
+    "message": "احذف سجل فحوصي",
+    "description": "DELETE MY SCAN HISTORY"
+  },
+  "m_tpyna0": {
+    "message": "أزل أذونات المواقع الإضافية",
+    "description": "REMOVE EXTRA SITE ACCESS"
+  },
+  "m_1q47tiz": {
+    "message": "عمليات بحث DropShredder",
+    "description": "DropShredder searches"
+  },
+  "m_1lp99za": {
+    "message": "جارٍ تجهيز البحث الذي اخترته…",
+    "description": "Preparing your selected research…"
+  },
+  "m_ahoh6q": {
+    "message": "أُلغي البحث عن النطاق.",
+    "description": "Domain lookup canceled."
+  },
+  "m_3syb2g": {
+    "message": "تغيرت الصفحة. افحص المنتج مجدداً.",
+    "description": "The page changed. Check this product again."
+  },
+  "m_4l5lcp": {
+    "message": "تغير إذن الموقع. افحص المنتج مجدداً.",
+    "description": "Site access changed. Check this product again."
+  },
+  "m_1jeob1z": {
+    "message": "تحتاج التنبيهات إلى إذن موقع من Chrome. فعّلها لمنحه.",
+    "description": "Automatic alerts need Chrome site permission. Switch on to allow it."
+  },
+  "m_ks3g9n": {
+    "message": "جارٍ طلب إذن Chrome لتنبيهات المنتجات التلقائية…",
+    "description": "Asking Chrome to allow automatic product alerts…"
+  },
+  "m_nzo33j": {
+    "message": "جارٍ إيقاف التنبيهات التلقائية…",
+    "description": "Turning off automatic alerts…"
+  },
+  "m_1lqqqzl": {
+    "message": "لم يُمنح إذن Chrome. تظل الفحوص اليدوية متاحة.",
+    "description": "Chrome permission was not granted. Manual checks still work."
+  },
+  "m_447iiq": {
+    "message": "التنبيهات مفعلة على صفحات التسوق المدعومة. تبقى الصفحات الأخرى بلا تنبيهات.",
+    "description": "Automatic alerts are on for supported shopping pages. Other pages stay quiet."
+  },
+  "m_1iijkzr": {
+    "message": "التنبيهات متوقفة. أُزيل إذن المواقع الواسع الإضافي.",
+    "description": "Automatic alerts are off. Extra broad site access removed."
+  },
+  "m_1hlqcms": {
+    "message": "تعذر تحديث التنبيهات.",
+    "description": "Could not update automatic alerts."
+  },
+  "m_yy0bq1": {
+    "message": "تعذر حفظ إعداد البحث عن المصادر.",
+    "description": "Could not save source-hunt setting."
+  },
+  "m_s43reb": {
+    "message": "تعذر حفظ تفضيل المنشأ.",
+    "description": "Could not save origin preference."
+  },
+  "m_lw7ro1": {
+    "message": "تعذر حفظ النبرة.",
+    "description": "Could not save tone preference."
+  },
+  "m_181mp38": {
+    "message": "جارٍ فحص العرض بحثاً عما يستحق مراجعة أخرى…",
+    "description": "Checking the listing for things worth a second look…"
+  },
+  "m_jrtjds": {
+    "message": "افتح صفحة المنتج المطلوب ثم حاول مجدداً.",
+    "description": "Open the product page you want to check, then try again."
+  },
+  "m_vcmc3b": {
+    "message": "يحتاج Chrome إلى إذن لهذا الموقع. اختر السماح لـDropShredder في إعدادات الإضافات، ثم اضغط افحص هذا المنتج مجدداً.",
+    "description": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again."
+  },
+  "m_tfloyf": {
+    "message": "لا يفحص DropShredder هذا النوع من الصفحات.",
+    "description": "DropShredder won’t scan this kind of page."
+  },
+  "m_tk6fct": {
+    "message": "تبدو صفحة تسجيل دخول أو دفع، لذا لن يفحصها DropShredder.",
+    "description": "This looks like a sign-in or payment page, so DropShredder is staying out of it."
+  },
+  "m_cnz7p4": {
+    "message": "لم تُرجع الصفحة نتيجة فحص.",
+    "description": "The page did not return a scan result."
+  },
+  "m_izff0z": {
+    "message": "تغيرت الصفحة أثناء الفحص. أعد الفحص بعد اكتمال صفحة المنتج.",
+    "description": "The page changed while DropShredder was checking it. Try the scan again on the finished product page."
+  },
+  "m_xl7g11": {
+    "message": "تغيرت الصفحة أثناء الفحص. حاول مجدداً.",
+    "description": "The page changed while DropShredder was checking it. Try again."
+  },
+  "m_f3orb7": {
+    "message": "DROPSHREDDER • لا حكم بعد",
+    "description": "DROPSHREDDER • NO VERDICT"
+  },
+  "m_7nc3gp": {
+    "message": "DROP SHREDDER",
+    "description": "DROP SHREDDER"
+  },
+  "m_a3z3xl": {
+    "message": "أغلق تحذير DropShredder",
+    "description": "Dismiss DropShredder warning"
+  },
+  "m_16fc5or": {
+    "message": "احتمال إعادة البيع الجماعي: غير معروف",
+    "description": "Mass-resell likelihood: UNKNOWN"
+  },
+  "m_1v9rhql": {
+    "message": "تحقق شرط الأدلة المستقلة.",
+    "description": "Independent evidence gate satisfied."
+  },
+  "m_1i9447f": {
+    "message": "لم يتحقق شرط الأدلة؛ هذا ليس اتهاماً خطيراً.",
+    "description": "Evidence gate not satisfied; this is not a severe accusation."
+  },
+  "m_sl3mdl": {
+    "message": "تغيرت صفحة المنتج. اضغط افحص هذا المنتج مجدداً.",
+    "description": "The product page changed. Click CHECK THIS PRODUCT to try again."
+  },
+  "m_16dib4x": {
+    "message": "جارٍ التحقق من ظهور صورة المنتج في أماكن أخرى…",
+    "description": "Checking whether this product image shows up elsewhere…"
+  },
+  "m_1vmh6tj": {
+    "message": "فُتح البحث عن الصورة. انظر من يستخدمها أيضاً.",
+    "description": "Image search opened. See who else is using this picture."
+  },
+  "m_16a6z13": {
+    "message": "جارٍ التحقق من عمر الموقع…",
+    "description": "Checking how long this website has been around…"
+  },
+  "m_mzbzeb": {
+    "message": "تعذر تأكيد عمر الموقع الآن.",
+    "description": "Couldn’t confirm this website’s age right now."
+  },
+  "m_fl321w": {
+    "message": "جُلبت معلومات تسجيل النطاق. لا تحدد عمر الشركة.",
+    "description": "Domain registration information retrieved. It does not establish the business’s age."
+  },
+  "m_vek09w": {
+    "message": "فُتحت عمليات بحث آراء المشترين. قارن الشكاوى قبل الوثوق بالمتجر.",
+    "description": "Buyer-review searches opened. Compare the complaints before you trust the store."
+  },
+  "m_3tggsf": {
+    "message": "جارٍ مراجعة سياسة الإرجاع بحثاً عن تكاليف وعقبات…",
+    "description": "Reading the return policy for expensive catches and hoops…"
+  },
+  "m_1i9vxbn": {
+    "message": "لم نجد سياسة واضحة للإرجاع أو استرداد المبلغ.",
+    "description": "Couldn’t find a clear return or refund policy on this store."
+  },
+  "m_159127j": {
+    "message": "تعذرت قراءة السياسة بوضوح كافٍ لتقييمها.",
+    "description": "The return policy couldn’t be read clearly enough to judge."
+  },
+  "m_1prohyv": {
+    "message": "لم تظهر عقبات واضحة في سياسة الإرجاع.",
+    "description": "No obvious return-policy traps stood out."
+  },
+  "m_19txq4b": {
+    "message": "جارٍ التحقق من مصدر شحن الطلب الفعلي…",
+    "description": "Checking where the order actually appears to ship from…"
+  },
+  "m_jlgbqw": {
+    "message": "لا توجد معلومات شحن كافية على الصفحة لتحديد ذلك.",
+    "description": "Couldn’t find enough shipping information on this page to tell."
+  },
+  "m_vgippz": {
+    "message": "لا تحدد الصفحة مصدر شحن الطلب بوضوح.",
+    "description": "The page doesn’t clearly say where the order ships from."
+  },
+  "m_s5usub": {
+    "message": "مصدر الشحن لا يطابق ادعاء البائع. راجع الأدلة.",
+    "description": "Where the order ships from doesn’t match the seller’s claim. Check the receipts."
+  },
+  "m_q7pqev": {
+    "message": "مصدر الشحن لا يناقض كلام البائع.",
+    "description": "The shipping origin doesn’t contradict what the seller says."
+  },
+  "m_see8qp": {
+    "message": "حُذف سجل فحوص DropShredder المحفوظ.",
+    "description": "Your saved DropShredder scan history is deleted."
+  },
+  "m_hds76z": {
+    "message": "احتفظ Chrome بإذن موقع؛ راجع وصول الإضافة للمواقع.",
+    "description": "Chrome kept a site permission; check extension site access."
+  },
+  "m_1sjsuxw": {
+    "message": "أُزيلت أذونات المواقع الإضافية.",
+    "description": "Extra site access removed."
+  },
+  "m_fcvv8f": {
+    "message": "لم يكن لدى DropShredder أذونات إضافية لإزالتها.",
+    "description": "DropShredder didn’t have any extra site access to remove."
+  },
+  "m_1vjmm3n": {
+    "message": "افتح تحليل المنتج الكامل في DropShredder",
+    "description": "Open DropShredder full product analysis"
+  },
+  "m_1vrhsbs": {
+    "message": "DROPSHREDDER • فحص سريع",
+    "description": "DROPSHREDDER • QUICK CHECK"
+  },
+  "m_1e6wthl": {
+    "message": "عدة أمور تستحق التحقق",
+    "description": "Several things to check"
+  },
+  "m_1fyj2th": {
+    "message": "أمر يستحق التحقق",
+    "description": "Something worth checking"
+  },
+  "m_4ommz5": {
+    "message": "لا أدلة كافية بعد",
+    "description": "Not enough evidence yet"
+  },
+  "m_ih25l1": {
+    "message": "لم يجد الفحص السريع إشارات تؤثر في الدرجة. موثوقية البائع ما زالت غير معروفة.",
+    "description": "This quick check found no scored signals. Seller trust is still unknown."
+  },
+  "m_10duoh3": {
+    "message": "السعر المعروض: ",
+    "description": "Listed price: "
+  },
+  "m_13089c7": {
+    "message": "البائع المذكور: ",
+    "description": "Seller listed as: "
+  },
+  "m_1nilydh": {
+    "message": "موثوقية البائع: غير متحققة",
+    "description": "Seller trust: NOT VERIFIED"
+  },
+  "m_44zzng": {
+    "message": "افتح الفحص الكامل ←",
+    "description": "Open full check →"
+  },
+  "m_h4xaam": {
+    "message": "جارٍ فتح الفحص الكامل…",
+    "description": "Opening full check…"
+  },
+  "m_z571pb": {
+    "message": "تعذر فتح اللوحة. استخدم أيقونة DropShredder في شريط الأدوات.",
+    "description": "Could not open panel. Use the DropShredder toolbar icon."
+  },
+  "m_9cz0wm": {
+    "message": "أغلق فحص DropShredder السريع",
+    "description": "Dismiss DropShredder quick check"
+  },
+  "m_xmwzf0": {
+    "message": "عرض المنتج",
+    "description": "Product listing"
+  },
+  "m_84sfyf": {
+    "message": "ابحث عن هذا المنتج",
+    "description": "Hunt this product"
+  },
+  "m_1gesjvp": {
+    "message": "ابحث عن هذه الصورة",
+    "description": "Hunt this image"
+  },
+  "m_1kcxou1": {
+    "message": "ابحث عن هذا المتجر",
+    "description": "Hunt this store"
+  },
+  "m_61pi2o": {
+    "message": "فشل تحديث القائمة المحلية.",
+    "description": "Local list update failed."
+  },
+  "m_1vu1nys": {
+    "message": "انتهت صلاحية اختيار البحث. ابدأ بحثاً آخر.",
+    "description": "This search selection expired. Start another hunt."
+  },
+  "m_17fd97q": {
+    "message": "منتهية — لا يمكن تفعيلها",
+    "description": "EXPIRED — cannot activate"
+  },
+  "m_11c22st": {
+    "message": "غير موقّعة — الحقائق وهوية الناشر غير متحققة",
+    "description": "UNSIGNED — facts and publisher identity unverified"
+  },
+  "m_1njq2ce": {
+    "message": "تعرض المعاينة أول 20 سجلاً. راجع JSON كاملاً قبل الإضافة.",
+    "description": "Preview shows the first 20 records. Review the full JSON before adding this list."
+  },
+  "m_1tncca7": {
+    "message": "المعاينة جاهزة. تبقى القائمة محلية ولا تغير حدود التحذير.",
+    "description": "Preview ready. Adding a list keeps it local and does not change warning thresholds."
+  },
+  "m_ir787x": {
+    "message": "فُعّلت الفحوص الأسبوعية. الاشتراكات المؤهلة فقط هي المأذونة والموقّعة بمفتاح مثبت؛ بلا طلب أذونات جديدة.",
+    "description": "Weekly signed-feed checks enabled. Only previously authorized, signed, pinned-key subscriptions are eligible; no new permission prompts."
+  },
+  "m_1cik44t": {
+    "message": "أُوقفت الفحوص التلقائية؛ القوائم المحفوظة لم تتغير.",
+    "description": "Automatic feed checks disabled; saved lists are unchanged."
+  },
+  "m_1sn6fve": {
+    "message": "منتهية؛ المطابقة معطلة",
+    "description": "expired; matching disabled"
+  },
+  "m_h4yktt": {
+    "message": "خيوط مرجعية فقط",
+    "description": "reference leads only"
+  },
+  "m_1aydb8f": {
+    "message": " • التحديث الأسبوعي مستحق",
+    "description": " • weekly refresh due"
+  },
+  "m_1dlxs0u": {
+    "message": "استعد الإصدار السابق",
+    "description": "Restore previous version"
+  },
+  "m_1k8ubhb": {
+    "message": "اختر خلاصة للتحديث",
+    "description": "Select feed for refresh"
+  },
+  "m_1162pm7": {
+    "message": "اختيرت الخلاصة. اضغط اجلب المعاينة لطلب نسخة؛ لم يُرسل طلب بعد.",
+    "description": "Feed selected. Click Fetch preview to request a new copy; no request has been sent."
+  },
+  "m_1487ipv": {
+    "message": "لا قوائم مضافة من المستخدم.",
+    "description": "No user-added lists."
+  },
+  "m_j6jpxv": {
+    "message": "اختر ملف JSON أصغر من 800 KB.",
+    "description": "Choose a JSON file smaller than 800 KB."
+  },
+  "m_1a89qs1": {
+    "message": "اجلب المعاينة قبل حفظ الاشتراك.",
+    "description": "Fetch a feed preview before saving a subscription."
+  },
+  "m_1ckw75p": {
+    "message": "جارٍ طلب الوصول إلى الخلاصة المختارة…",
+    "description": "Requesting access to the feed you chose…"
+  },
+  "m_9ndhxa": {
+    "message": "لم يُمنح الوصول أو أُزيل. لم تُفعّل أي قائمة.",
+    "description": "Access was not granted or was removed. No list activated."
+  },
+  "m_b30axq": {
+    "message": "أُلغي جلب الخلاصة.",
+    "description": "Feed fetch canceled."
+  },
+  "m_ylvcom": {
+    "message": "أُضيفت القائمة محلياً. تحتاج التحديثات التلقائية إلى موافقة منفصلة ومفتاح توقيع مثبت بشكل مستقل؛ تبقى الخلاصات غير الموقّعة يدوية.",
+    "description": "List added locally. Automatic updates require separate opt-in and an independently pinned signing key; unsigned feeds stay manual."
+  },
+  "m_b3ooko": {
+    "message": "أُزيلت القوائم والإصدارات السابقة والاشتراكات ومفاتيح الناشرين.",
+    "description": "User lists, previous versions, subscriptions and publisher keys removed."
+  },
+  "m_vsozru": {
+    "message": "ثُبّت مفتاح الناشر. أعد المعاينة للتحقق من الخلاصات الموقّعة بهذا المفتاح.",
+    "description": "Publisher key pinned. Re-preview signed feeds to verify with this key."
+  },
+  "m_a4ybee": {
+    "message": "جارٍ طلب LEI المحدد من GLEIF…",
+    "description": "Requesting the exact LEI you chose from GLEIF…"
+  },
+  "m_2p96yy": {
+    "message": "لم يُمنح الوصول أو أُزيل.",
+    "description": "Access was not granted or was removed."
+  },
+  "m_15bn3ws": {
+    "message": "غير متاح",
+    "description": "not supplied"
+  },
+  "m_1d9vgj8": {
+    "message": "سجل GLEIF الأصلي",
+    "description": "Original GLEIF record"
+  },
+  "m_egy7au": {
+    "message": "سجل هوية قانونية فقط. لا يربط الكيان بهذا البائع أو المصنع أو المنتج، ولا يثبت السلامة أو الجودة. بيانات GLEIF: CC0؛ DropShredder غير تابع لها.",
+    "description": "Legal identity record only. This does not link the entity to this seller, manufacturer or product, and does not establish safety or quality. GLEIF data: CC0; DropShredder is unaffiliated."
+  },
+  "m_kiztdr": {
+    "message": "أُلغي البحث عن الكيان.",
+    "description": "Entity lookup canceled."
+  },
+  "m_z2nhdi": {
+    "message": "لا تُعالج الملفات حتى تختار اقرأ الملصق على الجهاز.",
+    "description": "No file processed until you select READ LABEL ON DEVICE."
+  },
+  "m_1tr5y1i": {
+    "message": "اختر صورة ملصق المنتج أولاً.",
+    "description": "Choose a product-label image first."
+  },
+  "m_1cxwm2h": {
+    "message": "جارٍ قراءة الصورة محلياً. لا تُرسل إلى خادم.",
+    "description": "Reading image locally. No image is sent to a server."
+  },
+  "m_17auqbe": {
+    "message": "غير متاح في إصدار Chrome هذا",
+    "description": "unavailable in this Chrome build"
+  },
+  "m_ybs0hj": {
+    "message": "لم نعثر على محارف مقروءة. جرّب صورة أوضح أو ابحث يدوياً.",
+    "description": "No readable characters were found. Try a sharper label image or search manually."
+  },
+  "m_qak25s": {
+    "message": "النص المتعرف عليه (غير متحقق): ",
+    "description": "Recognized text (unverified): "
+  },
+  "m_1bhulbi": {
+    "message": "قيم باركود صحيحة المجموع الاختباري (غير متحققة مستقلاً): ",
+    "description": "Checksum-valid barcode values (not independently verified): "
+  },
+  "m_se06x7": {
+    "message": "ابحث عن مصادر هذا النص",
+    "description": "Search sources for this text"
+  },
+  "m_1i1yy2f": {
+    "message": "اكتمل التحليل المحلي. قد يخطئ OCR/GTIN ولا يغير درجات البائع أبداً.",
+    "description": "Local analysis complete. OCR/GTIN recognition may contain errors and never changes seller scores."
+  },
+  "m_19muah": {
+    "message": "القارئ المحلي غير متاح.",
+    "description": "Local reader unavailable."
+  },
+  "m_120gkpi": {
+    "message": "🔎 افحص باستخدام DropShredder",
+    "description": "🔎 Check with DropShredder"
+  },
+  "m_1wcavm4": {
+    "message": "افتح هذا المنتج لفحصه باستخدام DropShredder",
+    "description": "Open this product listing for a DropShredder check"
+  },
+  "m_m2xy6t": {
+    "message": "هذا العرض غير متحقق. افتح المنتج لفحص يستند إلى الأدلة.",
+    "description": "This listing has not been verified. Open the product for an evidence-based check."
+  },
+  "m_ajjry2": {
+    "message": "أُلغي البحث. لا يُحفظ مفتاح API.",
+    "description": "Search canceled. The API key is not saved."
+  },
+  "m_wj0t70": {
+    "message": "جارٍ إرسال بحث واحد صريح إلى Brave Search. لا يُرسل سجل التصفح.",
+    "description": "Requesting one explicit Brave Search query. No browser history is transmitted."
+  },
+  "m_7o5jb8": {
+    "message": "رُفض الإذن أو أُلغي؛ لم يُرسل الطلب.",
+    "description": "Permission denied or canceled; no request sent."
+  },
+  "m_8rp9l3": {
+    "message": "لا نتائج. لا يمكن استنتاج شيء سلبي.",
+    "description": "No results. No negative inference can be made."
+  },
+  "m_1nt43sp": {
+    "message": "البحث على الويب غير متاح.",
+    "description": "Web search unavailable."
+  },
+  "m_194fh44": {
+    "message": "أُلغي البحث أثناء إزالة الوصول. لا يُحفظ مفتاح API.",
+    "description": "Search canceled while site access is removed. The API key is not saved."
+  },
+  "m_2yzy77": {
+    "message": "تغير مظهر اللوحة لكن تعذر حفظه.",
+    "description": "Appearance changed for this panel; saving it was unavailable."
+  },
+  "m_jego5b": {
+    "message": "المظهر المحفوظ غير متاح. العرض الافتراضي صالح للاستخدام.",
+    "description": "Saved appearance is unavailable. Default display is still usable."
+  },
+  "m_goz0xo": {
+    "message": " — المرشحات لا تغير الحكم",
+    "description": " — filters do not change the verdict"
+  },
+  "m_10zaq0w": {
+    "message": "النتائج إشعارات مرشحة؛ تحقق من الطراز والرقم التسلسلي ونطاق الوحدات في الإشعار الرسمي.",
+    "description": "Results are candidate notices; confirm exact model, serial and unit scope in the official notice."
+  },
+  "m_6x5dun": {
+    "message": "تغيرت الصفحة. افحص المنتج مجدداً قبل التصدير.",
+    "description": "The page changed. Check this product again before exporting."
+  },
+  "m_1mgubrw": {
+    "message": "التصدير جاهز. تُستبعد المراجعات والصور وسجلات الاتصال الأصلية ونص الصفحة الكامل.",
+    "description": "Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded."
+  },
+  "m_1ihj8nx": {
+    "message": "أُلغي البحث عن الاستدعاء.",
+    "description": "Recall lookup canceled."
+  },
+  "m_1iwy4vi": {
+    "message": "جارٍ البحث عن عبارتك في خدمة CPSC العامة…",
+    "description": "Checking the query you chose with the public CPSC recall service…"
+  },
+  "m_1nwf7sq": {
+    "message": "لم يُمنح وصول Chrome. لم يُرسل طلب الاستدعاء.",
+    "description": "Chrome access was not granted. No recall request was sent."
+  },
+  "m_1k9b6w6": {
+    "message": "التاريخ غير متاح",
+    "description": "date not supplied"
+  },
+  "m_10yqw7k": {
+    "message": "ذُكر الطراز؛ نطاق الوحدات غير متحقق",
+    "description": "model token mentioned; unit scope unverified"
+  },
+  "m_1qm7t4h": {
+    "message": "نتيجة مرشحة؛ هوية المنتج غير متحققة",
+    "description": "retrieval candidate; product identity unverified"
+  },
+  "m_1xfzhsk": {
+    "message": " — النتائج محدودة",
+    "description": " — results capped"
+  },
+  "m_1tt1pl3": {
+    "message": "لا نتائج مرشحة لهذه العبارة. قد تفوّت الخدمة والبحث إشعارات؛ هذا ليس تصريح سلامة.",
+    "description": "No candidates returned for this query. The service and query can miss notices; this is not a safety clearance."
+  },
+  "m_1s87f86": {
+    "message": "البحث عن الاستدعاء غير متاح.",
+    "description": "Recall lookup unavailable."
+  },
+  "m_tuo7sd": {
+    "message": "أُلغي بحث الاستدعاء أثناء إزالة الوصول.",
+    "description": "Recall lookup canceled while site access is removed."
+  },
+  "m_qzhfaz": {
+    "message": "العرض المفحوص",
+    "description": "Scanned listing"
+  },
+  "m_74hcuk": {
+    "message": "درجة أدلة إعادة البيع الجماعي",
+    "description": "Mass-resell evidence score"
+  },
+  "m_j5rupt": {
+    "message": "درجة أدلة الدروبشيبينغ",
+    "description": "Dropship evidence score"
+  },
+  "m_1wfjfwj": {
+    "message": "ادعاءات مضللة",
+    "description": "Misleading claims"
+  },
+  "m_7f3bys": {
+    "message": "إشارات تحذير المتجر",
+    "description": "Store warning signs"
+  },
+  "m_13cm4b4": {
+    "message": "حيل المراجعات والمبيعات",
+    "description": "Review / sales tricks"
+  },
+  "m_t5i9hp": {
+    "message": "مشكلات الشحن",
+    "description": "Shipping headaches"
+  },
+  "m_1uks3wg": {
+    "message": "المنشأ الظاهر",
+    "description": "Where it appears to come from"
+  },
+  "m_11wa5": {
+    "message": "من يعالج الدفع",
+    "description": "Who handles the payment"
+  },
+  "m_1jul7sb": {
+    "message": "تلخص الدرجات الأدلة المكتشفة؛ وليست احتمالات مقاسة أو تقييماً لجودة المنتج.",
+    "description": "Scores summarize detected evidence; they are not measured probabilities or product-quality ratings."
+  },
+  "m_149g8wc": {
+    "message": "انتبه لهذا",
+    "description": "WATCH THIS"
+  },
+  "m_1vtd8im": {
+    "message": "إشارة طفيفة",
+    "description": "SMALL FLAG"
+  },
+  "m_b8pujm": {
+    "message": "المصدر والمنهج",
+    "description": "Source and method"
+  },
+  "m_a2rmeg": {
+    "message": "لم يسجل هذا الكاشف رابط المصدر أو طريقة الاستخراج.",
+    "description": "This detector did not record a source URL or extraction method."
+  },
+  "m_1au1a8v": {
+    "message": "اختر عمليات البحث لفتحها",
+    "description": "Choose searches to open"
+  },
+  "m_1qnmdp3": {
+    "message": "تشارك عمليات البحث الخارجية العبارة مع المحرك المختار. افتح حتى 8 في المرة.",
+    "description": "External searches share the query with the selected search engine. Open up to 8 at a time."
+  },
+  "m_4xn7ie": {
+    "message": "افتح عمليات البحث المختارة",
+    "description": "Open selected searches"
+  },
+  "m_1fj2xc8": {
+    "message": "اختر بين 1 و8 عمليات بحث.",
+    "description": "Choose between 1 and 8 searches."
+  },
+  "m_1a03ner": {
+    "message": "تعذر فتح بحث. تبقى عمليات البحث غير المفتوحة متاحة.",
+    "description": "A search could not open. Unopened searches remain available."
+  },
+  "m_1pa9zoy": {
+    "message": "⚠ أدلة قوية على الدروبشيبينغ أو إعادة البيع",
+    "description": "⚠ STRONG DROPSHIP / RESELL EVIDENCE"
+  },
+  "m_17on8ti": {
+    "message": "تجاوزت مجموعات الأدلة المستقلة حد التحذير الشديد.",
+    "description": "Independent evidence families crossed the severe-warning gate."
+  },
+  "m_qa2g1w": {
+    "message": "⚠ هناك ما يثير الشك",
+    "description": "⚠ SOMETHING SMELLS OFF"
+  },
+  "m_1ok95zu": {
+    "message": "رُصدت إشارات خطر، لكن الأدلة لا تكفي لاتهام خطير.",
+    "description": "Risk signals detected, but the evidence is not strong enough for a severe accusation."
+  },
+  "m_196lx5e": {
+    "message": "DROPSHREDDER • رُصدت إشارات",
+    "description": "DROPSHREDDER • SIGNALS FOUND"
+  },
+  "m_1g6z073": {
+    "message": "مؤشرات ضعيفة أو متوسطة فقط. اعتبرها دعوة للتحقيق لا حكماً.",
+    "description": "Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict."
+  },
+  "m_usd9bd": {
+    "message": "لا أدلة سلبية ذات معنى بعد. يمكن للبحث المتعمق فحص المصدر وهوية البائع.",
+    "description": "No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity."
+  },
+  "m_1udoc23": {
+    "message": "مزّق هذا الهراء",
+    "description": "SHRED THIS SHIT"
+  },
+  "m_1ru4mwq": {
+    "message": "الأدلة اللعينة",
+    "description": "THE FUCKING RECEIPTS"
+  },
+  "m_bmi36g": {
+    "message": "لا شيء قاطع بعد. واصل البحث قبل أن تدفع للمتجر.",
+    "description": "Nothing solid yet. Keep digging before you give this store your money."
+  },
+  "m_re2gif": {
+    "message": "DROPSHREDDER رصد شيئاً",
+    "description": "DROPSHREDDER CAUGHT SOMETHING"
+  },
+  "m_8eqvig": {
+    "message": "هذا العرض يحمل إشارات خطيرة لإعادة البيع أو الدروبشيبينغ",
+    "description": "THIS LISTING HAS SERIOUS RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_n8lez9": {
+    "message": "افحص هذا الهراء",
+    "description": "CHECK THIS SHIT"
+  },
+  "m_jku2d7": {
+    "message": "لا شيء قاطع بعد. ابحث أكثر قبل تصديق كلام البيع.",
+    "description": "Nothing solid yet. Dig deeper before you trust the sales pitch."
+  },
+  "m_1etuljh": {
+    "message": "DROPSHREDDER رصد إشارات تحذير",
+    "description": "DROPSHREDDER FOUND RED FLAGS"
+  },
+  "m_pdtbad": {
+    "message": "إشارات قوية لإعادة البيع أو الدروبشيبينغ",
+    "description": "STRONG RESELL / DROPSHIP RED FLAGS"
+  },
+  "m_8b27l4": {
+    "message": "ما لفت الانتباه",
+    "description": "WHAT STOOD OUT"
+  },
+  "m_e3qmz": {
+    "message": "لا شيء قاطع بعد. يمكنك البحث أكثر قبل أن تقرر الوثوق بالعرض.",
+    "description": "Nothing solid yet. You can dig deeper before deciding whether the listing deserves your trust."
+  },
+  "m_er0hmn": {
+    "message": "DROPSHREDDER وجد ما يستحق التحقق",
+    "description": "DROPSHREDDER FOUND SOMETHING WORTH CHECKING"
+  },
+  "m_1uq9kwn": {
+    "message": "إشارات قوية لإعادة البيع أو الدروبشيبينغ",
+    "description": "STRONG RESELL / DROPSHIP WARNING SIGNS"
+  },
+  "m_1aku595": {
+    "message": "تحليل محلي للتجارة ومنشأ المنتجات.",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "m_1qj5k8r": {
+    "message": "افتح DropShredder",
+    "description": "Open DropShredder"
+  },
+  "m_12wv6je": {
+    "message": "لغة الواجهة تتبع Chrome. تحتفظ ملاحظات الأدلة التقنية والتصديرات الخام بصيغتها الأصلية. يقرأ OCR المضمّن النص الإنجليزي.",
+    "description": "Interface language follows Chrome. Technical evidence annotations and raw exports retain their original wording. Packaged OCR reads English text."
+  },
+  "m_qhjvpw": {
+    "message": "ملاحظات الكاشف (اللغة الأصلية)",
+    "description": "Detector notes (original language)"
+  },
+  "m_10j58ar": {
+    "message": "DropShredder $arg1$ • خصوصية مدمجة • بلا حساب",
+    "description": "DropShredder $1 • Private by design • No account needed",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1sscdoz": {
+    "message": "اكتمل فحص $arg1$.",
+    "description": "Scan complete for $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_zz0wd1": {
+    "message": "ملاحظات سياسة الإرجاع للمراجعة قبل الشراء: $arg1$.",
+    "description": "Return-policy findings to review before buying: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1tgjts7": {
+    "message": "رُصد الناقل $arg1$، لكن لم يُعثر على منشأ شحن صريح. لم تُحتسب درجة تناقض.",
+    "description": "Carrier $1 detected, but no explicit shipment origin was found. No contradiction scored.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1ptgjet": {
+    "message": "فشل جلب السياسة: HTTP $arg1$",
+    "description": "Policy fetch failed: HTTP $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1umunh4": {
+    "message": "السعر المعروض: $arg1$",
+    "description": "Listed price: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_673z20": {
+    "message": "البائع المذكور: $arg1$",
+    "description": "Seller listed as: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1f7bzd7": {
+    "message": "$arg1$ • $arg2$ • رُصد في $arg3$",
+    "description": "$1 • $2 • captured $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_1o1yof0": {
+    "message": "التقييم المعروض: $arg1$؛ بعد المراجعات المرئية المعلّمة: $arg2$.",
+    "description": "Rating shown: $1; after flagged visible reviews: $2.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1kg4e3m": {
+    "message": "شكاوى شائعة في التقييمات المنخفضة: $arg1$.",
+    "description": "Common low-star complaints: $1.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1vd7g02": {
+    "message": "فحص المراجعات: $arg1$/$arg2$ من المراجعات المرئية لم تُفعّل فحوصنا.$arg3$$arg4$",
+    "description": "Review check: $1/$2 visible reviews did not trigger our checks.$3$4",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_m1msr6": {
+    "message": "$arg1$ • رُصد في $arg2$",
+    "description": "$1 • observed $2",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_1upynrn": {
+    "message": "افتح المصدر: $arg1$",
+    "description": "Open source: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_2047wl": {
+    "message": "تُعرض أول 300 من $arg1$ عنصر. الباقي في تفاصيل الفحص الكاملة.",
+    "description": "Showing the first 300 of $1 items. Full scan details contain the remaining items.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1b73ffu": {
+    "message": "يُعرض $arg1$ من $arg2$ عنصر$arg3$.",
+    "description": "$1 of $2 displayed items shown$3.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_ajkrjj": {
+    "message": "إشعار $arg1$ • $arg2$ • $arg3$",
+    "description": "Notice $1 • $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_8vwz1y": {
+    "message": "الإشعارات المرشحة: $arg1$؛ جُلبت $arg2$$arg3$. قد يشمل البحث الجزئي علامات غير مرتبطة. تحقق من كل إشعار رسمي؛ لا تتغير درجتك.",
+    "description": "Candidate notices: $1; retrieved $2$3. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_d89ct1": {
+    "message": "فُتحت $arg1$ عمليات بحث. المتبقي: $arg2$.",
+    "description": "Opened $1 searches. $2 remaining.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      }
+    }
+  },
+  "m_11nhyfc": {
+    "message": "المصادر المرشحة: $arg1$. راجع الأصول قبل النسبة؛ لم يتغير الحكم.",
+    "description": "Source candidates: $1. Check originals before attribution; no verdict changed.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1oyfgbf": {
+    "message": "الباركود المقروء: $arg1$؛ أسطر النص: $arg2$. دعم الباركود: $arg3$. دعم OCR: $arg4$.",
+    "description": "Barcodes read: $1; text lines: $2. Barcode support: $3. OCR support: $4.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_qlsa5y": {
+    "message": "الباركود: $arg1$",
+    "description": "Barcode: $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_19l0liv": {
+    "message": "النص المتعرف عليه (غير متحقق): $arg1$",
+    "description": "Recognized text (unverified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1r8u2jh": {
+    "message": "قيم باركود صحيحة المجموع الاختباري (غير متحققة مستقلاً): $arg1$",
+    "description": "Checksum-valid barcode values (not independently verified): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_8dviar": {
+    "message": "فُحص التوقيع بمفتاحك المثبت $arg1$؛ الحقائق غير متحققة",
+    "description": "Signature checked against your pinned key $1; facts remain unverified",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_1pvmmcm": {
+    "message": "$arg1$ • الإصدار $arg2$ • سجلات: $arg3$ • نُشر $arg4$ • ينتهي $arg5$ • الترخيص $arg6$ • $arg7$",
+    "description": "$1 • version $2 • $3 records • published $4 • expires $5 • license $6 • $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1y9jypi": {
+    "message": "$arg1$ • v$arg2$ • سجلات: $arg3$ • $arg4$$arg5$",
+    "description": "$1 • v$2 • $3 records • $4$5",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      }
+    }
+  },
+  "m_nvlwxh": {
+    "message": "$arg1$ / $arg2$ • $arg3$ • SHA-256 لمفتاح base64url: $arg4$. تحقق عبر قناة ناشر مستقلة. تثبيته أو استبداله قرار ثقتك؛ لا يصادق على اتهامات.",
+    "description": "$1 / $2 • $3 • SHA-256 of base64url key: $4. Verify this key through an independent publisher channel. Pinning or replacing it is your trust decision; it does not validate allegations.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      }
+    }
+  },
+  "m_k3870i": {
+    "message": "$arg1$ • LEI $arg2$ • $arg3$ • الكيان $arg4$ • التسجيل $arg5$ • تحديث $arg6$ • جلب $arg7$",
+    "description": "$1 • LEI $2 • $3 • entity $4 • registration $5 • updated $6 • retrieved $7",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      },
+      "arg4": {
+        "content": "$4",
+        "example": "runtime value 4"
+      },
+      "arg5": {
+        "content": "$5",
+        "example": "runtime value 5"
+      },
+      "arg6": {
+        "content": "$6",
+        "example": "runtime value 6"
+      },
+      "arg7": {
+        "content": "$7",
+        "example": "runtime value 7"
+      }
+    }
+  },
+  "m_1dbdstp": {
+    "message": "درجة أدلة إعادة البيع: $arg1$/100 • الإشارات: $arg2$ • $arg3$",
+    "description": "Mass-resell evidence score: $1/100 • Signals: $2 • $3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "runtime value 2"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "runtime value 3"
+      }
+    }
+  },
+  "m_tbzvyx": {
+    "message": "غير معروف",
+    "description": "UNKNOWN"
+  },
+  "m_1mbceap": {
+    "message": "منخفض",
+    "description": "LOW"
+  },
+  "m_1dfjx12": {
+    "message": "متوسط",
+    "description": "MEDIUM"
+  },
+  "m_y6hdz1": {
+    "message": "مرتفع",
+    "description": "HIGH"
+  },
+  "m_pr8pgc": {
+    "message": "مباشر",
+    "description": "DIRECT"
+  },
+  "m_rkyqd6": {
+    "message": "قوي",
+    "description": "STRONG"
+  },
+  "m_aphutn": {
+    "message": "للعلم",
+    "description": "FYI"
+  },
+  "m_skramw": {
+    "message": "متاح",
+    "description": "available"
+  },
+  "m_13ml53d": {
+    "message": "غير متاح",
+    "description": "unavailable"
+  },
+  "m_tkexoc": {
+    "message": "أُلغي.",
+    "description": "Canceled."
+  },
+  "m_9c35st": {
+    "message": "إزالة",
+    "description": "Remove"
+  },
+  "m_1l0xxoj": {
+    "message": "إغلاق",
+    "description": "Close"
+  },
+  "m_srveqq": {
+    "message": "لا توجد صفحة ويب نشطة.",
+    "description": "No active web page is available."
+  },
+  "m_1687ptr": {
+    "message": "رابط الصفحة النشطة غير مدعوم.",
+    "description": "The active page URL is not supported."
+  },
+  "m_a60if4": {
+    "message": "يفحص DropShredder صفحات التجارة العادية عبر HTTP/HTTPS فقط.",
+    "description": "DropShredder only scans ordinary HTTP/HTTPS commerce pages."
+  },
+  "m_1usa14u": {
+    "message": "لا يفحص DropShredder خدمات الحساب أو البريد أو إتمام الشراء أو الدفع.",
+    "description": "DropShredder does not scan account, email, checkout or payment services."
+  },
+  "m_akhvd4": {
+    "message": "لا يفحص DropShredder صفحات الحساب أو المصادقة أو الدفع أو الفواتير أو العناوين أو سجل الطلبات.",
+    "description": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages."
+  },
+  "m_mrljgd": {
+    "message": "تعذر إكمال الإجراء. التفاصيل (اللغة الأصلية): $arg1$",
+    "description": "Action could not complete. Details (original language): $1",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "runtime value 1"
+      }
+    }
+  },
+  "m_5mv5og": {
+    "message": "متوسط",
+    "description": "MODERATE"
+  },
+  "m_lzjy3u": {
+    "message": "تستوفي أدلة المنشأ والتنفيذ المستقلة شرط التحذير الشديد.",
+    "description": "Independent provenance/fulfillment evidence satisfies the severe-warning gate."
+  },
+  "m_1kfh8e3": {
+    "message": "أدلة المنتج ليست مستقلة أو قوية بما يكفي لاتهام تلقائي خطير.",
+    "description": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+  },
+  "m_1t1mzwk": {
+    "message": "توجد إشارات خطر، لكن لا تثبت أي منها منشأ المنتج أو الدروبشيبينغ.",
+    "description": "Risk signals exist, but none establish product provenance or dropshipping."
+  },
+  "m_12v6pfe": {
+    "message": "لا تتوفر أدلة موزونة للاتهام بعد.",
+    "description": "No accusation-weighted evidence is available yet."
+  },
+  "extension_description": {
+    "message": "تحليل محلي للتجارة ومنشأ المنتجات.",
+    "description": "Local-first commerce forensics and product provenance analysis."
+  },
+  "open_extension": {
+    "message": "افتح DropShredder",
+    "description": "Open DropShredder"
+  },
+  "locale_code": {
+    "message": "ar",
+    "description": "Resolved packaged UI locale, including fallback; do not translate."
+  }
+}

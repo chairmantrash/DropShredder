@@ -1,0 +1,5 @@
+# Native offline localization without changing evidence
+
+DS-039 adds seven broad-reach UI packs alongside English using Chrome's native packaged i18n. Keep WXT/dependencies/permissions/scoring/source facts/OCR models unchanged. English messages use stable collision-audited keys, translator context and exact native placeholders. Whole messages and text-only substitutions avoid markup injection and English plural suffixes. Arabic uses semantic direction, logical CSS and isolated source values. The packaged locale marker gives a correct English fallback for unsupported languages.
+
+Chrome display language remains the single authority across worker, side panel, searches and isolated content scripts; no override storage, polling or remote catalogs. Detector annotations/source quotes/raw exports retain original wording, explicitly disclosed. Serialized callbacks receive localized arguments rather than imported closures. Catalog and genuine native Chrome locale checks give bounded verification; independent language review remains separate. Research and maintenance: TRANSLATIONS.md and brain/research/2026-10-10-LANGUAGE-KITS.md.

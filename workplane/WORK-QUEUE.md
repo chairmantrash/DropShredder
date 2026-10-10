@@ -1,5 +1,7 @@
 # Work queue
 
+Current owner-directed addition2026-10-10: DS-039 offline localization VERIFYING. Seven additions plus English,336messages/pack;278core tests locally pass. Consult DS-039/TRANSLATIONS.md for exact new-build Chrome/packaging evidence. Public release remains held.
+
 | ID | Priority | Task | Status | Owner | Depends on |
 |---|---:|---|---|---|---|
 | DS-001 | P0 | Scaffold WXT/TypeScript MV3 extension | DONE | runtime | — |

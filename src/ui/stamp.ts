@@ -1,3 +1,4 @@
+import { tr } from '../i18n/index';
 import type { DropShredderReport } from '../types/report';
 
 const HOST_ID='dropshredder-stamp-host';
@@ -5,20 +6,20 @@ const HOST_ID='dropshredder-stamp-host';
 function label(report: DropShredderReport): {headline:string;detail:string} {
   const v=report.verdict;
   if (v.severeWarningAllowed) return {
-    headline:'⚠ STRONG DROPSHIP / RESELL EVIDENCE',
-    detail:'Independent evidence families crossed the severe-warning gate.',
+    headline:tr('⚠ STRONG DROPSHIP / RESELL EVIDENCE'),
+    detail:tr('Independent evidence families crossed the severe-warning gate.'),
   };
   if ((v.massResellLikelihood ?? 0) >= 35) return {
-    headline:'⚠ SOMETHING SMELLS OFF',
-    detail:'Risk signals detected, but the evidence is not strong enough for a severe accusation.',
+    headline:tr('⚠ SOMETHING SMELLS OFF'),
+    detail:tr('Risk signals detected, but the evidence is not strong enough for a severe accusation.'),
   };
   if (report.evidence.length) return {
-    headline:'DROPSHREDDER • SIGNALS FOUND',
-    detail:'Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict.',
+    headline:tr('DROPSHREDDER • SIGNALS FOUND'),
+    detail:tr('Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict.'),
   };
   return {
-    headline:'DROPSHREDDER • NO VERDICT',
-    detail:'No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity.',
+    headline:tr('DROPSHREDDER • NO VERDICT'),
+    detail:tr('No meaningful passive evidence yet. Deep Hunt can investigate provenance and seller identity.'),
   };
 }
 
@@ -46,13 +47,13 @@ export function renderStamp(report: DropShredderReport): void {
   box.className='box';
   const close=document.createElement('button');
   close.type='button';
-  close.setAttribute('aria-label','Dismiss DropShredder warning');
+  close.setAttribute('aria-label',tr('Dismiss DropShredder warning'));
   close.textContent='×';
   close.addEventListener('click',()=>host.remove());
 
   const brand=document.createElement('div');
   brand.className='brand';
-  brand.textContent='DROP SHREDDER';
+  brand.textContent=tr('DROP SHREDDER');
   const headline=document.createElement('div');
   headline.className='headline';
   headline.textContent=state.headline;
@@ -61,7 +62,7 @@ export function renderStamp(report: DropShredderReport): void {
   detail.textContent=state.detail;
   const scoreNode=document.createElement('div');
   scoreNode.className='score';
-  scoreNode.textContent=`${score===null?'Mass-resell likelihood: UNKNOWN':`Mass-resell likelihood: ${score}%`} • ${report.evidence.length} signal(s)`;
+  scoreNode.textContent=`${score===null?tr('Mass-resell likelihood: UNKNOWN'):`Mass-resell likelihood: ${score}%`} • ${report.evidence.length} signal(s)`;
 
   box.append(close,brand,headline,detail,scoreNode);
   shadow.append(style,box);

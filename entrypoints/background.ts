@@ -1,3 +1,4 @@
+import { tr } from '../src/i18n/index';
 import { applyFeaturePatch, loadFeatureSettings } from '../src/settings/features';
 import { imageSearchUrls, merchantSearchUrls, productSearchUrls } from '../src/deep-hunt/search-urls';
 import { AUTO_PANEL_INTENT, AUTO_PATTERN, setAutoContentRegistration } from '../src/runtime/auto-registration';
@@ -8,10 +9,10 @@ import { checkDueSignedFeeds, ensureIntelligenceAlarm, INTELLIGENCE_ALARM } from
 const ROOT='dropshredder-root';
 function createMenus():void {
   chrome.contextMenus.removeAll(()=>{
-    chrome.contextMenus.create({id:ROOT,title:'DropShredder',contexts:['page','selection','image'],documentUrlPatterns:['http://*/*','https://*/*']});
-    chrome.contextMenus.create({id:'ds-hunt-product',parentId:ROOT,title:'Hunt this product',contexts:['page','selection'],documentUrlPatterns:['http://*/*','https://*/*']});
-    chrome.contextMenus.create({id:'ds-hunt-image',parentId:ROOT,title:'Hunt this image',contexts:['image'],documentUrlPatterns:['http://*/*','https://*/*']});
-    chrome.contextMenus.create({id:'ds-hunt-store',parentId:ROOT,title:'Hunt this store',contexts:['page'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:ROOT,title:tr('DropShredder'),contexts:['page','selection','image'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-product',parentId:ROOT,title:tr('Hunt this product'),contexts:['page','selection'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-image',parentId:ROOT,title:tr('Hunt this image'),contexts:['image'],documentUrlPatterns:['http://*/*','https://*/*']});
+    chrome.contextMenus.create({id:'ds-hunt-store',parentId:ROOT,title:tr('Hunt this store'),contexts:['page'],documentUrlPatterns:['http://*/*','https://*/*']});
   });
 }
 
@@ -55,7 +56,7 @@ export default defineBackground(() => {
     if(record.version!==1) return;
     if(record.type==='DS_LIST_MUTATION'){
       if(sender.id!==chrome.runtime.id || sender.tab || !sender.url?.startsWith(chrome.runtime.getURL(''))) return;
-      void applyListMutation(record.action).then(store=>sendResponse({ok:true,store})).catch(error=>sendResponse({ok:false,error:error instanceof Error?error.message:'Local list update failed.'}));
+      void applyListMutation(record.action).then(store=>sendResponse({ok:true,store})).catch(error=>sendResponse({ok:false,error:error instanceof Error?error.message:tr('Local list update failed.')}));
       return true;
     }
     if(record.type==='DS_FEATURE_PATCH'){

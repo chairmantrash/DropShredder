@@ -361,7 +361,7 @@ try {
         providerMode='delay';const start=providerRequests.length;await native.click('#recall-lookup');await until(()=>providerRequests.length>start,'CPSC explicit request');await native.click('#recall-cancel');await pause(2100);assert.equal(await native.evaluate("document.querySelector('#recall-results').children.length"),0);
         providerMode='error';await native.click('#recall-lookup');await until(()=>native.evaluate("!document.querySelector('#recall-lookup').disabled"),'CPSC error');assert.match(await native.evaluate("document.querySelector('#recall-status').textContent"),/503/);
         providerMode='normal';await native.click('#recall-lookup');await until(()=>native.evaluate("!document.querySelector('#recall-lookup').disabled"),'CPSC success');assert.equal(await native.evaluate("document.querySelector('#recall-results').children.length"),1);
-        assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,before);assert.match(await native.evaluate("document.querySelector('#recall-status').textContent"),/candidate/);
+        assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,before);assert.match(await native.evaluate("document.querySelector('#recall-status').textContent"),/candidate/i);
         const request=providerRequests.filter(x=>x.url.includes('saferproducts.gov')).at(-1);assert.equal(new URL(request.url).searchParams.get('RecallTitle'),'Fixture');return {scope:'Owned intercepted CPSC notice, exact unit still unverified'};
       });
       await test('N23','Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls',async()=>{
@@ -494,7 +494,7 @@ try {
         assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,beforeRecall);
         const notices=await native.evaluate("Array.from(document.querySelectorAll('#recall-results a')).map(a=>({title:a.textContent,url:a.href}))");
         for(const notice of notices)assert.match(notice.url,/^https:\/\/(?:www\.)?cpsc\.gov\/Recalls\//i);
-        report.liveProviders.push({id:'BETA-P02',endpoint:'https://www.saferproducts.gov/RestWebServices/Recall',query:'RecallTitle=Anker',status:/candidate notice|No candidates returned/.test(cpscMessage)?'OBSERVED_RESPONSE':'EXTERNAL_BLOCKER_OR_ABSTENTION',uiMessage:cpscMessage,notices,scope:'Live incomplete candidate feed; no unit or product safety verification'});
+        report.liveProviders.push({id:'BETA-P02',endpoint:'https://www.saferproducts.gov/RestWebServices/Recall',query:'RecallTitle=Anker',status:/Candidate notices:|No candidates returned/.test(cpscMessage)?'OBSERVED_RESPONSE':'EXTERNAL_BLOCKER_OR_ABSTENTION',uiMessage:cpscMessage,notices,scope:'Live incomplete candidate feed; no unit or product safety verification'});
         await native.screenshot('beta-live-cpsc.png');
         report.liveSurfaces=[];
         const fixturePage=page;

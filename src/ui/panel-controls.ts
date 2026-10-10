@@ -1,3 +1,4 @@
+import { tr, errorText } from '../i18n/index';
 import { applyDisplayPreferences, DEFAULT_DISPLAY, DISPLAY_KEY, normalizeDisplayPreferences } from './preferences';
 import { exportCurrentReport, readPanelReport } from '../reporting/export-report';
 import { lookupRecallCandidates, type RecallField } from '../osint/cpsc';
@@ -25,13 +26,13 @@ export function mountPanelControls(doc:Document=document) {
     dirty=true;const p=normalizeDisplayPreferences({theme:theme?.value,density:density?.value,textScale:Number(scale?.value)});
     showPreferences(p);
     stored=stored.then(()=>chrome.storage.local.set({[DISPLAY_KEY]:p})).catch(()=>{
-      if(status) status.textContent='Appearance changed for this panel; saving it was unavailable.';
+      if(status) status.textContent=tr('Appearance changed for this panel; saving it was unavailable.');
     });
   };
   for(const id of ['display-theme','display-density','display-scale']) on(id,'change',savePreferences);
   on('reset-display','click',()=>{showPreferences(DEFAULT_DISPLAY);savePreferences();});
   void chrome.storage.local.get(DISPLAY_KEY).then(result=>{if(!dirty) showPreferences(result[DISPLAY_KEY]);}).catch(()=>{
-    if(status) status.textContent='Saved appearance is unavailable. Default display is still usable.';
+    if(status) status.textContent=tr('Saved appearance is unavailable. Default display is still usable.');
   });
   const stopLookup=()=>{lookup?.abort();lookup=undefined;if(cancel) cancel.disabled=true;};
   const applyFilters=()=>{
@@ -44,13 +45,13 @@ export function mountPanelControls(doc:Document=document) {
       if(row.hidden!==hidden) row.hidden=hidden;
       if(!row.hidden) visible++;
     }
-    if(count) count.textContent=`${visible} of ${rows.length} displayed items shown${visible<rows.length?' — filters do not change the verdict':''}.`;
+    if(count) count.textContent=tr('$1 of $2 displayed items shown$3.',visible,rows.length,visible<rows.length?tr(' — filters do not change the verdict'):'');
   };
   const refresh=()=>{
     const value=raw?.textContent??'',report=readPanelReport(value);
     if(value!==lastRaw){lastRaw=value;stopLookup();recallResults?.replaceChildren();
       if(recallQuery) recallQuery.value=(report?.product.brand??report?.product.title??'').slice(0,100);
-      if(recallStatus) recallStatus.textContent='Results are candidate notices; confirm exact model, serial and unit scope in the official notice.';
+      if(recallStatus) recallStatus.textContent=tr('Results are candidate notices; confirm exact model, serial and unit scope in the official notice.');
     }
     if(exportButton) exportButton.disabled=!report;if(recallButton) recallButton.disabled=!report||Boolean(lookup);
     applyFilters();
@@ -58,39 +59,39 @@ export function mountPanelControls(doc:Document=document) {
   on('evidence-query','input',applyFilters);on('evidence-filter','change',applyFilters);
   on('export-report','click',()=>void(async()=>{
     const value=raw?.textContent??'',report=readPanelReport(value);if(!report) return;
-    if(!await currentReportAllowed()||raw?.textContent!==value){if(status) status.textContent='The page changed. Check this product again before exporting.';return;}
+    if(!await currentReportAllowed()||raw?.textContent!==value){if(status) status.textContent=tr('The page changed. Check this product again before exporting.');return;}
     const blob=new Blob([JSON.stringify(exportCurrentReport(report),null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob),a=doc.createElement('a');a.href=url;a.download='DropShredder-current-scan.json';
     doc.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    if(status) status.textContent='Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded.';
+    if(status) status.textContent=tr('Current-scan export prepared. Raw reviews, images, raw contact records and full page text are excluded.');
   })());
   on('recall-cancel','click',()=>{stopLookup();if(recallButton) recallButton.disabled=!readPanelReport(raw?.textContent??'');
-    if(recallStatus) recallStatus.textContent='Recall lookup canceled.';});
+    if(recallStatus) recallStatus.textContent=tr('Recall lookup canceled.');});
   on('recall-lookup','click',()=>{
     if(lookup) return;const value=raw?.textContent??'',report=readPanelReport(value);if(!report) return;
     const active=new AbortController();lookup=active;if(cancel) cancel.disabled=false;if(recallButton) recallButton.disabled=true;
-    if(recallStatus) recallStatus.textContent='Checking the query you chose with the public CPSC recall service…';
+    if(recallStatus) recallStatus.textContent=tr('Checking the query you chose with the public CPSC recall service…');
     // Begin synchronously so the helper reaches permissions.request during this user click.
     void lookupRecallCandidates(recallQuery?.value??'',(field?.value??'RecallTitle') as RecallField,report.product.mpn,active.signal)
       .then(result=>{
         if(lookup!==active || raw?.textContent!==value) return;
         recallResults?.replaceChildren();
-        if(!result){if(recallStatus) recallStatus.textContent='Chrome access was not granted. No recall request was sent.';return;}
+        if(!result){if(recallStatus) recallStatus.textContent=tr('Chrome access was not granted. No recall request was sent.');return;}
         for(const item of result.candidates){
           const row=doc.createElement('article');row.className='evidence-row';
           const a=doc.createElement('a');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=item.title;
-          const note=doc.createElement('p');note.textContent=`Notice ${item.number} • ${item.date??'date not supplied'} • ${item.modelMentioned?'model token mentioned; unit scope unverified':'retrieval candidate; product identity unverified'}`;
+          const note=doc.createElement('p');note.textContent=tr('Notice $1 • $2 • $3',item.number,item.date??tr('date not supplied'),item.modelMentioned?tr('model token mentioned; unit scope unverified'):tr('retrieval candidate; product identity unverified'));
           row.append(a,note);recallResults?.append(row);
         }
         if(recallStatus) recallStatus.textContent=result.candidates.length
-          ? `${result.candidates.length} candidate notice(s), retrieved ${result.retrievedAt}${result.truncated?' — results capped':''}. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.`
-          : 'No candidates returned for this query. The service and query can miss notices; this is not a safety clearance.';
+          ? tr('Candidate notices: $1; retrieved $2$3. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.',result.candidates.length,result.retrievedAt,result.truncated?tr(' — results capped'):'')
+          : tr('No candidates returned for this query. The service and query can miss notices; this is not a safety clearance.');
       }).catch(error=>{if(lookup===active && raw?.textContent===value && recallStatus)
-        recallStatus.textContent=active.signal.aborted?'Recall lookup canceled.':error instanceof Error?error.message:'Recall lookup unavailable.';
+        recallStatus.textContent=active.signal.aborted?tr('Recall lookup canceled.'):error instanceof Error?errorText(error):tr('Recall lookup unavailable.');
       }).finally(()=>{if(lookup===active){lookup=undefined;if(cancel) cancel.disabled=true;if(recallButton) recallButton.disabled=!readPanelReport(raw?.textContent??'');}});
   });
   on('revoke-optional-access','click',()=>{stopLookup();if(recallButton) recallButton.disabled=!readPanelReport(raw?.textContent??'');
-    if(recallStatus) recallStatus.textContent='Recall lookup canceled while site access is removed.';});
+    if(recallStatus) recallStatus.textContent=tr('Recall lookup canceled while site access is removed.');});
   const observer=new MutationObserver(records=>{
     if(records.some(record=>record.type==='childList'||record.type==='characterData')) refresh();
   });

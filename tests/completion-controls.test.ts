@@ -24,7 +24,7 @@ test('old canceled permission prompt cannot overwrite a newer supplier search',a
   assert.equal((s.doc.getElementById('brave-key') as HTMLInputElement).value,'');
   s.click('brave-cancel');s.input('brave-key','owned-fake-key-two');s.input('brave-query','Product model two');s.click('brave-search');
   s.prompts[0]!(false);await tick();assert.match(s.status(),/Requesting one explicit/);assert.equal(requests,0);
-  s.prompts[1]!(true);await tick();await tick();assert.equal(requests,1);assert.match(s.status(),/1 source candidates/);
+  s.prompts[1]!(true);await tick();await tick();assert.equal(requests,1);assert.match(s.status(),/Source candidates: 1/);
  }finally{s.restore();}
 });
 test('broad site revocation aborts supplier fetch and clears key/results',async()=>{

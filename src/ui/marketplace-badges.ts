@@ -1,3 +1,4 @@
+import { tr, uiDirection } from '../i18n/index';
 /**
  * Informational, user-activated result-page labels. No scores, hidden requests,
  * DOM-wide observers, affiliate redirects or ownership inference.
@@ -46,11 +47,11 @@ export function attachMarketplaceBadges(doc:Document,href:string,max=24):number{
       :link.closest('article,li,[data-testid*="item"],[data-testid*="product"],[class*="listing-card"],[class*="product-card"]');
     if(!host || host.querySelector('[data-dropshredder-result-label]')) continue;
     const label=doc.createElement('a');
-    label.setAttribute('data-dropshredder-result-label','');
+    label.setAttribute('data-dropshredder-result-label','');label.dir=uiDirection();
     label.href=url;
-    label.textContent='🔎 Check with DropShredder';
-    label.setAttribute('aria-label','Open this product listing for a DropShredder check');
-    label.setAttribute('title','This listing has not been verified. Open the product for an evidence-based check.');
+    label.textContent=tr('🔎 Check with DropShredder');
+    label.setAttribute('aria-label',tr('Open this product listing for a DropShredder check'));
+    label.setAttribute('title',tr('This listing has not been verified. Open the product for an evidence-based check.'));
     label.style.cssText='display:inline-flex;align-items:center;max-width:100%;box-sizing:border-box;'+
       'padding:4px 8px;margin:5px 0;border:1px solid #5f84aa;border-radius:7px;'+
       'background:#152335;color:#d9edff;font:600 11px/1.5 system-ui,sans-serif;'+

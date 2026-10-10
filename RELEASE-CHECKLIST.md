@@ -34,3 +34,5 @@ A Chrome Web Store publisher account, verified contact and applicable developer 
 
 No merge or Store submission was performed by DS-038.
 
+DS-039 adds localized runtime bytes: require its fresh fingerprint/Chrome receipts rather than applying unchanged-runtime DS-038 evidence to it. Review translations with native speakers and localized consent/full scans before declaring language acceptance. Existing DS-038 screenshot crops predate this UI disclosure addition; refresh affected current-UI assets from the new build before submission.
+

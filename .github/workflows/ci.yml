@@ -29,6 +29,8 @@ jobs:
         run: npm run audit:chrome-runtime
       - name: Intelligence data lint
         run: npm run lint:data
+      - name: Offline language catalog audit
+        run: npm run audit:localization
       - name: Professional AI-assisted engineering audit
         run: npm run audit:professional
       - name: Test forensic core

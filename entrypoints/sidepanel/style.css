@@ -90,6 +90,14 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .evidence-source{margin-top:8px;padding-top:5px}
 .evidence-source a{display:inline-block;padding-block:8px;font-size:calc(12px * var(--font-scale))}
 .evidence-head{flex-wrap:wrap}
+/* Logical edges and isolated source text also work with the Arabic UI. */
+.gate{border-left:0;border-inline-start:3px solid var(--accent);border-radius:8px}
+.evidence-row::before{left:auto;inset-inline-start:-1px}
+[dir="auto"],code,pre{unicode-bidi:isolate}
+code,pre,input[type="url"],input[type="password"],#publisher-key,#entity-lei{direction:ltr;text-align:start}
+:root[lang="ar"]{letter-spacing:normal}
+:root[lang="ar"] .eyebrow,:root[lang="ar"] .section-kicker,:root[lang="ar"] button,:root[lang="ar"] .metric span{letter-spacing:normal;line-height:1.6}
+:root[lang="hi"] h1,:root[lang="bn"] h1{line-height:1.35}
 .scan-card{background:var(--surface)}
 .toggle-row select{min-width:0;max-width:45%;min-height:44px;border-color:var(--line)}
 body{overflow-wrap:anywhere;scrollbar-color:var(--muted) var(--bg)}
