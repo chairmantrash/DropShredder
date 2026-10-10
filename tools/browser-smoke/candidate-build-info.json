@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "b8fa9f02e6311c0cb8557f1fe3fd34f7dd0a1f94",
-  "sourceTree": "a7c79fe092927f030e6576b2d65fca391ff1596f",
+  "sourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
+  "sourceTree": "3a5b2a8483e6ea11707d78d6d54ee7c1d2bfbf26",
   "version": "0.2.0",
-  "reviewedChange": "DS-042/043: audited prior research families, user-reviewed session-only merchant/manufacturer/shipper standing; seven dimensions/32 sources; exact scope and case-party/category/status/freshness gates; no new permissions/backend/warning score; deterministic OCR manifest environment metadata without OCR model or assertion changes.",
+  "reviewedChange": "DS-042/043: audited prior research families, user-reviewed session-only merchant/manufacturer/shipper standing; seven dimensions/32 sources; exact scope and case-party/category/status/freshness gates; no new permissions/backend/warning score; deterministic OCR manifest environment metadata without OCR model or assertion changes. Restores ten complete source destinations with unchanged native two-batch assertions.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -56,8 +56,8 @@
     },
     {
       "path": "background.js",
-      "bytes": 50449,
-      "sha256": "3a618f88248937b19a0ffb1d01c22abc87dd3f4f097d816d421b39697aa458a6"
+      "bytes": 50466,
+      "sha256": "504faaed0ac4fbffc52c9e55e40ae7c2f19c628e7841171b95824255f2f41ae6"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -70,9 +70,9 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-DRQkFbrS.js",
-      "bytes": 565030,
-      "sha256": "8c2ae34014080d61e5ef51667170016d5d2a6cb36665e21d3e84b4661d46ce6d"
+      "path": "chunks/sidepanel-Vz-B8VmM.js",
+      "bytes": 565047,
+      "sha256": "dc26d5c90365c013dddd71557f9e5c3f59fea5fa4ab548db66069492ec5d71f2"
     },
     {
       "path": "content-scripts/auto.js",
@@ -257,7 +257,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "d686461135d920c7a6f05687ab71fc6997b3a2ea9a200aab6aedb43af2b049dd"
+      "sha256": "22c0ec73b8bed90073a5956ade27b34e36416fc2c1a711fd3c6315c7e281f99d"
     }
   ]
 }
