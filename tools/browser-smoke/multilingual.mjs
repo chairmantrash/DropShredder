@@ -23,7 +23,7 @@ export async function installMultilingualFixtures(context){
  });
 }
 export async function runMultilingualSuite({page,native,worker,context,test,until,pause,output}){
- const scan=async()=>{await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan',30000);const raw=await native.evaluate("document.querySelector('#raw').textContent");assert.ok(raw,'Localized product must return a report');return JSON.parse(raw);};
+ const scan=async()=>{await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan ready',30000);await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan',30000);const raw=await native.evaluate("document.querySelector('#raw').textContent");assert.ok(raw,'Localized product must return a report');return JSON.parse(raw);};
  for(const f of fixtures){
   const url=new URL(`https://fixture.example.com/languages/${f.lang}/detail${f.productPath}`).href;
   await test(`M-${f.lang}`,'Native toast-to-panel and repeated manual scan of an owned original-language product',async()=>{
