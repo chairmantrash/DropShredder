@@ -1,14 +1,9 @@
 {
-  "sourceCommit": "75041fcde6c0f7f9409f144a4a177766218189bc",
-  "sourceTree": "2c908b5d065ff4d7dc5ba0e311f89964f572dff3",
+  "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
+  "sourceTree": "db63f2b26bc569ffb7f7585b544d032436014386",
   "version": "0.2.0",
-  "reviewedChange": "DS-044/045: English-first selected-language offline OCR preserves the original Hindi phrase and Latin identifier; original strict assertion plus unchanged-image literal regression. Complete dated source-access follow-up and guarded independent-corpus metrics, reconcile superseded records; no model/engine/permission/dependency/verdict changes. Local393 tests; hosted exact-package acceptance follows separately.",
+  "reviewedChange": "DS-044/045: English-first offline OCR repairs Hindi identifiers; bounded high-quality2x Arabic OCR retains native and Latin lines with2048px cap and unchanged1024px shape-detector budget. Both original failed inputs and strict assertions retained. Source-access follow-up and guarded corpus metrics;394 local tests. No engine/model/dependency/permission/verdict changes; fresh hosted verification required.",
   "buildFiles": [
-    {
-      "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19974,
-      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
-    },
     {
       "path": "_locales/ar/messages.json",
       "bytes": 82144,
@@ -70,9 +65,9 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-sDxTFASf.js",
-      "bytes": 565047,
-      "sha256": "b8f0a09f945c50b32e192bd6d7f42ca9b14fde0122f072d2856eb95d48fd6e96"
+      "path": "chunks/sidepanel-BgycW4SC.js",
+      "bytes": 565316,
+      "sha256": "adc6c6c38d51b571aa26db0668d73e74a2c09f2fd9efbaa94770acfa478020aa"
     },
     {
       "path": "content-scripts/auto.js",
@@ -105,31 +100,6 @@
       "sha256": "a07d5fa66c5bb069b841ed860f7cdf655f9597181afdda11114735908d764228"
     },
     {
-      "path": "ocr/LANGUAGE-MODELS.json",
-      "bytes": 4282,
-      "sha256": "1c9418063a475042603c093d27d86fa8f1c157d0df18974e4112496469cc83e5"
-    },
-    {
-      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
-      "bytes": 11358,
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
-    },
-    {
-      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
-      "bytes": 11358,
-      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
-    },
-    {
-      "path": "ocr/LICENSE-TESSERACT-JS.txt",
-      "bytes": 11357,
-      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
-    },
-    {
-      "path": "ocr/PROVENANCE.txt",
-      "bytes": 1147,
-      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
-    },
-    {
       "path": "ocr/ara.traineddata.gz",
       "bytes": 715721,
       "sha256": "588433010757ee22481757818f3cbf610cda08357b9f1376498b819a70a1701b"
@@ -160,9 +130,34 @@
       "sha256": "2e8e4516ac16abcdbca15377cca8ba90da8931f5b54510bb758931965baf61c2"
     },
     {
+      "path": "ocr/LANGUAGE-MODELS.json",
+      "bytes": 4282,
+      "sha256": "1c9418063a475042603c093d27d86fa8f1c157d0df18974e4112496469cc83e5"
+    },
+    {
+      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-JS.txt",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
       "path": "ocr/por.traineddata.gz",
       "bytes": 998523,
       "sha256": "8b875b5cedb7fc753eb01173df3b469c694c8bcb649180a351a13ebd18ab1832"
+    },
+    {
+      "path": "ocr/PROVENANCE.txt",
+      "bytes": 1147,
+      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
     },
     {
       "path": "ocr/spa.traineddata.gz",
@@ -257,7 +252,12 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "28d8003323d25195dc6baf686c7fc67e4360c14b6ab0bb102daa7e48411c2cf5"
+      "sha256": "4e7051187d0ad27dcdd4c21f68a5ba7bc1e0d907f439f31fd7f00c2ed0208fb8"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19974,
+      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
     }
   ]
 }
