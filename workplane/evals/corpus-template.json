@@ -1,8 +1,8 @@
 {
   "version": 1,
   "pin": {
-    "sourceCommit": "24089b72322eb58aff26fce98f0c681cae81fe76",
-    "artifactSha256": "2dbdcddf2c23df768126abfbb8af8cbac56439f955dde6c9775d373854832192"
+    "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
+    "artifactSha256": "24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1"
   },
   "provenance": {
     "independentGroundTruth": false,

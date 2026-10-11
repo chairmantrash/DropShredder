@@ -1,15 +1,15 @@
 # Research application continuation — current October 11, 2026
 
-DS-045 supersedes the obsolete implementation/deferred statements in the historical October9 table retained below. Current source is the repaired candidate pinned in `tools/browser-smoke/candidate-build-info.json`; exact current-artifact browser acceptance remains open.
+DS-045 supersedes the obsolete implementation/deferred statements in the historical October9 table retained below. Current source is the repaired candidate pinned in `tools/browser-smoke/candidate-build-info.json`; fresh owned Chrome subset is green in DS-045; independent acceptance remains open.
 
 | Area | Current implemented behavior | Actual remaining work |
 |---|---|---|
 | References/feeds | Inert preview/save, expiry/rollback/version floors, source-bound Ed25519 key pinning and off-by-default scheduled signed checks | Real publisher/rights onboarding and elapsed weekly browser lifecycle; no silent key rotation |
-| Product matching | Exact identifiers/variant exclusions, bounded local feature-hash similarity and eight selected-language offline OCR models; Hindi mixed-script repair local | Independent product/merchant-disjoint accuracy and real photographs; hashing is not neural embeddings |
+| Product matching | Exact identifiers/variant exclusions, bounded local feature-hash similarity and eight selected-language offline OCR models; Hindi/Arabic mixed-script repairs verified in hosted Chrome | Independent product/merchant-disjoint accuracy and real photographs; hashing is not neural embeddings |
 | Roles/origin | Separate manufacturer/importer/seller leads and exact eight-stage North American origin dossier | Authenticated real-product chain, rights, dates and current source scope; no factory inference or blacklists |
 | Identity/safety | Explicit exact-LEI GLEIF, user-triggered RDAP/CPSC candidates, serial/lot/model exclusions and conservative issuer scope | Independent provider/unit authenticity; optional API candidates remain unselected |
 | Standing/litigation | Session-only exact-entity reviewed records, seven dimensions, case-party/category/status gates, seven-day litigation expiry and supersession | Actual current original records and coverage; no exhaustive court crawler or automatic imported-summary authentication |
-| Chrome/interface | Native panel, lifecycle invalidation, privacy controls, bounded search chooser, eight419-message catalogs | Exact repaired Chrome run, independent A01–D06, native OS chooser/concurrent panels/context menus/storage, minimum version and language/legal review |
+| Chrome/interface | Native panel, lifecycle invalidation, privacy controls, bounded search chooser, eight419-message catalogs | Independent A01–D06, concurrent panels/context menus/storage, minimum version and language/legal review; one actual Linux chooser passes |
 | Evaluation/research | Dated source-access follow-up and reproducible accuracy metrics with explicit NOT_ACCEPTED gates | Independent rights-cleared corpus, actual predictions, owner-approved thresholds and clustering review |
 
 Source-access results: `brain/research/2026-10-11-SOURCE-ACCESS-COMPLETION.md`. Current remaining-work authority: `workplane/WORK-QUEUE.md`. Built-in data changes still require reviewed Git integration and extension updates; Monday/Tuesday ChatGPT research schedules do not distribute code.

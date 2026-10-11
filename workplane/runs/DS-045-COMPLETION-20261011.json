@@ -1,0 +1,180 @@
+{
+  "task": "DS-045",
+  "date": "2026-10-11",
+  "status": "DONE — engineering, source-access follow-up and acceptance preparation; independent acceptance open",
+  "baseline": "c56dd9558c08d0222cc51087dd11b2e654a46293",
+  "productionSource": "2641a597573f071f8360492d6dc577983c38c144",
+  "productionTree": "db63f2b26bc569ffb7f7585b544d032436014386",
+  "testedHarness": "480f71043c059b4695553c0718ef1d08d5c07728",
+  "testedHarnessTree": "c25a5d3cac82291b6b5cf5512ce8bb05dcc1b6ca",
+  "integration": {
+    "pr": 12,
+    "merged": true,
+    "target": "release/security-performance-hardening",
+    "mergeCommit": "bb84b66bc65f60cd6f43f66a3f3fd2f0a8f7fa5e",
+    "fileChangesFromTestedHead": 0,
+    "canonicalPublicReleasePR": 9,
+    "mainMerged": false,
+    "tagged": false,
+    "storeSubmitted": false
+  },
+  "local": {
+    "node": "22.18.0",
+    "tests": 394,
+    "failed": 0,
+    "skipped": 0,
+    "audits": [
+      "typecheck",
+      "security",
+      "static Chrome conformance",
+      "data",
+      "localization",
+      "professionalism",
+      "build",
+      "zip",
+      "release",
+      "performance"
+    ],
+    "architectureWarnings": "Existing three large-module recommendations remain; no demonstrated regression",
+    "sourceAndHarnessTrees": "API-published Git trees exactly equal reviewed local Git trees; commit identities differ by API authorship/timestamps"
+  },
+  "package": {
+    "files": 51,
+    "bytes": 54940159,
+    "rawZipBytes": 25848653,
+    "rawZipSha256": "24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1",
+    "hostedInventory": "All51 actual downloaded QA files match pinned paths/bytes/SHA256, with no extras"
+  },
+  "hosted": {
+    "ci": {
+      "run": 38183021577,
+      "status": "success"
+    },
+    "codeql": {
+      "run": 38183021589,
+      "status": "success"
+    },
+    "chromium": {
+      "run": 38183021566,
+      "status": "success",
+      "browser": "156.0.8078.4",
+      "packaged": 9,
+      "headed": 69,
+      "localeGroups": 7,
+      "distinct": 85,
+      "headlessNativeDuplicatesNotAdded": 7,
+      "errors": 0,
+      "ocr": "EnglishN29 plus all seven selected models; original literal Hindi and Arabic images pass",
+      "privacy": "N12/N13/N14 pass on repaired bytes",
+      "nativeOSPicker": "N34 genuinely opens Open File and selects a different unchanged local image through actual X11 input; one Linux chooser, not cross-OS proof"
+    }
+  },
+  "artifacts": [
+    {
+      "id": 11718720569,
+      "name": "dropshredder-localization-evidence",
+      "sha256": "dc35b911d33d750cde9ebfb1c35415b2ac52364e44c873c06adaad3df2b36df3",
+      "expiresAt": "2026-11-10T23:07:35Z"
+    },
+    {
+      "id": 11718444458,
+      "name": "dropshredder-headed-permission-evidence",
+      "sha256": "ba88acfdafb593c5e98dedb216a2879ae98a54073f9669f990431a75957c8285",
+      "expiresAt": "2026-11-10T23:11:35Z"
+    },
+    {
+      "id": 11718188012,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "sha256": "9ed29c90a7cf83b413b5892a3df8e7b993e85ead7d3a63266fab33de796d86f1",
+      "expiresAt": "2026-11-10T23:07:22Z"
+    },
+    {
+      "id": 11717908190,
+      "name": "dropshredder-unpacked-qa",
+      "sha256": "065a1cea2745ea020ce48cdad3da99a55940a840875a2849f7ce81269c8bd56b",
+      "expiresAt": "2026-11-10T23:07:19Z"
+    },
+    {
+      "id": 11717803263,
+      "name": "dropshredder-native-panel-evidence",
+      "sha256": "150a033706a06e956b4b6a859bed1e3fedc333c9f0c2866b4df6b70d4ec3e644",
+      "expiresAt": "2026-11-10T23:07:15Z"
+    }
+  ],
+  "visualReview": {
+    "reviewed": [
+      "Final native OS selected-file screenshot",
+      "Final native Hindi original-input screenshot",
+      "Arabic original-input screenshot from green38180469431 on identical production bytes",
+      "Arabic/Hindi locale top crops from first run"
+    ],
+    "scope": "Bounded visual inspection; not native-speaker/legal review or all-frame QA"
+  },
+  "sourceResearch": {
+    "incompleteReferencesRetried": 55,
+    "correctedPrimaryUrls": 4,
+    "readableGeneralIncludingPriorPagesAndReplacements": 86,
+    "generalReferences": 98,
+    "readableLitigationIncludingPriorPages": 10,
+    "litigationReferences": 15,
+    "limits": "Access counts are not source/subject authenticity or reuse clearance; unvisited old pages not redated. Inaccessible sources remain link-only."
+  },
+  "live": {
+    "gleif": "Exact Bloomberg Finance L.P. LEI observed, zero verdict effect",
+    "rdap": "Reserved example.net chronology observed",
+    "cpsc": "Explicit Anker candidate notices observed, no unit authenticity claim",
+    "stores": "Amazon Noctua and Walmart LEGO titles observed; structured offers/identity unresolved and no severe warning",
+    "unavailable": "Noctua manufacturer429, Etsy403; no bypass or accuracy pass",
+    "scope": "Bounded engineering convenience sample, not independent calibrated beta accuracy"
+  },
+  "retainedFailures": [
+    {
+      "run": 38179614263,
+      "reason": "O-ara loses script at native resolution; Hindi passes",
+      "artifact": 11716613819
+    },
+    {
+      "run": 38180861754,
+      "reason": "New N34 used EWMH active-window query unavailable on Xvfb",
+      "artifact": 11717696974
+    },
+    {
+      "run": 38181408319,
+      "reason": "M-en repeated scan clicked before control enabled; readiness wait added",
+      "artifact": 11717527968
+    },
+    {
+      "run": 38181691382,
+      "reason": "N34 selection timeout",
+      "artifact": 11718396320
+    },
+    {
+      "run": 38182250183,
+      "reason": "Correct entered path captured; keyboard submission did not select. Actual observed Open-button click succeeds",
+      "artifact": 11718527851
+    }
+  ],
+  "corpus": {
+    "tool": "tools/evaluation/metrics.mjs",
+    "template": "workplane/evals/corpus-template.json",
+    "status": "NOT_ACCEPTED",
+    "observedCases": 0,
+    "independentGroundTruth": false,
+    "approvedThresholds": false,
+    "reason": "No independent corpus/reviewer/rights/threshold or clustering attestations fabricated"
+  },
+  "remaining": [
+    "Independent A01–D06 and representative merchant/product/category/language corpus",
+    "Native-speaker/legal review and real photographed/blurred/rotated labels",
+    "Concurrent panels/full native context menus/malformed browser storage/Chrome133/real-page resources",
+    "Actual elapsed weekly lifecycle and real publisher/source rights",
+    "Exact current entity/case/product source authenticity where used",
+    "Publisher account details, accepted main/tag/Store release authorization"
+  ],
+  "externalBeta": {
+    "status": "NOT STARTED for an accepted repaired build",
+    "reason": "Independent acceptance/ground truth and other external gates remain open",
+    "readyDeliverable": "Pinned green hosted QA artifact and full protocol; no testers or results invented"
+  },
+  "publication": "Prior automatic rejection is historical. Renewed owner instruction authorized the queued review publication; Git CLI lacked credentials, connected GitHub app succeeded. No new rejection bypassed."
+}

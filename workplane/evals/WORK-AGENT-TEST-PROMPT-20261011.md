@@ -3,7 +3,7 @@
 **Role:** Independent **QA / browser-testing agent only**. You are NOT the engineering or repair agent.
 
 **Project:** `chairmantrash/DropShredder`
-**Candidate:** DS-044 local repair on `feature/beta-readiness-20261011`, based on canonical draft PR #9 at4dfa3c0. Production source24089b72322eb58aff26fce98f0c681cae81fe76; inspect every supplied BUILD-INFO.json hash. This is a QA-only package. New repaired-build hosted CI/CodeQL/Chrome are pending explicit remote branch publication authorization. Do not distribute this as an accepted beta, merge or publish.
+**Candidate:** DS-045 repaired production2641a597573f071f8360492d6dc577983c38c144; tested harness480f71043c059b4695553c0718ef1d08d5c07728; integrated via PR12 into canonical draft release PR9. Use green run38183021566 unpacked QA artifact11717908190; verify every BUILD-INFO.json hash. This is a QA-only package.394 core and85 owned browser/locale checks, CI and CodeQL pass; independent acceptance and public release remain open.
 **Exact extension build:** commit `[sourceCommit from BUILD-INFO.json]`, Chrome MV3, extension version `0.2.0`, Chrome **133 or newer**.
 **Test subject:** the attached `DropShredder-Unpacked/` directory (unzip the supplied Work Agent QA bundle first). The `manifest.json` must be immediately inside this directory.
 
@@ -132,4 +132,4 @@ Re-run O-chi_sim, O-hin, O-spa, O-ara, O-fra, O-ben and O-por against native sel
 
 Verify regional origin and standing imports are deliberate, previewed, exact-product/variant/entity-bound, fresh and unscored; incomplete/claim-only origin cannot announce wholly regional products. Pending/appealed litigation remains unresolved; unrelated/plaintiff/dismissed/settled/vacated cases do not become wrongdoing. Session-only dossiers clear on navigation. Independent real-document source authentication is required before any real-entity conclusion.
 
-Do not treat the local386-test receipt or original engine reproduction as Chrome acceptance. Record each phase PASS/FAIL/BLOCKED/NOT RUN. Preserve the first failure and stop under the existing QA-role policy. The repair's fresh hosted validation and independent external acceptance remain open.
+Do not treat the local394-test receipt or original engine reproduction as Chrome acceptance. Record each phase PASS/FAIL/BLOCKED/NOT RUN. Preserve the first failure and stop under the existing QA-role policy. Fresh owned hosted validation is recorded in DS-045; independent external acceptance remains open.

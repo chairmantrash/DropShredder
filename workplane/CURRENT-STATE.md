@@ -1,3 +1,19 @@
+# Current state — October 11, 2026 DS-045 continuation
+
+Owner-directed queued completion is active. PR12 is merged into the canonical release branch at bb84b66bc65f60cd6f43f66a3f3fd2f0a8f7fa5e; public-release PR9 stays draft. The Git CLI lacked credentials; the connected GitHub app published under the renewed owner directive. Remote/local source trees were compared byte-for-byte through Git tree hashes. Earlier publication-blocked receipts below remain historical, not the current blocker.
+
+Current production2641a597573f071f8360492d6dc577983c38c144, treedb63f2b26bc569ffb7f7585b544d032436014386. Hindi uses English-first model order; selected Arabic OCR uses bounded high-quality2x enlargement, retaining1024px native detectors and a2048px OCR cap. Original failed images and strict native assertions remain.394 local tests and all required local/package gates pass;51 files/54,940,159bytes.
+
+Hosted harness4b857bf82310ac26ed286f6b737a27a237579245 passes CI38180469408, CodeQL38180469401 and Chromium38180469431:9 packaged +68 headed +7 locale groups =84 distinct checks, excluding7 headless native repeats. All selected models, both original images and N12–14 pass. Final harness480f71043c059b4695553c0718ef1d08d5c07728 passes CI38183021577, CodeQL38183021589 and Chromium38183021566:9 packaged +69 headed +7 locale groups =85 distinct checks. N34 opens the actual Linux OS chooser and selects a different image through desktop input. Downloaded QA archive and all51 package files were digest-verified; bounded native screenshots were reviewed. Integration has zero file changes from the tested head. See workplane/runs/DS-045-COMPLETION-20261011.json.
+
+Source follow-up retried all55 previously incomplete references, with four corrected primary URLs;86/98 general and10/15 litigation references have readable pages/replacements. Failed sources stay link-only and exact-entity/source authenticity remains unverified. Superseded task/continuation records were reconciled. Accuracy tooling and an empty/unapproved corpus template exist; the template intentionally fails acceptance, not a representative accuracy result.
+
+Independent corpus, native-speaker/legal review, photographs, elapsed weekly lifecycle, real publisher provenance, broader concurrent/context-menu/storage/minimum-version/performance acceptance and account-specific public release remain open. Current queue is authoritative; engineering passes do not close those gates.
+
+---
+
+## Historical October11 DS-044 checkpoint
+
 # Current state — October 11, 2026 authoritative override
 
 DS-044 completes the owner-directed orientation/remaining-implementation audit. Current remote release remains4dfa3c0 in draft PR9. Local source24089b7 repairs the known Hindi OCR failure by prioritizing English within the selected model pair; the unchanged failed input and original strict assertion are preserved, with an additional exact native-script/model-code regression.386 core tests and all clean Node22 local gates pass on51 files/54,939,890bytes; npm audit reports zero advisories at this run.

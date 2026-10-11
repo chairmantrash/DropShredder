@@ -1,0 +1,41 @@
+{
+  "task": "DS-045",
+  "status": "FAIL",
+  "sourceCommit": "75041fcde6c0f7f9409f144a4a177766218189bc",
+  "harnessCommit": "f70e80a8b50a5004097683cf01a9fe3ea1c37163",
+  "workflowRun": 38179614263,
+  "headedJob": 114589202591,
+  "artifact": {
+    "id": 11716613819,
+    "sha256": "c73d69b11fbf475081899b50cc2c98d5bade1e9023e98c02bd14ee66ff1c6f9e"
+  },
+  "chrome": "156.0.8078.4",
+  "passed": {
+    "packaged": 9,
+    "headed": 59,
+    "localeGroups": 7,
+    "headlessNativeDuplicatesNotAdded": 7
+  },
+  "failure": "O-ara: selected Arabic OCR omitted native-script text",
+  "passedOcr": [
+    "O-chi_sim",
+    "O-hin",
+    "O-spa"
+  ],
+  "notExecuted": [
+    "O-fra",
+    "O-ben",
+    "O-por",
+    "O-hin-original",
+    "N12",
+    "N13",
+    "N14"
+  ],
+  "cause": "Both language orders and PSM3/6/11 omit the Arabic line at1000x240. Whole-image bilinear/bicubic enlargement to2000x480 with eng+ara recognizes Arabic and Latin; nearest-neighbor still fails.",
+  "input": {
+    "path": "tests/fixtures/ocr/arabic-model-original.png",
+    "sha256": "208e18c86178bb9f58b83179b3e83971a661590ab00428b6afe4b2cd31794376"
+  },
+  "scope": "Controlled native/locale fixtures and bounded live observations, not independent category/photograph accuracy; original failure/assertion preserved",
+  "successorSource": "2641a597573f071f8360492d6dc577983c38c144"
+}
