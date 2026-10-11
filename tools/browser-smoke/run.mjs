@@ -41,7 +41,8 @@ async function test(id, description, fn) {
 }
 async function openContext() {
   const ctx = await chromium.launchPersistentContext(profile, {
-    channel: 'chromium', headless, viewport: { width: 420, height: 900 },
+    ...(process.env.DS_BROWSER_EXECUTABLE ? { executablePath: process.env.DS_BROWSER_EXECUTABLE } : { channel: 'chromium' }),
+    headless, viewport: { width: 420, height: 900 },
     args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`],
   });
   ctx.setDefaultTimeout(10000);
@@ -84,6 +85,7 @@ try {
     extensionId = new URL(worker.url()).host;
     const cdp = await context.newCDPSession(context.pages()[0]);
     report.browser = await cdp.send('Browser.getVersion');
+    if (process.env.DS_EXPECT_CHROME_MAJOR) assert.equal(Number(report.browser.product.split('/')[1].split('.')[0]), Number(process.env.DS_EXPECT_CHROME_MAJOR), 'Wrong compatibility browser');
     report.os = `${os.platform()} ${os.release()}`;
     report.extensionId = extensionId;
     const manifest = await worker.evaluate(() => chrome.runtime.getManifest());
