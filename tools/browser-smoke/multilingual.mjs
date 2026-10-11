@@ -78,4 +78,19 @@ export async function runMultilingualSuite({page,native,worker,context,test,unti
   if(script)assert.ok(new RegExp(`\\p{Script=${script}}`,'u').test(recognized),`${language} must recognize original script, not only Latin SKU`);
   return {language,text,recognized:recognized.slice(0,600),scope:'Packaged model invocation on a synthetic known-script label; independent photo accuracy untested'};
  });
+ await test('O-hin-original','Original failed Hindi label preserves both native text and the literal Latin model identifier',async()=>{
+  if(!(await native.evaluate("document.querySelector('#label-image').closest('details').open"))) await native.click('.label-reader-panel > summary');
+  await native.click('#label-language');await native.key('Home','Home',36);
+  await native.key('Down','ArrowDown',40);await native.key('Down','ArrowDown',40);await native.key('Enter','Enter',13);
+  assert.equal(await native.evaluate("document.querySelector('#label-language').value"),'hin');
+  await native.setFiles('#label-image',[path.join(root,'tests/fixtures/ocr/hindi-model-original.png')]);
+  await native.click('#label-read');
+  await until(()=>native.evaluate("(/Local analysis complete|Offline OCR failed|unavailable|Could not/.test(document.querySelector('#label-status').textContent))"),'original Hindi OCR regression',60000);
+  assert.match(await native.evaluate("document.querySelector('#label-status').textContent"),/Local analysis complete/);
+  const recognized=await native.evaluate("document.querySelector('#label-results').textContent");
+  assert.match(recognized,/उत्पाद\s+मॉडल/u);assert.match(recognized,/MODEL12345/);
+  assert.doesNotMatch(recognized,/\|॥0\/05।/u);
+  await native.screenshot('native-hindi-original-regression.png');
+  return {recognized:recognized.slice(0,600),scope:'Unchanged DS-040 failed synthetic image, selected Hindi, native panel; no independent photo accuracy claim'};
+ });
 }

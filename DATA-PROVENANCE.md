@@ -37,7 +37,7 @@ Do not promote a candidate with unresolved licenses/terms into a runtime corpus.
 - Merchant records retain reviewedAt/freshnessDays; expired active records are rejected by data lint and runtime evidence freshness. Network complaints stay domain-specific.
 - Registry/source tables without row-level dates are explicitly metadata-incomplete. Their names/patterns are neutral leads, not asserted current ownership, quality or deception. Do not market every source as live-verified.
 - Weekly built-in maintenance changes require a reviewed repository change and new extension package. Chrome alarms update only user-opted-in, previously authorized signed subscriptions; they do not update packaged code/built-in registries or implement DS-021 research.
-- No weekly background research job has been installed. Next registry maintenance is due October 13 based on the October 6 baseline, then at most seven-day review intervals. Current primary legal/terms and RDAP comparison receipts are dated October 9.
+- No extension background research crawler has been installed. Separate ChatGPT research schedules are enabled for Monday litigation and Tuesday broader intelligence,08:00 America/Chicago; verified October11. Next registry maintenance is due October 13 based on the October 6 baseline, then at most seven-day review intervals. Current primary legal/terms and RDAP comparison receipts are dated October 9.
 
 ## Primary references inspected
 - https://www.iana.org/help/licensing-terms

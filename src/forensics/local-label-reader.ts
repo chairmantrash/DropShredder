@@ -31,7 +31,9 @@ async function localTesseract(canvas:OffscreenCanvas,signal:AbortSignal,language
   const api=await offlineEngine();
   signal.throwIfAborted();
   const ocrOrigin=chrome.runtime.getURL('ocr/');
-  const worker=await api.createWorker(language==='eng'?'eng':language+'+eng',1,{
+  // Tesseract language order affects recognition. Keep English first so the
+  // selected script does not reinterpret Latin model/lot identifiers.
+  const worker=await api.createWorker(language==='eng'?'eng':'eng+'+language,1,{
     workerPath:ocrOrigin+'worker.min.js',
     corePath:ocrOrigin,
     langPath:ocrOrigin.slice(0,-1),

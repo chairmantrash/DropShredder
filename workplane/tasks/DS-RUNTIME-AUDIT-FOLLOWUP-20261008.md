@@ -1,6 +1,8 @@
 # DS-RUNTIME-AUDIT-FOLLOWUP-20261008 — Chrome owner handoff
 
-Status: READY
+DS-045 reconciliation, 2026-10-11: keep the findings as history. DS-030 verification and DS-031–037 hosted receipts record the fixes and bounded browser coverage. Broader independent acceptance remains in the current queue; this is not an active repair claim.
+
+Status: SUPERSEDED — implementation resolved by DS-030 and subsequent runtime work
 Owner: Original DropShredder continuation engineering agent / active DS-028 and DS-029 owners
 Source task: DS-ENHANCEMENT-AUDIT-20261008
 Release baseline: 2f89ddaac2037dbeb78be5a39ae7254b68394a78

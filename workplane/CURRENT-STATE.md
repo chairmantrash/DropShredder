@@ -1,3 +1,15 @@
+# Current state — October 11, 2026 authoritative override
+
+DS-044 completes the owner-directed orientation/remaining-implementation audit. Current remote release remains4dfa3c0 in draft PR9. Local source24089b7 repairs the known Hindi OCR failure by prioritizing English within the selected model pair; the unchanged failed input and original strict assertion are preserved, with an additional exact native-script/model-code regression.386 core tests and all clean Node22 local gates pass on51 files/54,939,890bytes; npm audit reports zero advisories at this run.
+
+**BLOCKED:** fresh repaired-package Chrome/CI/CodeQL and conditional external beta have not run. This host denies browser sockets; automatic approval review rejected remote Git publication to both release and isolated feature branches. Explicit approval to push feature/beta-readiness-20261011 to the verified chairmantrash/DropShredder repository is required for the existing hosted workflows. No remote branch changed, no main merge/tag/store publication. Full details: workplane/tasks/DS-044.md and workplane/runs/DS-044-COMPLETION-20261011.json. Current remaining-work authority: workplane/WORK-QUEUE.md.
+
+DS-041–043 implementation/research and previous bounded native checks are complete. Weekly litigation and broader source research are enabled in America/Chicago. Independent A01–D06, representative live category/language calibration, native-speaker/legal review, photo OCR and broader browser edges remain genuine acceptance work. Historical passes below do not verify repaired bytes.
+
+---
+
+## Historical checkpoints (retained; current override above takes precedence)
+
 # Current state
 
 **Phase:** Beta completion / verification

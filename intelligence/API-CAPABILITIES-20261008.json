@@ -194,5 +194,13 @@
     "brain/research/2026-10-08-CPSC-TITLE-PROBE.json",
     "brain/research/2026-10-09-GLEIF-ENDPOINT-PROBE.json"
   ],
-  "scope": "Access research and code integration states, not approval of every API for Chrome runtime."
+  "scope": "Access research and code integration states, not approval of every API for Chrome runtime.",
+  "currentStateOverride": {
+    "task": "DS-045",
+    "date": "2026-10-11",
+    "authority": "workplane/WORK-QUEUE.md",
+    "rdap": "Permission/cache/routing follow-ups resolved by DS-030; bounded live DS-037 evidence exists. Older chromeVerified fields are historical, not repaired-build verification.",
+    "cpsc": "Bounded live DS-037 evidence supersedes the old untested status. Exact current-artifact provider acceptance remains open.",
+    "optionalCandidates": "SaferProducts/openFDA/SEC/CompaniesHouse/FTC/Comtrade remain unselected; see October11 source-access completion report."
+  }
 }
