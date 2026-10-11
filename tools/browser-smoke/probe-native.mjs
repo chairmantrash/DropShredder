@@ -600,7 +600,8 @@ try {
         const filename=path.join(root,'tests/fixtures/ocr/hindi-model-original.png');
         assert.notEqual(await native.evaluate("document.querySelector('#label-image').files[0]?.name"),'hindi-model-original.png');
         await native.click('#label-image');await pause(600);
-        const dialog=execFileSync('xdotool',['getactivewindow','getwindowname'],{encoding:'utf8'}).trim();
+        // Xvfb has no EWMH window manager; query actual X11 focus directly.
+        const dialog=execFileSync('xdotool',['getwindowfocus','getwindowname'],{encoding:'utf8'}).trim();
         assert.match(dialog,/Open|Select.*[Ff]ile|File.*Upload/i,'Expected actual OS file picker, not a Chrome page');
         await native.screenshot('native-os-file-picker-open.png');
         execFileSync('xdotool',['key','ctrl+l']);
