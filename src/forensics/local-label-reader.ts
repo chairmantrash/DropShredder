@@ -44,7 +44,19 @@ async function localTesseract(canvas:OffscreenCanvas,signal:AbortSignal,language
   signal.addEventListener('abort',cancel,{once:true});
   try{
     signal.throwIfAborted();
-    const image=await canvas.convertToBlob({type:'image/png'});
+    // At the native 1024px detector bound, mixed Arabic/Latin labels can lose
+    // the Arabic line during layout recognition. Enlarge only this explicit
+    // OCR input, keeping shape detectors unchanged and work capped at 2048px.
+    let ocrCanvas=canvas;
+    if(language==='ara'){
+      ocrCanvas=new OffscreenCanvas(Math.min(2048,canvas.width*2),Math.min(2048,canvas.height*2));
+      const ctx=ocrCanvas.getContext('2d');
+      if(!ctx) throw new Error('Local OCR canvas is unavailable.');
+      ctx.imageSmoothingEnabled=true;
+      ctx.imageSmoothingQuality='high';
+      ctx.drawImage(canvas,0,0,ocrCanvas.width,ocrCanvas.height);
+    }
+    const image=await ocrCanvas.convertToBlob({type:'image/png'});
     signal.throwIfAborted();
     const result=await worker.recognize(image);
     signal.throwIfAborted();
