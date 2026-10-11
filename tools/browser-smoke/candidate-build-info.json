@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "24089b72322eb58aff26fce98f0c681cae81fe76",
-  "sourceTree": "48690e5b6019edcb0dec6bd5fb63e01a58843a43",
+  "sourceCommit": "75041fcde6c0f7f9409f144a4a177766218189bc",
+  "sourceTree": "2c908b5d065ff4d7dc5ba0e311f89964f572dff3",
   "version": "0.2.0",
-  "reviewedChange": "DS-044: English-first selected-language offline OCR preserves original Hindi phrase and Latin model identifier; original O-hin assertion retained, additional unchanged-image literal regression; no models/engine/permissions/dependencies/verdict changes. Current eight-language docs corrected.",
+  "reviewedChange": "DS-044/045: English-first selected-language offline OCR preserves the original Hindi phrase and Latin identifier; original strict assertion plus unchanged-image literal regression. Complete dated source-access follow-up and guarded independent-corpus metrics, reconcile superseded records; no model/engine/permission/dependency/verdict changes. Local393 tests; hosted exact-package acceptance follows separately.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
