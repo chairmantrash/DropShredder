@@ -1,6 +1,8 @@
 # DS-GAP-RUNTIME-FOLLOWUP-20261008 — Second sweep owner handoff
 
-Status: READY
+DS-045 reconciliation, 2026-10-11: keep the findings as history. DS-030 verification and DS-031–037 hosted receipts record the fixes and bounded browser coverage. Broader independent acceptance remains in the current queue; this is not an active repair claim.
+
+Status: SUPERSEDED — implementation resolved by DS-030 and subsequent runtime work
 Addressed to: Original DropShredder continuation engineering agent, active DS-028 / DS-029 owners
 Source task: DS-FULLSTACK-GAP-AUDIT-20261008
 Baseline: 7417aa2d5de90df3211586e5d1a4525c649ae0e8

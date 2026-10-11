@@ -1,0 +1,91 @@
+{
+  "task": "DS-044",
+  "status": "BLOCKED",
+  "baseline": "4dfa3c057bd1fc9d07447c7b16efe935938e90b9",
+  "productionSource": "24089b72322eb58aff26fce98f0c681cae81fe76",
+  "productionTree": "48690e5b6019edcb0dec6bd5fb63e01a58843a43",
+  "packageFiles": 51,
+  "packageBytes": 54939890,
+  "zipBytes": 25848568,
+  "zipSha256": "2dbdcddf2c23df768126abfbb8af8cbac56439f955dde6c9775d373854832192",
+  "localEnvironment": {
+    "node": "22.18.0",
+    "install": "clean npm ci",
+    "tests": 386,
+    "failed": 0,
+    "skipped": 0,
+    "audits": [
+      "typecheck",
+      "security",
+      "Chrome conformance",
+      "data",
+      "localization",
+      "professionalism",
+      "build",
+      "zip",
+      "release",
+      "performance"
+    ],
+    "npmAuditAdvisories": 0
+  },
+  "localReproduction": {
+    "inputSha256": "b0254a587f6f3b1ca6fb33c26dc1fdccc2ad9319b48d3d83401ed0442bc362dd",
+    "engine": "Tesseract.js/core 7.0.0; unchanged packaged data",
+    "hin+eng": "उत्पाद मॉडल\n|॥0/05। 42345",
+    "eng+hin": "उत्पाद मॉडल\nMODEL12345",
+    "eng": "Sule Atset\nMODEL12345",
+    "scope": "isolated actual engine, original synthetic input; not Chrome or photo accuracy"
+  },
+  "maintenanceSchedulesVerified": {
+    "litigation": {
+      "enabled": true,
+      "day": "Monday",
+      "hour": 8,
+      "timezone": "America/Chicago"
+    },
+    "intelligence": {
+      "enabled": true,
+      "day": "Tuesday",
+      "hour": 8,
+      "timezone": "America/Chicago"
+    }
+  },
+  "hostedBrowser": "NOT RUN on repaired bytes; requires explicit isolated branch push authorization",
+  "release": "DRAFT PR9; main untouched; not published",
+  "remainingAcceptance": [
+    "Independent A01–D06",
+    "representative merchant/category/language calibration",
+    "native-speaker/legal review",
+    "independent photographed-label accuracy",
+    "native OS chooser/concurrent-panel/context-menu/storage edges",
+    "minimum Chrome version and real-page resource acceptance",
+    "publisher/source authentication where applicable"
+  ],
+  "localBrowserCapabilityProbe": {
+    "socketAllowed": false,
+    "code": "EPERM",
+    "scope": "read-only disposable local socket capability probe; Chrome not launched"
+  },
+  "remotePublication": {
+    "status": "BLOCKED BY AUTOMATIC APPROVAL REVIEW",
+    "destination": "https://github.com/chairmantrash/DropShredder",
+    "proposedBranch": "feature/beta-readiness-20261011",
+    "destinationVerified": {
+      "repositoryId": "1407325128",
+      "visibility": "public",
+      "owner": "chairmantrash",
+      "cloneUrlMatches": true
+    },
+    "blockedActions": [
+      "push to shared release/security-performance-hardening",
+      "push to new isolated feature/beta-readiness-20261011"
+    ],
+    "reason": "Explicit user authorization for remote code publication/destination required; no bypass attempted",
+    "remoteReleaseHeadUnchanged": "4dfa3c057bd1fc9d07447c7b16efe935938e90b9"
+  },
+  "externalBeta": {
+    "status": "NOT STARTED for repaired candidate",
+    "gate": "Fresh exact-package Chrome/CI/CodeQL first; independent acceptance remains open",
+    "priorLiveBeta": "DS-037 historical observations remain valid only for their older source"
+  }
+}

@@ -1,3 +1,5 @@
+> DS-045 correction, October 11: the Canada West Boots outlet profile now reads Not Rated, superseding the A+ example below. NR/non-accreditation remain neutral. Additional access corrections and limits: `brain/research/2026-10-11-SOURCE-ACCESS-COMPLETION.md`. Original observations below remain historical.
+
 # Research refresh and company/manufacturer standing
 
 2026-10-10, DS-042; baseline f2007ca0b80266770c97637ae261fb51d99c7e5e. All 38 pre-existing Markdown research notes were inventoried across 12 topic families in `intelligence/research-refresh-20261010.json`. The separate 98-reference presence ledger records 51 retrieved pages, 39 primary search results, seven failed retrievals and one unreadable body. This is a topic-level refresh: it does not certify all legacy URLs, company entries, historical experiments or benchmark claims. Original registry verification dates remain intact unless that exact record was checked. Later litigation research is separately recorded in DS-043, not retroactively included in these counts.

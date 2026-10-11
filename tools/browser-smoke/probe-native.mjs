@@ -281,6 +281,33 @@ try {
       report.permissionExploration.afterDecision = { granted, scripts };
       await native.screenshot('native-permission-allowed.png');
     });
+      await test('N34','Native operating-system file picker selects an unchanged local label through desktop input',async()=>{
+        if(!(await native.evaluate("document.querySelector('#label-image').closest('details').open")))await native.click('.label-reader-panel > summary');
+        const filename=path.join(root,'tests/fixtures/ocr/hindi-model-original.png');
+        assert.notEqual(await native.evaluate("document.querySelector('#label-image').files[0]?.name"),'hindi-model-original.png');
+        await native.click('#label-image');await pause(600);
+        // Xvfb has no EWMH window manager; query actual X11 focus directly.
+        const dialogWindow=execFileSync('xdotool',['getwindowfocus'],{encoding:'utf8'}).trim();
+        assert.match(dialogWindow,/^\d+$/);
+        const dialog=execFileSync('xdotool',['getwindowname',dialogWindow],{encoding:'utf8'}).trim();
+        assert.match(dialog,/Open|Select.*[Ff]ile|File.*Upload/i,'Expected actual OS file picker, not a Chrome page');
+        await native.screenshot('native-os-file-picker-open.png');
+        await fs.access(filename);
+        execFileSync('xdotool',['windowfocus','--sync',dialogWindow]);
+        execFileSync('xdotool',['key','ctrl+l']);
+        await pause(300);
+        execFileSync('xdotool',['type','--clearmodifiers','--delay','5',filename]);
+        await pause(300);
+        await native.screenshot('native-os-file-picker-path.png');
+        const geometry=Object.fromEntries(execFileSync('xdotool',['getwindowgeometry','--shell',dialogWindow],{encoding:'utf8'}).trim().split('\n').map(line=>{const [key,value]=line.split('=');return [key,Number(value)];}));
+        // Preserved chooser screenshots place Open at this bottom-right point.
+        // Refuse changed geometry before sending the actual desktop click.
+        assert.equal(geometry.X+geometry.WIDTH,1124);assert.equal(geometry.Y+geometry.HEIGHT,822);
+        execFileSync('xdotool',['mousemove',String(geometry.X+geometry.WIDTH-49),String(geometry.Y+geometry.HEIGHT-23),'click','1']);
+        await until(()=>native.evaluate("document.querySelector('#label-image').files[0]?.name==='hindi-model-original.png'"),'actual OS chooser selection',15000);
+        await native.screenshot('native-os-file-picker-selected.png');
+        return {dialog,selected:'hindi-model-original.png',scope:'One genuine Linux/Xvfb OS chooser through desktop input; no CDP file dispatch, photograph accuracy or cross-OS chooser claim'};
+      });
     await test('N10', 'Owned product fixture gets exactly one automatic alert after consent', async () => {
       await page.locator('#dropshredder-auto-verdict').waitFor({ state: 'attached', timeout: 8000 });
       assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 1);

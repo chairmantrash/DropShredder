@@ -55,7 +55,7 @@ See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md).
 - Made in USA preference notices kept separate from wrongdoing scores
 - User-previewed signed/unsigned reference lists with version floors, expiry, rollback and optional trusted weekly refresh
 - Informational local manufacturer/importer/seller leads and lightweight lexical similarity (not neural embeddings)
-- Local user-selected barcode/English OCR with packaged worker/WASM/data
+- Local user-selected barcode/OCR in eight languages with packaged worker/WASM/data
 - Neutral marketplace result-page links and optional explicit provider searches
 
 Country, nationality, storefront platform, payment processor and ordinary third-party fulfillment are informational by themselves and do not count as misconduct.
@@ -114,7 +114,7 @@ Start there with [START-HERE.md](START-HERE.md).
 
 A separate internal-only diagnostic build exists for development. It exports sanitized local diagnostic cases to help convert missed detections into new fixtures and rules. It is intentionally isolated from the public Store release and is not telemetry.
 
-The optional OCR assets dominate unpacked size (about 45 MiB before license/code overhead); they are loaded only for a selected local photo. Exact package sizes/hashes are in `tools/browser-smoke/candidate-build-info.json`. No main merge or Chrome Web Store publication is authorized by engineering completion.
+The optional OCR assets dominate unpacked size (about 50 MiB before license/code overhead); they are loaded only for a selected local photo. Exact package sizes/hashes are in `tools/browser-smoke/candidate-build-info.json`. No main merge or Chrome Web Store publication is authorized by engineering completion.
 
 North American provenance utility: explicit manual reports separate eight product/sale stages within US/Canada/Mexico. A local source-reviewed dossier can document the exact chain; store/warehouse/label claims never grant independent certification. See [origin evidence and source map](NORTH-AMERICA-ORIGIN.md).
 

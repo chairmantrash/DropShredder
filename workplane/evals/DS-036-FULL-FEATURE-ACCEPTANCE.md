@@ -33,6 +33,8 @@ Construct an independently rights-cleared, merchant and product-disjoint ground-
 
 Compute per-stratum precision, recall, false-positive rate and UNKNOWN/abstention share. Report confidence intervals and sample counts; DO NOT convert raw heuristic evidence scores to probability of fraud. Declare a launch gate failed if the user has not accepted thresholds or independent ground truth is insufficient. Avoid commercial sites' private/internal endpoints and do not bypass paywalls/captchas.
 
+DS-045 measurement tooling: `tools/evaluation/metrics.mjs`, documented in `tools/evaluation/README.md`, consumes actual pinned observations and independently reviewed truth. Start from `workplane/evals/corpus-template.json`; its empty/unapproved state intentionally returns NOT_ACCEPTED. Record canonical calibration/evaluation merchant and product groups, rights, clustering review and owner-approved thresholds. Do not substitute synthetic unit-test labels for the independent corpus.
+
 ## P1 — accessibility, usability, operations
 Contrast and keyboard navigation, reduced-motion notifications, text scale, side-panel empty states, manual feed preview/signing source explanation, live CPSC/RDAP requests with consent, provider API license disclosure and unknown issuer handling, work on 32+ page tabs with memory caps, clear observation/history/store keys, signed-list outage recovery, and long-running idle background chrome. Confirm no mandatory user action on laptop required just to exercise hosted synthetic tests.
 

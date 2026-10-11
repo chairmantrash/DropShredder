@@ -1,3 +1,5 @@
+> DS-045 source correction, October 11: readable primary notice25-297 is under CPSC Warnings, not the failed Recalls URL below. See the October11 source-access report and ledger. Historical retrieval failures are preserved.
+
 # DropShredder — furniture and pet-product evidence expansion
 
 Research date: 2026-10-08; seventeen findings, four academic abstract-level reviews and twenty-four unique primary-source URLs. Research complete for this bounded batch; manufacturer-network mapping follows separately. User requested furniture, pet furniture/toys, Amazon/Walmart evaluation and stronger manufacturing-region weighting. Region/factory metadata will be recorded; a predictive regional penalty has not been validated. No runtime weighting or blacklist is introduced.

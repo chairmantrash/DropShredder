@@ -23,7 +23,7 @@ export async function installMultilingualFixtures(context){
  });
 }
 export async function runMultilingualSuite({page,native,worker,context,test,until,pause,output}){
- const scan=async()=>{await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan',30000);const raw=await native.evaluate("document.querySelector('#raw').textContent");assert.ok(raw,'Localized product must return a report');return JSON.parse(raw);};
+ const scan=async()=>{await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan ready',30000);await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'localized manual scan',30000);const raw=await native.evaluate("document.querySelector('#raw').textContent");assert.ok(raw,'Localized product must return a report');return JSON.parse(raw);};
  for(const f of fixtures){
   const url=new URL(`https://fixture.example.com/languages/${f.lang}/detail${f.productPath}`).href;
   await test(`M-${f.lang}`,'Native toast-to-panel and repeated manual scan of an owned original-language product',async()=>{
@@ -77,5 +77,24 @@ export async function runMultilingualSuite({page,native,worker,context,test,unti
   const status=await native.evaluate("document.querySelector('#label-status').textContent"),recognized=await native.evaluate("document.querySelector('#label-results').textContent");assert.match(status,/Local analysis complete/);assert.match(recognized,/MODEL\s*12345/i);
   if(script)assert.ok(new RegExp(`\\p{Script=${script}}`,'u').test(recognized),`${language} must recognize original script, not only Latin SKU`);
   return {language,text,recognized:recognized.slice(0,600),scope:'Packaged model invocation on a synthetic known-script label; independent photo accuracy untested'};
+ });
+ for(const [language,phrase,filename] of [
+  ['hin',/उत्पाद\s+मॉडल/u,'hindi-model-original.png'],
+  ['ara',/نموذج\s+المنتج/u,'arabic-model-original.png'],
+ ])await test(`O-${language}-original`,'Original failed label preserves both native text and the literal Latin model identifier',async()=>{
+  if(!(await native.evaluate("document.querySelector('#label-image').closest('details').open"))) await native.click('.label-reader-panel > summary');
+  await native.click('#label-language');await native.key('Home','Home',36);
+  for(let i=0;i<['eng','chi_sim','hin','spa','ara','fra','ben','por'].indexOf(language);i++)await native.key('Down','ArrowDown',40);
+  await native.key('Enter','Enter',13);
+  assert.equal(await native.evaluate("document.querySelector('#label-language').value"),language);
+  await native.setFiles('#label-image',[path.join(root,'tests/fixtures/ocr',filename)]);
+  await native.click('#label-read');
+  await until(()=>native.evaluate("(/Local analysis complete|Offline OCR failed|unavailable|Could not/.test(document.querySelector('#label-status').textContent))"),'original mixed-script OCR regression',60000);
+  assert.match(await native.evaluate("document.querySelector('#label-status').textContent"),/Local analysis complete/);
+  const recognized=await native.evaluate("document.querySelector('#label-results').textContent");
+  assert.match(recognized,phrase);assert.match(recognized,/MODEL12345/);
+  assert.doesNotMatch(recognized,/\|॥0\/05।/u);
+  await native.screenshot(`native-${language}-original-regression.png`);
+  return {recognized:recognized.slice(0,600),scope:'Unchanged original failed synthetic image, selected script, native panel; no independent photo accuracy claim'};
  });
 }
