@@ -601,11 +601,18 @@ try {
         assert.notEqual(await native.evaluate("document.querySelector('#label-image').files[0]?.name"),'hindi-model-original.png');
         await native.click('#label-image');await pause(600);
         // Xvfb has no EWMH window manager; query actual X11 focus directly.
-        const dialog=execFileSync('xdotool',['getwindowfocus','getwindowname'],{encoding:'utf8'}).trim();
+        const dialogWindow=execFileSync('xdotool',['getwindowfocus'],{encoding:'utf8'}).trim();
+        assert.match(dialogWindow,/^\d+$/);
+        const dialog=execFileSync('xdotool',['getwindowname',dialogWindow],{encoding:'utf8'}).trim();
         assert.match(dialog,/Open|Select.*[Ff]ile|File.*Upload/i,'Expected actual OS file picker, not a Chrome page');
         await native.screenshot('native-os-file-picker-open.png');
+        await fs.access(filename);
+        execFileSync('xdotool',['windowfocus','--sync',dialogWindow]);
         execFileSync('xdotool',['key','ctrl+l']);
-        execFileSync('xdotool',['type','--clearmodifiers','--delay','1',filename]);
+        await pause(300);
+        execFileSync('xdotool',['type','--clearmodifiers','--delay','5',filename]);
+        await pause(300);
+        await native.screenshot('native-os-file-picker-path.png');
         execFileSync('xdotool',['key','Return']);
         await until(()=>native.evaluate("document.querySelector('#label-image').files[0]?.name==='hindi-model-original.png'"),'actual OS chooser selection',15000);
         await native.screenshot('native-os-file-picker-selected.png');
