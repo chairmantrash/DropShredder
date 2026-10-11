@@ -596,6 +596,20 @@ try {
         }
       }
       await runMultilingualSuite({page,native,worker,context,test,until,pause,output});
+      await test('N34','Native operating-system file picker selects an unchanged local label through desktop input',async()=>{
+        const filename=path.join(root,'tests/fixtures/ocr/hindi-model-original.png');
+        assert.notEqual(await native.evaluate("document.querySelector('#label-image').files[0]?.name"),'hindi-model-original.png');
+        await native.click('#label-image');await pause(600);
+        const dialog=execFileSync('xdotool',['getactivewindow','getwindowname'],{encoding:'utf8'}).trim();
+        assert.match(dialog,/Open|Select.*[Ff]ile|File.*Upload/i,'Expected actual OS file picker, not a Chrome page');
+        await native.screenshot('native-os-file-picker-open.png');
+        execFileSync('xdotool',['key','ctrl+l']);
+        execFileSync('xdotool',['type','--clearmodifiers','--delay','1',filename]);
+        execFileSync('xdotool',['key','Return']);
+        await until(()=>native.evaluate("document.querySelector('#label-image').files[0]?.name==='hindi-model-original.png'"),'actual OS chooser selection',15000);
+        await native.screenshot('native-os-file-picker-selected.png');
+        return {dialog,selected:'hindi-model-original.png',scope:'One genuine Linux/Xvfb OS chooser through desktop input; no CDP file dispatch, photograph accuracy or cross-OS chooser claim'};
+      });
       await test('N12', 'Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses', async () => {
         await page.goto('https://fixture.example.com/journal/mugs'); await pause(4500);
         assert.equal(await page.locator('#dropshredder-auto-verdict').count(), 0);
