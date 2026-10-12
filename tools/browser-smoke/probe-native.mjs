@@ -1,5 +1,5 @@
 import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
-import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation} from './remaining-edges.mjs';
+import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation, observeLiveResources} from './remaining-edges.mjs';
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, sign } from 'node:crypto';
@@ -621,6 +621,7 @@ try {
                 if(actual.origin+actual.pathname!==intended.origin+intended.pathname)throw Object.assign(new Error('Wrong-tab/product attribution during live beta scan'),{betaStop:true});
                 if(data.verdict.severeWarningAllowed)throw Object.assign(new Error('Live beta severe-warning gate requires independent evidence review before continuing'),{betaStop:true});
                 entry.status='OBSERVED_SCAN';entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,mpn:data.product.mpn,asin:data.product.asin,price:data.product.price,currency:data.product.currency,extraction:data.product.extraction};entry.verdict=data.verdict;entry.evidence=data.evidence.slice(0,20).map(e=>({id:e.id,severity:e.severity,weight:e.weight}));
+                entry.resources=await observeLiveResources({page,context,pause});
                 await native.screenshot('beta-live-'+surface.kind.split(' / ')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png');
               }
               else entry.status='ABSTAINED_OR_REFUSED';

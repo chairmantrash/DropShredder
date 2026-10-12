@@ -111,7 +111,8 @@ export async function runContextMenus({context,page,native,worker,id,test,until,
   await choose({selector:'#menu-image',kind:'image',rootSteps:1,index:0});const tab=await chooser();
   assert.ok(await tab.locator('#ds-search-chooser label').count()>=4);assert.equal(context.pages().length,2);
   const choices=await tab.locator('#ds-search-chooser').innerText();assert.match(choices,/lens\.google\.com/);assert.match(choices,/tineye\.com/);
-  for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();await tab.locator('#ds-search-chooser input').first().check();await tab.locator('#ds-search-chooser button').first().click();
+  for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();
+  const selected=tab.locator('#ds-search-chooser label').filter({hasText:'lens.google.com'});assert.equal(await selected.count(),1);await selected.locator('input').check();await tab.locator('#ds-search-chooser button').first().click();
   await until(async()=>context.pages().length===3&&(await targets('lens.google.com')).length===1,'one explicitly selected image destination');
   const destination=(await targets('lens.google.com'))[0].url;const parsed=new URL(destination);assert.equal(parsed.hostname,'lens.google.com');assert.equal(parsed.searchParams.get('url'),'https://fixture.example.com/menu-image.png');
   await closeSearches();
@@ -187,4 +188,19 @@ export async function runStorageRecovery({native,worker,test,until,pause,report,
   report.storageFaultFixture={faults,controls,canonical,scope:'Explicit engineering-only Chrome storage fault and full profile restart, not unmodified independent QA'};
   return report.storageFaultFixture;
  });
+}
+
+export async function observeLiveResources({page,context,pause}){
+ let cdp;
+ try{
+  cdp=await context.newCDPSession(page);await cdp.send('Performance.enable');
+  const snapshot=async()=>Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(x=>[x.name,x.value]));
+  const before=await snapshot(),started=Date.now();await pause(5000);const after=await snapshot();
+  const intervalMs=Date.now()-started;
+  const dom=await page.evaluate(()=>({elements:document.querySelectorAll('*').length,scrollHeight:document.documentElement.scrollHeight,viewport:innerHeight}));
+  const inputStart=Date.now();await page.mouse.wheel(0,250);
+  const frame=await page.evaluate(()=>new Promise(resolve=>{const timeout=setTimeout(()=>resolve(false),3000);requestAnimationFrame(()=>{clearTimeout(timeout);resolve(true);});}));
+  return {status:frame?'OBSERVED':'FRAME_NOT_OBSERVED',intervalMs,taskSeconds:after.TaskDuration-before.TaskDuration,scriptSeconds:after.ScriptDuration-before.ScriptDuration,heapBytes:after.JSHeapUsedSize,dom,scrollFrameMs:frame?Date.now()-inputStart:null,scope:'Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance'};
+ }catch(error){return {status:'MEASUREMENT_UNAVAILABLE',error:String(error),scope:'Provider/page limitations are not a performance pass'};}
+ finally{await cdp?.detach().catch(()=>{});}
 }
