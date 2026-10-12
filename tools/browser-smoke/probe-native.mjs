@@ -1,4 +1,5 @@
 import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
+import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation, observeLiveResources} from './remaining-edges.mjs';
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, sign } from 'node:crypto';
@@ -8,7 +9,8 @@ import os from 'node:os';
 import path from 'node:path';
 
 // Public CDP toolbar hook and trusted native-panel input in a disposable profile.
-// No storage writes, permission overrides, manifest changes or private methods.
+// No permission overrides, manifest changes or private methods. The explicitly
+// labelled post-revocation storage fault fixture writes malformed test data only.
 const root = path.resolve(import.meta.dirname, '../..');
 const ext = path.join(root, '.output/chrome-mv3');
 const output = path.join(root, 'browser-smoke-results');
@@ -45,7 +47,7 @@ async function test(id, description, fn) {
     report.tests.push({ id, description, status: 'FAIL', elapsedMs: Date.now() - start, error: String(error) }); throw error;
   }
 }
-async function attach(targetId) {
+async function attach(targetId, productPage = page) {
   const { sessionId } = await browserCdp.send('Target.attachToTarget', { targetId, flatten: false });
   let sequence = 0;
   const pending = new Map();
@@ -88,7 +90,7 @@ async function attach(targetId) {
     await pause(200);
     const point = await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); const r=el.getBoundingClientRect(); if(!r.width || !r.height) throw new Error('Control is hidden'); const x=r.x+r.width/2,y=r.y+r.height/2,hit=document.elementFromPoint(x,y); if(!hit || !(hit===el || el.contains(hit))) throw new Error('Control is obscured'); return {x,y}; })()`);
     if (headed) {
-      const { targetInfo } = await (await context.newCDPSession(page)).send('Target.getTargetInfo');
+      const { targetInfo } = await (await context.newCDPSession(productPage)).send('Target.getTargetInfo');
       const { bounds } = await browserCdp.send('Browser.getWindowForTarget', { targetId: targetInfo.targetId });
       const viewport = await evaluate('({width:innerWidth,height:innerHeight})');
       // The controlled Chrome 156/Xvfb screenshots show the panel WebContents
@@ -134,11 +136,16 @@ async function attach(targetId) {
     // not a test of the operating system's graphical file-picker dialog.
     await call('DOM.setFileInputFiles',{files,nodeId});
   };
-  return { evaluate, click, key, screenshot, type, setFiles, liveProviders:()=>call('Fetch.disable') };
+  return { evaluate, click, key, screenshot, type, setFiles,
+    metrics:async()=>{await call('Performance.enable');return Object.fromEntries((await call('Performance.getMetrics')).metrics.map(x=>[x.name,x.value]));},
+    liveProviders:()=>call('Fetch.disable') };
 }
 async function openNative() {
   context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: !headed,
-    args: ['--enable-unsafe-extension-debugging', `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
+    args: ['--enable-unsafe-extension-debugging',
+      '--host-resolver-rules=MAP www.google.com ~NOTFOUND, MAP lens.google.com ~NOTFOUND, MAP www.bing.com ~NOTFOUND, MAP yandex.com ~NOTFOUND, MAP tineye.com ~NOTFOUND',
+      `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
+  report.fixtureSearchNetworkIsolation={hosts:['www.google.com','lens.google.com','www.bing.com','yandex.com','tineye.com'],scope:'Disposable engineering browser only: owned HTTP routes plus DNS refusal fallback; selected destinations are checked from actual Chrome pending/committed tab URLs, not remote search content'};
   context.on('request', request => {
     let fromExtension = request.serviceWorker()?.url().startsWith('chrome-extension://');
     try { fromExtension ||= request.frame().url().startsWith('chrome-extension://'); } catch {}
@@ -151,12 +158,12 @@ async function openNative() {
   await context.route(/^https:\/\/fixture\.example\.(?:com|net)\//, route => {
     const url=route.request().url();
     if(url.includes('/slow-policy')) return void(async()=>{await pause(2000);await route.fulfill({contentType:'text/html',body:'<p>Return policy: returns accepted within 30 days.</p>'});})().catch(()=>{});
-    const product={"@context":"https://schema.org","@type":"Product",name:"Fixture mug",sku:"FIXTURE-MUG-001",gtin:"012345678905",offers:{"@type":"Offer",price:"12.00",priceCurrency:"USD",availability:"https://schema.org/InStock"}};
+    const product={"@context":"https://schema.org","@type":"Product",name:url.includes('/window-two')?'Window two kettle':"Fixture mug",sku:url.includes('/window-two')?'WINDOW-TWO-002':"FIXTURE-MUG-001",gtin:"012345678905",offers:{"@type":"Offer",price:"12.00",priceCurrency:"USD",availability:"https://schema.org/InStock"}};
     if(url.includes('/origin')) product.offers.seller={"@type":"Organization",name:'Owned Origin Seller'};
     const variant=url.includes('/variants');
     const structured=variant?{"@type":"ProductGroup",name:"Fixture mug",url:"https://fixture.example.com/products/variants",hasVariant:[{...product,sku:'RED-MUG',color:'red',offers:{price:10,priceCurrency:'USD'}},{...product,sku:'BLUE-MUG',color:'blue',offers:{price:20,priceCurrency:'USD'}}]}:product;
     return route.fulfill({contentType:'text/html',body:url.includes('/journal/')?'<title>Owned article</title><article><h1>How mugs are made</h1><p>No item for sale.</p></article>':
-      '<!doctype html><title>Fixture mug</title><main><h1>Fixture mug</h1><p class="product-price">$12.00</p><button>Add to cart</button>'+ (variant?'<input type="radio" name="color" value="red"><input type="radio" name="color" value="blue" checked>':'')+'</main>'+
+      '<!doctype html><title>'+product.name+'</title><main><h1>'+product.name+'</h1><p class="product-price">$12.00</p><button>Add to cart</button>'+ (variant?'<input type="radio" name="color" value="red"><input type="radio" name="color" value="blue" checked>':'')+'</main>'+
       (url.includes('sign-in')||url.includes('/field-only')?'<input type="password" autocomplete="current-password">':'')+
       (url.includes('/delayed')?'<a href="/slow-policy">Return policy</a>':'')+
       '<script type="application/ld+json">'+JSON.stringify(structured)+'</script>'});
@@ -325,6 +332,9 @@ try {
       await native.screenshot('native-fixture-scan.png'); return { status: state.status, product: scan.product, scope: 'Owned fixture, no merchant accuracy/explicit prompt acceptance claim' };
     });
     if (headed) {
+      await runWindowEdges({context,page,native,worker,browserCdp,id,attach,test,until,pause,report});
+      await runContextMenus({context,page,native,worker,id,test,until,pause,report});
+      await runResourceEdges({context,page,native,worker,browserCdp,test,until,pause,report,output});
       const scanFixture=async url=>{if(url) await page.goto(url);await page.bringToFront();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'fixture scan',20000);return native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent})");};
       const downloads=[];const downloadDir=path.join(output,'downloads');await fs.mkdir(downloadDir,{recursive:true});
       await browserCdp.send('Browser.setDownloadBehavior',{behavior:'allowAndName',downloadPath:downloadDir,eventsEnabled:true});
@@ -551,6 +561,7 @@ try {
         await native.screenshot('native-packaged-ocr.png');
         return {scope:'Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested',output:outputText.slice(0,250)};
       });
+      await runOcrCancellation({page,native,test,until,pause,output,root});
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);
@@ -610,6 +621,7 @@ try {
                 if(actual.origin+actual.pathname!==intended.origin+intended.pathname)throw Object.assign(new Error('Wrong-tab/product attribution during live beta scan'),{betaStop:true});
                 if(data.verdict.severeWarningAllowed)throw Object.assign(new Error('Live beta severe-warning gate requires independent evidence review before continuing'),{betaStop:true});
                 entry.status='OBSERVED_SCAN';entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,mpn:data.product.mpn,asin:data.product.asin,price:data.product.price,currency:data.product.currency,extraction:data.product.extraction};entry.verdict=data.verdict;entry.evidence=data.evidence.slice(0,20).map(e=>({id:e.id,severity:e.severity,weight:e.weight}));
+                entry.resources=await observeLiveResources({page,context,pause});
                 await native.screenshot('beta-live-'+surface.kind.split(' / ')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.png');
               }
               else entry.status='ABSTAINED_OR_REFUSED';
@@ -651,12 +663,14 @@ try {
         report.finalPermissionState = { granted: await worker.evaluate(() => chrome.permissions.contains({ origins: ['https://*/*'] })),
           scripts: await worker.evaluate(() => chrome.scripting.getRegisteredContentScripts()), features: await features() };
       });
+      await runStorageRecovery({native,worker,context,test,until,pause,report,restart:async()=>{await context.close();await openNative();return {native,worker,context};}});
     }
   } else report.productScanBlocked = 'Full scan/toast testing requires genuine Chrome host access; no test override was used.';
 } catch (error) {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED'; report.failure = String(error);
   report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent,focused:document.activeElement?.outerHTML?.slice(0,300),chooserOpen:document.querySelector('#ds-search-chooser')?.open,documentFocused:document.hasFocus()})").catch(() => undefined);
   report.savedFeaturesAtFailure = worker ? await features().catch(() => undefined) : undefined;
+  report.chromeTabsAtFailure = worker ? await worker.evaluate(()=>chrome.tabs.query({})).catch(()=>undefined) : undefined;
   await native?.screenshot('native-failure.png').catch(() => {}); console.error(error); process.exitCode = 1;
 } finally {
   report.finishedAt = new Date().toISOString(); report.testsPassed = report.tests.filter(t => t.status === 'PASS').length;

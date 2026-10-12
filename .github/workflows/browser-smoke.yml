@@ -17,6 +17,51 @@ permissions:
   contents: read
 
 jobs:
+  minimum-chrome-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '133.0.6943.141'
+            major: '133'
+          - version: '155.0.8059.39'
+            major: '155'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build unchanged package and install isolated tooling
+        run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Install official pinned compatibility Chrome
+        run: |
+          curl --fail --location --retry 0 https://storage.googleapis.com/chrome-for-testing-public/${{ matrix.version }}/linux64/chrome-linux64.zip --output compatibility-chrome.zip
+          sha256sum compatibility-chrome.zip
+          if [ '${{ matrix.major }}' = '133' ]; then
+            echo '0e51d229098b5c2330ec91190bae6e48bb5b8a5cff2e2593b03af573221816e1  compatibility-chrome.zip' | sha256sum --check
+          fi
+          unzip -q compatibility-chrome.zip -d compatibility-chrome
+          compatibility-chrome/chrome-linux64/chrome --version
+      - name: Verify exact package and compatibility runtime
+        timeout-minutes: 4
+        env:
+          DS_BROWSER_EXECUTABLE: ${{ github.workspace }}/compatibility-chrome/chrome-linux64/chrome
+          DS_EXPECT_CHROME_MAJOR: ${{ matrix.major }}
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/run.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-chrome${{ matrix.major }}-evidence
+          path: browser-smoke-results/
+          retention-days: 30
   localized-runtime:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
