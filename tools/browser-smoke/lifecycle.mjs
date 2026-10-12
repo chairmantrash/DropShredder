@@ -55,7 +55,6 @@ async function pinToolbar(){
  await call('Page.navigate',{url:'about:blank'},pageSession);await until(()=>evaluate("location.href==='about:blank'&&document.readyState==='complete'",pageSession),'normal browser tab ready');
 }
 async function attachPanel(){
- await screenshot(`lifecycle-toolbar-before-open-${starts}.png`);
  const {bounds}=await call('Browser.getWindowForTarget',{targetId:pageTarget});assert.equal(bounds.width,1288);assert.ok([850,851].includes(bounds.height));
  // Locate the project's exact opaque icon pixels in the actual toolbar band.
  // This avoids a raw-Chrome crash in the experimental CDP action hook. The
@@ -72,7 +71,10 @@ for y in range(${bounds.top+45},${bounds.top+95}-i.height+1):
   if max(abs(a.getpixel((x+anchor[0],y+anchor[1]))[c]-anchor[2][c]) for c in range(3))>3:continue
   if all(max(abs(a.getpixel((x+px,y+py))[c]-rgb[c]) for c in range(3))<=3 for px,py,rgb in mask):matches.append({'x':x+i.width//2,'y':y+i.height//2})
 print(json.dumps(matches))`;
- const points=JSON.parse(execFileSync('python3',['-c',script],{encoding:'utf8'}));assert.equal(points.length,1,'Exactly one actual DropShredder toolbar icon');
+ let points;
+ // document.readyState can precede the first desktop/compositor frame. Wait
+ // for the actual unique icon pixels; never re-click or substitute a fake UI.
+ await until(async()=>{await screenshot(`lifecycle-toolbar-before-open-${starts}.png`);points=JSON.parse(execFileSync('python3',['-c',script],{encoding:'utf8'}));assert.ok(points.length<=1,'Ambiguous project toolbar icon');return points.length===1;},'actual toolbar painted with unique project icon',10000,200);
  execFileSync('xdotool',['mousemove',String(points[0].x),String(points[0].y),'click','1']);
  (report.toolbarActions??=[]).push({start:starts,icon:points[0],method:'Exact opaque project-icon pixels in actual screenshot; real X11 pointer click'});
  await until(async()=>{panelTarget=(await call('Target.getTargets')).targetInfos.find(t=>t.url===`chrome-extension://${id}/sidepanel.html`);return panelTarget;},'native panel mounted');
