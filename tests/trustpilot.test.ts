@@ -1,6 +1,19 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { parseTrustpilotHtml } from '../src/reputation/trustpilot';
+
+test('script/style content with spaced, attributed or missing end tags cannot fabricate complaints',()=>{
+  const visible='<body>Trustpilot TrustScore 4.8 out of 5 100 reviews.</body>';
+  for(const hidden of ['<script>Counterfeit and never received.</script >','<style>Flimsy and broken.</style\n >','<script>Wrong item.</script data-x="1">','<script>Refund never received.']){
+    const observation=parseTrustpilotHtml(visible+hidden,'https://www.trustpilot.com/review/example.com')!;
+    assert.equal(observation.rating,4.8);assert.deepEqual(observation.snippets,[]);
+  }
+});
+
+test('HTML entities are decoded once and escaped complaint-like markup stays literal text',()=>{
+  const observation=parseTrustpilotHtml('<body>Trustpilot TrustScore 4.8 out of 5 100 reviews. Return &amp;quot;parcel&amp;quot; &amp;#39;label&amp;#39; &#39;one&#39; &#x27;two&#x27; &lt;b&gt;.</body>','https://www.trustpilot.com/review/example.com')!;
+  assert.equal(observation.snippets?.[0],"Return &quot;parcel&quot; &#39;label&#39; 'one' 'two' <b>.");
+});
 import { analyzeReputationObservations } from '../src/reputation/complaint-analysis';
 
 test('parses Trustpilot score, volume, one-star share and complaints',()=>{
