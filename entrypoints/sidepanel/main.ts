@@ -815,7 +815,9 @@ policyCheck?.addEventListener('click',()=>{
         args:[policyUrl],
         func:async(url:string)=>{
           const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
-          if(!response.ok) throw new Error(tr('Policy fetch failed: HTTP $1',response.status));
+          // Injected functions cannot access the panel's imported translator.
+          // Return the status as data and localize it in the panel context.
+          if(!response.ok) return {httpStatus:response.status};
           const length=Number(response.headers.get('content-length')||0);
           if(length>2_000_000 || new URL(response.url).origin!==location.origin || !response.body) return undefined;
           const reader=response.body.getReader();
@@ -834,10 +836,13 @@ policyCheck?.addEventListener('click',()=>{
             void reader.cancel().catch(()=>{});
           }
           const doc=new DOMParser().parseFromString(html,'text/html');
-          return (doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000);
+          return {text:(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000)};
         },
       });
-      const text=policyResult?.result as string|undefined;
+      const policy=policyResult?.result as {text?:string;httpStatus?:number}|undefined;
+      if(typeof policy?.httpStatus==='number')
+        throw new Error(tr('Policy fetch failed: HTTP $1',policy.httpStatus));
+      const text=policy?.text;
       if(!text) throw new Error('The return policy couldn’t be read clearly enough to judge.');
       const findings=analyzeReturnPolicy(text);
       await verifiedReportPage(report);

@@ -1,0 +1,50 @@
+name: DropShredder beta repair verification
+
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths:
+      - '.github/workflows/beta-repair.yml'
+      - 'entrypoints/sidepanel/main.ts'
+      - 'tools/browser-smoke/candidate-build-info.json'
+      - 'tools/beta/**'
+
+permissions:
+  contents: read
+
+jobs:
+  native-regressions:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-policy-repair-20261012'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build changed exact-source candidate and install isolated tooling
+        run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 tools/beta/collect.py
+      - name: Verify policy success/HTTP503 and the complete native regression suite
+        timeout-minutes: 10
+        env:
+          DS_NATIVE_HEADED: '1'
+          DS_LIVE_SURFACES: '1'
+          DS_SKIP_EXPANDED_LIVE: '1'
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-beta-repair-native-evidence
+          path: |
+            browser-smoke-results/
+            tools/browser-smoke/beta-collector-manifest.json
+          if-no-files-found: error
+          retention-days: 90
