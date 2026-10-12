@@ -1,0 +1,19 @@
+[
+  {"id":"LIVE-01","kind":"product","region":"US","language":"en","url":"https://www.noctua.at/en/products/nf-a12x25-g2-pwm","expected":"NF-A12x25","source":"Existing committed bounded beta protocol"},
+  {"id":"LIVE-02","kind":"product","region":"US","language":"en","url":"https://www.amazon.com/dp/B0FC636JBS","expected":"Noctua","source":"Existing committed bounded beta protocol"},
+  {"id":"LIVE-03","kind":"product","region":"US","language":"en","url":"https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug","expected":"mug","source":"Existing committed bounded beta protocol"},
+  {"id":"LIVE-04","kind":"product","region":"US","language":"en","url":"https://www.walmart.com/ip/41004055","expected":"LEGO","source":"Existing committed bounded beta protocol"},
+  {"id":"LIVE-05","kind":"product","region":"US","language":"en","url":"https://store-usa.arduino.cc/products/arduino-uno-rev3","expected":"UNO","source":"Arduino official store, checked2026-10-12"},
+  {"id":"LIVE-06","kind":"product","region":"EU","language":"en","url":"https://store.arduino.cc/products/arduino-uno-rev3","expected":"UNO","source":"Arduino official store, checked2026-10-12"},
+  {"id":"LIVE-07","kind":"product","region":"CA","language":"en","url":"https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/","expected":"KALLAX","source":"IKEA Canada official product page, checked2026-10-12"},
+  {"id":"LIVE-08","kind":"product","region":"MX","language":"es","url":"https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/","expected":"KALLAX","source":"IKEA Mexico official product page, checked2026-10-12"},
+  {"id":"LIVE-09","kind":"product","region":"FR","language":"fr","url":"https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/","expected":"KALLAX","source":"IKEA France official product page, checked2026-10-12"},
+  {"id":"LIVE-10","kind":"product","region":"SA","language":"ar","url":"https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/","expected":"KALLAX","source":"IKEA Arabic official product page, checked2026-10-12"},
+  {"id":"LIVE-11","kind":"product","region":"US","language":"en","url":"https://www.logitech.com/en-us/shop/p/mx-master-3s","expected":"MX Master","source":"Logitech official product page, checked2026-10-12"},
+  {"id":"LIVE-12","kind":"product","region":"UK","language":"en","url":"https://www.raspberrypi.com/products/raspberry-pi-5/","expected":"Raspberry Pi 5","source":"Official manufacturer informational product page; offer may be unresolved"},
+  {"id":"LIVE-13","kind":"quiet","region":"EU","language":"en","url":"https://store.arduino.cc/","expected":"Arduino","source":"Official store homepage"},
+  {"id":"LIVE-14","kind":"quiet","region":"EU","language":"en","url":"https://store.arduino.cc/collections/boards-modules","expected":"Arduino","source":"Official store collection"},
+  {"id":"LIVE-15","kind":"quiet","region":"SA","language":"ar","url":"https://www.ikea.com/sa/ar/cat/kallax-series-27534/","expected":"KALLAX","source":"IKEA official Arabic category page, checked2026-10-12"},
+  {"id":"LIVE-16","kind":"quiet","region":"BD","language":"bn","url":"https://www.rokomari.com/book/category/7066/in-stock-bengali-books","expected":"বাংলা","source":"Rokomari public Bengali category, checked2026-10-12"},
+  {"id":"LIVE-17","kind":"quiet","region":"UK","language":"en","url":"https://www.raspberrypi.com/news/","expected":"Raspberry","source":"Official manufacturer editorial page"}
+]
