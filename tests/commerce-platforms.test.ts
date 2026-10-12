@@ -22,3 +22,14 @@ test('detects Wix and Ecwid common public assets',()=>{
   assert.equal(detectCommercePlatforms({scripts:['https://static.wixstatic.com/x.js'],html:'',imageUrls:[]}).some(m=>m.id==='wix'),true);
   assert.equal(detectCommercePlatforms({scripts:['https://app.ecwid.com/script.js'],html:'',imageUrls:[]}).some(m=>m.id==='ecwid'),true);
 });
+
+test('asset domains cannot be spoofed with URL paths, queries, credentials or suffix hosts',()=>{
+  const matches=detectCommercePlatforms({scripts:['https://cdn.shopify.com.evil.example/a.js','https://bigcommerce.com@evil.example/a.js','https://evil.example/myshopline.com/a.js','https://evil.example/a.js?site=wixstatic.com&wc-cart-fragments=1#shoplazza.com','data:text/javascript,shopbase.com'],html:'',imageUrls:['https://shoplazza.com.evil.example/a.jpg','https://evil.example/myshopline.com/a.jpg']});
+  assert.deepEqual(matches,[]);
+});
+
+test('real subdomains and public asset paths remain recognized with cache queries',()=>{
+  const matches=detectCommercePlatforms({scripts:['https://cdn.shopify.com/a.js?x=1','https://shop.example/wp/woocommerce/wc-cart-fragments.js?v=1','https://ecwid.com/script.js?v=1','https://shop.example/on/demandware.static/a.js'],html:'',imageUrls:['https://cdn.shoplazza.net/a.jpg']});
+  assert.deepEqual(matches.map(x=>x.id),['shopify','woocommerce','shoplazza','ecwid','salesforce-commerce-cloud']);
+  assert.equal(detectCommercePlatforms({scripts:['https://ecwid.com/not-script.js'],html:'',imageUrls:[]}).length,0);
+});

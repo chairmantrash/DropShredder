@@ -103,7 +103,7 @@ export async function runContextMenus({context,page,native,worker,id,test,until,
   await page.mouse.click(40,300);await choose({kind:'store',index:1});const tab=await chooser();assert.equal(await tab.locator('#ds-search-chooser label').count(),7);assert.equal(context.pages().length,2);
   for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();await tab.locator('#ds-search-chooser input').first().check();await tab.locator('#ds-search-chooser button').first().click();
   await until(async()=>context.pages().length===3&&(await targets('www.google.com')).length===1,'one explicitly selected store destination');
-  const destination=(await targets('www.google.com'))[0].url;assert.ok(new URL(destination).searchParams.get('q').includes('fixture.example.com'));
+  const destination=(await targets('www.google.com'))[0].url;assert.match(new URL(destination).searchParams.get('q'),/(?:^|\s)site:fixture\.example\.com(?:\s|$)/);
   await closeSearches();return {choices:7,openedBeforeSelection:0,openedAfterSelection:1,destination};
  });
  await test('N38-image','Actual image context menu preserves the chosen public image URL and sends nothing before destination selection',async()=>{

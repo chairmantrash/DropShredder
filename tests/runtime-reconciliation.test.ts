@@ -9,8 +9,8 @@ import { lookupDomainRdap, registeredDomain, rdapEndpoint } from '../src/osint/r
 import { isEtsyDomain } from '../src/adapters/etsy';
 import { showSearchChooser } from '../src/ui/search-chooser';
 
-function page(nodes:unknown,href='https://shop.example/products/lamp',price='$29.99'){
-  const w=parseHTML(`<html><head><link rel="canonical" href="https://shop.example/products/lamp"><script type="application/ld+json">${JSON.stringify(nodes)}</script></head><body><main><h1>Target Lamp</h1><div class="product-price">${price}</div><button name="add">Add to cart</button></main></body></html>`);
+function page(nodes:unknown,href='https://shop.example/products/lamp',price='$29.99',resources=''){
+  const w=parseHTML(`<html><head><link rel="canonical" href="https://shop.example/products/lamp"><script type="application/ld+json">${JSON.stringify(nodes)}</script>${resources}</head><body><main><h1>Target Lamp</h1><div class="product-price">${price}</div><button name="add">Add to cart</button></main></body></html>`);
   const doc=w.document;
   for(const [key,selector] of [['scripts','script'],['images','img']] as const){
     const elements=Array.from(doc.querySelectorAll(selector));
@@ -18,14 +18,30 @@ function page(nodes:unknown,href='https://shop.example/products/lamp',price='$29
   }
   return {w,doc,href};
 }
-function scan(nodes:unknown,href?:string,controls=''){
-  const {w,doc,href:url}=page(nodes,href),g=globalThis as unknown as Record<string,unknown>;
+function scan(nodes:unknown,href?:string,controls='',resources=''){
+  const {w,doc,href:url}=page(nodes,href,undefined,resources),g=globalThis as unknown as Record<string,unknown>;
   if(controls){const holder=doc.createElement('div');holder.innerHTML=controls;doc.querySelector('main')?.append(holder);}
   const values={document:doc,window:w,location:new URL(url),NodeFilter:{SHOW_TEXT:4,SHOW_ELEMENT:1},HTMLElement:w.HTMLElement};
   const old=Object.fromEntries(Object.keys(values).map(k=>[k,g[k]]));Object.assign(g,values);
   try{return extractPageScan(COMMERCE_LANGUAGE_KIT);}finally{for(const k of Object.keys(values)) if(old[k]===undefined) delete g[k];else g[k]=old[k];}
 }
 const product=(name='Target Lamp',url='https://shop.example/products/lamp',price=29)=>({'@type':'Product',name,url,sku:name,image:`https://images.example/${name}.jpg`,offers:{'@type':'Offer',price,priceCurrency:'USD'},aggregateRating:{ratingValue:4.8,reviewCount:100}});
+
+test('platform and provider signatures reject lookalike hosts, credentials, paths, query and fragments',()=>{
+  const resources=['https://cdn.shopify.com.evil.example/a.js','https://cdn.shopify.com@evil.example/a.js','https://evil.example/bigcommerce.com/a.js','https://evil.example/a.js?cdn=cdn.shopify.com#myshopline.com','https://evil.example/loox.io/widget/loox.js','https://evil.example/a.js?u=track123.com/track123-widget.min.js','https://evil.example/parcelpanel.com/assets/tracking/track-page.js','data:text/javascript,myshopline.com'].map(src=>`<script src="${src}"></script>`).join('')+'<link href="https://myshopline.com.evil.example/style.css">';
+  assert.deepEqual(scan(product(),undefined,'',resources).product.pageSignals,[]);
+});
+
+test('real provider hosts and exact script paths still yield neutral resource signals',()=>{
+  const resources=['https://cdn.shopify.com/a.js?cache=1','https://cdn.bigcommerce.com/a.js','https://cdn.myshopline.com/a.js','https://loox.io/widget/loox.js?v=1','https://shp.track123.com/tracking-page/build/widget.min.js','https://shopify-edd.parcelpanel.com/loader.js'].map(src=>`<script src="${src}"></script>`).join('');
+  assert.deepEqual(scan(product(),undefined,'',resources).product.pageSignals,['platform:shopify','platform:bigcommerce','platform:shopline','review-platform:loox','tracking-platform:track123','tracking-platform:parcelpanel']);
+});
+
+test('platform stylesheet hosts and path signatures stay separate from unrelated query tokens',()=>{
+  const real='<link href="//cdn.shopify.com/theme.css"><script src="/wc-add-to-cart.js?cache=1"></script>';
+  assert.deepEqual(scan(product(),undefined,'',real).product.pageSignals,['platform:shopify','platform:woocommerce']);
+  assert.deepEqual(scan(product(),undefined,'','<script src="/app.js?wc-add-to-cart=1&requirejs=1"></script>').product.pageSignals,[]);
+});
 
 test('Amazon product title takes precedence over an unrelated first heading and stays host-scoped',()=>{
   const controls='<span id="productTitle">Noctua fixture cooling fan</span>';

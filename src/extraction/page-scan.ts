@@ -183,6 +183,22 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           const src=document.scripts.item(i)?.src;
           if(src) scriptSources.push(src.slice(0,2048));
         }
+        const resourceUrl=(value:string):URL|undefined=>{
+          try{const url=new URL(value,location.href);return /^https?:$/.test(url.protocol)?url:undefined;}catch{return undefined;}
+        };
+        const scriptUrls=scriptSources.map(resourceUrl).filter((url):url is URL=>Boolean(url));
+        const imageUrls=pageImages.map(resourceUrl).filter((url):url is URL=>Boolean(url));
+        const linkUrls:URL[]=[];
+        const links=document.getElementsByTagName('link');
+        for(let i=0;i<Math.min(links.length,LIMITS.scripts);i++){
+          const href=links.item(i)?.getAttribute('href');
+          if(href&&href.length<=2048){const url=resourceUrl(href);if(url)linkUrls.push(url);}
+        }
+        const fromHost=(url:URL,domain:string)=>{
+          const host=url.hostname.toLowerCase().replace(/\.$/,'');
+          return host===domain||host.endsWith('.'+domain);
+        };
+        const fromResource=(url:URL,domain:string,pathname:string)=>fromHost(url,domain)&&url.pathname===pathname;
         const amazonAsin=/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})(?:[/?]|$)/i.exec(location.pathname)?.[1]?.toUpperCase();
         const amazonSeller=(
           document.querySelector<HTMLElement>('#sellerProfileTriggerId')?.innerText
@@ -349,26 +365,26 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
             extraction:{method:product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
             pageSignals:[
-              ...(('Shopify' in window || scriptSources.some(src=>src.includes('cdn.shopify.com')) || document.querySelector('link[href*="cdn.shopify.com"]'))
+              ...(('Shopify' in window || [...scriptUrls,...linkUrls].some(url=>fromHost(url,'cdn.shopify.com')))
                 ? ['platform:shopify'] : []),
-              ...((document.body?.classList.contains('woocommerce') || scriptSources.some(src=>/wc-(?:cart|checkout|add-to-cart)/i.test(src)))
+              ...((document.body?.classList.contains('woocommerce') || scriptUrls.some(url=>/wc-(?:cart|checkout|add-to-cart)/i.test(url.pathname)))
                 ? ['platform:woocommerce'] : []),
-              ...((scriptSources.some(src=>src.includes('bigcommerce.com')) || document.querySelector('[data-content-region]'))
+              ...((scriptUrls.some(url=>fromHost(url,'bigcommerce.com')) || document.querySelector('[data-content-region]'))
                 ? ['platform:bigcommerce'] : []),
-              ...((document.querySelector('script[src*="requirejs"], script[src*="/static/version"]') || 'mage' in window)
+              ...((scriptUrls.some(url=>/requirejs|\/static\/version/.test(url.pathname)) || 'mage' in window)
                 ? ['platform:magento'] : []),
-              ...((scriptSources.some(src=>/myshopline\.com|shoplineapp\.com/i.test(src))
-                || pageImages.some(src=>/myshopline\.com/i.test(src))
-                || document.querySelector('link[href*="myshopline.com"], meta[content*="SHOPLINE"]'))
+              ...((scriptUrls.some(url=>fromHost(url,'myshopline.com')||fromHost(url,'shoplineapp.com'))
+                || [...imageUrls,...linkUrls].some(url=>fromHost(url,'myshopline.com'))
+                || document.querySelector('meta[content*="SHOPLINE"]'))
                 ? ['platform:shopline'] : []),
-              ...(document.querySelector('#looxReviews, .loox-rating') || scriptSources.some(src=>src.includes('loox.io/widget/loox.js'))
+              ...(document.querySelector('#looxReviews, .loox-rating') || scriptUrls.some(url=>fromResource(url,'loox.io','/widget/loox.js'))
                 ? ['review-platform:loox'] : []),
               ...(document.querySelector('#judgeme_product_reviews, .jdgm-widget, .jdgm-review-widget, .jdgm-preview-badge')
                 ? ['review-platform:judgeme'] : []),
-              ...(scriptSources.some(src=>src.includes('track123.com/track123-widget.min.js') || src.includes('shp.track123.com/tracking-page/build/widget.min.js'))
+              ...(scriptUrls.some(url=>fromResource(url,'track123.com','/track123-widget.min.js') || fromResource(url,'shp.track123.com','/tracking-page/build/widget.min.js'))
                 || document.querySelector('#track123-tracking-widget, track123-tracking-widget')
                 ? ['tracking-platform:track123'] : []),
-              ...(scriptSources.some(src=>src.includes('parcelpanel.com/assets/tracking/track-page.js') || src.includes('shopify-edd.parcelpanel.com/loader.js'))
+              ...(scriptUrls.some(url=>fromResource(url,'parcelpanel.com','/assets/tracking/track-page.js') || fromResource(url,'shopify-edd.parcelpanel.com','/loader.js'))
                 || document.querySelector('#pp-tracking-page-app, #pp-tracking-shop, parcelpanel-edd')
                 ? ['tracking-platform:parcelpanel'] : []),
             ],

@@ -37,9 +37,25 @@ export function detectCommercePlatforms(input:{
   selectorPresent?:(selector:string)=>boolean;
 }):CommercePlatformDefinition[]{
   const haystack=input.html.toLowerCase();
+  const resource=(value:string)=>{try{const url=new URL(value);return /^https?:$/.test(url.protocol)?url:undefined;}catch{return undefined;}};
+  const scripts=input.scripts.map(resource).filter((url):url is URL=>Boolean(url));
+  const images=input.imageUrls.map(resource).filter((url):url is URL=>Boolean(url));
+  const hostMatches=(url:URL,domain:string)=>{
+    const host=url.hostname.toLowerCase().replace(/\.$/,'');
+    return host===domain||host.endsWith('.'+domain);
+  };
+  const scriptMatches=(url:URL,needle:string)=>{
+    const [domain,...parts]=needle.toLowerCase().split('/');
+    if(domain&&/^[a-z0-9-]+(?:\.[a-z0-9-]+)+$/.test(domain)&&domain!=='demandware.static'){
+      return hostMatches(url,domain)&&(!parts.length||url.pathname.toLowerCase()==='/'+parts.join('/'));
+    }
+    // Non-domain vendor signatures describe the public asset path, not a
+    // tracker query, fragment, username or unrelated host.
+    return url.pathname.toLowerCase().includes(needle.toLowerCase());
+  };
   return COMMERCE_PLATFORMS.filter(platform=>{
-    if((platform.scriptIncludes??[]).some(n=>input.scripts.some(src=>src.toLowerCase().includes(n.toLowerCase())))) return true;
-    if((platform.imageHostIncludes??[]).some(n=>input.imageUrls.some(src=>src.toLowerCase().includes(n.toLowerCase())))) return true;
+    if((platform.scriptIncludes??[]).some(n=>scripts.some(url=>scriptMatches(url,n)))) return true;
+    if((platform.imageHostIncludes??[]).some(n=>images.some(url=>hostMatches(url,n.toLowerCase())))) return true;
     if((platform.htmlIncludes??[]).some(n=>haystack.includes(n.toLowerCase()))) return true;
     if(input.selectorPresent && (platform.selectors??[]).some(s=>input.selectorPresent!(s))) return true;
     return false;

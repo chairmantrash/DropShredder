@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
@@ -27,3 +29,17 @@ jobs:
         uses: github/codeql-action/autobuild@v3
       - name: Analyze
         uses: github/codeql-action/analyze@v3
+        with:
+          output: codeql-results
+          ref: ${{ github.event_name == 'pull_request' && format('refs/pull/{0}/head', github.event.number) || github.ref }}
+          sha: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Require a complete security analysis with no findings
+        run: node scripts/audit-codeql-results.mjs codeql-results
+      - name: Preserve security findings and exact-source receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-codeql-evidence
+          path: codeql-results/
+          if-no-files-found: error
+          retention-days: 30
