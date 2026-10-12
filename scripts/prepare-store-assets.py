@@ -91,10 +91,10 @@ for w,h,name in [(440,280,'promo-440x280'),(1400,560,'marquee-1400x560')]:
         c.text(426,370,'Local evidence · optional research · clear limits',24,MUTED)
     p=OUT/(name+'.png');c.save(p)
     assets.append(dict(path=str(p.relative_to(ROOT)),width=w,height=h,sha256=digest(p),scope='Project-authored vector brand composition; no accuracy/Google endorsement claims'))
-manifest=dict(schemaVersion=1,preparedAt='2026-10-12',task='DS-046',productionSource='2641a597573f071f8360492d6dc577983c38c144',
-    testedHarness='7ba9329291434ea8627f358f8db4d59ce999322e',browser='Chrome/156.0.8078.4',
-    sourceRun='https://github.com/chairmantrash/DropShredder/actions/runs/38186085864',
-    artifacts={'native':11719906717,'packaged':11719935779},
+manifest=dict(schemaVersion=1,preparedAt='2026-10-12',task='DS-048',productionSource='5e3dc52bc54630753cf37619225be49d42043a2d',
+    testedHarness='0c4b0e96e9629aef2bee42cf7c0e46d7076cdc8e',browser='Chrome/156.0.8078.4',
+    sourceRun='https://github.com/chairmantrash/DropShredder/actions/runs/38265325684',
+    artifacts={'native':11755295027,'packaged':11753953432},
     exclusions=['Current default professional document and native non-verdict crops only; no visible aggressive/nuclear verdict or toast included.','Native fixture profiles have nondefault feature/tone settings outside these crops; no product accuracy or safety endorsement.','Live merchant logos/images and full public-key textarea not used; signed crop ends before key input.'],
     rendering={'script':'scripts/prepare-store-assets.py','Pillow':Image.__version__,'font':str(FONT),'fontSha256':digest(FONT),'boldSha256':digest(BOLD)},
     sources='Unmodified source capture files retained under store-assets/captures; SVG layout files are also included.',

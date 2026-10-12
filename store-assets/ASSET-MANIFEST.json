@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "preparedAt": "2026-10-12",
-  "task": "DS-046",
-  "productionSource": "2641a597573f071f8360492d6dc577983c38c144",
-  "testedHarness": "7ba9329291434ea8627f358f8db4d59ce999322e",
+  "task": "DS-048",
+  "productionSource": "5e3dc52bc54630753cf37619225be49d42043a2d",
+  "testedHarness": "0c4b0e96e9629aef2bee42cf7c0e46d7076cdc8e",
   "browser": "Chrome/156.0.8078.4",
-  "sourceRun": "https://github.com/chairmantrash/DropShredder/actions/runs/38186085864",
+  "sourceRun": "https://github.com/chairmantrash/DropShredder/actions/runs/38265325684",
   "artifacts": {
-    "native": 11719906717,
-    "packaged": 11719935779
+    "native": 11755295027,
+    "packaged": 11753953432
   },
   "exclusions": [
     "Current default professional document and native non-verdict crops only; no visible aggressive/nuclear verdict or toast included.",
@@ -48,9 +48,9 @@
       "path": "store-assets/screenshots/02-local-label-1280x800.png",
       "width": 1280,
       "height": 800,
-      "sha256": "46553c8848e8885b963e390d34cbc58b2a23d0eb35c6ea03418b840b4c0ebb10",
+      "sha256": "b8764d7c275934d614526c06ccd1850b4dcd1b990379a9bba96a069b4d07da0d",
       "source": "store-assets/captures/native-local-label.png",
-      "sourceSha256": "41585d031181894583e00dea80a90bc6ddc887ccda6986ebf46d9985975201e1",
+      "sourceSha256": "b1fd5865b751d19373e77fab4d08eff019955d789f821f656c30df3cebf52def",
       "sourceDimensions": [
         1920,
         1080
@@ -90,7 +90,7 @@
       "height": 800,
       "sha256": "5f7940a3798c653e3d3ac35162dac6b5280b0865b99c4f2f7b73720e43bf2623",
       "source": "store-assets/captures/native-signed-reference.png",
-      "sourceSha256": "4cd10eb2b8b06f41812fef4f79bbf1c2a207012ec245a1de2f0b1dd555317c47",
+      "sourceSha256": "765ea55c67afd0220088e1ab3a7021f546db41ae431c502fc82c07de9a6aaed4",
       "sourceDimensions": [
         1920,
         1080

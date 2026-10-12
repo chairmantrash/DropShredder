@@ -1,3 +1,25 @@
+# Current state — October 12, 2026 DS-048
+
+PRs #15–17 are integrated into canonical `release/security-performance-hardening` at `28be5696cd594fba482ae391230e38468fc63784`, tree `f2008f180ed14ed55a53639c0132ae69bbcc0694`, matching the local integration tree. PR #9 remains draft against unchanged main. External beta has not started.
+
+Current production source `5e3dc52bc54630753cf37619225be49d42043a2d`, tree `e5841d40c6b22a6bdd7eb685956e221eceff0bcd`, contains the resource host/path identity repair and source-only Trustpilot text corrections. Native harness selector values now pass as CDP arguments. Permissions, models, dependency locks and severe-verdict policy are unchanged. Clean prebuild/prezip removes obsolete generated chunks; repeated inventories match.
+
+Canonical tested head `2fa7d0a75998e6b1691060011fada9735309c94f` passes 405 core tests and 117 browser executions / 99 unique IDs: 77 headed, six natural worker/history checks, nine packaged Chromium, nine full headless Chrome 133, nine full headless Chrome 155 and seven locale groups; seven duplicate headless native checks excluded. CI 38266197583, CodeQL 38266197621 and Chromium 38266197484 are green. Full SARIF reports zero findings, with no severity/baseline/suppression exemption. Canonical natural worker shutdown took 30,136 ms with no worker debugger; actual history delete/reuse/restart remains verified. This is owned engineering evidence.
+
+Workflow-only dependency followup `3c7435f2fa2723e2b0a0914e5a428d2c8c49534b` passes CI 38267549335 and finding-free CodeQL 38267549288. Complete root and isolated browser-tool advisory inventories report zero vulnerabilities; artifact 11755192299 was downloaded/digest-verified. This is a current advisory lookup, not universal safety certification. PR #15 adds eleven scoped legal observations / eighteen original-source links, zero automatic weight and no runtime import; original-docket/access limits remain explicit.
+
+The exact 51-file / 54,941,299-byte QA payload and both actual CI Store ZIPs were downloaded and every entry/size/hash verified. QA artifact 11755200538 has archive SHA256 `c779fbd557e0e02d05b6513740e6d596cfcccfe9efb09d97a0a50ea4edceaedf`. Latest dependency-gated Store artifact 11754903493 has archive SHA256 `00fae5a5479e058430fe5ee3ce0e405bcd6bdd50b83bd31d76aa36cbcb7ffd98`; its actual install ZIP is 25,849,056 bytes, SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c`. Wrapper identities differ; all 51 runtime file hashes agree.
+
+Four current UI Store assets were refreshed from the green 0c4b0e96/38265325684 captures on the same exact runtime payload. Six asset PNGs decode, match dimensions/hashes and render deterministically; four UI crops are pixel-exact and visually inspected. Capture/scope provenance is retained. Synthetic owned label and signer demos are not photograph accuracy or external publisher acceptance.
+
+The independent corpus still has zero cases; the pinned empty/unapproved template returns NOT_ACCEPTED/exit 2. `workplane/evals/ACCEPTANCE-INPUTS.md`, `threshold-proposal.json` and `language-legal-review-template.json` prepare specific review inputs. Numeric proposal approval is null; none of eight 419-message catalogs has native/legal approval. Independent rights/clustering/accuracy, operator/platform/OS/accessibility/resource/long-duration/retention, real photographed labels, applicable publisher/source/elapsed-week acceptance remain required inputs. Any distribution to people must use an identified authorized channel. No reviewers, participants, rights, publisher identity or elapsed time were invented. Store-account settings are for the later Store route, not core unpacked QA.
+
+Current authority: WORK-QUEUE and `workplane/runs/DS-048-COMPLETION-20261012.json`. Earlier green CodeQL workflow conclusions did not mean zero findings; full-scan security repairs and both failed chooser-harness attempts remain traceable in the new receipt. Weekly research/readiness monitoring continues; main/tag/Store/public beta remain held.
+
+---
+
+## Historical DS-047 checkpoint
+
 # Current state — October 12, 2026 DS-047
 
 PR #14 is merged into canonical release/security-performance-hardening at 9b41362d126476461a9855d676bd22674414d59b; its tree matches tested harness add57146c60fc018fb883bd8031f11eb96af4ab7/ tree 4c5e49da18d1a4a433df678daaefde1baed6e1c8 with zero file differences. PR #9 remains draft; main/tag/Store/external beta are not published.
