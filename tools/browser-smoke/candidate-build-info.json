@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "a345e6cc58571f8aac979dd311b2ec62954824d3",
-  "sourceTree": "25d9fb2daa8d6f135f4e5f2629d3b88ee9abf249",
+  "sourceCommit": "6fe561807d6962fe51006eab99c0cf7017c2c6ee",
+  "sourceTree": "8074e5bbcb8c678e7eacfe397457901186f0b661",
   "version": "0.2.0",
-  "reviewedChange": "DS-051 after complete frozen beta testing: injected return-policy callback returns non200 HTTP status as data and the native panel localizes it. Same origin/bounds/no-credentials/report guard and positive policy behavior retained. No permission, model, data, dependency or verdict changes. N39 records actual pending/completed read, requires original native-script/model text on completion and preserves invalidation/recovery assertions. Fresh hosted gates required.",
+  "reviewedChange": "DS-052 after all24 known-site initial outcomes: bounded unique explicit current-product visible SKU fallback. Hidden/review/recommendation/related/linked/conflicting labels cannot select a SKU; bound structured SKU remains authoritative. Structured identity, variant, price and GTIN remain unresolved where previously ambiguous. Store-local SKU is not common ownership or source chronology proof. DS-051 policy HTTP fix retained; no permissions, models, data, dependencies or risk-weight changes. Fresh hosted native/known-live/source gates required.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -70,14 +70,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-BYqxNJlq.js",
-      "bytes": 566180,
-      "sha256": "20d4ccc9ba27548a51aee09f107c0629e851cdba1b22e85db02f5e1a3808517d"
+      "path": "chunks/sidepanel-CWpuRbao.js",
+      "bytes": 566806,
+      "sha256": "f234ef21c579ea683a364f58b34fed3f1e28aa0d1bb9c4c3c75aa7ac1df26e1b"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 73125,
-      "sha256": "66aaf29ec32f6439776cad4aafb0ba56b4a6470acadc17429778e801a643f2c2"
+      "bytes": 73751,
+      "sha256": "ed0c4cd23e9d903e6ec6941910db9a65b17d55d01be5587c5b5f8427282b7352"
     },
     {
       "path": "icon/128.png",
@@ -257,7 +257,8 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "c4b639a4103d3594bdd82bb62eec538c5286df126e2b7ad966577257b6b295b8"
+      "sha256": "1f82aae1eab012af032643c6111c484bb9d1ce915a4de9d4e7c20814502169dd"
     }
-  ]
+  ],
+  "totalBytes": 54942638
 }
