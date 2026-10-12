@@ -142,7 +142,10 @@ async function attach(targetId, productPage = page) {
 }
 async function openNative() {
   context = await chromium.launchPersistentContext(profile, { channel: 'chromium', headless: !headed,
-    args: ['--enable-unsafe-extension-debugging', `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
+    args: ['--enable-unsafe-extension-debugging',
+      '--host-resolver-rules=MAP www.google.com ~NOTFOUND, MAP lens.google.com ~NOTFOUND, MAP www.bing.com ~NOTFOUND, MAP yandex.com ~NOTFOUND, MAP tineye.com ~NOTFOUND',
+      `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
+  report.fixtureSearchNetworkIsolation={hosts:['www.google.com','lens.google.com','www.bing.com','yandex.com','tineye.com'],scope:'Disposable engineering browser only: owned HTTP routes plus DNS refusal fallback; selected destinations are checked from actual Chrome pending/committed tab URLs, not remote search content'};
   context.on('request', request => {
     let fromExtension = request.serviceWorker()?.url().startsWith('chrome-extension://');
     try { fromExtension ||= request.frame().url().startsWith('chrome-extension://'); } catch {}
@@ -330,7 +333,7 @@ try {
     });
     if (headed) {
       await runWindowEdges({context,page,native,worker,browserCdp,id,attach,test,until,pause,report});
-      await runContextMenus({context,page,native,id,test,until,pause,report});
+      await runContextMenus({context,page,native,worker,id,test,until,pause,report});
       await runResourceEdges({context,page,native,worker,browserCdp,test,until,pause,report,output});
       const scanFixture=async url=>{if(url) await page.goto(url);await page.bringToFront();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'fixture scan',20000);return native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent})");};
       const downloads=[];const downloadDir=path.join(output,'downloads');await fs.mkdir(downloadDir,{recursive:true});
@@ -666,6 +669,7 @@ try {
   report.status = 'FAIL OR ENVIRONMENT BLOCKED'; report.failure = String(error);
   report.failureState = await native?.evaluate("({status:document.querySelector('#status')?.textContent,settingsOpen:document.querySelector('.settings-panel')?.open,sourceChecked:document.querySelector('#auto-source-hunt')?.checked,autoStatus:document.querySelector('#auto-protection-status')?.textContent,focused:document.activeElement?.outerHTML?.slice(0,300),chooserOpen:document.querySelector('#ds-search-chooser')?.open,documentFocused:document.hasFocus()})").catch(() => undefined);
   report.savedFeaturesAtFailure = worker ? await features().catch(() => undefined) : undefined;
+  report.chromeTabsAtFailure = worker ? await worker.evaluate(()=>chrome.tabs.query({})).catch(()=>undefined) : undefined;
   await native?.screenshot('native-failure.png').catch(() => {}); console.error(error); process.exitCode = 1;
 } finally {
   report.finishedAt = new Date().toISOString(); report.testsPassed = report.tests.filter(t => t.status === 'PASS').length;
