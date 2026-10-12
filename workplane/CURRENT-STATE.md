@@ -1,3 +1,21 @@
+# Current state — October12, 2026 DS-046
+
+PR13 is merged into canonical release/security-performance-hardening at8940834e10581572f97f0912f9dc996a3450aae4. Its tree exactly matches tested harness8bc3d70b429809ee5a12f819541e6b0c0bbe9097/ treef45511dc094882ad4c80bd0a9d0332e367d25c11. PR9 remains draft; no main merge, tag, Store submission or accepted external beta.
+
+Production2641a597573f071f8360492d6dc577983c38c144/ treedb63f2b26bc569ffb7f7585b544d032436014386 is unchanged.51 files/54,940,159bytes verified in hosted QA artifact11720232054, archiveSHA25662747c7be5ba854519dece8d5ba2259092edc796cd71e9225410277dcdcd8430. Raw local install ZIP remains24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1; these are different wrappers and must not be confused.
+
+394 core tests, CI38187268119, CodeQL38187268158 and Chromium38187268027 pass.77 headed +9 Chromium packaged +9 pinned official Chrome133 +9 pinned current-stable Chrome155 +7 locale groups =111 browser case executions/93 unique case IDs;7 headless native repeats excluded. Actual two-window panels/settings, page/selection/store/image context-menu commands, model-change OCR cancellation/recovery,32 quiet tabs and malformed Chrome-local-storage restart recovery pass. Original Hindi/Arabic fixtures, all selected models, true Linux chooser and privacy N12–14 remain green. Version133/155 jobs cover packaged runtime; the expanded native suite uses156.
+
+Walmart's public product scan/resource observation succeeds on a5,402-element page. Noctua429, Etsy403 and Amazon HTTP2 transport failure remain unavailable, not accuracy passes. Idle/task/heap/aggregate-RSS observations are descriptive, not extension-only resource budgets. Two intermediate menu-harness failures remain preserved; no product code was changed for them.
+
+The release/operator checklist and four Store screenshots now use current runtime evidence, with original frames/crop hashes retained and pixels/dimensions/determinism verified. The independent corpus template is pinned to the current hosted QA archive and remains empty/unapproved. Engineering acceptance is mapped to the operator protocol without inventing an independent sign-off. Receipt: workplane/runs/DS-046-COMPLETION-20261012.json. The conditional beta-readiness check and existing weekly research are enabled.
+
+Remaining: independent rights-cleared merchant/product-disjoint accuracy and approved thresholds; full independent browser/site/OS/accessibility acceptance; native-speaker/legal-copy and photographed-label review; applicable real publisher/source authenticity and elapsed weekly lifecycle; accepted-package/account-specific public distribution. Current WORK-QUEUE is authoritative. Engineering evidence does not close those gates.
+
+---
+
+## Historical DS-045 checkpoint
+
 # Current state — October 11, 2026 DS-045 continuation
 
 Owner-directed queued completion is active. PR12 is merged into the canonical release branch at bb84b66bc65f60cd6f43f66a3f3fd2f0a8f7fa5e; public-release PR9 stays draft. The Git CLI lacked credentials; the connected GitHub app published under the renewed owner directive. Remote/local source trees were compared byte-for-byte through Git tree hashes. Earlier publication-blocked receipts below remain historical, not the current blocker.

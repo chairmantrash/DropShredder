@@ -3,7 +3,7 @@
 **Role:** Independent **QA / browser-testing agent only**. You are NOT the engineering or repair agent.
 
 **Project:** `chairmantrash/DropShredder`
-**Candidate:** DS-045 repaired production2641a597573f071f8360492d6dc577983c38c144; tested harness480f71043c059b4695553c0718ef1d08d5c07728; integrated via PR12 into canonical draft release PR9. Use green run38183021566 unpacked QA artifact11717908190; verify every BUILD-INFO.json hash. This is a QA-only package.394 core and85 owned browser/locale checks, CI and CodeQL pass; independent acceptance and public release remain open.
+**Candidate:** repaired production2641a597573f071f8360492d6dc577983c38c144; tested DS-046 harness8bc3d70b429809ee5a12f819541e6b0c0bbe9097; PR13 integrated into canonical draft release PR9. Use green run38187268027 QA artifact11720232054, archiveSHA25662747c7be5ba854519dece8d5ba2259092edc796cd71e9225410277dcdcd8430; verify every BUILD-INFO.json hash. This is QA-only.394 core tests and111 browser case executions (93 unique IDs, including9 version checks each on133/155), CI and CodeQL pass. Expanded native checks use156. Independent acceptance/public release remain open; engineering mapping: DS-046-ENGINEERING-ACCEPTANCE.md.
 **Exact extension build:** commit `[sourceCommit from BUILD-INFO.json]`, Chrome MV3, extension version `0.2.0`, Chrome **133 or newer**.
 **Test subject:** the attached `DropShredder-Unpacked/` directory (unzip the supplied Work Agent QA bundle first). The `manifest.json` must be immediately inside this directory.
 

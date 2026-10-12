@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "preparedAt": "2026-10-09",
-  "task": "DS-038",
-  "productionSource": "cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6",
-  "testedHarness": "fe22e27b44424273d4b465d8af5cafbc40178bdb",
+  "preparedAt": "2026-10-12",
+  "task": "DS-046",
+  "productionSource": "2641a597573f071f8360492d6dc577983c38c144",
+  "testedHarness": "7ba9329291434ea8627f358f8db4d59ce999322e",
   "browser": "Chrome/156.0.8078.4",
-  "sourceRun": "https://github.com/chairmantrash/DropShredder/actions/runs/37979165995",
+  "sourceRun": "https://github.com/chairmantrash/DropShredder/actions/runs/38186085864",
   "artifacts": {
-    "native": 11640001725,
-    "packaged": 11640825265
+    "native": 11719906717,
+    "packaged": 11719935779
   },
   "exclusions": [
-    "Initial headed capture was blank before compositor paint; excluded.",
-    "Nuclear-tone scan/toast captures excluded from customer-facing assets.",
-    "Live merchant logos/images and full public-key textarea not used."
+    "Current default professional document and native non-verdict crops only; no visible aggressive/nuclear verdict or toast included.",
+    "Native fixture profiles have nondefault feature/tone settings outside these crops; no product accuracy or safety endorsement.",
+    "Live merchant logos/images and full public-key textarea not used; signed crop ends before key input."
   ],
   "rendering": {
     "script": "scripts/prepare-store-assets.py",
@@ -30,10 +30,10 @@
       "height": 800,
       "sha256": "0741eab0bafbdc9fb5f5cf37eee19c6ac41088c230d2022f13f7fcf6df6216ee",
       "source": "store-assets/captures/professional-panel.png",
-      "sourceSha256": "487f73a553505c06e78601ef058b68e3b7ff08d86a34c20b79cb560feb05e271",
+      "sourceSha256": "634aab33ff502405a70cbe20fb6101f6856edb282c265a75e56b819069562674",
       "sourceDimensions": [
         420,
-        1622
+        1832
       ],
       "crop": [
         0,
@@ -48,9 +48,9 @@
       "path": "store-assets/screenshots/02-local-label-1280x800.png",
       "width": 1280,
       "height": 800,
-      "sha256": "c5b588d4898a33b28246aa535639e01364936e9a8f008175088f0784ebd23bbd",
+      "sha256": "46553c8848e8885b963e390d34cbc58b2a23d0eb35c6ea03418b840b4c0ebb10",
       "source": "store-assets/captures/native-local-label.png",
-      "sourceSha256": "c8be5e68a7111f1bd610997feffcb56bbb8f21c0b12c1ce29b8edfe40fc516ae",
+      "sourceSha256": "41585d031181894583e00dea80a90bc6ddc887ccda6986ebf46d9985975201e1",
       "sourceDimensions": [
         1920,
         1080
@@ -68,16 +68,16 @@
       "path": "store-assets/screenshots/03-private-history-1280x800.png",
       "width": 1280,
       "height": 800,
-      "sha256": "fa0f97ae5e5fd34b3152c59a756d2836cfa6cf3f43dd7252f978ce55af0449a6",
+      "sha256": "3d6106ab22224f20863a0b6205c07013f81bb406046f3374bd94b1a96f97e585",
       "source": "store-assets/captures/native-private-history.png",
-      "sourceSha256": "258d7f05aed1af36381402b95437a2b722bc80a9e1f575c7ecb1fae628692e01",
+      "sourceSha256": "bad0e4e917e52e3bbb1281ca0e2753fee88c8b9c96dd3afb79477b2261d603a3",
       "sourceDimensions": [
         1920,
         1080
       ],
       "crop": [
         929,
-        136,
+        360,
         1289,
         852
       ],
@@ -88,9 +88,9 @@
       "path": "store-assets/screenshots/04-signed-reference-1280x800.png",
       "width": 1280,
       "height": 800,
-      "sha256": "0ebf86120e1a808cceb9894dbcfdc1758fff817435aeca3974430bb1525bf074",
+      "sha256": "5f7940a3798c653e3d3ac35162dac6b5280b0865b99c4f2f7b73720e43bf2623",
       "source": "store-assets/captures/native-signed-reference.png",
-      "sourceSha256": "344b2c969d14e1eb92c5171895aaa03f7e55366ce158d3ec8a2b1ef5b8642e11",
+      "sourceSha256": "4cd10eb2b8b06f41812fef4f79bbf1c2a207012ec245a1de2f0b1dd555317c47",
       "sourceDimensions": [
         1920,
         1080
@@ -99,7 +99,7 @@
         929,
         152,
         1289,
-        780
+        754
       ],
       "transforms": "Crop only, no UI pixel edits or scaling; external brand/caption composition; PNG encoded RGB",
       "scope": "Actual native signed-feed onboarding with ephemeral owned fixture key; no external issuer authenticated or elapsed-week scheduler test."
