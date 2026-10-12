@@ -20,7 +20,8 @@
     "audit:professional": "node --import tsx scripts/professionalism-audit.ts",
     "audit:chrome-runtime": "node scripts/chrome-runtime-audit.mjs",
     "audit:localization": "node --import tsx scripts/localization-audit.ts",
-    "prebuild": "node scripts/package-ocr-models.mjs"
+    "prebuild": "node scripts/clean-build-output.mjs && node scripts/package-ocr-models.mjs",
+    "prezip": "node scripts/clean-build-output.mjs && node scripts/package-ocr-models.mjs"
   },
   "devDependencies": {
     "@types/chrome": "0.0.323",

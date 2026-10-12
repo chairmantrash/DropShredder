@@ -4,6 +4,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, sign } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import {nativeControl} from './native-control.mjs';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -60,7 +61,9 @@ async function attach(targetId, productPage = page) {
       const {requestId,request}=response.params;const url=request.url;providerRequests.push({url,mode:providerMode,at:new Date().toISOString()});
       void(async()=>{
         const mode=providerMode;if(mode==='delay') await pause(2000);
-        const body=url.includes('publisher.example.com')?(feedMode==='signed'?signedFixtureList():fixtureList()):url.includes('rdap.verisign.com')?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
+        const target=new URL(url);assert.equal(target.protocol,'https:');
+        assert.ok(['publisher.example.com','rdap.verisign.com','www.saferproducts.gov'].includes(target.hostname),'Unexpected fixture provider origin');
+        const body=target.hostname==='publisher.example.com'?(feedMode==='signed'?signedFixtureList():fixtureList()):target.hostname==='rdap.verisign.com'?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
         await call('Fetch.fulfillRequest',{requestId,responseCode:mode==='error'?503:200,responseHeaders:[{name:'content-type',value:'application/json'}],body:Buffer.from(JSON.stringify(body)).toString('base64')});
       })().catch(()=>{});return;
     }
@@ -83,12 +86,12 @@ async function attach(targetId, productPage = page) {
     if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails)); return result.result.value;
   };
   const click = async selector => {
-    await until(() => evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)})?.getBoundingClientRect().width)`), `visible control ${selector}`);
-    await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); if(!el || el.disabled) throw new Error('Missing/disabled control'); el.scrollIntoView({block:'center'}); })()`);
+    await until(() => nativeControl(call,selector,'visible'), `visible control ${selector}`);
+    await nativeControl(call,selector,'scroll');
     // Chrome Views forwards native-panel input through compositor hit testing.
     // Let the scroll settle before computing/clicking a visible, unobscured hit.
     await pause(200);
-    const point = await evaluate(`(() => { const el=document.querySelector(${JSON.stringify(selector)}); const r=el.getBoundingClientRect(); if(!r.width || !r.height) throw new Error('Control is hidden'); const x=r.x+r.width/2,y=r.y+r.height/2,hit=document.elementFromPoint(x,y); if(!hit || !(hit===el || el.contains(hit))) throw new Error('Control is obscured'); return {x,y}; })()`);
+    const {x,y}=await nativeControl(call,selector,'point');const point={x,y};
     if (headed) {
       const { targetInfo } = await (await context.newCDPSession(productPage)).send('Target.getTargetInfo');
       const { bounds } = await browserCdp.send('Browser.getWindowForTarget', { targetId: targetInfo.targetId });
@@ -408,7 +411,7 @@ try {
         providerMode='error';await native.click('#recall-lookup');await until(()=>native.evaluate("!document.querySelector('#recall-lookup').disabled"),'CPSC error');assert.match(await native.evaluate("document.querySelector('#recall-status').textContent"),/503/);
         providerMode='normal';await native.click('#recall-lookup');await until(()=>native.evaluate("!document.querySelector('#recall-lookup').disabled"),'CPSC success');assert.equal(await native.evaluate("document.querySelector('#recall-results').children.length"),1);
         assert.deepEqual(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict,before);assert.match(await native.evaluate("document.querySelector('#recall-status').textContent"),/candidate/i);
-        const request=providerRequests.filter(x=>x.url.includes('saferproducts.gov')).at(-1);assert.equal(new URL(request.url).searchParams.get('RecallTitle'),'Fixture');return {scope:'Owned intercepted CPSC notice, exact unit still unverified'};
+        const request=providerRequests.filter(x=>new URL(x.url).hostname==='www.saferproducts.gov').at(-1);assert.equal(new URL(request.url).searchParams.get('RecallTitle'),'Fixture');return {scope:'Owned intercepted CPSC notice, exact unit still unverified'};
       });
       await test('N23','Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls',async()=>{
         await native.click('.intelligence-panel > summary');await native.type('#list-url','https://publisher.example.com/products.json');await native.click('#list-subscribe');feedVersion=1;providerMode='normal';await native.click('#list-fetch');

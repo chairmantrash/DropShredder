@@ -2,13 +2,18 @@ import type { ReputationObservation } from './complaint-analysis';
 
 function htmlToText(html:string):string{
   return html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ')
+    .replace(/<script\b[^>]*>[\s\S]*?(?:<\/script\b[^>]*>|$)/gi,' ')
+    .replace(/<style\b[^>]*>[\s\S]*?(?:<\/style\b[^>]*>|$)/gi,' ')
     .replace(/<[^>]+>/g,' ')
-    .replace(/&nbsp;/gi,' ')
-    .replace(/&amp;/gi,'&')
-    .replace(/&#39;|&apos;/gi,"'")
-    .replace(/&quot;/gi,'"')
+    // Decode one original entity per match. Chained replacements would
+    // reinterpret &amp;quot; as a quote instead of its literal &quot; text.
+    .replace(/&(?:nbsp|amp|apos|quot|lt|gt|#\d+|#x[a-f0-9]+);/gi,entity=>{
+      const key=entity.slice(1,-1).toLowerCase();
+      const named:Record<string,string>={nbsp:' ',amp:'&',apos:"'",quot:'"',lt:'<',gt:'>'};
+      if(!key.startsWith('#'))return named[key]??entity;
+      const code=key.startsWith('#x')?parseInt(key.slice(2),16):Number(key.slice(1));
+      return code>0&&code<=0x10ffff&&(code<0xd800||code>0xdfff)?String.fromCodePoint(code):'\ufffd';
+    })
     .replace(/\s+/g,' ')
     .trim();
 }

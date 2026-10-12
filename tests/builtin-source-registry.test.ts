@@ -15,8 +15,10 @@ test('fresh install ships with broad supplier/source coverage',()=>{
 
 test('source hunt uses bundled registry without local history',()=>{
   const urls=sourceSearchUrls('example product');
-  assert.ok(urls.aliexpress?.includes('aliexpress.com'));
-  assert.ok(urls['made-in-china']?.includes('made-in-china.com'));
-  assert.ok(urls.globalsources?.includes('globalsources.com'));
+  for(const [id,domain]of [['aliexpress','aliexpress.com'],['made-in-china','made-in-china.com'],['globalsources','globalsources.com']]){
+    const search=new URL(urls[id!]!);
+    assert.equal(search.origin,'https://www.google.com');assert.equal(search.pathname,'/search');
+    assert.equal(search.searchParams.get('q'),'"example product" site:'+domain);
+  }
   assert.ok(Object.keys(urls).length>=20);
 });

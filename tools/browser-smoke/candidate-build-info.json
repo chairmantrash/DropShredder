@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
-  "sourceTree": "db63f2b26bc569ffb7f7585b544d032436014386",
+  "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+  "sourceTree": "e5841d40c6b22a6bdd7eb685956e221eceff0bcd",
   "version": "0.2.0",
-  "reviewedChange": "DS-044/045: English-first offline OCR repairs Hindi identifiers; bounded high-quality2x Arabic OCR retains native and Latin lines with2048px cap and unchanged1024px shape-detector budget. Both original failed inputs and strict assertions retained. Source-access follow-up and guarded corpus metrics;394 local tests. No engine/model/dependency/permission/verdict changes; fresh hosted verification required.",
+  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 405 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required. Clean prebuild/prezip removes obsolete generated chunks; repeated clean inventories match. Trustpilot text excludes spaced/unclosed script/style bodies and decodes entities once; search registry and actual chosen BBB query assertions are exact.",
   "buildFiles": [
     {
       "path": "_locales/ar/messages.json",
@@ -65,14 +65,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-BgycW4SC.js",
-      "bytes": 565316,
-      "sha256": "adc6c6c38d51b571aa26db0668d73e74a2c09f2fd9efbaa94770acfa478020aa"
+      "path": "chunks/sidepanel-D_EGUFq6.js",
+      "bytes": 566093,
+      "sha256": "6fc6e6d3a76c7d09ce32716525297951662434afae120a5372913f3361de6d0a"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 72762,
-      "sha256": "be37ef0491e31ffad1cdab3fcf01bb94ac1ee88fe58e2c5e8d57e27ea592157b"
+      "bytes": 73125,
+      "sha256": "66aaf29ec32f6439776cad4aafb0ba56b4a6470acadc17429778e801a643f2c2"
     },
     {
       "path": "icon/128.png",
@@ -252,7 +252,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "4e7051187d0ad27dcdd4c21f68a5ba7bc1e0d907f439f31fd7f00c2ed0208fb8"
+      "sha256": "8c1ab898433787126c26f5f074e4af5998a8d2d8dc4463b8f6234c0470d63301"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",

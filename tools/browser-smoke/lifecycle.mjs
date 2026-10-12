@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {nativeControl} from './native-control.mjs';
 
 // Raw browser CDP deliberately never attaches a debugger to the service worker.
 // Chrome stops it naturally; normal native-panel messages wake it. Application
@@ -22,8 +23,9 @@ function call(method,params={},sessionId){return new Promise((resolve,reject)=>{
 async function evaluate(expression,sessionId=panelSession){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true},sessionId);if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;}
 async function screenshot(name){execFileSync('scrot',['--overwrite',path.join(out,name)]);}
 async function click(selector){
- await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)});if(!e||e.disabled)throw Error('Missing/disabled control');e.scrollIntoView({block:'center'});})()`);await pause(200);
- const p=await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)}),r=e.getBoundingClientRect(),x=r.x+r.width/2,y=r.y+r.height/2,h=document.elementFromPoint(x,y);if(!r.width||!r.height||!(h===e||e.contains(h)))throw Error('Hidden/obscured control');return {x,y,width:innerWidth,height:innerHeight};})()`);
+ const panelCall=(method,params)=>call(method,params,panelSession);
+ await nativeControl(panelCall,selector,'scroll');await pause(200);
+ const p=await nativeControl(panelCall,selector,'point');
  const {bounds}=await call('Browser.getWindowForTarget',{targetId:pageTarget});assert.equal(bounds.width,1288);assert.ok([850,851].includes(bounds.height));
  report.geometry={bounds,panelViewport:{width:p.width,height:p.height},insetRight:9,insetBottom:8};
  execFileSync('xdotool',['mousemove',String(Math.round(bounds.left+bounds.width-p.width-9+p.x)),String(Math.round(bounds.top+bounds.height-p.height-8+p.y)),'click','1']);await pause(150);
@@ -128,7 +130,7 @@ async function stopBrowser(){
 }
 const settings=()=>evaluate("chrome.storage.local.get('dropshredder-feature-settings-v1').then(r=>r['dropshredder-feature-settings-v1'])");
 const history=()=>evaluate(`new Promise((resolve,reject)=>{const r=indexedDB.open('dropshredder',2);r.onerror=()=>reject(r.error);r.onsuccess=()=>{const d=r.result;if(!d.objectStoreNames.contains('observations')){d.close();resolve({count:0,rows:[]});return;}const t=d.transaction('observations','readonly'),q=t.objectStore('observations').getAll();q.onsuccess=()=>resolve({count:q.result.length,rows:q.result.map(x=>({url:x.url,id:x.id,identityKey:x.identityKey}))});q.onerror=()=>reject(q.error);t.oncomplete=()=>d.close();};})`);
-async function navigate(n){const url=`https://fixture.example.com/products/history-${n}?token=OWNED-NOT-PRIVATE#owned-fragment`;await call('Page.navigate',{url},pageSession);await until(()=>evaluate(`document.querySelector('h1')?.textContent===${JSON.stringify(`Owned history mug ${n}`)}`,pageSession),'owned product navigation');return url;}
+async function navigate(n){const url=`https://fixture.example.com/products/history-${n}?token=OWNED-NOT-PRIVATE#owned-fragment`;await call('Page.navigate',{url},pageSession);await until(async()=>(await evaluate("document.querySelector('h1')?.textContent",pageSession))===`Owned history mug ${n}`,'owned product navigation');return url;}
 async function scan(n){await navigate(n);await until(()=>evaluate("!document.querySelector('#scan').disabled"),'scan ready');await click('#scan');await until(()=>evaluate("!document.querySelector('#scan').disabled"),'scan completed',20000);const r=JSON.parse(await evaluate("document.querySelector('#raw').textContent"));assert.equal(r.product.sku,`HISTORY-${n}`);assert.equal(r.product.title,`Owned history mug ${n}`);assert.equal(r.verdict.severeWarningAllowed,false);return r.product;}
 try{
  await test('L01','Exact unmodified package mounts with a service worker that has no debugger attached',async()=>{
