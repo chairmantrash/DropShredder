@@ -49,6 +49,12 @@ export async function additionalFeatureChecks({context,page,native,test,until,pa
     policyStatus=200;return {status};
   });
   policyStatus=200;
+  await test('N57','Native visible current-product SKU survives unresolved structured variants without choosing their prices',async()=>{
+    const target='https://fixture.example.com/products/visible-sku';
+    await context.route(target,route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><title>Owned visible SKU control</title><script type="application/ld+json">'+JSON.stringify({'@type':'ProductGroup',hasVariant:[{'@type':'Product',name:'Small',url:target+'?variant=1',sku:'SMALL',offers:{price:10,priceCurrency:'USD'}},{'@type':'Product',name:'Large',url:target+'?variant=2',sku:'LARGE',offers:{price:20,priceCurrency:'USD'}}]})+'</script></head><body><main><h1>Owned visible SKU control</h1><p>SKU: <span>OWNED-SKU-57</span></p><button>Add to cart</button><div class="related-products"><p>SKU: UNRELATED-99</p></div></main></body></html>'}));
+    await page.goto(target);const data=await scan();assert.equal(data.product.sku,'OWNED-SKU-57');assert.equal(data.product.price,undefined);assert.equal(data.product.variantId,undefined);assert.equal(data.product.extraction.structuredIdentityResolved,false);assert.equal(data.verdict.severeWarningAllowed,false);
+    await page.goto('https://fixture.example.com/products/beta-controls');return {sku:data.product.sku,extraction:data.product.extraction,scope:'Actual native extraction of an explicit store-local label; structured price/variant and independent supplier/ownership remain unresolved'};
+  });
   await test('N55','Native shipping action keeps an explicit origin informational without accusing a country',async()=>{
     await scan();await native.click('#fulfillment-check');
     await until(()=>native.evaluate("!document.querySelector('#status').textContent.startsWith('Checking where')"),'shipping action settled',12000);

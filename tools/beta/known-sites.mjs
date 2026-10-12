@@ -36,7 +36,7 @@ export async function runKnownSiteTests({context,page:fixture,native,until,pause
         await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'known-site native scan',25000);
         const data=await guard(page);assert.ok(data.product.title);
         assert.ok(data.product.title.toLowerCase().includes(candidate.expectedTitle.toLowerCase()),'Extracted identity differs from intended product');
-        entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,brand:data.product.brand,price:data.product.price,currency:data.product.currency,claims:data.product.claims};
+        entry.product={url:data.product.url,title:data.product.title,sku:data.product.sku,brand:data.product.brand,price:data.product.price,currency:data.product.currency,claims:data.product.claims,extraction:data.product.extraction};
         entry.verdict=data.verdict;entry.supplyChain=data.supplyChain;
         entry.evidence=data.evidence.map(({id,family,severity,weight,title,observedValue,independentKey})=>({id,family,severity,weight,title,observedValue,independentKey}));
         await native.screenshot(candidate.id+'-scan.png');return {product:entry.product,verdict:data.verdict};

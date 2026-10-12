@@ -38,6 +38,7 @@ jobs:
           DS_NATIVE_HEADED: '1'
           DS_LIVE_SURFACES: '1'
           DS_SKIP_EXPANDED_LIVE: '1'
+          DS_KNOWN_SITES: '1'
         run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-beta.mjs
       - uses: actions/upload-artifact@v4
         if: always()

@@ -60,6 +60,22 @@ test('ProductGroup selects the current variant URL and abstains at ambiguous par
   assert.equal(scan(group,'https://shop.example/products/lamp?variant=2').product.price,20);
   const unknown=scan(group);assert.equal(unknown.product.price,undefined);assert.equal(unknown.product.sku,undefined);assert.equal(unknown.hostedReviews,undefined);
 });
+test('explicit current-product SKU survives unresolved variants without selecting their offer or global identity',()=>{
+  const group={'@type':'ProductGroup',hasVariant:[product('Small','https://shop.example/products/lamp?variant=1',10),product('Large','https://shop.example/products/lamp?variant=2',20)]};
+  const s=scan(group,undefined,'<p>SKU: <span>GPH42-Black</span></p>');
+  assert.equal(s.product.sku,'GPH42-Black');assert.equal(s.product.price,undefined);assert.equal(s.product.variantId,undefined);assert.equal(s.product.gtin,undefined);
+  assert.equal(s.product.extraction?.structuredIdentityResolved,false);assert.equal(s.product.extraction?.offerResolved,false);assert.match(s.product.extraction?.method??'',/explicit visible SKU/);
+});
+test('conflicting, hidden, review and recommendation SKU labels cannot resolve the current product',()=>{
+  assert.equal(scan({},undefined,'<p>SKU: TARGET-1</p><p>SKU: TARGET-2</p>').product.sku,undefined);
+  assert.equal(scan({},undefined,'<p hidden>SKU: HIDDEN-1</p><div class="reviews">SKU: REVIEW-1</div><div class="related-products"><p>SKU: RELATED-1</p></div><a href="/products/other">SKU: OTHER-1</a>').product.sku,undefined);
+  assert.equal(scan({},undefined,'<p>SKU: N/A</p>').product.sku,undefined);
+  assert.equal(scan({},'https://shop.example/blog/lamp','<p>SKU: EDITORIAL-1</p>').product.sku,undefined);
+});
+test('visible SKU fallback does not replace the bound structured SKU or infer common ownership',()=>{
+  assert.equal(scan(product(),undefined,'<p>SKU: ANOTHER-SKU</p>').product.sku,'Target Lamp');
+  const s=scan({},undefined,'<p>SKU: CURRENT-1</p><div class="product-card"><p>SKU: RECOMMENDED-1</p></div>');assert.equal(s.product.sku,'CURRENT-1');assert.equal(s.product.variantId,undefined);
+});
 test('same-URL ProductGroup uses explicit selected variant attributes and abstains when ambiguous',()=>{
   const base='https://shop.example/products/lamp';
   const red={...product('Red lamp',base,10),color:'red',material:'cotton'};

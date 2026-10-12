@@ -221,6 +221,12 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
 
         // A bounded text-node walk avoids materializing the entire body's innerText on huge pages.
         const pagePieces:string[]=[];
+        // A merchant can expose the current SKU while its structured variants
+        // remain unresolved. Keep that store-local label separate from choosing
+        // a JSON-LD offer, GTIN, variant or common supplier.
+        const skuRoot=visibleTitle && /\/products?\//i.test(location.pathname)
+          ? document.querySelector('h1')?.closest('main,[role="main"],[itemtype$="/Product"]') : undefined;
+        const skuPieces:string[]=[];
         let pageChars=0, visitedTextNodes=0;
         if(document.body){
           const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -234,10 +240,14 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             if(!value) continue;
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
             pagePieces.push(clipped);
+            if(skuRoot?.contains(parent) && !parent.closest('a[href],[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"],li[class*="product"]')) skuPieces.push(clipped);
             pageChars+=clipped.length+1;
           }
         }
         const pageText=pagePieces.join(' ').slice(0,LIMITS.pageText);
+        const labeledSkus=[...skuPieces.join(' ').matchAll(/(?:^|\s)SKU\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{0,79})(?=$|\s)/gi)].map(m=>m[1]!);
+        const uniqueSkus=[...new Set(labeledSkus)];
+        const visibleSku=uniqueSkus.length===1 && !/^(?:n\/a|none|unknown|null)$/i.test(uniqueSkus[0]!) ? uniqueSkus[0] : undefined;
         const shippingPattern=/(?:shipping|delivery)[^.;!?。！？]{0,120}\d+[\s-]*(?:-|to|–|से|থেকে|إلى|à|a|至)[\s-]*\d+[^.;!?。！？]{0,35}(?:business\s+)?days/i;
         const shippingMatch=pagePieces.find(piece=>shippingPattern.test(matching(piece)));
         const shippingText=shippingMatch?.slice(0,220);
@@ -349,7 +359,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             currency:first(offer?.priceCurrency)||explicitCurrency,
             brand:first(brand?.name ?? product?.brand),
             seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
-            sku:first(product?.sku),
+            sku:first(product?.sku) || visibleSku,
             asin:amazonAsin,
             mpn:first(product?.mpn),
             gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
@@ -363,7 +373,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             claims:[],
             specifications,
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
-            extraction:{method:product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved',structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
+            extraction:{method:(product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved')+(!first(product?.sku)&&visibleSku?'; explicit visible SKU':''),structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
             pageSignals:[
               ...(('Shopify' in window || [...scriptUrls,...linkUrls].some(url=>fromHost(url,'cdn.shopify.com')))
                 ? ['platform:shopify'] : []),
