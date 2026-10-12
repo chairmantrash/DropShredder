@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
+import path from 'node:path';
 
 // Actual browser operations against disposable profiles. These are engineering
 // acceptance fixtures, not an independent accuracy corpus or human QA review.
@@ -52,11 +53,82 @@ export async function runWindowEdges({context,page,native,worker,browserCdp,id,a
  });
 }
 
-export async function captureContextMenu({page,native,pause,report}){
- await page.bringToFront();await page.locator('h1').click({button:'right'});await pause(500);
- await native.screenshot('native-context-menu-page.png');
- report.contextMenuExploration={status:'CAPTURED — COMMAND SELECTION UNVERIFIED',scope:'Actual Chrome context menu opened with a right-click; screenshot must establish menu position before choosing commands'};
- execFileSync('xdotool',['key','Escape']);
+export async function runContextMenus({context,page,native,id,test,until,pause,report}){
+ await context.route('https://fixture.example.com/menu-image.png',route=>route.fulfill({contentType:'image/png',body:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAAKUlEQVR4nGN0CEhgoA1gopG5o0aPGj1q9KjRo0aPGj1q9KjRo0aPCKMBSJsBLOf+6uIAAAAASUVORK5CYII=','base64')}));
+ await context.route('https://fixture.example.com/products/context-menu',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><title>Owned menu product</title><h1>Selection Model 076</h1><img id="menu-image" src="/menu-image.png" width="100" height="100" alt="Owned image"><p>$12.00</p><button>Add to cart</button>'}));
+ await context.route(/https:\/\/(?:www\.)?google.com\/search/,route=>route.fulfill({contentType:'text/html',body:'<p>Owned intercepted context search; no Google query sent.</p>'}));
+ await context.route(/^https:\/\/(?:lens\.google\.com|www\.bing\.com|yandex\.com|tineye\.com)\//,route=>route.fulfill({contentType:'text/html',body:'<p>Owned intercepted reverse-image destination; no test image URL sent.</p>'}));
+ const choose=async({selector='h1',kind,index=0,rootSteps=2})=>{
+  await page.bringToFront();await page.locator(selector).click({button:'right'});await pause(300);
+  await native.screenshot(`native-context-${kind}-open.png`);
+  // Page screenshot7ba932 establishes DropShredder two rows above End
+  // (View source, Inspect). Selection/image menus omit View source. Actual
+  // browser keyboard input selects the native menu; command outcomes below
+  // must prove correct context, with no direct onClicked/event invocation.
+  execFileSync('xdotool',['key','End']);
+  for(let i=0;i<rootSteps;i++)execFileSync('xdotool',['key','Up']);
+  execFileSync('xdotool',['key','Right']);await pause(300);
+  await native.screenshot(`native-context-${kind}-submenu.png`);
+  execFileSync('xdotool',['key','Home']);
+  for(let i=0;i<index;i++)execFileSync('xdotool',['key','Down']);
+  execFileSync('xdotool',['key','Return']);
+ };
+ const chooser=async()=>{let tab;await until(()=>{tab=context.pages().find(p=>p.url().startsWith(`chrome-extension://${id}/search.html#ds-search-`));return tab;},'native context-menu local chooser');await tab.locator('#ds-search-chooser').waitFor();return tab;};
+ const closeSearches=async()=>{for(const p of context.pages())if(p!==page)await p.close();await page.bringToFront();};
+ await test('N38-page','Actual page/product context menu opens a local chooser, cancellation shares nothing and selected searches are bounded',async()=>{
+  await page.goto('https://fixture.example.com/products/context-menu');const start=context.pages().length;
+  await choose({kind:'page'});let tab=await chooser();assert.equal(context.pages().length,start+1);assert.ok(await tab.locator('#ds-search-chooser label').count()>8);
+  await tab.keyboard.press('Escape');assert.equal(await tab.locator('#ds-search-chooser').count(),0);assert.equal(context.pages().length,start+1);await tab.close();
+  await choose({kind:'page-selected'});tab=await chooser();await tab.locator('#ds-search-chooser button').first().click();
+  await until(()=>context.pages().length===start+9,'context hunt opens local chooser plus8 searches');
+  await until(()=>context.pages().filter(p=>p!==page&&p!==tab).every(p=>p.url().startsWith('https://www.google.com/search')),'actual product destination URLs');
+  const destinations=context.pages().filter(p=>p!==page&&p!==tab).map(p=>p.url());assert.equal(destinations.length,8);
+  for(const url of destinations){const u=new URL(url);assert.equal(u.hostname,'www.google.com');assert.ok(u.searchParams.get('q').includes('Owned menu product'));}
+  await closeSearches();return {destinations,scope:'Real native menu/chooser; owned HTTP interception prevents sending test queries'};
+ });
+ await test('N38-selection','Actual selected-text context menu searches the selection rather than the tab title',async()=>{
+  await page.locator('h1').click({clickCount:3});assert.equal((await page.evaluate(()=>getSelection().toString())).trim(),'Selection Model 076');
+  await choose({kind:'selection',rootSteps:1});const tab=await chooser();await tab.locator('#ds-search-chooser button').first().click();
+  await until(()=>context.pages().length===10,'selected context bounded batch');
+  await until(()=>context.pages().filter(p=>p!==page&&p!==tab).every(p=>p.url().startsWith('https://www.google.com/search')),'actual selection destination URLs');
+  const queries=context.pages().filter(p=>p!==page&&p!==tab).map(p=>new URL(p.url()).searchParams.get('q'));
+  assert.equal(queries.length,8);for(const q of queries){assert.ok(q.includes('Selection Model 076'));assert.ok(!q.includes('Owned menu product'));}
+  await closeSearches();return {selection:'Selection Model 076',queries};
+ });
+ await test('N38-store','Actual store context menu offers domain-scoped destinations without opening them before selection',async()=>{
+  await page.mouse.click(40,300);await choose({kind:'store',index:1});const tab=await chooser();assert.equal(await tab.locator('#ds-search-chooser label').count(),7);assert.equal(context.pages().length,2);
+  for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();await tab.locator('#ds-search-chooser input').first().check();await tab.locator('#ds-search-chooser button').first().click();
+  await until(()=>context.pages().length===3&&context.pages().some(p=>p.url().startsWith('https://www.google.com/search')),'one explicitly selected store destination');
+  const destination=context.pages().find(p=>p!==page&&p!==tab).url();assert.ok(new URL(destination).searchParams.get('q').includes('fixture.example.com'));
+  await closeSearches();return {choices:7,openedBeforeSelection:0,openedAfterSelection:1,destination};
+ });
+ await test('N38-image','Actual image context menu preserves the chosen public image URL and sends nothing before destination selection',async()=>{
+  assert.equal(await page.locator('#menu-image').evaluate(el=>el.complete&&el.naturalWidth>0),true,'Owned image must decode');
+  await choose({selector:'#menu-image',kind:'image',rootSteps:1,index:0});const tab=await chooser();
+  assert.ok(await tab.locator('#ds-search-chooser label').count()>=4);assert.equal(context.pages().length,2);
+  const choices=await tab.locator('#ds-search-chooser').innerText();assert.match(choices,/lens\.google\.com/);assert.match(choices,/tineye\.com/);
+  for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();await tab.locator('#ds-search-chooser input').first().check();await tab.locator('#ds-search-chooser button').first().click();
+  await until(()=>context.pages().length===3&&context.pages().some(p=>p.url().startsWith('https://lens.google.com/')),'one explicitly selected image destination');
+  const destination=context.pages().find(p=>p!==page&&p!==tab).url();const parsed=new URL(destination);assert.equal(parsed.hostname,'lens.google.com');assert.equal(parsed.searchParams.get('url'),'https://fixture.example.com/menu-image.png');
+  await closeSearches();
+  report.contextMenuExploration={status:'ACTUAL PAGE/SELECTION/STORE/IMAGE COMMANDS VERIFIED',scope:'Native Chrome menus and real local choosers; owned public context and intercepted test queries, not independent live-site review'};
+  await page.goto('https://fixture.example.com/products/mug');return {imageUrl:'https://fixture.example.com/menu-image.png',destination,openedBeforeSelection:0,openedAfterSelection:1,scope:'Actual selected destination URL, intercepted HTTP; no image URL sent externally'};
+ });
+}
+
+export async function runOcrCancellation({page,native,test,until,pause,output,root}){
+ await test('N39','Changing the selected OCR language cancels or invalidates pending results and the next native read recovers',async()=>{
+  await page.bringToFront();await native.click('#label-language');await native.key('Home','Home',36);await native.key('Down','ArrowDown',40);await native.key('Down','ArrowDown',40);await native.key('Enter','Enter',13);
+  assert.equal(await native.evaluate("document.querySelector('#label-language').value"),'hin');
+  await native.setFiles('#label-image',[path.join(root,'tests/fixtures/ocr/hindi-model-original.png')]);await native.click('#label-read');
+  const pending=await native.evaluate("({disabled:document.querySelector('#label-read').disabled,status:document.querySelector('#label-status').textContent})");assert.equal(pending.disabled,true);assert.match(pending.status,/Reading image locally/);
+  await native.click('#label-language');await native.key('Home','Home',36);await native.key('Enter','Enter',13);
+  await until(()=>native.evaluate("!document.querySelector('#label-read').disabled"),'native cancellation/selection ready');await pause(2500);
+  assert.equal(await native.evaluate("document.querySelector('#label-results').textContent"),'');assert.match(await native.evaluate("document.querySelector('#label-status').textContent"),/No file processed until/);
+  await native.setFiles('#label-image',[path.join(output,'owned-ocr-label.png')]);await native.click('#label-read');await until(()=>native.evaluate("document.querySelector('#label-status').textContent.startsWith('Local analysis complete.')"),'recovered English read',60000);
+  const result=await native.evaluate("document.querySelector('#label-results').textContent");assert.match(result,/PRODUCT\s*12345/);await native.screenshot('native-ocr-cancellation-recovered.png');
+  return {pending,recovered:result.slice(0,300),scope:'Real native model change, no stale result, successful next read; no independent photo/blur/rotation accuracy'};
+ });
 }
 
 export async function runResourceEdges({context,page,native,worker,browserCdp,test,until,pause,report}){
@@ -97,9 +169,10 @@ export async function runStorageRecovery({native,worker,test,until,pause,report,
   // No grant, ground truth, valid subscription or installed user data is written.
   await worker.evaluate(value=>chrome.storage.local.set(value),faults);
   ({native,worker}=await restart());await pause(800);
-  const controls=await native.evaluate("({source:document.querySelector('#auto-source-hunt').checked,auto:document.querySelector('#auto-protection').checked,origin:document.querySelector('#prefer-made-in-usa').checked,tone:document.querySelector('#tone-mode').value,theme:document.documentElement.dataset.theme,textScale:document.documentElement.dataset.textScale})");
+  const controls=await native.evaluate("({source:document.querySelector('#auto-source-hunt').checked,auto:document.querySelector('#auto-protection').checked,weekly:document.querySelector('#list-auto-weekly').checked,origin:document.querySelector('#prefer-made-in-usa').checked,tone:document.querySelector('#tone-mode').value,theme:document.documentElement.dataset.theme,textScale:document.documentElement.dataset.textScale,savedLists:document.querySelector('#saved-lists').textContent})");
   assert.deepEqual({source:controls.source,auto:controls.auto,origin:controls.origin,tone:controls.tone},{source:false,auto:false,origin:false,tone:'professional'});
   assert.equal(controls.theme,'dark');assert.equal(controls.textScale,'100');
+  assert.equal(controls.weekly,false);assert.equal(controls.savedLists,'No user-added lists.');
   assert.equal(await worker.evaluate(()=>chrome.permissions.contains({origins:['https://*/*']})),false);
   assert.deepEqual(await worker.evaluate(()=>chrome.scripting.getRegisteredContentScripts()),[]);
   await native.click('.settings-panel > summary');await native.click('#auto-source-hunt');

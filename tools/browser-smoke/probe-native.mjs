@@ -1,5 +1,5 @@
 import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
-import {runWindowEdges, captureContextMenu, runResourceEdges, runStorageRecovery} from './remaining-edges.mjs';
+import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation} from './remaining-edges.mjs';
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, sign } from 'node:crypto';
@@ -330,7 +330,7 @@ try {
     });
     if (headed) {
       await runWindowEdges({context,page,native,worker,browserCdp,id,attach,test,until,pause,report});
-      await captureContextMenu({page,native,test,pause,report});
+      await runContextMenus({context,page,native,id,test,until,pause,report});
       await runResourceEdges({context,page,native,worker,browserCdp,test,until,pause,report,output});
       const scanFixture=async url=>{if(url) await page.goto(url);await page.bringToFront();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'fixture scan',20000);return native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent})");};
       const downloads=[];const downloadDir=path.join(output,'downloads');await fs.mkdir(downloadDir,{recursive:true});
@@ -558,6 +558,7 @@ try {
         await native.screenshot('native-packaged-ocr.png');
         return {scope:'Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested',output:outputText.slice(0,250)};
       });
+      await runOcrCancellation({page,native,test,until,pause,output,root});
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);

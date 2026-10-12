@@ -10,11 +10,12 @@ Prepared October 9,2026. State: PREPARED; acceptance and owner release authoriza
 - DS-037 exact build/test/live receipt and DS-038 preparation receipt.
 - DISTRIBUTION-REVIEW-20261009.zip: docs/asset review packet, not an accepted extension release.
 
-## Current candidate identity — not accepted
-DS-040 production ba9c51a74a9d914d5e75710902bfb1c4a431dbe5; tested harness b9d6bad55ac5f9d81a5300eae498e1ee4ac87774.
-Exact candidate:51files,54,767,122bytes.337core/CI/CodeQL and69distinct Chromium156 checks pass; full native suite is BLOCKED at Hindi OCR O-hin (reproduced unchanged). Historical34/42-file receipts do not certify this candidate. See DS-040 run and handoff. Refresh affected current-UI OCR/settings assets before any submission. Version0.2.0/minimumChrome133 remain metadata; Chrome133 is not exercised here.
+## Current candidate identity — awaiting independent acceptance
+Production source2641a597573f071f8360492d6dc577983c38c144; production treedb63f2b26bc569ffb7f7585b544d032436014386. Exact candidate51files/54,940,159bytes; raw local install ZIP SHA25624b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1.394 core tests pass. DS-045 fresh harness480f710 passes CI/CodeQL and85 distinct Chrome156 checks, including unchanged original Hindi/Arabic regressions and actual Linux OS chooser. The former DS-040 Hindi blocker is repaired and superseded by those receipts.
 
-Independent A01-D06, representative precision/recall/abstention, real-photo OCR, native browser edges and performance acceptance remain open. Keep failures/blocked cases visible. No severe unsupported accusation, wrong-page scan, private data capture or serious performance issue may be waived silently.
+DS-046 extends browser acceptance on identical package bytes. Pinned official Chrome133.0.6943.141 passes all9 packaged-runtime checks in run38186085864; this covers loading, sender guards, display, persistence and pre-consent privacy, not every native permission/OCR feature on133. Expanded native results are recorded in the DS-046 completion receipt when verified. Version0.2.0 is unchanged.
+
+Independent A01–D06 review, representative merchant/product-disjoint accuracy, native-speaker/legal-copy review, photographs, real publishers and elapsed-week lifecycle remain open. Store/operator settings and main/tag/submission follow acceptance. No severe unsupported accusation, wrong-page scan, private capture or serious performance issue may be waived silently. Screenshots must identify current runtime bytes and exclude unsupported claims; older34/42/51-file receipts with different hashes are historical.
 
 ## Final operator sequence after acceptance
 1. Record acceptance receipt for the exact package/source including residual limitations; obtain owner's explicit release authorization.
@@ -43,6 +44,6 @@ DS-040 candidate adds multilingual merchant detection and seven selected offline
 - [ ] Native-speaker/legal-copy review of 38 new origin/directory messages; no certified/100% claims from source types or legal logos alone.
 - [ ] Source authenticity and complete real-product/actual-shipment dossiers; no proof inferred from fixture passes.
 - [ ] Refresh store screenshots affected by the origin utility before submission.
-DS-040 O-hin remains a separate blocker. Existing independent A01–D06 and release authorization requirements remain in force.
+DS-040 O-hin is repaired with unchanged original assertions under DS-045. Existing independent A01–D06 and release authorization requirements remain in force.
 
-DS-042/043: review exact candidate standing/litigation controls and seven-day stale behavior; source licenses/access and exact-party scope must be checked before machine ingestion. Refresh standing/origin screenshots and obtain native-language/legal-copy review. Scheduled research maintenance does not replace the release acceptance gates. DS-040 Hindi OCR remains separately blocked until original-engineer repair and unchanged assertion pass.
+DS-042/043: review exact candidate standing/litigation controls and seven-day stale behavior; source licenses/access and exact-party scope must be checked before machine ingestion. Refresh standing/origin screenshots and obtain native-language/legal-copy review. Scheduled research maintenance does not replace the release acceptance gates. DS-045 repairs and verifies the original Hindi/Arabic fixtures; independent photographed-label accuracy remains open.
