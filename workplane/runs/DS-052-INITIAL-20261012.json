@@ -1,0 +1,922 @@
+{
+  "task": "DS-052",
+  "phase": "INITIAL_ALL_SELECTED_CASES_COMPLETE_BEFORE_REPAIR",
+  "run": 38317100022,
+  "job": 115036218215,
+  "sourceHead": "be770de7ab62e3a049898b39f2dccdbc02626a88",
+  "packagedSource": "a345e6cc58571f8aac979dd311b2ec62954824d3",
+  "installSha256": "cf6e3a162cd30b5c4f7fa7aefd64707b569d8ea80d44f4582c912ef19bfc20c7",
+  "artifact": {
+    "id": 11777227260,
+    "sha256": "18aad6255d6eabdfcb81c1dcb8212527c3bd50123aa4898a80da1323827a33a7",
+    "bytes": 7639669
+  },
+  "counts": {
+    "PASS": 15,
+    "FAIL": 1,
+    "UNAVAILABLE": 8,
+    "BLOCKED": 0
+  },
+  "nativePasses": 83,
+  "errors": [],
+  "cases": [
+    {
+      "id": "KNOWN-01",
+      "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+      "expectedTitle": "Nordic Wooden Hanging Wall Lamp",
+      "expectation": {
+        "kind": "fulfillment",
+        "detail": "factor"
+      },
+      "basis": [
+        "https://warmlydecor.com/pages/about-warmly",
+        "https://warmlydecor.com/pages/faqs"
+      ],
+      "scope": "Merchant discloses direct factory/partner dispatch; no assertion of fraud or original manufacturer.",
+      "startedAt": "2026-10-12T22:33:30.271Z",
+      "status": "OBSERVED_SCAN",
+      "httpStatus": 200,
+      "finalUrl": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+      "pageIdentityConfirmed": true,
+      "product": {
+        "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+        "title": "Nordic Wooden Hanging Wall Lamp",
+        "price": 218.95,
+        "currency": "USD",
+        "claims": []
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "low",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [
+          {
+            "role": "merchant",
+            "detail": "based in Harrisburg, PA, and our office hours are 9am-5pm EST - we respond to most emails within a business day or two, but if yo",
+            "confidence": 0.82,
+            "source": "About/Contact"
+          },
+          {
+            "role": "fulfillment",
+            "detail": "ship directly from the top factories on the planet, and pass the savings on to you",
+            "confidence": 0.78,
+            "source": "Shipping policy"
+          },
+          {
+            "role": "payment",
+            "detail": "Apple Pay detected; merchant banking jurisdiction not established",
+            "confidence": 0.95,
+            "source": "Checkout technology"
+          }
+        ],
+        "paymentProcessors": [
+          "Apple Pay"
+        ],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED"
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Store platform identified",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify"
+        },
+        {
+          "id": "REVIEW_PLATFORM_JUDGEME",
+          "family": "reviews",
+          "severity": "info",
+          "weight": 0,
+          "title": "Judge.me reviews are being used",
+          "observedValue": "Judge.me storefront widget signature",
+          "independentKey": "review-platform-judgeme"
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "Jurisdiction references found",
+          "observedValue": "United States, Canada",
+          "independentKey": "merchant-jurisdictions"
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "family": "claims",
+          "severity": "info",
+          "weight": 0,
+          "title": "Specific location/manufacturing claims can be checked",
+          "observedValue": "ship directly from the top factories on the planet, and pass the savings on to you",
+          "independentKey": "explicit-origin-claims"
+        },
+        {
+          "id": "FINAL_SALE_BROAD",
+          "family": "merchant",
+          "severity": "weak",
+          "weight": 4,
+          "title": "The store may not take it back",
+          "observedValue": "non-returnable",
+          "independentKey": "return-final-sale"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "observedValue": "payment: Apple Pay detected; merchant banking jurisdiction not established • PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "shipping": {
+        "message": "The page doesn’t clearly say where the order ships from.",
+        "evidence": []
+      },
+      "finishedAt": "2026-10-12T22:33:46.266Z"
+    },
+    {
+      "id": "KNOWN-02",
+      "url": "https://warmlydecor.com/products/modern-swirl-led-ceiling-light",
+      "expectedTitle": "Modern Swirl LED Ceiling Light",
+      "expectation": {
+        "kind": "fulfillment",
+        "detail": "factor"
+      },
+      "basis": [
+        "https://warmlydecor.com/pages/about-warmly",
+        "https://warmlydecor.com/pages/faqs"
+      ],
+      "scope": "Second product from the same merchant; correlated coverage, not a second independent operator.",
+      "startedAt": "2026-10-12T22:33:46.310Z",
+      "status": "OBSERVED_SCAN",
+      "httpStatus": 200,
+      "finalUrl": "https://warmlydecor.com/products/modern-swirl-led-ceiling-light",
+      "pageIdentityConfirmed": true,
+      "product": {
+        "url": "https://warmlydecor.com/products/modern-swirl-led-ceiling-light",
+        "title": "Modern Swirl LED Ceiling Light",
+        "price": 78.95,
+        "currency": "USD",
+        "claims": []
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "low",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [
+          {
+            "role": "merchant",
+            "detail": "based in Harrisburg, PA, and our office hours are 9am-5pm EST - we respond to most emails within a business day or two, but if yo",
+            "confidence": 0.82,
+            "source": "About/Contact"
+          },
+          {
+            "role": "fulfillment",
+            "detail": "ship directly from the top factories on the planet, and pass the savings on to you",
+            "confidence": 0.78,
+            "source": "Shipping policy"
+          },
+          {
+            "role": "payment",
+            "detail": "Apple Pay detected; merchant banking jurisdiction not established",
+            "confidence": 0.95,
+            "source": "Checkout technology"
+          }
+        ],
+        "paymentProcessors": [
+          "Apple Pay"
+        ],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED"
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Store platform identified",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify"
+        },
+        {
+          "id": "REVIEW_PLATFORM_JUDGEME",
+          "family": "reviews",
+          "severity": "info",
+          "weight": 0,
+          "title": "Judge.me reviews are being used",
+          "observedValue": "Judge.me storefront widget signature",
+          "independentKey": "review-platform-judgeme"
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "Jurisdiction references found",
+          "observedValue": "United States, Canada",
+          "independentKey": "merchant-jurisdictions"
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "family": "claims",
+          "severity": "info",
+          "weight": 0,
+          "title": "Specific location/manufacturing claims can be checked",
+          "observedValue": "ship directly from the top factories on the planet, and pass the savings on to you",
+          "independentKey": "explicit-origin-claims"
+        },
+        {
+          "id": "FINAL_SALE_BROAD",
+          "family": "merchant",
+          "severity": "weak",
+          "weight": 4,
+          "title": "The store may not take it back",
+          "observedValue": "non-returnable",
+          "independentKey": "return-final-sale"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "observedValue": "payment: Apple Pay detected; merchant banking jurisdiction not established • PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "shipping": {
+        "message": "The page doesn’t clearly say where the order ships from.",
+        "evidence": []
+      },
+      "finishedAt": "2026-10-12T22:34:02.340Z"
+    },
+    {
+      "id": "KNOWN-03",
+      "url": "https://untilgone.com/products/toiletry-and-makeup-bag.html",
+      "expectedTitle": "Toiletry and Makeup Bag",
+      "expectation": {
+        "kind": "fulfillment",
+        "detail": "factor",
+        "visibleDisclosure": "ships directly from an international factory"
+      },
+      "basis": [
+        "https://support.untilgone.com/hc/en-us/articles/222593647-How-do-you-ship-your-items-and-how-quickly",
+        "https://untilgone.com/products/toiletry-and-makeup-bag.html"
+      ],
+      "scope": "Exact listing advertised as factory-direct; search retrieval currently differs from direct fetch, so native availability must be verified.",
+      "startedAt": "2026-10-12T22:34:02.386Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404,
+      "finalUrl": "https://untilgone.com/search-results-page",
+      "pageIdentityConfirmed": false,
+      "finishedAt": "2026-10-12T22:34:06.307Z"
+    },
+    {
+      "id": "KNOWN-04",
+      "url": "https://untilgone.com/products/self-stirring-coffee-mug.html",
+      "expectedTitle": "Self-Stirring Coffee Mug",
+      "expectation": {
+        "kind": "fulfillment",
+        "detail": "factor",
+        "visibleDisclosure": "ships directly from an international factory"
+      },
+      "basis": [
+        "https://support.untilgone.com/hc/en-us/articles/222593647-How-do-you-ship-your-items-and-how-quickly",
+        "https://untilgone.com/products/self-stirring-coffee-mug.html"
+      ],
+      "scope": "Second factory-direct listing from the same operator; inaccessible or removed is not an accepted detection.",
+      "startedAt": "2026-10-12T22:34:06.342Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404,
+      "finalUrl": "https://untilgone.com/search-results-page",
+      "pageIdentityConfirmed": false,
+      "finishedAt": "2026-10-12T22:34:10.021Z"
+    },
+    {
+      "id": "KNOWN-05",
+      "url": "https://www.harempants.com/products/triangles-womens-harem-pants-in-black",
+      "expectedTitle": "Triangles Women's Harem Pants in Black",
+      "expectation": {
+        "kind": "network",
+        "detail": "harempants-suredesign",
+        "sku": "GPH42-Black"
+      },
+      "basis": [
+        "https://www.harempants.com/products/triangles-womens-harem-pants-in-black",
+        "https://www.suredesigntshirts.com/pages/contact-us"
+      ],
+      "scope": "Development-exposed affiliation/shared-catalog control, not authenticated dropshipping or deception truth.",
+      "startedAt": "2026-10-12T22:34:10.055Z",
+      "status": "OBSERVED_SCAN",
+      "httpStatus": 200,
+      "finalUrl": "https://www.harempants.com/products/triangles-womens-harem-pants-in-black",
+      "pageIdentityConfirmed": true,
+      "product": {
+        "url": "https://www.harempants.com/products/triangles-womens-harem-pants-in-black",
+        "title": "Triangles Women's Harem Pants in Black",
+        "claims": [
+          "handcrafted"
+        ]
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "moderate",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "supplyChain": {
+        "classification": "predominantly-international",
+        "label": "MULTIPLE DISCLOSED ROLES OUTSIDE U.S.",
+        "preferenceNote": "The identified roles are outside the United States. Unobserved roles and upstream factories remain unknown; these disclosures do not establish the entire supply chain.",
+        "nodes": [
+          {
+            "role": "manufacture",
+            "country": "Thailand",
+            "detail": "crafted in Thailand and shipped worldwide",
+            "confidence": 0.8,
+            "source": "Merchant claim"
+          },
+          {
+            "role": "fulfillment",
+            "country": "Thailand",
+            "detail": "shipped from our Chiang Mai, Thailand warehouse",
+            "confidence": 0.78,
+            "source": "Shipping policy"
+          }
+        ],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Store platform identified",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify"
+        },
+        {
+          "id": "REVIEW_PLATFORM_JUDGEME",
+          "family": "reviews",
+          "severity": "info",
+          "weight": 0,
+          "title": "Judge.me reviews are being used",
+          "observedValue": "Judge.me storefront widget signature",
+          "independentKey": "review-platform-judgeme"
+        },
+        {
+          "id": "KNOWN_AFFILIATED_MERCHANT_NETWORK",
+          "family": "identity",
+          "severity": "strong",
+          "weight": 24,
+          "title": "Affiliated sister-store network detected",
+          "observedValue": "HaremPants / Sure Design affiliated merchant network • type: sister-store • harempants.com, suredesigntshirts.com, suredesignwholesale.com, surecannabisdesigns.com, mysterybuddha.com • status: active • reviewed 2026-10-06 • evidence: public-affiliation, shared-address, cross-domain-reference, shared-catalog",
+          "independentKey": "merchant-network:harempants-suredesign"
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "Jurisdiction references found",
+          "observedValue": "Thailand, India, United States, United Kingdom, Canada",
+          "independentKey": "merchant-jurisdictions"
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "family": "claims",
+          "severity": "info",
+          "weight": 0,
+          "title": "Specific location/manufacturing claims can be checked",
+          "observedValue": "crafted in Thailand and shipped worldwide",
+          "independentKey": "explicit-origin-claims"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "MULTIPLE DISCLOSED ROLES OUTSIDE U.S.",
+          "observedValue": "manufacture: Thailand • fulfillment: Thailand • PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        },
+        {
+          "id": "MADE_IN_USA_PREFERENCE_MISMATCH",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "Does not appear to match your Made in USA preference",
+          "observedValue": "MULTIPLE DISCLOSED ROLES OUTSIDE U.S.",
+          "independentKey": "made-in-usa-preference"
+        }
+      ],
+      "shipping": {
+        "message": "The shipping origin doesn’t contradict what the seller says.",
+        "evidence": [
+          {
+            "id": "FULFILLMENT_ORIGIN_OBSERVATION",
+            "family": "fulfillment",
+            "severity": "info",
+            "confidence": 0.76,
+            "weight": 0,
+            "title": "Explicit shipment-origin evidence captured",
+            "explanation": "The active tracking/fulfillment page explicitly exposed a shipment origin. This is informational unless it conflicts with a seller claim.",
+            "observedValue": "Thailand. We currently offer two shipping options • DHL",
+            "independentKey": "fulfillment-origin-observation"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-12T22:34:16.413Z"
+    },
+    {
+      "id": "KNOWN-06",
+      "url": "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+      "expectedTitle": "Unisex Triangles Harem Pants in Black",
+      "expectation": {
+        "kind": "network",
+        "detail": "harempants-suredesign",
+        "sku": "GPH42-Black"
+      },
+      "basis": [
+        "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+        "https://www.suredesigntshirts.com/pages/track-shipment"
+      ],
+      "scope": "Same known affiliate family; store-local SKU alone must not establish common ownership or source chronology.",
+      "startedAt": "2026-10-12T22:34:16.465Z",
+      "status": "OBSERVED_SCAN",
+      "httpStatus": 200,
+      "finalUrl": "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+      "pageIdentityConfirmed": true,
+      "product": {
+        "url": "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+        "title": "Unisex Triangles Harem Pants in Black",
+        "sku": "GPH42-Black",
+        "brand": "HaremPants",
+        "price": 25.95,
+        "currency": "USD",
+        "claims": []
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "moderate",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Store platform identified",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify"
+        },
+        {
+          "id": "KNOWN_AFFILIATED_MERCHANT_NETWORK",
+          "family": "identity",
+          "severity": "strong",
+          "weight": 24,
+          "title": "Affiliated sister-store network detected",
+          "observedValue": "HaremPants / Sure Design affiliated merchant network • type: sister-store • harempants.com, suredesigntshirts.com, suredesignwholesale.com, surecannabisdesigns.com, mysterybuddha.com • status: active • reviewed 2026-10-06 • evidence: public-affiliation, shared-address, cross-domain-reference, shared-catalog",
+          "independentKey": "merchant-network:harempants-suredesign"
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "Jurisdiction references found",
+          "observedValue": "India",
+          "independentKey": "merchant-jurisdictions"
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "family": "provenance",
+          "severity": "info",
+          "weight": 0,
+          "title": "Product ID found",
+          "observedValue": "gph42-black",
+          "independentKey": "product-identifiers"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "shipping": {
+        "message": "Carrier DHL detected, but no explicit shipment origin was found. No contradiction scored.",
+        "evidence": []
+      },
+      "finishedAt": "2026-10-12T22:34:22.006Z"
+    }
+  ],
+  "tests": [
+    {
+      "id": "KNOWN-01-scan",
+      "status": "PASS",
+      "elapsedMs": 1136,
+      "details": {
+        "product": {
+          "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+          "title": "Nordic Wooden Hanging Wall Lamp",
+          "price": 218.95,
+          "currency": "USD",
+          "claims": []
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "low",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+        }
+      }
+    },
+    {
+      "id": "KNOWN-01-detection",
+      "status": "PASS",
+      "elapsedMs": 2,
+      "details": {
+        "node": {
+          "role": "fulfillment",
+          "detail": "ship directly from the top factories on the planet, and pass the savings on to you",
+          "confidence": 0.78,
+          "source": "Shipping policy"
+        },
+        "signal": {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "payment: Apple Pay detected; merchant banking jurisdiction not established • PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED",
+          "independentKey": "supply-chain-profile"
+        },
+        "scope": "Actual merchant-authored direct-fulfillment claim, not supplier identity, fraud or calibrated probability"
+      }
+    },
+    {
+      "id": "KNOWN-01-shipping",
+      "status": "PASS",
+      "elapsedMs": 468,
+      "details": {
+        "message": "The page doesn’t clearly say where the order ships from.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "KNOWN-01-safety",
+      "status": "PASS",
+      "elapsedMs": 1,
+      "details": {
+        "severeWarningAllowed": false,
+        "dropshipLikelihood": null,
+        "massResellLikelihood": null,
+        "scope": "Resale/fulfillment/platform/geography alone does not establish deception. Null scores are abstentions, not clean or accurate detections."
+      }
+    },
+    {
+      "id": "KNOWN-02-scan",
+      "status": "PASS",
+      "elapsedMs": 1075,
+      "details": {
+        "product": {
+          "url": "https://warmlydecor.com/products/modern-swirl-led-ceiling-light",
+          "title": "Modern Swirl LED Ceiling Light",
+          "price": 78.95,
+          "currency": "USD",
+          "claims": []
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "low",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+        }
+      }
+    },
+    {
+      "id": "KNOWN-02-detection",
+      "status": "PASS",
+      "elapsedMs": 2,
+      "details": {
+        "node": {
+          "role": "fulfillment",
+          "detail": "ship directly from the top factories on the planet, and pass the savings on to you",
+          "confidence": 0.78,
+          "source": "Shipping policy"
+        },
+        "signal": {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "payment: Apple Pay detected; merchant banking jurisdiction not established • PAYMENT PROCESSOR(S): Apple Pay • BANK JURISDICTION UNVERIFIED",
+          "independentKey": "supply-chain-profile"
+        },
+        "scope": "Actual merchant-authored direct-fulfillment claim, not supplier identity, fraud or calibrated probability"
+      }
+    },
+    {
+      "id": "KNOWN-02-shipping",
+      "status": "PASS",
+      "elapsedMs": 470,
+      "details": {
+        "message": "The page doesn’t clearly say where the order ships from.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "KNOWN-02-safety",
+      "status": "PASS",
+      "elapsedMs": 2,
+      "details": {
+        "severeWarningAllowed": false,
+        "dropshipLikelihood": null,
+        "massResellLikelihood": null,
+        "scope": "Resale/fulfillment/platform/geography alone does not establish deception. Null scores are abstentions, not clean or accurate detections."
+      }
+    },
+    {
+      "id": "KNOWN-03-scan",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-03-detection",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-03-shipping",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-03-safety",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-04-scan",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-04-detection",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-04-shipping",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-04-safety",
+      "status": "UNAVAILABLE",
+      "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "httpStatus": 404
+    },
+    {
+      "id": "KNOWN-05-scan",
+      "status": "PASS",
+      "elapsedMs": 1152,
+      "details": {
+        "product": {
+          "url": "https://www.harempants.com/products/triangles-womens-harem-pants-in-black",
+          "title": "Triangles Women's Harem Pants in Black",
+          "claims": [
+            "handcrafted"
+          ]
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "moderate",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+        }
+      }
+    },
+    {
+      "id": "KNOWN-05-detection",
+      "status": "FAIL",
+      "elapsedMs": 5,
+      "error": "AssertionError [ERR_ASSERTION]: Expected exposed shared-catalog identifier was missed\n+ actual - expected\n\n+ undefined\n- 'GPH42-Black'\n"
+    },
+    {
+      "id": "KNOWN-05-shipping",
+      "status": "PASS",
+      "elapsedMs": 472,
+      "details": {
+        "message": "The shipping origin doesn’t contradict what the seller says.",
+        "evidence": [
+          {
+            "id": "FULFILLMENT_ORIGIN_OBSERVATION",
+            "family": "fulfillment",
+            "severity": "info",
+            "confidence": 0.76,
+            "weight": 0,
+            "title": "Explicit shipment-origin evidence captured",
+            "explanation": "The active tracking/fulfillment page explicitly exposed a shipment origin. This is informational unless it conflicts with a seller claim.",
+            "observedValue": "Thailand. We currently offer two shipping options • DHL",
+            "independentKey": "fulfillment-origin-observation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "KNOWN-05-safety",
+      "status": "PASS",
+      "elapsedMs": 1,
+      "details": {
+        "severeWarningAllowed": false,
+        "dropshipLikelihood": null,
+        "massResellLikelihood": null,
+        "scope": "Resale/fulfillment/platform/geography alone does not establish deception. Null scores are abstentions, not clean or accurate detections."
+      }
+    },
+    {
+      "id": "KNOWN-06-scan",
+      "status": "PASS",
+      "elapsedMs": 919,
+      "details": {
+        "product": {
+          "url": "https://www.suredesigntshirts.com/products/unisex-triangles-harem-pants-in-black",
+          "title": "Unisex Triangles Harem Pants in Black",
+          "sku": "GPH42-Black",
+          "brand": "HaremPants",
+          "price": 25.95,
+          "currency": "USD",
+          "claims": []
+        },
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": null,
+          "deceptionRisk": "unknown",
+          "merchantRisk": "moderate",
+          "manipulationRisk": "unknown",
+          "fulfillmentRisk": "unknown",
+          "severeWarningAllowed": false,
+          "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+        }
+      }
+    },
+    {
+      "id": "KNOWN-06-detection",
+      "status": "PASS",
+      "elapsedMs": 2,
+      "details": {
+        "signal": {
+          "id": "KNOWN_AFFILIATED_MERCHANT_NETWORK",
+          "family": "identity",
+          "severity": "strong",
+          "confidence": 0.95,
+          "weight": 24,
+          "title": "Affiliated sister-store network detected",
+          "explanation": "DropShredder has multiple independent public linkage families connecting this storefront to other merchant domains. Affiliation itself is not fraud, and complaint evidence from one network member is never inherited by another without its own corroboration.",
+          "observedValue": "HaremPants / Sure Design affiliated merchant network • type: sister-store • harempants.com, suredesigntshirts.com, suredesignwholesale.com, surecannabisdesigns.com, mysterybuddha.com • status: active • reviewed 2026-10-06 • evidence: public-affiliation, shared-address, cross-domain-reference, shared-catalog",
+          "independentKey": "merchant-network:harempants-suredesign"
+        },
+        "sku": "GPH42-Black",
+        "scope": "Existing development control, not independent dropshipping truth"
+      }
+    },
+    {
+      "id": "KNOWN-06-shipping",
+      "status": "PASS",
+      "elapsedMs": 468,
+      "details": {
+        "message": "Carrier DHL detected, but no explicit shipment origin was found. No contradiction scored.",
+        "evidence": []
+      }
+    },
+    {
+      "id": "KNOWN-06-safety",
+      "status": "PASS",
+      "elapsedMs": 1,
+      "details": {
+        "severeWarningAllowed": false,
+        "dropshipLikelihood": null,
+        "massResellLikelihood": null,
+        "scope": "Resale/fulfillment/platform/geography alone does not establish deception. Null scores are abstentions, not clean or accurate detections."
+      }
+    }
+  ],
+  "findings": [
+    "Warmly direct-factory statement captured twice as informational evidence, while numeric dropship/resell estimates abstain",
+    "HaremPants and Sure Design affiliation both detected; HaremPants visible GPH42-Black SKU is missed, whereas Sure Design SKU is captured",
+    "Both UntilGone planned listings return404/search-results-page, not accepted detections",
+    "No severe live warning or safety stop occurred",
+    "Sample includes exposed development controls/correlated products; it is not independent accuracy acceptance"
+  ]
+}
