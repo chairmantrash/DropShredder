@@ -102,7 +102,7 @@ export async function runContextMenus({context,page,native,worker,id,test,until,
  await test('N38-store','Actual store context menu offers domain-scoped destinations without opening them before selection',async()=>{
   await page.mouse.click(40,300);await choose({kind:'store',index:1});const tab=await chooser();assert.equal(await tab.locator('#ds-search-chooser label').count(),7);assert.equal(context.pages().length,2);
   for(const input of await tab.locator('#ds-search-chooser input').all())await input.uncheck();
-  const selected=tab.locator('#ds-search-chooser label').filter({hasText:'bbb.org'});assert.equal(await selected.count(),1);await selected.locator('input').check();await tab.locator('#ds-search-chooser button').first().click();
+  const selected=tab.locator('#ds-search-chooser label').filter({hasText:/^\s*bbb\s+—/});assert.equal(await selected.count(),1);assert.equal((await selected.innerText()).trim(),'bbb — www.google.com');await selected.locator('input').check();await tab.locator('#ds-search-chooser button').first().click();
   await until(async()=>context.pages().length===3&&(await targets('www.google.com')).length===1,'one explicitly selected store destination');
   const destination=(await targets('www.google.com'))[0].url;assert.equal(new URL(destination).searchParams.get('q'),'"fixture.example.com" site:bbb.org');
   await closeSearches();return {choices:7,openedBeforeSelection:0,openedAfterSelection:1,destination};
