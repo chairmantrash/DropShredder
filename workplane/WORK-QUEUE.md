@@ -1,6 +1,6 @@
 # Work queue — authoritative snapshot, October 12, 2026
 
-Owner directive: open beta; the agent's independent-acceptance entry gate was circular. DS-049 is RUNNING to publish the exact verified package as an experimental GitHub prerelease after the unchanged bounded native/public-site protocol and exact-head CI/CodeQL pass. Independent acceptance remains open beta work and public-release promotion work. DS-048 engineering gates pass; its historical beta-held classification is superseded by `brain/decisions/20261012-002-beta-entry-and-promotion.md`. PRs #15–17 are integrated into the release branch; public PR #9 remains draft against main.
+Owner directive: open beta; the agent's independent-acceptance entry gate was circular. **DS-049 DONE — BETA OPEN**, published at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1 on 2026-10-12T18:05:55Z. The exact verified CI ZIP passed the unchanged bounded native/public-site protocol and exact-head CI/CodeQL; its unauthenticated public download is verified. Independent acceptance remains open beta validation and later public-release promotion work. Current receipt: `workplane/runs/DS-049-BETA-OPEN-20261012.json`; decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`. PR18 is integrated into release at 3200fc179c641649fa5fc455382e2680252c4ad0; public PR9 remains draft against unchanged main.
 
 ## Completed engineering work
 
@@ -21,6 +21,7 @@ Owner directive: open beta; the agent's independent-acceptance entry gate was ci
 | DS-046 remaining engineering acceptance | Window/menu/storage/OCR-cancellation/version checks,51-file QA validation and current Store assets completed | Engineering mapping and current screenshots do not replace independent acceptance |
 | DS-047 worker/history lifecycle | Natural worker stop after 30,157 ms, ordinary native wake preserving settings, 12 real scans, actual history deletion/reuse and full profile restart; 394 core and 117 browser case executions green |99 unique case IDs; worker never debugger-attached; owned/short-interval evidence does not authenticate a corpus or an elapsed week |
 | DS-048 security and acceptance preparation | 405 core / 117 browser executions; exact-head SARIF zero findings; current dependency advisories zero; clean 51-file QA/actual CI ZIP identities verified; current assets and review inputs prepared; queued legal references integrated |Independent labels/rights/threshold approval, actual reviewer/photo/operator/publisher/elapsed-lifecycle acceptance remain open |
+| DS-049 beta opening | Exact accepted package publicly downloadable;405 core/77 fresh native checks, finding-free CodeQL and fresh advisory gates; real public Walmart/RDAP observations; no stop failure |Independent validation remains beta work; main/Store promotion is held |
 
 ## Beta validation and public-release promotion queue
 
@@ -42,4 +43,8 @@ Current QA artifact 11755200538/archive SHA256 `c779fbd557e0e02d05b6513740e6d596
 
 No release-blocking runtime defect is currently demonstrated. The remaining acceptance work requires actual external observations, material rights, reviewers and owner decisions. The empty corpus and native/legal review templates retain zero approvals; the numerical proposal is not accepted. Engineering fixtures cannot supply independent acceptance. Store account/contact settings apply only to the later Store route; no invitation, main merge or Store submission is performed from the prepared packet.
 
-DS-049 retires the obsolete conditional beta-entry check once beta is actually published. DS-021 weekly research continues. Missing reviews, labels, rights, approved thresholds, publisher identity and elapsed time remain explicit validation work; none is fabricated or treated as accepted.
+DS-049 disabled the obsolete conditional beta-entry check after beta was actually published. DS-021 weekly research continues. Missing reviews, labels, rights, approved thresholds, publisher identity and elapsed time remain explicit validation work; none is fabricated or treated as accepted.
+
+## Actual beta observations
+
+Fresh bounded run 38287899652: Walmart scanned with UNKNOWN and no severe warning; live RDAP succeeds. Noctua 429, Etsy 403, Amazon 200/unavailable-or-identity-unconfirmed and CPSC timeout remain unavailable. Public evidence and installation packet are attached to the prerelease. These observations do not close the independent corpus/native/legal/photo/lifecycle promotion gates. The existing GitHub release and issues are the authorized distribution/feedback route; no invitations or participants were invented.

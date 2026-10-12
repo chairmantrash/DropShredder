@@ -1,6 +1,8 @@
 # DropShredder release packet / operator checklist
 Prepared October 9,2026. State: PREPARED; acceptance and owner release authorization pending. This checklist does not authorize merge, tag, upload, submission or publication.
 
+Scope clarification, DS-049: this is the **general release / main / Chrome Web Store promotion** checklist. The owner separately authorized the experimental GitHub beta prerelease on October12; `brain/decisions/20261012-002-beta-entry-and-promotion.md` and `BETA-TESTING.md` govern that route. Independent acceptance remains open during beta. The later main/Store sequence below is unchanged.
+
 ## Prepared materials
 - STORE-LISTING.md: customer copy, current scope and permissions.
 - STORE-PRIVACY-DECLARATIONS.md and PRIVACY.md: complete local/optional-provider handling.

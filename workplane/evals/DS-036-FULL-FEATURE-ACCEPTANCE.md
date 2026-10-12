@@ -5,6 +5,8 @@ Engineering receipt: `workplane/runs/DS-036-FEATURE-CONVERGENCE-20261009.json`
 Candidate manifest: `tools/browser-smoke/candidate-build-info.json`.
 
 ## Contract
+DS-049 scope correction: this independent matrix governs beta validation and public-release promotion. It is not a prerequisite to the owner's authorized experimental GitHub beta. Independent results, rights, calibrated thresholds and approvals remain unaccepted until actually supplied; beta entry and serious-failure stop rules are in `brain/decisions/20261012-002-beta-entry-and-promotion.md`.
+
 A full-feature candidate is **ready for testing**, not proven safe, accurate, or fit for publication. No main merge, Web Store publication, credentials, paid services, mandatory backend or account setup. Use the **exact unpacked artifact from a green Chromium run at the pinned source tree** rather than an older ZIP or editor directory. Every test must record Chrome version/OS/URL/time, expected and observed result, screenshots, browser console and scrubbed traces, and whether the subject was truly observed or blocked by anti-bot restrictions. No independent verdict counts without trusted merchant/product truth labels.
 
 ## P0 — common functional pathways
@@ -31,7 +33,7 @@ Construct an independently rights-cleared, merchant and product-disjoint ground-
 - apparel, accessories, electronics, furniture, pet goods, cosmetics and toys, domestic and international shipping
 - high-risk and benign adversarial lookalikes, duplicate generic photos, counterfeit claims without proof, swapped variants, inactive stores
 
-Compute per-stratum precision, recall, false-positive rate and UNKNOWN/abstention share. Report confidence intervals and sample counts; DO NOT convert raw heuristic evidence scores to probability of fraud. Declare a launch gate failed if the user has not accepted thresholds or independent ground truth is insufficient. Avoid commercial sites' private/internal endpoints and do not bypass paywalls/captchas.
+Compute per-stratum precision, recall, false-positive rate and UNKNOWN/abstention share. Report confidence intervals and sample counts; DO NOT convert raw heuristic evidence scores to probability of fraud. Declare the independent public-release promotion gate failed if the user has not accepted thresholds or independent ground truth is insufficient. That is open beta validation, not a circular beta-entry requirement. Avoid commercial sites' private/internal endpoints and do not bypass paywalls/captchas.
 
 DS-045 measurement tooling: `tools/evaluation/metrics.mjs`, documented in `tools/evaluation/README.md`, consumes actual pinned observations and independently reviewed truth. Start from `workplane/evals/corpus-template.json`; its empty/unapproved state intentionally returns NOT_ACCEPTED. Record canonical calibration/evaluation merchant and product groups, rights, clustering review and owner-approved thresholds. Do not substitute synthetic unit-test labels for the independent corpus.
 

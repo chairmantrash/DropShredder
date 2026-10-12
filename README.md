@@ -1,5 +1,7 @@
 # DropShredder
 
+**Public beta:** [Download 0.2.0 beta 1](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1). See [installation and feedback instructions](BETA-TESTING.md). Independent accuracy and broader validation are ongoing beta work.
+
 **Commerce forensics for shoppers. Don't guess. Build a case.**
 
 DropShredder is a local-first Chrome/Chromium extension that helps consumers investigate:
