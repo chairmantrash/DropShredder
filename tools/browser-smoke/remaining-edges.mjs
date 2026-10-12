@@ -127,13 +127,18 @@ export async function runOcrCancellation({page,native,test,until,pause,output,ro
   await page.bringToFront();await native.click('#label-language');await native.key('Home','Home',36);await native.key('Down','ArrowDown',40);await native.key('Down','ArrowDown',40);await native.key('Enter','Enter',13);
   assert.equal(await native.evaluate("document.querySelector('#label-language').value"),'hin');
   await native.setFiles('#label-image',[path.join(root,'tests/fixtures/ocr/hindi-model-original.png')]);await native.click('#label-read');
-  const pending=await native.evaluate("({disabled:document.querySelector('#label-read').disabled,status:document.querySelector('#label-status').textContent})");assert.equal(pending.disabled,true);assert.match(pending.status,/Reading image locally/);
+  const pending=await native.evaluate("({disabled:document.querySelector('#label-read').disabled,status:document.querySelector('#label-status').textContent})");
+  // A valid read can complete before the trusted desktop click returns. Test
+  // the actual pending/completed state, then require the same invalidation and
+  // next-read assertions in either case. Never label completion as cancellation.
+  if(pending.disabled){assert.equal(pending.disabled,true);assert.match(pending.status,/Reading image locally/);}
+  else{assert.match(pending.status,/Local analysis complete/);const completed=await native.evaluate("document.querySelector('#label-results').textContent");assert.match(completed,/उत्पाद\s+मॉडल/u);assert.match(completed,/MODEL12345/);}
   await native.click('#label-language');await native.key('Home','Home',36);await native.key('Enter','Enter',13);
   await until(()=>native.evaluate("!document.querySelector('#label-read').disabled"),'native cancellation/selection ready');await pause(2500);
   assert.equal(await native.evaluate("document.querySelector('#label-results').textContent"),'');assert.match(await native.evaluate("document.querySelector('#label-status').textContent"),/No file processed until/);
   await native.setFiles('#label-image',[path.join(output,'owned-ocr-label.png')]);await native.click('#label-read');await until(()=>native.evaluate("document.querySelector('#label-status').textContent.startsWith('Local analysis complete.')"),'recovered English read',60000);
   const result=await native.evaluate("document.querySelector('#label-results').textContent");assert.match(result,/PRODUCT\s*12345/);await native.screenshot('native-ocr-cancellation-recovered.png');
-  return {pending,recovered:result.slice(0,300),scope:'Real native model change, no stale result, successful next read; no independent photo/blur/rotation accuracy'};
+  return {pending,pendingReadObserved:pending.disabled,recovered:result.slice(0,300),scope:'Real native model change invalidates the actually observed pending or completed result and the next read succeeds; no fabricated cancellation interval or independent photo/blur/rotation accuracy'};
  });
 }
 

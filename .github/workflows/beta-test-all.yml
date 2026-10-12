@@ -1,0 +1,83 @@
+name: DropShredder full beta test collection
+
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths:
+      - '.github/workflows/beta-test-all.yml'
+      - 'tools/beta/**'
+      - 'workplane/evals/DS-050-**'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-tests-20261012'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        # Initial six-suite run38311789419 is preserved in the pre-repair receipt.
+        # Followup changes only native input dispatch; unchanged suites retain their initial results.
+        suite: [native-live]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download and verify the frozen public beta without rebuilding
+        run: |
+          curl --fail --location --retry 0 https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/DropShredder-0.2.0-beta.1-chrome.zip --output accepted-public-beta.zip
+          python3 tools/beta/stage-public.py accepted-public-beta.zip
+          python3 tools/beta/collect.py
+      - name: Install isolated real-browser tools
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 -m pip install Pillow==12.3.0
+      - name: Install official compatibility browser
+        if: matrix.suite == 'chrome133' || matrix.suite == 'chrome155'
+        env:
+          SUITE: ${{ matrix.suite }}
+        run: |
+          if [ "$SUITE" = 'chrome133' ]; then
+            version=133.0.6943.141
+          else
+            version=155.0.8059.39
+          fi
+          curl --fail --location --retry 0 "https://storage.googleapis.com/chrome-for-testing-public/$version/linux64/chrome-linux64.zip" --output compatibility-chrome.zip
+          if [ "$SUITE" = 'chrome133' ]; then
+            echo '0e51d229098b5c2330ec91190bae6e48bb5b8a5cff2e2593b03af573221816e1  compatibility-chrome.zip' | sha256sum --check
+          fi
+          unzip -q compatibility-chrome.zip -d compatibility-chrome
+          compatibility-chrome/chrome-linux64/chrome --version
+      - name: Execute every applicable suite before repairs
+        env:
+          SUITE: ${{ matrix.suite }}
+          DS_NATIVE_HEADED: '1'
+          DS_LIVE_SURFACES: '1'
+          DS_BROWSER_HEADLESS: '1'
+        run: |
+          case "$SUITE" in
+            native-live) xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-beta.mjs ;;
+            lifecycle) xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/lifecycle-beta.mjs ;;
+            locales) xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/locales-beta.mjs ;;
+            chrome133) DS_BROWSER_EXECUTABLE="$GITHUB_WORKSPACE/compatibility-chrome/chrome-linux64/chrome" DS_EXPECT_CHROME_MAJOR=133 node tools/browser-smoke/run-beta.mjs ;;
+            chrome155) DS_BROWSER_EXECUTABLE="$GITHUB_WORKSPACE/compatibility-chrome/chrome-linux64/chrome" DS_EXPECT_CHROME_MAJOR=155 node tools/browser-smoke/run-beta.mjs ;;
+            packaged) node tools/browser-smoke/run-beta.mjs ;;
+          esac
+      - name: Preserve all results and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-beta-${{ matrix.suite }}-evidence
+          path: |
+            browser-smoke-results/
+            tools/browser-smoke/beta-collector-manifest.json
+          if-no-files-found: error
+          retention-days: 90

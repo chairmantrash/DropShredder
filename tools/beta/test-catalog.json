@@ -1,0 +1,552 @@
+{
+  "frozenProductionSource": "5e3dc52bc54630753cf37619225be49d42043a2d",
+  "frozenZipSha256": "6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+  "native": [
+    {
+      "id": "N01",
+      "description": "Reviewed package mounts in the native side panel without host grants"
+    },
+    {
+      "id": "N02",
+      "description": "Trusted native source-hunt toggle saves through the background writer"
+    },
+    {
+      "id": "N03",
+      "description": "Native origin and tone changes preserve the previous feature patch"
+    },
+    {
+      "id": "N04",
+      "description": "Nondefault preferences survive a full native-profile restart"
+    },
+    {
+      "id": "N05",
+      "description": "Native product scan fails closed without host access"
+    },
+    {
+      "id": "N06",
+      "description": "Native remove-access control is safe without grants and preserves other preferences"
+    },
+    {
+      "id": "N07",
+      "description": "Native checks produce no uncaught errors or external investigations"
+    },
+    {
+      "id": "N08",
+      "description": "Genuine Chrome Deny leaves monitoring and host access off"
+    },
+    {
+      "id": "N09",
+      "description": "Genuine Chrome Allow enables host access and the isolated automatic script"
+    },
+    {
+      "id": "N34",
+      "description": "Native operating-system file picker selects an unchanged local label through desktop input"
+    },
+    {
+      "id": "N10",
+      "description": "Owned product fixture gets exactly one automatic alert after consent"
+    },
+    {
+      "id": "N11",
+      "description": "Full native product scan after an observed grant on an owned HTTPS fixture"
+    },
+    {
+      "id": "N35",
+      "description": "Two simultaneous native panels preserve independent settings patches and target their focused windows"
+    },
+    {
+      "id": "N38-page",
+      "description": "Actual page/product context menu opens a local chooser, cancellation shares nothing and selected searches are bounded"
+    },
+    {
+      "id": "N38-selection",
+      "description": "Actual selected-text context menu searches the selection rather than the tab title"
+    },
+    {
+      "id": "N38-store",
+      "description": "Actual store context menu offers domain-scoped destinations without opening them before selection"
+    },
+    {
+      "id": "N38-image",
+      "description": "Actual image context menu preserves the chosen public image URL and sends nothing before destination selection"
+    },
+    {
+      "id": "N36",
+      "description": "32 quiet background tabs cause no toast flood, registration growth or unsolicited investigation"
+    },
+    {
+      "id": "N15",
+      "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields"
+    },
+    {
+      "id": "N16",
+      "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports"
+    },
+    {
+      "id": "N17",
+      "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it"
+    },
+    {
+      "id": "N18",
+      "description": "Rapid tab switching invalidates reports and scans the actual active product tab"
+    },
+    {
+      "id": "N19",
+      "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs"
+    },
+    {
+      "id": "N20",
+      "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection"
+    },
+    {
+      "id": "N25",
+      "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title"
+    },
+    {
+      "id": "N21",
+      "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational"
+    },
+    {
+      "id": "N22",
+      "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query"
+    },
+    {
+      "id": "N23",
+      "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls"
+    },
+    {
+      "id": "N26",
+      "description": "Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions"
+    },
+    {
+      "id": "N27",
+      "description": "Chrome file-input dispatch previews JSON without saving and rejects malformed local files"
+    },
+    {
+      "id": "N30",
+      "description": "Native origin file requires user review, exact seller/product scope and eight fresh stages without score changes"
+    },
+    {
+      "id": "N31",
+      "description": "Native regional map filters Mexico without source requests or trust scores"
+    },
+    {
+      "id": "N32",
+      "description": "Native standing rating requires source review and entity binding; categories are local and navigation clears the rating"
+    },
+    {
+      "id": "N33",
+      "description": "Native litigation preview shows scope and pending allegations; a later vacatur removes unresolved context"
+    },
+    {
+      "id": "N28",
+      "description": "Packaged local OCR engine and language data exist without making a remote request at panel startup"
+    },
+    {
+      "id": "N29",
+      "description": "Actual native panel invokes bundled offline OCR on a synthetic local image"
+    },
+    {
+      "id": "N39",
+      "description": "Changing the selected OCR language cancels or invalidates pending results and the next native read recovers"
+    },
+    {
+      "id": "N24",
+      "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict"
+    },
+    {
+      "id": "M-en",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-en",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-en",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-zh",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-zh",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-zh",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-hi",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-hi",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-hi",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-es",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-es",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-es",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-ar",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-ar",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-ar",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-fr",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-fr",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-fr",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-bn",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-bn",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-bn",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-pt-BR",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product"
+    },
+    {
+      "id": "P-pt-BR",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity"
+    },
+    {
+      "id": "Q-pt-BR",
+      "description": "Localized collection, editorial, home and private pages remain quiet"
+    },
+    {
+      "id": "M-browser-translated",
+      "description": "Visible French heading with unchanged English schema retains exact original identifiers"
+    },
+    {
+      "id": "M-large",
+      "description": "Bounded manual scan of a 20,000-element original-language product page"
+    },
+    {
+      "id": "O-chi_sim",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-hin",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-spa",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-ara",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-fra",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-ben",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-por",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label"
+    },
+    {
+      "id": "O-hin-original",
+      "description": "Original failed label preserves both native text and the literal Latin model identifier"
+    },
+    {
+      "id": "O-ara-original",
+      "description": "Original failed label preserves both native text and the literal Latin model identifier"
+    },
+    {
+      "id": "N12",
+      "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses"
+    },
+    {
+      "id": "N13",
+      "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences"
+    },
+    {
+      "id": "N14",
+      "description": "Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins"
+    },
+    {
+      "id": "N37",
+      "description": "Actual malformed Chrome storage fails closed across a browser restart and normal native writes recover canonical settings"
+    },
+    {
+      "id": "N50",
+      "description": "Native weekly opt-in/alarm lifecycle"
+    },
+    {
+      "id": "N51",
+      "description": "Native absent Brave key refusal"
+    },
+    {
+      "id": "N53",
+      "description": "Native return-policy positive"
+    },
+    {
+      "id": "N54",
+      "description": "Native return-policy HTTP error"
+    },
+    {
+      "id": "N55",
+      "description": "Native fulfillment positive"
+    },
+    {
+      "id": "N56",
+      "description": "Native evidence filtering"
+    }
+  ],
+  "lifecycle": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06"
+  ],
+  "packaged": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09"
+  ],
+  "locales": [
+    "L-zh_CN",
+    "L-hi",
+    "L-es",
+    "L-ar",
+    "L-fr",
+    "L-bn",
+    "L-pt_BR"
+  ],
+  "live": [
+    "LIVE-01-scan",
+    "LIVE-01-export",
+    "LIVE-01-policy",
+    "LIVE-01-shipping",
+    "LIVE-01-evidence",
+    "LIVE-01-domain",
+    "LIVE-01-sources",
+    "LIVE-01-image",
+    "LIVE-01-store",
+    "LIVE-01-reputation",
+    "LIVE-01-resources",
+    "LIVE-02-scan",
+    "LIVE-02-export",
+    "LIVE-02-policy",
+    "LIVE-02-shipping",
+    "LIVE-02-evidence",
+    "LIVE-02-domain",
+    "LIVE-02-sources",
+    "LIVE-02-image",
+    "LIVE-02-store",
+    "LIVE-02-reputation",
+    "LIVE-02-resources",
+    "LIVE-03-scan",
+    "LIVE-03-export",
+    "LIVE-03-policy",
+    "LIVE-03-shipping",
+    "LIVE-03-evidence",
+    "LIVE-03-domain",
+    "LIVE-03-sources",
+    "LIVE-03-image",
+    "LIVE-03-store",
+    "LIVE-03-reputation",
+    "LIVE-03-resources",
+    "LIVE-04-scan",
+    "LIVE-04-export",
+    "LIVE-04-policy",
+    "LIVE-04-shipping",
+    "LIVE-04-evidence",
+    "LIVE-04-domain",
+    "LIVE-04-sources",
+    "LIVE-04-image",
+    "LIVE-04-store",
+    "LIVE-04-reputation",
+    "LIVE-04-resources",
+    "LIVE-05-scan",
+    "LIVE-05-export",
+    "LIVE-05-policy",
+    "LIVE-05-shipping",
+    "LIVE-05-evidence",
+    "LIVE-05-domain",
+    "LIVE-05-sources",
+    "LIVE-05-image",
+    "LIVE-05-store",
+    "LIVE-05-reputation",
+    "LIVE-05-resources",
+    "LIVE-06-scan",
+    "LIVE-06-export",
+    "LIVE-06-policy",
+    "LIVE-06-shipping",
+    "LIVE-06-evidence",
+    "LIVE-06-domain",
+    "LIVE-06-sources",
+    "LIVE-06-image",
+    "LIVE-06-store",
+    "LIVE-06-reputation",
+    "LIVE-06-resources",
+    "LIVE-07-scan",
+    "LIVE-07-export",
+    "LIVE-07-policy",
+    "LIVE-07-shipping",
+    "LIVE-07-evidence",
+    "LIVE-07-domain",
+    "LIVE-07-sources",
+    "LIVE-07-image",
+    "LIVE-07-store",
+    "LIVE-07-reputation",
+    "LIVE-07-resources",
+    "LIVE-08-scan",
+    "LIVE-08-export",
+    "LIVE-08-policy",
+    "LIVE-08-shipping",
+    "LIVE-08-evidence",
+    "LIVE-08-domain",
+    "LIVE-08-sources",
+    "LIVE-08-image",
+    "LIVE-08-store",
+    "LIVE-08-reputation",
+    "LIVE-08-resources",
+    "LIVE-09-scan",
+    "LIVE-09-export",
+    "LIVE-09-policy",
+    "LIVE-09-shipping",
+    "LIVE-09-evidence",
+    "LIVE-09-domain",
+    "LIVE-09-sources",
+    "LIVE-09-image",
+    "LIVE-09-store",
+    "LIVE-09-reputation",
+    "LIVE-09-resources",
+    "LIVE-10-scan",
+    "LIVE-10-export",
+    "LIVE-10-policy",
+    "LIVE-10-shipping",
+    "LIVE-10-evidence",
+    "LIVE-10-domain",
+    "LIVE-10-sources",
+    "LIVE-10-image",
+    "LIVE-10-store",
+    "LIVE-10-reputation",
+    "LIVE-10-resources",
+    "LIVE-11-scan",
+    "LIVE-11-export",
+    "LIVE-11-policy",
+    "LIVE-11-shipping",
+    "LIVE-11-evidence",
+    "LIVE-11-domain",
+    "LIVE-11-sources",
+    "LIVE-11-image",
+    "LIVE-11-store",
+    "LIVE-11-reputation",
+    "LIVE-11-resources",
+    "LIVE-12-scan",
+    "LIVE-12-export",
+    "LIVE-12-policy",
+    "LIVE-12-shipping",
+    "LIVE-12-evidence",
+    "LIVE-12-domain",
+    "LIVE-12-sources",
+    "LIVE-12-image",
+    "LIVE-12-store",
+    "LIVE-12-reputation",
+    "LIVE-12-resources",
+    "LIVE-13-quiet",
+    "LIVE-14-quiet",
+    "LIVE-15-quiet",
+    "LIVE-16-quiet",
+    "LIVE-17-quiet"
+  ],
+  "requiredInputCases": [
+    {
+      "id": "INPUT-BRAVE",
+      "status": "NOT EVALUATED",
+      "reason": "No authorized valid optional API key"
+    },
+    {
+      "id": "INPUT-PHOTOS",
+      "status": "NOT EVALUATED",
+      "reason": "No rights-reviewed original multilingual photographs/transcriptions"
+    },
+    {
+      "id": "INPUT-PUBLISHER",
+      "status": "NOT EVALUATED",
+      "reason": "No selected authenticated external publisher/rights/key provenance"
+    },
+    {
+      "id": "INPUT-ELAPSED-WEEK",
+      "status": "NOT EVALUATED",
+      "reason": "No actual seven-day start/end observations"
+    },
+    {
+      "id": "INPUT-TRANSLATE-SERVICE",
+      "status": "NOT EVALUATED",
+      "reason": "No actual browser translate service execution; modeled translated DOM is separate"
+    },
+    {
+      "id": "INPUT-CROSS-OS",
+      "status": "NOT EVALUATED",
+      "reason": "Windows/macOS native desktop environments unavailable"
+    },
+    {
+      "id": "INPUT-INDEPENDENT-ACCURACY",
+      "status": "NOT EVALUATED",
+      "reason": "No independent rights-cleared merchant/product-disjoint corpus/approved thresholds"
+    },
+    {
+      "id": "INPUT-REVIEWERS",
+      "status": "NOT EVALUATED",
+      "reason": "No identified independent native/legal/screen-reader operators"
+    },
+    {
+      "id": "INPUT-RETENTION-ELAPSED",
+      "status": "NOT EVALUATED",
+      "reason": "No invented 180-day elapsed retention interval"
+    }
+  ]
+}

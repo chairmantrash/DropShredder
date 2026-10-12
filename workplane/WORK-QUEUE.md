@@ -1,5 +1,13 @@
 # Work queue — authoritative snapshot, October 12, 2026
 
+## Capability testing and repair update
+
+- DS-050 DONE: matrix committed before execution; all260 initial cases have actual outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL; original failures remain preserved. Receipt: workplane/runs/DS-050-COMPLETION-20261012.json.
+- DS-051 DONE: policy HTTP status transport fixed after complete pre-repair testing. Exact changed package passes405 core, zero-finding CodeQL, all standard Chromium jobs and83 extended native checks; N53/N54 pass. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json. Repaired candidate awaits the next beta iteration.
+- DS-052 RUNNING: six known factory-direct/affiliate catalog pages,24 predeclared checks; exact repaired CI ZIP staged without rebuilding. Every case receives an outcome before further application repairs. Misses/unavailable pages are explicit; no independent accuracy or scam-label acceptance claim.
+
+These finite tasks preserve BETA OPEN. Independent external inputs remain beta validation/public-release-promotion work. DS-021 remains ongoing maintenance.
+
 Owner directive: open beta; the agent's independent-acceptance entry gate was circular. **DS-049 DONE — BETA OPEN**, published at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1 on 2026-10-12T18:05:55Z. The exact verified CI ZIP passed the unchanged bounded native/public-site protocol and exact-head CI/CodeQL; its unauthenticated public download is verified. Independent acceptance remains open beta validation and later public-release promotion work. Current receipt: `workplane/runs/DS-049-BETA-OPEN-20261012.json`; decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`. PR18 is integrated into release at 3200fc179c641649fa5fc455382e2680252c4ad0; public PR9 remains draft against unchanged main.
 
 ## Completed engineering work

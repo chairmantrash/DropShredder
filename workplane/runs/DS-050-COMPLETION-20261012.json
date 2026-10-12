@@ -1,0 +1,4541 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-050",
+  "status": "TEST PASS COMPLETE — ONE CONFIRMED PRODUCT DEFECT",
+  "recordedAt": "2026-10-12T22:07:41.864267+00:00",
+  "productionSource": "5e3dc52bc54630753cf37619225be49d42043a2d",
+  "installZipSha256": "6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+  "initialReceiptCommit": "2d3a2289f617225e9e5dcf90457eec6a2df31358",
+  "initialWorkflow": 38311789419,
+  "initialRawCounts": {
+    "PASS": 196,
+    "FAIL": 6,
+    "UNAVAILABLE": 58
+  },
+  "inputVerification": {
+    "head": "b4059b2b1a5294d3e617e21e94bcd10d9b86cee1",
+    "workflow": 38313395947,
+    "job": 115024211137,
+    "artifact": 11776001747,
+    "archiveSha256": "e4c888dc31d0f5fb0e5d49a5d077848e14da85d8e811baa8bc26a5596c4ca4d7",
+    "sourceCi": 38313396027,
+    "sourceCodeql": 38313395982,
+    "nativeRawCounts": {
+      "PASS": 81,
+      "FAIL": 2
+    },
+    "liveRawCounts": {
+      "PASS": 91,
+      "UNAVAILABLE": 46
+    },
+    "report": {
+      "sourceCommit": "b4059b2b1a5294d3e617e21e94bcd10d9b86cee1",
+      "startedAt": "2026-10-12T21:53:45.040Z",
+      "mode": "headed Chromium / Xvfb",
+      "status": "FAIL — COLLECTION COMPLETE OR DEPENDENCIES BLOCKED",
+      "tests": [
+        {
+          "id": "N01",
+          "description": "Reviewed package mounts in the native side panel without host grants",
+          "status": "PASS",
+          "elapsedMs": 1069,
+          "details": {
+            "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+            "files": 51
+          }
+        },
+        {
+          "id": "N02",
+          "description": "Trusted native source-hunt toggle saves through the background writer",
+          "status": "PASS",
+          "elapsedMs": 3673
+        },
+        {
+          "id": "N03",
+          "description": "Native origin and tone changes preserve the previous feature patch",
+          "status": "PASS",
+          "elapsedMs": 1236
+        },
+        {
+          "id": "N04",
+          "description": "Nondefault preferences survive a full native-profile restart",
+          "status": "PASS",
+          "elapsedMs": 541
+        },
+        {
+          "id": "N05",
+          "description": "Native product scan fails closed without host access",
+          "status": "PASS",
+          "elapsedMs": 519,
+          "details": {
+            "status": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.",
+            "raw": "",
+            "exportDisabled": true
+          }
+        },
+        {
+          "id": "N06",
+          "description": "Native remove-access control is safe without grants and preserves other preferences",
+          "status": "PASS",
+          "elapsedMs": 923,
+          "details": {
+            "status": "DropShredder didn’t have any extra site access to remove.",
+            "scope": "No-grant removal, not revocation of an accepted grant"
+          }
+        },
+        {
+          "id": "N07",
+          "description": "Native checks produce no uncaught errors or external investigations",
+          "status": "PASS",
+          "elapsedMs": 0
+        },
+        {
+          "id": "N08",
+          "description": "Genuine Chrome Deny leaves monitoring and host access off",
+          "status": "PASS",
+          "elapsedMs": 94
+        },
+        {
+          "id": "N09",
+          "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+          "status": "PASS",
+          "elapsedMs": 3119
+        },
+        {
+          "id": "N34",
+          "description": "Native operating-system file picker selects an unchanged local label through desktop input",
+          "status": "PASS",
+          "elapsedMs": 2418,
+          "details": {
+            "dialog": "Open File",
+            "selected": "hindi-model-original.png",
+            "scope": "One genuine Linux/Xvfb OS chooser through desktop input; no CDP file dispatch, photograph accuracy or cross-OS chooser claim"
+          }
+        },
+        {
+          "id": "N10",
+          "description": "Owned product fixture gets exactly one automatic alert after consent",
+          "status": "PASS",
+          "elapsedMs": 73
+        },
+        {
+          "id": "N11",
+          "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+          "status": "PASS",
+          "elapsedMs": 528,
+          "details": {
+            "status": "Scan complete for fixture.example.com.",
+            "product": {
+              "capturedAt": "2026-10-12T21:54:09.532Z",
+              "claims": [],
+              "currency": "USD",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [],
+              "jsonLdProductCount": 1,
+              "pageSignals": [],
+              "price": 12,
+              "sku": "FIXTURE-MUG-001",
+              "specifications": {},
+              "title": "Fixture mug",
+              "url": "https://fixture.example.com/products/mug",
+              "variantId": "FIXTURE-MUG-001",
+              "technicalFingerprint": "012345678905|fixture-mug-001"
+            },
+            "scope": "Owned fixture, no merchant accuracy/explicit prompt acceptance claim"
+          }
+        },
+        {
+          "id": "N35",
+          "description": "Two simultaneous native panels preserve independent settings patches and target their focused windows",
+          "status": "PASS",
+          "elapsedMs": 5215,
+          "details": {
+            "windowIds": [
+              1083851308,
+              1083851312
+            ],
+            "products": [
+              "https://fixture.example.com/products/mug",
+              "https://fixture.example.net/products/window-two"
+            ],
+            "preservedPatches": {
+              "autoProtection": true,
+              "autoSourceHunt": false,
+              "preferMadeInUSA": false,
+              "toneMode": "nuclear",
+              "weeklyIntelligenceUpdates": false
+            },
+            "scope": "Two actual native panels, user controls and focused-window scans; no independent tester"
+          }
+        },
+        {
+          "id": "N38-page",
+          "description": "Actual page/product context menu opens a local chooser, cancellation shares nothing and selected searches are bounded",
+          "status": "PASS",
+          "elapsedMs": 2379,
+          "details": {
+            "destinations": [
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Amercadolibre.com.mx%20OR%20site%3Aaliexpress.com%20OR%20site%3Atemu.com%20OR%20site%3Abanggood.com%20OR%20site%3Ataobao.com%20OR%20site%3Atmall.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aprintify.com%20OR%20site%3Aprintful.com%20OR%20site%3Agelato.com%20OR%20site%3Atapstitch.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20reddit",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aamazon.ca%20OR%20site%3Aamazon.com.mx%20OR%20site%3Awalmart.ca%20OR%20site%3Awalmart.com.mx%20OR%20site%3Alightinthebox.com%20OR%20site%3Ashein.com%20OR%20site%3Aamazon.com%20OR%20site%3Aebay.com%20OR%20site%3Awalmart.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Adropcommerce.com%20OR%20site%3Adropi.com.mx%20OR%20site%3Asourcinbox.com%20OR%20site%3Ahypersku.com%20OR%20site%3Acjdropshipping.com%20OR%20site%3Azendrop.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aspocket.co%20OR%20site%3Adoba.com%20OR%20site%3Asalehoo.com%20OR%20site%3Awholesale2b.com%20OR%20site%3Amodalyst.co%20OR%20site%3Asyncee.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aautods.com%20OR%20site%3Ainventorysource.com%20OR%20site%3Adropified.com%20OR%20site%3Adsers.com%20OR%20site%3Atrendsi.com%20OR%20site%3Ausadrop.com)",
+              "https://www.google.com/search?q=%22Owned%20menu%20product%22"
+            ],
+            "scope": "Real native menu/chooser and actual Chrome pending/committed target URLs; DNS-refused engineering destinations, no claim remote results loaded"
+          }
+        },
+        {
+          "id": "N38-selection",
+          "description": "Actual selected-text context menu searches the selection rather than the tab title",
+          "status": "PASS",
+          "elapsedMs": 1359,
+          "details": {
+            "selection": "Selection Model 076",
+            "queries": [
+              "\"Selection Model 076\" (site:mercadolibre.com.mx OR site:aliexpress.com OR site:temu.com OR site:banggood.com OR site:taobao.com OR site:tmall.com)",
+              "\"Selection Model 076\" (site:printify.com OR site:printful.com OR site:gelato.com OR site:tapstitch.com)",
+              "\"Selection Model 076\" reddit",
+              "\"Selection Model 076\" (site:amazon.ca OR site:amazon.com.mx OR site:walmart.ca OR site:walmart.com.mx OR site:lightinthebox.com OR site:shein.com OR site:amazon.com OR site:ebay.com OR site:walmart.com)",
+              "\"Selection Model 076\" (site:dropcommerce.com OR site:dropi.com.mx OR site:sourcinbox.com OR site:hypersku.com OR site:cjdropshipping.com OR site:zendrop.com)",
+              "\"Selection Model 076\" (site:spocket.co OR site:doba.com OR site:salehoo.com OR site:wholesale2b.com OR site:modalyst.co OR site:syncee.com)",
+              "\"Selection Model 076\" (site:autods.com OR site:inventorysource.com OR site:dropified.com OR site:dsers.com OR site:trendsi.com OR site:usadrop.com)",
+              "\"Selection Model 076\""
+            ]
+          }
+        },
+        {
+          "id": "N38-store",
+          "description": "Actual store context menu offers domain-scoped destinations without opening them before selection",
+          "status": "PASS",
+          "elapsedMs": 1400,
+          "details": {
+            "choices": 7,
+            "openedBeforeSelection": 0,
+            "openedAfterSelection": 1,
+            "destination": "https://www.google.com/search?q=%22fixture.example.com%22%20site%3Abbb.org"
+          }
+        },
+        {
+          "id": "N38-image",
+          "description": "Actual image context menu preserves the chosen public image URL and sends nothing before destination selection",
+          "status": "PASS",
+          "elapsedMs": 1317,
+          "details": {
+            "imageUrl": "https://fixture.example.com/menu-image.png",
+            "destination": "https://lens.google.com/uploadbyurl?url=https%3A%2F%2Ffixture.example.com%2Fmenu-image.png",
+            "openedBeforeSelection": 0,
+            "openedAfterSelection": 1,
+            "scope": "Actual selected destination URL, intercepted HTTP; no image URL sent externally"
+          }
+        },
+        {
+          "id": "N36",
+          "description": "32 quiet background tabs cause no toast flood, registration growth or unsolicited investigation",
+          "status": "PASS",
+          "elapsedMs": 10545,
+          "details": {
+            "backgroundTabs": 32,
+            "beforeRss": {
+              "processCount": 11,
+              "rssKiB": 1586368,
+              "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+            },
+            "loadedRss": {
+              "processCount": 43,
+              "rssKiB": 6241252,
+              "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+            },
+            "afterCloseRss": {
+              "processCount": 11,
+              "rssKiB": 1552488,
+              "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+            },
+            "idle": {
+              "elapsedMs": 5347,
+              "pageTaskSeconds": 0.003188,
+              "panelTaskSeconds": 0.014537999999999999,
+              "pageHeapBytes": 3165612,
+              "panelHeapBytes": 2931560
+            },
+            "scope": "Owned quiet pages,5-second observed idle interval, DevTools-attached page/panel; descriptive measurements, not real-page CPU or a population/performance budget pass"
+          }
+        },
+        {
+          "id": "N15",
+          "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields",
+          "status": "PASS",
+          "elapsedMs": 1017,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3643,
+            "product": {
+              "url": "https://fixture.example.com/products/mug",
+              "title": "Fixture mug",
+              "brand": "",
+              "model": "",
+              "gtin": "012345678905",
+              "capturedAt": "2026-10-12T21:54:32.296Z"
+            }
+          }
+        },
+        {
+          "id": "N16",
+          "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports",
+          "status": "PASS",
+          "elapsedMs": 6557,
+          "details": {
+            "status": "This looks like a sign-in or payment page, so DropShredder is staying out of it.",
+            "raw": ""
+          }
+        },
+        {
+          "id": "N17",
+          "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it",
+          "status": "PASS",
+          "elapsedMs": 3588
+        },
+        {
+          "id": "N18",
+          "description": "Rapid tab switching invalidates reports and scans the actual active product tab",
+          "status": "PASS",
+          "elapsedMs": 1041
+        },
+        {
+          "id": "N19",
+          "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs",
+          "status": "PASS",
+          "elapsedMs": 3067
+        },
+        {
+          "id": "N20",
+          "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection",
+          "status": "PASS",
+          "elapsedMs": 1961
+        },
+        {
+          "id": "N25",
+          "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title",
+          "status": "PASS",
+          "elapsedMs": 1028,
+          "details": {
+            "scope": "Owned intercepted Amazon page; live store remains separately observed"
+          }
+        },
+        {
+          "id": "N21",
+          "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational",
+          "status": "PASS",
+          "elapsedMs": 4433,
+          "details": {
+            "scope": "Owned intercepted RDAP response, not live provider accuracy"
+          }
+        },
+        {
+          "id": "N22",
+          "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query",
+          "status": "PASS",
+          "elapsedMs": 4907,
+          "details": {
+            "scope": "Owned intercepted CPSC notice, exact unit still unverified"
+          }
+        },
+        {
+          "id": "N23",
+          "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls",
+          "status": "PASS",
+          "elapsedMs": 5660
+        },
+        {
+          "id": "N50",
+          "description": "Native weekly ON/OFF creates and removes a real Chrome alarm without an immediate feed request",
+          "status": "PASS",
+          "elapsedMs": 925,
+          "details": {
+            "registered": {
+              "name": "dropshredder-signed-feed-weekly-check-v1",
+              "periodInMinutes": 1440,
+              "persistAcrossSessions": true,
+              "scheduledTime": 1791843008563.982
+            },
+            "scope": "Actual opt-in/alarm lifecycle in an owned signed-feed profile; no simulated alarm, elapsed week or real publisher claim"
+          }
+        },
+        {
+          "id": "N26",
+          "description": "Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions",
+          "status": "PASS",
+          "elapsedMs": 4428,
+          "details": {
+            "scope": "Ephemeral owned Ed25519 test key; genuine native panel controls; no real issuer authenticated",
+            "signedVersion": 4
+          }
+        },
+        {
+          "id": "N27",
+          "description": "Chrome file-input dispatch previews JSON without saving and rejects malformed local files",
+          "status": "PASS",
+          "elapsedMs": 271,
+          "details": {
+            "scope": "Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested"
+          }
+        },
+        {
+          "id": "N30",
+          "description": "Native origin file requires user review, exact seller/product scope and eight fresh stages without score changes",
+          "status": "PASS",
+          "elapsedMs": 2076,
+          "details": {
+            "scope": "Real native panel / CDP file input on owned synthetic source records; no source authentication or OS picker claim"
+          }
+        },
+        {
+          "id": "N31",
+          "description": "Native regional map filters Mexico without source requests or trust scores",
+          "status": "PASS",
+          "elapsedMs": 1218,
+          "details": {
+            "records": 34,
+            "filtered": 18,
+            "automaticSourceRequests": 0
+          }
+        },
+        {
+          "id": "N32",
+          "description": "Native standing rating requires source review and entity binding; categories are local and navigation clears the rating",
+          "status": "PASS",
+          "elapsedMs": 4246,
+          "details": {
+            "sources": 32,
+            "dimensions": 7,
+            "automaticSourceRequests": 0,
+            "scope": "User-confirmed entity and synthetic records in real native Chrome panel; no real company certified"
+          }
+        },
+        {
+          "id": "N33",
+          "description": "Native litigation preview shows scope and pending allegations; a later vacatur removes unresolved context",
+          "status": "PASS",
+          "elapsedMs": 3629,
+          "details": {
+            "scope": "Synthetic docket in actual native panel; no real case authenticity or comprehensive court coverage claimed",
+            "automaticSourceRequests": 0
+          }
+        },
+        {
+          "id": "N28",
+          "description": "Packaged local OCR engine and language data exist without making a remote request at panel startup",
+          "status": "PASS",
+          "elapsedMs": 37,
+          "details": {
+            "files": [
+              {
+                "path": "ocr/tesseract.min.js",
+                "bytes": 62953
+              },
+              {
+                "path": "ocr/worker.min.js",
+                "bytes": 111280
+              },
+              {
+                "path": "ocr/eng.traineddata.gz",
+                "bytes": 1976293
+              },
+              {
+                "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm.js",
+                "bytes": 3905767
+              },
+              {
+                "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm",
+                "bytes": 2862266
+              }
+            ],
+            "scope": "Packaged local assets, not accuracy or photographed-label recognition"
+          }
+        },
+        {
+          "id": "N29",
+          "description": "Actual native panel invokes bundled offline OCR on a synthetic local image",
+          "status": "PASS",
+          "elapsedMs": 535,
+          "details": {
+            "scope": "Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested",
+            "output": "Barcodes read: 0; text lines: 1. Barcode support: unavailable. OCR support: available.Recognized text (unverified): PRODUCT 12345Search sources for this text"
+          }
+        },
+        {
+          "id": "N39",
+          "description": "Changing the selected OCR language cancels or invalidates pending results and the next native read recovers",
+          "status": "FAIL",
+          "elapsedMs": 1390,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+        },
+        {
+          "id": "N24",
+          "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict",
+          "status": "PASS",
+          "elapsedMs": 2498,
+          "details": {
+            "endpoint": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+            "scope": "Live public CC0 identity record only; not merchant/product attribution"
+          }
+        },
+        {
+          "id": "N51",
+          "description": "Native optional Brave empty-key request refuses without sending an API request",
+          "status": "PASS",
+          "elapsedMs": 1894,
+          "details": {
+            "status": "Enter a valid API key.",
+            "scope": "Real native refusal with absent key; no authorized successful provider key supplied"
+          }
+        },
+        {
+          "id": "N53",
+          "description": "Native return-policy button reads a bounded same-origin policy and displays its actual findings",
+          "status": "PASS",
+          "elapsedMs": 924,
+          "details": {
+            "status": "Return-policy findings to review before buying: 3.",
+            "evidence": [
+              "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "PRODUCT_IDENTIFIERS_PRESENT",
+              "SUPPLY_CHAIN_PROFILE",
+              "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+              "RESTOCKING_FEE",
+              "VERY_SHORT_RETURN_WINDOW"
+            ],
+            "scope": "Owned policy text served to the unchanged installed beta"
+          }
+        },
+        {
+          "id": "N54",
+          "description": "Native non200 return-policy action reports the HTTP status rather than a script-scope error",
+          "status": "FAIL",
+          "elapsedMs": 983,
+          "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /503/. Input:\n\n'The return policy couldn’t be read clearly enough to judge.'\n"
+        },
+        {
+          "id": "N55",
+          "description": "Native shipping action keeps an explicit origin informational without accusing a country",
+          "status": "PASS",
+          "elapsedMs": 926,
+          "details": {
+            "status": "The shipping origin doesn’t contradict what the seller says.",
+            "origin": {
+              "id": "FULFILLMENT_ORIGIN_OBSERVATION",
+              "family": "fulfillment",
+              "severity": "info",
+              "confidence": 0.76,
+              "weight": 0,
+              "title": "Explicit shipment-origin evidence captured",
+              "explanation": "The active tracking/fulfillment page explicitly exposed a shipment origin. This is informational unless it conflicts with a seller claim.",
+              "observedValue": "Toronto, Canada to Chicago, USA. Return policy • UPS",
+              "independentKey": "fulfillment-origin-observation"
+            }
+          }
+        },
+        {
+          "id": "N56",
+          "description": "Native evidence search and informational filter change visible rows and restore the full list",
+          "status": "PASS",
+          "elapsedMs": 3072,
+          "details": {
+            "total": 6,
+            "count": "6 of 6 displayed items shown."
+          }
+        },
+        {
+          "id": "M-en",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1589,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "en",
+            "url": "https://fixture.example.com/languages/en/detail/products/lamp",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T21:58:50.187Z",
+              "claims": [
+                "Handmade",
+                "Only 3 left"
+              ],
+              "currency": "USD",
+              "description": "Ceramic 12 cm",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/en/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "Delivery: 12–20 business days",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "Ceramic table lamp",
+              "url": "https://fixture.example.com/languages/en/detail/products/lamp",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "Delivery: 12–20 business days"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "Only 3 left"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "Customers pay international return costs. Return"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "restocking fee of 25%"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "Return within 3 days"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-en",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1306,
+          "details": {
+            "url": "https://fixture.example.com/languages/en/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "USD",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-en",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13234,
+          "details": {
+            "paths": [
+              "/collections/lamps",
+              "/blog/lamp",
+              "/account"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-zh",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1583,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "zh",
+            "url": "https://fixture.example.com/languages/zh/detail/%E5%95%86%E5%93%81/%E5%8F%B0%E7%81%AF",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T21:59:06.307Z",
+              "claims": [
+                "手工制作",
+                "仅剩３件"
+              ],
+              "currency": "CNY",
+              "description": "陶瓷 １２ 厘米",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/zh/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "配送：１２–２０工作日",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "陶瓷台灯",
+              "url": "https://fixture.example.com/languages/zh/detail/%E5%95%86%E5%93%81/%E5%8F%B0%E7%81%AF",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "配送：１２–２０工作日"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "仅剩３件"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "３天内退货"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "买家承担国际退货费用。３天内退货"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "补货费２５%"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-zh",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1312,
+          "details": {
+            "url": "https://fixture.example.com/languages/zh/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "CNY",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-zh",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13273,
+          "details": {
+            "paths": [
+              "/分类/灯具",
+              "/blog/lamp",
+              "/账户"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-hi",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1578,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "hi",
+            "url": "https://fixture.example.com/languages/hi/detail/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%BE%E0%A4%A6/%E0%A4%B2%E0%A5%88%E0%A4%82%E0%A4%AA",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T21:59:22.472Z",
+              "claims": [
+                "हस्तनिर्मित",
+                "केवल ३ बचे"
+              ],
+              "currency": "INR",
+              "description": "सिरेमिक १२ सेंटीमीटर",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/hi/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "डिलीवरी: १२–२० कार्य दिवस",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "सिरेमिक टेबल लैंप",
+              "url": "https://fixture.example.com/languages/hi/detail/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%BE%E0%A4%A6/%E0%A4%B2%E0%A5%88%E0%A4%82%E0%A4%AA",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "डिलीवरी: १२–२० कार्य दिवस"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "केवल ३ बचे"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "३ दिन के भीतर वापसी"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "ग्राहक भुगतान करता है अंतरराष्ट्रीय वापसी"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "रीस्टॉकिंग शुल्क २५%"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-hi",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1309,
+          "details": {
+            "url": "https://fixture.example.com/languages/hi/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "INR",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-hi",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13263,
+          "details": {
+            "paths": [
+              "/संग्रह/लैंप",
+              "/blog/lamp",
+              "/खाता"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-es",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1579,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "es",
+            "url": "https://fixture.example.com/languages/es/detail/productos/lampara",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T21:59:38.622Z",
+              "claims": [
+                "Hecho a mano",
+                "Solo quedan 3"
+              ],
+              "currency": "EUR",
+              "description": "Cerámica 12 centímetros",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/es/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "Entrega: 12–20 días laborables",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "Lámpara de mesa de cerámica",
+              "url": "https://fixture.example.com/languages/es/detail/productos/lampara",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "Entrega: 12–20 días laborables"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "Solo quedan 3"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "El cliente paga la devolución internacional. Devoluciones"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "Tarifa de reposición del 25%"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "Devoluciones dentro de 3 días"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-es",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1311,
+          "details": {
+            "url": "https://fixture.example.com/languages/es/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "EUR",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-es",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13275,
+          "details": {
+            "paths": [
+              "/colecciones/lamparas",
+              "/blog/lamp",
+              "/cuenta"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-ar",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1558,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "ar",
+            "url": "https://fixture.example.com/languages/ar/detail/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/%D9%85%D8%B5%D8%A8%D8%A7%D8%AD",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T21:59:54.768Z",
+              "claims": [
+                "مصنوع يدويًا",
+                "بقي ٣ فقط"
+              ],
+              "currency": "SAR",
+              "description": "سيراميك ١٢ سنتيمتر",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/ar/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "التوصيل: ١٢–٢٠ أيام عمل",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "مصباح طاولة سيراميك",
+              "url": "https://fixture.example.com/languages/ar/detail/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/%D9%85%D8%B5%D8%A8%D8%A7%D8%AD",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "التوصيل: ١٢–٢٠ أيام عمل"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "بقي ٣ فقط"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "يدفع العميل تكلفة إرجاع دولي. الإرجاع"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "رسوم إعادة التخزين ٢٥%"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "الإرجاع خلال ٣ أيام"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-ar",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1312,
+          "details": {
+            "url": "https://fixture.example.com/languages/ar/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "SAR",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-ar",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13285,
+          "details": {
+            "paths": [
+              "/فئات/مصابيح",
+              "/blog/lamp",
+              "/حساب"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-fr",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1573,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "fr",
+            "url": "https://fixture.example.com/languages/fr/detail/produits/lampe",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T22:00:10.934Z",
+              "claims": [
+                "Fait main",
+                "Il ne reste que 3"
+              ],
+              "currency": "EUR",
+              "description": "Céramique 12 centimètres",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/fr/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "Livraison : 12–20 jours ouvrés",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "Lampe de table en céramique",
+              "url": "https://fixture.example.com/languages/fr/detail/produits/lampe",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "Livraison : 12–20 jours ouvrés"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "Il ne reste que 3"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "Le client paie le retour international. Retours"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "Frais de restockage de 25%"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "Retours sous 3 jours"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-fr",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1313,
+          "details": {
+            "url": "https://fixture.example.com/languages/fr/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "EUR",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-fr",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13299,
+          "details": {
+            "paths": [
+              "/catégories/lampes",
+              "/blog/lamp",
+              "/compte"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-bn",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1572,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "bn",
+            "url": "https://fixture.example.com/languages/bn/detail/%E0%A6%AA%E0%A6%A3%E0%A7%8D%E0%A6%AF/%E0%A6%AC%E0%A6%BE%E0%A6%A4%E0%A6%BF",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T22:00:27.121Z",
+              "claims": [
+                "হাতে তৈরি",
+                "মাত্র ৩টি বাকি"
+              ],
+              "currency": "BDT",
+              "description": "সিরামিক ১২ সেন্টিমিটার",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/bn/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "ডেলিভারি: ১২–২০ কর্মদিবস",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "সিরামিক টেবিল বাতি",
+              "url": "https://fixture.example.com/languages/bn/detail/%E0%A6%AA%E0%A6%A3%E0%A7%8D%E0%A6%AF/%E0%A6%AC%E0%A6%BE%E0%A6%A4%E0%A6%BF",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "ডেলিভারি: ১২–২০ কর্মদিবস"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "মাত্র ৩টি বাকি"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "৩ দিনের মধ্যে ফেরত"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "ক্রেতা পরিশোধ করে আন্তর্জাতিক ফেরত"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "পুনঃমজুত ফি ২৫%"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-bn",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1323,
+          "details": {
+            "url": "https://fixture.example.com/languages/bn/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "BDT",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-bn",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13293,
+          "details": {
+            "paths": [
+              "/সংগ্রহ/বাতি",
+              "/blog/lamp",
+              "/অ্যাকাউন্ট"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-pt-BR",
+          "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+          "status": "PASS",
+          "elapsedMs": 1566,
+          "details": {
+            "uiLanguage": "en-US",
+            "merchantLanguage": "pt-BR",
+            "url": "https://fixture.example.com/languages/pt-BR/detail/produtos/luminaria",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T22:00:43.301Z",
+              "claims": [
+                "Feito à mão",
+                "Restam apenas 3"
+              ],
+              "currency": "BRL",
+              "description": "Cerâmica 12 centímetros",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/pt-BR/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "Entrega: 12–20 dias úteis",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "Luminária de mesa de cerâmica",
+              "url": "https://fixture.example.com/languages/pt-BR/detail/produtos/luminaria",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            },
+            "evidence": [
+              {
+                "id": "LONG_SHIPPING_WINDOW",
+                "weight": 10,
+                "observedValue": "Entrega: 12–20 dias úteis"
+              },
+              {
+                "id": "SCARCITY_LANGUAGE",
+                "weight": 4,
+                "observedValue": "Restam apenas 3"
+              },
+              {
+                "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+                "weight": 9,
+                "observedValue": "O cliente paga a devolução internacional. Devoluções"
+              },
+              {
+                "id": "RESTOCKING_FEE",
+                "weight": 8,
+                "observedValue": "Taxa de reposição de 25%"
+              },
+              {
+                "id": "VERY_SHORT_RETURN_WINDOW",
+                "weight": 9,
+                "observedValue": "Devoluções dentro de 3 dias"
+              },
+              {
+                "id": "PRODUCT_IDENTIFIERS_PRESENT",
+                "weight": 0,
+                "observedValue": "012345678905, lamp-123, model-123"
+              },
+              {
+                "id": "REVIEW_TEXT_DUPLICATION",
+                "weight": 19,
+                "observedValue": "6 high-similarity review pair(s)"
+              },
+              {
+                "id": "SUPPLY_CHAIN_PROFILE",
+                "weight": 0,
+                "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+              },
+              {
+                "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+                "weight": 0,
+                "observedValue": "fixture.example.net: gtin"
+              }
+            ],
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": 5,
+              "deceptionRisk": "low",
+              "merchantRisk": "low",
+              "manipulationRisk": "moderate",
+              "fulfillmentRisk": "low",
+              "severeWarningAllowed": false,
+              "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+            },
+            "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+          }
+        },
+        {
+          "id": "P-pt-BR",
+          "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+          "status": "PASS",
+          "elapsedMs": 1325,
+          "details": {
+            "url": "https://fixture.example.com/languages/pt-BR/plain/unique-model-123",
+            "price": 1234.56,
+            "currency": "BRL",
+            "structuredIdentityResolved": false
+          }
+        },
+        {
+          "id": "Q-pt-BR",
+          "description": "Localized collection, editorial, home and private pages remain quiet",
+          "status": "PASS",
+          "elapsedMs": 13304,
+          "details": {
+            "paths": [
+              "/coleções/lampadas",
+              "/blog/lamp",
+              "/conta"
+            ],
+            "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+          }
+        },
+        {
+          "id": "M-browser-translated",
+          "description": "Visible French heading with unchanged English schema retains exact original identifiers",
+          "status": "PASS",
+          "elapsedMs": 523,
+          "details": {
+            "scope": "Owned modeled translated-DOM state, not a Google Translate service test",
+            "product": {
+              "brand": "灯品牌",
+              "capturedAt": "2026-10-12T22:00:58.518Z",
+              "claims": [
+                "Fait main",
+                "Il ne reste que 3"
+              ],
+              "currency": "EUR",
+              "description": "Céramique 12 centimètres",
+              "domain": "fixture.example.com",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "originalStructuredTitle": "Ceramic table lamp",
+                "structuredIdentityResolved": true
+              },
+              "gtin": "012345678905",
+              "imageUrls": [
+                "https://fixture.example.com/languages/fr/hero"
+              ],
+              "jsonLdProductCount": 1,
+              "mpn": "LAMP-123",
+              "pageSignals": [],
+              "price": 1234.56,
+              "shippingText": "Livraison : 12–20 jours ouvrés",
+              "sku": "MODEL-123",
+              "specifications": {},
+              "title": "Lampe de table en céramique",
+              "url": "https://fixture.example.com/languages/fr/translated/produits/lampe",
+              "variantId": "MODEL-123",
+              "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+            }
+          }
+        },
+        {
+          "id": "M-large",
+          "description": "Bounded manual scan of a 20,000-element original-language product page",
+          "status": "PASS",
+          "elapsedMs": 859,
+          "details": {
+            "elements": 20000,
+            "elapsedMs": 608,
+            "scope": "Owned large fixture; wall time includes panel/IPC/intelligence, not isolated CPU benchmark"
+          }
+        },
+        {
+          "id": "O-chi_sim",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1505,
+          "details": {
+            "language": "chi_sim",
+            "text": "产品型号 测试",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): 产品 型 号 测试Recognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-hin",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1522,
+          "details": {
+            "language": "hin",
+            "text": "उत्पाद मॉडल",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): उत्पाद मॉडलRecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-spa",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1626,
+          "details": {
+            "language": "spa",
+            "text": "MODELO PRODUCTO",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): MODELO PRODUCTORecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-ara",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1842,
+          "details": {
+            "language": "ara",
+            "text": "نموذج المنتج",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): نموذج المنتجRecognized text (unverified): ‎MODEL12345‏Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-fra",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1861,
+          "details": {
+            "language": "fra",
+            "text": "MODÈLE PRODUIT",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): MODELE PRODUITRecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-ben",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 1981,
+          "details": {
+            "language": "ben",
+            "text": "পণ্যের মডেল",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): পণ্যের মডেলRecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-por",
+          "description": "Native reader selects a packaged offline language model on a synthetic local label",
+          "status": "PASS",
+          "elapsedMs": 2092,
+          "details": {
+            "language": "por",
+            "text": "MODELO PRODUTO",
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): MODELO PRODUTORecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+          }
+        },
+        {
+          "id": "O-hin-original",
+          "description": "Original failed label preserves both native text and the literal Latin model identifier",
+          "status": "PASS",
+          "elapsedMs": 1468,
+          "details": {
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): उत्पाद मॉडलRecognized text (unverified): MODEL12345Search sources for this text",
+            "scope": "Unchanged original failed synthetic image, selected script, native panel; no independent photo accuracy claim"
+          }
+        },
+        {
+          "id": "O-ara-original",
+          "description": "Original failed label preserves both native text and the literal Latin model identifier",
+          "status": "PASS",
+          "elapsedMs": 1794,
+          "details": {
+            "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): نموذج المنتجRecognized text (unverified): ‎MODEL12345‏Search sources for this text",
+            "scope": "Unchanged original failed synthetic image, selected script, native panel; no independent photo accuracy claim"
+          }
+        },
+        {
+          "id": "N12",
+          "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+          "status": "PASS",
+          "elapsedMs": 9720,
+          "details": {
+            "status": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages.",
+            "raw": ""
+          }
+        },
+        {
+          "id": "N13",
+          "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+          "status": "PASS",
+          "elapsedMs": 5101
+        },
+        {
+          "id": "N14",
+          "description": "Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins",
+          "status": "PASS",
+          "elapsedMs": 3
+        },
+        {
+          "id": "N37",
+          "description": "Actual malformed Chrome storage fails closed across a browser restart and normal native writes recover canonical settings",
+          "status": "PASS",
+          "elapsedMs": 2384,
+          "details": {
+            "faults": {
+              "dropshredder-feature-settings-v1": {
+                "autoProtection": "true",
+                "weeklyIntelligenceUpdates": "true",
+                "autoSourceHunt": 1,
+                "preferMadeInUSA": [],
+                "toneMode": "unsupported"
+              },
+              "dropshredder-display-v1": {
+                "theme": "unsupported",
+                "density": [],
+                "textScale": 9000
+              },
+              "dropshredder-user-lists-v1": {
+                "schemaVersion": 1,
+                "lists": [
+                  {
+                    "current": {
+                      "list": {
+                        "id": "untrusted-invalid",
+                        "version": 999999
+                      },
+                      "authentication": "signed"
+                    }
+                  }
+                ],
+                "keys": [
+                  {
+                    "trusted": true
+                  }
+                ]
+              }
+            },
+            "controls": {
+              "source": false,
+              "auto": false,
+              "weekly": false,
+              "origin": false,
+              "tone": "professional",
+              "theme": "dark",
+              "textScale": "100",
+              "savedLists": "No user-added lists."
+            },
+            "canonical": {
+              "autoProtection": false,
+              "autoSourceHunt": true,
+              "preferMadeInUSA": false,
+              "toneMode": "professional",
+              "weeklyIntelligenceUpdates": false
+            },
+            "scope": "Explicit engineering-only Chrome storage fault and full profile restart, not unmodified independent QA"
+          }
+        }
+      ],
+      "errors": [],
+      "externalRequests": [
+        "https://rdap.verisign.com",
+        "https://rdap.verisign.com",
+        "https://rdap.verisign.com",
+        "https://www.saferproducts.gov",
+        "https://www.saferproducts.gov",
+        "https://www.saferproducts.gov",
+        "https://publisher.example.com",
+        "https://publisher.example.com",
+        "https://publisher.example.com",
+        "https://publisher.example.com",
+        "https://api.gleif.org",
+        "https://rdap.verisign.com",
+        "https://www.saferproducts.gov",
+        "https://tld-rdap.verisign.com",
+        "https://store-usa.arduino.cc",
+        "https://store.arduino.cc",
+        "https://rdap.verisign.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://rdap.verisign.com",
+        "https://resource.logitech.com",
+        "https://rdap.verisign.com",
+        "https://assets.raspberrypi.com"
+      ],
+      "providerRequests": [
+        {
+          "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+          "mode": "delay",
+          "at": "2026-10-12T21:54:51.109Z"
+        },
+        {
+          "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+          "mode": "error",
+          "at": "2026-10-12T21:54:54.132Z"
+        },
+        {
+          "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+          "mode": "normal",
+          "at": "2026-10-12T21:54:54.592Z"
+        },
+        {
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+          "mode": "delay",
+          "at": "2026-10-12T21:54:56.016Z"
+        },
+        {
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+          "mode": "error",
+          "at": "2026-10-12T21:54:59.038Z"
+        },
+        {
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+          "mode": "normal",
+          "at": "2026-10-12T21:54:59.499Z"
+        },
+        {
+          "url": "https://publisher.example.com/products.json",
+          "mode": "normal",
+          "at": "2026-10-12T21:55:01.409Z"
+        },
+        {
+          "url": "https://publisher.example.com/products.json",
+          "mode": "normal",
+          "at": "2026-10-12T21:55:02.795Z"
+        },
+        {
+          "url": "https://publisher.example.com/products.json",
+          "mode": "normal",
+          "at": "2026-10-12T21:55:04.180Z"
+        },
+        {
+          "url": "https://publisher.example.com/products.json",
+          "mode": "normal",
+          "at": "2026-10-12T21:55:07.681Z"
+        }
+      ],
+      "notTested": [
+        "Independent A01-D06 desktop QA",
+        "Live merchant/category accuracy",
+        "malformed storage tested in core, not browser; native context-menu UI; live-store accuracy; RDAP/CPSC live endpoints"
+      ],
+      "packagedSourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+      "fixtureSearchNetworkIsolation": {
+        "hosts": [
+          "www.google.com",
+          "lens.google.com",
+          "www.bing.com",
+          "yandex.com",
+          "tineye.com"
+        ],
+        "scope": "Disposable engineering browser only: owned HTTP routes plus DNS refusal fallback; selected destinations are checked from actual Chrome pending/committed tab URLs, not remote search content"
+      },
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "actionOptions": {
+        "enabled": true,
+        "path": "sidepanel.html"
+      },
+      "actionTargets": [
+        {
+          "type": "service_worker",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+        },
+        {
+          "type": "page",
+          "url": "about:blank"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+        },
+        {
+          "type": "browser_ui",
+          "url": "chrome://omnibox-popup.top-chrome/"
+        },
+        {
+          "type": "page",
+          "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+        }
+      ],
+      "nativeDesktopGeometry": {
+        "bounds": {
+          "left": 10,
+          "top": 10,
+          "width": 1288,
+          "height": 851,
+          "windowState": "normal"
+        },
+        "viewport": {
+          "width": 360,
+          "height": 716
+        },
+        "insetRight": 9,
+        "insetBottom": 8
+      },
+      "permissionExploration": {
+        "status": "EXPLICIT NATIVE DENY THEN ALLOW OBSERVED",
+        "settled": false,
+        "granted": false,
+        "ui": {
+          "checked": true,
+          "disabled": true,
+          "status": "Asking Chrome to allow automatic product alerts…"
+        },
+        "scripts": [],
+        "targets": [
+          {
+            "type": "service_worker",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+          },
+          {
+            "type": "browser_ui",
+            "url": "chrome://omnibox-popup.top-chrome/"
+          },
+          {
+            "type": "page",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+          },
+          {
+            "type": "page",
+            "url": "https://fixture.example.com/products/mug"
+          }
+        ],
+        "afterDecision": {
+          "granted": true,
+          "scripts": [
+            {
+              "allFrames": false,
+              "id": "dropshredder-auto-shopping-v1",
+              "js": [
+                "content-scripts/auto.js"
+              ],
+              "matchOriginAsFallback": false,
+              "matches": [
+                "https://*/*"
+              ],
+              "persistAcrossSessions": true,
+              "runAt": "document_idle",
+              "world": "ISOLATED"
+            }
+          ]
+        }
+      },
+      "contextMenuExploration": {
+        "status": "ACTUAL PAGE/SELECTION/STORE/IMAGE COMMANDS VERIFIED",
+        "scope": "Native Chrome menus and real local choosers; owned public context and intercepted test queries, not independent live-site review"
+      },
+      "resourceObservations": {
+        "backgroundTabs": 32,
+        "beforeRss": {
+          "processCount": 11,
+          "rssKiB": 1586368,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "loadedRss": {
+          "processCount": 43,
+          "rssKiB": 6241252,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "afterCloseRss": {
+          "processCount": 11,
+          "rssKiB": 1552488,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "idle": {
+          "elapsedMs": 5347,
+          "pageTaskSeconds": 0.003188,
+          "panelTaskSeconds": 0.014537999999999999,
+          "pageHeapBytes": 3165612,
+          "panelHeapBytes": 2931560
+        },
+        "scope": "Owned quiet pages,5-second observed idle interval, DevTools-attached page/panel; descriptive measurements, not real-page CPU or a population/performance budget pass"
+      },
+      "liveProviders": [
+        {
+          "id": "BETA-P01",
+          "endpoint": "https://rdap.verisign.com/net/v1/domain/example.net",
+          "status": "OBSERVED_RESPONSE",
+          "scope": "Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy",
+          "uiMessage": "Domain registration information retrieved. It does not establish the business’s age.",
+          "observation": "registered domain example.net • registered 1995-08-31 • registrar RESERVED-Internet Assigned Numbers Authority",
+          "elapsedMs": 462
+        },
+        {
+          "id": "BETA-P02",
+          "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+          "query": "RecallTitle=Anker",
+          "status": "EXTERNAL_BLOCKER_OR_ABSTENTION",
+          "uiMessage": "signal timed out",
+          "notices": [],
+          "scope": "Live incomplete candidate feed; no unit or product safety verification"
+        }
+      ],
+      "liveSurfaces": [
+        {
+          "kind": "direct manufacturer / cooling fan",
+          "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "expected": "NF-A12x25",
+          "startedAt": "2026-10-12T21:55:35.602Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 429,
+          "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "finishedAt": "2026-10-12T21:55:38.248Z"
+        },
+        {
+          "kind": "Amazon / cooling fan",
+          "url": "https://www.amazon.com/dp/B0FC636JBS",
+          "expected": "Noctua",
+          "startedAt": "2026-10-12T21:55:38.248Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 200,
+          "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+          "finishedAt": "2026-10-12T21:55:40.376Z"
+        },
+        {
+          "kind": "Etsy / ceramic mug",
+          "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "expected": "Mug",
+          "startedAt": "2026-10-12T21:55:40.376Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 403,
+          "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "finishedAt": "2026-10-12T21:55:42.673Z"
+        },
+        {
+          "kind": "Walmart / construction toy",
+          "url": "https://www.walmart.com/ip/41004055",
+          "expected": "LEGO",
+          "startedAt": "2026-10-12T21:55:42.673Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 200,
+          "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+          "panelStatus": "Scan complete for www.walmart.com.",
+          "product": {
+            "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+            "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+            "extraction": {
+              "method": "page metadata; structured identity unresolved",
+              "offerResolved": false,
+              "structuredIdentityResolved": false
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "severity": "info",
+              "weight": 0
+            }
+          ],
+          "resources": {
+            "status": "OBSERVED",
+            "intervalMs": 5001,
+            "taskSeconds": 0.098794,
+            "scriptSeconds": 0.016965,
+            "heapBytes": 95320748,
+            "dom": {
+              "elements": 5787,
+              "scrollHeight": 7818,
+              "viewport": 720
+            },
+            "scrollFrameMs": 5,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          },
+          "finishedAt": "2026-10-12T21:55:54.073Z"
+        }
+      ],
+      "betaLiveTests": [
+        {
+          "id": "LIVE-01-scan",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-export",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-policy",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-shipping",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-evidence",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-domain",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-sources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-image",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-store",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-reputation",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-01-resources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 429
+        },
+        {
+          "id": "LIVE-02-scan",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-export",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-policy",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-shipping",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-evidence",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-domain",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-sources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-image",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-store",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-reputation",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-02-resources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-03-scan",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-export",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-policy",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-shipping",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-evidence",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-domain",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-sources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-image",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-store",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-reputation",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-03-resources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-04-scan",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-export",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-policy",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-shipping",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-evidence",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-domain",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-sources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-image",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-store",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-reputation",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-04-resources",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 200
+        },
+        {
+          "id": "LIVE-05-scan",
+          "status": "PASS",
+          "elapsedMs": 1287,
+          "details": {
+            "product": {
+              "url": "https://store-usa.arduino.cc/products/arduino-uno-rev3",
+              "title": "Arduino Uno Rev3",
+              "sku": "A000066",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": false,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "low",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+            },
+            "toastCount": 1,
+            "language": "en"
+          }
+        },
+        {
+          "id": "LIVE-05-export",
+          "status": "PASS",
+          "elapsedMs": 781,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 6015,
+            "productUrl": "https://store-usa.arduino.cc/products/arduino-uno-rev3",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-05-policy",
+          "status": "PASS",
+          "elapsedMs": 775,
+          "details": {
+            "message": "Return-policy findings to review before buying: 1.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-05-shipping",
+          "status": "PASS",
+          "elapsedMs": 466,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-05-evidence",
+          "status": "PASS",
+          "elapsedMs": 1175,
+          "details": {
+            "count": "7 of 7 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-05-domain",
+          "status": "PASS",
+          "elapsedMs": 468,
+          "details": {
+            "observation": "registered domain arduino.cc • registered 2005-10-26 • registrar MarkMonitor Inc.",
+            "source": "https://tld-rdap.verisign.com/cc/v1/domain/arduino.cc"
+          }
+        },
+        {
+          "id": "LIVE-05-sources",
+          "status": "PASS",
+          "elapsedMs": 577,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-05-image",
+          "status": "PASS",
+          "elapsedMs": 579,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-05-store",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-05-reputation",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-05-resources",
+          "status": "PASS",
+          "elapsedMs": 5040,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5003,
+            "taskSeconds": 0.022150000000000003,
+            "scriptSeconds": 0.005087,
+            "heapBytes": 42833384,
+            "dom": {
+              "elements": 2724,
+              "scrollHeight": 13124,
+              "viewport": 720
+            },
+            "scrollFrameMs": 31,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-06-scan",
+          "status": "PASS",
+          "elapsedMs": 1275,
+          "details": {
+            "product": {
+              "url": "https://store.arduino.cc/products/arduino-uno-rev3",
+              "title": "Arduino Uno Rev3",
+              "sku": "A000066",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": false,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "low",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+            },
+            "toastCount": 1,
+            "language": "en"
+          }
+        },
+        {
+          "id": "LIVE-06-export",
+          "status": "PASS",
+          "elapsedMs": 776,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 6537,
+            "productUrl": "https://store.arduino.cc/products/arduino-uno-rev3",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-06-policy",
+          "status": "PASS",
+          "elapsedMs": 882,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-06-shipping",
+          "status": "PASS",
+          "elapsedMs": 467,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-06-evidence",
+          "status": "PASS",
+          "elapsedMs": 1185,
+          "details": {
+            "count": "8 of 8 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-06-domain",
+          "status": "PASS",
+          "elapsedMs": 464,
+          "details": {
+            "observation": "registered domain arduino.cc • registered 2005-10-26 • registrar MarkMonitor Inc.",
+            "source": "https://tld-rdap.verisign.com/cc/v1/domain/arduino.cc"
+          }
+        },
+        {
+          "id": "LIVE-06-sources",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-06-image",
+          "status": "PASS",
+          "elapsedMs": 577,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-06-store",
+          "status": "PASS",
+          "elapsedMs": 576,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-06-reputation",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-06-resources",
+          "status": "PASS",
+          "elapsedMs": 5031,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5002,
+            "taskSeconds": 0.017028,
+            "scriptSeconds": 0.002456,
+            "heapBytes": 35482516,
+            "dom": {
+              "elements": 2654,
+              "scrollHeight": 13491,
+              "viewport": 720
+            },
+            "scrollFrameMs": 24,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-07-scan",
+          "status": "PASS",
+          "elapsedMs": 1553,
+          "details": {
+            "product": {
+              "url": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
+              "title": "KALLAX Shelf unit - white 77x77 cm (30 1/8x30 1/8 \")",
+              "price": 59.99,
+              "currency": "CAD",
+              "sku": "206.316.39",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 1,
+            "language": "en-CA"
+          }
+        },
+        {
+          "id": "LIVE-07-export",
+          "status": "PASS",
+          "elapsedMs": 775,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3596,
+            "productUrl": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-07-policy",
+          "status": "PASS",
+          "elapsedMs": 786,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-07-shipping",
+          "status": "PASS",
+          "elapsedMs": 467,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-07-evidence",
+          "status": "PASS",
+          "elapsedMs": 1175,
+          "details": {
+            "count": "3 of 3 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-07-domain",
+          "status": "PASS",
+          "elapsedMs": 567,
+          "details": {
+            "observation": "registered domain ikea.com • registered 1995-07-29 • registrar CSC Corporate Domains, Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/ikea.com"
+          }
+        },
+        {
+          "id": "LIVE-07-sources",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-07-image",
+          "status": "PASS",
+          "elapsedMs": 579,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-07-store",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-07-reputation",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-07-resources",
+          "status": "PASS",
+          "elapsedMs": 5056,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5003,
+            "taskSeconds": 0.184049,
+            "scriptSeconds": 0.009457,
+            "heapBytes": 45322956,
+            "dom": {
+              "elements": 1955,
+              "scrollHeight": 7551,
+              "viewport": 720
+            },
+            "scrollFrameMs": 45,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-08-scan",
+          "status": "PASS",
+          "elapsedMs": 2642,
+          "details": {
+            "product": {
+              "url": "https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/",
+              "title": "KALLAX Estante - negro-café 77x147 cm",
+              "price": 1999,
+              "currency": "MXN",
+              "sku": "202.758.85",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 0,
+            "language": "es-MX"
+          }
+        },
+        {
+          "id": "LIVE-08-export",
+          "status": "PASS",
+          "elapsedMs": 782,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 4906,
+            "productUrl": "https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-08-policy",
+          "status": "PASS",
+          "elapsedMs": 691,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-08-shipping",
+          "status": "PASS",
+          "elapsedMs": 465,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-08-evidence",
+          "status": "PASS",
+          "elapsedMs": 1177,
+          "details": {
+            "count": "4 of 4 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-08-domain",
+          "status": "PASS",
+          "elapsedMs": 465,
+          "details": {
+            "observation": "registered domain ikea.com • registered 1995-07-29 • registrar CSC Corporate Domains, Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/ikea.com"
+          }
+        },
+        {
+          "id": "LIVE-08-sources",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-08-image",
+          "status": "PASS",
+          "elapsedMs": 579,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-08-store",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-08-reputation",
+          "status": "PASS",
+          "elapsedMs": 579,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-08-resources",
+          "status": "PASS",
+          "elapsedMs": 5043,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5003,
+            "taskSeconds": 0.22698400000000002,
+            "scriptSeconds": 0.000422,
+            "heapBytes": 67555548,
+            "dom": {
+              "elements": 2501,
+              "scrollHeight": 720,
+              "viewport": 720
+            },
+            "scrollFrameMs": 34,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-09-scan",
+          "status": "PASS",
+          "elapsedMs": 1448,
+          "details": {
+            "product": {
+              "url": "https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/",
+              "title": "KALLAX Étagère - blanc 42x41 cm",
+              "sku": "203.015.54",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 1,
+            "language": "fr-FR"
+          }
+        },
+        {
+          "id": "LIVE-09-export",
+          "status": "PASS",
+          "elapsedMs": 776,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3542,
+            "productUrl": "https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-09-policy",
+          "status": "PASS",
+          "elapsedMs": 673,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-09-shipping",
+          "status": "PASS",
+          "elapsedMs": 465,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-09-evidence",
+          "status": "PASS",
+          "elapsedMs": 1179,
+          "details": {
+            "count": "3 of 3 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-09-domain",
+          "status": "PASS",
+          "elapsedMs": 465,
+          "details": {
+            "observation": "registered domain ikea.com • registered 1995-07-29 • registrar CSC Corporate Domains, Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/ikea.com"
+          }
+        },
+        {
+          "id": "LIVE-09-sources",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-09-image",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-09-store",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-09-reputation",
+          "status": "PASS",
+          "elapsedMs": 581,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-09-resources",
+          "status": "PASS",
+          "elapsedMs": 5054,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5002,
+            "taskSeconds": 0.21373799999999998,
+            "scriptSeconds": 0.000166,
+            "heapBytes": 16867220,
+            "dom": {
+              "elements": 1783,
+              "scrollHeight": 8049,
+              "viewport": 720
+            },
+            "scrollFrameMs": 45,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-10-scan",
+          "status": "PASS",
+          "elapsedMs": 1374,
+          "details": {
+            "product": {
+              "url": "https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/",
+              "title": "KALLAX وحدة أرفف - أبيض ‎112x147 سم‏",
+              "price": 749,
+              "currency": "SAR",
+              "sku": "104.099.32",
+              "extraction": {
+                "method": "current-product JSON-LD",
+                "offerResolved": true,
+                "structuredIdentityResolved": true
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 0,
+            "language": "ar-SA"
+          }
+        },
+        {
+          "id": "LIVE-10-export",
+          "status": "PASS",
+          "elapsedMs": 779,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3130,
+            "productUrl": "https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-10-policy",
+          "status": "PASS",
+          "elapsedMs": 670,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-10-shipping",
+          "status": "PASS",
+          "elapsedMs": 463,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-10-evidence",
+          "status": "PASS",
+          "elapsedMs": 1181,
+          "details": {
+            "count": "2 of 2 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-10-domain",
+          "status": "PASS",
+          "elapsedMs": 465,
+          "details": {
+            "observation": "registered domain ikea.com • registered 1995-07-29 • registrar CSC Corporate Domains, Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/ikea.com"
+          }
+        },
+        {
+          "id": "LIVE-10-sources",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-10-image",
+          "status": "PASS",
+          "elapsedMs": 578,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-10-store",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-10-reputation",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-10-resources",
+          "status": "PASS",
+          "elapsedMs": 5059,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5003,
+            "taskSeconds": 0.25060499999999997,
+            "scriptSeconds": 0.01232,
+            "heapBytes": 69961188,
+            "dom": {
+              "elements": 1739,
+              "scrollHeight": 7705,
+              "viewport": 720
+            },
+            "scrollFrameMs": 45,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-11-scan",
+          "status": "PASS",
+          "elapsedMs": 1014,
+          "details": {
+            "product": {
+              "url": "https://www.logitech.com/en-us/shop/p/mx-master-3s.910-007500",
+              "title": "MX Master 3S Bluetooth Edition",
+              "extraction": {
+                "method": "page metadata; structured identity unresolved",
+                "offerResolved": false,
+                "structuredIdentityResolved": false
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 0,
+            "language": "en-us"
+          }
+        },
+        {
+          "id": "LIVE-11-export",
+          "status": "PASS",
+          "elapsedMs": 780,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3278,
+            "productUrl": "https://www.logitech.com/en-us/shop/p/mx-master-3s.910-007500",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-11-policy",
+          "status": "PASS",
+          "elapsedMs": 570,
+          "details": {
+            "message": "No obvious return-policy traps stood out.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-11-shipping",
+          "status": "PASS",
+          "elapsedMs": 464,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-11-evidence",
+          "status": "PASS",
+          "elapsedMs": 1179,
+          "details": {
+            "count": "2 of 2 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-11-domain",
+          "status": "PASS",
+          "elapsedMs": 464,
+          "details": {
+            "observation": "registered domain logitech.com • registered 1990-05-07 • registrar MarkMonitor Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/logitech.com"
+          }
+        },
+        {
+          "id": "LIVE-11-sources",
+          "status": "PASS",
+          "elapsedMs": 579,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-11-image",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-11-store",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-11-reputation",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-11-resources",
+          "status": "PASS",
+          "elapsedMs": 5038,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5002,
+            "taskSeconds": 0.09916900000000001,
+            "scriptSeconds": 0.052741,
+            "heapBytes": 52594128,
+            "dom": {
+              "elements": 1383,
+              "scrollHeight": 5826,
+              "viewport": 720
+            },
+            "scrollFrameMs": 29,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-12-scan",
+          "status": "PASS",
+          "elapsedMs": 1772,
+          "details": {
+            "product": {
+              "url": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+              "title": "Buy a Raspberry Pi 5 – Raspberry Pi",
+              "extraction": {
+                "method": "page metadata; structured identity unresolved",
+                "offerResolved": false,
+                "structuredIdentityResolved": false
+              }
+            },
+            "verdict": {
+              "massResellLikelihood": null,
+              "dropshipLikelihood": null,
+              "deceptionRisk": "unknown",
+              "merchantRisk": "unknown",
+              "manipulationRisk": "unknown",
+              "fulfillmentRisk": "unknown",
+              "severeWarningAllowed": false,
+              "reason": "No accusation-weighted evidence is available yet."
+            },
+            "toastCount": 0,
+            "language": "en-GB"
+          }
+        },
+        {
+          "id": "LIVE-12-export",
+          "status": "PASS",
+          "elapsedMs": 782,
+          "details": {
+            "filename": "DropShredder-current-scan.json",
+            "bytes": 3180,
+            "productUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+            "nativeDownloadPopupDismissed": true
+          }
+        },
+        {
+          "id": "LIVE-12-policy",
+          "status": "PASS",
+          "elapsedMs": 467,
+          "details": {
+            "message": "Couldn’t find a clear return or refund policy on this store.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-12-shipping",
+          "status": "PASS",
+          "elapsedMs": 468,
+          "details": {
+            "message": "The page doesn’t clearly say where the order ships from.",
+            "scope": "Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification"
+          }
+        },
+        {
+          "id": "LIVE-12-evidence",
+          "status": "PASS",
+          "elapsedMs": 1181,
+          "details": {
+            "count": "2 of 2 displayed items shown."
+          }
+        },
+        {
+          "id": "LIVE-12-domain",
+          "status": "PASS",
+          "elapsedMs": 464,
+          "details": {
+            "observation": "registered domain raspberrypi.com • registered 2008-09-15 • registrar Tucows Domains Inc.",
+            "source": "https://rdap.verisign.com/com/v1/domain/raspberrypi.com"
+          }
+        },
+        {
+          "id": "LIVE-12-sources",
+          "status": "PASS",
+          "elapsedMs": 582,
+          "details": {
+            "destinations": [
+              "web — www.google.com",
+              "wholesale 1 — www.google.com",
+              "wholesale 2 — www.google.com",
+              "marketplaces 1 — www.google.com",
+              "retail 1 — www.google.com",
+              "supplier networks 1 — www.google.com",
+              "supplier networks 2 — www.google.com",
+              "supplier networks 3 — www.google.com",
+              "pod 1 — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-12-image",
+          "status": "PASS",
+          "elapsedMs": 680,
+          "details": {
+            "destinations": [
+              "googleLens — lens.google.com",
+              "bing — www.bing.com",
+              "yandex — yandex.com",
+              "tineye — tineye.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-12-store",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "reviews — www.google.com",
+              "complaints — www.google.com",
+              "scam — www.google.com",
+              "reddit — www.google.com",
+              "trustpilot — www.google.com",
+              "rdap — client.rdap.org",
+              "bbb — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-12-reputation",
+          "status": "PASS",
+          "elapsedMs": 580,
+          "details": {
+            "destinations": [
+              "trustpilot — www.google.com",
+              "sitejabber — www.google.com",
+              "consumeraffairs — www.google.com",
+              "bbb — www.google.com",
+              "google reviews — www.google.com",
+              "reddit — www.google.com"
+            ],
+            "scope": "Actual live-product source/image/store/reputation chooser and cancel; external search result quality not certified"
+          }
+        },
+        {
+          "id": "LIVE-12-resources",
+          "status": "PASS",
+          "elapsedMs": 5022,
+          "details": {
+            "status": "OBSERVED",
+            "intervalMs": 5003,
+            "taskSeconds": 0.000377,
+            "scriptSeconds": 0,
+            "heapBytes": 16406252,
+            "dom": {
+              "elements": 557,
+              "scrollHeight": 7792,
+              "viewport": 720
+            },
+            "scrollFrameMs": 13,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          }
+        },
+        {
+          "id": "LIVE-13-quiet",
+          "status": "PASS",
+          "elapsedMs": 4,
+          "details": {
+            "url": "https://store.arduino.cc/",
+            "passiveToasts": 0,
+            "language": "en"
+          }
+        },
+        {
+          "id": "LIVE-14-quiet",
+          "status": "PASS",
+          "elapsedMs": 8,
+          "details": {
+            "url": "https://store.arduino.cc/collections/boards-modules",
+            "passiveToasts": 0,
+            "language": "en"
+          }
+        },
+        {
+          "id": "LIVE-15-quiet",
+          "status": "PASS",
+          "elapsedMs": 4,
+          "details": {
+            "url": "https://www.ikea.com/sa/ar/cat/kallax-series-27534/",
+            "passiveToasts": 0,
+            "language": "ar-SA"
+          }
+        },
+        {
+          "id": "LIVE-16-quiet",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        },
+        {
+          "id": "LIVE-17-quiet",
+          "status": "UNAVAILABLE",
+          "reason": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "httpStatus": 403
+        }
+      ],
+      "betaLiveSurfaces": [
+        {
+          "id": "LIVE-01",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "expected": "NF-A12x25",
+          "source": "Existing committed bounded beta protocol",
+          "startedAt": "2026-10-12T21:56:01.993Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 429,
+          "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "finishedAt": "2026-10-12T21:56:05.094Z"
+        },
+        {
+          "id": "LIVE-02",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://www.amazon.com/dp/B0FC636JBS",
+          "expected": "Noctua",
+          "source": "Existing committed bounded beta protocol",
+          "startedAt": "2026-10-12T21:56:05.107Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+          "finishedAt": "2026-10-12T21:56:08.228Z"
+        },
+        {
+          "id": "LIVE-03",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "expected": "mug",
+          "source": "Existing committed bounded beta protocol",
+          "startedAt": "2026-10-12T21:56:08.240Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 403,
+          "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "finishedAt": "2026-10-12T21:56:11.358Z"
+        },
+        {
+          "id": "LIVE-04",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://www.walmart.com/ip/41004055",
+          "expected": "LEGO",
+          "source": "Existing committed bounded beta protocol",
+          "startedAt": "2026-10-12T21:56:11.372Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.walmart.com/blocked",
+          "finishedAt": "2026-10-12T21:56:14.866Z"
+        },
+        {
+          "id": "LIVE-05",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://store-usa.arduino.cc/products/arduino-uno-rev3",
+          "expected": "UNO",
+          "source": "Arduino official store, checked2026-10-12",
+          "startedAt": "2026-10-12T21:56:14.895Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://store-usa.arduino.cc/products/arduino-uno-rev3",
+          "product": {
+            "url": "https://store-usa.arduino.cc/products/arduino-uno-rev3",
+            "title": "Arduino Uno Rev3",
+            "sku": "A000066",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": false,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "low",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+          },
+          "evidence": [
+            {
+              "id": "COMMERCE_PLATFORM_DETECTED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "REVIEW_PLATFORM_LOOX",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "COMMERCE_PLATFORM_CONTEXT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "FINAL_SALE_BROAD",
+              "weight": 4,
+              "severity": "weak"
+            },
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:56:31.798Z"
+        },
+        {
+          "id": "LIVE-06",
+          "kind": "product",
+          "region": "EU",
+          "language": "en",
+          "url": "https://store.arduino.cc/products/arduino-uno-rev3",
+          "expected": "UNO",
+          "source": "Arduino official store, checked2026-10-12",
+          "startedAt": "2026-10-12T21:56:31.832Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://store.arduino.cc/products/arduino-uno-rev3",
+          "product": {
+            "url": "https://store.arduino.cc/products/arduino-uno-rev3",
+            "title": "Arduino Uno Rev3",
+            "sku": "A000066",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": false,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "low",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+          },
+          "evidence": [
+            {
+              "id": "COMMERCE_PLATFORM_DETECTED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "REVIEW_PLATFORM_LOOX",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "COMMERCE_PLATFORM_CONTEXT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "FINAL_SALE_BROAD",
+              "weight": 4,
+              "severity": "weak"
+            },
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:56:48.551Z"
+        },
+        {
+          "id": "LIVE-07",
+          "kind": "product",
+          "region": "CA",
+          "language": "en",
+          "url": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
+          "expected": "KALLAX",
+          "source": "IKEA Canada official product page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:56:48.590Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
+          "product": {
+            "url": "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-20631639/",
+            "title": "KALLAX Shelf unit - white 77x77 cm (30 1/8x30 1/8 \")",
+            "price": 59.99,
+            "currency": "CAD",
+            "sku": "206.316.39",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": true,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:57:05.455Z"
+        },
+        {
+          "id": "LIVE-08",
+          "kind": "product",
+          "region": "MX",
+          "language": "es",
+          "url": "https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/",
+          "expected": "KALLAX",
+          "source": "IKEA Mexico official product page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:57:05.504Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/",
+          "product": {
+            "url": "https://www.ikea.com/mx/es/p/kallax-estante-negro-cafe-20275885/",
+            "title": "KALLAX Estante - negro-café 77x147 cm",
+            "price": 1999,
+            "currency": "MXN",
+            "sku": "202.758.85",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": true,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "EXPLICIT_ORIGIN_CLAIMS",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:57:23.534Z"
+        },
+        {
+          "id": "LIVE-09",
+          "kind": "product",
+          "region": "FR",
+          "language": "fr",
+          "url": "https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/",
+          "expected": "KALLAX",
+          "source": "IKEA France official product page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:57:23.549Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/",
+          "product": {
+            "url": "https://www.ikea.com/fr/fr/p/kallax-etagere-blanc-20301554/",
+            "title": "KALLAX Étagère - blanc 42x41 cm",
+            "sku": "203.015.54",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": true,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:57:40.421Z"
+        },
+        {
+          "id": "LIVE-10",
+          "kind": "product",
+          "region": "SA",
+          "language": "ar",
+          "url": "https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/",
+          "expected": "KALLAX",
+          "source": "IKEA Arabic official product page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:57:40.436Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/",
+          "product": {
+            "url": "https://www.ikea.com/sa/ar/p/kallax-shelving-unit-white-10409932/",
+            "title": "KALLAX وحدة أرفف - أبيض ‎112x147 سم‏",
+            "price": 749,
+            "currency": "SAR",
+            "sku": "104.099.32",
+            "extraction": {
+              "method": "current-product JSON-LD",
+              "offerResolved": true,
+              "structuredIdentityResolved": true
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "PRODUCT_IDENTIFIERS_PRESENT",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:57:57.459Z"
+        },
+        {
+          "id": "LIVE-11",
+          "kind": "product",
+          "region": "US",
+          "language": "en",
+          "url": "https://www.logitech.com/en-us/shop/p/mx-master-3s",
+          "expected": "MX Master",
+          "source": "Logitech official product page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:57:57.503Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.logitech.com/en-us/shop/p/mx-master-3s.910-007500",
+          "product": {
+            "url": "https://www.logitech.com/en-us/shop/p/mx-master-3s.910-007500",
+            "title": "MX Master 3S Bluetooth Edition",
+            "extraction": {
+              "method": "page metadata; structured identity unresolved",
+              "offerResolved": false,
+              "structuredIdentityResolved": false
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:58:12.821Z"
+        },
+        {
+          "id": "LIVE-12",
+          "kind": "product",
+          "region": "UK",
+          "language": "en",
+          "url": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+          "expected": "Raspberry Pi 5",
+          "source": "Official manufacturer informational product page; offer may be unresolved",
+          "startedAt": "2026-10-12T21:58:12.864Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+          "product": {
+            "url": "https://www.raspberrypi.com/products/raspberry-pi-5/",
+            "title": "Buy a Raspberry Pi 5 – Raspberry Pi",
+            "extraction": {
+              "method": "page metadata; structured identity unresolved",
+              "offerResolved": false,
+              "structuredIdentityResolved": false
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+              "weight": 0,
+              "severity": "info"
+            },
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "weight": 0,
+              "severity": "info"
+            }
+          ],
+          "finishedAt": "2026-10-12T21:58:29.448Z"
+        },
+        {
+          "id": "LIVE-13",
+          "kind": "quiet",
+          "region": "EU",
+          "language": "en",
+          "url": "https://store.arduino.cc/",
+          "expected": "Arduino",
+          "source": "Official store homepage",
+          "startedAt": "2026-10-12T21:58:29.470Z",
+          "status": "OBSERVED_QUIET_PAGE",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://store.arduino.cc/",
+          "finishedAt": "2026-10-12T21:58:33.811Z"
+        },
+        {
+          "id": "LIVE-14",
+          "kind": "quiet",
+          "region": "EU",
+          "language": "en",
+          "url": "https://store.arduino.cc/collections/boards-modules",
+          "expected": "Arduino",
+          "source": "Official store collection",
+          "startedAt": "2026-10-12T21:58:33.835Z",
+          "status": "OBSERVED_QUIET_PAGE",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://store.arduino.cc/collections/boards-modules",
+          "finishedAt": "2026-10-12T21:58:38.176Z"
+        },
+        {
+          "id": "LIVE-15",
+          "kind": "quiet",
+          "region": "SA",
+          "language": "ar",
+          "url": "https://www.ikea.com/sa/ar/cat/kallax-series-27534/",
+          "expected": "KALLAX",
+          "source": "IKEA official Arabic category page, checked2026-10-12",
+          "startedAt": "2026-10-12T21:58:38.195Z",
+          "status": "OBSERVED_QUIET_PAGE",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ikea.com/sa/ar/cat/kallax-series-27534/",
+          "finishedAt": "2026-10-12T21:58:42.421Z"
+        },
+        {
+          "id": "LIVE-16",
+          "kind": "quiet",
+          "region": "BD",
+          "language": "bn",
+          "url": "https://www.rokomari.com/book/category/7066/in-stock-bengali-books",
+          "expected": "বাংলা",
+          "source": "Rokomari public Bengali category, checked2026-10-12",
+          "startedAt": "2026-10-12T21:58:42.473Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 403,
+          "finalUrl": "https://www.rokomari.com/book/category/7066/in-stock-bengali-books",
+          "finishedAt": "2026-10-12T21:58:45.707Z"
+        },
+        {
+          "id": "LIVE-17",
+          "kind": "quiet",
+          "region": "UK",
+          "language": "en",
+          "url": "https://www.raspberrypi.com/news/",
+          "expected": "Raspberry",
+          "source": "Official manufacturer editorial page",
+          "startedAt": "2026-10-12T21:58:45.726Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Public convenience sample; manufacturer/listing claims are not independently authenticated truth",
+          "httpStatus": 403,
+          "finalUrl": "https://www.raspberrypi.com/news/",
+          "finishedAt": "2026-10-12T21:58:48.887Z"
+        }
+      ],
+      "betaApprovedRequestOrigins": [
+        "https://store-usa.arduino.cc",
+        "https://store-usa.arduino.cc",
+        "https://tld-rdap.verisign.com",
+        "https://store.arduino.cc",
+        "https://store.arduino.cc",
+        "https://tld-rdap.verisign.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://rdap.verisign.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://rdap.verisign.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://rdap.verisign.com",
+        "https://www.ikea.com",
+        "https://www.ikea.com",
+        "https://rdap.verisign.com",
+        "https://www.logitech.com",
+        "https://resource.logitech.com",
+        "https://rdap.verisign.com",
+        "https://www.raspberrypi.com",
+        "https://assets.raspberrypi.com",
+        "https://rdap.verisign.com"
+      ],
+      "approvedRequestOrigins": [
+        "https://publisher.example.com",
+        "https://rdap.verisign.com",
+        "https://www.saferproducts.gov",
+        "https://api.gleif.org",
+        "https://store-usa.arduino.cc",
+        "https://tld-rdap.verisign.com",
+        "https://store.arduino.cc",
+        "https://www.ikea.com",
+        "https://www.logitech.com",
+        "https://resource.logitech.com",
+        "https://www.raspberrypi.com",
+        "https://assets.raspberrypi.com",
+        "https://www.walmart.com"
+      ],
+      "finalPermissionState": {
+        "granted": false,
+        "scripts": [],
+        "features": {
+          "autoProtection": false,
+          "autoSourceHunt": true,
+          "preferMadeInUSA": true,
+          "toneMode": "nuclear",
+          "weeklyIntelligenceUpdates": false
+        }
+      },
+      "storageFaultFixture": {
+        "faults": {
+          "dropshredder-feature-settings-v1": {
+            "autoProtection": "true",
+            "weeklyIntelligenceUpdates": "true",
+            "autoSourceHunt": 1,
+            "preferMadeInUSA": [],
+            "toneMode": "unsupported"
+          },
+          "dropshredder-display-v1": {
+            "theme": "unsupported",
+            "density": [],
+            "textScale": 9000
+          },
+          "dropshredder-user-lists-v1": {
+            "schemaVersion": 1,
+            "lists": [
+              {
+                "current": {
+                  "list": {
+                    "id": "untrusted-invalid",
+                    "version": 999999
+                  },
+                  "authentication": "signed"
+                }
+              }
+            ],
+            "keys": [
+              {
+                "trusted": true
+              }
+            ]
+          }
+        },
+        "controls": {
+          "source": false,
+          "auto": false,
+          "weekly": false,
+          "origin": false,
+          "tone": "professional",
+          "theme": "dark",
+          "textScale": "100",
+          "savedLists": "No user-added lists."
+        },
+        "canonical": {
+          "autoProtection": false,
+          "autoSourceHunt": true,
+          "preferMadeInUSA": false,
+          "toneMode": "professional",
+          "weeklyIntelligenceUpdates": false
+        },
+        "scope": "Explicit engineering-only Chrome storage fault and full profile restart, not unmodified independent QA"
+      },
+      "finishedAt": "2026-10-12T22:01:32.521Z",
+      "testsPassed": 81
+    }
+  },
+  "unchangedSuites": {
+    "locales": {
+      "PASS": 7
+    },
+    "lifecycle": {
+      "PASS": 6
+    },
+    "chrome133": {
+      "PASS": 9
+    },
+    "chrome155": {
+      "PASS": 9
+    },
+    "packaged": {
+      "PASS": 9
+    }
+  },
+  "all260PlannedCasesHaveActualOutcomes": true,
+  "productRepairsStartedDuringTestPass": false,
+  "confirmedDefects": [
+    {
+      "id": "DS-051-POLICY-HTTP",
+      "test": "N54",
+      "severity": "P2 functional error reporting",
+      "observed": "HTTP503 policy response is reported as a generic unreadable policy; status is lost",
+      "confirmedOnBothFrozenRuns": true,
+      "scope": "Native return-policy action; positive policy action passes; no verdict/privacy/permissions changes needed"
+    }
+  ],
+  "testDriverTriage": [
+    {
+      "cases": [
+        "N56"
+      ],
+      "evidence": "Initial screenshot retained selected sentinel text; empty native typing did not delete it",
+      "followup": "Actual BackSpace input clears field; original filtering assertions pass"
+    },
+    {
+      "cases": [
+        "LIVE-08-sources",
+        "LIVE-08-image",
+        "LIVE-08-store",
+        "LIVE-08-reputation"
+      ],
+      "evidence": "Initial Chrome download popup intercepted panel clicks",
+      "followup": "Genuine Escape closes popup; all four Mexico chooser actions pass; changed settled policy/shipping/domain statuses also pass"
+    },
+    {
+      "cases": [
+        "N39"
+      ],
+      "evidence": "First run captured pending read, changed language, cleared results and recovered; second screenshot shows successful Hindi OCR completed before the pending-state assertion",
+      "followup": "Timing/precondition failure, not evidence of an OCR defect. Preserve both raw outcomes; require cancellation/invalidation and recovery for the actually observed pending or completed state"
+    }
+  ],
+  "externalInputCases": [
+    {
+      "id": "INPUT-BRAVE",
+      "status": "NOT EVALUATED",
+      "reason": "No authorized valid optional API key"
+    },
+    {
+      "id": "INPUT-PHOTOS",
+      "status": "NOT EVALUATED",
+      "reason": "No rights-reviewed original multilingual photographs/transcriptions"
+    },
+    {
+      "id": "INPUT-PUBLISHER",
+      "status": "NOT EVALUATED",
+      "reason": "No selected authenticated external publisher/rights/key provenance"
+    },
+    {
+      "id": "INPUT-ELAPSED-WEEK",
+      "status": "NOT EVALUATED",
+      "reason": "No actual seven-day start/end observations"
+    },
+    {
+      "id": "INPUT-TRANSLATE-SERVICE",
+      "status": "NOT EVALUATED",
+      "reason": "No actual browser translate service execution; modeled translated DOM is separate"
+    },
+    {
+      "id": "INPUT-CROSS-OS",
+      "status": "NOT EVALUATED",
+      "reason": "Windows/macOS native desktop environments unavailable"
+    },
+    {
+      "id": "INPUT-INDEPENDENT-ACCURACY",
+      "status": "NOT EVALUATED",
+      "reason": "No independent rights-cleared merchant/product-disjoint corpus/approved thresholds"
+    },
+    {
+      "id": "INPUT-REVIEWERS",
+      "status": "NOT EVALUATED",
+      "reason": "No identified independent native/legal/screen-reader operators"
+    },
+    {
+      "id": "INPUT-RETENTION-ELAPSED",
+      "status": "NOT EVALUATED",
+      "reason": "No invented 180-day elapsed retention interval"
+    }
+  ],
+  "noSafetyStop": true,
+  "publicBetaUnchanged": true,
+  "remainingAction": "After completed test pass, repair confirmed policy HTTP status loss and verify the changed exact package; do not fabricate independent inputs."
+}

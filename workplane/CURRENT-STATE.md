@@ -1,4 +1,16 @@
-# Current state — October 12, 2026 DS-049
+# Current state — October 12, 2026 DS-050/051/052
+
+**BETA OPEN; capability testing and repair verification continue.** Public beta1 remains available at the release below. DS-050 committed its matrix before execution and completed all260 initial browser outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL. The raw initial failures remain preserved. One confirmed application defect lost policy HTTP503.
+
+DS-051 is DONE: the minimal policy error transport repair passes405 core, complete zero-finding CodeQL, all seven Chromium jobs and83 extended native checks. N53 positive policy/N54 HTTP503 pass. Both headed N39 captures observed real pending work and next-read recovery. Tested head5f503dd294674594cd840c84410ec7848eaa316e; productiona345e6cc58571f8aac979dd311b2ec62954824d3/tree25d9fb2daa8d6f135f4e5f2629d3b88ee9abf249. Install ZIP25,849,036bytes/SHA256cf6e3a162cd30b5c4f7fa7aefd64707b569d8ea80d44f4582c912ef19bfc20c7; all51 files/54,941,386bytes match QA. Repaired candidate not yet published. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json.
+
+DS-052 is RUNNING: six predeclared Warmly/UntilGone factory-direct listings and HaremPants/Sure Design affiliate/catalog controls,24 checks, against the existing repaired CI ZIP without rebuilding. Earlier manufacturer/marketplace surfaces did not establish known dropshipping-positive acceptance. Actual hits, misses and unavailable pages are recorded separately. This small developer-selected sample is not independent accuracy or deception truth. PR20 contains repair and prior PR19 test work; main/Store remain untouched.
+
+Independent rights-cleared/disjoint corpus, approved thresholds, real photos/transcriptions, native/legal/OS/accessibility reviewers, authorized optional-provider key, real publisher identity and actual elapsed weekly/retention lifecycle remain beta validation/public-release-promotion work, not experimental beta-entry gates.
+
+---
+
+## Previous DS-049 publication checkpoint
 
 Status: **BETA OPEN**. Published October 12 at 18:05:55Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1 . The owner corrected the agent-imposed circular beta-entry gate. Independent accuracy/rights/threshold, native/legal/photo, broader operator/OS/resource/retention and applicable publisher/elapsed-week validation remain open beta work and later public-release promotion gates. Empty approvals are unchanged; no independent acceptance or 100% claim. Decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`.
 
