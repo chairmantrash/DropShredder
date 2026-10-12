@@ -1,9 +1,14 @@
 {
-  "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
-  "sourceTree": "e5841d40c6b22a6bdd7eb685956e221eceff0bcd",
+  "sourceCommit": "a345e6cc58571f8aac979dd311b2ec62954824d3",
+  "sourceTree": "25d9fb2daa8d6f135f4e5f2629d3b88ee9abf249",
   "version": "0.2.0",
-  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 405 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required. Clean prebuild/prezip removes obsolete generated chunks; repeated clean inventories match. Trustpilot text excludes spaced/unclosed script/style bodies and decodes entities once; search registry and actual chosen BBB query assertions are exact.",
+  "reviewedChange": "DS-051 after complete frozen beta testing: injected return-policy callback returns non200 HTTP status as data and the native panel localizes it. Same origin/bounds/no-credentials/report guard and positive policy behavior retained. No permission, model, data, dependency or verdict changes. N39 records actual pending/completed read, requires original native-script/model text on completion and preserves invalidation/recovery assertions. Fresh hosted gates required.",
   "buildFiles": [
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 19974,
+      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
+    },
     {
       "path": "_locales/ar/messages.json",
       "bytes": 82144,
@@ -65,9 +70,9 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-D_EGUFq6.js",
-      "bytes": 566093,
-      "sha256": "6fc6e6d3a76c7d09ce32716525297951662434afae120a5372913f3361de6d0a"
+      "path": "chunks/sidepanel-BYqxNJlq.js",
+      "bytes": 566180,
+      "sha256": "20d4ccc9ba27548a51aee09f107c0629e851cdba1b22e85db02f5e1a3808517d"
     },
     {
       "path": "content-scripts/auto.js",
@@ -100,6 +105,31 @@
       "sha256": "a07d5fa66c5bb069b841ed860f7cdf655f9597181afdda11114735908d764228"
     },
     {
+      "path": "ocr/LANGUAGE-MODELS.json",
+      "bytes": 4282,
+      "sha256": "1c9418063a475042603c093d27d86fa8f1c157d0df18974e4112496469cc83e5"
+    },
+    {
+      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "ocr/LICENSE-TESSERACT-JS.txt",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "ocr/PROVENANCE.txt",
+      "bytes": 1147,
+      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
+    },
+    {
       "path": "ocr/ara.traineddata.gz",
       "bytes": 715721,
       "sha256": "588433010757ee22481757818f3cbf610cda08357b9f1376498b819a70a1701b"
@@ -130,34 +160,9 @@
       "sha256": "2e8e4516ac16abcdbca15377cca8ba90da8931f5b54510bb758931965baf61c2"
     },
     {
-      "path": "ocr/LANGUAGE-MODELS.json",
-      "bytes": 4282,
-      "sha256": "1c9418063a475042603c093d27d86fa8f1c157d0df18974e4112496469cc83e5"
-    },
-    {
-      "path": "ocr/LICENSE-TESSDATA-FAST.txt",
-      "bytes": 11358,
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
-    },
-    {
-      "path": "ocr/LICENSE-TESSERACT-CORE.txt",
-      "bytes": 11358,
-      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
-    },
-    {
-      "path": "ocr/LICENSE-TESSERACT-JS.txt",
-      "bytes": 11357,
-      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
-    },
-    {
       "path": "ocr/por.traineddata.gz",
       "bytes": 998523,
       "sha256": "8b875b5cedb7fc753eb01173df3b469c694c8bcb649180a351a13ebd18ab1832"
-    },
-    {
-      "path": "ocr/PROVENANCE.txt",
-      "bytes": 1147,
-      "sha256": "f32b23d0dfbec24c776cdb27db393411078afcfbb1306faa38a0e4000aef86f0"
     },
     {
       "path": "ocr/spa.traineddata.gz",
@@ -252,12 +257,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "8c1ab898433787126c26f5f074e4af5998a8d2d8dc4463b8f6234c0470d63301"
-    },
-    {
-      "path": "THIRD-PARTY-NOTICES.txt",
-      "bytes": 19974,
-      "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
+      "sha256": "c4b639a4103d3594bdd82bb62eec538c5286df126e2b7ad966577257b6b295b8"
     }
   ]
 }
