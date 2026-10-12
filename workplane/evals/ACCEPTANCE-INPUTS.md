@@ -1,6 +1,6 @@
-# Exact inputs needed to unblock external beta
+# Beta validation inputs and public-release promotion gates
 
-This is a prepared intake packet, not acceptance. The current candidate and verified artifact are pinned in the newest completion receipt and independent QA prompt. Use those exact bytes; changing runtime, models, permissions, data or version requires a new fingerprint and applicable checks.
+This is a prepared intake packet, not acceptance. DS-049 corrects the earlier agent-imposed beta-entry gate: these independent inputs are collected during beta and remain required for public-release promotion. They do not block the owner's authorized bounded experimental beta on the verified package. The current candidate and verified artifact are pinned in the newest completion receipt and independent QA prompt. Use those exact bytes; changing runtime, models, permissions, data or version requires a new fingerprint and applicable checks.
 
 | Gate | Prepared input | Evidence still required |
 |---|---|---|
