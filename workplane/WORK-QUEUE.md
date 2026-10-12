@@ -4,7 +4,8 @@
 
 - DS-050 DONE: matrix committed before execution; all260 initial cases have actual outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL; original failures remain preserved. Receipt: workplane/runs/DS-050-COMPLETION-20261012.json.
 - DS-051 DONE: policy HTTP status transport fixed after complete pre-repair testing. Exact changed package passes405 core, zero-finding CodeQL, all standard Chromium jobs and83 extended native checks; N53/N54 pass. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json. Repaired candidate awaits the next beta iteration.
-- DS-052 RUNNING: six known factory-direct/affiliate catalog pages,24 predeclared checks; exact repaired CI ZIP staged without rebuilding. Every case receives an outcome before further application repairs. Misses/unavailable pages are explicit; no independent accuracy or scam-label acceptance claim.
+- DS-052 DONE:24 initial known-site outcomes completed before SKU repair; changed package has16PASS/8UNAVAILABLE/0FAIL,84 native PASS,408 core PASS and all source/security/Chromium gates green. Visible GPH42-Black now captured, unresolved offers remain unresolved. Receipt: workplane/runs/DS-052-COMPLETION-20261012.json.
+- DS-053 RUNNING: publish the exact accepted beta2 ZIP through the existing GitHub channel; verify public unauthenticated downloads and all51 hashes. Main/Store and independent acceptance stay separate.
 
 These finite tasks preserve BETA OPEN. Independent external inputs remain beta validation/public-release-promotion work. DS-021 remains ongoing maintenance.
 

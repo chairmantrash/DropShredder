@@ -1,3 +1,15 @@
+# Current state — October12 DS-052/053
+
+**BETA OPEN; beta2 accepted packet prepared for publication.** DS-050 initial matrix completed before repairs; DS-051 policy HTTP error and DS-052 visible product SKU fixes are integrated in release atb03974f84422bc12e79b6287b4b884ee871631f9, tree841c8e78619fd617069ab3309ad68d854e233bb4 matching accepted headc5326c7e7aa3deddae5cd2d2bf434fc739339e48.408 core,84 native, complete finding-free CodeQL and all7 Chromium jobs pass. Lifecycle assertions originally passed before an ENOTEMPTY temp cleanup; preserved evidence plus affected-job rerun are green.
+
+Known live cases:16PASS/8UNAVAILABLE/0FAIL after the SKU fix. Warmly direct-factory disclosures captured; HaremPants/Sure Design affiliation and GPH42-Black captured. Two UntilGone listings404. Numerical dropship/resell estimates remain UNKNOWN. This selected/correlated/development-exposed sample is not independent accuracy acceptance. Receipt: workplane/runs/DS-052-COMPLETION-20261012.json.
+
+Beta2 packet is the existing accepted CI ZIP,25,849,500bytes/SHA2567fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8;51 files/54,942,638bytes. Production6fe561807d6962fe51006eab99c0cf7017c2c6ee/tree8074e5bbcb8c678e7eacfe397457901186f0b661. Public beta1 remains downloadable while DS-053 verifies publishing-head CI/security and publishes beta2 through the existing GitHub channel. No main/Store, real publisher authentication or invitations. Independent rights/disjoint labels/threshold/native/legal/photo/other-OS/accessibility/elapsed lifecycle remain open beta work.
+
+---
+
+## Earlier checkpoints
+
 # Current state — October 12, 2026 DS-050/051/052
 
 **BETA OPEN; capability testing and repair verification continue.** Public beta1 remains available at the release below. DS-050 committed its matrix before execution and completed all260 initial browser outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL. The raw initial failures remain preserved. One confirmed application defect lost policy HTTP503.

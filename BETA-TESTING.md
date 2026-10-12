@@ -1,18 +1,24 @@
 # DropShredder Beta Testing
 
-DropShredder 0.2.0 beta 1 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
+DropShredder 0.2.0 beta 2 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
 
 ## Download and install
 
-Use the [beta 1 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1), and download `DropShredder-0.2.0-beta.1-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
+Use the [beta 2 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2), and download `DropShredder-0.2.0-beta.2-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
 
-1. Verify ZIP SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.1-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.1-chrome.zip`).
+1. Verify ZIP SHA256 `7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.2-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.2-chrome.zip`).
 2. Extract the ZIP into a folder you will keep. Its root contains `manifest.json`.
 3. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select that folder.
 4. Open a normal public product page, click the DropShredder extension icon, and use the side panel. Grant optional site access only when you choose the corresponding function.
 5. Report problems through [DropShredder GitHub issues](https://github.com/chairmantrash/DropShredder/issues). Use the report fields below and attach only scrubbed information. Removing the extension at `chrome://extensions` ends participation; no account or telemetry enrollment is required.
 
-`BUILD-INFO.json` lists all 51 reviewed package files and production source `5e3dc52bc54630753cf37619225be49d42043a2d`. `BETA-OBSERVATIONS.json` contains actual bounded public-site results; `NATIVE-PROTOCOL.json` contains the full engineering/native run. Unavailable sites/provider timeouts are recorded without a pass claim. The prerelease tag points to the production source; accompanying testing instructions and observations come from DS-049.
+`BUILD-INFO.json` lists all 51 reviewed package files and production source `6fe561807d6962fe51006eab99c0cf7017c2c6ee`. `BETA-OBSERVATIONS.json` contains actual bounded public-site results; `NATIVE-PROTOCOL.json` contains the full engineering/native run. Unavailable sites/provider timeouts are recorded without a pass claim. The prerelease tag points to exact accepted/tested head c5326c7e7aa3deddae5cd2d2bf434fc739339e48; BUILD-INFO records the production source of those identical compiled bytes. DS-050/051/052 receipts preserve the original full matrix, initial failures and subsequent repairs.
+
+To update an existing beta1 installation, replace the contents of its unpacked folder with beta2 and click Reload in chrome://extensions.
+
+## Actual known-site observations
+
+The predeclared six-page run found Warmly factory-direct statements and the HaremPants/Sure Design affiliation. It exposed a missing visible HaremPants SKU; beta2 captures GPH42-Black without choosing an ambiguous structured offer. After repair,24 known checks have16PASS/8UNAVAILABLE/0FAIL; both selected UntilGone pages returned404.84 native checks and408 core checks pass. Numeric dropship/resell estimates remain UNKNOWN. This is a small selected/correlated sample with exposed affiliate controls, not independent accuracy acceptance.
 
 ## What to test
 Use normal public product/listing pages first. Try a mix of well-known manufacturers, ordinary resellers, marketplace listings, suspicious ads/stores, products with many reviews, and products with little information.
