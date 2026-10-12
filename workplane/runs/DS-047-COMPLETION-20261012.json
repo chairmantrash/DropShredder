@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-047",
+  "recordedAt": "2026-10-12T12:58:19.953Z",
+  "verifiedAt": "2026-10-12T12:45:27.981Z",
+  "status": "DONE — actionable worker/history engineering acceptance; independent acceptance remains open",
+  "ownerDirective": "Continue this task",
+  "baselineRemote": "d11ea56a558bb7aebec25455bb6f6d33cac626bf",
+  "production": {
+    "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
+    "sourceTree": "db63f2b26bc569ffb7f7585b544d032436014386",
+    "files": 51,
+    "bytes": 54940159,
+    "runtimeChanges": false,
+    "modelOrPermissionChanges": false
+  },
+  "testedHarness": {
+    "remoteCommit": "add57146c60fc018fb883bd8031f11eb96af4ab7",
+    "localCommit": "9c110a0",
+    "tree": "4c5e49da18d1a4a433df678daaefde1baed6e1c8",
+    "localRemoteTreeEqual": true
+  },
+  "integration": {
+    "pr": 14,
+    "url": "https://github.com/chairmantrash/DropShredder/pull/14",
+    "merged": true,
+    "mergeSha": "9b41362d126476461a9855d676bd22674414d59b",
+    "releaseBranch": "release/security-performance-hardening",
+    "mainMerged": false,
+    "publicPr9Draft": true,
+    "tagCreated": false,
+    "storeSubmitted": false
+  },
+  "verification": {
+    "ci": {
+      "id": 38250837430,
+      "status": "success",
+      "coreTests": 394,
+      "failures": 0,
+      "skips": 0
+    },
+    "codeql": {
+      "id": 38250837392,
+      "status": "success"
+    },
+    "chromium": {
+      "id": 38250837414,
+      "status": "success",
+      "headedCases": 77,
+      "lifecycleCases": 6,
+      "packagedCases": 9,
+      "chrome133Cases": 9,
+      "chrome155Cases": 9,
+      "localeGroups": 7,
+      "totalBrowserExecutions": 117,
+      "uniqueCaseIds": 99,
+      "excludedHeadlessNativeRepeats": 7,
+      "nativeVersion": "Chrome/156.0.8078.4",
+      "compatibilityScope": "Full headless Chrome133/155 packaged-document/API subset; expanded native UI tests on156"
+    },
+    "local": [
+      "Node22 syntax checks",
+      "git diff --check",
+      "QA artifact digest and all51 path/size/SHA256 checks",
+      "lifecycle archive digest",
+      "bounded actual desktop-frame review",
+      "Current pinned empty/unapproved corpus returns exit2 NOT_ACCEPTED with0 independent cases"
+    ]
+  },
+  "lifecycle": {
+    "scope": "Owned engineering fixture; genuine native user controls; natural idle with panel closed, not independent QA or elapsed-week acceptance",
+    "workerDebuggerAttached": false,
+    "tests": [
+      {
+        "id": "L01",
+        "description": "Exact unmodified package mounts with a service worker that has no debugger attached",
+        "status": "PASS",
+        "elapsedMs": 6550,
+        "details": {
+          "files": 51,
+          "worker": {
+            "targetId": "6AE5636CFFC06E35933F2EFC8B90C761",
+            "type": "service_worker",
+            "title": "Service Worker chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "attached": false,
+            "canAccessOpener": false,
+            "browserContextId": "81107D3E8D8AAF09EAD0D5633D22A46A"
+          }
+        }
+      },
+      {
+        "id": "L02",
+        "description": "Chrome naturally terminates the idle worker after the native panel closes, without a stop or worker-debugger command",
+        "status": "PASS",
+        "elapsedMs": 30272,
+        "details": {
+          "idleElapsedMs": 30157,
+          "workerTargets": [],
+          "pageWidthBefore": 902,
+          "pageWidthAfter": 1288,
+          "panelDebuggerDetached": true,
+          "scope": "Native panel closed; browser/page remain open; no worker debugger, force stop or time manipulation"
+        }
+      },
+      {
+        "id": "L03",
+        "description": "A normal native settings action wakes a fresh worker and preserves the earlier saved patch",
+        "status": "PASS",
+        "elapsedMs": 1865,
+        "details": {
+          "worker": {
+            "targetId": "F61241898BE9A8290E7CFBFBF5A4E493",
+            "type": "service_worker",
+            "title": "Service Worker chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "attached": false,
+            "canAccessOpener": false,
+            "browserContextId": "81107D3E8D8AAF09EAD0D5633D22A46A"
+          },
+          "settings": {
+            "autoProtection": false,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          }
+        }
+      },
+      {
+        "id": "L04",
+        "description": "Genuine Chrome consent and12 actual product scans create only sanitized local history",
+        "status": "PASS",
+        "elapsedMs": 9244,
+        "details": {
+          "count": 12,
+          "rows": [
+            {
+              "url": "https://fixture.example.com/products/history-4",
+              "id": "0e4c6e0b-5d11-4f06-83cb-41994e7baa1e",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 4"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-5",
+              "id": "13857ccd-08e9-4de2-8ab7-24e0fed180d0",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 5"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-3",
+              "id": "190242aa-ad53-4323-92bb-004a8d718ad6",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 3"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-2",
+              "id": "1aeebf88-d0fe-4958-937e-8d7f1f0b21ef",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 2"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-11",
+              "id": "3640d2ec-be7a-4b2a-b24f-3208da5996c6",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 11"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-8",
+              "id": "583b0726-fa91-4371-99e1-ed509d64297b",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 8"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-9",
+              "id": "642e1b32-7319-4406-8a0b-4d2a823a245c",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 9"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-7",
+              "id": "7a2ec72f-f507-49a7-b452-4a88f4ffd165",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 7"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-6",
+              "id": "916df729-86e2-4e4a-8c48-3b6ce3d0c328",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 6"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-0",
+              "id": "d7ae24c1-87b3-4b80-bdaf-baf0e12a5678",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 0"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-10",
+              "id": "e176db1b-1a56-455d-a69c-1ebb5997da84",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 10"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-1",
+              "id": "ffac0fa8-0854-45ff-8a51-4750c70663b5",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "L05",
+        "description": "The actual DELETE MY SCAN HISTORY control clears IndexedDB and the next real scan writes normally",
+        "status": "PASS",
+        "elapsedMs": 1525,
+        "details": {
+          "history": {
+            "count": 1,
+            "rows": [
+              {
+                "url": "https://fixture.example.com/products/history-12",
+                "id": "b98785ef-72cb-43cf-b0d2-826d67798a24",
+                "identityKey": "domain-title:fixture.example.com|owned history mug 12"
+              }
+            ]
+          },
+          "preservedSettings": {
+            "autoProtection": true,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          }
+        }
+      },
+      {
+        "id": "L06",
+        "description": "Full browser restart retains the post-deletion history and preferences while revoked monitoring remains off",
+        "status": "PASS",
+        "elapsedMs": 2507,
+        "details": {
+          "settings": {
+            "autoProtection": false,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          },
+          "history": {
+            "count": 1,
+            "rows": [
+              {
+                "url": "https://fixture.example.com/products/history-12",
+                "id": "b98785ef-72cb-43cf-b0d2-826d67798a24",
+                "identityKey": "domain-title:fixture.example.com|owned history mug 12"
+              }
+            ]
+          },
+          "scope": "Full disposable profile restart, not elapsed-week signed publisher acceptance"
+        }
+      }
+    ],
+    "toolbarActions": [
+      {
+        "start": 1,
+        "icon": {
+          "x": 989,
+          "y": 73
+        },
+        "method": "Exact opaque project-icon pixels in actual screenshot; real X11 pointer click"
+      },
+      {
+        "start": 1,
+        "icon": {
+          "x": 1149,
+          "y": 73
+        },
+        "method": "Exact opaque project-icon pixels in actual screenshot; real X11 pointer click"
+      },
+      {
+        "start": 2,
+        "icon": {
+          "x": 1149,
+          "y": 73
+        },
+        "method": "Exact opaque project-icon pixels in actual screenshot; real X11 pointer click"
+      }
+    ],
+    "errors": [],
+    "requests": [
+      "https://fixture.example.com/products/history-0?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-1?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-2?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-3?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-4?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-5?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-6?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-7?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-8?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-9?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-10?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-11?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico",
+      "https://fixture.example.com/products/history-12?token=OWNED-NOT-PRIVATE",
+      "https://fixture.example.com/favicon.ico"
+    ],
+    "geometry": {
+      "bounds": {
+        "left": 10,
+        "top": 10,
+        "width": 1288,
+        "height": 851,
+        "windowState": "normal"
+      },
+      "panelViewport": {
+        "width": 360,
+        "height": 716
+      },
+      "insetRight": 9,
+      "insetBottom": 8
+    }
+  },
+  "nativePrivacyAndOriginalOcr": {
+    "status": "PASS — NATIVE RUNTIME SUBSET",
+    "checks": [
+      {
+        "id": "N12",
+        "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+        "status": "PASS",
+        "elapsedMs": 9814,
+        "details": {
+          "status": "DropShredder does not scan account, authentication, payment, billing, address, or order-history pages.",
+          "raw": ""
+        }
+      },
+      {
+        "id": "N13",
+        "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+        "status": "PASS",
+        "elapsedMs": 5150
+      },
+      {
+        "id": "N14",
+        "description": "Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins",
+        "status": "PASS",
+        "elapsedMs": 4
+      },
+      {
+        "id": "N34",
+        "description": "Native operating-system file picker selects an unchanged local label through desktop input",
+        "status": "PASS",
+        "elapsedMs": 2617,
+        "details": {
+          "dialog": "Open File",
+          "selected": "hindi-model-original.png",
+          "scope": "One genuine Linux/Xvfb OS chooser through desktop input; no CDP file dispatch, photograph accuracy or cross-OS chooser claim"
+        }
+      },
+      {
+        "id": "O-hin-original",
+        "description": "Original failed label preserves both native text and the literal Latin model identifier",
+        "status": "PASS",
+        "elapsedMs": 1713,
+        "details": {
+          "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): उत्पाद मॉडलRecognized text (unverified): MODEL12345Search sources for this text",
+          "scope": "Unchanged original failed synthetic image, selected script, native panel; no independent photo accuracy claim"
+        }
+      },
+      {
+        "id": "O-ara-original",
+        "description": "Original failed label preserves both native text and the literal Latin model identifier",
+        "status": "PASS",
+        "elapsedMs": 2048,
+        "details": {
+          "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): نموذج المنتجRecognized text (unverified): ‎MODEL12345‏Search sources for this text",
+          "scope": "Unchanged original failed synthetic image, selected script, native panel; no independent photo accuracy claim"
+        }
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 11747699435,
+      "name": "dropshredder-worker-history-evidence",
+      "digest": "sha256:1c72218640bd4a58a7f307629fd3a8381fd7afa4afbb9426eee4c105bb71eafd",
+      "expiresAt": "2026-11-11T12:45:31Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747699435"
+    },
+    {
+      "id": 11747569406,
+      "name": "dropshredder-chrome133-evidence",
+      "digest": "sha256:887120c62ac9f7c3aa175b712a6ef7578a34f7a5a5c3ab29a369f509dd200875",
+      "expiresAt": "2026-11-11T12:44:30Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747569406"
+    },
+    {
+      "id": 11747424453,
+      "name": "dropshredder-chrome155-evidence",
+      "digest": "sha256:4c89965a56908ec672278a1425b86c838021e550a7041a1c581fac4af052e821",
+      "expiresAt": "2026-11-11T12:44:22Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747424453"
+    },
+    {
+      "id": 11747294560,
+      "name": "dropshredder-localization-evidence",
+      "digest": "sha256:13eed62bee05637d13d2cc35f37f1b605cb771080c46c34263c46edf361d5c32",
+      "expiresAt": "2026-11-11T12:44:40Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747294560"
+    },
+    {
+      "id": 11747233743,
+      "name": "dropshredder-unpacked-qa",
+      "digest": "sha256:1b7b785339ddfc6d0727416bcf2e45c1969e8b3f30f791a18081a74a8bed115b",
+      "expiresAt": "2026-11-11T12:44:27Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747233743"
+    },
+    {
+      "id": 11747134603,
+      "name": "dropshredder-headed-permission-evidence",
+      "digest": "sha256:eb91510cb31b06e90fed86f02591eb0c2ae7dcd4439e659e6fc65c9839e2db41",
+      "expiresAt": "2026-11-11T12:49:38Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11747134603"
+    },
+    {
+      "id": 11746993938,
+      "name": "dropshredder-native-panel-evidence",
+      "digest": "sha256:3677d6e3fc1e3d9ad0c72035bf769f9083992bc0d20b20cb4e4532bf8493ed9e",
+      "expiresAt": "2026-11-11T12:44:27Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11746993938"
+    },
+    {
+      "id": 11746929009,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "digest": "sha256:ab045bda64d1e3f7c0e3e6931291ee3df27d0c07fa31886856aa497227e3a66f",
+      "expiresAt": "2026-11-11T12:44:30Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38250837414/artifacts/11746929009"
+    }
+  ],
+  "downloadedAndVerified": {
+    "qaArtifact": 11747233743,
+    "qaArchiveSha256": "1b7b785339ddfc6d0727416bcf2e45c1969e8b3f30f791a18081a74a8bed115b",
+    "all51PackageFiles": true,
+    "lifecycleArtifact": 11747699435,
+    "lifecycleArchiveSha256": "1c72218640bd4a58a7f307629fd3a8381fd7afa4afbb9426eee4c105bb71eafd"
+  },
+  "historicalRuns": [
+    {
+      "commit": "2deb32582e9f14dc7ea39767ec94f41d14a9394f",
+      "run": 38246365364,
+      "result": "FAIL",
+      "lifecycleArtifact": 11746051538,
+      "digest": "sha256:edaa79327a95c4c4dce705c7b5be2944173fdd043c1acdae79dd513912fc4526",
+      "failure": "Raw Chromium crashed in experimental Extensions.triggerAction beforeL01; actual Chrome UI replaced the hook. Headed155 renderer screenshot also failed."
+    },
+    {
+      "commit": "25094e84d038fa06dec8f591654856c406a25aa3",
+      "run": 38247650101,
+      "result": "FAIL",
+      "lifecycleArtifact": 11746673593,
+      "digest": "sha256:61d5c000ae4f2be88ba017769701e7c83fc51587185469f95f08c46191103ece",
+      "failure": "Extensions management deep link normalized before detail rendering; actual Details button used. Headed155 capture repeated; same packaged checks moved to full headless Chrome."
+    },
+    {
+      "commit": "93d774578419ac39754f6bd6bd60dcb90cd30d5b",
+      "run": 38248357860,
+      "result": "FAIL",
+      "lifecycleArtifact": 11747195131,
+      "digest": "sha256:e564cee6fa4042d4616c9a2b9befa327da9a8d65f3bb2aebba5e58b55308fe1d",
+      "headedArtifact": 11747320224,
+      "headedDigest": "sha256:d01d395e5ffd6ac6e18c10a6d0cd7df82ee303215d4ad1b2445ab4e5695e117c",
+      "failure": "Desktop toolbar frame captured before paint; chooser was visible while X11 focus still named Chrome. Wait for unique visible controls and explicitly focus actual named chooser; no permission/OCR/package assertion relaxed."
+    },
+    {
+      "commit": "2f3a91af9a4b75f7ab2729e224a7011b3d0cd60c",
+      "run": 38249266862,
+      "result": "GREEN",
+      "lifecycleCases": 6,
+      "headedCases": 77,
+      "scope": "Full117-case checkpoint; follow-up adds visible-layout guard for reopened/restored native panel before restart capture"
+    }
+  ],
+  "liveConvenienceSurfaces": [
+    {
+      "kind": "direct manufacturer / cooling fan",
+      "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "expected": "NF-A12x25",
+      "startedAt": "2026-10-12T12:46:31.060Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 429,
+      "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "finishedAt": "2026-10-12T12:46:33.698Z"
+    },
+    {
+      "kind": "Amazon / cooling fan",
+      "url": "https://www.amazon.com/dp/B0FC636JBS",
+      "expected": "Noctua",
+      "startedAt": "2026-10-12T12:46:33.698Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+      "finishedAt": "2026-10-12T12:46:35.897Z"
+    },
+    {
+      "kind": "Etsy / ceramic mug",
+      "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "expected": "Mug",
+      "startedAt": "2026-10-12T12:46:35.897Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 403,
+      "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "finishedAt": "2026-10-12T12:46:38.071Z"
+    },
+    {
+      "kind": "Walmart / construction toy",
+      "url": "https://www.walmart.com/ip/41004055",
+      "expected": "LEGO",
+      "startedAt": "2026-10-12T12:46:38.071Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+      "panelStatus": "Scan complete for www.walmart.com.",
+      "product": {
+        "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "resources": {
+        "status": "OBSERVED",
+        "intervalMs": 5002,
+        "taskSeconds": 0.272865,
+        "scriptSeconds": 0.07226800000000001,
+        "heapBytes": 70179456,
+        "dom": {
+          "elements": 4638,
+          "scrollHeight": 7332,
+          "viewport": 720
+        },
+        "scrollFrameMs": 16,
+        "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+      },
+      "finishedAt": "2026-10-12T12:46:50.344Z"
+    }
+  ],
+  "remainingAcceptance": [
+    "Zero independent merchant/product-disjoint rights-cleared corpus cases; no approved numeric thresholds or clustering review",
+    "Full independent operator/platform/OS/accessibility and long-duration/resource/retention acceptance",
+    "Native-speaker/legal-copy review across eight419-message catalogs",
+    "Independent photographed/blurred/rotated label accuracy and cross-OS chooser coverage",
+    "Applicable real publisher/source authenticity and naturally elapsed weekly signed-feed lifecycle",
+    "Accepted package/account/contact/distribution settings for public release; main/tag/Store held"
+  ],
+  "externalBeta": {
+    "ready": false,
+    "started": false,
+    "status": "NOT_STARTED — independent acceptance incomplete",
+    "groundTruthOrReviewersInvented": false
+  },
+  "maintenance": {
+    "DS021": "ONGOING, not an overdue finite task",
+    "conditionalReadinessCheckEnabled": true,
+    "weeklyResearchEnabled": true
+  },
+  "accuracyGate": {
+    "status": "NOT_ACCEPTED",
+    "independentCases": 0,
+    "issues": [
+      "Independent ground truth not attested",
+      "Corpus rights not cleared",
+      "Owner threshold approval missing",
+      "Merchant/product clustering review missing",
+      "Numeric acceptance thresholds missing",
+      "No observed evaluation cases"
+    ]
+  }
+}

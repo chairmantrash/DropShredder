@@ -1,3 +1,19 @@
+# Current state — October 12, 2026 DS-047
+
+PR #14 is merged into canonical release/security-performance-hardening at 9b41362d126476461a9855d676bd22674414d59b; its tree matches tested harness add57146c60fc018fb883bd8031f11eb96af4ab7/ tree 4c5e49da18d1a4a433df678daaefde1baed6e1c8 with zero file differences. PR #9 remains draft; main/tag/Store/external beta are not published.
+
+Production 2641a597573f071f8360492d6dc577983c38c144/ tree db63f2b26bc569ffb7f7585b544d032436014386 remains unchanged: 51 files / 54,940,159 bytes. Current hosted QA artifact 11747233743, archive SHA256 1b7b785339ddfc6d0727416bcf2e45c1969e8b3f30f791a18081a74a8bed115b, is downloaded and all 51 hashes verified. Raw local install ZIP 24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1 is a different wrapper.
+
+CI 38250837430 (394 core tests, no failures/skips), CodeQL 38250837392 and Chromium 38250837414 are green. 77 headed + 6 lifecycle + 9 packaged Chromium + 9 full headless Chrome 133 + 9 full headless Chrome 155 + 7 locale groups = 117 browser case executions/99 unique IDs, excluding7 headless native repeats. Original Hindi/Arabic assertions, selected models, genuine permission UI, true Linux chooser and privacy checks remain intact.
+
+The worker was never debugger-attached. Chrome naturally stopped it after 30,157 ms with the native panel closed; a normal native action woke a fresh worker and preserved prior settings. 12 actual scans created sanitized history; the actual delete control emptied IndexedDB, a subsequent scan wrote normally, and full profile restart preserved one post-deletion row/preferences/revocation with a visible native panel. Raw Chrome experimental-hook, Details/paint and focus assumptions were corrected in the harness, with failed records retained. No production code/model/permission change.
+
+Current Store assets remain valid on identical runtime bytes. Independent corpus remains 0 cases/unapproved and is pinned to the current hosted QA archive. Full independent operator/platform/OS/accessibility/long-duration review, approved accuracy thresholds/clustering/rights, native-language/legal/photo review, applicable real publisher/source/elapsed-week acceptance and public distribution settings remain external inputs. Engineering evidence cannot supply those attestations. Conditional readiness and weekly research remain enabled. Current WORK-QUEUE and workplane/runs/DS-047-COMPLETION-20261012.json are authoritative.
+
+---
+
+## Historical DS-046 checkpoint
+
 # Current state — October12, 2026 DS-046
 
 PR13 is merged into canonical release/security-performance-hardening at8940834e10581572f97f0912f9dc996a3450aae4. Its tree exactly matches tested harness8bc3d70b429809ee5a12f819541e6b0c0bbe9097/ treef45511dc094882ad4c80bd0a9d0332e367d25c11. PR9 remains draft; no main merge, tag, Store submission or accepted external beta.
