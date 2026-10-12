@@ -30,7 +30,16 @@ async function click(selector){
 }
 async function workers(){const r=await call('Target.getTargets');const w=r.targetInfos.filter(t=>t.type==='service_worker'&&t.url===`chrome-extension://${id}/background.js`);for(const t of w)assert.equal(t.attached,false,'Service worker must never have a debugger attached');return w;}
 async function pinToolbar(){
- await call('Page.navigate',{url:`chrome://extensions/?id=${id}`},pageSession);
+ await call('Page.navigate',{url:'chrome://extensions/'},pageSession);
+ // The management page can normalize a deep link before its extension list
+ // has loaded. Use its actual rendered Details control instead of assuming
+ // the URL query opened the detail view.
+ let detail;
+ await until(async()=>{const tree=await call('Accessibility.getFullAXTree',{},pageSession);const matches=tree.nodes.filter(n=>n.role?.value==='button'&&n.name?.value==='Details');assert.ok(matches.length<=1,'Only the owned extension may expose Details');detail=matches[0];return detail;},'actual extension Details control');
+ await call('DOM.scrollIntoViewIfNeeded',{backendNodeId:detail.backendDOMNodeId},pageSession);
+ const d=(await call('DOM.getBoxModel',{backendNodeId:detail.backendDOMNodeId},pageSession)).model.content;
+ const dp={x:(d[0]+d[2]+d[4]+d[6])/4,y:(d[1]+d[3]+d[5]+d[7])/4};
+ await call('Input.dispatchMouseEvent',{type:'mousePressed',...dp,button:'left',clickCount:1},pageSession);await call('Input.dispatchMouseEvent',{type:'mouseReleased',...dp,button:'left',clickCount:1},pageSession);
  let node;
  const pin=async()=>{const tree=await call('Accessibility.getFullAXTree',{},pageSession);const matches=tree.nodes.filter(n=>/^Pin to toolbar$/i.test(n.name?.value??'')&&['button','checkbox','switch'].includes(n.role?.value));assert.ok(matches.length<=1,'Ambiguous public pin control');node=matches[0];return node;};
  await until(pin,'public Chrome pin-to-toolbar control');
@@ -74,7 +83,7 @@ print(json.dumps(matches))`;
 async function startBrowser(){
  starts++;
  await fs.rm(path.join(profile,'DevToolsActivePort'),{force:true});
- child=spawn(chromium.executablePath(),['--no-sandbox','--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-component-update','--lang=en-US','--accept-lang=en-US','--window-size=1288,851','--window-position=10,10','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--enable-unsafe-extension-debugging',`--user-data-dir=${profile}`,`--disable-extensions-except=${ext}`,`--load-extension=${ext}`,'about:blank'],{stdio:['ignore','ignore','pipe']});
+ child=spawn(chromium.executablePath(),['--no-sandbox','--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-component-update','--disable-dev-shm-usage','--enable-automation','--test-type','--disable-infobars','--lang=en-US','--accept-lang=en-US','--window-size=1288,851','--window-position=10,10','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--enable-unsafe-extension-debugging',`--user-data-dir=${profile}`,`--disable-extensions-except=${ext}`,`--load-extension=${ext}`,'about:blank'],{stdio:['ignore','ignore','pipe']});
  child.stderr.on('data',b=>{stderr=(stderr+b.toString()).slice(-5000);});
  let port;await until(async()=>{try{port=(await fs.readFile(path.join(profile,'DevToolsActivePort'),'utf8')).trim().split('\n');return /^\d+$/.test(port[0]);}catch{return false;}},'raw Chrome debugging endpoint',15000);
  socket=new WebSocket(`ws://127.0.0.1:${port[0]}${port[1]}`);
@@ -155,5 +164,7 @@ try{
   assert.deepEqual(report.errors,[]);assert.ok(report.requests.every(u=>new URL(u).origin==='https://fixture.example.com'));await screenshot('lifecycle-restarted.png');return {settings:s,history:await history(),scope:'Full disposable profile restart, not elapsed-week signed publisher acceptance'};
  });
  report.status='PASS — NATURAL WORKER / HISTORY ENGINEERING SUBSET';
-}catch(e){report.status='FAIL OR ENVIRONMENT BLOCKED';report.failure=String(e);report.chromeStderr=stderr;await screenshot('lifecycle-failure.png').catch(()=>{});console.error(e);process.exitCode=1;}
+}catch(e){report.status='FAIL OR ENVIRONMENT BLOCKED';report.failure=String(e);report.chromeStderr=stderr;
+ report.accessibilityAtFailure=pageSession?await call('Accessibility.getFullAXTree',{},pageSession).then(t=>t.nodes.filter(n=>n.name?.value).slice(0,240).map(n=>({role:n.role?.value,name:n.name.value,properties:n.properties}))).catch(()=>undefined):undefined;
+ await screenshot('lifecycle-failure.png').catch(()=>{});console.error(e);process.exitCode=1;}
 finally{report.finishedAt=new Date().toISOString();report.testsPassed=report.tests.filter(t=>t.status==='PASS').length;await fs.writeFile(path.join(out,'lifecycle-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await stopBrowser().catch(()=>{});await fs.rm(profile,{recursive:true,force:true});}
