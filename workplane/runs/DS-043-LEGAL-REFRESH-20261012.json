@@ -1,0 +1,27 @@
+{
+  "task": "DS-043-REFRESH-20261012",
+  "date": "2026-10-12",
+  "baseline": "2a0745c114c2d7fab18e8e360e05dcee19fd0e38",
+  "status": "RESEARCH-AND-REVIEWABLE-CHANGES-COMPLETE",
+  "observations": 11,
+  "uniqueObservationSources": 18,
+  "privateInspectedDossiers": 0,
+  "fullDocketSearch": false,
+  "standingRegressionTests": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "node": "24.19.0",
+    "scope": "Existing behavior regressions; no production build/runtime changed"
+  },
+  "metadataChecks": "PASS:dates/expiry/URLs/party/scope/consent/uncertainty/zero-weight",
+  "runtimeChanges": false,
+  "limitations": [
+    "Public search/page/document access does not authenticate a complete current docket",
+    "Canadian court body/search excerpt conflict preserved; no clear/condemn inference",
+    "Mexico Ford body403; PROFECO pending/private coverage and terms preserved",
+    "No PACER purchase, authenticated court API, restricted scraping or private dossier access",
+    "Existing independent acceptance and release gate unchanged"
+  ],
+  "publication": "Isolated review branch/draft PR; no release integration/main merge/tag/store publication"
+}
