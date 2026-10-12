@@ -25,6 +25,20 @@ jobs:
           node-version: 22
       - name: Install
         run: npm ci
+      - name: Require current dependency advisory audits
+        run: |
+          npm audit --json > dependency-audit.json
+          npm audit --prefix tools/browser-smoke --json > browser-tool-dependency-audit.json
+      - name: Preserve dependency audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-dependency-evidence
+          path: |
+            dependency-audit.json
+            browser-tool-dependency-audit.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Typecheck
         run: npm run typecheck
       - name: Security audit
