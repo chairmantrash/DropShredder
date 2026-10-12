@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "eac8de6b35d9765763cdb1bd27c150acdf59c589",
-  "sourceTree": "eac2ca72938d4cd82c1824a51e0063ebdb6c9019",
+  "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+  "sourceTree": "e5841d40c6b22a6bdd7eb685956e221eceff0bcd",
   "version": "0.2.0",
-  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 403 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required. Clean prebuild/prezip removes obsolete generated chunks; repeated clean inventories match.",
+  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 405 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required. Clean prebuild/prezip removes obsolete generated chunks; repeated clean inventories match. Trustpilot text excludes spaced/unclosed script/style bodies and decodes entities once; search registry and actual chosen BBB query assertions are exact.",
   "buildFiles": [
     {
       "path": "_locales/ar/messages.json",
