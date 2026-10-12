@@ -292,11 +292,17 @@ try {
         if(!(await native.evaluate("document.querySelector('#label-image').closest('details').open")))await native.click('.label-reader-panel > summary');
         const filename=path.join(root,'tests/fixtures/ocr/hindi-model-original.png');
         assert.notEqual(await native.evaluate("document.querySelector('#label-image').files[0]?.name"),'hindi-model-original.png');
-        await native.click('#label-image');await pause(600);
-        // Xvfb has no EWMH window manager; query actual X11 focus directly.
-        const dialogWindow=execFileSync('xdotool',['getwindowfocus'],{encoding:'utf8'}).trim();
+        await native.click('#label-image');
+        // The observed failed frame already had a real GTK chooser while
+        // X11 focus still named its Chrome parent. Locate the unique visible
+        // named OS window and focus it explicitly; no picker/API override.
+        let dialogWindow,dialog;
+        await until(()=>{
+          let ids;try{ids=execFileSync('xdotool',['search','--onlyvisible','--name','^(Open|Select.*[Ff]ile|File.*Upload)'],{encoding:'utf8'}).trim().split('\n').filter(x=>/^\d+$/.test(x));}catch{return false;}
+          assert.ok(ids.length<=1,'Ambiguous visible OS chooser');if(!ids.length)return false;
+          dialogWindow=ids[0];dialog=execFileSync('xdotool',['getwindowname',dialogWindow],{encoding:'utf8'}).trim();return /Open|Select.*[Ff]ile|File.*Upload/i.test(dialog);
+        },'unique visible actual OS chooser',10000);
         assert.match(dialogWindow,/^\d+$/);
-        const dialog=execFileSync('xdotool',['getwindowname',dialogWindow],{encoding:'utf8'}).trim();
         assert.match(dialog,/Open|Select.*[Ff]ile|File.*Upload/i,'Expected actual OS file picker, not a Chrome page');
         await native.screenshot('native-os-file-picker-open.png');
         await fs.access(filename);

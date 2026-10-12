@@ -17,6 +17,33 @@ permissions:
   contents: read
 
 jobs:
+  worker-history-lifecycle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm ci
+          npm run build
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool
+      - name: Observe natural worker shutdown and actual local-history deletion
+        timeout-minutes: 4
+        run: |
+          python3 -m pip install Pillow==12.3.0
+          xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/lifecycle.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-worker-history-evidence
+          path: browser-smoke-results/
+          retention-days: 30
   minimum-chrome-runtime:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
@@ -55,7 +82,8 @@ jobs:
         env:
           DS_BROWSER_EXECUTABLE: ${{ github.workspace }}/compatibility-chrome/chrome-linux64/chrome
           DS_EXPECT_CHROME_MAJOR: ${{ matrix.major }}
-        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/run.mjs
+          DS_BROWSER_HEADLESS: '1'
+        run: node tools/browser-smoke/run.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
