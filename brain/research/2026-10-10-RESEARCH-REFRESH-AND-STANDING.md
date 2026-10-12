@@ -54,3 +54,7 @@ The prior f200 hosted browser run failed before runtime tests: `ocr/LANGUAGE-MOD
 ## Maintenance
 
 The broader intelligence task is enabled for Tuesday mornings; litigation refresh Monday mornings, America/Chicago. Source-specific runtime evidence windows remain seven, 30 or 90 days as documented, with original-company/case dates separate from directory dates. Each scheduled research run must report failed/unavailable checks and avoid redating unvisited records. Reviewable Git changes and regression evidence precede release promotion; no main merge or publication is authorized. An enabled research schedule does not guarantee source availability, real-time alerts or that already installed extension copies receive new bundled data without an update.
+
+## Dated legal-source correction — October 12, 2026
+
+The later public-source refresh retrieved entered consent orders for TouchTunes, Americana Liberty and Oak Street. Their court document dates differ from FTC timeline publication, and the agency headers still say Pending; allegations are not admitted by those consent terms. This updates the earlier proposed-settlement discussion without redating its98-reference audit. See [exact observations, scopes and retrieval limits](2026-10-12-LEGAL-REFRESH.md) and `intelligence/legal-observations-20261012.json`.
