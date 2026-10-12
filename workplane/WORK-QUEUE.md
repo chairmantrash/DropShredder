@@ -4,11 +4,12 @@
 
 - DS-050 DONE: matrix committed before execution; all260 initial cases have actual outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL; original failures remain preserved. Receipt: workplane/runs/DS-050-COMPLETION-20261012.json.
 - DS-051 DONE: policy HTTP status transport fixed after complete pre-repair testing. Exact changed package passes405 core, zero-finding CodeQL, all standard Chromium jobs and83 extended native checks; N53/N54 pass. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json. Repaired candidate awaits the next beta iteration.
-- DS-052 RUNNING: six known factory-direct/affiliate catalog pages,24 predeclared checks; exact repaired CI ZIP staged without rebuilding. Every case receives an outcome before further application repairs. Misses/unavailable pages are explicit; no independent accuracy or scam-label acceptance claim.
+- DS-052 DONE:24 initial known-site outcomes completed before SKU repair; changed package has16PASS/8UNAVAILABLE/0FAIL,84 native PASS,408 core PASS and all source/security/Chromium gates green. Visible GPH42-Black now captured, unresolved offers remain unresolved. Receipt: workplane/runs/DS-052-COMPLETION-20261012.json.
+- DS-053 DONE — BETA2 OPEN: published2026-10-12T22:59:54Z at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2 ; actual public unauthenticated downloads/all6 asset digests/all51 package hashes verified. Receipt: workplane/runs/DS-053-BETA2-OPEN-20261012.json. Main/Store and independent acceptance stay separate.
 
 These finite tasks preserve BETA OPEN. Independent external inputs remain beta validation/public-release-promotion work. DS-021 remains ongoing maintenance.
 
-Owner directive: open beta; the agent's independent-acceptance entry gate was circular. **DS-049 DONE — BETA OPEN**, published at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1 on 2026-10-12T18:05:55Z. The exact verified CI ZIP passed the unchanged bounded native/public-site protocol and exact-head CI/CodeQL; its unauthenticated public download is verified. Independent acceptance remains open beta validation and later public-release promotion work. Current receipt: `workplane/runs/DS-049-BETA-OPEN-20261012.json`; decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`. PR18 is integrated into release at 3200fc179c641649fa5fc455382e2680252c4ad0; public PR9 remains draft against unchanged main.
+Owner directive: keep beta open and test real capabilities. DS-049 opened beta1; **DS-053 DONE — BETA2 OPEN**, published2026-10-12T22:59:54Z at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2 . Exact accepted CI bytes, all6 public asset digests and all51 package hashes are verified, including unauthenticated download. Current receipt: workplane/runs/DS-053-BETA2-OPEN-20261012.json. Independent acceptance remains open beta validation/later public-release promotion work under brain/decisions/20261012-002-beta-entry-and-promotion.md. PR20 integrated runtime/test fixes into release; PR21 carries publication records. Public PR9 remains draft against unchanged main.
 
 ## Completed engineering work
 
@@ -43,7 +44,7 @@ DS-021 remains ongoing maintenance, not an overdue finite task. Monday litigatio
 
 Optional SaferProducts/openFDA/SEC/CompaniesHouse/FTC/Comtrade, neural/material recognition and content-credential ideas remain unselected research. They are not silently added to the completion scope or treated as mandatory beta features.
 
-## Exact current evidence
+## Historical DS-048/049 evidence — superseded by DS-052/053 above
 
 Production `5e3dc52bc54630753cf37619225be49d42043a2d`, tree `e5841d40c6b22a6bdd7eb685956e221eceff0bcd`; 51 files / 54,941,299 bytes. Canonical tested head `2fa7d0a75998e6b1691060011fada9735309c94f` / tree `b018d753c966ec54814961259e2772a6a7288510`. CI 38266197583, finding-free CodeQL 38266197621 and Chromium 38266197484 are green: 405 core / 117 browser executions / 99 unique IDs. Subsequent dependency workflow, research, asset and documentation changes preserve all runtime hashes; dependency CI 38267549335 and finding-free CodeQL 38267549288 pass.
 

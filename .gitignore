@@ -18,3 +18,5 @@ tools/browser-smoke/beta-collector-manifest.json
 /public/ocr/fra.traineddata.gz
 /public/ocr/ben.traineddata.gz
 /public/ocr/por.traineddata.gz
+# Generated packet contains already accepted CI bytes, not source.
+/beta2-packet/

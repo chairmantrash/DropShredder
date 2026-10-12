@@ -1,0 +1,94 @@
+{
+  "task": "DS-053",
+  "status": "DONE — BETA2 OPEN",
+  "publishedAt": "2026-10-12T22:59:54Z",
+  "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2",
+  "releaseId": 411060521,
+  "draft": false,
+  "prerelease": true,
+  "tag": "v0.2.0-beta.2",
+  "tagTarget": "c5326c7e7aa3deddae5cd2d2bf434fc739339e48",
+  "productionSource": "6fe561807d6962fe51006eab99c0cf7017c2c6ee",
+  "productionTree": "8074e5bbcb8c678e7eacfe397457901186f0b661",
+  "acceptedHead": "c5326c7e7aa3deddae5cd2d2bf434fc739339e48",
+  "acceptedTree": "841c8e78619fd617069ab3309ad68d854e233bb4",
+  "initialPublishingHead": "17bd12b83050cda525af59e096e65220c288cc91",
+  "initialPublishingTree": "2bce4f288f85fd516a20e82d5c76ec2024b65bc5",
+  "acceptedGates": {
+    "CI": 38318354091,
+    "CodeQL": 38318354068,
+    "Chromium": 38318354093,
+    "nativeKnown": 38318354131,
+    "conclusion": "success",
+    "corePassed": 408,
+    "nativePassed": 84,
+    "knownPassed": 16,
+    "knownUnavailable": 8,
+    "knownFailed": 0
+  },
+  "publishingGates": {
+    "CI": 38319642023,
+    "CodeQL": 38319642028,
+    "publication": 38319642205,
+    "conclusion": "success"
+  },
+  "packetArtifact": {
+    "id": 11778395566,
+    "name": "dropshredder-beta2-release-packet",
+    "size_in_bytes": 25868103,
+    "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11778395566",
+    "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11778395566/zip",
+    "expired": false,
+    "created_at": "2026-10-12T22:59:59Z",
+    "expires_at": "2027-01-10T22:58:23Z",
+    "updated_at": "2026-10-12T22:59:59Z",
+    "digest": "sha256:358f480382ec9fe06f174f48c6e8b02871d4f1f8c8f3e16419d2b58489dd8ae3",
+    "workflow_run": {
+      "id": 38319642205,
+      "repository_id": 1407325128,
+      "head_repository_id": 1407325128,
+      "head_branch": "feature/beta2-20261012",
+      "head_sha": "17bd12b83050cda525af59e096e65220c288cc91"
+    }
+  },
+  "publicVerification": {
+    "authenticated": false,
+    "verifiedAt": "2026-10-12T22:59:54.873767+00:00",
+    "assets": [
+      {
+        "name": "BETA-OBSERVATIONS.json",
+        "bytes": 45224,
+        "sha256": "94c901feebb9099dab87c0d3dee56643b559f78b79640345423aa41e1058941c"
+      },
+      {
+        "name": "BUILD-INFO.json",
+        "bytes": 8985,
+        "sha256": "dfa552273b14014b58d7d02dafab5db72be67b41bbd8117ec4894eb26cc1efd8"
+      },
+      {
+        "name": "DropShredder-0.2.0-beta.2-chrome.zip",
+        "bytes": 25849500,
+        "sha256": "7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8"
+      },
+      {
+        "name": "INSTALL-AND-REPORT.md",
+        "bytes": 2433,
+        "sha256": "662b7c59b44f91cbe490eb33df333f321b07fc626c4dad0441d3e9dea86d209f"
+      },
+      {
+        "name": "NATIVE-PROTOCOL.json",
+        "bytes": 120133,
+        "sha256": "5101cdbd0c8cd7b20532b2e7d72f3a8e0a23abc20452875959044dae569af0c7"
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "bytes": 103,
+        "sha256": "c14ca7787afe08465fa59c621fdd386c5ede814d0476c6c330ffbeac231cc466"
+      }
+    ],
+    "all51PublicPackageHashesMatch": true
+  },
+  "unchangedMain": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
+  "distribution": "Existing authorized public GitHub prerelease and issues; no invitations or invented participants",
+  "scope": "Known factory-direct statements/affiliate controls and SKU extraction verified. Numeric dropship/resell estimates remain UNKNOWN; no independent accuracy acceptance. General release/Store and actual human/rights/key/publisher/elapsed-lifecycle acceptance remain open."
+}
