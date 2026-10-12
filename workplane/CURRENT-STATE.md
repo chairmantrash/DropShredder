@@ -1,3 +1,15 @@
+# Current state — October 12, 2026 DS-049
+
+Status: BETA OPENING. The owner corrected the agent-imposed circular gate that made beta wait for independent acceptance. Independent rights/accuracy/threshold, native/legal/photo, cross-OS/resource/retention and applicable publisher/elapsed-week validation remain open beta work and public-release promotion gates. Empty templates and approvals are unchanged. Decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`.
+
+The existing public GitHub repository is the authorized distribution route. DS-049 stages the exact dependency-gated CI ZIP, source `5e3dc52bc54630753cf37619225be49d42043a2d`, SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c`, verifies all 51 file hashes, runs the unchanged headed native/live public-site protocol and publishes `v0.2.0-beta.1` only after actual observations without stop failures and exact-head CI/CodeQL succeed. No production rebuild, main merge or Store submission.
+
+Canonical October 12 live observations already include actual Amazon and Walmart scans with UNKNOWN verdicts and no severe warnings; Noctua returned429, Etsy403 and CPSC timed out. Those are bounded observations, not independent accuracy acceptance. The new protocol will record its own actual results. Installation/reporting instructions: `BETA-TESTING.md`.
+
+---
+
+## Historical DS-048 checkpoint
+
 # Current state — October 12, 2026 DS-048
 
 PRs #15–17 are integrated into canonical `release/security-performance-hardening` at `28be5696cd594fba482ae391230e38468fc63784`, tree `f2008f180ed14ed55a53639c0132ae69bbcc0694`, matching the local integration tree. PR #9 remains draft against unchanged main. External beta has not started.

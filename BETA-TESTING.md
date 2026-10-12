@@ -1,6 +1,18 @@
 # DropShredder Beta Testing
 
-This build is a beta candidate, not a claim that every store or product can be classified.
+DropShredder 0.2.0 beta 1 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
+
+## Download and install
+
+Use the [beta 1 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1), and download `DropShredder-0.2.0-beta.1-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
+
+1. Verify ZIP SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.1-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.1-chrome.zip`).
+2. Extract the ZIP into a folder you will keep. Its root contains `manifest.json`.
+3. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select that folder.
+4. Open a normal public product page, click the DropShredder extension icon, and use the side panel. Grant optional site access only when you choose the corresponding function.
+5. Report problems through [DropShredder GitHub issues](https://github.com/chairmantrash/DropShredder/issues). Use the report fields below and attach only scrubbed information. Removing the extension at `chrome://extensions` ends participation; no account or telemetry enrollment is required.
+
+`BUILD-INFO.json` lists all 51 reviewed package files and production source `5e3dc52bc54630753cf37619225be49d42043a2d`. `BETA-OBSERVATIONS.json` contains actual bounded public-site results; `NATIVE-PROTOCOL.json` contains the full engineering/native run. Unavailable sites/provider timeouts are recorded without a pass claim. The prerelease tag points to the production source; accompanying testing instructions and observations come from DS-049.
 
 ## What to test
 Use normal public product/listing pages first. Try a mix of well-known manufacturers, ordinary resellers, marketplace listings, suspicious ads/stores, products with many reviews, and products with little information.

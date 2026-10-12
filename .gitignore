@@ -4,6 +4,8 @@ node_modules/
 *.zip
 .DS_Store
 browser-smoke-results/
+beta-packet/
+tools/beta/__pycache__/
 
 # Hash-checked OCR resources generated at build time; never fetched at runtime.
 /public/ocr/LANGUAGE-MODELS.json

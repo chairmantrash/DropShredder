@@ -1,6 +1,6 @@
 # Work queue — authoritative snapshot, October 12, 2026
 
-Owner directive: finish all work until beta is unblocked. PRs #15–17 are integrated into the release branch at `28be5696cd594fba482ae391230e38468fc63784`; public PR #9 remains draft. DS-048 closes outstanding URL/native-control/text-extraction security findings, exact-head/SARIF/dependency gates and clean-package preparation, integrates queued legal reference research and prepares independent review inputs. Current receipt: `workplane/runs/DS-048-COMPLETION-20261012.json`. All recorded engineering gates pass; independent acceptance remains open and external beta has not started.
+Owner directive: open beta; the agent's independent-acceptance entry gate was circular. DS-049 is RUNNING to publish the exact verified package as an experimental GitHub prerelease after the unchanged bounded native/public-site protocol and exact-head CI/CodeQL pass. Independent acceptance remains open beta work and public-release promotion work. DS-048 engineering gates pass; its historical beta-held classification is superseded by `brain/decisions/20261012-002-beta-entry-and-promotion.md`. PRs #15–17 are integrated into the release branch; public PR #9 remains draft against main.
 
 ## Completed engineering work
 
@@ -22,7 +22,7 @@ Owner directive: finish all work until beta is unblocked. PRs #15–17 are integ
 | DS-047 worker/history lifecycle | Natural worker stop after 30,157 ms, ordinary native wake preserving settings, 12 real scans, actual history deletion/reuse and full profile restart; 394 core and 117 browser case executions green |99 unique case IDs; worker never debugger-attached; owned/short-interval evidence does not authenticate a corpus or an elapsed week |
 | DS-048 security and acceptance preparation | 405 core / 117 browser executions; exact-head SARIF zero findings; current dependency advisories zero; clean 51-file QA/actual CI ZIP identities verified; current assets and review inputs prepared; queued legal references integrated |Independent labels/rights/threshold approval, actual reviewer/photo/operator/publisher/elapsed-lifecycle acceptance remain open |
 
-## External acceptance queue
+## Beta validation and public-release promotion queue
 
 - Independently rights-cleared, merchant/product-disjoint observations across platforms, categories and all languages; owner-approved launch thresholds and clustering review. `tools/evaluation/metrics.mjs` provides counts, confidence intervals, false warnings/misses and UNKNOWN rates. The empty corpus deliberately returns NOT_ACCEPTED.
 - Native-speaker/legal-copy review and independently photographed labels.
@@ -42,4 +42,4 @@ Current QA artifact 11755200538/archive SHA256 `c779fbd557e0e02d05b6513740e6d596
 
 No release-blocking runtime defect is currently demonstrated. The remaining acceptance work requires actual external observations, material rights, reviewers and owner decisions. The empty corpus and native/legal review templates retain zero approvals; the numerical proposal is not accepted. Engineering fixtures cannot supply independent acceptance. Store account/contact settings apply only to the later Store route; no invitation, main merge or Store submission is performed from the prepared packet.
 
-The conditional beta-readiness check and DS-021 weekly research remain enabled; they check actual repository evidence and cannot fabricate missing reviews, labels, rights, thresholds, publisher identity or elapsed time.
+DS-049 retires the obsolete conditional beta-entry check once beta is actually published. DS-021 weekly research continues. Missing reviews, labels, rights, approved thresholds, publisher identity and elapsed time remain explicit validation work; none is fabricated or treated as accepted.

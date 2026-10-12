@@ -1,0 +1,107 @@
+name: DropShredder bounded beta opening
+
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths:
+      - '.github/workflows/beta-open.yml'
+      - 'tools/beta/**'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: dropshredder-v0.2.0-beta.1-opening
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-open-20261012'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download the accepted CI artifact without rebuilding
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/chairmantrash/DropShredder/actions/artifacts/11754903493/zip > accepted-ci-artifact.zip
+          python3 tools/beta/prepare.py accepted-ci-artifact.zip
+      - name: Install isolated native tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          npm audit --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+      - name: Execute the committed bounded native and live public-site protocol
+        timeout-minutes: 10
+        env:
+          DS_NATIVE_HEADED: '1'
+          DS_LIVE_SURFACES: '1'
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native.mjs
+      - name: Record actual observations and require no stop failure
+        run: python3 tools/beta/record.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-beta-opening-evidence
+          path: browser-smoke-results/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dropshredder-beta-release-packet
+          path: beta-packet/
+          if-no-files-found: error
+          retention-days: 90
+  publish:
+    needs: observe
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: dropshredder-beta-release-packet
+          path: beta-packet
+      - name: Require green CI and finding-free CodeQL on this exact publishing head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BETA_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, time
+          for attempt in range(30):
+              response = subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/runs?head_sha={os.environ["BETA_HEAD"]}&event=pull_request&per_page=100'])
+              runs = json.loads(response)['workflow_runs']
+              latest = {}
+              for run in runs:
+                  if run['name'] in ['DropShredder CI','CodeQL']:
+                      latest.setdefault(run['name'], run)
+              if len(latest) == 2 and all(r['status'] == 'completed' for r in latest.values()):
+                  assert all(r['conclusion'] == 'success' for r in latest.values()), latest
+                  print(json.dumps({name: {'id': r['id'], 'head': r['head_sha'], 'conclusion': r['conclusion']} for name,r in latest.items()}))
+                  break
+              time.sleep(10)
+          else:
+              raise SystemExit('Exact-head CI/CodeQL incomplete; beta publication stopped')
+          PY
+      - name: Publish experimental beta on the existing GitHub distribution channel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd beta-packet
+          sha256sum --check SHA256SUMS.txt
+          gh release create v0.2.0-beta.1 ./* --repo chairmantrash/DropShredder --target 5e3dc52bc54630753cf37619225be49d42043a2d --prerelease --latest=false --draft --title 'DropShredder 0.2.0 beta 1 — public testing' --notes-file INSTALL-AND-REPORT.md
+          gh release edit v0.2.0-beta.1 --repo chairmantrash/DropShredder --draft=false
+          gh release view v0.2.0-beta.1 --repo chairmantrash/DropShredder --json url,isDraft,isPrerelease,tagName,assets
