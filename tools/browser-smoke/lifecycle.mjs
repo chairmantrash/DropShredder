@@ -56,6 +56,13 @@ async function pinToolbar(){
 }
 async function attachPanel(){
  const {bounds}=await call('Browser.getWindowForTarget',{targetId:pageTarget});assert.equal(bounds.width,1288);assert.ok([850,851].includes(bounds.height));
+ const width=await evaluate('innerWidth',pageSession);
+ const restored=(await call('Target.getTargets')).targetInfos.find(t=>t.url===`chrome-extension://${id}/sidepanel.html`);
+ if(restored&&width<=bounds.width-200){
+  // A full profile restart can restore an already-open native panel. Do not
+  // toggle it closed and then mistake its cached document for visible UI.
+  (report.toolbarActions??=[]).push({start:starts,method:'Chrome restored the actual open native panel; main viewport narrowed',pageWidth:width});
+ }else{
  // Locate the project's exact opaque icon pixels in the actual toolbar band.
  // This avoids a raw-Chrome crash in the experimental CDP action hook. The
  // physical click must mount the real panel, otherwise the check fails.
@@ -77,10 +84,13 @@ print(json.dumps(matches))`;
  await until(async()=>{await screenshot(`lifecycle-toolbar-before-open-${starts}.png`);points=JSON.parse(execFileSync('python3',['-c',script],{encoding:'utf8'}));assert.ok(points.length<=1,'Ambiguous project toolbar icon');return points.length===1;},'actual toolbar painted with unique project icon',10000,200);
  execFileSync('xdotool',['mousemove',String(points[0].x),String(points[0].y),'click','1']);
  (report.toolbarActions??=[]).push({start:starts,icon:points[0],method:'Exact opaque project-icon pixels in actual screenshot; real X11 pointer click'});
+ }
+ await until(async()=>(await evaluate('innerWidth',pageSession))<=bounds.width-200,'actual native panel visible in browser layout');
  await until(async()=>{panelTarget=(await call('Target.getTargets')).targetInfos.find(t=>t.url===`chrome-extension://${id}/sidepanel.html`);return panelTarget;},'native panel mounted');
  panelSession=(await call('Target.attachToTarget',{targetId:panelTarget.targetId,flatten:true})).sessionId;
  await call('Runtime.enable',{},panelSession);
  await until(()=>evaluate("Boolean(document.querySelector('#build-meta')?.textContent.includes('0.2.0'))"),'native document ready');
+ await pause(200);
 }
 async function startBrowser(){
  starts++;
@@ -142,7 +152,7 @@ try{
   await screenshot('lifecycle-worker-naturally-stopped.png');return {idleElapsedMs:Date.now()-started,workerTargets:await workers(),pageWidthBefore:beforeWidth,pageWidthAfter:await evaluate('innerWidth',pageSession),panelDebuggerDetached:true,scope:'Native panel closed; browser/page remain open; no worker debugger, force stop or time manipulation'};
  });
  await test('L03','A normal native settings action wakes a fresh worker and preserves the earlier saved patch',async()=>{
-  await attachPanel();assert.equal(await evaluate("document.querySelector('#auto-source-hunt').checked"),true);
+  await attachPanel();await until(()=>evaluate("document.querySelector('#auto-source-hunt').checked"),'saved native source preference restored');
   if(!await evaluate("document.querySelector('.settings-panel').open"))await click('.settings-panel > summary');await click('#prefer-made-in-usa');await until(async()=>(await settings())?.preferMadeInUSA===true,'woken worker patch');
   const w=(await workers())[0];assert.ok(w);assert.notEqual(w.targetId,report.workerBeforeIdle.targetId);
   const s=await settings();assert.deepEqual(s,{autoSourceHunt:true,autoProtection:false,weeklyIntelligenceUpdates:false,preferMadeInUSA:true,toneMode:'professional'});await screenshot('lifecycle-worker-woken.png');return {worker:w,settings:s};
