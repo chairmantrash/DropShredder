@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "1b6882f750dfc22a99c8fcd7afa8927020ccfc6f",
-  "sourceTree": "76448eb7f990dce6add2323c18771e128bc8c5b7",
+  "sourceCommit": "eac8de6b35d9765763cdb1bd27c150acdf59c589",
+  "sourceTree": "eac2ca72938d4cd82c1824a51e0063ebdb6c9019",
   "version": "0.2.0",
-  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 403 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required.",
+  "reviewedChange": "DS-048: parsed resource hosts/paths reject URL lookalikes and query/credential spoofing; native-control selectors pass through CDP as data. Exact-head CI and finding-free CodeQL SARIF gate. 403 core tests pass; original OCR/privacy/native assertions retained. No permission, model, dependency or severe-verdict policy changes; fresh hosted acceptance required. Clean prebuild/prezip removes obsolete generated chunks; repeated clean inventories match.",
   "buildFiles": [
     {
       "path": "_locales/ar/messages.json",
@@ -63,11 +63,6 @@
       "path": "chunks/search-chooser-DQ05wBu8.js",
       "bytes": 3900,
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
-    },
-    {
-      "path": "chunks/sidepanel-BgycW4SC.js",
-      "bytes": 565316,
-      "sha256": "adc6c6c38d51b571aa26db0668d73e74a2c09f2fd9efbaa94770acfa478020aa"
     },
     {
       "path": "chunks/sidepanel-D_EGUFq6.js",
