@@ -57,20 +57,22 @@ export async function runLiveTests({context,page:fixture,native,worker,until,pau
         const item=downloads.slice(before).find(d=>d.state==='completed'),bytes=await fs.readFile(path.join(downloadDir,item.guid),'utf8'),data=JSON.parse(bytes);
         const url=new URL(data.product.url);assert.equal(url.search,'');assert.equal(url.hash,'');assert.equal(url.origin+url.pathname,new URL(page.url()).origin+new URL(page.url()).pathname);
         for(const key of ['imageUrls','description','reviews','specifications','merchant','pageText'])assert.equal(key in data.product||key in data,false);
-        return {filename:item.suggestedFilename,bytes:Buffer.byteLength(bytes),productUrl:data.product.url};
+        await native.key('Escape','Escape',27);await pause(200);
+        return {filename:item.suggestedFilename,bytes:Buffer.byteLength(bytes),productUrl:data.product.url,nativeDownloadPopupDismissed:true};
       });
       for(const [suffix,button,pending] of [['policy','#policy-check','Reading the return policy'],['shipping','#fulfillment-check','Checking where']])await observe(base+'-'+suffix,async()=>{
-        await native.click(button);await until(async()=>!(await state()).message.startsWith(pending),'actual '+suffix+' action',15000);
+        const before=(await state()).message;await native.click(button);
+        await until(async()=>{const message=(await state()).message;return message!==before&&!message.startsWith(pending);},'actual '+suffix+' action changed and settled',15000);
         const message=(await state()).message;assert.doesNotMatch(message,/not defined|ReferenceError|Cannot read/i);await guard(page);
         return {message,scope:'Actual public-page action; missing source/origin is an explicit abstention, not independent policy/shipment verification'};
       });
       await observe(base+'-evidence',async()=>{
         await native.type('#evidence-query','NO-MATCH-BETA-SENTINEL-89231');await pause(150);
         assert.equal(await native.evaluate("document.querySelectorAll('#evidence article.evidence-row:not([hidden])').length"),0);
-        await native.type('#evidence-query','');return {count:await native.evaluate("document.querySelector('#evidence-count').textContent")};
+        await native.type('#evidence-query','');assert.equal(await native.evaluate("document.querySelector('#evidence-query').value"),'');return {count:await native.evaluate("document.querySelector('#evidence-count').textContent")};
       });
       await observe(base+'-domain',async()=>{
-        await native.click('#check-domain');await until(()=>native.evaluate("!document.querySelector('#check-domain').disabled"),'actual public-domain lookup',15000);
+        const before=(await state()).message;await native.click('#check-domain');await until(async()=>!await native.evaluate("document.querySelector('#check-domain').disabled")&&(await state()).message!==before,'actual public-domain lookup changed and settled',15000);
         const data=await guard(page),entry=data.evidence.find(e=>e.id==='RDAP_DOMAIN_OBSERVATION');
         if(entry){assert.equal(entry.weight,0);return {observation:entry.observedValue,source:entry.provenance?.sourceUrl};}
         return {unavailable:true,message:(await state()).message,scope:'Provider failure/unsupported registry is not a domain-age observation'};

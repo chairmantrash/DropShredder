@@ -18,6 +18,7 @@ for name in ["probe-native", "run", "locales", "lifecycle"]:
     text = original
     if name == "probe-native":
         text = "import {weeklyCheck,additionalFeatureChecks} from '../beta/feature-checks.mjs';\nimport {runLiveTests} from '../beta/live-tests.mjs';\n" + text
+        text = replace_once(text, "execFileSync('xdotool',['key','ctrl+a']);execFileSync('xdotool',['type','--clearmodifiers','--delay','1',String(value)]);", "execFileSync('xdotool',['key','ctrl+a']);if(String(value)==='')execFileSync('xdotool',['key','BackSpace']);else execFileSync('xdotool',['type','--clearmodifiers','--delay','1',String(value)]);")
         text = replace_once(text, "error: String(error) }); throw error;", "error: String(error) }); console.error(`COLLECTED FAIL ${id}: ${error}`); await native?.screenshot(`collected-${id}-failure.png`).catch(()=>{}); if(['N01','N08','N09','N16','N17','N18','N35'].includes(id))throw error;")
         text = replace_once(text, "await native.screenshot('native-signed-feed-onboarding.png');", "await native.screenshot('native-signed-feed-onboarding.png');\n        await weeklyCheck({native,worker,test,until,providerRequests});")
         text = replace_once(text, "await runMultilingualSuite({page,native,worker,context,test,until,pause,output});", "await additionalFeatureChecks({context,page,native,test,until,pause,externalRequests});\n      await runLiveTests({context,page,native,worker,until,pause,report,output,downloads,downloadDir});\n      await runMultilingualSuite({page,native,worker,context,test,until,pause,output});")

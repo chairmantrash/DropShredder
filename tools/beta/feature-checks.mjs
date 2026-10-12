@@ -60,7 +60,7 @@ export async function additionalFeatureChecks({context,page,native,test,until,pa
     await scan();const total=await native.evaluate("document.querySelectorAll('#evidence article.evidence-row:not([hidden])').length");assert.ok(total>0);
     await native.type('#evidence-query','NO-MATCH-BETA-SENTINEL-89231');await pause(200);
     assert.equal(await native.evaluate("document.querySelectorAll('#evidence article.evidence-row:not([hidden])').length"),0);
-    await native.type('#evidence-query','');await native.click('#evidence-filter');await native.key('End','End',35);await native.key('Enter','Enter',13);
+    await native.type('#evidence-query','');assert.equal(await native.evaluate("document.querySelector('#evidence-query').value"),'');await native.click('#evidence-filter');await native.key('End','End',35);await native.key('Enter','Enter',13);
     assert.equal(await native.evaluate("document.querySelector('#evidence-filter').value"),'context');
     await native.click('#evidence-filter');await native.key('Home','Home',36);await native.key('Enter','Enter',13);
     assert.equal(await native.evaluate("document.querySelectorAll('#evidence article.evidence-row:not([hidden])').length"),total);
