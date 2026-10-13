@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   native-live:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/public-product-privacy-repair-20261013'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/public-product-privacy-repair-20261013' && github.event.pull_request.head.sha == '8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     strategy:

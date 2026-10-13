@@ -1,3 +1,11 @@
+# Current state — October13,2026 DS-055 verified candidate
+
+**BETA2 OPEN; public-product refusal repair is verified, beta3 publication pending.** Same frozen259 outcomes:227 distinct successful product scans across47 hostnames, up from11 reports/216 refusals. Active credential and late-modal guards pass; private subtrees excluded.414 core tests,80 headed native tests, all seven standard browser job groups and finding-free CodeQL pass on accepted head8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. All51 package hashes match exact existing CI ZIP0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4.
+
+All227 numerical estimates remain UNKNOWN;10 weak sale/policy findings and zero severe warnings. This repairs extraction coverage and does not establish current fraud/dropshipping accuracy. ScamFerret primary-source/API research and54 historical output comparisons are recorded; no public managed API found in published artifact, no model calls or runtime blacklist imports added. Receipt: workplane/runs/DS-055-COMPLETION-20261013.json; research: workplane/research/DS-055-SCAMFERRET-RESEARCH-20261013.md. Publish only these accepted bytes; main/Store untouched.
+
+---
+
 # Current state — October13,2026 DS-054
 
 **BETA2 OPEN; broader live testing exposes a public-store coverage failure.** All259 frozen candidate outcomes completed before production repair. The real native Scan control was tested on227 distinct accessible commerce pages across47 hostnames:216 refused,11 reports; all11 dropshipping/resale estimates remain UNKNOWN. Five weak final-sale policy findings, zero severe warnings. The requested150 native function tests are met;150 successful extractions are NOT met. Collection/CI/CodeQL success is not detection success.

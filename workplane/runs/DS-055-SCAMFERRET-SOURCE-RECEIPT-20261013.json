@@ -1,0 +1,1553 @@
+{
+  "retrievedAt": "2026-10-13T07:14:30.795211+00:00",
+  "sourceCommit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+  "scope": "Historical GPT-4.1 classifications matching DS-054 candidate hosts; not fresh ground truth or runtime answers",
+  "license": "GPL-3.0; see tools/beta/audit150/SOURCE-LICENSE-GPL-3.0.txt",
+  "records": [
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json",
+      "name": "18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json",
+      "sha256": "19d5fe2a380506ac16a4e1d425856be0c2821496aa17c721c9ff886f3686eed8",
+      "bytes": 1096,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://bagsoutletonlineshop.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays hallmarks of a fake online shopping scam: it lists high-end brand items at 'outlet' discounts of 70\u201380% off, which are far below genuine market values. There is no verifiable company, business identifiers, or real contact information on display. The domain was registered just days ago, with all WHOIS registrant information hidden, which further reduces credibility. The site structure and navigation are similar to known scam storefront templates. No evidence supports this as a legitimate business, and it exhibits multiple scam characteristics according to the listed criteria."
+        },
+        "total_tokens": 12483,
+        "prompt_tokens": 11797,
+        "completion_tokens": 686,
+        "total_cost": 0.024282000000000005,
+        "execution_time_seconds": 19.09,
+        "execution_time_formatted": "0m 19s",
+        "start_time": "2025-08-31 03:44:21",
+        "end_time": "2025-08-31 03:44:40"
+      }
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json",
+      "name": "33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json",
+      "sha256": "c11c738d59b99777fcd997c84f53674d974c3ee55392407bb87b34fa9932f1a1",
+      "bytes": 968,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json",
+      "parsedClassification": {
+        "scam": false,
+        "website_type": "Online Shopping"
+      },
+      "record": {
+        "target_url": "https://beringhorloges.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": false,
+          "website_type": "Online Shopping",
+          "reason": "The website presents itself as a Dutch-language retailer selling watches and jewelry, with sales and product categories similar to legitimate e-commerce stores. Major scam markers such as unrealistic offers, psychological manipulation, fake testimonials, odd payment methods, urgency tactics, and request for remote access are absent. Policy and legal info should be more accessible, and new registration with hidden WHOIS is mildly concerning, but not enough for a scam determination."
+        },
+        "total_tokens": 14977,
+        "prompt_tokens": 14190,
+        "completion_tokens": 787,
+        "total_cost": 0.029876000000000003,
+        "execution_time_seconds": 164.63,
+        "execution_time_formatted": "2m 44s",
+        "start_time": "2025-08-31 04:04:50",
+        "end_time": "2025-08-31 04:07:35"
+      }
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json",
+      "name": "54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json",
+      "sha256": "6245b6243cae8a919b7859996944394641dd9f09907551b532fde5619b78ccb9",
+      "bytes": 884,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://koolesports.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays extreme, unrealistic discounts on branded products (-83%), mimics legitimate e-commerce stores, uses domain privacy masking, has a domain registered very recently (less than 1 month old), and provides no verifiable business contact information or physical address. These are classic characteristics of scam websites according to the provided criteria, especially points 1, 4, 7, 8, 9, and 16."
+        },
+        "total_tokens": 10722,
+        "prompt_tokens": 10058,
+        "completion_tokens": 664,
+        "total_cost": 0.025428,
+        "execution_time_seconds": 13.57,
+        "execution_time_formatted": "0m 13s",
+        "start_time": "2025-08-31 04:33:46",
+        "end_time": "2025-08-31 04:33:59"
+      }
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json",
+      "name": "804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json",
+      "sha256": "ba83ce1fb0de69bd35cb7dc12e47168a690f15429e65aca77938a32f7b499bba",
+      "bytes": 966,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://vrouwelijkschoenen.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website advertises significant discounts ('Uitverkoop Met Hoge Kortingen') on branded women's shoes, a classic scam tactic (characteristics #1, #5, #13). The domain was registered extremely recently (June 2025) and all owner details are anonymized\u2014both common in scam sites (#4, #9). There is no evidence of legitimate business information or reputation and the contact/about information appears vague. These factors collectively indicate this is a likely fake online shopping scam."
+        },
+        "total_tokens": 12671,
+        "prompt_tokens": 11985,
+        "completion_tokens": 686,
+        "total_cost": 0.024658,
+        "execution_time_seconds": 24.49,
+        "execution_time_formatted": "0m 24s",
+        "start_time": "2025-08-31 04:55:02",
+        "end_time": "2025-08-31 04:55:27"
+      }
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json",
+      "name": "97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json",
+      "sha256": "3d1ecadaad8e4f930bbf72a56f78c0fdde5afc20f38b7dfc4ffe3bf8474c849a",
+      "bytes": 1222,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json",
+      "parsedClassification": null,
+      "record": {
+        "target_url": "https://favorieteaction.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": "The website \"https://favorieteaction.com/\" is a scam. It is a Fake Online Shopping site designed to imitate the reputable \"Action\" store, using urgency sales tactics and brand spoofing with a recently registered anonymous domain.\n\nJSON Analysis:\n{\n  \"scam\": True,\n  \"website_type\": \"Fake Online Shopping\",\n  \"reason\": \"The website mimics the branding and product catalog of the legitimate Dutch retailer 'Action,' but is hosted under a separate, newly created domain with no public registrant details and a suspicious overseas registration. The site employs urgency sales tactics ('Biggest Sale'), aims to exploit brand trust, and was registered only days ago. These characteristics align with classic scam attributes: spoofing legitimate brands for fraudulent e-commerce, urgency, and concealed operations.\"\n}",
+        "total_tokens": 11430,
+        "prompt_tokens": 10658,
+        "completion_tokens": 772,
+        "total_cost": 0.027492000000000003,
+        "execution_time_seconds": 17.27,
+        "execution_time_formatted": "0m 17s",
+        "start_time": "2025-08-31 05:10:59",
+        "end_time": "2025-08-31 05:11:16"
+      }
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json",
+      "name": "9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json",
+      "sha256": "de652e1825fffc4baa7f3dbc2791fdc7389023ffe14c30240f6759b86c103f96",
+      "bytes": 1171,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.stellamccartneys.us/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site claims to be the official Stella McCartney US online shop, but uses a suspicious domain ('stellamccartneys.us') which does not match the official brand domain, exhibits classic brand spoofing, and is not referenced or reviewed on credible platforms. The WHOIS information is entirely hidden and blocked, which is atypical for legitimate luxury brands and is commonly seen with scam websites. The absence of any trust profiles or consumer reviews related to 'stellamccartneys.us', combined with typical e-commerce structuring and 'official site' claims on an unofficial domain, strongly suggest this is a scam designed to impersonate the real Stella McCartney site to defraud customers."
+        },
+        "total_tokens": 9494,
+        "prompt_tokens": 8581,
+        "completion_tokens": 913,
+        "total_cost": 0.020434,
+        "execution_time_seconds": 20.17,
+        "execution_time_formatted": "0m 20s",
+        "start_time": "2025-08-30 16:25:22",
+        "end_time": "2025-08-30 16:25:43"
+      }
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json",
+      "name": "b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json",
+      "sha256": "b907a6310de5bf082e8f16ef61b209243cfac352d3b2555bdae8bb4efa9601cf",
+      "bytes": 1065,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://jordans.com.mx/t/jordan-40",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims to sell '100% Original' Jordan products at prices unusually low for authentic items, with free shipping on all past orders\u2014common bait tactics (points #1, #3). There are no visible company credentials, addresses, or traceable contact details (points #4, #7). The domain registrant is an individual in Germany targeting Mexican consumers, and there is no verification of being an authorized Jordan/Nike reseller (points #4, #16). The site relies on ambiguous trust signals, fits the pattern of fake branded online shops, and strongly matches numerous scam indicators."
+        },
+        "total_tokens": 8845,
+        "prompt_tokens": 8093,
+        "completion_tokens": 752,
+        "total_cost": 0.020666,
+        "execution_time_seconds": 24.6,
+        "execution_time_formatted": "0m 24s",
+        "start_time": "2025-08-30 16:31:09",
+        "end_time": "2025-08-30 16:31:34"
+      }
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json",
+      "name": "d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json",
+      "sha256": "d3fd345370c724d56d1e3e48318d7223eb08abb011797fd84eb3e322cf72bafc",
+      "bytes": 1048,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.pokemoncenterca.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website closely mimics the official Pok\u00e9mon Center store layout and products but uses a newly registered and privacy-shielded domain ('pokemoncenterca.com'), while the official Pok\u00e9mon Center site for North America is 'pokemoncenter.com'. The site attempts to impersonate the legitimate brand and hides ownership details, which are common characteristics of scam sites. There is no official connection to The Pok\u00e9mon Company, and the registration details show no transparency or legitimacy. These factors indicate this is a fake online shopping scam."
+        },
+        "total_tokens": 15197,
+        "prompt_tokens": 14542,
+        "completion_tokens": 655,
+        "total_cost": 0.030100000000000002,
+        "execution_time_seconds": 17.64,
+        "execution_time_formatted": "0m 17s",
+        "start_time": "2025-08-30 16:45:00",
+        "end_time": "2025-08-30 16:45:18"
+      }
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json",
+      "name": "5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json",
+      "sha256": "1e54227b4667dd6a0d1e96234c96f159e2844a5eb1eabe2fb890d5f408d3f28f",
+      "bytes": 1105,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.happysocksfr.fr/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site mimics the famous Happy Socks brand, but the domain is freshly registered with privacy-shielded WHOIS and warnings about bogus contact details. There is no display of a verifiable French company, no SIRET registration, or business address. The About page is vague and avoids official company info. No verifiable links to the real Happy Socks. SSL certificate errors add security risks. The legitimate Happy Socks company uses different domains and has proper authentication. All these signs strongly align with characteristics of a scam/fake online shopping website, especially brand spoofing and recent domain creation."
+        },
+        "total_tokens": 21990,
+        "prompt_tokens": 20976,
+        "completion_tokens": 1014,
+        "total_cost": 0.032016,
+        "execution_time_seconds": 175.5,
+        "execution_time_formatted": "2m 55s",
+        "start_time": "2025-08-31 04:04:46",
+        "end_time": "2025-08-31 04:07:42"
+      }
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json",
+      "name": "7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json",
+      "sha256": "a3e8357cb26923ccb5634c9e119e7cfc29eec98b63bc46acdd0644c7a5e5b5ac",
+      "bytes": 1126,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://chromehearts-france.fr/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website uses the global luxury brand Chrome Hearts, but the domain is not officially affiliated with the real Chrome Hearts. The authentic brand only has two physical stores in France and does not sell online via third parties. The website was created recently, has anonymous and irrelevant registration details (personal Hotmail and German address), and its e-commerce setup mimics luxury product listings with incomplete price display and generic privacy/policy pages. There is no evidence of legitimate reseller status. These are classic signs of a fake online shop scam intending to defraud users by selling counterfeit or nonexistent goods."
+        },
+        "total_tokens": 17134,
+        "prompt_tokens": 16254,
+        "completion_tokens": 880,
+        "total_cost": 0.039548,
+        "execution_time_seconds": 35.56,
+        "execution_time_formatted": "0m 35s",
+        "start_time": "2025-08-31 04:24:45",
+        "end_time": "2025-08-31 04:25:20"
+      }
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json",
+      "name": "d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json",
+      "sha256": "47c82ceac5a5c06d72d54ce7f29efc363a4190d21bb7d80aa02602ccbb31a20f",
+      "bytes": 978,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://www.akufrance.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays multiple scam red flags: unusually high discounts (50-70%+ off) on branded products, use of urgency and psychological sales triggers, lack of verifiable business/contact/legal information, and the use of a generic e-commerce layout common among scam clones. The product line mimics that of official brands, and the absence of company transparency as per WHOIS or on-site details strongly suggests fraudulent intent. These are highly indicative of a Fake Online Shopping scam."
+        },
+        "total_tokens": 9078,
+        "prompt_tokens": 8319,
+        "completion_tokens": 759,
+        "total_cost": 0.022709999999999998,
+        "execution_time_seconds": 20.69,
+        "execution_time_formatted": "0m 20s",
+        "start_time": "2025-08-31 04:57:14",
+        "end_time": "2025-08-31 04:57:35"
+      }
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json",
+      "name": "eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json",
+      "sha256": "ced5ce6ca88cafbc934295f378cbee3654b40bb25913b9162460b06779d48883",
+      "bytes": 932,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.akufrance.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website akufrance.com offers AKU footwear at extremely deep, unrealistic discounts and claims of free shipping and returns, which exploits typical psychological triggers. There is no verifiable company information, contact details, or physical address, and WHOIS info is hidden. It mimics legitimate branding and lacks transparency in privacy and payment details. These are consistent with most common characteristics of Fake Online Shopping scam websites."
+        },
+        "total_tokens": 11510,
+        "prompt_tokens": 10703,
+        "completion_tokens": 807,
+        "total_cost": 0.026326,
+        "execution_time_seconds": 35.3,
+        "execution_time_formatted": "0m 35s",
+        "start_time": "2025-08-31 05:08:24",
+        "end_time": "2025-08-31 05:08:59"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json",
+      "name": "04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json",
+      "sha256": "5eac4b050def042d209f044d681e85cb8509ca3245c2a1714fbf2939e6981204",
+      "bytes": 1018,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.uggat.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays numerous scam indicators: it impersonates the legitimate UGG brand, lists UGG boots at highly unrealistic prices (e.g., \u20ac55, vastly below market value), offers free shipping and returns on all orders (common scam tactic), lacks any verifiable business details or Austrian registration, uses generic about page text, and does not show ownership transparency. Additionally, the content appears copied and targeted at exploiting consumer interest in discounted branded goods, and the official WHOIS data is concealed."
+        },
+        "total_tokens": 26397,
+        "prompt_tokens": 25329,
+        "completion_tokens": 1068,
+        "total_cost": 0.046146000000000006,
+        "execution_time_seconds": 125.35,
+        "execution_time_formatted": "2m 5s",
+        "start_time": "2025-08-30 16:00:23",
+        "end_time": "2025-08-30 16:02:28"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json",
+      "name": "2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json",
+      "sha256": "24179b1066a73ebc6ec27ce1c0ca738083b46b73ed62d7501183b8f4f4ee8069",
+      "bytes": 1123,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website closely mimics a known brand (Teva) and offers shoes at prices well below the typical retail value, both strong scam indicators. No legal company information, physical address, or proper customer contact details are provided; both 'Impressum' and 'Kontakt' pages return 404 errors, violating Austrian legal requirements for online shops. The WHOIS data masks the registrant, and SSL/security issues further support the conclusion. These characteristics fit multiple scam patterns: unusually low prices, fake company info, ambiguous customer privacy, and spoofing of a legitimate brand."
+        },
+        "total_tokens": 20135,
+        "prompt_tokens": 19320,
+        "completion_tokens": 815,
+        "total_cost": 0.03652,
+        "execution_time_seconds": 159.38,
+        "execution_time_formatted": "2m 39s",
+        "start_time": "2025-08-30 16:17:21",
+        "end_time": "2025-08-30 16:20:01"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json",
+      "name": "2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json",
+      "sha256": "7e49fafcbac29f52a472ae16a19f1589bbb0da0bef7b517340f8a5cfb1aeffe1",
+      "bytes": 1207,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.champion.co.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays multiple scam characteristics: 1) It sells branded products (Champion) from a non-official domain. 2) The About Us and Contact pages provide no business address, phone, verifiable company registration, or clear organizational identity. 3) The site has SSL certificate issues, which may point to lack of professionalism or attempt to obscure tracking. 4) Searches found no evidence the domain is linked to the real Champion brand, and there are no positive reputable third-party reviews. 5) The policies, contact info, and company claims are generic and vague instead of traceable and specific, typical of scam sites seeking to mimic legit e-commerce stores. These factors align with several key scam indicators."
+        },
+        "total_tokens": 26994,
+        "prompt_tokens": 25787,
+        "completion_tokens": 1207,
+        "total_cost": 0.042414,
+        "execution_time_seconds": 183.14,
+        "execution_time_formatted": "3m 3s",
+        "start_time": "2025-08-30 16:17:54",
+        "end_time": "2025-08-30 16:20:57"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json",
+      "name": "458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json",
+      "sha256": "b75d166fd4df7c09224d5f05f211148bd5c6ab22d44a536aacaeb764ccdb5714",
+      "bytes": 1276,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://barboursuk.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website 'barboursuk.com' uses the content, branding, and product images of 'Acne Studios', a well-known fashion label, despite its domain referencing 'Barbour', a completely different brand. All hyperlinks point off-site to 'acnestudios.co.at', suggesting mirrored/stolen web content and an intentional attempt to mislead users. The website features ambiguous legal/privacy text, promises of free shipping and returns for all orders (common outlet scam tactic), and lacks credible information about the operating company. These attributes, especially the domain/name mismatch and brand impersonation, fulfill multiple scam criteria: brand spoofing, absence of legitimate contact info, psychological manipulation, and product misrepresentation. This fits the classic pattern of fake online shopping scams."
+        },
+        "total_tokens": 9225,
+        "prompt_tokens": 8432,
+        "completion_tokens": 793,
+        "total_cost": 0.023208,
+        "execution_time_seconds": 17.94,
+        "execution_time_formatted": "0m 17s",
+        "start_time": "2025-08-30 16:30:36",
+        "end_time": "2025-08-30 16:30:54"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json",
+      "name": "46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json",
+      "sha256": "3919b2506ab531077e69dd83d0ddbefcfc43584ea2c14ed535040a28c663e0f6",
+      "bytes": 956,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://specialized-gb.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims to be an official Acne Studios Outlet despite the domain ('specialized-gb.com') being unrelated to the brand. The entire site content is cloned from or heavily references 'acnestudios.co.at,' and nearly all hyperlinks redirect to another suspicious, non-official site. Classic scam features are present: free shipping/returns offers, mismatched or spoofed branding, and an ambiguous business identity. These align with well-known Fake Online Shopping scam patterns."
+        },
+        "total_tokens": 9235,
+        "prompt_tokens": 8463,
+        "completion_tokens": 772,
+        "total_cost": 0.023102,
+        "execution_time_seconds": 22.14,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-30 16:31:06",
+        "end_time": "2025-08-30 16:31:28"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json",
+      "name": "4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json",
+      "sha256": "a50fdf3bc7160fe5f75913b305c9643907c04cbdba8be952c32c8abe4eeaa7d6",
+      "bytes": 1094,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://napapijris.de/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The domain name napapijris.de mimics a legitimate brand (Napapijri) but displays and redirects to Aybl sportswear content, a completely unrelated brand. All hyperlinks on the site direct to a different domain (aybl.co.at), and the website's content mentions only 'Aybl \u00d6sterreich'. The absence of genuine contact information, ambiguous WHOIS data with no registrant details, and clear brand/domain mismatch strongly indicate a scam, specifically a doorway or spoofing fake shop. This matches scam characteristics #4 (non-existent company info), #6 (inappropriate contact info), #7 (ambiguous privacy), and #16 (brand mimicry)."
+        },
+        "total_tokens": 8714,
+        "prompt_tokens": 7960,
+        "completion_tokens": 754,
+        "total_cost": 0.021952,
+        "execution_time_seconds": 14.86,
+        "execution_time_formatted": "0m 14s",
+        "start_time": "2025-08-30 16:31:55",
+        "end_time": "2025-08-30 16:32:10"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json",
+      "name": "5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json",
+      "sha256": "7f2571d40149c9b6a39c3df2c2986837b9da2ab35f589835357ca209e05a365a",
+      "bytes": 1048,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://superdry.co.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the well-known Superdry brand but uses a suspicious .co.at domain instead of the official company site. The About Us page contains vague, generic language inconsistent with Superdry's known business profile, and there is no concrete company registration or contact data. The WHOIS results reveal recent domain changes and hidden registrant details, highly atypical for a major brand. There are also SSL security warnings. Taken together, these indicators are classic hallmarks of a fake online shopping scam aiming to defraud potential customers."
+        },
+        "total_tokens": 22361,
+        "prompt_tokens": 21245,
+        "completion_tokens": 1116,
+        "total_cost": 0.047577999999999995,
+        "execution_time_seconds": 89.47,
+        "execution_time_formatted": "1m 29s",
+        "start_time": "2025-08-30 16:36:17",
+        "end_time": "2025-08-30 16:37:47"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json",
+      "name": "628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json",
+      "sha256": "031248b4ce1fde5cc22d15990425eca2ea986f7f8b5dc042f6d686e88d3cb649",
+      "bytes": 1048,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.nike-blazer.de/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website masquerades as an official Nike store using an unauthorized domain (nike-blazer.de). It employs psychological tactics such as promises of low prices and free shipping/returns. The domain lacks any corporate registration information, a red flag for a major brand. The site heavily mimics Nike corporate branding and only sells one product line, which is atypical for legitimate online brand shops. External checks suggest association with counterfeit and potentially scam operations. All these align strongly with known fake e-commerce site behaviors."
+        },
+        "total_tokens": 15166,
+        "prompt_tokens": 14459,
+        "completion_tokens": 707,
+        "total_cost": 0.030350000000000002,
+        "execution_time_seconds": 37.35,
+        "execution_time_formatted": "0m 37s",
+        "start_time": "2025-08-30 16:37:47",
+        "end_time": "2025-08-30 16:38:24"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json",
+      "name": "906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json",
+      "sha256": "0ccccc1c4739ff1715f10da2bcf0184cc512e89bcb41315834d7036aacaa0b4b",
+      "bytes": 1067,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.adidas-campus.de/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site mimics the well-known Adidas brand, claims to be an 'official' shop for Germany, offers free shipping for all orders, and lists unusually low prices for in-demand sneakers. There is no verifiable company or physical address information provided, only vague mission statements. The WHOIS data is opaque, with no registrant information, which is abnormal for a true brand website. SSL certificate issues were detected, further increasing suspicion. These characteristics align closely with scam signals: spoofing, abnormally low prices, lack of transparency, and brand impersonation."
+        },
+        "total_tokens": 17699,
+        "prompt_tokens": 16840,
+        "completion_tokens": 859,
+        "total_cost": 0.033256,
+        "execution_time_seconds": 103.08,
+        "execution_time_formatted": "1m 43s",
+        "start_time": "2025-08-30 16:59:39",
+        "end_time": "2025-08-30 17:01:22"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json",
+      "name": "a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json",
+      "sha256": "a8879325fbf8cb4001fbd8cf4e1ccb6dbd65cef65ee6ccfab7b55afb2f153f66",
+      "bytes": 1093,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://pokemoncenter.co.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the official Pok\u00e9mon Center online store using a country-specific .co.at TLD, but official Pok\u00e9mon Center domains are managed directly by The Pok\u00e9mon Company with country-specific subdirectories or TLDs (.com, .jp, etc.), not .co.at. The WHOIS information is anonymized and registered through an unrelated provider instead of the Pok\u00e9mon Company. No company data or links from official sources verify its legitimacy. The site demonstrates multiple characteristics typical of scam sites: spoofing a known brand, hidden registrant, and impersonation. Therefore, this is a fake online shopping scam."
+        },
+        "total_tokens": 11315,
+        "prompt_tokens": 10517,
+        "completion_tokens": 798,
+        "total_cost": 0.027418,
+        "execution_time_seconds": 28.17,
+        "execution_time_formatted": "0m 28s",
+        "start_time": "2025-08-30 17:08:47",
+        "end_time": "2025-08-30 17:09:15"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json",
+      "name": "b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json",
+      "sha256": "683c0ae70d163bc152053548a17a462e9c1e2cd536a8768a06af893a914eaf44",
+      "bytes": 1077,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.adidas-samba.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site imitates Adidas branding and focuses on high-demand Samba models but operates under a suspicious domain ('adidas-samba.at'), not affiliated with official Adidas. Pricing is slightly below market, using classic lures like 'free shipping for all orders.' WHOIS domain info is undisclosed (unlike official company sites), and the use of many 'collaborations' to suggest variety is atypical for a single shoe landing site. These characteristics align strongly with common fake shopping scams, especially those targeting trending products with official-looking but unauthoritative sites."
+        },
+        "total_tokens": 10030,
+        "prompt_tokens": 9144,
+        "completion_tokens": 886,
+        "total_cost": 0.025375999999999996,
+        "execution_time_seconds": 20.57,
+        "execution_time_formatted": "0m 20s",
+        "start_time": "2025-08-30 17:13:03",
+        "end_time": "2025-08-30 17:13:24"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json",
+      "name": "c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json",
+      "sha256": "de10a2c0f58998e12b811462ce23f8a980a0684adbcc44b502eb6b12c3aad82c",
+      "bytes": 838,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://owalasale.de/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the official Owala brand with deep discounts, but it lacks legally required company info (impressum is missing/non-functional), provides no verifiable contact details, and its WHOIS record is devoid of business data. All these are classic indicators of a scam shopping site, especially for sites pretending to be authorized dealers of well-known brands."
+        },
+        "total_tokens": 19627,
+        "prompt_tokens": 18665,
+        "completion_tokens": 962,
+        "total_cost": 0.03197,
+        "execution_time_seconds": 79.09,
+        "execution_time_formatted": "1m 19s",
+        "start_time": "2025-08-30 17:22:17",
+        "end_time": "2025-08-30 17:23:36"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json",
+      "name": "c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json",
+      "sha256": "89bdaf5869d0f11bc8e4d102bb22664f0351789ad8e980300de9cc08c40301d2",
+      "bytes": 1064,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://labubu.co.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website matches multiple scam criteria: external warnings from BBB/Forbes/McAfee about fake Labubu sites; lack of credible business info or contact details (only form, no phone/address); ambiguous/boilerplate About Us; mismatch in context (mentions sneakers, actually sells toys); free shipping/returns as psychological lure; recent proliferation of scam reports tied to exactly such domains; security (SSL) certificate issues; and exploitative use of viral toy trend tactics. These factors, plus confirmation from trusted authorities, confirm this as a fraudulent shopping site."
+        },
+        "total_tokens": 25696,
+        "prompt_tokens": 24695,
+        "completion_tokens": 1001,
+        "total_cost": 0.048566000000000005,
+        "execution_time_seconds": 163.96,
+        "execution_time_formatted": "2m 43s",
+        "start_time": "2025-08-30 17:27:33",
+        "end_time": "2025-08-30 17:30:17"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json",
+      "name": "c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json",
+      "sha256": "32a5124e28e7d74d2c74860d838841ce46e7ae68303d20c84758aa3baffb7cc9",
+      "bytes": 993,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://zippoes.es/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site zippoes.es claims to be an Acne Studios outlet with free shipping offers, but uses a Spanish (.es) domain while targeting Austrian customers and displaying all content as for Austria. The site links only to 'acnestudios.co.at', which is not the official Acne Studios website. There is clear evidence of brand impersonation, misleading domain usage, lack of clear ownership/contact information, and potentially unrealistic discount or outlet offers. All these are classic characteristics of a fake online shopping scam."
+        },
+        "total_tokens": 11279,
+        "prompt_tokens": 10541,
+        "completion_tokens": 738,
+        "total_cost": 0.023338,
+        "execution_time_seconds": 18.27,
+        "execution_time_formatted": "0m 18s",
+        "start_time": "2025-08-30 17:29:12",
+        "end_time": "2025-08-30 17:29:30"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json",
+      "name": "c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json",
+      "sha256": "8dff75ee38c8c953939103cdd7e2feae05fb96bf9309bb495b4203747dbc658d",
+      "bytes": 1086,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://ninewest.com.de/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The domain 'ninewest.com.de' mimics the legitimate Nine West brand (real site: ninewest.com), a common impersonation tactic (characteristics #16, #4). WHOIS data is unavailable or anonymized, which is typical for scam sites. The website offers branded products with free shipping and generic legal/policy text, without clear business information (characteristics #1, #5, #7). External search reveals a high incidence of Nine West brand copycat scams using similar domains and fraudulent practices (non-delivery, fake goods, poor customer service). This matches the main scam indicators for Fake Online Shopping scams."
+        },
+        "total_tokens": 9694,
+        "prompt_tokens": 8768,
+        "completion_tokens": 926,
+        "total_cost": 0.024944,
+        "execution_time_seconds": 27.39,
+        "execution_time_formatted": "0m 27s",
+        "start_time": "2025-08-30 17:31:06",
+        "end_time": "2025-08-30 17:31:33"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json",
+      "name": "c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json",
+      "sha256": "2534865015ee9caecd0e652c6d7928189bae018ab862384e4e7a535525dc1a9c",
+      "bytes": 974,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://kickers.co.at/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the Kickers shoe brand, uses sales tactics like 'Outlet Sale' and free shipping to entice shoppers, and the domain (.co.at) does not correspond to any officially listed Kickers websites or authorized retailers. The site is absent from official Kickers listings and major retailer search results, indicating it is not a legitimate store. These characteristics, alongside the use of an unusual domain to impersonate a well-known brand, fit the classic model of fake online shopping scams."
+        },
+        "total_tokens": 45928,
+        "prompt_tokens": 44873,
+        "completion_tokens": 1055,
+        "total_cost": 0.09665,
+        "execution_time_seconds": 48.46,
+        "execution_time_formatted": "0m 48s",
+        "start_time": "2025-08-30 17:33:48",
+        "end_time": "2025-08-30 17:34:36"
+      }
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json",
+      "name": "d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json",
+      "sha256": "6bb7e7f8840f0933069406d9b77d1d417aadd5001e8eaa42f3aea9e2a426c199",
+      "bytes": 999,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://salomons.gr/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website exhibits several scam hallmarks: it falsely brands itself as an Acne Studios outlet using an unrelated Greek domain, all major links direct to another suspicious domain (acnestudios.co.at), and it leverages 'Outlet Sale', free shipping promises, and unclear contact/privacy information. Legitimate Acne Studios domains do not utilize 'salomons.gr' or 'acnestudios.co.at'. The site mimics the layout of legitimate brands and heavily relies on urgency and deep discounts\u2014common features of fake shopping scams."
+        },
+        "total_tokens": 9202,
+        "prompt_tokens": 8484,
+        "completion_tokens": 718,
+        "total_cost": 0.019256000000000002,
+        "execution_time_seconds": 18.94,
+        "execution_time_formatted": "0m 18s",
+        "start_time": "2025-08-30 17:37:14",
+        "end_time": "2025-08-30 17:37:33"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json",
+      "name": "03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json",
+      "sha256": "3b24ba98355105179506b894bb9e04f9d747fc972b368be24d29f269d509c24c",
+      "bytes": 1074,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://pokemoncenter.co.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site mimics the official Pok\u00e9mon Center brand and design but uses the non-standard domain 'pokemoncenter.co.it,' which is not affiliated with official Pok\u00e9mon Center shops (all use 'pokemoncenter.com'). The domain was registered extremely recently (June 30, 2025) with all ownership details hidden\u2014a common trait among scam sites. The .co.it TLD is unusual and not associated with legitimate Pok\u00e9mon Center operations. This, together with brand impersonation and lack of transparency, matches multiple scam characteristics, particularly of fake online stores that mimic well-known companies."
+        },
+        "total_tokens": 11727,
+        "prompt_tokens": 10883,
+        "completion_tokens": 844,
+        "total_cost": 0.028518,
+        "execution_time_seconds": 22.71,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-31 03:14:00",
+        "end_time": "2025-08-31 03:14:23"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json",
+      "name": "228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json",
+      "sha256": "d0268caa2bf5541772e65ec8db4ae6817e2b6b1c8c698e085518269c796cc2ea",
+      "bytes": 1174,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://bambiniattivi.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims to sell a wide range of branded Italian children's clothes and accessories, but the domain was registered extremely recently (only days old), with all business/owner information hidden behind a privacy shield and with business/legal/customer info links not functioning (404 errors). No legitimate company information or contacts are visible, and privacy practices cannot be verified. This matches classic e-commerce scam characteristics such as 4 (non-existent company), 6 and 7 (missing/improper contact and privacy info), 5 (handling common branded goods with no established company), and a quickly registered throwaway domain\u2014the hallmarks of a fake shopping site."
+        },
+        "total_tokens": 14265,
+        "prompt_tokens": 13547,
+        "completion_tokens": 718,
+        "total_cost": 0.024390000000000002,
+        "execution_time_seconds": 116.15,
+        "execution_time_formatted": "1m 56s",
+        "start_time": "2025-08-31 03:41:32",
+        "end_time": "2025-08-31 03:43:28"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json",
+      "name": "33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json",
+      "sha256": "797471f0a3be2573a551020f8b59f0d8afe10d81dedec1529a3c84e3d988d417",
+      "bytes": 1024,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.bershka.co.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the appearance and branding of the real Bershka online store but uses a suspicious 'co.it' domain instead of the official 'bershka.com/it'. WHOIS data shows the domain was registered in 2025 with hidden details, not linked to Inditex. Typical scam signs include free returns offers, a wide range of products, and mimicking a legitimate brand to deceive shoppers. These match multiple scam website characteristics: handling multiple products, spoofing legitimate brand design, and ambiguous business registration details."
+        },
+        "total_tokens": 11267,
+        "prompt_tokens": 10550,
+        "completion_tokens": 717,
+        "total_cost": 0.025300000000000003,
+        "execution_time_seconds": 19.32,
+        "execution_time_formatted": "0m 19s",
+        "start_time": "2025-08-31 03:54:37",
+        "end_time": "2025-08-31 03:54:57"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json",
+      "name": "412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json",
+      "sha256": "1a1b6800f3c3c0349a3b3827b0461505fcde5a39b80068b96d69f52a31e51eea",
+      "bytes": 1113,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://www.pokemoncenter.co.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics legitimate Pok\u00e9mon Center branding and design, but uses the unofficial and suspicious domain pokemoncenter.co.it, registered very recently in 2025 with hidden ownership. Official Pok\u00e9mon Center stores do not operate on .co.it domains; their legitimate operations use .com, .jp, and authorized EU domains. The WHOIS information is concealed, which is typical of scam sites, and there is a lack of verifiable company information. This aligns with scam characteristics 4, 7, 16 (non-existent company info, ambiguous privacy, spoofing legitimate brands) and strongly indicates a fake store set up to defraud consumers."
+        },
+        "total_tokens": 15205,
+        "prompt_tokens": 14469,
+        "completion_tokens": 736,
+        "total_cost": 0.030794,
+        "execution_time_seconds": 25.18,
+        "execution_time_formatted": "0m 25s",
+        "start_time": "2025-08-31 04:02:13",
+        "end_time": "2025-08-31 04:02:39"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json",
+      "name": "74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json",
+      "sha256": "ad6f76cd4846166e1e649dc0dae11e7a30ca1fe892895d41ef931d613c8c6fbb",
+      "bytes": 1077,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json",
+      "parsedClassification": null,
+      "record": {
+        "target_url": "https://happysocksit.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": "{\n  \"scam\": True,\n  \"website_type\": \"Fake Online Shopping\",\n  \"reason\": \"The website presents itself as an official retailer for a global brand but uses a newly registered domain (June 2025) with all ownership information hidden. This is a common tactic in scam/fake shop operations, particularly as Happy Socks is a well-known brand and the legitimate sites would be older and openly branded. The lack of complaints on Reddit and X/Twitter is likely due to its extreme recency. Its structure mimics legitimate e-commerce sites, but this is a key scam indicator (characteristic 16: mimics legitimate company names/designs). The impersonation risk and the suspicious timing are decisive.\"\n}",
+        "total_tokens": 18611,
+        "prompt_tokens": 17766,
+        "completion_tokens": 845,
+        "total_cost": 0.033268,
+        "execution_time_seconds": 32.2,
+        "execution_time_formatted": "0m 32s",
+        "start_time": "2025-08-31 04:33:59",
+        "end_time": "2025-08-31 04:34:31"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json",
+      "name": "847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json",
+      "sha256": "303e71469e7e3930b620a3eb14bfdfd54ce377057e9e141457451a7a1b43a372",
+      "bytes": 884,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.happysocksit.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The domain 'happysocksit.it' was registered in 2025 and hides ownership details, while mimicking a well-known global brand (Happy Socks) without official affiliation or external verification. All hyperlinks are internal, there is no clear company information or business address, the privacy policy is vague, and SSL issues indicate poor security. These factors match scam indicators for spoof online stores."
+        },
+        "total_tokens": 21801,
+        "prompt_tokens": 20795,
+        "completion_tokens": 1006,
+        "total_cost": 0.039846,
+        "execution_time_seconds": 122.65,
+        "execution_time_formatted": "2m 2s",
+        "start_time": "2025-08-31 04:42:00",
+        "end_time": "2025-08-31 04:44:02"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json",
+      "name": "895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json",
+      "sha256": "a6bcb93675634d1501e022ed28e121494f15609c0f575672a272c16fbfeed784",
+      "bytes": 1135,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.cannondales.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The domain cannondales.it was registered very recently (2025-06-26), with all registrant/admin/technical details hidden in WHOIS. The website claims to be the official Cannondale Outlet for Italy, but this is highly likely to be a spoof, as its About/Company page is inaccessible (403 Forbidden) and SSL/certificate security issues are reported. The site offers high-value branded bikes with free shipping and returns, matching common fake outlet scam characteristics. These factors\u2014lack of transparency, security risks, impossible-to-check company legitimacy, and claims of official branding\u2014are strong evidence it is a scam site targeting online shoppers."
+        },
+        "total_tokens": 16616,
+        "prompt_tokens": 15873,
+        "completion_tokens": 743,
+        "total_cost": 0.03769,
+        "execution_time_seconds": 117.74,
+        "execution_time_formatted": "1m 57s",
+        "start_time": "2025-08-31 04:45:02",
+        "end_time": "2025-08-31 04:47:00"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json",
+      "name": "952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json",
+      "sha256": "9a1996a463a21d14194fab18e0d911e97efe2940263073a5f7d80fa29040cbab",
+      "bytes": 1154,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.lowa.co.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site displays multiple scam characteristics: (1) It falsely represents itself as an official retailer for Lowa but is not acknowledged by the official brand ('lowa.com'), (2) lacks any verifiable company name, physical address, or legitimate business contact info (phone/email), (3) its 'About Us' and 'Contact Us' pages only contain generic, non-specific information, (4) SSL certificate issues present potential security risks, (5) offers free shipping and claims of 24/7 support without any supporting commercial infrastructure, and (6) mimics legitimate design and branding of the Lowa company. All these are consistent with common tactics used in fake online shopping scams."
+        },
+        "total_tokens": 28356,
+        "prompt_tokens": 27359,
+        "completion_tokens": 997,
+        "total_cost": 0.049638,
+        "execution_time_seconds": 203.64,
+        "execution_time_formatted": "3m 23s",
+        "start_time": "2025-08-31 04:56:03",
+        "end_time": "2025-08-31 04:59:27"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json",
+      "name": "a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json",
+      "sha256": "be5509201424b7f55baa9b6443a93534f0b46121003f325d85faf4f0538b1cbb",
+      "bytes": 901,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://jordan4.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims '100% authenticity' for Air Jordan shoes while lacking legitimate business credentials, with ambiguous privacy policy, generic contact info, and no evidence of being an authorized retailer. The site exclusively focuses on popular branded sneakers (a classic scam pattern), offers free shipping, and the domain is newly registered (Oct 2023) with hidden WHOIS details, all strongly matching known scam characteristics."
+        },
+        "total_tokens": 17574,
+        "prompt_tokens": 16784,
+        "completion_tokens": 790,
+        "total_cost": 0.039888,
+        "execution_time_seconds": 27.28,
+        "execution_time_formatted": "0m 27s",
+        "start_time": "2025-08-31 05:03:47",
+        "end_time": "2025-08-31 05:04:14"
+      }
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json",
+      "name": "a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json",
+      "sha256": "0272674347b0f0619b0c5007a5d7df533162fba1f634e5304d4b3d3ffe630c34",
+      "bytes": 1129,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://baggu-it.it/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims to be the official Baggu outlet for Italy, but the domain was registered extremely recently (July 2025) with all ownership details hidden. Baggu is a well-known US-based brand and this site mimics its branding. There is no online reputation, credibility, or recognition of this site among legitimate sources or the Baggu community. These factors, combined with mismatched new domain registration and lack of transparency, fulfill several scam indicators: spoofing legitimate companies, recent and hidden domain registration, and mimicking official store layout. Consequently, the website is very likely a Fake Online Shopping scam."
+        },
+        "total_tokens": 16183,
+        "prompt_tokens": 15263,
+        "completion_tokens": 920,
+        "total_cost": 0.027326000000000003,
+        "execution_time_seconds": 25.67,
+        "execution_time_formatted": "0m 25s",
+        "start_time": "2025-08-31 05:04:35",
+        "end_time": "2025-08-31 05:05:00"
+      }
+    },
+    {
+      "language": "japanese",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_japanese/386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json",
+      "name": "386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json",
+      "sha256": "d6ac5ec7721e39bd717df41b525d13bdd3cece6189d7b032c9f57ca2371c32d5",
+      "bytes": 1036,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_japanese/386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://tuketa1.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "There is overwhelming third-party evidence (Trustpilot, Facebook, community forums) reporting this site as a scam, with users complaining of misleading claims, overcharging, and fraudulent conduct. The site also exhibits many scam characteristics: excessive urgency tactics, unverified celebrity endorsements, aggressive claims about health benefits from shoes, likely ambiguous company/contact info, and similarities to known scam sites. WHOIS data could not be retrieved, often a red flag. Therefore, it is highly likely to be a fake online shopping scam."
+        },
+        "total_tokens": 13188,
+        "prompt_tokens": 12332,
+        "completion_tokens": 856,
+        "total_cost": 0.028824000000000002,
+        "execution_time_seconds": 22.83,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-09-01 13:22:00",
+        "end_time": "2025-09-01 13:22:23"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json",
+      "name": "07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json",
+      "sha256": "0246535e157462869fe4de233aabe745ecb6ab239862e771731b5149903c291f",
+      "bytes": 1174,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://ninewest.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website ninewest.com.mx closely mimics the branding and product catalogue of the official Nine West brand, but the domain was registered very recently by an individual in Germany, not by the official brand or its authorized distributors. In top search results, the legitimate Mexican Nine West site is 'ninewestmexico.com', and the queried site is absent from official listings. This pattern is indicative of a scam website impersonating the real Nine West to deceive shoppers and collect payments or personal data. Hallmarks of scam sites present: brand impersonation, registration by unrelated international parties, very recent domain creation, and nonappearance in legitimate channels."
+        },
+        "total_tokens": 11917,
+        "prompt_tokens": 11097,
+        "completion_tokens": 820,
+        "total_cost": 0.027218000000000003,
+        "execution_time_seconds": 25.6,
+        "execution_time_formatted": "0m 25s",
+        "start_time": "2025-08-31 03:12:02",
+        "end_time": "2025-08-31 03:12:27"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json",
+      "name": "33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json",
+      "sha256": "78c5c4f5806534cd698ed54336e54b2da3a61a68efacf672bb0c8908e6d5efa6",
+      "bytes": 999,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.jwpeis.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website claims to be the official Mexican outlet for JW PEI, a globally-known brand, but the domain was registered only in June 2025 to an unrelated individual in Germany. Key informational pages ('About Us' and 'Contact Us') are inaccessible, a notorious scam tactic. JW PEI's real site and store are unrelated to this domain. The use of a regional domain (.com.mx), the attempt to mimic a luxury brand, newly registered domain, and lack of tangible business owner information indicate classic fake shopping scam patterns."
+        },
+        "total_tokens": 20796,
+        "prompt_tokens": 19900,
+        "completion_tokens": 896,
+        "total_cost": 0.04332,
+        "execution_time_seconds": 242.23,
+        "execution_time_formatted": "4m 2s",
+        "start_time": "2025-08-31 03:41:03",
+        "end_time": "2025-08-31 03:45:05"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json",
+      "name": "49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json",
+      "sha256": "91adc4fe8dffc0504320a349f6e7e5233685cea491b9327bdfd21f0cd43ff237",
+      "bytes": 955,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://pokemonmx.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website is branded as a Mexican Pok\u00e9mon card shop but is registered in Germany under a personal name with no clear business association. The domain was registered very recently (June 2025), and the contact page is inaccessible, preventing verification of company details, business contact info, or legitimacy. These characteristics match those typical of scam sites: non-existent companies, business transparency issues, and potential spoofing of legitimate brands."
+        },
+        "total_tokens": 23289,
+        "prompt_tokens": 22522,
+        "completion_tokens": 767,
+        "total_cost": 0.032364000000000004,
+        "execution_time_seconds": 143.42,
+        "execution_time_formatted": "2m 23s",
+        "start_time": "2025-08-31 03:51:38",
+        "end_time": "2025-08-31 03:54:01"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+      "name": "61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+      "sha256": "c54dad8be9c8f91b52c9f18b797849549557774e170f90b6188b397315bc9924",
+      "bytes": 1213,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-oreo-by1604/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website exhibits multiple scam indicators: (1) Unusually low prices and claims of free shipping/returns (far below market value for Yeezy/Adidas products); (2) Spoofs 'Yeezy Mexico Oficial' and Adidas branding without legal connection; (3) Psychological tactics aimed at urgency/fear of missing deals; (4) The company info and domain contact reference an individual in Germany, not a registered business in Mexico or an Adidas partner; (5) No legitimate contact details, only generic forms; (6) No clear privacy or payment gateway information; (7) SSL certificate/security issues; (8) The website's structure, business claim, and behavior all match major hallmarks of a 'Fake Online Shopping' scam."
+        },
+        "total_tokens": 31956,
+        "prompt_tokens": 30990,
+        "completion_tokens": 966,
+        "total_cost": 0.0603,
+        "execution_time_seconds": 181.51,
+        "execution_time_formatted": "3m 1s",
+        "start_time": "2025-08-31 04:01:31",
+        "end_time": "2025-08-31 04:04:33"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json",
+      "name": "70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json",
+      "sha256": "8b176c0e55f94dabdace471cfe604f49677669560a943b7ad02cdd3ef587799e",
+      "bytes": 924,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.keensoutletcolombia.com/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "All major scam website characteristics are present: extremely low trust score from external reputation sources; unusually low prices; no evidence of legitimate company or contact information; no clear privacy protections; and a pattern of similar 'Keen Outlet' sites previously flagged as scams. The domain mimics the official brand, and there is no verification or legitimate business presence, fitting the fake online shopping scam profile."
+        },
+        "total_tokens": 11993,
+        "prompt_tokens": 11380,
+        "completion_tokens": 613,
+        "total_cost": 0.02056,
+        "execution_time_seconds": 25.03,
+        "execution_time_formatted": "0m 25s",
+        "start_time": "2025-08-31 04:07:59",
+        "end_time": "2025-08-31 04:08:24"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json",
+      "name": "76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json",
+      "sha256": "23c0f5e5ba3b72e528a45bd5373aa2417655b692b7e4804e4e112d8274f15ad2",
+      "bytes": 1048,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://happysocksmx.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site offers well-known 'Happy Socks' products, mimics legitimate branding and design, but is registered very recently (June 2025) to an individual in Germany, not a Mexican company or authorized Happy Socks distributor. Legitimate country outlets typically have local company registration and clear brand association. This, combined with clear attempts at spoofing a genuine brand, fits characteristics #4 (Information on non-existent companies) and #16 (Mimics or spoofs legitimate company names, logos, and website designs), marking it as a fake online shopping scam."
+        },
+        "total_tokens": 13126,
+        "prompt_tokens": 12189,
+        "completion_tokens": 937,
+        "total_cost": 0.028418,
+        "execution_time_seconds": 22.74,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-31 04:10:24",
+        "end_time": "2025-08-31 04:10:47"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json",
+      "name": "7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json",
+      "sha256": "260ae29e0296e1e7453f6d28ad60c5b2ee9003ef676f1b385d81cfd802c4ccdf",
+      "bytes": 949,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site displays unusually low prices, mimics the legitimate Salomon brand with deceptive naming, lacks genuine company/contact information, and is externally reported as a scam by users on Scamdoc and social media. The product discounts and branding are used to exploit buyers\u2019 psychological weaknesses. The website fits several scam characteristics, especially those of fake online shopping sites."
+        },
+        "total_tokens": 8615,
+        "prompt_tokens": 7966,
+        "completion_tokens": 649,
+        "total_cost": 0.018052,
+        "execution_time_seconds": 22.8,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-31 04:18:43",
+        "end_time": "2025-08-31 04:19:06"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+      "name": "82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+      "sha256": "fc9ab033b2fe2f60436d127e969eb9ac8eae7cf5eb0e17837fa86f3e90823822",
+      "bytes": 1071,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The product prices are far below market value, there are claims of official status and free shipping/returns, no verified company information or real contact details are shown, use of official Adidas/Yeezy branding is intended to deceive. Multiple authoritative scam-checking services consistently rate yeezys.com.mx as a scam, with consumer reports of lost money and non-delivery. These points meet key scam indicators (characteristics 1, 3, 4, 6, 7, 16), and external evidence strongly corroborates that this is a fraudulent shopping website."
+        },
+        "total_tokens": 16161,
+        "prompt_tokens": 15413,
+        "completion_tokens": 748,
+        "total_cost": 0.036809999999999996,
+        "execution_time_seconds": 22.55,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-31 04:20:37",
+        "end_time": "2025-08-31 04:20:59"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json",
+      "name": "8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json",
+      "sha256": "4cc750f9be3fa2b95b7cdbcf5beaf48e4906ee9aa42f6ee8f170b5bc4b656db3",
+      "bytes": 843,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.tiendafilaespana.es/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics a legitimate Fila outlet but offers prices far below market value, with no appropriate business contact, unclear privacy statements, and no verifiable company credentials or social legitimacy. The lack of transparency and spoofing of a known brand are consistent with multiple listed scam characteristics, indicating a Fake Online Shopping scam."
+        },
+        "total_tokens": 16603,
+        "prompt_tokens": 16006,
+        "completion_tokens": 597,
+        "total_cost": 0.026612,
+        "execution_time_seconds": 34.19,
+        "execution_time_formatted": "0m 34s",
+        "start_time": "2025-08-31 04:27:34",
+        "end_time": "2025-08-31 04:28:08"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json",
+      "name": "97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json",
+      "sha256": "bf414b5dc26bf04db93f507f1d47ff9080391cff8c2d18c493cdf7a637b3896b",
+      "bytes": 1404,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json",
+      "parsedClassification": null,
+      "record": {
+        "target_url": "https://laneiges.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": "The website https://laneiges.com.mx/ appears to be a scam. It is most likely a Fake Online Shopping site, impersonating the authentic Laneige brand. Basis: the domain is newly registered to an individual not affiliated with the brand/company, it is not recognized by any official Laneige channels or authorized distributors for Mexico, and it uses a similar name to the official brand in a manner typical of spoofing scams.\n\n{\n  \"scam\": True,\n  \"website_type\": \"Fake Online Shopping\",\n  \"reason\": \"The website mimics the legitimate Laneige brand, but its domain is newly registered (2025) to an individual in Germany (not affiliated with Laneige or Amorepacific), and its existence is not recognized by Laneige's official channels or the authorized distributor (Sephora) for Mexico. These factors closely match known scam characteristics of spoofing a legitimate brand, providing ambiguous company information, and attempting to mislead buyers into purchasing from an unauthorized and likely fraudulent source.\"\n}",
+        "total_tokens": 13765,
+        "prompt_tokens": 12852,
+        "completion_tokens": 913,
+        "total_cost": 0.030896,
+        "execution_time_seconds": 22.74,
+        "execution_time_formatted": "0m 22s",
+        "start_time": "2025-08-31 04:33:33",
+        "end_time": "2025-08-31 04:33:56"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json",
+      "name": "bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json",
+      "sha256": "0129fb564df2281452f02ae8e2f138963bdcd816738e0bbc1b596e5905f17213",
+      "bytes": 948,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://yeezys.com.mx/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website displays unusually low prices and claims of 'free shipping,' pretends to be the official Mexican distributor for Adidas Yeezy products, and mimics legitimate Adidas branding. Its WHOIS registrant is an individual in Germany, not an established Mexican business partner or Adidas entity. These signal typical fake shopping scam tactics: spoofing a well-known brand, implausible offers, misleading privacy/ownership and no legitimate company contact details."
+        },
+        "total_tokens": 15508,
+        "prompt_tokens": 15118,
+        "completion_tokens": 390,
+        "total_cost": 0.033356000000000004,
+        "execution_time_seconds": 12.55,
+        "execution_time_formatted": "0m 12s",
+        "start_time": "2025-08-31 04:49:54",
+        "end_time": "2025-08-31 04:50:06"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json",
+      "name": "c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json",
+      "sha256": "17bde614fb1a15fb70158a84ad6a230eb3f28264b931708178a9bbf324918100",
+      "bytes": 1115,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "https://www.vionic.es/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics the branding and product lines of the legitimate Vionic footwear brand without providing any business registration, company address, or official authorization. WHOIS lacks registrant data; the About Us page is vague and generic with no real company info. SSL certificate issues are noted, which is uncharacteristic of a genuine webshop. The combination of free shipping, outlet sale offers, heavy trust signals, and generic content aligns with common e-commerce scam patterns. Multiple scam characteristics are met: brand spoofing, urgency/psychological tactics, lack of transparency, and possible too-good-to-be-true pricing."
+        },
+        "total_tokens": 16175,
+        "prompt_tokens": 15371,
+        "completion_tokens": 804,
+        "total_cost": 0.027574,
+        "execution_time_seconds": 143.76,
+        "execution_time_formatted": "2m 23s",
+        "start_time": "2025-08-31 04:53:31",
+        "end_time": "2025-08-31 04:55:55"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json",
+      "name": "d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json",
+      "sha256": "53e66f2ab20890b54d4afc5c7aaaebe02b926d24d869fecef4456dc3691a0ba4",
+      "bytes": 997,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://pokemon-center.es/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The website mimics official Pok\u00e9mon Center e-commerce branding and structure, offering merchandise under the strictly controlled 'pokemon-center' trademark, which is not officially registered to The Pok\u00e9mon Company in Spain and does not appear in any official or community discussions. No verifiable or transparent company information is present, and the domain registration data is withheld. These are classic signs of a fake online shopping scam, particularly one that spoofs a legitimate, high-profile brand."
+        },
+        "total_tokens": 19246,
+        "prompt_tokens": 18278,
+        "completion_tokens": 968,
+        "total_cost": 0.044300000000000006,
+        "execution_time_seconds": 24.59,
+        "execution_time_formatted": "0m 24s",
+        "start_time": "2025-08-31 04:58:25",
+        "end_time": "2025-08-31 04:58:50"
+      }
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json",
+      "name": "dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json",
+      "sha256": "42ac7abc2c7773c5794b5713aac383063d502c1b9e4c2460c61cbb2e49d68db0",
+      "bytes": 1135,
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json",
+      "parsedClassification": {
+        "scam": true,
+        "website_type": "Fake Online Shopping"
+      },
+      "record": {
+        "target_url": "http://yeezys.com.es/",
+        "analysis_llm": "gpt-4.1",
+        "llm_response": {
+          "scam": true,
+          "website_type": "Fake Online Shopping",
+          "reason": "The site mimics the branding and product lineup of a legitimate, high-demand brand (Adidas Yeezy) on an unrelated domain, with no verifiable company, registrant, or business contact information. It presents free shipping and purportedly sells rare models often targeted by counterfeiters. Domain ownership is hidden, violating best practices for transparency. These traits directly match scam characteristics #4 (non-existent company), #16 (spoofing/mimicking brands), #5 (targeted products), and #1 (unusually low/free offers). The lack of explicit scam reports does not outweigh these significant scam indicators. This is a textbook Fake Online Shopping scam site."
+        },
+        "total_tokens": 38041,
+        "prompt_tokens": 37017,
+        "completion_tokens": 1024,
+        "total_cost": 0.082226,
+        "execution_time_seconds": 36.44,
+        "execution_time_formatted": "0m 36s",
+        "start_time": "2025-08-31 05:03:06",
+        "end_time": "2025-08-31 05:03:43"
+      }
+    }
+  ]
+}
