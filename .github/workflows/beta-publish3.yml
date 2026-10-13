@@ -3,7 +3,7 @@ name: DropShredder accepted beta3 publication
 on:
   pull_request:
     branches: [release/security-performance-hardening]
-    paths: ['.github/workflows/beta-publish2.yml', 'tools/beta/prepare-beta3.py', 'tools/beta/BETA3-INSTALL-AND-REPORT.md']
+    paths: ['.github/workflows/beta-publish3.yml', 'tools/beta/prepare-beta3.py', 'tools/beta/BETA3-INSTALL-AND-REPORT.md']
 
 permissions:
   contents: read
@@ -38,7 +38,7 @@ jobs:
               run=api(f'actions/runs/{id}')
               assert run['head_sha']==head and run['status']=='completed' and run['conclusion']=='success', run
           paths=subprocess.check_output(['git','diff','--name-only',head,'HEAD'],text=True).splitlines()
-          assert all(p.startswith(('workplane/','tools/beta/')) or p in ['BETA-TESTING.md','README.md','.github/workflows/beta-publish2.yml','.gitignore'] for p in paths), paths
+          assert all(p.startswith(('workplane/','tools/beta/','tools/evaluation/')) or p in ['BETA-TESTING.md','README.md','.github/workflows/beta-publish3.yml','.github/workflows/beta-public-product-live.yml','.gitignore'] for p in paths), paths
           artifact=next(a for a in api('actions/runs/38362104652/artifacts')['artifacts'] if a['name']=='dropshredder-headed-permission-evidence')
           assert not artifact['expired'] and artifact['workflow_run']['head_sha']==head
           open('native-artifact.json','w').write(json.dumps(artifact))
