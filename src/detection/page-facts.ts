@@ -1,4 +1,4 @@
-import {hasSensitiveCommerceSurface} from '../security/sensitive-surface';
+import {hasSensitiveCommerceSurface,privateCommerceRegions} from '../security/sensitive-surface';
 import {COMMERCE_LANGUAGE_KIT} from '../languages/commerce-kit';
 import {canonicalCommerceText,normalizeCommerceCharacters,commerceTokens} from '../languages/commerce-text';
 import {classifyShoppingPage,type ShoppingPageFacts} from '../detection/shopping-page';
@@ -11,14 +11,17 @@ function safeType(node:unknown):string[]{
 }
 
 export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageFacts {
+  const privateRegions=privateCommerceRegions(COMMERCE_LANGUAGE_KIT.privateFormParts,doc);
+  const excluded=(el:Element)=>privateRegions.some(root=>root===el||root.contains(el));
+  const publicNode=(selector:string):Element|null=>{const nodes=doc.querySelectorAll(selector);for(let i=0;i<Math.min(nodes.length,40);i++)if(!excluded(nodes[i]!))return nodes[i]!;return null;};
   const facts:ShoppingPageFacts={
     url:href,
-    title:doc.querySelector('h1')?.textContent?.trim().slice(0,180),
     hasSensitiveFields:hasSensitiveCommerceSurface(COMMERCE_LANGUAGE_KIT.privateFormParts,doc),
   };
   // Never inspect scripts, prices or text on sensitive surfaces.
   if(facts.hasSensitiveFields) return facts;
-  const type=doc.querySelector<HTMLMetaElement>('meta[property="og:type"]')?.content?.toLowerCase();
+  facts.title=publicNode('h1')?.textContent?.trim().slice(0,180);
+  const type=(publicNode('meta[property="og:type"]') as HTMLMetaElement|null)?.content?.toLowerCase();
   facts.ogProduct=type==='product' || type==='product.item';
   facts.structuredArticle=type==='article';
   // Work budget applies to input traversal as well as parsed outputs.
@@ -26,7 +29,7 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   let parsedScripts=0;
   for(let i=0;i<Math.min(scripts.length,160) && parsedScripts<12;i++){
     const script=scripts.item(i);
-    if(script?.type!=='application/ld+json') continue;
+    if(script?.type!=='application/ld+json'||excluded(script)) continue;
     parsedScripts++;
     const raw=script.textContent??'';
     if(!raw || raw.length>24_000) continue;
@@ -62,7 +65,7 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
     '[id="add-to-cart-button"]','[id="buy-now-button"]',
   ];
   const activeControl=(el:Element|null):boolean=>{
-    if(!el||el.hasAttribute('disabled')||el.getAttribute('aria-disabled')==='true'||el.closest('[hidden],[aria-hidden="true"]')) return false;
+    if(!el||excluded(el)||el.hasAttribute('disabled')||el.getAttribute('aria-disabled')==='true'||el.closest('[hidden],[aria-hidden="true"]')) return false;
     const style=doc.defaultView?.getComputedStyle?.(el);
     return style?.display!=='none'&&style?.visibility!=='hidden';
   };
@@ -83,8 +86,8 @@ export function collectShoppingPageFacts(doc:Document,href:string):ShoppingPageF
   }
   facts.purchaseAction=purchase;
 
-  const price=doc.querySelector<HTMLElement>('[itemprop="price"],[data-price],.product-price,.price,[class*="price"],.a-price .a-offscreen,[class*="product-price"]');
-  const metaPrice=doc.querySelector<HTMLMetaElement>('meta[property="product:price:amount"]');
+  const price=publicNode('[itemprop="price"],[data-price],.product-price,.price,[class*="price"],.a-price .a-offscreen,[class*="product-price"]') as HTMLElement|null;
+  const metaPrice=publicNode('meta[property="product:price:amount"]') as HTMLMetaElement|null;
   const priceText=(price?.textContent||metaPrice?.content||'').trim().slice(0,70);
   facts.visiblePrice=/(?:[$€£¥₹৳]|(?:USD|EUR|GBP|CAD|AUD|CNY|INR|BDT|BRL|SAR|AED)|د\.?إ|ر\.?س)[\s\S]{0,20}\d|\d[\d.,\s]*\s*(?:[$€£¥₹৳]|USD|EUR|GBP|CAD|AUD|CNY|INR|BDT|BRL|SAR|AED|د\.?إ|ر\.?س)/i.test(normalizeCommerceCharacters(priceText));
 

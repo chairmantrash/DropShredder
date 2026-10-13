@@ -22,6 +22,35 @@ export interface PageScanResult {
  * Keep this function self-contained: chrome.scripting serializes the function body.
  */
 export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
+  // The live guard permits dormant credential markup. Never collect its text,
+  // selected values, metadata, scripts or resources, even when CSS hides it.
+  // Self-contained because Chrome serializes this function into ISOLATED world.
+  const privateRoots=new Set<Element>();
+  const privateFields=document.querySelectorAll('input[type="password"],input[autocomplete~="cc-number"],input[autocomplete~="cc-csc"],input[autocomplete~="current-password"],input[autocomplete~="new-password"],input[name*="cardnumber" i]');
+  const forms=document.getElementsByTagName('form');
+  if(privateFields.length>64||forms.length>30) throw new Error('Too many private form regions to safely isolate.');
+  for(const field of privateFields) privateRoots.add(field.closest('form,dialog,[role="dialog"]')||field.parentElement||field);
+  for(let i=0;i<Math.min(forms.length,30);i++){
+    const form=forms.item(i)!;
+    try{
+      const action=form.getAttribute('action');if(!action) continue;
+      const path=decodeURIComponent(new URL(action,location.href).pathname).normalize('NFKC').toLowerCase();
+      if(/checkout|payment/i.test(path)||path.split('/').some(part=>kit.privateFormParts.includes(part))) privateRoots.add(form);
+    }catch{/* Unrecognized destinations are never used for data collection. */}
+  }
+  const excluded=(element:Element):boolean=>{for(const root of privateRoots)if(root===element||root.contains(element))return true;return false;};
+  const publicNode=<T extends Element=Element>(selector:string):T|null=>{
+    const nodes=document.querySelectorAll<T>(selector);
+    for(let i=0;i<Math.min(nodes.length,40);i++)if(!excluded(nodes[i]!))return nodes[i]!;
+    return null;
+  };
+  const publicText=(element:Element|null,limit=4000):string=>{
+    if(!element||excluded(element))return '';
+    const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);let text='',visited=0;
+    while(visited++<160&&text.length<limit){const node=walker.nextNode();if(!node)break;const parent=node.parentElement;
+      if(parent&&!excluded(parent)&&!parent.closest('input,textarea,select,[contenteditable="true"],script,style,noscript'))text+=(node.nodeValue||'').slice(0,limit-text.length);}
+    return text;
+  };
   const normalizeDigits=(v:string)=>v.normalize('NFKC').replace(/[\u061c\u200b\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff]/g,'').replace(/[٠-٩۰-۹०-९০-৯]/g,c=>String(c.charCodeAt(0)-[0x660,0x6f0,0x966,0x9e6].find(n=>c.charCodeAt(0)>=n&&c.charCodeAt(0)<n+10)!));
   const aliases=new Map<string,string>();
   for(const [key,...langs] of kit.phrases) for(const alias of langs.flat()) if((alias.length>1||/\p{Script=Han}/u.test(alias))&&alias.toLowerCase()!==key.toLowerCase()) aliases.set(alias.toLowerCase(),key);
@@ -63,8 +92,8 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
   const bounded=(value:string|undefined,limit:number):string|undefined=>value?.trim().slice(0,limit)||undefined;
 
         const meta=(selector:string):string|undefined =>
-          bounded(document.querySelector<HTMLMetaElement>(selector)?.content,4000);
-        const canonical=bounded(document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href,2048);
+          bounded(publicNode<HTMLMetaElement>(selector)?.content,4000);
+        const canonical=bounded(publicNode<HTMLLinkElement>('link[rel="canonical"]')?.href,2048);
 
         const jsonNodes: Record<string, unknown>[]=[];
         const walk=(value:unknown,depth=0):void=>{
@@ -83,7 +112,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         let jsonScripts=0;
         for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts) && jsonScripts<MAX_JSON_SCRIPTS;i++){
           const script=document.scripts.item(i);
-          if(script?.type!=='application/ld+json') continue;
+          if(script?.type!=='application/ld+json'||excluded(script)) continue;
           jsonScripts++;
           const input=script.textContent || '';
           if(input.length>MAX_JSON_BYTES) continue;
@@ -110,8 +139,8 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         // Amazon may place an accessibility/keyboard-help h1 before the actual
         // product-title span. Keep that navigation text out of product identity.
         const visibleTitle=amazonProduct
-          ? bounded(document.querySelector('#productTitle')?.textContent||meta('meta[property="og:title"]')||document.title||undefined,500)
-          : bounded(document.querySelector('h1')?.textContent||undefined,500);
+          ? bounded(publicText(publicNode('#productTitle'),500)||meta('meta[property="og:title"]')||document.title||undefined,500)
+          : bounded(publicText(publicNode('h1'),500)||undefined,500);
         const translatedPage=document.documentElement.classList.contains('translated-ltr')||document.documentElement.classList.contains('translated-rtl');
         const originalMetaTitle=meta('meta[property="og:title"]');
         const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
@@ -127,6 +156,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         // prices, arbitrary form fields or a third-party widget's private state.
         const selector='main select[name],main select[data-option-name],main input[type="radio"][name]:checked,main input[type="radio"][data-option-name]:checked,main [data-option-name][aria-pressed="true"],main [data-option-name][aria-checked="true"]';
         for(const control of [...document.querySelectorAll<HTMLElement>(selector)].slice(0,40)){
+          if(excluded(control)||(control.tagName==='INPUT'&&(control as HTMLInputElement).type!=='radio')) continue;
           const name=control.getAttribute('data-option-name')||control.getAttribute('name')||'';
           const key=variantKey(name.normalize('NFKC').toLowerCase().replace(/^options\[/,'').replace(/\]$/,''));
           if(!key || control.hasAttribute('disabled') || control.getAttribute('aria-disabled')==='true') continue;
@@ -175,12 +205,13 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const pageImages:string[]=[];
         for(let i=0;i<Math.min(document.images.length,LIMITS.images);i++){
           const image=document.images.item(i);
-          const src=image?.currentSrc || image?.src;
+          const src=image&&!excluded(image)?image.currentSrc||image.src:undefined;
           if(src) pageImages.push(src.slice(0,2048));
         }
         const scriptSources:string[]=[];
         for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts);i++){
-          const src=document.scripts.item(i)?.src;
+          const script=document.scripts.item(i);
+          const src=script&&!excluded(script)?script.src:undefined;
           if(src) scriptSources.push(src.slice(0,2048));
         }
         const resourceUrl=(value:string):URL|undefined=>{
@@ -191,7 +222,8 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const linkUrls:URL[]=[];
         const links=document.getElementsByTagName('link');
         for(let i=0;i<Math.min(links.length,LIMITS.scripts);i++){
-          const href=links.item(i)?.getAttribute('href');
+          const link=links.item(i);
+          const href=link&&!excluded(link)?link.getAttribute('href'):undefined;
           if(href&&href.length<=2048){const url=resourceUrl(href);if(url)linkUrls.push(url);}
         }
         const fromHost=(url:URL,domain:string)=>{
@@ -225,7 +257,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         // remain unresolved. Keep that store-local label separate from choosing
         // a JSON-LD offer, GTIN, variant or common supplier.
         const skuRoot=visibleTitle && /\/products?\//i.test(location.pathname)
-          ? document.querySelector('h1')?.closest('main,[role="main"],[itemtype$="/Product"]') : undefined;
+          ? publicNode('h1')?.closest('main,[role="main"],[itemtype$="/Product"]') : undefined;
         const skuPieces:string[]=[];
         let pageChars=0, visitedTextNodes=0;
         if(document.body){
@@ -235,7 +267,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             if(!node) break;
             visitedTextNodes++;
             const parent=node.parentElement;
-            if(!parent || parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"]')) continue;
+            if(!parent || excluded(parent)||parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"]')) continue;
             const value=(node.nodeValue||'').replace(/\s+/g,' ').trim();
             if(!value) continue;
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
@@ -266,7 +298,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const anchors=document.getElementsByTagName('a');
         for(let i=0;i<Math.min(anchors.length,MAX_LINKS) && siteLinks.length<4;i++){
           const a=anchors.item(i);
-          if(!a?.href) continue;
+          if(!a?.href||excluded(a)) continue;
           try{
             const url=new URL(a.href,location.href);
             const kind=classifyLink(a);
@@ -293,7 +325,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             const element=elementWalker.nextNode();
             if(!element) break;
             visitedElements++;
-            if(!(element instanceof HTMLElement)) continue;
+            if(!(element instanceof HTMLElement)||excluded(element)) continue;
             if(priceElements.length<4&&element.matches('[itemprop="price"],.product-price,[data-product-price]')&&element.closest('main')) priceElements.push(element);
             if(cards.length<LIMITS.cards && element.matches(cardSelector)) cards.push(element);
             if(amazonElements.length<LIMITS.amazonCards && element.matches('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')) amazonElements.push(element);
@@ -416,7 +448,11 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             const head=document.head;
             if(head) for(let i=0;i<Math.min(head.children.length,100);i++){
               const item=head.children.item(i);
-              if(item) parts.push(item.outerHTML.slice(0,500));
+              // Stack fingerprints do not need arbitrary inline script bodies
+              // or attributes, which can contain customer/session information.
+              if(!item||excluded(item)) continue;
+              if(item.tagName==='META'&&/^(?:generator|application-name)$/i.test(item.getAttribute('name')||''))parts.push('meta '+(item.getAttribute('name')||'')+' '+(item.getAttribute('content')||'').slice(0,500));
+              if(item.tagName==='SCRIPT'&&item.getAttribute('src'))parts.push('script '+(item.getAttribute('src')||'').split(/[?#]/)[0]!.slice(0,500));
             }
             return parts.join(' ').slice(0,LIMITS.htmlSignature)+' '+(document.body?.className || '').slice(0,500);
           })(),

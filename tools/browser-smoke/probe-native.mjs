@@ -160,6 +160,10 @@ async function openNative() {
   // Unlike .test, this URL passes the public-evidence export/link guard.
   await context.route(/^https:\/\/fixture\.example\.(?:com|net)\//, route => {
     const url=route.request().url();
+    if(url.includes('/privacy-public')){
+      const publicItem={'@context':'https://schema.org','@type':'Product',url,name:'Public privacy lamp',sku:'PUBLIC-PRIVACY-12',offers:{price:12,priceCurrency:'USD'}};
+      return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><title>Public privacy lamp</title><script type="application/ld+json">'+JSON.stringify(publicItem)+'</script><script>window.customer="PRIVATE-HEAD-SENTINEL"</script></head><body><div id="private-login" style="display:none"><form action="/account/login"><h1>PRIVATE-TITLE-SENTINEL</h1><span>PRIVATE-TEXT-SENTINEL</span><input type="password" value="PRIVATE-FIELD-SENTINEL"><input type="radio" name="color" value="PRIVATE-OPTION-SENTINEL" checked><script type="application/ld+json">'+JSON.stringify({...publicItem,name:'PRIVATE-JSON-SENTINEL',sku:'PRIVATE-SKU-SENTINEL'})+'</script></form></div><main><h1>Public privacy lamp</h1><div class="product-price">$12.00</div><button name="add">Add to cart</button><button id="open-login" onclick="document.getElementById(\'private-login\').style.display=\'block\'">Open login</button></main></body></html>'});
+    }
     if(url.includes('/slow-policy')) return void(async()=>{await pause(2000);await route.fulfill({contentType:'text/html',body:'<p>Return policy: returns accepted within 30 days.</p>'});})().catch(()=>{});
     const product={"@context":"https://schema.org","@type":"Product",name:url.includes('/window-two')?'Window two kettle':"Fixture mug",sku:url.includes('/window-two')?'WINDOW-TWO-002':"FIXTURE-MUG-001",gtin:"012345678905",offers:{"@type":"Offer",price:"12.00",priceCurrency:"USD",availability:"https://schema.org/InStock"}};
     if(url.includes('/origin')) product.offers.seller={"@type":"Organization",name:'Owned Origin Seller'};
@@ -653,6 +657,26 @@ try {
         const state = await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent})");
         assert.ok(!state.status.startsWith('Scan complete'), state.status); assert.equal(state.raw, '');
         await native.screenshot('native-sensitive-refusal.png'); return state;
+      });
+      await test('P01', 'Public product with a dormant login form scans without private content or values', async () => {
+        await page.goto('https://fixture.example.com/products/privacy-public');await page.bringToFront();await pause(4200);
+        assert.equal(await page.locator('#dropshredder-auto-verdict').count(),1,'Dormant credential markup must not suppress public-product monitoring');
+        await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'public privacy scan');
+        const text=await native.evaluate("document.querySelector('#raw').textContent");assert.doesNotMatch(text,/PRIVATE-[A-Z]+-SENTINEL/);
+        const data=JSON.parse(text);assert.equal(data.product.title,'Public privacy lamp');assert.equal(data.product.sku,'PUBLIC-PRIVACY-12');assert.equal(data.product.price,12);
+        assert.equal(data.product.jsonLdProductCount,1);await native.screenshot('privacy-public-dormant.png');return {product:data.product,privateSentinelsExcluded:true};
+      });
+      await test('P02', 'Activating the same login form refuses a fresh scan and disables export', async () => {
+        await page.locator('#open-login').click();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'active private form refusal');
+        const state=await native.evaluate("({status:document.querySelector('#status').textContent,raw:document.querySelector('#raw').textContent,exportDisabled:document.querySelector('#export-report').disabled})");
+        assert.match(state.status,/sign-in or payment/);assert.equal(state.raw,'');assert.equal(state.exportDisabled,true);await native.screenshot('privacy-active-login-refused.png');return state;
+      });
+      await test('P03', 'A late active login modal invalidates a previously public report action', async () => {
+        await page.reload();await native.click('#scan');await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'public report restored');
+        assert.equal(JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).product.sku,'PUBLIC-PRIVACY-12');
+        await page.locator('#open-login').click();await native.click('#policy-check');
+        await until(()=>native.evaluate("/changed|private|sign-in|payment/i.test(document.querySelector('#status').textContent)"),'late private modal action refused');
+        await native.screenshot('privacy-late-modal-action-refused.png');return {status:await native.evaluate("document.querySelector('#status').textContent"),scope:'Same URL/document, private modal activation after a completed public scan'};
       });
       await test('N13', 'Revoking an accepted host grant disables scripts and alerts without losing preferences', async () => {
         await native.click('#revoke-optional-access');
