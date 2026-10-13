@@ -1,0 +1,54 @@
+name: DropShredder source-backed 150-page discovery
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-audit150-discover.yml', 'tools/beta/audit150/seed-pool.json', 'tools/beta/audit150/sources.json', 'tools/beta/audit150/discover.py']
+permissions:
+  contents: read
+jobs:
+  discovery:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Inspect every frozen public source seed; no extension verdicts
+        env:
+          AUDIT_PART: ${{ matrix.part }}
+        run: python3 tools/beta/audit150/discover.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit150-discovery-${{ matrix.part }}
+          path: audit150-discovery/
+          if-no-files-found: error
+          retention-days: 90
+  freeze:
+    needs: discovery
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: audit150-discovery-*
+          path: audit150-discovery
+          merge-multiple: true
+      - name: Freeze every eligible observed page before native testing
+        env:
+          AUDIT_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: python3 tools/beta/audit150/discover.py combine
+      - uses: actions/upload-artifact@v4
+        with:
+          name: audit150-frozen-targets
+          path: audit150-discovery/
+          if-no-files-found: error
+          retention-days: 90
