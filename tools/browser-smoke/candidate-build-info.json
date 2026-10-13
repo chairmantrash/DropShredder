@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "6fe561807d6962fe51006eab99c0cf7017c2c6ee",
-  "sourceTree": "8074e5bbcb8c678e7eacfe397457901186f0b661",
+  "sourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+  "sourceTree": "3cb142f0a06c4d9673e4c653272e8aba36433137",
   "version": "0.2.0",
-  "reviewedChange": "DS-052 after all24 known-site initial outcomes: bounded unique explicit current-product visible SKU fallback. Hidden/review/recommendation/related/linked/conflicting labels cannot select a SKU; bound structured SKU remains authoritative. Structured identity, variant, price and GTIN remain unresolved where previously ambiguous. Store-local SKU is not common ownership or source chronology proof. DS-051 policy HTTP fix retained; no permissions, models, data, dependencies or risk-weight changes. Fresh hosted native/known-live/source gates required.",
+  "reviewedChange": "DS-055: allow public product pages with dormant credential forms; retain rendered/active/late-modal, private-URL, document and budget guards. Exclude private regions/values/text/structured identity/resources and inline head script bodies. Same frozen live corpus plus sentinel/active-modal/native regressions. No risk weights, permissions, dependencies, model data or source-label imports changed.",
   "buildFiles": [
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -70,14 +70,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-CWpuRbao.js",
-      "bytes": 566806,
-      "sha256": "f234ef21c579ea683a364f58b34fed3f1e28aa0d1bb9c4c3c75aa7ac1df26e1b"
+      "path": "chunks/sidepanel-DF5ZLeA3.js",
+      "bytes": 569491,
+      "sha256": "eda7993a21487c68c199558c5a2656cd97aeec007119e9e2044f8c0a6a9de0c9"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 73751,
-      "sha256": "ed0c4cd23e9d903e6ec6941910db9a65b17d55d01be5587c5b5f8427282b7352"
+      "bytes": 76916,
+      "sha256": "194b1c92197294acb1aec9335a46aa000ac274f825716bb1f6aaca2ed4db4861"
     },
     {
       "path": "icon/128.png",
@@ -257,7 +257,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 20685,
-      "sha256": "1f82aae1eab012af032643c6111c484bb9d1ce915a4de9d4e7c20814502169dd"
+      "sha256": "f83fa2b5fb643885864af0bc9dcaf1a17399e54a8425634b683754d3c45b3af6"
     }
   ],
   "totalBytes": 54942638
