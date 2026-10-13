@@ -373,7 +373,7 @@
     }
   ],
   "recordedAt": "2026-10-13T07:33:55.098671+00:00",
-  "status": "REPAIR_VERIFIED_PUBLICATION_PENDING",
+  "status": "DONE_BETA3_OPEN",
   "productionTree": "3cb142f0a06c4d9673e4c653272e8aba36433137",
   "zip": {
     "artifact": 11794980740,
@@ -1050,5 +1050,6 @@
   ],
   "independentAccuracyAccepted": false,
   "mainMerged": false,
-  "storeSubmitted": false
+  "storeSubmitted": false,
+  "publicationReceipt": "workplane/runs/DS-055-BETA3-OPEN-20261013.json"
 }
