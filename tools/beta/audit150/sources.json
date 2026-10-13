@@ -1,0 +1,140 @@
+{
+  "retrievedAt": "2026-10-13T03:17:20.066282+00:00",
+  "sources": [
+    {
+      "id": "SF-01",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "dataset/scam_websites/online_shopping_english/groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/dataset/scam_websites/online_shopping_english/groundtruth_url.txt",
+      "sha256": "5a19393611184e53b964c351d18cbf02f82435fbd76c745503b1a9943f440ba8",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "english"
+    },
+    {
+      "id": "SF-02",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "dataset/scam_websites/online_shopping_german/groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/dataset/scam_websites/online_shopping_german/groundtruth_url.txt",
+      "sha256": "1793ebf630f14596a89f15c1d4c6e75f819d647041c12c70848bdf27681db1b9",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "german"
+    },
+    {
+      "id": "SF-03",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "dataset/scam_websites/online_shopping_japanese/groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/dataset/scam_websites/online_shopping_japanese/groundtruth_url.txt",
+      "sha256": "de2208257e569031bcecd6cebb91be45cc402389f13ed26bdb52f7aef162d4ca",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "japanese"
+    },
+    {
+      "id": "SF-04",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_dutch_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_dutch_groundtruth_url.txt",
+      "sha256": "064cd11dddfe87f20b7ec5448dded79b1b66d13bd6250a814f2cd419a86a2b2a",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "dutch"
+    },
+    {
+      "id": "SF-05",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_english_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_english_groundtruth_url.txt",
+      "sha256": "d5047c2b3d7263d157b7f4c7212a621a2e3b7162c834cd190e9805c9fdf9746b",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "english"
+    },
+    {
+      "id": "SF-06",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_french_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_french_groundtruth_url.txt",
+      "sha256": "b8688c08422d972149145d57309733dc750cf378b9cf3a48e7093bd20943816b",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "french"
+    },
+    {
+      "id": "SF-07",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_german_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_german_groundtruth_url.txt",
+      "sha256": "cfcda116c3348483c60e80c3039cfe090a4c706e4b5eef16015cfebcb028136b",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "german"
+    },
+    {
+      "id": "SF-08",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_italian_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_italian_groundtruth_url.txt",
+      "sha256": "21720c8741883e880b90df52aeb7bf18f3721c3a65cb128e3c28f6ad554ccadb",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "italian"
+    },
+    {
+      "id": "SF-09",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_japanese_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_japanese_groundtruth_url.txt",
+      "sha256": "5c58e1604e19b74408fda20d2f61fe34cf479aaa0769d4f4cd3d69ba6356cf6e",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "japanese"
+    },
+    {
+      "id": "SF-10",
+      "repository": "ScamFerret/artifact",
+      "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+      "commitDate": "2025-09-30T08:10:39Z",
+      "path": "expanded_dataset/scam_websites/online_shopping_spanish_groundtruth_url.txt",
+      "url": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_dataset/scam_websites/online_shopping_spanish_groundtruth_url.txt",
+      "sha256": "a19b24c137e819fae4fa1dd53499e9242087a9e09b1122c88e12aae6c0c1ac8f",
+      "rows": 200,
+      "label": "source-labelled shopping scam; historical, current fraud not independently established",
+      "license": "GPL-3.0",
+      "language": "spanish"
+    }
+  ],
+  "excluded": [
+    "Watchlist Internet and derivatives: explicit written reuse consent required",
+    "Commercial Shopify popularity rankings: not dropshipping ground truth",
+    "Investment, cryptocurrency, technical-support and phishing categories"
+  ]
+}

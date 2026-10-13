@@ -1,0 +1,468 @@
+{
+  "task": "DS-054",
+  "status": "COMPLETED_NATIVE_TEST_COLLECTION; FUNCTIONAL_COVERAGE_FAILURE",
+  "requestedMinimumDistinctNativePublicTests": 150,
+  "canonicalBase": {
+    "commit": "7a12edfba3a7397fb751d2fbac4f7b9e971e8e90",
+    "tree": "c0f0e9d53fba50170cc149ec973f0e2099e82f89"
+  },
+  "source": {
+    "repository": "ScamFerret/artifact",
+    "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+    "sourceDate": "2025-09-30T08:10:39Z",
+    "category": "Historical source-labelled shopping scams only",
+    "files": 10,
+    "rows": 2000,
+    "uniqueSeeds": 1999,
+    "poolSha256": "04a8d9b1e8abaea301b3f1d4834e89887c77719d6b3ccb76307323f6e29e338a",
+    "developmentExposure": "Source mentioned in prior project research; no independent merchant/operator/product-disjoint acceptance"
+  },
+  "frozenManifest": {
+    "head": "6a9cef93d5853cfa2588df63999dfd49f51ab964",
+    "tree": "6748f985fdf558bb974bf38928685e48ca60caae",
+    "run": 38341236812,
+    "artifact": 11786149218,
+    "artifactSha256": "8c89e38edbad9c2d73bf0e69575cea08c301dd6c936b73bdd05219274ee62a42",
+    "manifestSha256": "fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98",
+    "candidatePages": 259,
+    "hostnames": 53
+  },
+  "package": {
+    "release": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2",
+    "productionSource": "6fe561807d6962fe51006eab99c0cf7017c2c6ee",
+    "productionTree": "8074e5bbcb8c678e7eacfe397457901186f0b661",
+    "zipSha256": "7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8",
+    "zipBytes": 25849500,
+    "packageFiles": 51,
+    "packageBytes": 54942638,
+    "all51HashesVerifiedInEveryProfile": true,
+    "downloadAuthenticated": false,
+    "rebuilt": false,
+    "productionModified": false
+  },
+  "initial": {
+    "head": "ca9dd22c97a701d45be9824ad64a519c94804d77",
+    "tree": "c6e42a5580ca4602f8bdd48e28b2b106342604f8",
+    "run": 38341539912,
+    "outcomes": 259,
+    "artifacts": [
+      {
+        "id": 11787526319,
+        "name": "audit150-native-1",
+        "size_in_bytes": 547440,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787526319",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787526319/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:30:45Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:30:45Z",
+        "digest": "sha256:93789dc6e106809b8745ae16b6626b813ef675db8f73661864197ff155e6b51b",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787520806,
+        "name": "audit150-native-7",
+        "size_in_bytes": 543360,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787520806",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787520806/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:26:48Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:26:48Z",
+        "digest": "sha256:c097348bbe5256e49a93a19227885a54f61566242501dd97c5c409e7577e5899",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787511257,
+        "name": "audit150-native-4",
+        "size_in_bytes": 559599,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787511257",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787511257/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:30:02Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:30:02Z",
+        "digest": "sha256:d122ed562032f37fb59c618e04f7e1333feed3d6c3e63d7083083b1c0a4cc39e",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787406503,
+        "name": "audit150-native-0",
+        "size_in_bytes": 558497,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787406503",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787406503/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:29:03Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:29:03Z",
+        "digest": "sha256:ff8dbfca4e3a13c10706fa366812c5048147914fd5ff8135bbd42c3afe5a1f77",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787181932,
+        "name": "audit150-native-2",
+        "size_in_bytes": 948707,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787181932",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787181932/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:28:42Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:28:42Z",
+        "digest": "sha256:8b11416a58deb387bef51c788c05f7eed46f64d4d1f289bf1f418d258b229322",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787171649,
+        "name": "audit150-native-3",
+        "size_in_bytes": 547345,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787171649",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787171649/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:26:46Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:26:46Z",
+        "digest": "sha256:5658577a92c0b49e074390c3d1c5ddf32fb4a81f715da6778c51d21161c8c0a3",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787137053,
+        "name": "audit150-native-5",
+        "size_in_bytes": 532653,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787137053",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787137053/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:28:36Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:28:36Z",
+        "digest": "sha256:0980905d7fed68c45dcfce05f60855a6f4a8e0d15b98ae1886bc86de829f327a",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      },
+      {
+        "id": 11787017259,
+        "name": "audit150-native-6",
+        "size_in_bytes": 1865484,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787017259",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787017259/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:27:29Z",
+        "expires_at": "2027-01-11T03:24:15Z",
+        "updated_at": "2026-10-13T03:27:29Z",
+        "digest": "sha256:58b890d4a8d48d849fbac8ac871b6c5164d52c149ac4c697204505591e8876b4",
+        "workflow_run": {
+          "id": 38341539912,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "ca9dd22c97a701d45be9824ad64a519c94804d77"
+        }
+      }
+    ],
+    "limit": "220 harness preflight skips prevented measuring real native refusal. Preserved unchanged; collection success is not detector success."
+  },
+  "corrected": {
+    "head": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1",
+    "tree": "1052b8bb362b9ed6c736c7b5eb390dbb66760bea",
+    "run": 38342157199,
+    "outcomes": 259,
+    "accessibleDistinctNativeRequests": 227,
+    "hostnames": 47,
+    "nativeRefusals": 216,
+    "successfulExtractions": 11,
+    "allNumericEstimatesUnknown": 11,
+    "severeWarnings": 0,
+    "policyFindings": 5,
+    "remainingNonNativeTargets": 32,
+    "artifacts": [
+      {
+        "id": 11787960438,
+        "name": "audit150-native-0",
+        "size_in_bytes": 541449,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787960438",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787960438/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:35:55Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:35:55Z",
+        "digest": "sha256:82b6bceef4589b7f3afbdf69ca96fccc8a441b54376f5d219f3312e302664ae8",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787905340,
+        "name": "audit150-native-3",
+        "size_in_bytes": 541587,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787905340",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787905340/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:34:09Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:34:09Z",
+        "digest": "sha256:fe106889acabe00d8b05ca22cd4c39dd5f4d97269f125e18a2d956ab31d8735f",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787850474,
+        "name": "audit150-native-6",
+        "size_in_bytes": 1936803,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787850474",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787850474/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:35:22Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:35:22Z",
+        "digest": "sha256:b7ef75c66d9b73a4ec0428618840dc08fd53c10e99fa74265b00334a071a2102",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787690916,
+        "name": "audit150-native-4",
+        "size_in_bytes": 556472,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787690916",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787690916/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:37:08Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:37:08Z",
+        "digest": "sha256:f8dd3a28ff02b1a42b43e826dee88b7f844cab096781551014816e10cf6dd281",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787650897,
+        "name": "audit150-native-5",
+        "size_in_bytes": 554946,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787650897",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787650897/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:36:25Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:36:25Z",
+        "digest": "sha256:7b60c3b87c23192cb87e96c53abfce731846051b474fd64b5b234c8023770bb4",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787521933,
+        "name": "audit150-native-7",
+        "size_in_bytes": 543850,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787521933",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787521933/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:34:40Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:34:40Z",
+        "digest": "sha256:4db6e1d470b4e0dc8910b44b01aa3a4700bb9fca0ca35bb8ba71c7e6f25894b2",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787178048,
+        "name": "audit150-native-2",
+        "size_in_bytes": 943258,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787178048",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787178048/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:36:22Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:36:22Z",
+        "digest": "sha256:60ea2d6dbbdb378d0eac5e93066cafb911b0d8f5821c4c2caf42532515a9e697",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      },
+      {
+        "id": 11787163289,
+        "name": "audit150-native-1",
+        "size_in_bytes": 553365,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787163289",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787163289/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:38:06Z",
+        "expires_at": "2027-01-11T03:32:00Z",
+        "updated_at": "2026-10-13T03:38:06Z",
+        "digest": "sha256:47cff794c56be6eada1480f6c0163a9ba629fac796c1d4d1639c8e2fbb5c78ec",
+        "workflow_run": {
+          "id": 38342157199,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1"
+        }
+      }
+    ],
+    "correctionScope": "Test harness now exercises real Scan control on public commerce pages with credential markup; no product change or guard bypass."
+  },
+  "diagnosis": {
+    "head": "0ff0689b770e2eb4ca2644807c92845a1c5790c1",
+    "tree": "e214f49685a67ee4e7a36a0d940b08b3a157e778",
+    "run": 38342507400,
+    "artifacts": [
+      {
+        "id": 11787188316,
+        "name": "audit150-refusal-diagnosis",
+        "size_in_bytes": 1110642,
+        "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787188316",
+        "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11787188316/zip",
+        "expired": false,
+        "created_at": "2026-10-13T03:37:49Z",
+        "expires_at": "2027-01-11T03:36:28Z",
+        "updated_at": "2026-10-13T03:37:49Z",
+        "digest": "sha256:4fd96d67862e8e09d08df5f0b3146d2d05a719f8b19a9028950308bfe9d60139",
+        "workflow_run": {
+          "id": 38342507400,
+          "repository_id": 1407325128,
+          "head_repository_id": 1407325128,
+          "head_branch": "feature/beta-audit150-20261013",
+          "head_sha": "0ff0689b770e2eb4ca2644807c92845a1c5790c1"
+        }
+      }
+    ],
+    "cases": [
+      "AUDIT-0001",
+      "AUDIT-0071",
+      "AUDIT-0159"
+    ],
+    "finding": "Two public product pages had password inputs with zero-width/zero-height rectangles and were refused by the real native Scan action. A third no-password product scanned normally. Field values were never read; real desktop screenshots preserved."
+  },
+  "minimum": {
+    "nativeFunctionTests": true,
+    "successfulExtractions": false,
+    "independentAccuracyAccepted": false
+  },
+  "nextWork": {
+    "id": "DS-055",
+    "priority": "HIGH",
+    "problem": "Public-store scan coverage: credential fields in dormant login markup cause blanket refusal",
+    "scope": "Preserve real private/active account/payment/modal refusal and never read credential values; isolate safe public product extraction before allowing these pages; verify same frozen corpus and privacy regressions. Do not import source labels as runtime answers or weaken gates to hit a count."
+  },
+  "beta": "OPEN; detection capability not accepted as reliable",
+  "main": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
+  "mainModified": false,
+  "storeSubmitted": false,
+  "peopleInvited": false,
+  "elapsedTimeInvented": false,
+  "gates": [
+    {
+      "run": 38341539846,
+      "head": "ca9dd22c97a701d45be9824ad64a519c94804d77",
+      "conclusion": "success"
+    },
+    {
+      "run": 38341539842,
+      "head": "ca9dd22c97a701d45be9824ad64a519c94804d77",
+      "conclusion": "success"
+    },
+    {
+      "run": 38342157235,
+      "head": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1",
+      "conclusion": "success"
+    },
+    {
+      "run": 38342157236,
+      "head": "aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1",
+      "conclusion": "success"
+    },
+    {
+      "run": 38342507276,
+      "head": "0ff0689b770e2eb4ca2644807c92845a1c5790c1",
+      "conclusion": "success"
+    },
+    {
+      "run": 38342507301,
+      "head": "0ff0689b770e2eb4ca2644807c92845a1c5790c1",
+      "conclusion": "success"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "workplane/runs/DS-054-REFUSAL-SCREENSHOTS/AUDIT-0001-actual-refusal.png",
+      "bytes": 314947,
+      "sha256": "7df93a39cba5cd97faa320cfe7202752944802fb201189adaa648a06fe2b334b",
+      "originalUnmodifiedDesktopCapture": true
+    },
+    {
+      "path": "workplane/runs/DS-054-REFUSAL-SCREENSHOTS/AUDIT-0071-actual-refusal.png",
+      "bytes": 279787,
+      "sha256": "0db8d85e90ec180d4a16abd9aa6c07d3b1b95d10c28f8777cff692048c22b112",
+      "originalUnmodifiedDesktopCapture": true
+    }
+  ]
+}
