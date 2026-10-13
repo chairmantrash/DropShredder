@@ -81,7 +81,7 @@ test('published ScamFerret uses original strict output and source date, never it
  assert.deepEqual(publishedScamferretPaths('not-in-published-source.example.com'),[]);
 });
 test('published lookup performs no request for an unknown domain and only pinned source GETs for a known one',async()=>{
- let calls=0;const request:typeof fetch=async(u,o)=>{calls++;assert.equal(o?.credentials,'omit');assert.match(String(u),/^https:\/\/raw.githubusercontent.com\/ScamFerret\/artifact\/8cf8dc/);return new Response(JSON.stringify({target_url:'https://yeezys.com.mx/',start_time:'2025-08-31 00:00:00',llm_response:{scam:true,reason:'Historical outside opinion'}}),{headers:{'content-type':'text/plain; charset=utf-8'}});};
+ let calls=0;const request:typeof fetch=async(u,o)=>{calls++;assert.equal(o?.credentials,'omit');assert.equal(new URL(String(u)).hostname,'raw.githubusercontent.com');assert.ok(new URL(String(u)).pathname.startsWith('/ScamFerret/artifact/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/'));return new Response(JSON.stringify({target_url:'https://yeezys.com.mx/',start_time:'2025-08-31 00:00:00',llm_response:{scam:true,reason:'Historical outside opinion'}}),{headers:{'content-type':'text/plain; charset=utf-8'}});};
  assert.deepEqual(await lookupPublishedScamferret('not-in-published-source.example.com',new AbortController().signal,request,now),[]);assert.equal(calls,0);
  const r=await lookupPublishedScamferret('yeezys.com.mx',new AbortController().signal,request,now);assert.ok(r.length);assert.ok(calls<=2);assert.ok(r.every(r=>r.stale));
 });
