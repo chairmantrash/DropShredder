@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   native-audit:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013' && github.event.pull_request.head.sha == 'aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     strategy:

@@ -7,7 +7,7 @@ permissions:
   contents: read
 jobs:
   discovery:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013' && github.event.pull_request.head.sha == '6a9cef93d5853cfa2588df63999dfd49f51ab964'
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     strategy:

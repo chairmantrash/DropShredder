@@ -10,7 +10,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
   const shard=Number(process.env.AUDIT_SHARD),shards=8;
   const bytes=await fs.readFile(process.env.AUDIT_MANIFEST);
   const manifest=JSON.parse(bytes);
-  const selected=manifest.targets.filter(t=>parseInt(createHash('sha256').update(t.host).digest('hex').slice(0,8),16)%shards===shard);
+  const diagnosticIds=process.env.AUDIT_DIAGNOSTIC_IDS?.split(',');
+  const selected=manifest.targets.filter(t=>diagnosticIds?diagnosticIds.includes(t.id):parseInt(createHash('sha256').update(t.host).digest('hex').slice(0,8),16)%shards===shard);
   report.audit150={shard,shards,manifestSha256:createHash('sha256').update(bytes).digest('hex'),manifestFrozenAt:manifest.frozenAt,sourcePoolSha256:manifest.poolSha256,planned:selected.length,rows:[],limits:manifest.limits??['Historical source labels; current fraud not independently accepted','Cumulative local history in this clean disposable shard; no source-list import','Languages and operator clusters not independently accepted']};
   const status=()=>native.evaluate("document.querySelector('#status').textContent");
   const snapshot=()=>native.evaluate("document.querySelector('#raw').textContent");
@@ -34,6 +35,7 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       row.httpStatus=response?.status();row.finalUrl=clean(page.url());row.pageTitle=await page.title();
       const observed=await page.evaluate(()=>({language:document.documentElement.lang,title:document.title,h1:document.querySelector('h1')?.textContent?.trim(),text:(document.body?.innerText??'').slice(0,60000),privateForm:Boolean(document.querySelector('input[type=password],input[autocomplete="cc-number"],input[autocomplete="current-password"]')),products:[...document.querySelectorAll('script[type="application/ld+json"]')].map(e=>e.textContent).filter(s=>/"@type"\s*:\s*"Product"/i.test(s??'')).length,productLinks:[...document.querySelectorAll('a[href]')].filter(a=>/\/(products?|item|items|p)\//i.test(a.pathname)).length}));
       row.pageIdentity={title:observed.title,h1:observed.h1,language:observed.language,visibleTextSha256:createHash('sha256').update(observed.text).digest('hex'),visibleTextChars:observed.text.length,jsonProductBlocks:observed.products,productLinks:observed.productLinks,credentialFieldPresent:observed.privateForm};
+      if(diagnosticIds)row.credentialFieldDiagnostics=await page.evaluate(()=>[...document.querySelectorAll('input[type=password],input[autocomplete="cc-number"],input[autocomplete="current-password"]')].map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return {tag:e.tagName,type:e.getAttribute('type'),name:e.getAttribute('name'),autocomplete:e.getAttribute('autocomplete'),display:s.display,visibility:s.visibility,rect:{width:r.width,height:r.height},hiddenAncestor:Boolean(e.closest('[hidden],[aria-hidden="true"],dialog:not([open])')),scope:'Field structure/visibility only; no values read'};}));
       const current=new URL(row.finalUrl);
       if(current.hostname.replace(/^www\./,'')!==target.host||privatePath.test(current.pathname)||/^(?:log ?in|sign ?in|my account|checkout|payment|anmelden|connexion|iniciar sesi[oó]n)(?:\b|\s)/i.test(observed.h1??observed.title)){row.status='REDIRECT_OR_PRIVATE_SURFACE_REFUSED';continue;}
       if(row.httpStatus>=400||blocked.test(observed.text.slice(0,12000))||blocked.test(observed.title)||observed.text.length<150){row.status='UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY';continue;}
@@ -49,7 +51,7 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'actual native live scan',25000);
       row.scanStatus=await status();
       const data=await read();
-      if(!data||!row.scanStatus.startsWith('Scan complete')){row.status='NATIVE_SCAN_REFUSED_OR_FAILED';row.actions.push({action:'scan',status:'REFUSED_OR_FAILED',message:row.scanStatus});continue;}
+      if(!data||!row.scanStatus.startsWith('Scan complete')){row.status='NATIVE_SCAN_REFUSED_OR_FAILED';row.actions.push({action:'scan',status:'REFUSED_OR_FAILED',message:row.scanStatus});if(diagnosticIds)await native.screenshot(target.id+'-actual-refusal.png');continue;}
       checkIdentity(data);row.scanReport=data;
       row.status='OBSERVED_SCAN';row.actions.push({action:'scan',status:'OBSERVED',elapsedMs:Date.now()-scanStart,message:row.scanStatus});
       row.stamp=await page.evaluate(()=>document.querySelector('#dropshredder-stamp-host')?.shadowRoot?.textContent?.slice(0,1800));
