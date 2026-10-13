@@ -1,3 +1,21 @@
+# Current state — October13,2026 DS-055 completed
+
+**BETA3 OPEN**, published2026-10-13T07:46:34Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3 . All7 public assets and all51 package files downloaded without authentication and byte/hash verified. Exact existing CI ZIP25,851,180bytes/SHA2560f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4;51files/54,948,488bytes. Tag points productionf2ea60e2ac42f6292d60dfe6069290a1758a6905/tree3cb142f0a06c4d9673e4c653272e8aba36433137. Accepted native/live harness8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. Publishing headc53a32366fcc344ffc923fb2c38f85a16c737cc4 passes CI38364674445, finding-free CodeQL38364674474 and publication38364674506.
+
+DS-055 DONE: same259 targets produce227 distinct successful native extractions /47 hostnames, versus11 reports/216 refusals before repair. Active credential and late-modal guards retained; private subtrees excluded.414 core,80 headed native and all7 accepted browser groups pass. All227 numerical estimates UNKNOWN;10 weak sale/policy findings, zero severe warnings. Historical labels and extraction success do not establish current fraud/dropshipping accuracy.
+
+Primary-source ScamFerret research and54 historical results are preserved with an offline comparison tool. No managed detection API found in the published artifact; cloud calls/blacklists were not added. Latest repositorySeptember30,2025; newer2026 paper lead inaccessible, similarly named screenshot service affiliation unverified. Receipts: workplane/runs/DS-055-COMPLETION-20261013.json and DS-055-BETA3-OPEN-20261013.json. Current queue: WORK-QUEUE. PR23 carries canonical release integration; PR9 remains draft; main/Store untouched. Independent promotion acceptance remains open beta work, not a new entry gate.
+
+---
+
+# Current state — October13,2026 DS-055 verified candidate
+
+**BETA2 OPEN; public-product refusal repair is verified, beta3 publication pending.** Same frozen259 outcomes:227 distinct successful product scans across47 hostnames, up from11 reports/216 refusals. Active credential and late-modal guards pass; private subtrees excluded.414 core tests,80 headed native tests, all seven standard browser job groups and finding-free CodeQL pass on accepted head8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. All51 package hashes match exact existing CI ZIP0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4.
+
+All227 numerical estimates remain UNKNOWN;10 weak sale/policy findings and zero severe warnings. This repairs extraction coverage and does not establish current fraud/dropshipping accuracy. ScamFerret primary-source/API research and54 historical output comparisons are recorded; no public managed API found in published artifact, no model calls or runtime blacklist imports added. Receipt: workplane/runs/DS-055-COMPLETION-20261013.json; research: workplane/research/DS-055-SCAMFERRET-RESEARCH-20261013.md. Publish only these accepted bytes; main/Store untouched.
+
+---
+
 # Current state — October13,2026 DS-054
 
 **BETA2 OPEN; broader live testing exposes a public-store coverage failure.** All259 frozen candidate outcomes completed before production repair. The real native Scan control was tested on227 distinct accessible commerce pages across47 hostnames:216 refused,11 reports; all11 dropshipping/resale estimates remain UNKNOWN. Five weak final-sale policy findings, zero severe warnings. The requested150 native function tests are met;150 successful extractions are NOT met. Collection/CI/CodeQL success is not detection success.

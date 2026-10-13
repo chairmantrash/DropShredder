@@ -1,0 +1,1055 @@
+{
+  "acceptedHead": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+  "production": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+  "runs": [
+    {
+      "id": 38362104831,
+      "name": "DropShredder repaired public-product live audit",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 1,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104831/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104831/logs",
+      "workflow_id": 382932810
+    },
+    {
+      "id": 38362104760,
+      "name": "DropShredder CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 539,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104760/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104760/logs",
+      "workflow_id": 376429085
+    },
+    {
+      "id": 38362104650,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 376,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104650/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104650/logs",
+      "workflow_id": 376732497
+    },
+    {
+      "id": 38362104652,
+      "name": "DropShredder Chromium Runtime",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 134,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104652/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38362104652/logs",
+      "workflow_id": 379315464
+    }
+  ],
+  "liveArtifacts": [
+    {
+      "id": 11796035526,
+      "name": "ds055-live-5",
+      "size_in_bytes": 2102877,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11796035526",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11796035526/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:28:56Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:28:56Z",
+      "digest": "sha256:de8bd34acc48a991403c428cdd7df3f588f1f6cb95e47ca265e0d834cd135717",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795925001,
+      "name": "ds055-live-6",
+      "size_in_bytes": 2436000,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795925001",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795925001/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:24:11Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:24:11Z",
+      "digest": "sha256:5dce6c038aea2f8643520d73a1630ee0e5459a3502f8f24f144f865b1da1634f",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795626206,
+      "name": "ds055-live-0",
+      "size_in_bytes": 1473305,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795626206",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795626206/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:25:43Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:25:43Z",
+      "digest": "sha256:0cfc8a4e54b4e6bd47e83f895d0b6adee25bdd0abbe33976339cc87dd8b2c32f",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795572456,
+      "name": "ds055-live-1",
+      "size_in_bytes": 2292854,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795572456",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795572456/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:28:52Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:28:52Z",
+      "digest": "sha256:bbbb8b87012968594d2ff776953d96203b8d85129bb87d3ffe36f95579d186a0",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795477562,
+      "name": "ds055-live-4",
+      "size_in_bytes": 1803817,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795477562",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795477562/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:28:36Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:28:36Z",
+      "digest": "sha256:8deb1a8f95aeaeccd101a0b4e44efe906caced042a16bca34c0db92d1abc3031",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795332456,
+      "name": "ds055-live-2",
+      "size_in_bytes": 2121611,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795332456",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795332456/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:27:10Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:27:10Z",
+      "digest": "sha256:ff3025c1530f900d9c51a93beb7685004f23d928db88ec3f04ea5a4672f19e43",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11794779824,
+      "name": "ds055-live-7",
+      "size_in_bytes": 2640836,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794779824",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794779824/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:24:40Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:24:40Z",
+      "digest": "sha256:563484ed4a99bd42f4244f1d43f9faf0dcedb9dfe78a7a073b35f0e05d30c76c",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11794699858,
+      "name": "ds055-live-3",
+      "size_in_bytes": 1102191,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794699858",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794699858/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:23:32Z",
+      "expires_at": "2027-01-11T07:21:07Z",
+      "updated_at": "2026-10-13T07:23:32Z",
+      "digest": "sha256:c8aa7c1d796a61a5bddf8da8e3cff23f418c81219eab2b843a9cd670a80cda1b",
+      "workflow_run": {
+        "id": 38362104831,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    }
+  ],
+  "browserArtifacts": [
+    {
+      "id": 11795975307,
+      "name": "dropshredder-headed-permission-evidence",
+      "size_in_bytes": 6982631,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795975307",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795975307/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:27:07Z",
+      "expires_at": "2026-11-12T07:27:05Z",
+      "updated_at": "2026-10-13T07:27:07Z",
+      "digest": "sha256:7d2c69fd674a1ab8b859d1397bd0bffdf4ad51efe00c7289cd1b0f792f30def8",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795650396,
+      "name": "dropshredder-chrome155-evidence",
+      "size_in_bytes": 1311433,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795650396",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795650396/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:21:58Z",
+      "expires_at": "2026-11-12T07:21:57Z",
+      "updated_at": "2026-10-13T07:21:58Z",
+      "digest": "sha256:1e1c599934c2d05e8b51d90c805f3d236b114cc2d5385e13908db2a17c48d47e",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795203024,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "size_in_bytes": 1311432,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795203024",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795203024/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:21:55Z",
+      "expires_at": "2026-11-12T07:21:54Z",
+      "updated_at": "2026-10-13T07:21:55Z",
+      "digest": "sha256:a9679a651019d25ce8f7ec549371290d4f967df66e0494ff6c082e610383fed8",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795173398,
+      "name": "dropshredder-unpacked-qa",
+      "size_in_bytes": 25883533,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795173398",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795173398/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:21:54Z",
+      "expires_at": "2026-11-12T07:21:51Z",
+      "updated_at": "2026-10-13T07:21:54Z",
+      "digest": "sha256:e7ec757e4775351e5ea58619072c8f53a4d53c8dd4fa39252976d04b37691d06",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11795142187,
+      "name": "dropshredder-worker-history-evidence",
+      "size_in_bytes": 917735,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795142187",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795142187/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:22:55Z",
+      "expires_at": "2026-11-12T07:22:55Z",
+      "updated_at": "2026-10-13T07:22:55Z",
+      "digest": "sha256:61169cc436892bbe1a86588dd2fff56f8edffdd500ee617b84d65d310bbcf4ad",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11794988834,
+      "name": "dropshredder-native-panel-evidence",
+      "size_in_bytes": 206675,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794988834",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794988834/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:22:11Z",
+      "expires_at": "2026-11-12T07:22:10Z",
+      "updated_at": "2026-10-13T07:22:11Z",
+      "digest": "sha256:7c6efc245669a15fad6d217b2938eb6c84044c016d126fdcfda6a409edfc991a",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11794757946,
+      "name": "dropshredder-localization-evidence",
+      "size_in_bytes": 17759128,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794757946",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794757946/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:22:17Z",
+      "expires_at": "2026-11-12T07:22:15Z",
+      "updated_at": "2026-10-13T07:22:17Z",
+      "digest": "sha256:8433a340d78d0f504aee2d15ed8a89f09718a0bb3402db9bcd6b5a1116358856",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    },
+    {
+      "id": 11794534827,
+      "name": "dropshredder-chrome133-evidence",
+      "size_in_bytes": 1298024,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794534827",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11794534827/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:21:55Z",
+      "expires_at": "2026-11-12T07:21:54Z",
+      "updated_at": "2026-10-13T07:21:55Z",
+      "digest": "sha256:530bb6b76de40387fe5da765b5eb6bad4e00c0edef064a36170ac9e32d078637",
+      "workflow_run": {
+        "id": 38362104652,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    }
+  ],
+  "codeqlArtifacts": [
+    {
+      "id": 11795625565,
+      "name": "dropshredder-codeql-evidence",
+      "size_in_bytes": 76201,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795625565",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11795625565/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:22:26Z",
+      "expires_at": "2026-11-12T07:22:25Z",
+      "updated_at": "2026-10-13T07:22:26Z",
+      "digest": "sha256:14748d10fadf469d79851c9fcf5597f7d0539529511795fee5ba253d4956419f",
+      "workflow_run": {
+        "id": 38362104650,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af"
+      }
+    }
+  ],
+  "recordedAt": "2026-10-13T07:33:55.098671+00:00",
+  "status": "DONE_BETA3_OPEN",
+  "productionTree": "3cb142f0a06c4d9673e4c653272e8aba36433137",
+  "zip": {
+    "artifact": 11794980740,
+    "ciRun": 38360924678,
+    "ciHead": "a58b226b1865ead787fee5d0ea5283e9a96037c5",
+    "wrapperSha256": "5fb1aa29d2c2b9b8ed9e8e08bae3a0b20e6f52f3c461f118305281f239c4b50e",
+    "sha256": "0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4",
+    "bytes": 25851180,
+    "files": 51,
+    "unpackedBytes": 54948488,
+    "all51HashesVerified": true,
+    "rebuiltForLiveTest": false
+  },
+  "core": {
+    "passed": 414,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "jobs": 7,
+    "allSuccessful": true,
+    "executionsExcluding7DuplicateHeadlessNative": 120,
+    "uniqueIds": 102,
+    "headedPassed": 80,
+    "privateRegressionIds": [
+      "P01",
+      "P02",
+      "P03"
+    ],
+    "naturalWorkerHistoryPassed": 6
+  },
+  "codeql": {
+    "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+    "recordedAt": "2026-10-13T07:22:25.248Z",
+    "status": "NO_FINDINGS",
+    "reports": [
+      {
+        "file": "javascript.sarif",
+        "sha256": "57ee2a13cf9869f2debac650d0c9357c8e14f436b71ac5281be46b8e08abe0a1",
+        "status": "NO_FINDINGS",
+        "findings": []
+      }
+    ]
+  },
+  "audit": {
+    "protocol": "DS-055",
+    "requiredAccessibleDistinctPages": 150,
+    "manifestSha256": "fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98",
+    "plannedPages": 259,
+    "recordedPageOutcomes": 259,
+    "nativeProfiles": [
+      {
+        "path": "native-0/browser-smoke-results/native-probe.json",
+        "sha256": "1d4feec1300d954126a7282404af1d0bd797b7c9663c36fa2048d746dc854898",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:48.849Z",
+        "finishedAt": "2026-10-13T07:25:42.586Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 0,
+        "planned": 35,
+        "safetyStop": null
+      },
+      {
+        "path": "native-1/browser-smoke-results/native-probe.json",
+        "sha256": "3e3ea37c06192486cbd49f6bdb89abbed93fb8d3488bf773c9fbca36ec1986ba",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:48.934Z",
+        "finishedAt": "2026-10-13T07:28:50.019Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 1,
+        "planned": 60,
+        "safetyStop": null
+      },
+      {
+        "path": "native-2/browser-smoke-results/native-probe.json",
+        "sha256": "6d3cac9af08e59571742f8f65021e10edb0fa411871bbc0e856e32f83351255a",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:46.670Z",
+        "finishedAt": "2026-10-13T07:27:08.662Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 2,
+        "planned": 40,
+        "safetyStop": null
+      },
+      {
+        "path": "native-3/browser-smoke-results/native-probe.json",
+        "sha256": "0fe1a4bd3d7049466836d3a61ce70d71cbd691ac12970aaa91d0daa93e973ae8",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:49.411Z",
+        "finishedAt": "2026-10-13T07:23:31.120Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 3,
+        "planned": 11,
+        "safetyStop": null
+      },
+      {
+        "path": "native-4/browser-smoke-results/native-probe.json",
+        "sha256": "e5b2ad9f62f26ff4907c6375ce19c38a8de423f8563592acd447384dc76e8eb3",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:59.532Z",
+        "finishedAt": "2026-10-13T07:28:34.336Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 4,
+        "planned": 43,
+        "safetyStop": null
+      },
+      {
+        "path": "native-5/browser-smoke-results/native-probe.json",
+        "sha256": "01be3bde109f2c603e9301c8609660a949449e4e3cbf4aae8913de4ce38733a5",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:58.302Z",
+        "finishedAt": "2026-10-13T07:28:54.304Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 5,
+        "planned": 35,
+        "safetyStop": null
+      },
+      {
+        "path": "native-6/browser-smoke-results/native-probe.json",
+        "sha256": "0c1f566c381a804b0521825237186bd0598d13d0d1ab5010ce5344088a35ed4c",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:21:42.963Z",
+        "finishedAt": "2026-10-13T07:24:10.087Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 6,
+        "planned": 20,
+        "safetyStop": null
+      },
+      {
+        "path": "native-7/browser-smoke-results/native-probe.json",
+        "sha256": "364f72048b3eb70bc7441bc82cd79e33a8ac088da03532e911eefc394c0c427a",
+        "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+        "packagedSourceCommit": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+        "bootstrapTests": [
+          {
+            "id": "N01",
+            "status": "PASS"
+          },
+          {
+            "id": "N02",
+            "status": "PASS"
+          },
+          {
+            "id": "N03",
+            "status": "PASS"
+          },
+          {
+            "id": "N04",
+            "status": "PASS"
+          },
+          {
+            "id": "N05",
+            "status": "PASS"
+          },
+          {
+            "id": "N06",
+            "status": "PASS"
+          },
+          {
+            "id": "N07",
+            "status": "PASS"
+          },
+          {
+            "id": "N08",
+            "status": "PASS"
+          },
+          {
+            "id": "N09",
+            "status": "PASS"
+          }
+        ],
+        "startedAt": "2026-10-13T07:22:09.687Z",
+        "finishedAt": "2026-10-13T07:24:39.053Z",
+        "browser": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.4",
+          "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+          "jsVersion": "15.6.75"
+        },
+        "status": "LIVE AUDIT COLLECTION COMPLETE",
+        "failure": null,
+        "uncaughtPanelErrors": [],
+        "shard": 7,
+        "planned": 15,
+        "safetyStop": null
+      }
+    ],
+    "rowStatusCounts": {
+      "OBSERVED_SCAN": 227,
+      "CURRENT_COMMERCE_UNCONFIRMED": 25,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 3
+    },
+    "accessibleScansBeforeDeduplication": 227,
+    "duplicateFinalPages": [],
+    "accessibleDistinctPages": 227,
+    "distinctHostnames": 47,
+    "minimum150Met": true,
+    "positiveWeightEvidencePages": 10,
+    "noPositiveWeightEvidencePages": 217,
+    "bothNumericalEstimatesUnknownPages": 227,
+    "severeWarningPages": 0,
+    "riskDistributions": {
+      "merchantRisk": {
+        "unknown": 222,
+        "low": 5
+      },
+      "deceptionRisk": {
+        "unknown": 222,
+        "low": 5
+      },
+      "manipulationRisk": {
+        "unknown": 222,
+        "low": 5
+      },
+      "fulfillmentRisk": {
+        "unknown": 227
+      }
+    },
+    "positiveSignalCounts": {
+      "CATALOG_SALE_PREVALENCE": 5,
+      "FINAL_SALE_BROAD": 5
+    },
+    "allSignalCounts": {
+      "COMMERCE_PLATFORM_DETECTED": 191,
+      "COMMERCE_PLATFORM_CONTEXT": 191,
+      "MERCHANT_JURISDICTIONS_DISCLOSED": 109,
+      "PRODUCT_IDENTIFIERS_PRESENT": 182,
+      "SUPPLY_CHAIN_PROFILE": 227,
+      "EXPLICIT_ORIGIN_CLAIMS": 32,
+      "MADE_IN_USA_PREFERENCE_MISMATCH": 19,
+      "FULFILLMENT_ORIGIN_OBSERVATION": 23,
+      "CATALOG_SALE_PREVALENCE": 5,
+      "MERCHANT_ORIGIN_BURIED_IN_SECONDARY_PAGES": 9,
+      "FINAL_SALE_BROAD": 5
+    },
+    "languageCounts": {
+      "es": 36,
+      "de-DE": 10,
+      "it-IT": 40,
+      "de-AT": 20,
+      "en-US": 11,
+      "nl-NL": 20,
+      "el": 5,
+      "de": 25,
+      "en": 5,
+      "es-MX": 20,
+      "en-GB": 10,
+      "fr-FR": 10,
+      "nl": 5,
+      "ja": 5,
+      "en-CA": 5
+    },
+    "actionCounts": [
+      {
+        "action": "policy",
+        "status": "OBSERVED",
+        "count": 227
+      },
+      {
+        "action": "scan",
+        "status": "OBSERVED",
+        "count": 227
+      },
+      {
+        "action": "shipping",
+        "status": "OBSERVED",
+        "count": 227
+      }
+    ],
+    "limits": [
+      "Historical source shopping-scam labels are not independent current fraud/dropshipping truth",
+      "Multiple correlated products per merchant and unresolved operator clusters; hostname count is not independent operator count",
+      "ScamFerret was known in development research; no source labels imported into installed extension",
+      "No accepted precision/recall/false-warning rate; no delivery/checkout/authentication test",
+      "Positive-weight evidence can concern manipulation rather than dropshipping or deception",
+      "UNKNOWN is abstention, never clean or a correct scam detection"
+    ],
+    "accessibleDistinctNativeScanAttempts": 227,
+    "nativeAttemptHostnames": 47,
+    "minimum150NativeFunctionTestsMet": true,
+    "successfulExtractionMinimum150Met": true,
+    "nativeScanRefusalCounts": {},
+    "hiddenCredentialFlaggedAttempts": 216
+  },
+  "before": {
+    "sameManifest": true,
+    "accessibleNativeAttempts": 227,
+    "successfulExtractions": 11,
+    "refusals": 216
+  },
+  "originalTransientFailures": {
+    "browserRun": 38360924736,
+    "head": "a58b226b1865ead787fee5d0ea5283e9a96037c5",
+    "headedArtifact": 11794786976,
+    "workerArtifact": 11794832084,
+    "headed": "N02 control paint/visibility timeout before product tests",
+    "worker": "six assertions PASS followed by ENOTEMPTY temporary-profile cleanup",
+    "failedJobsRetriedOnceOnUnchangedHead": true,
+    "retryAll7JobsSuccessful": true,
+    "laterAcceptedAll7JobsSuccessfulWithoutRetry": true
+  },
+  "evidenceFiles": [
+    {
+      "path": "workplane/runs/DS-055-NATIVE-EVIDENCE/privacy-late-modal-action-refused.png",
+      "bytes": 104873,
+      "sha256": "f8ec937334c390461ff62918ff6f083ccdf10e2c8f4246e1f1d289c2d19a924e"
+    },
+    {
+      "path": "workplane/runs/DS-055-NATIVE-EVIDENCE/privacy-public-dormant.png",
+      "bytes": 108625,
+      "sha256": "2ea27673871982b94fe2db095e4ed8ae041c232e0376609e8d45f12417a32e09"
+    },
+    {
+      "path": "workplane/runs/DS-055-NATIVE-EVIDENCE/native-probe.json",
+      "bytes": 83055,
+      "sha256": "ffe6734ad10326560fef71c9c738322526b3000543e797539dd3737c6cd7aefd"
+    },
+    {
+      "path": "workplane/runs/DS-055-NATIVE-EVIDENCE/privacy-active-login-refused.png",
+      "bytes": 114722,
+      "sha256": "ec059bbfb1a4fa53b8cd1cc70e7eebd8832bd74e0e413eee73fe297cee19d944"
+    },
+    {
+      "path": "workplane/runs/DS-055-NATIVE-EVIDENCE/SECURITY-RECEIPT.json",
+      "bytes": 338,
+      "sha256": "cdd8a8143d83f3eb86e8e4eaaaba0fcd8c2f2c703d371d882d02e142b28f7035"
+    }
+  ],
+  "limits": [
+    "Historical source shopping-scam labels are not independent current fraud/dropshipping truth",
+    "Multiple correlated products per merchant and unresolved operator clusters; hostname count is not independent operator count",
+    "ScamFerret was known in development research; no source labels imported into installed extension",
+    "No accepted precision/recall/false-warning rate; no delivery/checkout/authentication test",
+    "Positive-weight evidence can concern manipulation rather than dropshipping or deception",
+    "UNKNOWN is abstention, never clean or a correct scam detection"
+  ],
+  "independentAccuracyAccepted": false,
+  "mainMerged": false,
+  "storeSubmitted": false,
+  "publicationReceipt": "workplane/runs/DS-055-BETA3-OPEN-20261013.json"
+}

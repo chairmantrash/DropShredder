@@ -1,24 +1,26 @@
 # DropShredder Beta Testing
 
-DropShredder 0.2.0 beta 2 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
+DropShredder 0.2.0 beta 3 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
 
 ## Download and install
 
-Use the [beta 2 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2), and download `DropShredder-0.2.0-beta.2-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
+Use the [beta 3 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3), and download `DropShredder-0.2.0-beta.3-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
 
-1. Verify ZIP SHA256 `7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.2-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.2-chrome.zip`).
+1. Verify ZIP SHA256 `0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.3-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.3-chrome.zip`).
 2. Extract the ZIP into a folder you will keep. Its root contains `manifest.json`.
 3. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select that folder.
 4. Open a normal public product page, click the DropShredder extension icon, and use the side panel. Grant optional site access only when you choose the corresponding function.
 5. Report problems through [DropShredder GitHub issues](https://github.com/chairmantrash/DropShredder/issues). Use the report fields below and attach only scrubbed information. Removing the extension at `chrome://extensions` ends participation; no account or telemetry enrollment is required.
 
-`BUILD-INFO.json` lists all 51 reviewed package files and production source `6fe561807d6962fe51006eab99c0cf7017c2c6ee`. `BETA-OBSERVATIONS.json` contains actual bounded public-site results; `NATIVE-PROTOCOL.json` contains the full engineering/native run. Unavailable sites/provider timeouts are recorded without a pass claim. The prerelease tag points to exact accepted/tested head c5326c7e7aa3deddae5cd2d2bf434fc739339e48; BUILD-INFO records the production source of those identical compiled bytes. DS-050/051/052 receipts preserve the original full matrix, initial failures and subsequent repairs.
+BUILD-INFO.json lists all51 reviewed files and productionf2ea60e2ac42f6292d60dfe6069290a1758a6905, which the prerelease tag targets. BETA-OBSERVATIONS.json records actual native/live outcomes; NATIVE-PROTOCOL.json contains80 engineering/native checks, and LIVE-PAGE-OUTCOMES.json preserves all259 targets. The accepted native/live harness is8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. DS-054/055 receipts retain original refusals and subsequent repair.
 
-To update an existing beta1 installation, replace the contents of its unpacked folder with beta2 and click Reload in chrome://extensions.
+To update an existing beta, replace the contents of its unpacked folder with beta3 and click Reload in chrome://extensions.
 
-## Actual known-site observations
+## Actual public-site observations
 
-The predeclared six-page run found Warmly factory-direct statements and the HaremPants/Sure Design affiliation. It exposed a missing visible HaremPants SKU; beta2 captures GPH42-Black without choosing an ambiguous structured offer. After repair,24 known checks have16PASS/8UNAVAILABLE/0FAIL; both selected UntilGone pages returned404.84 native checks and408 core checks pass. Numeric dropship/resell estimates remain UNKNOWN. This is a small selected/correlated sample with exposed affiliate controls, not independent accuracy acceptance.
+The same259-target corpus now produces227 distinct successful native product extractions on47 hostnames, versus11 reports and216 privacy refusals before repair. Dormant login subtrees are excluded; activating private login/payment surfaces still refuses a scan and invalidates stale report actions.32 other targets remain unavailable/unconfirmed/navigation outcomes. All227 numerical estimates remain UNKNOWN;10 weak catalog-sale/final-sale findings and zero severe warnings.414 core tests,80 headed native checks and all seven accepted browser groups pass.
+
+This is extraction coverage, not independent current scam/dropshipping accuracy. Historical source labels and correlated products do not prove truth or independent operators. The [ScamFerret research](workplane/research/DS-055-SCAMFERRET-RESEARCH-20261013.md) explains external evidence and API limitations; no cloud-model calls or runtime blacklist imports were added.
 
 ## What to test
 Use normal public product/listing pages first. Try a mix of well-known manufacturers, ordinary resellers, marketplace listings, suspicious ads/stores, products with many reviews, and products with little information.

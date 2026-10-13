@@ -1,6 +1,6 @@
 # DropShredder
 
-**Public beta:** [Download 0.2.0 beta 2](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2). See [installation and feedback instructions](BETA-TESTING.md). Live testing caught and verified fixes for policy HTTP errors and visible product SKUs. Independent accuracy and broader validation are ongoing beta work.
+**Public beta:** [Download 0.2.0 beta 3](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3). See [installation and feedback instructions](BETA-TESTING.md). The public-product privacy repair now scans227 accessible pages in the frozen259-target live corpus; active private surfaces remain refused. Independent accuracy and broader validation are ongoing beta work.
 
 **Commerce forensics for shoppers. Don't guess. Build a case.**
 

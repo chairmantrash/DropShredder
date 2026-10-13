@@ -1,0 +1,133 @@
+{
+  "recordedAt": "2026-10-13T07:49:57.306697+00:00",
+  "status": "BETA3_OPEN",
+  "releaseUrl": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3",
+  "releaseId": 411421235,
+  "publishedAt": "2026-10-13T07:46:34Z",
+  "tag": "v0.2.0-beta.3",
+  "tagSource": "f2ea60e2ac42f6292d60dfe6069290a1758a6905",
+  "acceptedRuntimeTestHead": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+  "publicationHead": "c53a32366fcc344ffc923fb2c38f85a16c737cc4",
+  "publicationChecks": [
+    {
+      "id": 38364674445,
+      "name": "DropShredder CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 543,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674445/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674445/logs",
+      "workflow_id": 376429085
+    },
+    {
+      "id": 38364674474,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 380,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674474/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674474/logs",
+      "workflow_id": 376732497
+    },
+    {
+      "id": 38364674506,
+      "name": "DropShredder accepted beta3 publication",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 4,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674506/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/38364674506/logs",
+      "workflow_id": 382945397
+    }
+  ],
+  "packetArtifacts": [
+    {
+      "id": 11796271578,
+      "name": "dropshredder-beta3-release-packet",
+      "size_in_bytes": 25976913,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11796271578",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11796271578/zip",
+      "expired": false,
+      "created_at": "2026-10-13T07:46:38Z",
+      "expires_at": "2027-01-11T07:45:09Z",
+      "updated_at": "2026-10-13T07:46:38Z",
+      "digest": "sha256:5915829af83ddd8e4cbeca4940bb490d62c3df05e92edfc8866b27426b987c78",
+      "workflow_run": {
+        "id": 38364674506,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/public-product-privacy-repair-20261013",
+        "head_sha": "c53a32366fcc344ffc923fb2c38f85a16c737cc4"
+      }
+    }
+  ],
+  "publicDownloads": {
+    "authenticated": false,
+    "verifiedAt": "2026-10-13T07:47:21.191181+00:00",
+    "assets": [
+      {
+        "name": "BETA-OBSERVATIONS.json",
+        "bytes": 17989,
+        "sha256": "90c0310682256338afc4d29f82c4ae8c5f56076e14edf625cc40d98f49e7cfb7"
+      },
+      {
+        "name": "BUILD-INFO.json",
+        "bytes": 8832,
+        "sha256": "3465c89044950cba460efe1184ee4cef56f10388cf031e3094ca836f3e3ea815"
+      },
+      {
+        "name": "DropShredder-0.2.0-beta.3-chrome.zip",
+        "bytes": 25851180,
+        "sha256": "0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4"
+      },
+      {
+        "name": "INSTALL-AND-REPORT.md",
+        "bytes": 3109,
+        "sha256": "aceb5afa694254feaaef39005f89cc7915bd3b941763033fa7e5f6cbb5ede32f"
+      },
+      {
+        "name": "LIVE-PAGE-OUTCOMES.json",
+        "bytes": 3461713,
+        "sha256": "671dd61d475c5a868ffa600e97dde5d96b5309044e7227b5fb52bd3f7f1a6773"
+      },
+      {
+        "name": "NATIVE-PROTOCOL.json",
+        "bytes": 83055,
+        "sha256": "ffe6734ad10326560fef71c9c738322526b3000543e797539dd3737c6cd7aefd"
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "bytes": 103,
+        "sha256": "f1bfe3e1ff5a3496a34e5af16e29eed2e248f6607d7be6eeac2636e9e705e07e"
+      }
+    ],
+    "all51PublicPackageHashesMatch": true
+  },
+  "zipSha256": "0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4",
+  "all51Match": true,
+  "existingCiPackageReused": true,
+  "nativeChecks": 80,
+  "coreChecks": 414,
+  "plannedLiveOutcomes": 259,
+  "successfulDistinctLivePages": 227,
+  "hostnames": 47,
+  "numericalEstimatesUnknown": 227,
+  "weakPositiveEvidencePages": 10,
+  "severeWarnings": 0,
+  "originalPublicationFailures": [
+    {
+      "run": 38363922564,
+      "reason": "Publication guard retained beta2 workflow paths; fixed before any release mutation"
+    },
+    {
+      "run": 38364203792,
+      "reason": "GitHub release creation HTTP403 with contents-write token when tagging test/workflow head; preserved packet11795599679. Production-source tag succeeded on later run."
+    }
+  ],
+  "mainSource": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
+  "mainMerged": false,
+  "storeSubmitted": false,
+  "peopleInvited": false,
+  "independentAccuracyAccepted": false,
+  "promotionLimits": "Current rights-cleared/disjoint labels, approved thresholds, native/legal/photos/other-OS/accessibility and applicable publisher/elapsed-lifecycle acceptance remain open beta work."
+}
