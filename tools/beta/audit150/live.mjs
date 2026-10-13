@@ -33,15 +33,18 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       await pause(2200);
       row.httpStatus=response?.status();row.finalUrl=clean(page.url());row.pageTitle=await page.title();
       const observed=await page.evaluate(()=>({language:document.documentElement.lang,title:document.title,h1:document.querySelector('h1')?.textContent?.trim(),text:(document.body?.innerText??'').slice(0,60000),privateForm:Boolean(document.querySelector('input[type=password],input[autocomplete="cc-number"],input[autocomplete="current-password"]')),products:[...document.querySelectorAll('script[type="application/ld+json"]')].map(e=>e.textContent).filter(s=>/"@type"\s*:\s*"Product"/i.test(s??'')).length,productLinks:[...document.querySelectorAll('a[href]')].filter(a=>/\/(products?|item|items|p)\//i.test(a.pathname)).length}));
-      row.pageIdentity={title:observed.title,h1:observed.h1,language:observed.language,visibleTextSha256:createHash('sha256').update(observed.text).digest('hex'),visibleTextChars:observed.text.length,jsonProductBlocks:observed.products,productLinks:observed.productLinks};
+      row.pageIdentity={title:observed.title,h1:observed.h1,language:observed.language,visibleTextSha256:createHash('sha256').update(observed.text).digest('hex'),visibleTextChars:observed.text.length,jsonProductBlocks:observed.products,productLinks:observed.productLinks,credentialFieldPresent:observed.privateForm};
       const current=new URL(row.finalUrl);
-      if(current.hostname.replace(/^www\./,'')!==target.host||privatePath.test(current.pathname)||observed.privateForm){row.status='REDIRECT_OR_PRIVATE_SURFACE_REFUSED';continue;}
+      if(current.hostname.replace(/^www\./,'')!==target.host||privatePath.test(current.pathname)||/^(?:log ?in|sign ?in|my account|checkout|payment|anmelden|connexion|iniciar sesi[oó]n)(?:\b|\s)/i.test(observed.h1??observed.title)){row.status='REDIRECT_OR_PRIVATE_SURFACE_REFUSED';continue;}
       if(row.httpStatus>=400||blocked.test(observed.text.slice(0,12000))||blocked.test(observed.title)||observed.text.length<150){row.status='UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY';continue;}
       row.commerceIdentityConfirmed=Boolean(observed.products||observed.productLinks||/add to (?:cart|bag)|warenkorb|acheter|comprar|winkelwagen|カート|購入|aggiungi|panier/i.test(observed.text))&&/[$€£¥]|\b(?:USD|EUR|GBP|JPY)\b/.test(observed.text);
       if(!row.commerceIdentityConfirmed){row.status='CURRENT_COMMERCE_UNCONFIRMED';continue;}
       await page.bringToFront();
       row.automatic=await page.evaluate(()=>({toastCount:document.querySelectorAll('#dropshredder-auto-verdict').length,toastText:document.querySelector('#dropshredder-auto-verdict')?.shadowRoot?.textContent?.slice(0,1800)??document.querySelector('#dropshredder-auto-verdict')?.textContent}));
-      const scanStart=Date.now();
+      // Public product pages can include a dormant login modal. Do not alter
+      // its DOM or bypass the extension guard: observe the real Scan refusal.
+      // Genuine private/account/payment URLs were refused before this point.
+      const scanStart=Date.now();row.nativeScanAttemptedAt=new Date().toISOString();
       await native.click('#scan');
       await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'actual native live scan',25000);
       row.scanStatus=await status();
