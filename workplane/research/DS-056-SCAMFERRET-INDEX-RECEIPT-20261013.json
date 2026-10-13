@@ -1,0 +1,9 @@
+{
+  "retrievedAt": "2026-10-13T12:13:09.679930+00:00",
+  "source": "https://api.github.com/repos/ScamFerret/artifact/git/trees/8cf8dc631edafe584141e2f95f0c0f51855fb7bc?recursive=1",
+  "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+  "treeEntries": 39310,
+  "lookupPaths": 2800,
+  "distinctHostnames": 2683,
+  "scope": "Public result-file locator metadata only, no classifications imported from filenames/folders. Full chosen original result is fetched on demand and exact-domain/date/output validity checked; no current accuracy acceptance. GPL-3.0 source attribution, license retained in project."
+}

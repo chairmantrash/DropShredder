@@ -256,9 +256,10 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         // A merchant can expose the current SKU while its structured variants
         // remain unresolved. Keep that store-local label separate from choosing
         // a JSON-LD offer, GTIN, variant or common supplier.
-        const skuRoot=visibleTitle && /\/products?\//i.test(location.pathname)
+        const skuRoot=visibleTitle && (Boolean(product)||/\/(?:products?|p)\//i.test(location.pathname))
           ? publicNode('h1')?.closest('main,[role="main"],[itemtype$="/Product"]') : undefined;
         const skuPieces:string[]=[];
+        const visibleBrands=new Set<string>(),visibleMpns=new Set<string>(),brandRows=new Set<Element>();
         let pageChars=0, visitedTextNodes=0;
         if(document.body){
           const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -273,10 +274,19 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
             pagePieces.push(clipped);
             if(skuRoot?.contains(parent) && !parent.closest('a[href],[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"],li[class*="product"]')) skuPieces.push(clipped);
+            if(skuRoot?.contains(parent)&&brandRows.size<12&&!parent.closest('[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"]')&&
+              /(?:brand|marca|marke|marque|merk|μάρκα|ブランド|品牌|ब्रांड|ব্র্যান্ড|العلامة التجارية)\s*:/iu.test(value)){
+              const row=parent.closest('tr,p,li');
+              if(row&&!brandRows.has(row)){brandRows.add(row);const label=publicText(row,300).replace(/\s+/g,' ').trim();
+                const hit=label.match(/(?:brand|marca|marke|marque|merk|μάρκα|ブランド|品牌|ब्रांड|ব্র্যান্ড|العلامة التجارية)\s*:\s*([\p{L}\p{N}][\p{L}\p{N} .&'’-]{0,58}?)(?=\s+[\p{L}]{2,20}\s*:|$|[,;|])/iu)?.[1]?.trim();
+                if(hit&&!/^(?:unknown|none|n\/a)$/i.test(hit))visibleBrands.add(hit);
+              }
+            }
             pageChars+=clipped.length+1;
           }
         }
         const pageText=pagePieces.join(' ').slice(0,LIMITS.pageText);
+        for(const text of skuPieces.slice(0,200))for(const hit of text.matchAll(/(?:manufacturer(?:'s)?\s+(?:code|part\s+number)|mpn|c[oó]digo\s+del\s+fabricante|herstellercode|codice\s+produttore|code\s+fabricant)\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{1,59})(?=$|\s)/gi))visibleMpns.add(hit[1]!);
         const labeledSkus=[...skuPieces.join(' ').matchAll(/(?:^|\s)SKU\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{0,79})(?=$|\s)/gi)].map(m=>m[1]!);
         const uniqueSkus=[...new Set(labeledSkus)];
         const visibleSku=uniqueSkus.length===1 && !/^(?:n\/a|none|unknown|null)$/i.test(uniqueSkus[0]!) ? uniqueSkus[0] : undefined;
@@ -389,11 +399,11 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             description:first(product?.description) || meta('meta[property="og:description"]') || meta('meta[name="description"]'),
             price:offer && ((typeof offer.price==='number' && Number.isFinite(offer.price) && offer.price>=0) || (typeof offer.price==='string' && /^\d+(?:\.\d+)?$/.test(offer.price.trim())))?Number(offer.price):boundVisiblePrice,
             currency:first(offer?.priceCurrency)||explicitCurrency,
-            brand:first(brand?.name ?? product?.brand),
+            brand:first(brand?.name ?? product?.brand)||(visibleBrands.size===1?[...visibleBrands][0]:undefined),
             seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
             sku:first(product?.sku) || visibleSku,
             asin:amazonAsin,
-            mpn:first(product?.mpn),
+            mpn:first(product?.mpn)||(visibleMpns.size===1?[...visibleMpns][0]:undefined),
             gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
             imageUrls:[...new Set(structuredImages.length?structuredImages:[meta('meta[property="og:image"]')].filter((v):v is string=>Boolean(v)))].slice(0,30),
             jsonLdProductCount:jsonNodes.filter(node=>{
@@ -402,6 +412,10 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             }).length,
             capturedAt:new Date().toISOString(),
             shippingText,
+            merchantIdentity:[...new Set([
+              (publicNode('meta[property="og:site_name"]') as HTMLMetaElement|null)?.content?.trim().slice(0,300),
+              /[|｜]|\s[-–—]\s/.test(document.title)?document.title.split(/[|｜]|\s[-–—]\s/).at(-1)?.trim().slice(0,300):undefined,
+            ].filter((v):v is string=>Boolean(v)))].slice(0,4),
             claims:[],
             specifications,
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,

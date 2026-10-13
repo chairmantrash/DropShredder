@@ -28,6 +28,14 @@ export function renderShopperReport(report:DropShredderReport,targets:ReportRend
   const subject=document.createElement('div');subject.className='gate report-subject';
   subject.textContent=tr('$1 • $2 • captured $3',report.product.title??tr('Scanned listing'),report.product.domain,report.product.capturedAt);
   subject.dir='auto';summary.append(subject);
+  const flags=report.evidence.filter(e=>e.weight>0&&e.severity!=='info');
+  if(flags.length){const note=document.createElement('div');note.className='gate';
+    const label=document.createElement('strong');label.textContent=tr('Seller evidence to check');
+    const text=document.createElement('p');text.textContent=flags.slice(0,3).map(e=>e.title).join(' • ');text.dir='auto';note.append(label,text);summary.append(note);}
+  if(report.fulfillmentDisclosure){
+    metric(tr('Dispatch model disclosed by merchant'),report.fulfillmentDisclosure.model==='supplier-direct'?tr('Supplier-direct'):tr('Factory-direct'));
+    const note=document.createElement('p');note.className='gate';note.textContent=report.fulfillmentDisclosure.quote;note.dir='auto';summary.append(note);
+  }
   metric(tr('Mass-resell evidence score'),score===null?'UNKNOWN':score+'/100');
   metric(tr('Dropship evidence score'),report.verdict.dropshipLikelihood===null?'UNKNOWN':report.verdict.dropshipLikelihood+'/100');
   metric(tr('Misleading claims'),report.verdict.deceptionRisk.toUpperCase());

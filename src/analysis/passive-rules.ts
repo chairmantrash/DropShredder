@@ -4,6 +4,8 @@ import type { ProductSnapshot } from '../types/product';
 import { marketplacePolicyEvidence } from './marketplace-policy';
 import { certificationClaimEvidence } from './certification-claims';
 import { focusedSafetyEvidence } from '../intelligence/focused-safety';
+import {brandAffiliationEvidence} from './brand-affiliation';
+import {fulfillmentDisclosure,fulfillmentDisclosureEvidence} from './fulfillment-disclosure';
 
 const scarcityPatterns=[
   /only\s+\d+\s+(?:left|remaining)/i,
@@ -14,7 +16,8 @@ const scarcityPatterns=[
 const longShipping=/\b(?:1[2-9]|2\d|3\d)\s*(?:-|to|–|से|থেকে|إلى|à|a|至)\s*(?:1[5-9]|2\d|3\d)\s+(?:business\s+)?days\b/i;
 
 export function runPassiveRules(product: ProductSnapshot, pageText: string): EvidenceSignal[] {
-  const out: EvidenceSignal[]=[...marketplacePolicyEvidence(product),...certificationClaimEvidence(product),...focusedSafetyEvidence(product)];
+  const out: EvidenceSignal[]=[...marketplacePolicyEvidence(product),...certificationClaimEvidence(product),...focusedSafetyEvidence(product),...brandAffiliationEvidence(product),
+    ...fulfillmentDisclosureEvidence(fulfillmentDisclosure([{text:pageText,url:product.url}],product.capturedAt))];
 
   const contextualCount=out.length;
   for (const signal of product.pageSignals) {

@@ -1,0 +1,325 @@
+[
+  {
+    "id": "adidas",
+    "name": "Adidas",
+    "aliases": [
+      "adidas"
+    ],
+    "knownDomains": [
+      "adidas.com"
+    ],
+    "sourceUrl": "https://www.adidas.com/us/help/us-company-information/what-are-the-terms-and-conditions",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "nike",
+    "name": "Nike",
+    "aliases": [
+      "nike",
+      "air jordan",
+      "jordan"
+    ],
+    "knownDomains": [
+      "nike.com"
+    ],
+    "sourceUrl": "https://www.nike.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "pokemon-center",
+    "name": "Pokémon Center",
+    "aliases": [
+      "pokémon center",
+      "pokemon center",
+      "pokemoncenter",
+      "pokemon-center"
+    ],
+    "knownDomains": [
+      "pokemoncenter.com"
+    ],
+    "sourceUrl": "https://support.pokemoncenter.com/hc/en-us/articles/360051729272-How-do-I-select-a-different-country-on-Pok%C3%A9mon-Center",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "happy-socks",
+    "name": "Happy Socks",
+    "aliases": [
+      "happy socks",
+      "happysocks"
+    ],
+    "knownDomains": [
+      "happysocks.com"
+    ],
+    "sourceUrl": "https://www.happysocks.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "vionic",
+    "name": "Vionic",
+    "aliases": [
+      "vionic"
+    ],
+    "knownDomains": [
+      "vionicshoes.com"
+    ],
+    "sourceUrl": "https://www.vionicshoes.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "salomon",
+    "name": "Salomon",
+    "aliases": [
+      "salomon"
+    ],
+    "knownDomains": [
+      "salomon.com"
+    ],
+    "sourceUrl": "https://www.salomon.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "nine-west",
+    "name": "Nine West",
+    "aliases": [
+      "nine west",
+      "ninewest"
+    ],
+    "knownDomains": [
+      "ninewest.com"
+    ],
+    "sourceUrl": "https://ninewest.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "lowa",
+    "name": "Lowa",
+    "aliases": [
+      "lowa"
+    ],
+    "knownDomains": [
+      "lowa.com"
+    ],
+    "sourceUrl": "https://lowa.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "zippo",
+    "name": "Zippo",
+    "aliases": [
+      "zippo"
+    ],
+    "knownDomains": [
+      "zippo.com"
+    ],
+    "sourceUrl": "https://www.zippo.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "laneige",
+    "name": "Laneige",
+    "aliases": [
+      "laneige"
+    ],
+    "knownDomains": [
+      "laneige.com"
+    ],
+    "sourceUrl": "https://www.laneige.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "jw-pei",
+    "name": "Jw Pei",
+    "aliases": [
+      "jw pei",
+      "jwpei"
+    ],
+    "knownDomains": [
+      "jwpei.com"
+    ],
+    "sourceUrl": "https://www.jwpei.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "superdry",
+    "name": "Superdry",
+    "aliases": [
+      "superdry"
+    ],
+    "knownDomains": [
+      "superdry.com"
+    ],
+    "sourceUrl": "https://www.superdry.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "specialized",
+    "name": "Specialized",
+    "aliases": [
+      "specialized"
+    ],
+    "knownDomains": [
+      "specialized.com"
+    ],
+    "sourceUrl": "https://www.specialized.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "champion",
+    "name": "Champion",
+    "aliases": [
+      "champion"
+    ],
+    "knownDomains": [
+      "champion.com"
+    ],
+    "sourceUrl": "https://www.champion.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "baggu",
+    "name": "Baggu",
+    "aliases": [
+      "baggu"
+    ],
+    "knownDomains": [
+      "baggu.com"
+    ],
+    "sourceUrl": "https://www.baggu.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "bershka",
+    "name": "Bershka",
+    "aliases": [
+      "bershka"
+    ],
+    "knownDomains": [
+      "bershka.com"
+    ],
+    "sourceUrl": "https://www.bershka.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "cannondale",
+    "name": "Cannondale",
+    "aliases": [
+      "cannondale"
+    ],
+    "knownDomains": [
+      "cannondale.com"
+    ],
+    "sourceUrl": "https://www.cannondale.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "barbour",
+    "name": "Barbour",
+    "aliases": [
+      "barbour"
+    ],
+    "knownDomains": [
+      "barbour.com"
+    ],
+    "sourceUrl": "https://www.barbour.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "stella-mccartney",
+    "name": "Stella Mccartney",
+    "aliases": [
+      "stella mccartney",
+      "stellamccartney"
+    ],
+    "knownDomains": [
+      "stellamccartney.com"
+    ],
+    "sourceUrl": "https://www.stellamccartney.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "fila",
+    "name": "Fila",
+    "aliases": [
+      "fila"
+    ],
+    "knownDomains": [
+      "fila.com"
+    ],
+    "sourceUrl": "https://www.fila.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "napapijri",
+    "name": "Napapijri",
+    "aliases": [
+      "napapijri"
+    ],
+    "knownDomains": [
+      "napapijri.com"
+    ],
+    "sourceUrl": "https://www.napapijri.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "kickers",
+    "name": "Kickers",
+    "aliases": [
+      "kickers"
+    ],
+    "knownDomains": [
+      "kickers.com"
+    ],
+    "sourceUrl": "https://www.kickers.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "chrome-hearts",
+    "name": "Chrome Hearts",
+    "aliases": [
+      "chrome hearts",
+      "chromehearts"
+    ],
+    "knownDomains": [
+      "chromehearts.com"
+    ],
+    "sourceUrl": "https://www.chromehearts.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  },
+  {
+    "id": "pop-mart",
+    "name": "Pop Mart",
+    "aliases": [
+      "pop mart",
+      "popmart"
+    ],
+    "knownDomains": [
+      "popmart.com"
+    ],
+    "sourceUrl": "https://www.popmart.com/",
+    "reviewedAt": "2026-10-13",
+    "scope": "Known brand website reference only; not an exhaustive authorized-retailer list or safety certification."
+  }
+]

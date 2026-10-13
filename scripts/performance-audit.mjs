@@ -9,12 +9,13 @@ const rdap=fs.readFileSync('src/osint/rdap.ts','utf8');
 const images=fs.readFileSync('src/forensics/image-acquisition.ts','utf8');
 const renderer=fs.readFileSync('src/ui/report-renderer.ts','utf8');
 const scanner=fs.readFileSync('src/extraction/page-scan.ts','utf8');
+const publicPages=fs.readFileSync('src/osint/public-store-pages.ts','utf8');
 
 const requiredMain=[
-  ['same-site page cap',/links\.slice\(0,4\)/],
   ['search tab cap',/maxTabs=8/],
-  ['same-site timeout',/AbortSignal\.timeout\(3500\)/],
 ];
+if(!/links\.slice\(0,4\)/.test(publicPages)||!/AbortSignal\.timeout\(3500\)/.test(publicPages)||!/bytes>2_000_000/.test(publicPages)) failures.push('public store pages: request, time or byte cap missing');
+if(!/func:fetchPublicStorePages/.test(main)) failures.push('sidepanel: bounded public page reader is not used');
 const requiredScanner=[
   ['central scan budget',/const LIMITS=\{images:160,scripts:220,pageText:100_000,cards:160,amazonCards:120,reviews:60,htmlSignature:60_000\}/],
   ['page text cap',/slice\(0,LIMITS\.pageText\)/],

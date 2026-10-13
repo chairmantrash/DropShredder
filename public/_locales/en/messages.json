@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "Litigation and court cases",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "Outside reports and consumer records",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores.",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "CHECK PUBLISHED SCAMFERRET RESULTS",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "CHECK EXISTING SECURITY REPORTS",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery.",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "Outside result: $arg1$ • reported $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "Provider reported a concern",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "No concern stated in this record",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "Unclassified",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • HISTORICAL — not a current scan",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "Security report only; merchant delivery and product origin remain unverified.",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "Historical model opinion; current site and operator remain unverified.",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "Checking the chosen website only. Outside opinions do not change product scores.",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "Outside records: $arg1$. Dates and scope are shown; product scores are unchanged.",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "No usable outside record. This does not mean the store is safe.",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "Seller evidence to check",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "Dispatch model disclosed by merchant",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "Supplier-direct",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "Factory-direct",
+    "description": "Factory-direct"
   }
 }

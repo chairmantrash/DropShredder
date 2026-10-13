@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "মামলা ও আদালতের কার্যক্রম",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "বাইরের রিপোর্ট ও ভোক্তা নথি",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "বর্তমান ওয়েবসাইটের ঐচ্ছিক পরীক্ষা। প্রকাশিত ScamFerret রিপোর্ট মডেলের পুরোনো মতামত; urlscan রিপোর্ট নিরাপত্তা নিয়ে, বিক্রেতার ডেলিভারি নিয়ে নয়। স্ক্যানের জন্য কোনো সাইট, ছবি বা ব্রাউজিং ইতিহাস পাঠানো হয় না। ফলাফল পণ্যের স্কোর থেকে আলাদা থাকে।",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "প্রকাশিত SCAMFERRET ফলাফল দেখুন",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "বিদ্যমান নিরাপত্তা রিপোর্ট দেখুন",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "ভোক্তা ও সরকারি নথি: সঠিক ব্যবসা ও ওয়েবসাইট মিলিয়ে নিন। নথি না থাকা বা ভালো পর্যালোচনা নির্ভরযোগ্য ডেলিভারির নিশ্চয়তা নয়।",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "বাইরের ফলাফল: $arg1$ • রিপোর্ট $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "প্রদানকারী উদ্বেগ জানিয়েছে",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "এই নথিতে উদ্বেগের উল্লেখ নেই",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "অশ্রেণিবদ্ধ",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • পুরোনো নথি — বর্তমান স্ক্যান নয়",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "শুধু নিরাপত্তা রিপোর্ট; বিক্রেতার ডেলিভারি ও পণ্যের উৎস যাচাই করা হয়নি।",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "মডেলের পুরোনো মতামত; বর্তমান সাইট ও পরিচালনাকারী যাচাই করা হয়নি।",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "শুধু নির্বাচিত ওয়েবসাইট পরীক্ষা হচ্ছে। বাইরের মতামত পণ্যের স্কোর বদলায় না।",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "বাইরের নথি: $arg1$। তারিখ ও পরিধি দেখানো হয়েছে; পণ্যের স্কোর অপরিবর্তিত।",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "ব্যবহারযোগ্য বাইরের নথি নেই। এর মানে এই নয় যে দোকানটি নিরাপদ।",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "বিক্রেতার যে প্রমাণ যাচাই করা দরকার",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "বিক্রেতার জানানো প্রেরণ ব্যবস্থা",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "সরাসরি সরবরাহকারী থেকে",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "সরাসরি কারখানা থেকে",
+    "description": "Factory-direct"
   }
 }

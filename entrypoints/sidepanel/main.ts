@@ -50,6 +50,10 @@ import {currentReportAllowed} from '../../src/ui/report-guard';
 import {assessNorthAmerica,listingOriginClaims} from '../../src/analysis/north-america-origin';
 import {mountNorthAmericaControls} from '../../src/ui/north-america-controls';
 import {mountStandingControls} from '../../src/ui/business-standing-controls';
+import {mountOutsideResultControls} from '../../src/ui/outside-result-controls';
+import {consumerRecordLinks} from '../../src/reputation/consumer-links';
+import {fetchPublicStorePages,type PublicStorePage} from '../../src/osint/public-store-pages';
+import {fulfillmentDisclosure,fulfillmentDisclosureEvidence} from '../../src/analysis/fulfillment-disclosure';
 
 localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -81,6 +85,7 @@ let scanEpoch=0;
 let domainRequest:AbortController|undefined;
 const originControls=mountNorthAmericaControls(()=>lastReport,assessment=>{if(lastReport){lastReport={...lastReport,northAmerica:assessment};renderReport(lastReport);}},currentReportAllowed);
 const standingControls=mountStandingControls(()=>lastReport?.product.url,currentReportAllowed);
+const outsideControls=mountOutsideResultControls(()=>lastReport,r=>renderReport(r),currentReportAllowed);
 const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
 function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
 cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
@@ -89,6 +94,7 @@ cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status
 function invalidatePageReport(message=tr('The page changed. Check this product again.')):void {
   originControls.reset();
   standingControls.reset();
+  outsideControls.reset();
   stopDomainLookup();
   document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
@@ -216,11 +222,13 @@ function renderReport(report: DropShredderReport): void {
   lastReport=report;
   if(huntActions) huntActions.hidden=false;
   renderShopperReport(report,{summary,evidenceList,raw},currentTone);
+  outsideControls.refresh();
 }
 
 async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
   standingControls.reset();
+  outsideControls.reset();
   const epoch=++scanEpoch;
   scanButton.disabled=true;
   lastReport=undefined;
@@ -314,48 +322,11 @@ async function scanActivePage(): Promise<void> {
     try{
       if(result.siteLinks.length){
         const [siteExecution]=await chrome.scripting.executeScript({
-          target:documentTarget(page),
-          world:'ISOLATED',
-          args:[result.siteLinks],
-          func:async(links:Array<{kind:'about'|'shipping'|'returns'|'contact';url:string}>)=>{
-            const fetchPage=async(link:{kind:'about'|'shipping'|'returns'|'contact';url:string})=>{
-              try{
-                const response=await fetch(link.url,{
-                  credentials:'omit',
-                  cache:'force-cache',
-                  signal:AbortSignal.timeout(3500),
-                });
-                if(!response.ok) return undefined;
-                const length=Number(response.headers.get('content-length') || 0);
-                if(length>2_000_000) return undefined;
-                if(new URL(response.url).origin!==location.origin || !response.body) return undefined;
-                const reader=response.body.getReader();
-                const decoder=new TextDecoder();
-                let html='',size=0;
-                try{
-                  while(true){
-                    const {done,value}=await reader.read();
-                    if(done) break;
-                    size+=value.byteLength;
-                    if(size>2_000_000) return undefined;
-                    html+=decoder.decode(value,{stream:true});
-                  }
-                  html+=decoder.decode();
-                }finally{
-                  void reader.cancel().catch(()=>{});
-                }
-                const doc=new DOMParser().parseFromString(html,'text/html');
-                const text=(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,80000);
-                return text ? {...link,text} : undefined;
-              }catch{
-                return undefined;
-              }
-            };
-            const results=await Promise.all(links.slice(0,4).map(fetchPage));
-            return results.filter((page):page is {kind:'about'|'shipping'|'returns'|'contact';url:string;text:string}=>Boolean(page));
-          },
+          target:documentTarget(page),world:'ISOLATED',
+          args:[result.siteLinks,COMMERCE_LANGUAGE_KIT.privateFormParts],func:fetchPublicStorePages,
         });
-        sitePages=(siteExecution?.result ?? []) as SiteTextPage[];
+        const fetched=(siteExecution?.result??[]) as PublicStorePage[];
+        sitePages=fetched.filter((p):p is PublicStorePage&{text:string}=>typeof p.text==='string').map(p=>({kind:p.kind,url:p.url,text:p.text}));
         const origin=analyzeMerchantOrigin(result.pageText,sitePages);
         evidence.push(...origin.evidence);
         const network=merchantNetworkForDomain(result.product.domain);
@@ -364,11 +335,13 @@ async function scanActivePage(): Promise<void> {
           evidence.push(...crossDomainReferenceEvidence(result.product.domain,networkText,network.domains));
         }
         const returns=sitePages.find(page=>page.kind==='returns');
-        if(returns) evidence.push(...analyzeReturnPolicy(returns.text));
+        if(returns) evidence.push(...analyzeReturnPolicy(returns.text).map(e=>({...e,provenance:{sourceUrl:returns.url,observedAt:result.product.capturedAt,method:'Bounded public return-policy text'}})));
       }
     }catch(siteIntelError){
       console.warn('DropShredder: bounded same-site intelligence scan failed',siteIntelError);
     }
+    const dispatchDisclosure=fulfillmentDisclosure([{text:result.pageText,url:result.product.url},...sitePages],result.product.capturedAt);
+    if(dispatchDisclosure&&!evidence.some(e=>e.id==='SUPPLIER_DIRECT_DISPATCH_DISCLOSED')) evidence.push(...fulfillmentDisclosureEvidence(dispatchDisclosure));
     if(fingerprint.identifiers.length){
       evidence.push({
         id:'PRODUCT_IDENTIFIERS_PRESENT',family:'provenance',severity:'info',confidence:.95,weight:0,
@@ -443,6 +416,7 @@ async function scanActivePage(): Promise<void> {
       contradictions:[],
       verdict:calculateVerdict(evidence),
       supplyChain,
+      fulfillmentDisclosure:dispatchDisclosure,
       northAmerica:assessNorthAmerica(result.product,listingOriginClaims(result.product,result.pageText,sitePages)),
       reviewIntegrity:result.reviews.length ? reviewIntegrity(result.reviews,result.product.title) : undefined,
     };
@@ -773,7 +747,7 @@ reputationSweep?.addEventListener('click',()=>void (async()=>{
       merchantName:report.merchant.businessName || report.merchant.sellerName,
       domain:report.merchant.domain,
     };
-    await openSearches(reputationSearchUrls(target));
+    await openSearches(Object.fromEntries(consumerRecordLinks(target.domain).map(row=>[row.label,row.url])));
     if(status) status.textContent=tr('Buyer-review searches opened. Compare the complaints before you trust the store.');
   }catch(error){if(status) status.textContent=errorText(error);}
 })());
@@ -788,63 +762,24 @@ policyCheck?.addEventListener('click',()=>{
       const page=await verifiedReportPage(report);
 
       const [result]=await chrome.scripting.executeScript({
-        target:documentTarget(page),
-        func:()=>{
-          const anchors=document.getElementsByTagName('a');
-          for(let i=0;i<Math.min(anchors.length,1200);i++){
-            const a=anchors.item(i);
-            if(!a?.href) continue;
-            try{
-              const url=new URL(a.href,location.href);
-              if(url.origin!==location.origin || url.href.length>2048) continue;
-              if(/return|refund|shipping-policy|policies\/refund/i.test(url.pathname+' '+(a.innerText||'').slice(0,250))) return url.href;
-            }catch{}
-          }
-          return undefined;
-        },
+        target:documentTarget(page),world:'ISOLATED',func:extractPageScan,args:[COMMERCE_LANGUAGE_KIT],
       });
-
-      const policyUrl=result?.result as string|undefined;
+      const policyUrl=(result?.result as PageScanResult|undefined)?.siteLinks.find(link=>link.kind==='returns')?.url;
       if(!policyUrl){
         status.textContent=tr('Couldn’t find a clear return or refund policy on this store.');
         return;
       }
 
       const [policyResult]=await chrome.scripting.executeScript({
-        target:documentTarget(page),
-        args:[policyUrl],
-        func:async(url:string)=>{
-          const response=await fetch(url,{credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(3500)});
-          // Injected functions cannot access the panel's imported translator.
-          // Return the status as data and localize it in the panel context.
-          if(!response.ok) return {httpStatus:response.status};
-          const length=Number(response.headers.get('content-length')||0);
-          if(length>2_000_000 || new URL(response.url).origin!==location.origin || !response.body) return undefined;
-          const reader=response.body.getReader();
-          const decoder=new TextDecoder();
-          let html='',size=0;
-          try{
-            while(true){
-              const {done,value}=await reader.read();
-              if(done) break;
-              size+=value.byteLength;
-              if(size>2_000_000) return undefined;
-              html+=decoder.decode(value,{stream:true});
-            }
-            html+=decoder.decode();
-          }finally{
-            void reader.cancel().catch(()=>{});
-          }
-          const doc=new DOMParser().parseFromString(html,'text/html');
-          return {text:(doc.body?.innerText || '').replace(/\s+/g,' ').slice(0,100000)};
-        },
+        target:documentTarget(page),world:'ISOLATED',func:fetchPublicStorePages,
+        args:[[{kind:'returns',url:policyUrl}],COMMERCE_LANGUAGE_KIT.privateFormParts],
       });
-      const policy=policyResult?.result as {text?:string;httpStatus?:number}|undefined;
+      const policy=(policyResult?.result as PublicStorePage[]|undefined)?.[0];
       if(typeof policy?.httpStatus==='number')
         throw new Error(tr('Policy fetch failed: HTTP $1',policy.httpStatus));
       const text=policy?.text;
       if(!text) throw new Error('The return policy couldn’t be read clearly enough to judge.');
-      const findings=analyzeReturnPolicy(text);
+      const findings=analyzeReturnPolicy(text).map(e=>({...e,provenance:{sourceUrl:policy.url,observedAt:new Date().toISOString(),method:'Bounded public return-policy text'}}));
       await verifiedReportPage(report);
 
       if(!findings.length){

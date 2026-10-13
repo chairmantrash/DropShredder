@@ -96,5 +96,5 @@ export function variantKey(value:string):string|undefined {
 }
 /** Explicit contextual negation. Do not treat a bare translated negative as affirmative evidence. */
 export function localizedNegation(source:string):boolean {
-  return /(?:\b(?:not|without|never|no)\b|不(?:收取|支付|承担|是)|无需|没有|नहीं|बिना|নয়|নেই|না(?![\p{L}\p{M}])|\b(?:sin|sans|não)\b|\bne\b.{0,50}\bpas\b|\baucun\b|\bne sera\b|لا\s|ليس|بدون)/iu.test(source);
+  return /(?:\b(?:not|without|never|no|nicht|keine?r?|non|niet|geen)\b|δεν|ではありません|ではない|不(?:收取|支付|承担|是)|无需|没有|नहीं|बिना|নয়|নেই|না(?![\p{L}\p{M}])|\b(?:sin|sans|não)\b|\bne\b.{0,50}\bpas\b|\baucun\b|\bne sera\b|لا\s|ليس|بدون)/iu.test(source);
 }

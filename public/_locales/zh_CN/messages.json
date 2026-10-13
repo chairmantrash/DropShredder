@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "诉讼和法院案件",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "外部报告与消费者记录",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "可选检查仅针对当前网站。ScamFerret 发布的报告是历史模型观点；urlscan 报告涉及网络安全，并非商家交付能力。不会提交网站、图片或浏览记录进行扫描。结果与产品评分分开显示。",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "查看已发布的 SCAMFERRET 结果",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "查看现有安全报告",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "消费者与政府记录：请核对确切的企业和网站。缺少记录或好评不保证可靠交付。",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "外部结果：$arg1$ • 报告日期 $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "提供方报告了问题",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "此记录未说明问题",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "未分类",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • 历史记录 — 并非当前扫描",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "仅为安全报告；商家交付和产品来源仍未核实。",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "历史模型观点；当前网站与经营者仍未核实。",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "仅检查所选网站。外部观点不会改变产品评分。",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "外部记录：$arg1$。已显示日期和适用范围；产品评分不变。",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "没有可用的外部记录。这不表示商家安全。",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "需要核查的商家证据",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "商家披露的发货模式",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "供应商直发",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "工厂直发",
+    "description": "Factory-direct"
   }
 }

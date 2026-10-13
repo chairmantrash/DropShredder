@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "Litigios y casos judiciales",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "Informes externos y registros de consumo",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "Comprobaciones opcionales del sitio actual. Los informes publicados de ScamFerret son opiniones históricas de un modelo; urlscan evalúa la seguridad, no la entrega del vendedor. No se envían sitios, imágenes ni historial de navegación para escanear. Los resultados se mantienen separados de las puntuaciones del producto.",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "CONSULTAR RESULTADOS PUBLICADOS DE SCAMFERRET",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "CONSULTAR INFORMES DE SEGURIDAD EXISTENTES",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "Registros de consumo y oficiales: comprueba la empresa y el sitio exactos. La falta de registros o una opinión favorable no garantizan una entrega fiable.",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "Resultado externo: $arg1$ • publicado $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "El proveedor señaló un problema",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "Este registro no señala problemas",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "Sin clasificar",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • HISTÓRICO — no es un escaneo actual",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "Solo informe de seguridad; la entrega y el origen del producto siguen sin verificar.",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "Opinión histórica de un modelo; el sitio y el operador actuales siguen sin verificar.",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "Se comprueba solo el sitio elegido. Las opiniones externas no cambian las puntuaciones del producto.",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "Registros externos: $arg1$. Se muestran fechas y alcance; las puntuaciones no cambian.",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "No hay un registro externo utilizable. Esto no significa que la tienda sea segura.",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "Pruebas del vendedor que conviene comprobar",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "Modelo de envío declarado por el vendedor",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "Directo del proveedor",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "Directo de fábrica",
+    "description": "Factory-direct"
   }
 }
