@@ -92,11 +92,11 @@ jobs:
           r=api('releases/tags/v0.2.0-beta.3');assert not r['draft'] and r['prerelease']
           a=next(a for a in r['assets'] if a['name']=='DropShredder-0.2.0-beta.3-chrome.zip')
           assert a['size']==25851180 and a['digest']=='sha256:0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4'
-          assert api('git/ref/tags/v0.2.0-beta.3')['object']['sha']=='8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af'
+          assert api('git/ref/tags/v0.2.0-beta.3')['object']['sha']=='f2ea60e2ac42f6292d60dfe6069290a1758a6905'
           print('Existing identical published beta3 retained; no overwrite')
           PY
           else
-            gh release create v0.2.0-beta.3 ./* --repo chairmantrash/DropShredder --target 8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af --prerelease --latest=false --draft --title 'DropShredder 0.2.0 beta 3 — public-product scan repair' --notes-file INSTALL-AND-REPORT.md
+            gh release create v0.2.0-beta.3 ./* --repo chairmantrash/DropShredder --target f2ea60e2ac42f6292d60dfe6069290a1758a6905 --prerelease --latest=false --draft --title 'DropShredder 0.2.0 beta 3 — public-product scan repair' --notes-file INSTALL-AND-REPORT.md
             gh release edit v0.2.0-beta.3 --repo chairmantrash/DropShredder --draft=false
           fi
           gh release view v0.2.0-beta.3 --repo chairmantrash/DropShredder --json url,isDraft,isPrerelease,tagName,assets

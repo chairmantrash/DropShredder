@@ -41,3 +41,9 @@ These Python, shell, browser and cloud-model components cannot be dropped direct
 4. **Do not integrate:** historical positive lists as automatic accusations; model percentages as our accuracy; geography, privacy registration, platform or ordinary resale as fraud indicators; unpaid presumed service access; automatically accepted output from the three malformed JSON files.
 
 The runtime repair addresses observed public-page coverage. Independent merchant/product-disjoint, rights-cleared current labels and owner-approved accuracy thresholds remain open release-promotion work. Experimental beta is already authorized and does not await an invented new entry gate.
+
+## Freshness and similarly named services
+
+A final October13 search also located a January2026 bibliographic lead, *ScamFerret: An LLM Agent for Multi-type and Multilingual Scam Website Detection*, DOI[10.2139/ssrn.6960640](https://doi.org/10.2139/ssrn.6960640). SSRN retrieval returned403 and the indexed research profile offers no full text. This is an unresolved discovery lead, not a primary-source verification of its newer metrics, methods or API. The published repository still resolves to the September30,2025 commit above. No authors were contacted or authenticated.
+
+The developer-authored [Chrome Store listing](https://chromewebstore.google.com/detail/scamferret/bnlffffbkpnggillbdmplfgbbkjmepcd) for a same-named screenshot product advertises vision analysis, an account and limited free submissions, with paid plans and a scamferret.com destination. Its relationship to the NTT research artifact is unverified. It is a separate integration prospect requiring documented service access; an extension/backend does not by itself establish a public third-party detection API. The site timed out in this run and no public developer endpoint was verified. Do not mix its marketing with the paper benchmark or our historical corpus.
