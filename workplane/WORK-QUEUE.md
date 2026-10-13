@@ -1,6 +1,9 @@
-# Work queue — authoritative snapshot, October 12, 2026
+# Work queue — authoritative snapshot, October 13, 2026
 
 ## Capability testing and repair update
+
+- DS-054 DONE: all259 source-backed live candidate outcomes collected;227 distinct accessible pages on47 hostnames tested through actual native Scan.216 refused,11 reports; all11 dropshipping/resale estimates UNKNOWN. The requested150 native function tests are met;150 successful extractions are not. Receipt: workplane/runs/DS-054-COMPLETION-20261013.json.
+- DS-055 QUEUED, HIGH: preserve privacy while fixing refusal of public product pages carrying dormant credential forms. Two actual zero-rectangle field/native refusal repros recorded. Require same frozen corpus and active private/modal regressions before publishing a repair; no source-label injection or scoring change just to hit a count.
 
 - DS-050 DONE: matrix committed before execution; all260 initial cases have actual outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL; original failures remain preserved. Receipt: workplane/runs/DS-050-COMPLETION-20261012.json.
 - DS-051 DONE: policy HTTP status transport fixed after complete pre-repair testing. Exact changed package passes405 core, zero-finding CodeQL, all standard Chromium jobs and83 extended native checks; N53/N54 pass. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json. Repaired candidate awaits the next beta iteration.

@@ -1,3 +1,15 @@
+# Current state — October13,2026 DS-054
+
+**BETA2 OPEN; broader live testing exposes a public-store coverage failure.** All259 frozen candidate outcomes completed before production repair. The real native Scan control was tested on227 distinct accessible commerce pages across47 hostnames:216 refused,11 reports; all11 dropshipping/resale estimates remain UNKNOWN. Five weak final-sale policy findings, zero severe warnings. The requested150 native function tests are met;150 successful extractions are NOT met. Collection/CI/CodeQL success is not detection success.
+
+The source pool contains1,999 unique historical shopping-scam URLs from ten pinned ScamFerret datasets. Labels are source allegations, not independently accepted current fraud/dropshipping truth; operator/product independence remains unresolved. The original conservative harness-skipped collection remains preserved, followed by a full real-action collection on unchanged public beta2. Actual two-site field/desktop repros confirm dormant zero-rectangle password markup triggers native refusal. DS-055 is QUEUED for a privacy-preserving public-product extraction repair and same-corpus/private-modal regression verification. No detector/package change in DS-054.
+
+Report: workplane/research/DS-054-LIVE-AUDIT-20261013.md. Receipt: workplane/runs/DS-054-COMPLETION-20261013.json. Current tested beta2 ZIP SHA7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8/all51 hashes verified in every profile. Main/Store untouched; no new beta-entry gate, invitations, publisher login or elapsed-time acceptance. Independent release-promotion acceptance remains open.
+
+---
+
+## Earlier checkpoints
+
 # Current state — October12 DS-053
 
 **BETA2 OPEN.** Published2026-10-12T22:59:54Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2 . Actual public unauthenticated downloads of all6 assets and all51 package hashes are verified. ZIP25,849,500bytes/SHA2567fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8;51 files/54,942,638bytes. Tag targets accepted/tested headc5326c7e7aa3deddae5cd2d2bf434fc739339e48, tree841c8e78619fd617069ab3309ad68d854e233bb4. Production6fe561807d6962fe51006eab99c0cf7017c2c6ee/tree8074e5bbcb8c678e7eacfe397457901186f0b661; existing accepted CI bytes reused without rebuilding.
