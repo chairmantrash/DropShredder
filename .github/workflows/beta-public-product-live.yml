@@ -1,0 +1,64 @@
+name: DropShredder repaired public-product live audit
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-public-product-live.yml', 'tools/beta/public-product/stage.py']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  native-live:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/public-product-privacy-repair-20261013'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Stage the unchanged pre-repair frozen public target manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/chairmantrash/DropShredder/actions/artifacts/11786149218/zip > frozen.zip
+          python3 - <<'PY'
+          import hashlib,io,json,pathlib,zipfile
+          b=pathlib.Path('frozen.zip').read_bytes();assert hashlib.sha256(b).hexdigest()=='8c89e38edbad9c2d73bf0e69575cea08c301dd6c936b73bdd05219274ee62a42'
+          with zipfile.ZipFile(io.BytesIO(b)) as z:b=z.read('frozen-targets.json')
+          assert hashlib.sha256(b).hexdigest()=='fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98'
+          m=json.loads(b);assert m['sourceCommit']=='6a9cef93d5853cfa2588df63999dfd49f51ab964';assert len(m['targets'])==259
+          pathlib.Path('frozen-targets.json').write_bytes(b)
+          PY
+      - name: Stage the existing source-verified changed CI package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/chairmantrash/DropShredder/actions/artifacts/11794980740/zip > accepted-ci.zip
+          python3 tools/beta/public-product/stage.py accepted-ci.zip
+      - name: Install isolated genuine native browser tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 tools/beta/audit150/make-runner.py
+      - name: Exercise every frozen public target through the actual native controls
+        env:
+          DS_NATIVE_HEADED: '1'
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_MANIFEST: frozen-targets.json
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-audit-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds055-live-${{ matrix.shard }}
+          path: |
+            browser-smoke-results/
+            frozen-targets.json
+          if-no-files-found: error
+          retention-days: 90
