@@ -1,0 +1,55 @@
+name: DropShredder 100-site capability audit
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta100-live.yml', 'tools/beta/coverage100/**']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  baseline:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Stage exact published beta6 and frozen diverse targets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v0.2.0-beta.6 --pattern 'DropShredder-0.2.0-beta.6-chrome.zip' --dir /tmp/ds060
+          python3 tools/beta/coverage100/stage.py /tmp/ds060/DropShredder-0.2.0-beta.6-chrome.zip
+          node --test tools/beta/failures/classify.test.mjs
+      - name: Install isolated genuine native browser tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+      - name: Test all declared sites through genuine native controls
+        timeout-minutes: 28
+        env:
+          DS_NATIVE_HEADED: '1'
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_MANIFEST: tools/beta/coverage100/targets.json
+        run: |
+          python3 tools/beta/audit150/make-runner.py
+          xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-audit-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds060-baseline-${{ matrix.shard }}
+          path: |
+            browser-smoke-results/
+            tools/beta/coverage100/targets.json
+          if-no-files-found: error
+          retention-days: 90

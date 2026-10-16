@@ -29,3 +29,7 @@ beta3-packet/
 /beta5-packet/
 
 /beta6-packet/
+
+# Anonymous discovery/diagnostic merchant source bytes are local-only.
+/coverage100-discovery/
+/coverage100-diagnosis/

@@ -2,6 +2,8 @@
 
 ## Capability testing and repair update
 
+- DS-060 RUNNING — distinct-website coverage audit, baseline before repairs, source-backed failure research and renewed capability tests. Task: workplane/tasks/DS-060.md. Beta6 remains open.
+
 - DS-059 DONE — BETA6 OPEN, published 2026-10-16T15:06:09Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6. Four research-backed identity/countdown repairs; 459 core, 94 native, seven browser groups, finding-free CodeQL/zero-advisory inventories. All 269 outcomes: 236 scans/56 hosts, 39 evidence-bearing pages, zero severe/privacy/panel errors/profile stops. All numerical estimates UNKNOWN. Original 268 alone: 235 scans/55 hosts versus 230/54; real added vivo variant passes. Exact accepted CI ZIP 83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b reused without rebuild; all seven anonymous public assets/all 54 package hashes independently verified. PR27 runtime and PR28 publication/evidence. Task: workplane/tasks/DS-059.md; receipts: DS-059-COMPLETION-20261016.json and DS-059-BETA6-OPEN-20261016.json.
 
 - DS-058 DONE — BETA5 OPEN, published2026-10-16T06:53:49Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5 . All7 unauthenticated public asset downloads/all54 package hashes verified. Exact accepted CI ZIP17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c reused without rebuild. All268 outcomes,230 successful scans/54 hosts,10 explicit MPN reports versus0,38 evidence-bearing pages,0 severe/privacy/panel errors/profile stops.440 core,87 native,all7 browser groups and finding-free CodeQL pass. Original failures preserved; unavailable/error counts retained. Receipts: DS-058-COMPLETION-20261016.json and DS-058-BETA5-OPEN-20261016.json.

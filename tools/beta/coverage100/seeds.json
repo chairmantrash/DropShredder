@@ -1,0 +1,2792 @@
+{
+  "frozenAt": "2026-10-16T23:03:06.688008+00:00",
+  "seeds": [
+    {
+      "url": "https://warmlydecor.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wayfair.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://overstock.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ikea.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://westelm.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://potterybarn.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://crateandbarrel.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cb2.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://article.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://burrow.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://joybird.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://floydhome.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://thuma.co/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://sabai.design/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://insideweather.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://maidenhome.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://castlery.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://albanypark.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://litfad.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://homary.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://povison.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lampsplus.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lumens.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://schoolhouse.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rejuvenation.com/",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://harempants.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://suredesigntshirts.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://patagonia.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rei.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cotopaxi.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://tentree.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://allbirds.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://everlane.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://pact.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wearpact.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://organicbasics.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://girlfriend.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://boody.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://outerknown.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://asket.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://unboundmerino.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bombas.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://darntough.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://american-giant.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://losangelesapparel.net/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://goodamerican.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://universalstandard.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://quince.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://onequince.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://vuoriclothing.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gymshark.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://yoga.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://aloyoga.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lululemon.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://outdoorvoices.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fabletics.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://popflexactive.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fashionnova.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://prettylittlething.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://boohoo.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://shopcider.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://shein.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://romwe.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://zaful.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://chicwish.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://modlily.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bellelily.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rosewe.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lightinthebox.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://dhgate.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://temu.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://aliexpress.com/",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://nike.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://adidas.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://newbalance.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://asics.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://brooksrunning.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hoka.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://on.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://vivobarefoot.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://xeroshoes.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://birkenstock.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://crocs.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://teva.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://keenfootwear.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://merrell.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://redwingshoes.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://thursdayboots.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://blundstone.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://drmartens.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://vessi.com/",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://anker.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ugreen.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://baseus.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://belkin.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://satechi.net/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://nomadgoods.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://peakdesign.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://shopmoment.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://logitech.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://razer.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://corsair.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://steelseries.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hyperx.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://keychron.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://nuphy.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gloriousgaming.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wooting.io/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://duckychannel.com.tw/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://akkogear.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://epomaker.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://noctua.at/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bequiet.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://arctic.de/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fractal-design.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://nzxt.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://coolermaster.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://thermalright.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lian-li.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://montechpc.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://seasonic.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://silverstonetek.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ifixit.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://frameworkcomputer.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://raspberrypi.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://adafruit.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://sparkfun.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://pimoroni.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://seeedstudio.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://waveshare.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://dfrobot.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://elecrow.com/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://arduino.cc/",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://amazon.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://walmart.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://target.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bestbuy.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://newegg.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ebay.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://etsy.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://mercari.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://poshmark.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://depop.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://vinted.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://alibaba.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://banggood.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gearbest.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://tomtop.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://geekbuying.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://untilgone.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://woot.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://meh.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://morningsave.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://qvc.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hsn.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://costco.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://samsclub.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://homedepot.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lowes.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://acehardware.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bhphotovideo.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://adorama.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://microcenter.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://jbhifi.com.au/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://currys.co.uk/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://argos.co.uk/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bol.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://coolblue.nl/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://galaxus.de/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://digitec.ch/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cdiscount.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fnac.com/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rakuten.co.jp/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://yahoo.co.jp/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://mercadolibre.com.mx/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://liverpool.com.mx/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://dportenis.mx/",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://theordinary.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://deciem.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cerave.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://laroche-posay.us/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://paulaschoice.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://naturium.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://elfcosmetics.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://colourpop.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://glossier.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rarebeauty.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fentybeauty.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cocokind.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://byoma.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hellobubble.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://peachandlily.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://yesstyle.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://stylevana.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://jolse.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://oliveyoung.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wishtrend.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cosrx.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://beautyofjoseon.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://purito.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://roundlab.com/",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://chewy.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://petco.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://petsmart.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wildone.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ruffwear.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://kurgo.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://maxbone.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://zee.dog/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fablepets.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://westpaw.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://earthrated.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://honestpaws.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://dog.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://thefoggydog.com/",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lodgecastiron.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://stargazercastiron.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fieldcompany.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://finexusa.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://lecreuset.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://staub-us.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://madeincookware.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://misen.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://carawayhome.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://ourplace.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fromourplace.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hexclad.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://all-clad.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://tramontina.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://oxo.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fullcirclehome.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://simplehuman.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://blendtec.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://vitamix.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://kitchenaid.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://zwilling.com/",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://redbubble.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://teepublic.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://threadless.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://spreadshirt.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://society6.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://zazzle.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://bonfire.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://cottonbureau.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://displate.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gelato.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://printful.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://printify.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://spring.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://teefury.com/",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://backcountry.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://moosejaw.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://decathlon.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://osprey.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gregory.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://deuter.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://blackdiamondequipment.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://petzl.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://nitecore.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://fenixlighting.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://olightstore.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://sofirnlight.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wurkkos.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://convoylight.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://leatherman.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://gerbergear.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://victorinox.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://crkt.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://kershaw.kaiusa.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://knipex.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wera.de/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://wiha.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://tekton.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://channellock.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://harborfreight.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://valley.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://leevalley.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://rockler.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://woodcraft.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://joann.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://michaels.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://hobbylobby.com/",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "scope": "Public merchant surface, category control; no truth or safety certification"
+    },
+    {
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.vionic.es/p/sabina-wedge/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.lowa.co.it/p/acquista-gtx-mid/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.pokemoncenter.co.it/p/breloom-sitting-cuties-peluche-15-cm/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://beringhorloges.com/product/arctic-symphony-zilver-gepolijst-716-14-05/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.owalasale.de/outlet.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.salomons.gr/p/mountain-flex-jkt-hd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%b1-2/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.pokemoncenter.co.at/p/abomasnow-sitting-cuties-pluesch-8-%c2%be-zoll/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.zippoes.es/p/anne-stokes-3/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.adidas-samba.at/p/adidas-notitle-x-samba-og-pink/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.jordans.com.mx/p/air-jordan-1-low-flyease-bio-hack/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.keensoutletcolombia.com/contact_us.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://katemarkerhome.shop/products/fluted-antique-brass-bowl",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.rcmotorsparts.com/product/used-muddslide-motorsports-spring-kit-and-other-pancar-parts/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://vrouwelijkschoenen.com/product/sandalen-goud-248/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.laneiges.com.mx/p/conjunto-de-piel-de-verano/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.jwpeis.com.mx/p/bolso-bria-con-asa-superior-estructurada-lona-marron/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.superdry.co.at/p/athletic-essentials-entspannter-kurzer-kapuzenpullover-mit-reissverschluss-in-eclipse-navy/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.specialized-gb.com/p/aethos-2-expert/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.champion.co.at/p/champion-big-tall-fleece-script-logo-kapuzenpullover-herren-schwarz-25983eyhx/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://favorieteaction.com/product/action-koffers-shopper-voorjaar/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-freska-2/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-x-bella-hadid-beanie-red/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.bagsoutletonlineshop.com/products/pinko-mini-love-bag-icon-simply-jewel-crossbodytassen-dames-grijs-zilver-belgie24657019-p-1076.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://koolesports.com/product/wandelen-in-zeeuws-vlaanderen/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://tuketa1.com/products/plaid-platform-shoes",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.napapijris.de/p/ambra-kurzarm-t-shirt-5/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.stellamccartneys.us/p/compact-knit-peplum-dress/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.tiendafilaespana.es/collections/zapatos-sandalias-deslizantes-c-3_31.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.cannondales.it/p/abitudine-ht-3-perla-nera/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.barboursuk.com/p/ambleside-wax-jacket-2/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://bambiniattivi.com/product/pinko-kids-camicia-con-stampa-multicolor-e-ruches-per-bambine/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-bottleopener-fridge-magnet-blind-box/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.adidas-campus.de/p/adidas-campus-collegiate-burgundy-2/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-boost-v2-td-slate-hp7871/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.nike-blazer.de/p/nike-blazer-mid-77-coming-to-america/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.pokemoncenterca.com/p/aipom-sitting-cuties-plush-5-%c2%bc-in/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.happysocksmx.com.mx/p/calcetin-con-decoracion-navidena/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.bershka.co.it/p/pantaloni-fluidi-con-lacci-laterali/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.teva-osterreich.at/contact_us.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://tassenbrennerei.shop/products/tasse-lieblings-postbote-herzen",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.baggu-it.it/p/baby-baggu-7/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.happysocksfr.fr/p/boxers-courts-de-biere-en-paquet-de-3/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://pokemonmx.com.mx/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.kickers.co.at/p/kick-allure-schwarz/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.jordan4.it/p/air-jordan-4-golf-bred-2021/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.salomon.com/en-us/product/snowclog-og-li9280",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "PRIOR-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://ninewest.com/products/tatiana-pointy-toe-pumps-in-brown-leather",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "PRIOR-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://zippo.com/products/cotton-felt-replacement-kit",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "PRIOR-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.footlocker.com/product/giftcard/ECARD21.html",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "PRIOR-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://www.nordstrom.com/",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "PRIOR-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    },
+    {
+      "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "DS-059-PUBLIC-CONTROL"
+      ],
+      "scope": "Historical third-party lead only; current fraud not established",
+      "priorObservedTarget": true
+    }
+  ]
+}
