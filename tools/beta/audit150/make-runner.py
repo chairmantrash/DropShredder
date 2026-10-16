@@ -15,6 +15,7 @@ text += """
     // N05 failed before host permission: no successful fixture observation.
     report.auditBootstrapScope='N01-N09 real package/native permission checks only; no synthetic scan, imported list or provider verdict before public audit';
     await runAudit150({context,page,native,worker,until,pause,report,output});
+    if(report.audit150?.safetyStop)throw Error('Live profile stopped: '+report.audit150.safetyStop.reason);
     report.status='LIVE AUDIT COLLECTION COMPLETE';
   } else throw Error('Genuine headed native Chrome required');
 """

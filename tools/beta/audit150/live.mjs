@@ -21,7 +21,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
     if(!data?.product?.url||clean(data.product.url)!==clean(page.url()))throw Object.assign(Error('Wrong current-document attribution'),{safetyStop:true});
   };
   // All test browsing stays public. Close unrequested popup pages/downloads.
-  context.on('page',p=>{if(p!==page)void p.close().catch(()=>{});});
+  let replacingPage=false;
+  context.on('page',p=>{if(p!==page&&!replacingPage)void p.close().catch(()=>{});});
   page.on('download',d=>void d.cancel().catch(()=>{}));
   page.on('dialog',d=>void d.dismiss().catch(()=>{}));
   for(let index=0;index<selected.length;index++){
@@ -97,12 +98,15 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       if(error.safetyStop){report.audit150.safetyStop={id:target.id,reason:String(error)};await native.screenshot(target.id+'-failure.png').catch(()=>{});break;}
       // A timed-out old navigation can otherwise redirect the next declared case.
       // Stop it and replace its document before continuing; preserve the original failure.
-      let isolated=false;row.navigationResetAttempts=[];
-      for(let attempt=1;attempt<=2;attempt++){
-        try{await page.goto('about:blank',{waitUntil:'domcontentloaded',timeout:5000});row.navigationResetAttempts.push({attempt,status:'REPLACED_WITH_BLANK'});isolated=true;break;}
-        catch(resetError){row.navigationResetAttempts.push({attempt,status:'FAILED',error:String(resetError)});}
-      }
-      if(!isolated){report.audit150.safetyStop={id:target.id,reason:'Could not replace failed navigation after two bounded attempts'};break;}
+      const failedPage=page;replacingPage=true;
+      try{
+        const replacement=await context.newPage();page=replacement;native.useProductPage(replacement);
+        await replacement.bringToFront();await failedPage.close({runBeforeUnload:false});
+        for(const extra of context.pages())if(extra!==replacement)await extra.close({runBeforeUnload:false});
+        row.navigationReset='Replaced failed browser tab; old loader and error renderer closed';
+        replacement.on('download',d=>void d.cancel().catch(()=>{}));replacement.on('dialog',d=>void d.dismiss().catch(()=>{}));
+      }catch(resetError){row.navigationResetFailure=String(resetError);report.audit150.safetyStop={id:target.id,reason:'Could not replace failed browser tab: '+String(resetError)};break;}
+      finally{replacingPage=false;}
 
     }finally{
       row.finishedAt=new Date().toISOString();console.log(JSON.stringify({id:row.id,status:row.status,url:row.finalUrl??row.url,risk:row.finalReport?.verdict?.riskLevel,evidence:row.finalReport?.evidence?.length}));await save();
