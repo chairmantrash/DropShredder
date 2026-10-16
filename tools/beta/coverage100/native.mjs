@@ -14,7 +14,7 @@ export async function runCoverageNativeSuite({context,page,native,worker,test,un
   const observations=[];
   if(!await native.evaluate("document.querySelector('.settings-panel').open"))await native.click('.settings-panel > summary');
   for(const [tone,down] of [['professional',0],['aggressive',1],['nuclear',2]]){
-   await native.click('#tone-mode');await native.key('Home','Home',36);for(let i=0;i<down;i++)await native.key('ArrowDown','ArrowDown',40);await native.key('Enter','Enter',13);
+   await native.click('#tone-mode');await native.key('Home','Home',36);for(let i=0;i<down;i++)await native.key('Down','ArrowDown',40);await native.key('Enter','Enter',13);
    await until(()=>worker.evaluate(async value=>((await chrome.storage.local.get('dropshredder-feature-settings-v1'))['dropshredder-feature-settings-v1'])?.toneMode===value,tone),'tone saved');await pause(200);
    const data=await scan(quiet);assert.equal(data.verdict.severeWarningAllowed,false);assert.ok(data.evidence.every(e=>e.weight===0));
    const headline=await page.evaluate(()=>document.querySelector('#dropshredder-stamp-host')?.shadowRoot?.querySelector('.headline')?.textContent);
