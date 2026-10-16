@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   repaired:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016' && github.event.pull_request.head.sha == 'c17ee9b683f3b40615b2761a864e8569809cf212'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     strategy:
