@@ -2,6 +2,8 @@ import { pageSafety } from '../security/page-safety';
 import type { DropShredderReport } from '../types/report';
 import { publicEvidenceUrl, redactEvidenceText } from '../security/public-url';
 import {validOriginAssessment} from '../analysis/north-america-origin';
+import {lookupDomain,validOutsideResult} from '../reputation/outside-results';
+import {validFulfillmentDisclosure} from '../analysis/fulfillment-disclosure';
 
 const optionalText=(value:unknown)=>value===undefined || typeof value==='string';
 const score=(value:unknown)=>value===null || (typeof value==='number' && Number.isFinite(value) && value>=0 && value<=100);
@@ -14,6 +16,8 @@ export function readPanelReport(value:string):DropShredderReport|undefined {
     if(p.version!==1 || !p.product || !publicEvidenceUrl(p.product.url) || !pageSafety(p.product.url).allowed || !p.verdict || !Array.isArray(p.evidence) || p.evidence.length>2000) return undefined;
     if(typeof p.product.title!=='string' || ![p.product.brand,p.product.mpn,p.product.gtin,p.product.capturedAt].every(optionalText)) return undefined;
     if(p.northAmerica!==undefined&&!validOriginAssessment(p.northAmerica)) return undefined;
+    if(p.outsideResults!==undefined&&(!Array.isArray(p.outsideResults)||p.outsideResults.length>4||!p.outsideResults.every(r=>validOutsideResult(r)&&r.domain===lookupDomain(new URL(p.product.url).hostname))))return undefined;
+    if(p.fulfillmentDisclosure!==undefined&&(!validFulfillmentDisclosure(p.fulfillmentDisclosure)||new URL(p.fulfillmentDisclosure.sourceUrl).origin!==new URL(p.product.url).origin))return undefined;
     const v=p.verdict;
     if(!score(v.massResellLikelihood) || !score(v.dropshipLikelihood) || ![v.deceptionRisk,v.merchantRisk,v.manipulationRisk,v.fulfillmentRisk].every(risk) || typeof v.reason!=='string' || typeof v.severeWarningAllowed!=='boolean') return undefined;
     if(!p.evidence.every(e=>e && typeof e==='object' && typeof e.id==='string' && typeof e.title==='string' && typeof e.explanation==='string' && ['info','weak','moderate','strong','direct'].includes(e.severity)
@@ -30,6 +34,8 @@ export function exportCurrentReport(report:DropShredderReport) {
     verdict:{massResellEvidenceScore:v.massResellLikelihood,dropshipEvidenceScore:v.dropshipLikelihood,
       deceptionRisk:v.deceptionRisk,merchantRisk:v.merchantRisk,manipulationRisk:v.manipulationRisk,
       fulfillmentRisk:v.fulfillmentRisk,severeWarningAllowed:v.severeWarningAllowed,reason:redactEvidenceText(v.reason)},
+    outsideResults:report.outsideResults?.filter(validOutsideResult).slice(0,4).map(r=>({...r,reason:redactEvidenceText(r.reason,500),recordId:redactEvidenceText(r.recordId,150)})),
+    fulfillmentDisclosure:validFulfillmentDisclosure(report.fulfillmentDisclosure)?{model:report.fulfillmentDisclosure.model,quote:redactEvidenceText(report.fulfillmentDisclosure.quote,240),sourceUrl:publicEvidenceUrl(report.fulfillmentDisclosure.sourceUrl),observedAt:report.fulfillmentDisclosure.observedAt}:undefined,
     northAmerica:validOriginAssessment(report.northAmerica)?{scope:report.northAmerica.scope,status:report.northAmerica.status,reviewedByUser:report.northAmerica.reviewedByUser,assessedAt:report.northAmerica.assessedAt,
       stages:report.northAmerica.stages.map(s=>({...s,sources:s.sources.map(publicEvidenceUrl)})),
       claims:report.northAmerica.claims.map(c=>({...c,quote:redactEvidenceText(c.quote,150),sourceUrl:publicEvidenceUrl(c.sourceUrl)})),

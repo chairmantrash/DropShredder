@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "الدعاوى والقضايا القضائية",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "تقارير خارجية وسجلات المستهلكين",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "فحوص اختيارية للموقع الحالي. تقارير ScamFerret المنشورة آراء تاريخية لنموذج؛ وتقارير urlscan تتعلق بالأمن لا بتسليم التاجر. لا تُرسل مواقع أو صور أو سجل تصفح لإجراء مسح. تبقى النتائج منفصلة عن درجات المنتج.",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "فحص نتائج SCAMFERRET المنشورة",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "فحص تقارير الأمن الموجودة",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "سجلات المستهلكين والحكومة: طابق الشركة والموقع بدقة. غياب السجلات أو التقييم الجيد لا يضمن تسليماً موثوقاً.",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "نتيجة خارجية: $arg1$ • تاريخ التقرير $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "أبلغ المزوّد عن مشكلة",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "لا يذكر هذا السجل مشكلة",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "غير مصنّف",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • تاريخي — ليس مسحاً حالياً",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "تقرير أمني فقط؛ تسليم التاجر ومصدر المنتج لم يُتحقق منهما.",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "رأي تاريخي لنموذج؛ الموقع والمشغّل الحاليان لم يُتحقق منهما.",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "يُفحص الموقع المختار فقط. الآراء الخارجية لا تغيّر درجات المنتج.",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "السجلات الخارجية: $arg1$. تظهر التواريخ والنطاق؛ درجات المنتج لم تتغير.",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "لا يوجد سجل خارجي قابل للاستخدام. هذا لا يعني أن المتجر آمن.",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "أدلة عن البائع تستحق الفحص",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "نموذج الشحن الذي أفصح عنه التاجر",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "مباشرة من المورّد",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "مباشرة من المصنع",
+    "description": "Factory-direct"
   }
 }

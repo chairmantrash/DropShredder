@@ -1,0 +1,252 @@
+{
+  "retrievedAt": "2026-10-13T12:06:50.905085+00:00",
+  "sources": [
+    {
+      "brand": "adidas",
+      "source": "https://www.adidas.com/us/help/us-company-information/what-are-the-terms-and-conditions",
+      "status": 200,
+      "final": "https://www.adidas.com/us/help/us-company-information/what-are-the-terms-and-conditions",
+      "bytes": 696552,
+      "sha256": "a06f13e188b8f5d938285500f99bc75bd317c82269e18eb50c3239ec272cca0a",
+      "title": "What are the Terms and Conditions? | adidas US",
+      "truncated": false
+    },
+    {
+      "brand": "nike",
+      "source": "https://www.nike.com/",
+      "status": 200,
+      "final": "https://www.nike.com/",
+      "bytes": 944145,
+      "sha256": "e4e301c3aae29ec377927746f99655987a33dd15be0101b479852e1b0d673e33",
+      "title": "Nike. Just Do It. Nike.com",
+      "truncated": false
+    },
+    {
+      "brand": "pokemon-center",
+      "source": "https://support.pokemoncenter.com/hc/en-us/articles/360051729272-How-do-I-select-a-different-country-on-Pok%C3%A9mon-Center",
+      "status": 200,
+      "final": "https://support.pokemoncenter.com/hc/en-us/articles/360051729272-How-do-I-select-a-different-country-on-Pok%C3%A9mon-Center",
+      "bytes": 18490,
+      "sha256": "b3b2c5bdeea28e121ecbf1790fe9c610a3cc69b2c00308a5c1f5515ba3f22c33",
+      "title": "How do I select a different country on Pokémon Center? &ndash; Pokémon Center Support",
+      "truncated": false
+    },
+    {
+      "brand": "happy-socks",
+      "source": "https://www.happysocks.com/",
+      "status": 200,
+      "final": "https://www.happysocks.com/us/maintenance-us",
+      "bytes": 459122,
+      "sha256": "c3bc9daca5105dae05f258149b6a7f0ad46ca846c1ff1112549342ba9fde0c02",
+      "title": "The Original Colorful Sock Brand | Happy Socks US",
+      "truncated": false
+    },
+    {
+      "brand": "vionic",
+      "source": "https://www.vionicshoes.com/",
+      "status": 200,
+      "final": "https://www.vionicshoes.com/",
+      "bytes": 252458,
+      "sha256": "500887bb4ffa1a9919566946e793720db5c131761b186bad1d7509ec244db86d",
+      "title": "Vionic Shoes: Comfortable Stylish Shoes, Sandals, Boots &amp; More",
+      "truncated": false
+    },
+    {
+      "brand": "ugg",
+      "source": "https://www.ugg.com/",
+      "error": "HTTP Error 406: Not Acceptable",
+      "truncated": false
+    },
+    {
+      "brand": "salomon",
+      "source": "https://www.salomon.com/",
+      "status": 200,
+      "final": "https://www.salomon.com/en-us",
+      "bytes": 279743,
+      "sha256": "7d00dc3d072b9db13331278addc83ec528949ac6ac6dbd22665277de4d12b8d0",
+      "title": "SALOMON | Running shoes and clothing, trail running, hiking, ski and snowboard | Salomon",
+      "truncated": false
+    },
+    {
+      "brand": "nine-west",
+      "source": "https://ninewest.com/",
+      "status": 200,
+      "final": "https://ninewest.com/",
+      "bytes": 824724,
+      "sha256": "3ee304b6e5abc168f6bd4bc6b11135ebe739da771f6ba1feccaebf0e6a222c20",
+      "title": "Nine West | Women&#39;s Shoes, Handbags &amp; Watches",
+      "truncated": false
+    },
+    {
+      "brand": "lowa",
+      "source": "https://lowa.com/",
+      "status": 200,
+      "final": "https://lowa.com/en/",
+      "bytes": 1000001,
+      "sha256": "9981f9accb0752c978fa31b987a077af673e1c127b877a8b347e34e97ccbc2cc",
+      "title": "LOWA - Tradition and innovation",
+      "truncated": true
+    },
+    {
+      "brand": "zippo",
+      "source": "https://www.zippo.com/",
+      "status": 200,
+      "final": "https://zippo.com/",
+      "bytes": 682318,
+      "sha256": "f7cb40c12bfde7ee1aa25eef6ffc0166856b8f0ef5672ddb8deb10b248586ed7",
+      "title": "\n      Official Zippo Website | Zippo.com\n &ndash; Zippo USA",
+      "truncated": false
+    },
+    {
+      "brand": "laneige",
+      "source": "https://www.laneige.com/",
+      "status": 200,
+      "final": "https://www.laneige.com/",
+      "bytes": 127010,
+      "sha256": "f570e4dbb79a601b28a6114938f86abf0a0224d21d682ea11e467d95cc18e4e9",
+      "title": "아름다움을 향한 끝없는 호기심 OPEN TO WONDER.ㅣ라네즈 한국",
+      "truncated": false
+    },
+    {
+      "brand": "jw-pei",
+      "source": "https://www.jwpei.com/",
+      "status": 200,
+      "final": "https://www.jwpei.com/",
+      "bytes": 1000001,
+      "sha256": "5ad82e64b559bc2fd13c2c4576b6b727a52da719c1b9b1b5bfda0f502ab70af5",
+      "title": "JW PEI Official Site - Affordable Luxury Designer Brand\n",
+      "truncated": true
+    },
+    {
+      "brand": "superdry",
+      "source": "https://www.superdry.com/",
+      "status": 200,
+      "final": "https://www.superdry.com/",
+      "bytes": 355202,
+      "sha256": "e644299fd589f861331973b83baffc30254d10c8c2446892458f750f20b8b3ff",
+      "title": "\n        Superdry UK: 15% Off Your First Order | Men&#x27;s &amp; Women&#x27;s Clothing\n    ",
+      "truncated": false
+    },
+    {
+      "brand": "specialized",
+      "source": "https://www.specialized.com/",
+      "status": 200,
+      "final": "https://www.specialized.com/us/en",
+      "bytes": 299291,
+      "sha256": "575feb6e7418275d52a18b688dbc7bbba936e0e32daed1be8339a798fa1d7a7d",
+      "title": "Made for riders, by riders. | Specialized.com",
+      "truncated": false
+    },
+    {
+      "brand": "champion",
+      "source": "https://www.champion.com/",
+      "status": 200,
+      "final": "https://www.champion.com/",
+      "bytes": 1000001,
+      "sha256": "f9b29f5dff0b49e796a6dd8d2b7e51e273b724ce9815f0fbe050c60f56a03090",
+      "title": "\n      \n\n    Champion® Official Site | What Do You Champion?\n\n    ",
+      "truncated": true
+    },
+    {
+      "brand": "baggu",
+      "source": "https://www.baggu.com/",
+      "status": 200,
+      "final": "https://baggu.com/",
+      "bytes": 541908,
+      "sha256": "252a3f9bc600cc12c048a4406668c61fb92cb48084f3c4c56eb9081cb1fd71e9",
+      "title": "BAGGU ",
+      "truncated": false
+    },
+    {
+      "brand": "bershka",
+      "source": "https://www.bershka.com/",
+      "status": 200,
+      "final": "https://www.bershka.com/",
+      "bytes": 1000001,
+      "sha256": "db2a52e2a876508d0778fc60f3aaf12cae64612f7314ef321778c8d8ffad87a6",
+      "title": "BERSHKA: Online fashion | Official Store | Bershka",
+      "truncated": true
+    },
+    {
+      "brand": "cannondale",
+      "source": "https://www.cannondale.com/",
+      "status": 200,
+      "final": "https://www.cannondale.com/en",
+      "bytes": 241415,
+      "sha256": "9e7706012a97887260e5afe80a4ca8b2a2bb98e721f647c71bb4ad3cb662a719",
+      "title": "Cannondale Bikes | Road, Mountain, Kids, Electric Bikes ",
+      "truncated": false
+    },
+    {
+      "brand": "barbour",
+      "source": "https://www.barbour.com/",
+      "status": 200,
+      "final": "https://www.barbour.com/us/",
+      "bytes": 344325,
+      "sha256": "1ffe0f14c129378264987541be57ba345f36213addbff21c2000b063dd62bf54",
+      "title": "Barbour US Official Website ",
+      "truncated": false
+    },
+    {
+      "brand": "stella-mccartney",
+      "source": "https://www.stellamccartney.com/",
+      "status": 200,
+      "final": "https://www.stellamccartney.com/us/en/",
+      "bytes": 569464,
+      "sha256": "96658f5c825ad25fe949f681202d8aad0bd6a310057bcac19f1ccbdebdd2dfbf",
+      "title": "Designer Clothing | Luxury Fashion | Stella McCartney US",
+      "truncated": false
+    },
+    {
+      "brand": "fila",
+      "source": "https://www.fila.com/",
+      "status": 200,
+      "final": "https://www.fila.com/",
+      "bytes": 42423,
+      "sha256": "8cf8e4f1e4c5b037b1e34177ab8dbc2a0fcb369f3afd22a90a85ae822d261c7d",
+      "title": "Sites-FILA-Site",
+      "truncated": false
+    },
+    {
+      "brand": "napapijri",
+      "source": "https://www.napapijri.com/",
+      "status": 200,
+      "final": "https://www.napapijri.com/en-gb",
+      "bytes": 843293,
+      "sha256": "165b03590cbd04a28513e8fa1657508ac8424a96d0c6c96543c6baabf242e599",
+      "title": "Mid Season Sale: 30% Off | Napapijri",
+      "truncated": false
+    },
+    {
+      "brand": "kickers",
+      "source": "https://www.kickers.com/",
+      "status": 200,
+      "final": "https://www.kickers.com/",
+      "bytes": 1000001,
+      "sha256": "65fe20ea27de0168feaafb698ee5a80f710018a808c723e9c87dba48287a33f8",
+      "title": "Kickers — La marque iconique revient bientôt",
+      "truncated": true
+    },
+    {
+      "brand": "chrome-hearts",
+      "source": "https://www.chromehearts.com/",
+      "status": 200,
+      "final": "https://www.chromehearts.com/",
+      "bytes": 35816,
+      "sha256": "b83bf0dcf01984ca63f07b20dcf22f6641c91c8fd2b7828c676f9cce4056f5cb",
+      "title": "Chrome Hearts",
+      "truncated": false
+    },
+    {
+      "brand": "pop-mart",
+      "source": "https://www.popmart.com/",
+      "status": 200,
+      "final": "https://www.popmart.com/us",
+      "bytes": 772058,
+      "sha256": "f8bce74322166ed7437b2159b56c52d5a0d15803338f73719ab7a7a84f313ccf",
+      "title": "POP MART US Official | Designer Art Toys &amp; Blind Box Collectibles",
+      "truncated": false
+    }
+  ],
+  "scope": "Primary website-reference retrieval metadata, no raw page content redistributed. Failures/partial reads retained; no authorized-retailer completeness or independent ground truth."
+}

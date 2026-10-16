@@ -1,0 +1,80 @@
+{
+  "observations": [
+    {
+      "url": "https://urlscan.io/api/v1/search/?q=page.domain%3A%28%22yeezys.com.mx%22%20OR%20%22www.yeezys.com.mx%22%29%20AND%20date%3A%3Enow-90d&size=5",
+      "retrievedAt": "2026-10-13T12:48:46.696429+00:00",
+      "label": "urlscan-search",
+      "httpStatus": 200,
+      "finalUrl": "https://urlscan.io/api/v1/search/?q=page.domain%3A%28%22yeezys.com.mx%22%20OR%20%22www.yeezys.com.mx%22%29%20AND%20date%3A%3Enow-90d&size=5",
+      "bytes": 3170,
+      "sha256": "fae712f6a0fc96f781a4af93908cb4bccb7d186d7927516009bf7824e2b0899d"
+    },
+    {
+      "url": "https://urlscan.io/api/v1/result/01a1191c-050e-729f-97f4-7111689d38f3/",
+      "retrievedAt": "2026-10-13T12:48:55.534181+00:00",
+      "label": "urlscan-01a1191c-050e-729f-97f4-7111689d38f3",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://urlscan.io/api/v1/result/01a0a511-4386-77a7-8fd0-baac8b918a2c/",
+      "retrievedAt": "2026-10-13T12:49:02.033228+00:00",
+      "label": "urlscan-01a0a511-4386-77a7-8fd0-baac8b918a2c",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.bbb.org/search?find_country=USA&find_text=yeezys.com.mx&find_type=Business",
+      "retrievedAt": "2026-10-13T12:49:06.630084+00:00",
+      "label": "bbb",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bbb.org/search?find_country=USA&find_text=yeezys.com.mx&find_type=Business",
+      "bytes": 127465,
+      "sha256": "9862322fa327ccb148343a7623622a9ce2f10880385e585d99b03e6f5db56569"
+    },
+    {
+      "url": "https://www.ftc.gov/search?search=yeezys.com.mx",
+      "retrievedAt": "2026-10-13T12:49:12.336646+00:00",
+      "label": "ftc",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.cpsc.gov/Recalls",
+      "retrievedAt": "2026-10-13T12:49:30.398723+00:00",
+      "label": "cpsc",
+      "httpStatus": 200,
+      "finalUrl": "https://www.cpsc.gov/Recalls",
+      "bytes": 285689,
+      "sha256": "7e18b216e84d12cba0d6744e444aac95b3152e1853b15d6c28c8917aa7e2ad31"
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/",
+      "retrievedAt": "2026-10-13T12:49:34.889137+00:00",
+      "label": "canada",
+      "httpStatus": 200,
+      "finalUrl": "https://competition-bureau.canada.ca/en",
+      "bytes": 47307,
+      "sha256": "a2768e16565bcb51fc98b08e4d97e18557086a4509545109bec32ade69a5e691"
+    },
+    {
+      "url": "https://www.gob.mx/profeco",
+      "retrievedAt": "2026-10-13T12:49:45.403636+00:00",
+      "label": "mexico",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.trustpilot.com/review/yeezys.com.mx",
+      "retrievedAt": "2026-10-13T12:49:49.624196+00:00",
+      "label": "trustpilot",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "label": "ftc-corrected",
+      "url": "https://www.ftc.gov/legal-library/search?search=yeezys.com.mx",
+      "httpStatus": 200,
+      "sha256": "f6c7f6812db9fd7f50276b445fb803c7227596396d1facb288db86e3ee82affd",
+      "bytes": 500000,
+      "retrievedAt": "2026-10-13T12:55:28.289949+00:00",
+      "verifiedInputName": "search"
+    }
+  ],
+  "scope": "Read-only existing public reports and approved destination access. HTTP denial/unavailability is not a merchant verdict."
+}

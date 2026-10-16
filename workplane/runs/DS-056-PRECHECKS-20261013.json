@@ -1,0 +1,82 @@
+{
+  "productionSource": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+  "productionTree": "5956c9f997fd58ef24c360c1679af40a50bcc8a3",
+  "ciArtifact": 11815875609,
+  "ciHead": "c2fa68b38ea352e7de485ff67ce623264d980d01",
+  "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+  "zipBytes": 25985652,
+  "packageInventoryFiles": 54,
+  "allPackageHashesVerified": true,
+  "coreTestsPassed": 428,
+  "localAudits": [
+    "typecheck",
+    "security",
+    "chrome-runtime",
+    "localization:8 locales/438 messages",
+    "data-lint",
+    "professionalism",
+    "release",
+    "performance"
+  ],
+  "initialFailures": [
+    {
+      "scope": "Core regressions",
+      "passed": 12,
+      "failed": 2,
+      "actualBug": "English account/login form identifiers absent from private-form kit; fixed",
+      "testCorrection": "Related-card text is allowed in catalog context but excluded from product identity"
+    },
+    {
+      "scope": "Performance audit",
+      "reason": "Cap assertions still read entrypoint after extracting bounded reader to module",
+      "resolution": "Audit verifies cap/time/byte bound in real imported/injected reader"
+    },
+    {
+      "scope": "CodeQL",
+      "run": 38401262978,
+      "finding": "js/incomplete-hostname-regexp in test assertion tests/reputation-improvements.test.ts:84",
+      "resolution": "Exact parsed hostname and pinned pathname; no analyzer suppression"
+    },
+    {
+      "scope": "Initial headed native run",
+      "run": 38401262844,
+      "job": 115309199195,
+      "failureId": "R03",
+      "reason": "Harness button was inside unopened details",
+      "resolution": "Actual summary click before provider button; runtime unchanged"
+    },
+    {
+      "scope": "Second headed native run",
+      "run": 38401834562,
+      "job": 115311136785,
+      "newProviderTestsPassed": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "reason": "Downstream GLEIF test expected a current report after deliberate navigation invalidation",
+      "resolution": "Restore a fresh scan between suites; production package unchanged",
+      "liveRetest": 38401834739,
+      "liveRetestOutcome": "Stopped by source gate before public testing"
+    },
+    {
+      "scope": "Live profile 3 bootstrap",
+      "run": 38402573507,
+      "job": 115313682994,
+      "artifact": 11815963930,
+      "artifactSha256": "d7be5ec22c14d84e1938ae3d5c1e6f519c269b8c7fbaee2c259dbf3ebaeffbf6",
+      "lastPassed": "N01",
+      "failed": "N02",
+      "reason": "Native settings control had zero visible width; genuine desktop screenshot showed a blank Chrome window",
+      "productionPackage": "unchanged",
+      "nextAction": "Rerun only failed profile after other planned outcomes finish; original retained"
+    }
+  ],
+  "limits": [
+    "Historical outputs are not current independent accuracy",
+    "Provider fixtures are engineering tests, not real merchant labels"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "frozenAt": "2026-10-13T12:56:03.131108+00:00",
+  "targets": [
+    {
+      "id": "CONTROL-001",
+      "host": "salomon.com",
+      "url": "https://www.salomon.com/en-us/product/snowclog-og-li9280",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://www.salomon.com/en-us",
+      "sourceSha256": "7d00dc3d072b9db13331278addc83ec528949ac6ac6dbd22665277de4d12b8d0"
+    },
+    {
+      "id": "CONTROL-002",
+      "host": "ninewest.com",
+      "url": "https://ninewest.com/products/tatiana-pointy-toe-pumps-in-brown-leather",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://ninewest.com/",
+      "sourceSha256": "3ee304b6e5abc168f6bd4bc6b11135ebe739da771f6ba1feccaebf0e6a222c20"
+    },
+    {
+      "id": "CONTROL-003",
+      "host": "zippo.com",
+      "url": "https://zippo.com/products/cotton-felt-replacement-kit",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://zippo.com/",
+      "sourceSha256": "f7cb40c12bfde7ee1aa25eef6ffc0166856b8f0ef5672ddb8deb10b248586ed7"
+    },
+    {
+      "id": "CONTROL-004",
+      "host": "footlocker.com",
+      "url": "https://www.footlocker.com/product/giftcard/ECARD21.html",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.footlocker.com/",
+      "sourceSha256": "0309b213cacc7b31f0a2d8b8752e1455fae62d4a2785e1fa0e9c84338b5cc5d9"
+    },
+    {
+      "id": "CONTROL-005",
+      "host": "nordstrom.com",
+      "url": "https://www.nordstrom.com/",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.nordstrom.com/",
+      "sourceSha256": "53749a743716be59463922baf0f597b54bd33656f7251e5db438d8fbbe1449dc"
+    },
+    {
+      "id": "CONTROL-006",
+      "host": "target.com",
+      "url": "https://www.target.com/",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.target.com/",
+      "sourceSha256": "6e0b7eada20e13af3a47b4ac6926703df833b3a444d92cb8d2cde5fa86ce3fdd"
+    },
+    {
+      "id": "CONTROL-007",
+      "host": "bestbuy.com",
+      "url": "https://www.bestbuy.com/site/outlet-refurbished-clearance/open-box-electronics/pcmcat748300666861.c",
+      "label": "ordinary retailer",
+      "independentTruth": false,
+      "source": "https://www.bestbuy.com/",
+      "sourceSha256": "7f46a7647836b2a7a514f479338d25b779fdd1cb402c814a60646b23da21462f"
+    },
+    {
+      "id": "CONTROL-008",
+      "host": "warmlydecor.com",
+      "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "independentTruth": false,
+      "source": "https://warmlydecor.com/",
+      "sourceSha256": "9a303145fe77e2c9c84d92e59c4afe3db6da3186e5bf4dbb176b3446d0d7e147"
+    },
+    {
+      "id": "CONTROL-009",
+      "host": "harempants.com",
+      "url": "https://www.harempants.com/products/gift-card",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "independentTruth": false,
+      "source": "https://www.harempants.com/",
+      "sourceSha256": "99570de497d1dbddbc133c08986cf3180aecd1a94791e3fd07f71aa86b85d3eb"
+    }
+  ],
+  "sourceObservations": [
+    {
+      "url": "https://www.footlocker.com/",
+      "label": "ordinary multi-brand retailer",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://www.footlocker.com/",
+      "sha256": "0309b213cacc7b31f0a2d8b8752e1455fae62d4a2785e1fa0e9c84338b5cc5d9",
+      "bytes": 924943,
+      "selected": "https://www.footlocker.com/product/giftcard/ECARD21.html"
+    },
+    {
+      "url": "https://www.nordstrom.com/",
+      "label": "ordinary multi-brand retailer",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://www.nordstrom.com/",
+      "sha256": "53749a743716be59463922baf0f597b54bd33656f7251e5db438d8fbbe1449dc",
+      "bytes": 253799,
+      "selected": "https://www.nordstrom.com/"
+    },
+    {
+      "url": "https://www.target.com/",
+      "label": "ordinary multi-brand retailer",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://www.target.com/",
+      "sha256": "6e0b7eada20e13af3a47b4ac6926703df833b3a444d92cb8d2cde5fa86ce3fdd",
+      "bytes": 416145,
+      "selected": "https://www.target.com/"
+    },
+    {
+      "url": "https://www.bestbuy.com/",
+      "label": "ordinary retailer",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://www.bestbuy.com/",
+      "sha256": "7f46a7647836b2a7a514f479338d25b779fdd1cb402c814a60646b23da21462f",
+      "bytes": 493367,
+      "selected": "https://www.bestbuy.com/site/outlet-refurbished-clearance/open-box-electronics/pcmcat748300666861.c"
+    },
+    {
+      "url": "https://warmlydecor.com/",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://warmlydecor.com/",
+      "sha256": "9a303145fe77e2c9c84d92e59c4afe3db6da3186e5bf4dbb176b3446d0d7e147",
+      "bytes": 744587,
+      "selected": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps"
+    },
+    {
+      "url": "https://www.harempants.com/",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "observedAt": "2026-10-13T12:56:03.131108+00:00",
+      "status": 200,
+      "final": "https://www.harempants.com/",
+      "sha256": "99570de497d1dbddbc133c08986cf3180aecd1a94791e3fd07f71aa86b85d3eb",
+      "bytes": 1399778,
+      "selected": "https://www.harempants.com/products/gift-card"
+    }
+  ],
+  "scope": "Predeclared additional public controls for functional false-positive inspection and logistics extraction, not independently accepted product or merchant accuracy."
+}

@@ -26,6 +26,7 @@ export interface EvidenceSignal {
   /** Shared observation ancestry; different rule IDs do not make it independent. */
   correlationKeys?: string[];
   sourceKey?: string;
+  referenceUrls?: string[];
   provenance?: {sourceUrl:string;observedAt:string;method:string};
 }
 

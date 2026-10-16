@@ -840,6 +840,11 @@
       ],
       [
         "todas as vendas são finais"
+      ],
+      [
+        "alle Verkäufe sind endgültig",
+        "tutte le vendite sono definitive",
+        "alle verkopen zijn definitief"
       ]
     ],
     [
@@ -888,6 +893,13 @@
       ],
       [
         "tempo limitado"
+      ],
+      [
+        "まもなく売り切れる",
+        "ラスト1時間",
+        "nur für kurze Zeit",
+        "offerta a tempo limitato",
+        "beperkte tijd"
       ]
     ],
     [
@@ -964,6 +976,14 @@
       ],
       [
         "envio"
+      ],
+      [
+        "Versand",
+        "Lieferung",
+        "spedizione",
+        "levering",
+        "αποστολή",
+        "配送"
       ]
     ],
     [
@@ -1015,6 +1035,14 @@
       ],
       [
         "dias úteis"
+      ],
+      [
+        "Werktage",
+        "Arbeitstage",
+        "giorni lavorativi",
+        "werkdagen",
+        "εργάσιμες ημέρες",
+        "営業日"
       ]
     ],
     [
@@ -1042,6 +1070,13 @@
       ],
       [
         "dias"
+      ],
+      [
+        "Tage",
+        "giorni",
+        "dagen",
+        "ημέρες",
+        "日間"
       ]
     ],
     [
@@ -1070,6 +1105,16 @@
       [
         "devoluções",
         "devolução"
+      ],
+      [
+        "Rückgabe",
+        "Rücksendung",
+        "Retouren",
+        "reso",
+        "resi",
+        "retourneren",
+        "επιστροφές",
+        "返品"
       ]
     ],
     [
@@ -1124,6 +1169,13 @@
       [
         "contato",
         "contacto"
+      ],
+      [
+        "Kontakt",
+        "Contatti",
+        "Contacteer",
+        "Επικοινωνία",
+        "お問い合わせ"
       ]
     ],
     [
@@ -1149,6 +1201,13 @@
       ],
       [
         "sobre nós"
+      ],
+      [
+        "Über uns",
+        "Chi siamo",
+        "Over ons",
+        "Σχετικά με εμάς",
+        "私たちについて"
       ]
     ],
     [
@@ -1301,6 +1360,11 @@
       [
         "enviado de",
         "envios de"
+      ],
+      [
+        "Versand aus",
+        "spedito da",
+        "verzonden vanuit"
       ]
     ],
     [
@@ -2682,6 +2746,25 @@
         "branco",
         "branca"
       ]
+    ],
+    [
+      "return policy",
+      [
+        "Rückgabebedingungen",
+        "politica di reso",
+        "retourbeleid",
+        "πολιτική επιστροφών",
+        "返品ポリシー"
+      ]
+    ],
+    [
+      "non-returnable",
+      [
+        "nicht rückgabefähig",
+        "Rückgabe ausgeschlossen",
+        "non restituibile",
+        "niet retourneerbaar"
+      ]
     ]
   ],
   "paths": {
@@ -2873,6 +2956,47 @@
     "প্রবেশ",
     "পেমেন্ট",
     "entrar",
-    "pagamento"
+    "pagamento",
+    "anmelden",
+    "kundenkonto",
+    "mein-konto",
+    "accedi",
+    "inloggen",
+    "mijn-account",
+    "account",
+    "accounts",
+    "login",
+    "log-in",
+    "signin",
+    "sign-in",
+    "auth",
+    "oauth",
+    "payment",
+    "payments",
+    "billing",
+    "wallet",
+    "orders",
+    "order-history",
+    "my-orders",
+    "addresses",
+    "address-book",
+    "customer",
+    "customers",
+    "profile",
+    "register",
+    "sign-up",
+    "signup",
+    "shipping-address",
+    "order-confirmation",
+    "confirm-order",
+    "users",
+    "user",
+    "members",
+    "member",
+    "dashboard",
+    "myaccount",
+    "my-account",
+    "personal",
+    "my-profile"
   ]
 }

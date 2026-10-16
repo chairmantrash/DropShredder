@@ -1,0 +1,22 @@
+{
+  "workflowRun": 38402573495,
+  "artifact": 11815078697,
+  "artifactSha256": "6164f69dc786dc4d09395ba1ef45c00f52ab5a778ef2bb5316367498c5520cbe",
+  "sourceReceipt": {
+    "sourceCommit": "ac52c91f4e082fafc5ba7358aecdd39742d48adb",
+    "recordedAt": "2026-10-13T13:12:03.940Z",
+    "status": "NO_FINDINGS",
+    "reports": [
+      {
+        "file": "javascript.sarif",
+        "sha256": "f1f224c083b5da374b141b18a2ea007d5db55eadca384056fa5efa16cb0352d1",
+        "status": "NO_FINDINGS",
+        "findings": []
+      }
+    ]
+  },
+  "sarifSha256": "f1f224c083b5da374b141b18a2ea007d5db55eadca384056fa5efa16cb0352d1",
+  "sarifResults": 0,
+  "allInvocationsSuccessful": true,
+  "suppressionApplied": false
+}

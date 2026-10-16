@@ -66,6 +66,15 @@ export async function runAudit150({context,page,native,worker,until,pause,report
           row[action+'Report']=next;
         }catch(error){row.actions.push({action,status:'FAIL_OR_BLOCKED',error:String(error),elapsedMs:Date.now()-start,message:await status().catch(()=>undefined)});if(error.safetyStop)throw error;}
       }
+      if(process.env.DS_OUTSIDE_LIVE==='1'&&target.id==='AUDIT-0001'){
+        if(!await native.evaluate("document.querySelector('.outside-panel').open"))await native.click('.outside-panel summary');
+        for(const [action,selector] of [['published-outside','#outside-scamferret'],['security-outside','#outside-security']]){
+          const start=Date.now();
+          try{await native.click(selector);await until(()=>native.evaluate(`!document.querySelector('${selector}').disabled`),'settled explicit outside request',18000);
+            const next=await read();checkIdentity(next);row.actions.push({action,status:'OBSERVED_UI_OUTCOME',elapsedMs:Date.now()-start,message:await native.evaluate("document.querySelector('#outside-status').textContent"),results:next.outsideResults??[]});
+          }catch(error){row.actions.push({action,status:'FAIL_OR_BLOCKED',error:String(error)});if(error.safetyStop)throw error;}
+        }
+      }
       row.finalReport=await read();checkIdentity(row.finalReport);
       if(row.finalReport.verdict.severeWarningAllowed){row.status='SEVERE_WARNING_QUARANTINED';await native.screenshot(target.id+'-severe.png');report.audit150.safetyStop={id:target.id,reason:'Severe warning requires independent evidence review; affected profile stopped'};break;}
       const zeroIds=['COMMERCE_PLATFORM_CONTEXT','SUPPLY_CHAIN_PROFILE','FULFILLMENT_ORIGIN_OBSERVATION','MERCHANT_JURISDICTIONS_DISCLOSED'];

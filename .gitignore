@@ -23,3 +23,5 @@ tools/browser-smoke/beta-collector-manifest.json
 
 # Exact accepted beta publication packets are release artifacts.
 beta3-packet/
+
+/beta4-packet/

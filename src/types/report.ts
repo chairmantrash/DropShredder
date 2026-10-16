@@ -4,6 +4,8 @@ import type { ProductSnapshot } from './product';
 import type { SupplyChainProfile } from '../analysis/supply-chain-profile';
 import type { ReviewIntegrityReport } from '../analysis/review-integrity';
 import type {NorthAmericaAssessment} from '../analysis/north-america-origin';
+import type {OutsideResult} from '../reputation/outside-results';
+import type {FulfillmentDisclosure} from '../analysis/fulfillment-disclosure';
 
 export interface DropShredderReport {
   version: 1;
@@ -15,4 +17,6 @@ export interface DropShredderReport {
   supplyChain?: SupplyChainProfile;
   reviewIntegrity?: ReviewIntegrityReport;
   northAmerica?: NorthAmericaAssessment;
+  outsideResults?: OutsideResult[];
+  fulfillmentDisclosure?: FulfillmentDisclosure;
 }

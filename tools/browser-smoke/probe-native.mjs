@@ -1,3 +1,4 @@
+import {runReputationSuite} from './reputation.mjs';
 import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
 import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation, observeLiveResources} from './remaining-edges.mjs';
 import { chromium } from 'playwright';
@@ -62,8 +63,9 @@ async function attach(targetId, productPage = page) {
       void(async()=>{
         const mode=providerMode;if(mode==='delay') await pause(2000);
         const target=new URL(url);assert.equal(target.protocol,'https:');
-        assert.ok(['publisher.example.com','rdap.verisign.com','www.saferproducts.gov'].includes(target.hostname),'Unexpected fixture provider origin');
-        const body=target.hostname==='publisher.example.com'?(feedMode==='signed'?signedFixtureList():fixtureList()):target.hostname==='rdap.verisign.com'?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
+        assert.ok(['publisher.example.com','rdap.verisign.com','www.saferproducts.gov','raw.githubusercontent.com','urlscan.io'].includes(target.hostname),'Unexpected fixture provider origin');
+        const outsideTask={uuid:'01a0a511-4386-77a7-8fd0-baac8b918a2c',time:new Date(Date.now()-86400000).toISOString(),url:'https://www.yeezys.com.mx/p/ds056-owned-fixture'};
+        const body=target.hostname==='raw.githubusercontent.com'?{target_url:'https://www.yeezys.com.mx/',start_time:'2025-08-31 00:00:00',llm_response:{scam:true,reason:'Owned historical provider fixture, no real merchant assessment.'}}:target.hostname==='urlscan.io'?(target.pathname.includes('/search/')?{results:[{task:outsideTask,page:{url:outsideTask.url}}]}:{task:outsideTask,page:{url:outsideTask.url},stats:{dataLength:500},verdicts:{urlscan:{malicious:false}}}):target.hostname==='publisher.example.com'?(feedMode==='signed'?signedFixtureList():fixtureList()):target.hostname==='rdap.verisign.com'?{ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2000-01-01T00:00:00Z'}]}:[{RecallID:123,RecallNumber:'FIXTURE-123',Title:'Fixture mug notice',URL:'https://www.cpsc.gov/Recalls/2026/fixture',RecallDate:'2026-01-01',Products:[{Model:'FIXTURE-MUG-001'}]}];
         await call('Fetch.fulfillRequest',{requestId,responseCode:mode==='error'?503:200,responseHeaders:[{name:'content-type',value:'application/json'}],body:Buffer.from(JSON.stringify(body)).toString('base64')});
       })().catch(()=>{});return;
     }
@@ -80,7 +82,7 @@ async function attach(targetId, productPage = page) {
       .catch(error => { clearTimeout(timer); pending.delete(requestId); reject(error); });
   });
   await call('Runtime.enable');await call('Network.enable');
-  if(headed) await call('Fetch.enable',{patterns:[{urlPattern:'https://publisher.example.com/*'},{urlPattern:'https://rdap.verisign.com/*'},{urlPattern:'https://www.saferproducts.gov/RestWebServices/*'}]});
+  if(headed) await call('Fetch.enable',{patterns:[{urlPattern:'https://raw.githubusercontent.com/ScamFerret/artifact/*'},{urlPattern:'https://urlscan.io/api/*'},{urlPattern:'https://publisher.example.com/*'},{urlPattern:'https://rdap.verisign.com/*'},{urlPattern:'https://www.saferproducts.gov/RestWebServices/*'}]});
   const evaluate = async expression => {
     const result = await call('Runtime.evaluate', { expression, returnByValue: true });
     if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails)); return result.result.value;
@@ -575,6 +577,7 @@ try {
         return {scope:'Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested',output:outputText.slice(0,250)};
       });
       await runOcrCancellation({page,native,test,until,pause,output,root});
+      await runReputationSuite({context,page,native,test,until,pause,setMode:value=>{providerMode=value;}});
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');
         await until(()=>native.evaluate("!document.querySelector('#entity-lookup').disabled"),'live GLEIF',15000);assert.match(await native.evaluate("document.querySelector('#entity-results').textContent"),/Bloomberg Finance L.P./);
@@ -689,7 +692,7 @@ try {
         await native.screenshot('native-after-revoke.png');
       });
       await test('N14', 'Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins', async () => {
-        const allowedOrigins=new Set(['https://publisher.example.com','https://rdap.verisign.com','https://www.saferproducts.gov','https://api.gleif.org']);
+        const allowedOrigins=new Set(['https://publisher.example.com','https://rdap.verisign.com','https://www.saferproducts.gov','https://api.gleif.org','https://raw.githubusercontent.com','https://urlscan.io']);
         for(const entry of report.liveSurfaces??[])if(entry.status==='OBSERVED_SCAN')allowedOrigins.add(new URL(entry.product.url).origin);
         report.approvedRequestOrigins=[...allowedOrigins];
         assert.deepEqual(errors, []); assert.ok(externalRequests.every(origin=>allowedOrigins.has(origin)), JSON.stringify(externalRequests));

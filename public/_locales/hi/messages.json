@@ -2044,5 +2044,101 @@
   "m_o7pu4o": {
     "message": "मुकदमे और अदालती मामले",
     "description": "Litigation and court cases"
+  },
+  "m_1uthfvc": {
+    "message": "बाहरी रिपोर्ट और उपभोक्ता रिकॉर्ड",
+    "description": "Outside reports and consumer records"
+  },
+  "m_k9c2nw": {
+    "message": "मौजूदा वेबसाइट की वैकल्पिक जाँच। प्रकाशित ScamFerret रिपोर्ट पुराने मॉडल की राय हैं; urlscan रिपोर्ट सुरक्षा से संबंधित हैं, व्यापारी की डिलीवरी से नहीं। किसी साइट, चित्र या ब्राउज़िंग इतिहास को स्कैन के लिए नहीं भेजा जाता। नतीजे उत्पाद स्कोर से अलग रहते हैं।",
+    "description": "Optional checks for the current website. Published ScamFerret reports are historical model opinions; urlscan reports concern security, not merchant delivery. No site, image or browsing history is submitted for scanning. Results stay separate from product scores."
+  },
+  "m_18iopk5": {
+    "message": "प्रकाशित SCAMFERRET नतीजे देखें",
+    "description": "CHECK PUBLISHED SCAMFERRET RESULTS"
+  },
+  "m_wt3ol": {
+    "message": "मौजूदा सुरक्षा रिपोर्ट देखें",
+    "description": "CHECK EXISTING SECURITY REPORTS"
+  },
+  "m_pn6ld9": {
+    "message": "उपभोक्ता और सरकारी रिकॉर्ड: सही व्यवसाय और वेबसाइट का मिलान करें। रिकॉर्ड न मिलना या अच्छी समीक्षा भरोसेमंद डिलीवरी की गारंटी नहीं है।",
+    "description": "Consumer and government records: match the exact business and website. Missing records or a favorable review do not guarantee trustworthy delivery."
+  },
+  "m_o32ktc": {
+    "message": "बाहरी नतीजा: $arg1$ • रिपोर्ट $arg2$$arg3$",
+    "description": "Outside result: $1 • reported $2$3",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      },
+      "arg2": {
+        "content": "$2",
+        "example": "value"
+      },
+      "arg3": {
+        "content": "$3",
+        "example": "value"
+      }
+    }
+  },
+  "m_16lglpw": {
+    "message": "प्रदाता ने चिंता बताई",
+    "description": "Provider reported a concern"
+  },
+  "m_4nwv1p": {
+    "message": "इस रिकॉर्ड में चिंता नहीं बताई गई",
+    "description": "No concern stated in this record"
+  },
+  "m_iv6kl9": {
+    "message": "अवर्गीकृत",
+    "description": "Unclassified"
+  },
+  "m_11fbwwv": {
+    "message": " • पुराना रिकॉर्ड — मौजूदा स्कैन नहीं",
+    "description": " • HISTORICAL — not a current scan"
+  },
+  "m_12316r": {
+    "message": "केवल सुरक्षा रिपोर्ट; व्यापारी की डिलीवरी और उत्पाद का स्रोत अपुष्ट हैं।",
+    "description": "Security report only; merchant delivery and product origin remain unverified."
+  },
+  "m_1j8nilf": {
+    "message": "पुराने मॉडल की राय; मौजूदा साइट और संचालक अपुष्ट हैं।",
+    "description": "Historical model opinion; current site and operator remain unverified."
+  },
+  "m_37a8p1": {
+    "message": "केवल चुनी हुई वेबसाइट जाँची जा रही है। बाहरी राय उत्पाद स्कोर नहीं बदलती।",
+    "description": "Checking the chosen website only. Outside opinions do not change product scores."
+  },
+  "m_zaygtw": {
+    "message": "बाहरी रिकॉर्ड: $arg1$। तारीख और दायरा दिखाए गए हैं; उत्पाद स्कोर नहीं बदले।",
+    "description": "Outside records: $1. Dates and scope are shown; product scores are unchanged.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1",
+        "example": "value"
+      }
+    }
+  },
+  "m_lyciuo": {
+    "message": "उपयोगी बाहरी रिकॉर्ड नहीं मिला। इसका मतलब यह नहीं कि दुकान सुरक्षित है।",
+    "description": "No usable outside record. This does not mean the store is safe."
+  },
+  "m_153sxvk": {
+    "message": "जाँचने योग्य विक्रेता प्रमाण",
+    "description": "Seller evidence to check"
+  },
+  "m_16fgub1": {
+    "message": "व्यापारी का बताया हुआ प्रेषण मॉडल",
+    "description": "Dispatch model disclosed by merchant"
+  },
+  "m_14nx0ph": {
+    "message": "सीधे आपूर्तिकर्ता से",
+    "description": "Supplier-direct"
+  },
+  "m_9f1ish": {
+    "message": "सीधे कारखाने से",
+    "description": "Factory-direct"
   }
 }
