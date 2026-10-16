@@ -1,0 +1,15 @@
+{
+  "artifact": 12034379951,
+  "digest": "sha256:ac9dcb37c2f4cae89e787c67340778bac6cddb5a055f157373c5dd549f1db214",
+  "sourceCommit": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "reports": [
+    {
+      "name": "javascript.sarif",
+      "findings": 0,
+      "invocations": 1,
+      "sha256": "2f404fbb4db0c8f6e74a9c8149bf3b134f54d49c134a57d1eecb8a12d49a7186"
+    }
+  ],
+  "results": 0,
+  "allInvocationsSuccessful": true
+}

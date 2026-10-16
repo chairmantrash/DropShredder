@@ -1,6 +1,12 @@
-# Current state — October16,2026: beta5 OPEN; live repair complete
+# Current state — October 16, 2026: beta6 OPEN; researched repairs verified
 
-DS-059 IN PROGRESS: research-driven repairs for lost ProductGroup identity, missing typed Microdata and overgeneral repeated-scarcity warnings. Original failures retained; new native/security/full268 live acceptance is pending. Beta5 remains open.
+DS-059 DONE — BETA6 OPEN, published 2026-10-16T15:06:09Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6. All seven public assets independently downloaded without authentication and byte/hash verified; all 54 package files match accepted inventory. Exact existing CI ZIP 25,988,814 bytes / SHA256 83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b reused without rebuilding. Production/tag source 5bdd16f282bae1aff9b2193f9c98b3fca1e89737; accepted native/live harness 0167f5b8a9beae6d87deed65c42593aaa043c690.
+
+Research-backed ProductGroup/Microdata/sole-variant-Offer identity and observed countdown-reset repairs pass 459 core tests, 94 headed native checks, all seven browser groups, complete zero-finding CodeQL and zero-advisory inventories. All 269 outcomes: 236 distinct successful scans across 56 hosts, 39 evidence-bearing pages, zero severe warnings/native privacy refusals/uncaught panel errors/profile stops. All 236 numerical estimates remain UNKNOWN; no independent detection rate is established. Real vivo selected-variant SKU/brand/479 PHP passes. Original blank-bootstrap failure is preserved; one unchanged-package retry completes its 20 cases. PR27 integrates runtime; PR28 records publication/evidence. Main and Store unchanged; PR9 draft. Independent rights-cleared/disjoint accuracy, native/legal/photo/OS/accessibility/resource/publisher/elapsed-lifecycle acceptance remains open beta and later promotion work.
+
+Receipts: workplane/runs/DS-059-COMPLETION-20261016.json, DS-059-BETA6-OPEN-20261016.json and DS-059-BETA6-PUBLIC-DOWNLOAD-VERIFIED-20261016.json. Report: workplane/research/DS-059-IMPLEMENTED-AND-RETESTED-20261016.md.
+
+## Previous beta5 checkpoint
 
 **BETA5 OPEN**, published2026-10-16T06:53:49Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5 . All7 public assets independently downloaded without authentication and byte/hash verified; all54 package files match the accepted inventory. Exact existing CI ZIP25,986,104bytes/SHA25617f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c; production/tag ae94718c310fdf253fcfbef156fc49b30bb4a8d9/tree175ee8f1c2148fd774288bb5d1937731b71e3ff0. Publication head56595b2b262db6884458d79507614526faa9c7d7 passes CI38863681460, complete finding-free CodeQL38863681463 and publication38863681505.
 
