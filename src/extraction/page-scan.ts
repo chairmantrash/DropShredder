@@ -462,15 +462,22 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const cards:HTMLElement[]=[];
         const amazonElements:HTMLElement[]=[];
         const reviewElements:HTMLElement[]=[];
+        const reviewVisibility=new WeakMap<Element,boolean>();
         const publicReviewNode=(node:Element):boolean=>{
-          let cursor:Element|null=node,depth=0;
+          let cursor:Element|null=node,depth=0,visible=true;const visited:Element[]=[];
           while(cursor&&depth++<32){
-            if(excluded(cursor)||cursor.matches('form,input,textarea,select,option,[contenteditable],dialog:not([open]),[hidden],[aria-hidden="true"],script,style,noscript'))return false;
-            if(/display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)/i.test(cursor.getAttribute('style')??''))return false;
-            if(typeof getComputedStyle==='function'){const style=getComputedStyle(cursor);if(style.display==='none'||style.visibility==='hidden'||style.visibility==='collapse')return false;}
+            const cached=reviewVisibility.get(cursor);if(cached!==undefined){visible=cached;cursor=null;break;}
+            visited.push(cursor);
+            if(excluded(cursor)||cursor.matches('form,input,textarea,select,option,[contenteditable],dialog:not([open]),[hidden],[aria-hidden="true"],script,style,noscript')||/display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)/i.test(cursor.getAttribute('style')??'')){visible=false;break;}
+            if(typeof getComputedStyle==='function'){const style=getComputedStyle(cursor);if(style.display==='none'||style.visibility==='hidden'||style.visibility==='collapse'){visible=false;break;}}
             cursor=cursor.parentElement;
           }
-          return !cursor;
+          visible=visible&&!cursor;
+          // A false result belongs to the requested subtree, not its public
+          // ancestors. True paths can safely share computed visibility.
+          if(visible)for(const item of visited)reviewVisibility.set(item,true);
+          else reviewVisibility.set(node,false);
+          return visible;
         };
         const currentJudgeReview=(element:Element):boolean=>{
           if(!element.matches('.jdgm-rev')||!element.closest('.jdgm-review-widget')||element.closest('.jdgm-all-reviews-widget,.jdgm-carousel-wrapper,.jdgm-revs-tab'))return false;
