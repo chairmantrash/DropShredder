@@ -1,0 +1,602 @@
+{
+  "protocol": "DS-058",
+  "requiredAccessibleDistinctPages": 150,
+  "manifestSha256": "a27c4f08e6a8a08527af77939d266ceaca0d7fd335c787b0d16a57802fb76cd3",
+  "plannedPages": 268,
+  "recordedPageOutcomes": 268,
+  "nativeProfiles": [
+    {
+      "path": "native-0/browser-smoke-results/native-probe.json",
+      "sha256": "ebf1a46d7cf27d2b9eba8433a622ba37e426d02d9126c37c935050a2f7d587f1",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:36.802Z",
+      "finishedAt": "2026-10-16T06:24:31.995Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 0,
+      "planned": 36,
+      "safetyStop": null
+    },
+    {
+      "path": "native-1/browser-smoke-results/native-probe.json",
+      "sha256": "0641f111690256b745647fbc0cf9a247b542c2b920ea7da2826d7b25d4e5a589",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:39.718Z",
+      "finishedAt": "2026-10-16T06:23:21.004Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 1,
+      "planned": 61,
+      "safetyStop": {
+        "id": "AUDIT-0041",
+        "reason": "Could not isolate failed navigation: Error: cdpSession.send: Protocol error (Page.stopLoading): Not attached to an active page"
+      }
+    },
+    {
+      "path": "native-2/browser-smoke-results/native-probe.json",
+      "sha256": "5655b759682fd2010cebfa8429f5a30d2fe86e881acd09706250fce55ca8d2d2",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:21.251Z",
+      "finishedAt": "2026-10-16T06:25:36.452Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 2,
+      "planned": 40,
+      "safetyStop": null
+    },
+    {
+      "path": "native-3/browser-smoke-results/native-probe.json",
+      "sha256": "9919d3d523f4c2e76ad07d99c676d73bd48e14ecd6a9405ae8fb37956a654a6b",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:27.302Z",
+      "finishedAt": "2026-10-16T06:22:16.417Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 3,
+      "planned": 13,
+      "safetyStop": null
+    },
+    {
+      "path": "native-4/browser-smoke-results/native-probe.json",
+      "sha256": "a6d18e5676cc71d542b839675c185bc73d518ca5cde80ef7166056c1cacce4f8",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:28.124Z",
+      "finishedAt": "2026-10-16T06:23:00.508Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 4,
+      "planned": 46,
+      "safetyStop": {
+        "id": "AUDIT-0087",
+        "reason": "Could not isolate failed navigation: Error: cdpSession.send: Protocol error (Page.stopLoading): Not attached to an active page"
+      }
+    },
+    {
+      "path": "native-5/browser-smoke-results/native-probe.json",
+      "sha256": "eec35b0ad9a4d1c097b64dcaf5310249e4f4934ee198115d223e65fca55c7e38",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:30.877Z",
+      "finishedAt": "2026-10-16T06:24:56.552Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 5,
+      "planned": 36,
+      "safetyStop": null
+    },
+    {
+      "path": "native-6/browser-smoke-results/native-probe.json",
+      "sha256": "d90db4d960c612998df59fd18bf8b418661892f5e8a629d2bd0fd895b01f673f",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:24.375Z",
+      "finishedAt": "2026-10-16T06:22:53.063Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 6,
+      "planned": 20,
+      "safetyStop": null
+    },
+    {
+      "path": "native-7/browser-smoke-results/native-probe.json",
+      "sha256": "90744aa5450eff5f66aca7c87d47d09ac5af08fd12c6e0920b57ec7a92f40190",
+      "sourceCommit": "bbbed82e5027e26a9fae5fbf4c845732fde4e722",
+      "packagedSourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+      "bootstrapTests": [
+        {
+          "id": "N01",
+          "status": "PASS"
+        },
+        {
+          "id": "N02",
+          "status": "PASS"
+        },
+        {
+          "id": "N03",
+          "status": "PASS"
+        },
+        {
+          "id": "N04",
+          "status": "PASS"
+        },
+        {
+          "id": "N05",
+          "status": "PASS"
+        },
+        {
+          "id": "N06",
+          "status": "PASS"
+        },
+        {
+          "id": "N07",
+          "status": "PASS"
+        },
+        {
+          "id": "N08",
+          "status": "PASS"
+        },
+        {
+          "id": "N09",
+          "status": "PASS"
+        }
+      ],
+      "startedAt": "2026-10-16T06:20:30.635Z",
+      "finishedAt": "2026-10-16T06:23:09.890Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "status": "LIVE AUDIT COLLECTION COMPLETE",
+      "failure": null,
+      "uncaughtPanelErrors": [],
+      "shard": 7,
+      "planned": 16,
+      "safetyStop": null
+    }
+  ],
+  "rowStatusCounts": {
+    "OBSERVED_SCAN": 176,
+    "CURRENT_COMMERCE_UNCONFIRMED": 21,
+    "ENVIRONMENT_OR_ACTION_ERROR": 3,
+    "BLOCKED_AFTER_PROFILE_SAFETY_STOP": 64,
+    "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4
+  },
+  "accessibleScansBeforeDeduplication": 176,
+  "duplicateFinalPages": [],
+  "accessibleDistinctPages": 176,
+  "distinctHostnames": 40,
+  "minimum150Met": true,
+  "positiveWeightEvidencePages": 32,
+  "noPositiveWeightEvidencePages": 144,
+  "bothNumericalEstimatesUnknownPages": 176,
+  "severeWarningPages": 0,
+  "riskDistributions": {
+    "merchantRisk": {
+      "unknown": 160,
+      "low": 15,
+      "moderate": 1
+    },
+    "deceptionRisk": {
+      "unknown": 160,
+      "low": 16
+    },
+    "manipulationRisk": {
+      "unknown": 160,
+      "low": 16
+    },
+    "fulfillmentRisk": {
+      "unknown": 176
+    }
+  },
+  "positiveSignalCounts": {
+    "OFFICIAL_STORE_CLAIM_UNVERIFIED": 10,
+    "CATALOG_SALE_PREVALENCE": 5,
+    "FINAL_SALE_BROAD": 15,
+    "SCARCITY_LANGUAGE": 1,
+    "KNOWN_AFFILIATED_MERCHANT_NETWORK": 1
+  },
+  "allSignalCounts": {
+    "COMMERCE_PLATFORM_DETECTED": 153,
+    "COMMERCE_PLATFORM_CONTEXT": 153,
+    "MERCHANT_JURISDICTIONS_DISCLOSED": 83,
+    "PRODUCT_IDENTIFIERS_PRESENT": 144,
+    "SUPPLY_CHAIN_PROFILE": 176,
+    "OFFICIAL_STORE_CLAIM_UNVERIFIED": 10,
+    "EXPLICIT_ORIGIN_CLAIMS": 18,
+    "MADE_IN_USA_PREFERENCE_MISMATCH": 12,
+    "FULFILLMENT_ORIGIN_OBSERVATION": 19,
+    "CATALOG_SALE_PREVALENCE": 5,
+    "MERCHANT_ORIGIN_BURIED_IN_SECONDARY_PAGES": 10,
+    "FINAL_SALE_BROAD": 15,
+    "SCARCITY_LANGUAGE": 1,
+    "REVIEWED_BRAND_DOMAIN_MATCH": 2,
+    "REVIEW_PLATFORM_JUDGEME": 1,
+    "KNOWN_AFFILIATED_MERCHANT_NETWORK": 1
+  },
+  "languageCounts": {
+    "es": 26,
+    "de-DE": 10,
+    "it-IT": 30,
+    "de-AT": 20,
+    "nl-NL": 15,
+    "el": 5,
+    "de": 20,
+    "en": 9,
+    "en-US": 6,
+    "es-MX": 15,
+    "fr-FR": 10,
+    "nl": 5,
+    "ja": 5
+  },
+  "actionCounts": [
+    {
+      "action": "policy",
+      "status": "OBSERVED",
+      "count": 176
+    },
+    {
+      "action": "published-outside",
+      "status": "OBSERVED_UI_OUTCOME",
+      "count": 1
+    },
+    {
+      "action": "scan",
+      "status": "OBSERVED",
+      "count": 176
+    },
+    {
+      "action": "security-outside",
+      "status": "OBSERVED_UI_OUTCOME",
+      "count": 1
+    },
+    {
+      "action": "shipping",
+      "status": "OBSERVED",
+      "count": 176
+    }
+  ],
+  "limits": [
+    "Historical source shopping-scam labels are not independent current fraud/dropshipping truth",
+    "Multiple correlated products per merchant and unresolved operator clusters; hostname count is not independent operator count",
+    "ScamFerret was known in development research; historical opinions displayed separately without risk-weight import",
+    "No accepted precision/recall/false-warning rate; no delivery/checkout/authentication test",
+    "Positive-weight evidence can concern manipulation rather than dropshipping or deception",
+    "UNKNOWN is abstention, never clean or a correct scam detection"
+  ],
+  "accessibleDistinctNativeScanAttempts": 176,
+  "nativeAttemptHostnames": 40,
+  "minimum150NativeFunctionTestsMet": true,
+  "successfulExtractionMinimum150Met": true,
+  "nativeScanRefusalCounts": {},
+  "hiddenCredentialFlaggedAttempts": 161
+}

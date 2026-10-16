@@ -1,0 +1,20 @@
+{
+  "artifact": 12029656200,
+  "digest": "sha256:4317c1559c08aa24ff8a425efe249f10cb73be5ac6478c3d71561a8cf2cb97a1",
+  "sourceReceipt": {
+    "sourceCommit": "aa84acc6207340755ffb55b5c8d956995f57b504",
+    "recordedAt": "2026-10-16T06:37:54.761Z",
+    "status": "NO_FINDINGS",
+    "reports": [
+      {
+        "file": "javascript.sarif",
+        "sha256": "7bea876e02d3667284a2de7489ef6a6828b69361ffe3a3b07d3bfd7a1f7b4755",
+        "status": "NO_FINDINGS",
+        "findings": []
+      }
+    ]
+  },
+  "sarifSha256": "7bea876e02d3667284a2de7489ef6a6828b69361ffe3a3b07d3bfd7a1f7b4755",
+  "results": 0,
+  "allInvocationsSuccessful": true
+}

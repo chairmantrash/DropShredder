@@ -1,8 +1,8 @@
-# Work queue — authoritative snapshot, October 13, 2026
+# Work queue — authoritative snapshot, October16,2026
 
 ## Capability testing and repair update
 
-- DS-058 CLAIMED / RUNNING: split-element manufacturer-code fallback, demonstrated by actual public label plus prior real scan. No production edit before all268 DS-057 outcomes finish. Task: workplane/tasks/DS-058.md.
+- DS-058 VERIFYING / PUBLICATION PENDING: repair accepted after all268 fresh beta4 outcomes completed. Changed package230 successful scans/54 hosts,10 explicit MPN reports versus0,38 evidence-bearing pages,0 severe/privacy/panel errors/profile stops.440 core,87 native,all7 browser groups and finding-free CodeQL pass on aa84acc. PR25 integrated canonical58856eb. Publish exact accepted ZIP17f5ae15 as beta5, verify actual public downloads, then close. Task: workplane/tasks/DS-058.md.
 
 - DS-057 DONE: all268 current public-beta4 outcomes collected before repair;221 actual scans/50 hosts,36 evidence-bearing pages,0 severe/privacy/uncaught-panel errors.22 navigation/environment errors retained; interrupted-navigation cascade identified in collector. Exact public ZIP/all54 files verified in eight profiles. Receipt: DS-057-COMPLETION-20261016.json.
 

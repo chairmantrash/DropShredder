@@ -25,3 +25,5 @@ tools/browser-smoke/beta-collector-manifest.json
 beta3-packet/
 
 /beta4-packet/
+
+/beta5-packet/

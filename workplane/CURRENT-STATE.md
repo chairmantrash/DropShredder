@@ -1,3 +1,9 @@
+# Current state — October16,2026: repaired beta5 accepted, publication pending
+
+Beta4 remains OPEN. DS-058 changed-package acceptance is complete: all268 outcomes,230 successful public scans/54 hosts,38 evidence-bearing pages,10 explicit manufacturer codes versus0 on the fresh baseline. All230 numerical estimates remain UNKNOWN;0 severe warnings,0 native privacy refusals,0 uncaught panel errors,0 profile stops.440 core,87 headed native,all7 browser groups and finding-free CodeQL pass. PR25 is integrated into canonical58856eb5226c80dfed90ad07a2d16143ef0a5fbd. Exact existing CI ZIP17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c/sourceae94718c310fdf253fcfbef156fc49b30bb4a8d9 is prepared for beta5; public beta5 download verification is pending. Original failed profiles and all268 fresh beta4 outcomes are retained. This is functional extraction evidence, not independent fraud/dropshipping accuracy acceptance. Main/Store unchanged; PR9 draft.
+
+---
+
 # Current state — October16,2026: beta4 open, fresh testing complete; MPN repair verifying
 
 **BETA4 OPEN**, published2026-10-16T05:49:10Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.4 . All7 public assets independently downloaded without authentication and byte/hash verified; all54 package files match accepted inventory. Existing CI ZIP25,985,652bytes/SHA25684edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752; source/tag9aed11c9d26f79ba1f1824a92ccc1adec78905ce/tree5956c9f997fd58ef24c360c1679af40a50bcc8a3. Publication headb6ec6abca04584f231522d69294a62ac65564568/run38857635951.
