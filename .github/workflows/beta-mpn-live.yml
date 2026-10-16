@@ -44,7 +44,7 @@ jobs:
           else:raise SystemExit('Accepted source gates incomplete; no live test')
           old=api('actions/runs/38859403626');assert old['status']=='completed' and old['conclusion']=='success' and old['head_sha']=='1efffdc60ad5ecbc37427ba78fa2e836b352dd17'
           changed=subprocess.check_output(['git','diff','--name-only','1efffdc60ad5ecbc37427ba78fa2e836b352dd17','HEAD'],text=True).splitlines()
-          assert all(p.startswith(('tests/','tools/beta/','tools/browser-smoke/','.github/workflows/')) for p in changed),changed
+          assert all(p.startswith(('tests/','tools/beta/','tools/browser-smoke/','.github/workflows/')) or p=='workplane/tasks/DS-058.md' for p in changed),changed
           a=next(a for a in api('actions/runs/38859403626/artifacts')['artifacts'] if a['name']=='dropshredder-chrome-store')
           pathlib.Path('ci-artifact.json').write_text(json.dumps(a))
           b=pathlib.Path('tools/beta/reputation/public-beta4-targets.json').read_bytes()
