@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   baseline:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
+    if: false # Package identity preparation; renewed live workflow restored after inventory is recorded.
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     strategy:
