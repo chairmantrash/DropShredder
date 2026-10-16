@@ -1,0 +1,245 @@
+{
+  "scope": "Same fresh anonymous source bytes, detached parser comparison only; genuine native acceptance still required. Baseline source2c890b5 versus current repair. No fraud labels.",
+  "pages": [
+    {
+      "id": "yeezy",
+      "source": {
+        "id": "yeezy",
+        "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-380-lmnte-reflective-h02541/",
+        "responseUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-380-lmnte-reflective-h02541/",
+        "status": 200,
+        "bytes": 190489,
+        "sha256": "5a80f94078c67c72a74f0b1b7629df3dd4aff51b33ae53bc129537570f34de61",
+        "observedAt": "2026-10-16T08:18:02.827491+00:00"
+      },
+      "before": {
+        "title": "Adidas Yeezy Boost 380 Lmnte Reflective - H02541",
+        "brand": null,
+        "sku": "H02541",
+        "mpn": "H02541",
+        "gtin": null,
+        "price": 1638,
+        "currency": "MXN",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "after": {
+        "title": "Adidas Yeezy Boost 380 Lmnte Reflective - H02541",
+        "brand": null,
+        "sku": "H02541",
+        "mpn": "H02541",
+        "gtin": null,
+        "price": 1638,
+        "currency": "MXN",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      }
+    },
+    {
+      "id": "umbrella",
+      "source": {
+        "id": "umbrella",
+        "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+        "responseUrl": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+        "status": 200,
+        "bytes": 308469,
+        "sha256": "9801a688eb3df60a161227d00bd9915a16bdde21795b2421a7ae9d2a1c97df02",
+        "observedAt": "2026-10-16T08:18:02.075945+00:00"
+      },
+      "before": {
+        "title": "Custom Golf Umbrella Manufacturer",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "after": {
+        "title": "Custom Golf Umbrella Manufacturer",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      }
+    },
+    {
+      "id": "tasse",
+      "source": {
+        "id": "tasse",
+        "url": "https://tassenbrennerei.shop/products/tasse-lieblings-postbote-herzen",
+        "responseUrl": "https://tassenbrennerei.shop/products/tasse-lieblings-postbote-herzen",
+        "status": 200,
+        "bytes": 583318,
+        "sha256": "bf4e174a1b7d31eda4a6e588b76f81404aaab9495d7b7b33f9e9e5514e5a6248",
+        "observedAt": "2026-10-16T08:18:02.072940+00:00"
+      },
+      "before": {
+        "title": "Tasse - Lieblings-Postbote (Herzen)",
+        "brand": "Tassenbrennerei",
+        "sku": "TB-106914-22",
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "after": {
+        "title": "Tasse - Lieblings-Postbote (Herzen)",
+        "brand": "Tassenbrennerei",
+        "sku": "TB-106914-22",
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      }
+    },
+    {
+      "id": "teva",
+      "source": {
+        "id": "teva",
+        "url": "https://www.teva-osterreich.at/teva-hurricane-xlt-2-slip-on-kinder-dunkelgrau-ybnj26839-p-590.html",
+        "responseUrl": "https://www.teva-osterreich.at/teva-hurricane-xlt-2-slip-on-kinder-dunkelgrau-ybnj26839-p-590.html",
+        "status": 200,
+        "bytes": 49527,
+        "sha256": "abc411e40e6f2692cad8ac70afc7c9aeff3bdc211a88530fcbd45a4955612edf",
+        "observedAt": "2026-10-16T08:18:02.381836+00:00"
+      },
+      "before": {
+        "title": "Teva Hurricane Xlt 2 Slip On Kinder DunkelGrau  [YBNJ26839]",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "structuredIdentityResolved": false,
+          "offerResolved": false
+        }
+      },
+      "after": {
+        "title": "Teva Hurricane Xlt 2 Slip On Kinder DunkelGrau  [YBNJ26839]",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "structuredIdentityResolved": false,
+          "offerResolved": false
+        }
+      }
+    },
+    {
+      "id": "warmly",
+      "source": {
+        "id": "warmly",
+        "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+        "responseUrl": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+        "status": 200,
+        "bytes": 293601,
+        "sha256": "57baa6ab86ddc2e216af99248de32563460fe5d6518c4e7b5183cead0f696c14",
+        "observedAt": "2026-10-16T08:18:01.870254+00:00"
+      },
+      "before": {
+        "title": "Nordic Wooden Hanging Wall Lamp",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": 218.95,
+        "currency": "USD",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "structuredIdentityResolved": false,
+          "offerResolved": false
+        }
+      },
+      "after": {
+        "title": "Nordic Wooden Hanging Wall Lamp",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": 218.95,
+        "currency": "USD",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "structuredIdentityResolved": false,
+          "offerResolved": false
+        }
+      }
+    },
+    {
+      "id": "vivo",
+      "source": {
+        "id": "vivo",
+        "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "responseUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "status": 200,
+        "bytes": 183601,
+        "sha256": "5b7b411853241e050b2e96247dbfb0d0227929fc69deade8191e98f44c2210cc",
+        "observedAt": "2026-10-16T08:34:42.607103+00:00"
+      },
+      "before": {
+        "title": "4A Type-C USB Cable",
+        "brand": null,
+        "sku": null,
+        "mpn": null,
+        "gtin": null,
+        "price": null,
+        "currency": null,
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "structuredIdentityResolved": false,
+          "offerResolved": false
+        }
+      },
+      "after": {
+        "title": "4A Type-C USB Cable",
+        "brand": "vivo Philippines Official Store",
+        "sku": "11677981",
+        "mpn": null,
+        "gtin": null,
+        "price": 479,
+        "currency": "PHP",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      }
+    }
+  ]
+}

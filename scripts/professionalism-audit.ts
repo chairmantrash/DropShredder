@@ -9,6 +9,9 @@ const REVIEW_BYTES=20_000;
 const BLOCK_BYTES=40_000;
 // Temporary reviewed exception: characterize and decompose this orchestration module without mixing behavior changes.
 const documentedLargeFiles=new Set<string>(['entrypoints/sidepanel/main.ts']);
+// DS-059 reviewed exception: Chrome copies this entire injected function body.
+// No closures/eval/shared page state. The documented exception has a hard cap.
+const serializedExtractorReview='brain/decisions/20261016-001-typed-identity-and-observed-countdowns.md';
 
 function walk(dir:string):string[]{
   return fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>{
@@ -22,7 +25,8 @@ const executable=ROOTS.flatMap(root=>walk(root))
 
 for(const file of executable){
   const size=fs.statSync(file).size;
-  if(size>BLOCK_BYTES && !documentedLargeFiles.has(file)){
+  const boundedSerializedExtractor=file==='src/extraction/page-scan.ts'&&size<=45_000&&fs.existsSync(serializedExtractorReview);
+  if(size>BLOCK_BYTES && !documentedLargeFiles.has(file)&&!boundedSerializedExtractor){
     errors.push(`${file} is ${size} bytes (> ${BLOCK_BYTES}); decompose or document a reviewed exception`);
   }else if(size>REVIEW_BYTES){
     warnings.push(`${file} is ${size} bytes (> ${REVIEW_BYTES}); architecture review recommended`);

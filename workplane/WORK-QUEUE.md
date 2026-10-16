@@ -2,6 +2,8 @@
 
 ## Capability testing and repair update
 
+- DS-059 CLAIMED / RUNNING: primary-source research of demonstrated failures/weaknesses, bounded typed-identity and observed-countdown repairs, price-independent structured-product test admission, then complete renewed native/security/live validation. Beta5 stays open. Task: workplane/tasks/DS-059.md.
+
 - DS-058 DONE — BETA5 OPEN, published2026-10-16T06:53:49Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5 . All7 unauthenticated public asset downloads/all54 package hashes verified. Exact accepted CI ZIP17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c reused without rebuild. All268 outcomes,230 successful scans/54 hosts,10 explicit MPN reports versus0,38 evidence-bearing pages,0 severe/privacy/panel errors/profile stops.440 core,87 native,all7 browser groups and finding-free CodeQL pass. Original failures preserved; unavailable/error counts retained. Receipts: DS-058-COMPLETION-20261016.json and DS-058-BETA5-OPEN-20261016.json.
 
 - DS-057 DONE: all268 current public-beta4 outcomes collected before repair;221 actual scans/50 hosts,36 evidence-bearing pages,0 severe/privacy/uncaught-panel errors.22 navigation/environment errors retained; interrupted-navigation cascade identified in collector. Exact public ZIP/all54 files verified in eight profiles. Receipt: DS-057-COMPLETION-20261016.json.

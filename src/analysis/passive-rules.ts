@@ -8,6 +8,7 @@ import {brandAffiliationEvidence} from './brand-affiliation';
 import {fulfillmentDisclosure,fulfillmentDisclosureEvidence} from './fulfillment-disclosure';
 
 const scarcityPatterns=[
+  /\b(?:sale|offer|deal)\s+ends\s+(?:in\s+)?\d{1,3}:\d{2}:\d{2}\b/i,
   /only\s+\d+\s+(?:left|remaining)/i,
   /sale\s+ends\s+(?:today|tonight)/i,
   /limited\s+time/i,

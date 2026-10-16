@@ -108,6 +108,8 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           if (Array.isArray(record['@graph'])) walk(record['@graph'],depth+1);
           if(record.hasVariant) walk(record.hasVariant,depth+1);
           if(record.mainEntity) walk(record.mainEntity,depth+1);
+          if(record.isVariantOf) walk(record.isVariantOf,depth+1);
+          if(record.brand) walk(record.brand,depth+1);
         };
         let jsonScripts=0;
         for(let i=0;i<Math.min(document.scripts.length,LIMITS.scripts) && jsonScripts<MAX_JSON_SCRIPTS;i++){
@@ -143,7 +145,16 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           : bounded(publicText(publicNode('h1'),500)||undefined,500);
         const translatedPage=document.documentElement.classList.contains('translated-ltr')||document.documentElement.classList.contains('translated-rtl');
         const originalMetaTitle=meta('meta[property="og:title"]');
-        const exact=products.filter(node=>ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
+        const soleCurrentOffer=(node:Record<string,unknown>):boolean=>{
+          const offers=Array.isArray(node.offers)?node.offers:[node.offers];
+          const offer=offers[0];if(offers.length!==1||!offer||typeof offer!=='object'||Array.isArray(offer))return false;
+          const value=offer as Record<string,unknown>,type=value['@type'];
+          if(!(type==='Offer'||Array.isArray(type)&&type.includes('Offer'))||normalizeUrl(value.url)!==currentUrl)return false;
+          // A single named Product/Offer can bind an explicit variant URL.
+          // Multiple offers or a different parent path remain unresolved.
+          const parent=normalizeUrl(node.url);return Boolean(parent&&!new URL(parent).search&&new URL(parent).pathname===location.pathname&&visibleTitle&&named(node.name)===named(visibleTitle));
+        };
+        const exact=products.filter(node=>soleCurrentOffer(node)||ownUrls(node).includes(currentUrl) && (node.url!==undefined || Boolean(visibleTitle && named(node.name)===named(visibleTitle))));
         let product:Record<string,unknown>|undefined=exact.length===1?exact[0]:undefined;
         let selectedByControls=false;
         // Some ProductGroups share one URL. Require one page-scoped group and
@@ -190,10 +201,45 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           if (Array.isArray(v)) return bounded(v.find(x=>typeof x==='string') as string|undefined,4000);
           return undefined;
         };
+        // Resolve references only inside this bounded document graph. No fetch,
+        // ancestry chain or parent identifier/offer inheritance is permitted.
+        const graphId=(v:unknown):string|undefined=>{
+          if(typeof v!=='string'||v.length>2048)return undefined;
+          try{const u=new URL(v,location.href);return /^https?:$/.test(u.protocol)?u.href:undefined;}catch{return undefined;}
+        };
+        const references=(value:unknown,node:Record<string,unknown>):boolean=>{
+          const object=asRecord(value),id=graphId(typeof value==='string'?value:object?.['@id']);
+          return value===node||Boolean(id&&id===graphId(node['@id']));
+        };
+        const parents=product?jsonNodes.filter(node=>types(node).includes('ProductGroup')&&(
+          (Array.isArray(node.hasVariant)?node.hasVariant:[node.hasVariant]).some(v=>references(v,product!))||
+          references(product!.isVariantOf,node))):[];
+        const parent=parents.length===1?parents[0]:undefined;
+        const dimensions=Array.isArray(parent?.variesBy)?parent.variesBy:parent?.variesBy===undefined?[]:[parent.variesBy];
+        let dimensionsResolved=dimensions.length<=16;const varying=new Set<string>();
+        for(const value of dimensions.slice(0,16)){
+          const term=typeof value==='string'?value:asRecord(value)?.['@id'];
+          if(typeof term!=='string'||term.length>200)dimensionsResolved=false;
+          else varying.add(term.split(/[\/#]/).at(-1)!.toLowerCase());
+        }
+        const shared=(key:'brand'|'material'):unknown=>product&&Object.hasOwn(product,key)?product[key]:parent&&dimensionsResolved&&!varying.has(key)?parent[key]:undefined;
+        const brandName=(value:unknown):string|undefined=>{
+          const names=new Set<string>();
+          for(const v of (Array.isArray(value)?value:[value]).slice(0,8)){
+            if(typeof v==='string'){const name=first(v);if(name)names.add(name);continue;}
+            let record=asRecord(v);
+            if(record&&!record.name&&record['@id']){
+              const targets=jsonNodes.filter(n=>types(n).some(t=>t==='Brand'||t==='Organization')&&references(record,n));
+              record=targets.length===1?targets[0]:undefined;
+            }
+            const name=first(record?.name);if(name)names.add(name);
+          }
+          return names.size===1?[...names][0]:undefined;
+        };
+        const structuredBrand=brandName(shared('brand'));
         const offers=(Array.isArray(product?.offers)?product.offers:[product?.offers]).map(asRecord).filter((v):v is Record<string,unknown>=>Boolean(v));
         const currentOffers=offers.filter(node=>ownUrls(node).includes(currentUrl));
         const offer=currentOffers.length===1?currentOffers[0]:offers.length===1 && (!ownUrls(offers[0]!).length || ownUrls(offers[0]!).includes(currentUrl) || selectedByControls)?offers[0]:undefined;
-        const brand=asRecord(product?.brand);
         const seller=asRecord(offer?.seller ?? product?.seller);
         const aggregateNode=asRecord(product?.aggregateRating);
         const hostedRating=typeof aggregateNode?.ratingValue==='number'?aggregateNode.ratingValue:visibleNumber(String(aggregateNode?.ratingValue??''));
@@ -243,7 +289,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           ? product?.additionalProperty
           : product?.additionalProperty ? [product.additionalProperty] : [];
         const specifications:Record<string,string>={};
-        for(const key of ['color','size','capacity','material']){const value=first(product?.[key]??(key==='color'?product?.colour:undefined));if(value) specifications[key]=value.slice(0,200);}
+        for(const key of ['color','size','capacity','material']){const value=first(key==='material'?shared('material'):product?.[key]??(key==='color'?product?.colour:undefined));if(value) specifications[key]=value.slice(0,200);}
         for(const entry of additionalProperties){
           const record=asRecord(entry);
           const name=first(record?.name);
@@ -272,6 +318,73 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           }
           return !element;
         };
+        // Typed Microdata is a fallback only, bound to one current public Product.
+        // Metadata content attributes are public declarations; control values are never read.
+        const identityExcluded='form,input,textarea,select,option,[contenteditable],blockquote,q,[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"]';
+        const publicIdentityNode=(node:Element):boolean=>{
+          if(excluded(node)||node.closest(identityExcluded))return false;
+          let cursor:Element|null=node;let depth=0;
+          while(cursor&&depth++<32){
+            if(cursor.matches('[hidden],[aria-hidden="true"]')||/display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)/i.test(cursor.getAttribute('style')??''))return false;
+            if(typeof getComputedStyle==='function'&&!(cursor===node&&node.matches('meta,link'))){const style=getComputedStyle(cursor);if(style.display==='none'||style.visibility==='hidden'||style.visibility==='collapse')return false;}
+            cursor=cursor.parentElement;
+          }
+          return !cursor;
+        };
+        const productScope=(node:Element)=>node.closest('[itemscope][itemtype~="https://schema.org/Product"],[itemscope][itemtype~="http://schema.org/Product"]');
+        const microText=(node:Element,scope:Element):string=>{
+          const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);let text='';
+          for(let i=0;i<160&&text.length<200;i++){
+            const part=walker.nextNode();if(!part)break;const parent=part.parentElement;
+            if(parent&&productScope(parent)===scope&&publicIdentityNode(parent))text+=(part.nodeValue??'').slice(0,200-text.length);
+          }
+          return text;
+        };
+        const microValues=(scope:Element,key:string):string[]=>{
+          const nodes=scope.querySelectorAll(`[itemprop~="${key}"]`),values:string[]=[];
+          for(let i=0;i<Math.min(nodes.length,40);i++){
+            const node=nodes[i]!;if(productScope(node)!==scope||!publicIdentityNode(node))continue;
+            // Product properties inside another nested item (e.g. Offer/Review)
+            // cannot lend their identifiers to the parent Product.
+            const nested=node.parentElement?.closest('[itemscope]');
+            if(nested&&nested!==scope)continue;
+            const value=node.matches('meta')?node.getAttribute('content'):node.matches('link,a')?node.getAttribute('href'):microText(node,scope);
+            if(value?.trim()&&value.length<=200)values.push(value.trim());
+          }
+          return [...new Set(values)].slice(0,12);
+        };
+        const microScopes:Element[]=[];
+        const microWalker=document.createTreeWalker(document.documentElement,NodeFilter.SHOW_ELEMENT);
+        for(let i=0;i<MAX_ELEMENTS&&microScopes.length<5;i++){
+          const node=microWalker.nextNode() as Element|null;if(!node)break;
+          if(!node.matches('[itemscope][itemtype~="https://schema.org/Product"],[itemscope][itemtype~="http://schema.org/Product"]')||!node.closest('main,[role="main"]')||!publicIdentityNode(node))continue;
+          const urls=microValues(node,'url').map(normalizeUrl).filter(Boolean),names=microValues(node,'name');
+          const exactUrl=urls.length===1&&urls[0]===currentUrl;
+          const variantQuery=[...new URL(location.href).searchParams.keys()].some(k=>/^(?:variant|sku|color|colour|size)$/i.test(k));
+          if(!exactUrl&&(urls.length||variantQuery||products.length>1))continue;
+          if(names.length!==1||!visibleTitle||named(names[0])!==named(visibleTitle))continue;
+          microScopes.push(node);
+        }
+        const microScope=microScopes.length===1?microScopes[0]:undefined;
+        const uniqueMicro=(key:string):string|undefined=>{if(!microScope)return undefined;const values=microValues(microScope,key);return values.length===1?values[0]:undefined;};
+        let microBrand=uniqueMicro('brand');
+        if(microScope&&!microBrand){
+          const names=new Set<string>();
+          for(const node of [...microScope.querySelectorAll('[itemprop~="brand"][itemscope]')].slice(0,8)){
+            if(productScope(node)!==microScope||!publicIdentityNode(node))continue;
+            for(const name of [...node.querySelectorAll('[itemprop~="name"]')].slice(0,8))if(publicIdentityNode(name)){
+              const value=name.matches('meta')?name.getAttribute('content'):microText(name,microScope);if(value?.trim())names.add(value.trim());
+            }
+          }
+          if(names.size===1)microBrand=[...names][0];
+        }
+        const microMpn=uniqueMicro('mpn');
+        const validMicroGtins=microScope?['gtin','gtin8','gtin12','gtin13','gtin14'].flatMap(k=>microValues(microScope,k)).map(v=>normalizeDigits(v).replace(/[\s-]/g,'')).filter(v=>{
+          if(!/^(?:\d{8}|\d{12}|\d{13}|\d{14})$/.test(v)||/^0+$/.test(v))return false;
+          let sum=0;for(let i=v.length-2,n=0;i>=0;i--,n++)sum+=Number(v[i])*(n%2===0?3:1);
+          return (10-sum%10)%10===Number(v.at(-1));
+        }):[];
+        const microGtin=new Set(validMicroGtins.map(v=>v.padStart(14,'0'))).size===1?validMicroGtins[0]:undefined;
         let pageChars=0, visitedTextNodes=0;
         if(document.body){
           const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -422,12 +535,12 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             description:first(product?.description) || meta('meta[property="og:description"]') || meta('meta[name="description"]'),
             price:offer && ((typeof offer.price==='number' && Number.isFinite(offer.price) && offer.price>=0) || (typeof offer.price==='string' && /^\d+(?:\.\d+)?$/.test(offer.price.trim())))?Number(offer.price):boundVisiblePrice,
             currency:first(offer?.priceCurrency)||explicitCurrency,
-            brand:first(brand?.name ?? product?.brand)||(visibleBrands.size===1?[...visibleBrands][0]:undefined),
+            brand:structuredBrand||microBrand||(visibleBrands.size===1?[...visibleBrands][0]:undefined),
             seller:first(seller?.name ?? offer?.seller ?? product?.seller) || amazonSeller,
             sku:first(product?.sku) || visibleSku,
             asin:amazonAsin,
-            mpn:first(product?.mpn)||(visibleMpns.size===1?[...visibleMpns][0]:undefined),
-            gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8),
+            mpn:first(product?.mpn)||microMpn||(visibleMpns.size===1?[...visibleMpns][0]:undefined),
+            gtin:first(product?.gtin ?? product?.gtin13 ?? product?.gtin12 ?? product?.gtin14 ?? product?.gtin8)||microGtin,
             imageUrls:[...new Set(structuredImages.length?structuredImages:[meta('meta[property="og:image"]')].filter((v):v is string=>Boolean(v)))].slice(0,30),
             jsonLdProductCount:jsonNodes.filter(node=>{
               const t=node['@type'];
@@ -442,7 +555,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             claims:[],
             specifications,
             variantId:typeof product?.sku==='string'?product.sku.slice(0,200):undefined,
-            extraction:{method:(product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved')+(!first(product?.sku)&&visibleSku?'; explicit visible SKU':''),structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
+            extraction:{method:(product?(selectedByControls?'current ProductGroup selected controls':'current-product JSON-LD'):'page metadata; structured identity unresolved')+(!first(product?.sku)&&visibleSku?'; explicit visible SKU':'')+((!structuredBrand&&microBrand)||(!first(product?.mpn)&&microMpn)||(!first(product?.gtin??product?.gtin13??product?.gtin12??product?.gtin14??product?.gtin8)&&microGtin)?'; current-product Microdata identifiers':''),structuredIdentityResolved:Boolean(product),offerResolved:Boolean(offer),...(translatedPage&&typeof product?.name==='string'?{originalStructuredTitle:product.name.slice(0,500)}:{})},
             pageSignals:[
               ...(('Shopify' in window || [...scriptUrls,...linkUrls].some(url=>fromHost(url,'cdn.shopify.com')))
                 ? ['platform:shopify'] : []),

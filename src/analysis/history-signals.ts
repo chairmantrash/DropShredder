@@ -2,13 +2,19 @@ import type { EvidenceSignal } from '../types/evidence';
 import type { DropShredderReport } from '../types/report';
 import type { StoredObservation } from '../storage/history';
 import { compareProductIdentity } from './product-identity';
+import {commerceText} from '../languages/commerce-text';
 
-function scarcityTexts(report:DropShredderReport):string[] {
-  return report.evidence
-    .filter(e=>e.family==='scarcity')
-    .map(e=>e.observedValue || e.title)
-    .map(v=>v.toLowerCase().replace(/\d{1,2}:\d{2}(?::\d{2})?/g,'<time>').replace(/\s+/g,' ').trim())
-    .filter(Boolean);
+function countdowns(report:DropShredderReport):Array<{key:string;seconds:number}> {
+  const out:Array<{key:string;seconds:number}>=[];
+  for(const item of report.evidence.slice(0,300).filter(e=>e.family==='scarcity'&&e.id!=='REPEATED_SCARCITY_CLAIM').slice(0,20)){
+    const text=commerceText(item.observedValue||item.title,300).text.toLowerCase();
+    const hit=text.match(/\b(?:sale|offer|deal)\s+ends\s+(?:in\s+)?(\d{1,3}):(\d{2}):(\d{2})\b/);
+    if(!hit||Number(hit[2])>59||Number(hit[3])>59)continue;
+    const seconds=Number(hit[1])*3600+Number(hit[2])*60+Number(hit[3]);
+    if(seconds<=0||seconds>7*86400)continue;
+    out.push({key:hit[0].replace(/\d{1,3}:\d{2}:\d{2}/,'<time>').replace(/\s+/g,' '),seconds});
+  }
+  return out;
 }
 
 export function analyzeHistory(current:DropShredderReport, previous:StoredObservation[]):EvidenceSignal[] {
@@ -27,9 +33,11 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
   }).sort((a,b)=>b.capturedAt.localeCompare(a.capturedAt));
   if(!previous.length) return out;
 
-  const currentScarcity=new Set(scarcityTexts(current));
-  if(currentScarcity.size){
-    const matches=previous.filter(obs=>scarcityTexts(obs.report).some(v=>currentScarcity.has(v)));
+  for(const clock of countdowns(current)){
+    const deadline=now+clock.seconds*1000;
+    // A repeated low-stock phrase or a normally decreasing clock is not a reset.
+    // Require two real earlier visits and a later implied expiry beyond clock drift.
+    const matches=previous.filter(obs=>countdowns(obs.report).some(v=>v.key===clock.key&&deadline>Date.parse(obs.capturedAt)+v.seconds*1000+60_000));
     if(matches.length>=2){
       const oldest=Math.min(...matches.map(x=>Date.parse(x.capturedAt)).filter(Number.isFinite));
       const ageDays=Number.isFinite(oldest)
@@ -38,13 +46,16 @@ export function analyzeHistory(current:DropShredderReport, previous:StoredObserv
       out.push({
         id:'REPEATED_SCARCITY_CLAIM',family:'scarcity',
         severity:ageDays>=2?'strong':'moderate',confidence:ageDays>=2?.87:.68,
-        weight:ageDays>=2?20:9,title:'That "limited" deal keeps hanging around',
+        weight:ageDays>=2?20:9,title:'The countdown deadline moved later across visits',
         explanation:ageDays>=2
-          ? 'The same hurry-up message was still there across several visits and multiple days. A supposedly urgent deal that never seems to end deserves more skepticism.'
-          : 'The same hurry-up message has shown up more than once. We need more time before calling it a serious warning.',
-        observedValue:`${matches.length+1} matching observations across ${ageDays} day(s)`,
+          ? 'The displayed countdown implies a later expiry than on at least two earlier visits across multiple days. Check whether the promotion terms explain a recurring offer; this does not prove fraud or dropshipping.'
+          : 'The displayed countdown implies a later expiry than on at least two earlier visits. A recurring promotion can be legitimate; compare the stated deadline and terms.',
+        observedValue:`${matches.length+1} observations across ${ageDays} day(s); current implied deadline ${new Date(deadline).toISOString()}`,
         independentKey:'scarcity-longitudinal',
+        correlationKeys:['scarcity-copy'],
+        provenance:{sourceUrl:current.product.url,observedAt:current.product.capturedAt,method:'Local same-product observation timestamps plus explicit HH:MM:SS offer countdown; 60-second drift tolerance'},
       });
+      break;
     }
   }
 
