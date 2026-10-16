@@ -119,3 +119,25 @@ test('native widget model never links to outside scam services or requests data 
   d.doc.getElementById('outside-security')!.click();await new Promise(r=>setTimeout(r,20));assert.equal(permissions,1);assert.equal(calls,0);controls.reset();
  }finally{globalThis.fetch=oldFetch;g.chrome=oldChrome;d.restore();}
 });
+
+// DS-058: public merchant description places its labeled code in a child span.
+// These are owned structural fixtures, not merchant/accuracy ground truth.
+for(const [label,markup,expected] of [
+ ['Spanish span','<li>Código del fabricante: <span>GW3773</span></li>','GW3773'],
+ ['English strong','<p>Manufacturer Code: <strong>AB123</strong></p>','AB123'],
+ ['table cells','<table><tr><th>MPN:</th><td>ABC42</td></tr></table>','ABC42'],
+ ['review exclusion','<div class="review"><p>MPN: <span>REVIEW-42</span></p></div>',undefined],
+ ['related exclusion','<div class="related"><p>MPN: <span>RELATED-42</span></p></div>',undefined],
+ ['hidden value exclusion','<p>MPN: <span hidden>HIDDEN-42</span></p>',undefined],
+ ['CSS-hidden value exclusion','<p>MPN: <span style="display:none">HIDDEN-42</span></p>',undefined],
+ ['field value exclusion','<p>MPN: <input value="PRIVATE-MPN-42"></p>',undefined],
+ ['ambiguous codes','<p>MPN: <span>FIRST-12</span></p><p>MPN: <span>SECOND-34</span></p>',undefined],
+ ['no cross-row borrowing','<p>MPN:</p><p>UNRELATED-42</p>',undefined],
+ ['quote exclusion','<blockquote><p>MPN: <span>QUOTED-42</span></p></blockquote>',undefined],
+ ['private account exclusion','<form action="/account/login" hidden><p>MPN: <span>ACCOUNT-42</span></p><input type="password" value="PRIVATE-PASS"></form>',undefined],
+] as const)test('split public manufacturer-code extraction: '+label,()=>{
+ const d=setup('<html><head><title>Lamp</title></head><body><main><h1>Lamp</h1><p>$12.00</p><button>Add to cart</button>'+markup+'</main></body></html>');
+ try{for(const input of d.doc.querySelectorAll('input'))Object.defineProperty(input,'value',{get(){throw Error('Private field read');}});
+  const s=extractPageScan(kit);assert.equal(s.product.mpn,expected);assert.doesNotMatch(JSON.stringify(s.product),/PRIVATE-/);
+ }finally{d.restore();}
+});
