@@ -1,6 +1,6 @@
 # Research-backed repairs and renewed beta testing
 
-Four implemented repairs pass459 core tests,94 headed native checks,all seven browser groups and complete zero-finding CodeQL. The renewed public run records all269 targets:236 distinct successful native scans across56 hostnames. No severe warnings,native privacy refusals,uncaught panel errors or profile safety stops occurred. Beta6 publication/public-download verification follows these accepted results; beta5 remains open until then.
+Four implemented repairs pass459 core tests,94 headed native checks,all seven browser groups and complete zero-finding CodeQL. The renewed public run records all269 targets:236 distinct successful native scans across56 hostnames. No severe warnings,native privacy refusals,uncaught panel errors or profile safety stops occurred. [Beta6 is open](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6), published 2026-10-16T15:06:09Z. All seven public assets were independently downloaded without authentication and byte/hash verified, including all 54 compiled files; the exact accepted CI ZIP was reused without rebuilding.
 
 | Failure or weak area | Implemented solution | Observed verification |
 |---|---|---|
@@ -40,3 +40,5 @@ The serialized extractor's source-size exception is explicitly documented and ca
 No calibrated precision/recall or independently accepted detection rate is established. Merchant declarations and a valid barcode checksum do not authenticate product/manufacturer identity. A recurring promotion can legitimately renew; a reset is a qualified manipulation lead,not proof of fraud or dropshipping. Independent rights-cleared/disjoint labels and thresholds,native-language/legal review,real photographed labels,broader OS/accessibility/resource/lifecycle coverage and applicable real publisher/elapsed-week acceptance remain open beta work.
 
 Primary-source research and retrieved dates: [failures and solutions](DS-059-FAILURES-AND-SOLUTIONS-20261016.md). Evidence: [all269 outcomes](../runs/DS-059-PAGE-OUTCOMES-20261016.json), [same-cohort comparison](../runs/DS-059-BEFORE-AFTER-20261016.json), [native94](../runs/DS-059-NATIVE-EVIDENCE/native-probe.json), [original partial collection](../runs/DS-059-INITIAL-PAGE-OUTCOMES-20261016.json), [artifact identities](../runs/DS-059-ARTIFACT-IDENTITIES-20261016.json), [completion/publication status](../runs/DS-059-COMPLETION-20261016.json).
+
+Public release receipts: [beta6 open](../runs/DS-059-BETA6-OPEN-20261016.json) and [independent anonymous downloads](../runs/DS-059-BETA6-PUBLIC-DOWNLOAD-VERIFIED-20261016.json).

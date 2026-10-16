@@ -1,6 +1,6 @@
 {
   "task": "DS-059",
-  "status": "ACCEPTED_PENDING_PUBLICATION",
+  "status": "DONE_BETA6_OPEN",
   "recordedAt": "2026-10-16",
   "acceptedHarnessHead": "0167f5b8a9beae6d87deed65c42593aaa043c690",
   "acceptedHarnessTree": "4863dba825872e1fcff6e36127d256d9ddc56a48",
@@ -646,7 +646,13 @@
     "scope": "Current merchant-authored public metadata, not independent product/manufacture/authenticity truth"
   },
   "independentAccuracyAccepted": false,
-  "publication": "PENDING",
+  "publication": {
+    "status": "OPEN",
+    "publishedAt": "2026-10-16T15:06:09Z",
+    "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6",
+    "receipt": "DS-059-BETA6-OPEN-20261016.json",
+    "publicDownloads": "DS-059-BETA6-PUBLIC-DOWNLOAD-VERIFIED-20261016.json"
+  },
   "mainUnchanged": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
   "pr9": "DRAFT",
   "storeSubmitted": false

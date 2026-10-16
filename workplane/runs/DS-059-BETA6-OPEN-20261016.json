@@ -1,0 +1,115 @@
+{
+  "task": "DS-059",
+  "status": "BETA6_OPEN",
+  "release": {
+    "id": 415089684,
+    "html_url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6",
+    "tag_name": "v0.2.0-beta.6",
+    "published_at": "2026-10-16T15:06:09Z",
+    "target_commitish": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
+    "draft": false,
+    "prerelease": true,
+    "assets": [
+      {
+        "id": 647687790,
+        "name": "BETA-OBSERVATIONS.json",
+        "bytes": 18743,
+        "digest": "sha256:9dee46c6e20c47c665ca3471a9c98bcb42ae0412328bb3aa1ec099fbd7119f34",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/BETA-OBSERVATIONS.json"
+      },
+      {
+        "id": 647687794,
+        "name": "BUILD-INFO.json",
+        "bytes": 9331,
+        "digest": "sha256:16f92b79e7f29de7b23c48639a08503847bf455d17068bbfb5fa3b60c1846498",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/BUILD-INFO.json"
+      },
+      {
+        "id": 647687786,
+        "name": "DropShredder-0.2.0-beta.6-chrome.zip",
+        "bytes": 25988814,
+        "digest": "sha256:83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/DropShredder-0.2.0-beta.6-chrome.zip"
+      },
+      {
+        "id": 647687791,
+        "name": "INSTALL-AND-REPORT.md",
+        "bytes": 3364,
+        "digest": "sha256:89e070b6d1d9f2ddd57ac1df1c9e511a5641f59317182560e5545eb8a676bb6d",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/INSTALL-AND-REPORT.md"
+      },
+      {
+        "id": 647687787,
+        "name": "LIVE-PAGE-OUTCOMES.json",
+        "bytes": 3910587,
+        "digest": "sha256:183244d9eaa52d87e6a2930eb77de75f6d4b2097f197ba79304a3fe24f71398f",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/LIVE-PAGE-OUTCOMES.json"
+      },
+      {
+        "id": 647687812,
+        "name": "NATIVE-PROTOCOL.json",
+        "bytes": 95784,
+        "digest": "sha256:a4aa777db4f20e8311fe3628911579a80539299d2dd0e9b0dae37e071a1fa432",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/NATIVE-PROTOCOL.json"
+      },
+      {
+        "id": 647687819,
+        "name": "SHA256SUMS.txt",
+        "bytes": 103,
+        "digest": "sha256:85309459e8ac65af703345d7f6e4280069e29dd56aab9d0e929170eed4a6e76e",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/SHA256SUMS.txt"
+      }
+    ]
+  },
+  "productionSource": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
+  "productionTree": "ab126afcadd7c0b6015fc5e324ab45f33eadf569",
+  "acceptedHarnessHead": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "publicationHead": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0",
+  "publicationChecks": [
+    {
+      "name": "DropShredder CI",
+      "id": 38920970737,
+      "head_sha": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "CodeQL",
+      "id": 38920970975,
+      "head_sha": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "DropShredder accepted beta6 publication",
+      "id": 38920971019,
+      "head_sha": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "publicDownloads": "DS-059-BETA6-PUBLIC-DOWNLOAD-VERIFIED-20261016.json",
+  "allSevenAssetsUnauthenticatedByteVerified": true,
+  "all54PackageHashesMatch": true,
+  "rebuiltForPublication": false,
+  "independentAccuracyAccepted": false,
+  "mainUnchanged": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
+  "pr9": "DRAFT",
+  "storeSubmitted": false,
+  "publicationPacketArtifact": {
+    "id": 12053559670,
+    "digest": "sha256:25da6f4ca2be44f39d76c3d00a312929714926dc18fc41faf976c0a8acdd0e0f",
+    "run": 38920971019,
+    "head": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0"
+  },
+  "publicationSecurityArtifact": {
+    "artifact": 12054443611,
+    "run": 38920970975,
+    "head": "c73094f4e4fccb1d4a4bd36ed404b16bfb7bb4c0",
+    "wrapperSha256": "7ecc0da5f6e9bfc454e6d6c746b69880e8a6fe51a3746896515df3f2badd5317",
+    "sarifSha256": "1554684a82405b5f5f6df56333d2df0798ff95140427e3ac39c478ceacc0b8ac",
+    "completeSarifDownloaded": true,
+    "findings": 0,
+    "successfulInvocations": true
+  }
+}
