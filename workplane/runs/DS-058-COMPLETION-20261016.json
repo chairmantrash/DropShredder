@@ -1,6 +1,6 @@
 {
   "task": "DS-058",
-  "status": "ACCEPTED_PENDING_PUBLICATION",
+  "status": "DONE",
   "recordedAt": "2026-10-16",
   "production": {
     "artifact": 12028542454,
@@ -642,7 +642,13 @@
     "pass": true
   },
   "independentAccuracyAccepted": false,
-  "publication": "PENDING",
+  "publication": {
+    "status": "BETA5_OPEN",
+    "publishedAt": "2026-10-16T06:53:49Z",
+    "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5",
+    "receipt": "DS-058-BETA5-OPEN-20261016.json",
+    "allSevenPublicAssetsAnd54PackageHashesVerified": true
+  },
   "mainUnchanged": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
   "publicPromotionPR9": "DRAFT",
   "storeSubmitted": false

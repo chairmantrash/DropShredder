@@ -1,26 +1,28 @@
 # DropShredder Beta Testing
 
-DropShredder 0.2.0 beta 3 is an experimental public beta for Chrome/Chromium. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work. There is no claim that every store or product can be classified.
+DropShredder 0.2.0 beta 5 is an experimental public beta for Chrome/Chromium133 or later. Accuracy, native-language/legal-copy, original-photo and broader lifecycle validation are ongoing beta work.
 
 ## Download and install
 
-Use the [beta 3 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3), and download `DropShredder-0.2.0-beta.3-chrome.zip` plus `SHA256SUMS.txt`. The release is published only after exact-artifact/native/public-site checks and exact-head CI/CodeQL pass.
+Use the [beta 5 release](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5), and download `DropShredder-0.2.0-beta.5-chrome.zip` plus `SHA256SUMS.txt`.
 
-1. Verify ZIP SHA256 `0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.3-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.3-chrome.zip`).
+1. Verify ZIP SHA256 `17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c` (PowerShell: `Get-FileHash .\DropShredder-0.2.0-beta.5-chrome.zip -Algorithm SHA256`; macOS/Linux: `shasum -a 256 DropShredder-0.2.0-beta.5-chrome.zip`).
 2. Extract the ZIP into a folder you will keep. Its root contains `manifest.json`.
 3. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select that folder.
-4. Open a normal public product page, click the DropShredder extension icon, and use the side panel. Grant optional site access only when you choose the corresponding function.
-5. Report problems through [DropShredder GitHub issues](https://github.com/chairmantrash/DropShredder/issues). Use the report fields below and attach only scrubbed information. Removing the extension at `chrome://extensions` ends participation; no account or telemetry enrollment is required.
+4. Open a normal public product page, click the DropShredder extension icon, and use the side panel. Grant optional site access through the displayed Chrome controls.
+5. Report problems through [DropShredder GitHub issues](https://github.com/chairmantrash/DropShredder/issues). Use the report fields below and attach only scrubbed information. Removing the extension ends participation; no account or telemetry enrollment is required.
 
-BUILD-INFO.json lists all51 reviewed files and productionf2ea60e2ac42f6292d60dfe6069290a1758a6905, which the prerelease tag targets. BETA-OBSERVATIONS.json records actual native/live outcomes; NATIVE-PROTOCOL.json contains80 engineering/native checks, and LIVE-PAGE-OUTCOMES.json preserves all259 targets. The accepted native/live harness is8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. DS-054/055 receipts retain original refusals and subsequent repair.
+To update an existing unpacked beta, disable the extension and back up its folder. Replace that folder's contents with beta5, then reload and re-enable the existing extension. Keeping the same folder path preserves its extension ID and local data.
 
-To update an existing beta, replace the contents of its unpacked folder with beta3 and click Reload in chrome://extensions.
+BUILD-INFO.json lists all54 reviewed package files and production/tag source `ae94718c310fdf253fcfbef156fc49b30bb4a8d9`. The exact tested CI ZIP was reused without rebuilding. All7 public assets were independently downloaded without authentication and byte/hash verified. NATIVE-PROTOCOL.json records87 headed native checks; LIVE-PAGE-OUTCOMES.json preserves all268 target outcomes. Accepted native harness `aa84acc6207340755ffb55b5c8d956995f57b504`; six complete original live profiles use `bbbed82e5027e26a9fae5fbf4c845732fde4e722` and corrected profiles1/4 use the accepted harness, all with identical package bytes.
 
 ## Actual public-site observations
 
-The same259-target corpus now produces227 distinct successful native product extractions on47 hostnames, versus11 reports and216 privacy refusals before repair. Dormant login subtrees are excluded; activating private login/payment surfaces still refuses a scan and invalidates stale report actions.32 other targets remain unavailable/unconfirmed/navigation outcomes. All227 numerical estimates remain UNKNOWN;10 weak catalog-sale/final-sale findings and zero severe warnings.414 core tests,80 headed native checks and all seven accepted browser groups pass.
+The full268-target repeat produced230 distinct successful native product scans across54 hostnames,38 pages with positive-weight evidence,25 commerce-unconfirmed pages,4 unavailable/challenge pages,8 navigation/environment errors and1 redirected/private-surface refusal. Scan, policy and shipping each have230 recorded action outcomes. Explicit manufacturer-code reports increased from0 to10; the visible GW3773 manufacturer-code row is retained by the native scan. There were zero severe warnings, native privacy refusals, uncaught panel errors or profile safety stops.440 core tests,87 headed native checks,all seven browser groups and complete finding-free CodeQL pass.
 
-This is extraction coverage, not independent current scam/dropshipping accuracy. Historical source labels and correlated products do not prove truth or independent operators. The [ScamFerret research](workplane/research/DS-055-SCAMFERRET-RESEARCH-20261013.md) explains external evidence and API limitations; no cloud-model calls or runtime blacklist imports were added.
+All230 numerical dropshipping/resale estimates remain UNKNOWN. These results measure function and extraction coverage. Historical source labels, correlated products and weak evidence findings do not establish current scam truth or a validated detection rate. The [live acceptance report](workplane/research/DS-058-LIVE-BETA-ACCEPTANCE-20261016.md) retains the before/after comparison and initial collector failures.
+
+Open **Outside reports and consumer records** to explicitly request published historical research or existing security results. Those results stay inside the panel with source/date/scope; they do not change local product scores or submit a site for scanning. Actual historical lookup returned two dated records; urlscan HTTP403 remains an error. New reputation navigation uses Trustpilot, BBB and government originals. Missing or favorable outside data is not evidence of merchant delivery, product safety or legitimacy. [Primary-source research](workplane/research/DS-056-EXTERNAL-RESULTS-AND-DETECTION-20261013.md) records provider/API limitations.
 
 ## What to test
 Use normal public product/listing pages first. Try a mix of well-known manufacturers, ordinary resellers, marketplace listings, suspicious ads/stores, products with many reviews, and products with little information.
