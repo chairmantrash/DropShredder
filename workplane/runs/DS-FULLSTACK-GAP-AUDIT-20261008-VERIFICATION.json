@@ -1,0 +1,212 @@
+{
+  "task": "DS-FULLSTACK-GAP-AUDIT-20261008",
+  "verifiedAt": "2026-10-08",
+  "baseline": "7417aa2d5de90df3211586e5d1a4525c649ae0e8",
+  "node": "22.20.0",
+  "os": "Linux container",
+  "tests": {
+    "performed": 215,
+    "passed": 215,
+    "failed": 0,
+    "skipped": 0,
+    "newGapTests": 30,
+    "domHarness": "LinkeDOM 0.18.12 (development only)",
+    "notBrowserTests": true
+  },
+  "checks": [
+    {
+      "name": "clean-node22-npm-ci",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "215-tests",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "security",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "chrome-static-conformance",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "data-lint",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "architecture",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "clean-production-build-and-zip",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "release-audit",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "performance-static",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "package-layer-isolation",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "git-diff-check",
+      "result": "PASS",
+      "exitCode": 0
+    }
+  ],
+  "warnings": [
+    "Existing merchant-networks.ts 22420 bytes and sidepanel/main.ts 42941 bytes exceed architecture guideline.",
+    "npm emitted environment http-proxy config warning; clean install completed successfully."
+  ],
+  "archive": {
+    "bytes": 75475,
+    "sha256": "2c71f6fcaad0fa21aa086e8657f73769386a3d773e922cc530906351985a50e2",
+    "entries": [
+      "assets/sidepanel-DMQhI9ql.css",
+      "background.js",
+      "chunks/sidepanel-CI2J1yt_.js",
+      "content-scripts/auto.js",
+      "icon/128.png",
+      "icon/16.png",
+      "icon/32.png",
+      "icon/48.png",
+      "manifest.json",
+      "sidepanel.html"
+    ]
+  },
+  "unpackedBytes": 218929,
+  "manifest": {
+    "manifest_version": 3,
+    "name": "DropShredder",
+    "description": "Local-first commerce forensics and product provenance analysis.",
+    "version": "0.2.0",
+    "icons": {
+      "16": "icon/16.png",
+      "32": "icon/32.png",
+      "48": "icon/48.png",
+      "128": "icon/128.png"
+    },
+    "minimum_chrome_version": "133",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "permissions": [
+      "scripting",
+      "storage",
+      "contextMenus",
+      "sidePanel"
+    ],
+    "optional_host_permissions": [
+      "https://*/*"
+    ],
+    "action": {
+      "default_title": "Open DropShredder",
+      "default_icon": {
+        "16": "icon/16.png",
+        "32": "icon/32.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    }
+  },
+  "runtimeDependencies": 0,
+  "lockInstall": {
+    "command": "npm ci under Node 22.20.0",
+    "result": "PASS",
+    "installedPackages": 136,
+    "prepare": "wxt prepare PASS"
+  },
+  "benchmarks": {
+    "runtime": "v22.20.0",
+    "notMeasured": [
+      "Chrome wall time",
+      "DOM extraction",
+      "network latency",
+      "physical product accuracy"
+    ],
+    "scenarios": [
+      {
+        "name": "passive rules / 100k characters",
+        "iterations": 100,
+        "meanMs": 0.17896246999999932,
+        "p95Ms": 0.3939809999999966,
+        "maxMs": 0.8601150000000075
+      },
+      {
+        "name": "source matching / 250 observations x 12 images",
+        "iterations": 50,
+        "meanMs": 2.225206900000003,
+        "p95Ms": 2.9717549999999733,
+        "maxMs": 5.600565000000017
+      },
+      {
+        "name": "explicit image history / 250 observations x 12 x 12 images",
+        "iterations": 20,
+        "meanMs": 41.06446869999999,
+        "p95Ms": 49.45170600000006,
+        "maxMs": 49.45170600000006
+      },
+      {
+        "name": "fusion / 512 correlated signals",
+        "iterations": 100,
+        "meanMs": 0.24123466999999438,
+        "p95Ms": 0.8597910000000866,
+        "maxMs": 1.2630569999998897
+      }
+    ]
+  },
+  "probeReceipts": [
+    "brain/research/2026-10-08-CPSC-LIVE-PROBE.json",
+    "brain/research/2026-10-08-CPSC-TITLE-PROBE.json"
+  ],
+  "contrast": {
+    "method": "Math on CSS theme tokens, eight text/background pairs >=4.5:1",
+    "visualLayoutVerified": false,
+    "wcagComplianceClaim": false
+  },
+  "chromeQa": {
+    "result": "ENVIRONMENT BLOCKED",
+    "testsPerformed": 0,
+    "version": null,
+    "extensionId": null,
+    "reason": "No real desktop Chrome surface supporting unpacked extension installation available"
+  },
+  "limitations": [
+    "No native permission prompt, Chrome download, tab lifecycle, keyboard/screen-reader or visual layout verification.",
+    "DOM harness has select/MutationObserver differences; fixtures emulate native initial select state and observer ignores irrelevant attributes.",
+    "Export is public-HTTPS only and not a universal PII scrubber.",
+    "CPSC probes were real public HTTP requests, not Chrome extension fetches.",
+    "No population accuracy or physical-quality validation.",
+    "Synthetic Node timings exclude extraction, network and Chrome wall time.",
+    "Remote exact-head CI/CodeQL recorded separately after publication."
+  ],
+  "ownerHandoffs": [
+    "workplane/tasks/DS-GAP-RUNTIME-FOLLOWUP-20261008.md",
+    "workplane/tasks/DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md"
+  ]
+}

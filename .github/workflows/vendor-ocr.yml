@@ -1,0 +1,38 @@
+name: Vendor offline OCR assets
+on:
+  push:
+    branches: [release/security-performance-hardening]
+    paths:
+      - 'scripts/vendor-ocr.sh'
+      - '.github/workflows/vendor-ocr.yml'
+      - 'public/ocr/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+jobs:
+  vendor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/security-performance-hardening
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Package pinned offline OCR assets
+        run: bash scripts/vendor-ocr.sh
+      - name: Verify source files and publish locally vendored assets
+        run: |
+          test -s public/ocr/tesseract.min.js
+          test -s public/ocr/worker.min.js
+          test -s public/ocr/eng.traineddata.gz
+          find public/ocr -type f -maxdepth 1 -print0 | xargs -0 sha256sum
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add public/ocr
+          if ! git diff --staged --quiet; then
+            git commit -m "build: vendor pinned Tesseract OCR and local language model"
+            git push origin HEAD:release/security-performance-hardening
+          fi

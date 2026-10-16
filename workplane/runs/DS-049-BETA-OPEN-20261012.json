@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-049",
+  "recordedAt": "2026-10-12T18:10:27.081Z",
+  "status": "BETA_OPEN — INDEPENDENT_VALIDATION_ONGOING",
+  "authority": {
+    "ownerCorrection": "The agent-imposed independent-acceptance beta gate was circular. Open the bounded experimental beta on the verified build.",
+    "decision": "brain/decisions/20261012-002-beta-entry-and-promotion.md",
+    "priorReceipt": "workplane/runs/DS-048-COMPLETION-20261012.json",
+    "historicalAcceptanceNotRewritten": true
+  },
+  "production": {
+    "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+    "sourceTree": "e5841d40c6b22a6bdd7eb685956e221eceff0bcd",
+    "version": "0.2.0",
+    "files": 51,
+    "bytes": 54941299,
+    "acceptedForExperimentalBeta": true,
+    "runtimeRebuiltForDistribution": false,
+    "ciArtifact": 11754903493,
+    "ciWrapperSha256": "00fae5a5479e058430fe5ee3ce0e405bcd6bdd50b83bd31d76aa36cbcb7ffd98",
+    "installBytes": 25849056,
+    "installSha256": "6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+    "all51FileHashesVerified": true
+  },
+  "verification": {
+    "testedPublishingHead": "a1f7556ea43e811928ef6c92b86e1aaca744e5c8",
+    "testedTree": "310928298696ec2b3a6a8fb0001cdb58e79d4c6a",
+    "ci": {
+      "run": 38287899533,
+      "job": 114940571710,
+      "status": "success",
+      "coreTests": 405,
+      "failures": 0,
+      "skips": 0,
+      "dependencyArtifact": 11764406541,
+      "dependencyArchiveSha256": "e7211ac91e51ec51a2785a5ed8d0b3f9eec421e17484968c895f4f480ab17e51",
+      "rootAdvisories": 0,
+      "browserToolAdvisories": 0
+    },
+    "codeql": {
+      "run": 38287899608,
+      "job": 114940571743,
+      "status": "success",
+      "completeSarifFindings": 0,
+      "artifact": 11764645673,
+      "archiveSha256": "2c9469fd8011f93427419f1a1138a14d14706033e02d6582870ecdb2a6d015cc",
+      "sarifSha256": "db3ac150fe966e2216f38bd0a270860cba0da7a96b6a85dafb988f2908193a6f"
+    },
+    "boundedProtocol": {
+      "run": 38287899652,
+      "observeJob": 114940571889,
+      "publishJob": 114942861058,
+      "status": "success",
+      "startedAt": "2026-10-12T18:00:18.405Z",
+      "finishedAt": "2026-10-12T18:05:32.420Z",
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/156.0.8078.4",
+        "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+        "jsVersion": "15.6.75"
+      },
+      "os": "Ubuntu24.04 / Xvfb",
+      "nativeEngineeringChecksPassed": 77,
+      "stopFailures": [],
+      "actualPublicProviders": [
+        {
+          "id": "BETA-P01",
+          "endpoint": "https://rdap.verisign.com/net/v1/domain/example.net",
+          "status": "OBSERVED_RESPONSE",
+          "scope": "Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy",
+          "uiMessage": "Domain registration information retrieved. It does not establish the business’s age.",
+          "observation": "registered domain example.net • registered 1995-08-31 • registrar RESERVED-Internet Assigned Numbers Authority",
+          "elapsedMs": 466
+        },
+        {
+          "id": "BETA-P02",
+          "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+          "query": "RecallTitle=Anker",
+          "status": "EXTERNAL_BLOCKER_OR_ABSTENTION",
+          "uiMessage": "signal timed out",
+          "notices": [],
+          "scope": "Live incomplete candidate feed; no unit or product safety verification"
+        }
+      ],
+      "actualPublicSurfaces": [
+        {
+          "kind": "direct manufacturer / cooling fan",
+          "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "expected": "NF-A12x25",
+          "startedAt": "2026-10-12T18:02:19.989Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 429,
+          "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+          "finishedAt": "2026-10-12T18:02:22.591Z"
+        },
+        {
+          "kind": "Amazon / cooling fan",
+          "url": "https://www.amazon.com/dp/B0FC636JBS",
+          "expected": "Noctua",
+          "startedAt": "2026-10-12T18:02:22.591Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 200,
+          "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+          "finishedAt": "2026-10-12T18:02:24.773Z"
+        },
+        {
+          "kind": "Etsy / ceramic mug",
+          "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "expected": "Mug",
+          "startedAt": "2026-10-12T18:02:24.773Z",
+          "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 403,
+          "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+          "finishedAt": "2026-10-12T18:02:26.989Z"
+        },
+        {
+          "kind": "Walmart / construction toy",
+          "url": "https://www.walmart.com/ip/41004055",
+          "expected": "LEGO",
+          "startedAt": "2026-10-12T18:02:26.989Z",
+          "status": "OBSERVED_SCAN",
+          "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+          "httpStatus": 200,
+          "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+          "panelStatus": "Scan complete for www.walmart.com.",
+          "product": {
+            "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+            "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+            "extraction": {
+              "method": "page metadata; structured identity unresolved",
+              "offerResolved": false,
+              "structuredIdentityResolved": false
+            }
+          },
+          "verdict": {
+            "massResellLikelihood": null,
+            "dropshipLikelihood": null,
+            "deceptionRisk": "unknown",
+            "merchantRisk": "unknown",
+            "manipulationRisk": "unknown",
+            "fulfillmentRisk": "unknown",
+            "severeWarningAllowed": false,
+            "reason": "No accusation-weighted evidence is available yet."
+          },
+          "evidence": [
+            {
+              "id": "SUPPLY_CHAIN_PROFILE",
+              "severity": "info",
+              "weight": 0
+            }
+          ],
+          "resources": {
+            "status": "OBSERVED",
+            "intervalMs": 5002,
+            "taskSeconds": 0.14478000000000002,
+            "scriptSeconds": 0.029161,
+            "heapBytes": 81948184,
+            "dom": {
+              "elements": 5635,
+              "scrollHeight": 7957,
+              "viewport": 720
+            },
+            "scrollFrameMs": 4,
+            "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+          },
+          "finishedAt": "2026-10-12T18:02:38.840Z"
+        }
+      ]
+    },
+    "packetArtifact": {
+      "id": 11764780006,
+      "sha256": "02ba6291617329dc81a4c1a49626797efcda3a6da7f607d3638287c85511c3a5",
+      "downloaded": true,
+      "all51PackageHashesVerified": true
+    },
+    "local": [
+      "Python compilation and YAML structure",
+      "Exact artifact wrapper/install/51-file identity",
+      "Single-byte modified package rejected",
+      "git diff --check"
+    ]
+  },
+  "distribution": {
+    "channel": "Existing public chairmantrash/DropShredder GitHub repository",
+    "releaseId": 410876735,
+    "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1",
+    "tag": "v0.2.0-beta.1",
+    "tagTargetsExactProductionCommit": true,
+    "draft": false,
+    "prerelease": true,
+    "publishedAt": "2026-10-12T18:05:55Z",
+    "assets": [
+      {
+        "id": 634559875,
+        "name": "BETA-OBSERVATIONS.json",
+        "bytes": 5674,
+        "digest": "sha256:c5e15504f69901c393c4d15b1f53949813944d0af01061a8aba1e10d92baaa4e",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/BETA-OBSERVATIONS.json"
+      },
+      {
+        "id": 634559873,
+        "name": "BUILD-INFO.json",
+        "bytes": 9014,
+        "digest": "sha256:df16ab4f8cf2bbef15b440d4ec394dab443d0cddac4e48e9c5ba113be374766e",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/BUILD-INFO.json"
+      },
+      {
+        "id": 634559882,
+        "name": "DropShredder-0.2.0-beta.1-chrome.zip",
+        "bytes": 25849056,
+        "digest": "sha256:6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/DropShredder-0.2.0-beta.1-chrome.zip"
+      },
+      {
+        "id": 634559872,
+        "name": "INSTALL-AND-REPORT.md",
+        "bytes": 3901,
+        "digest": "sha256:2649706850e5d585837e0d3a72604679554c24abac8756029ee6b9c8332f820a",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/INSTALL-AND-REPORT.md"
+      },
+      {
+        "id": 634559880,
+        "name": "NATIVE-PROTOCOL.json",
+        "bytes": 76635,
+        "digest": "sha256:23bb6ce4f29f24913594138c79064873217e2ea16b655ba567b7c2306a290239",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/NATIVE-PROTOCOL.json"
+      },
+      {
+        "id": 634559897,
+        "name": "SHA256SUMS.txt",
+        "bytes": 103,
+        "digest": "sha256:7d0fa4795e9ef2e5a45cace063049aad579ca21401e9344fca8f7691f9cb126d",
+        "url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.1/SHA256SUMS.txt"
+      }
+    ],
+    "allSixAssetDigestsMatchDownloadedPacket": true,
+    "unauthenticatedPublicZipDownloaded": true,
+    "publicZipBytesAndDigestVerified": true,
+    "participantsInvented": 0,
+    "invitationsSent": 0,
+    "mainMerged": false,
+    "storeSubmitted": false,
+    "publishersAuthenticated": false
+  },
+  "integration": {
+    "pr": 18,
+    "releaseMerge": "3200fc179c641649fa5fc455382e2680252c4ad0",
+    "releaseTree": "310928298696ec2b3a6a8fb0001cdb58e79d4c6a",
+    "equalsTestedTree": true,
+    "publicPr9RemainsDraft": true
+  },
+  "remainingValidation": {
+    "independentAccuracyAccepted": false,
+    "rightsClearedIndependentCorpusCases": 0,
+    "numericThresholdApproval": null,
+    "nativeLegalReviewerApprovals": 0,
+    "realPhotographedLabelAcceptance": false,
+    "fullIndependentCrossOsResourceRetentionAcceptance": false,
+    "applicableRealPublisherElapsedWeekAcceptance": false,
+    "phase": "Open beta validation and later public-release promotion; not beta-entry prerequisites"
+  },
+  "readinessMonitor": {
+    "obsoleteConditionWatchDisabled": true,
+    "weeklyResearchUnchanged": true
+  },
+  "limits": "Automated public-site/native observations are not independent manufacturing truth, representative accuracy, calibrated resource acceptance or original-photo/native/legal/publisher/elapsed-week review. HTTP restrictions, unconfirmed listings and timeouts remain unavailable; UNKNOWN is not clean."
+}

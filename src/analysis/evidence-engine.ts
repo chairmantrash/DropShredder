@@ -1,4 +1,6 @@
 import type { EvidenceSignal, RiskLevel, Verdict } from '../types/evidence';
+import { fuseEvidence, type FusionEvidence, type FusionResult } from './evidence-fusion';
+import { selectIndependent } from './evidence-independence';
 
 const severityRank: Record<EvidenceSignal['severity'], number> = {
   info: 0,
@@ -10,6 +12,7 @@ const severityRank: Record<EvidenceSignal['severity'], number> = {
 
 function effectiveWeight(signal: EvidenceSignal): number {
   if (signal.severity === 'info') return 0;
+  if(!Number.isFinite(signal.weight) || !Number.isFinite(signal.confidence) || signal.confidence<0 || signal.confidence>1) return 0;
   return Math.max(0, signal.weight * signal.confidence);
 }
 
@@ -27,19 +30,25 @@ function riskLevel(signals: EvidenceSignal[]): RiskLevel {
 }
 
 export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
-  const byKey = new Map<string, EvidenceSignal>();
-  for (const signal of signals) {
-    const current = byKey.get(signal.independentKey);
-    if (!current) {
-      byKey.set(signal.independentKey, signal);
-      continue;
-    }
+  return selectIndependent(signals.filter(signal=>Boolean(signal.independentKey)),
+    signal=>[signal.independentKey,...(signal.correlationKeys??[]),...(signal.sourceKey?['source:'+signal.sourceKey]:[])],
+    signal=>effectiveWeight(signal)>0 ? severityRank[signal.severity]*100+Math.min(99,effectiveWeight(signal)) : 0);
+}
 
-    const currentScore = severityRank[current.severity] * 100 + effectiveWeight(current);
-    const nextScore = severityRank[signal.severity] * 100 + effectiveWeight(signal);
-    if (nextScore > currentScore) byKey.set(signal.independentKey, signal);
-  }
-  return [...byKey.values()];
+export function fusionSummary(signals: EvidenceSignal[],coverageFamilies:string[]=[]): FusionResult {
+  const unique=dedupeEvidence(signals);
+  const fusionItems:FusionEvidence[]=unique
+    .filter(signal=>effectiveWeight(signal)>0)
+    .map(signal=>({
+      id:signal.id,
+      family:signal.family,
+      strength:signal.severity==='direct'?'strong':signal.severity,
+      score:Math.min(1,effectiveWeight(signal)/35),
+      sourceKey:signal.sourceKey ?? signal.independentKey.split(':')[0] ?? signal.independentKey,
+      independenceKey:signal.independentKey,
+      correlationKeys:signal.correlationKeys,
+    }));
+  return fuseEvidence(fusionItems,coverageFamilies);
 }
 
 export function calculateVerdict(signals: EvidenceSignal[]): Verdict {

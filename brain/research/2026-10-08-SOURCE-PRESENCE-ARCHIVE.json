@@ -1,0 +1,1268 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-10-08",
+  "policy": "Public presence metadata and short attributed excerpts, not full article copies. Hashes refer to tool excerpts, not stable entire webpages. No sensitive/private evidence. A candidate retrieval is not endorsement.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2602.11733v1",
+      "title": "Adapting Vision-Language Models for E-commerce Understanding at Scale",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn23view0",
+        "turn17view6",
+        "turn24view2",
+        "turn16view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "ab523e25a044a0e621c7d16672142385ae6c4b76200d5ac0d448a7b820ab9c8b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "8ae28526c4c1f85dd20a439536c0e56ac521dbb20f9b7747a44e63cb7233bbf6",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "95623dbe297c68b1b4046cd6dc9d49fb29d6680d4803a1b44e2212c12af9010a",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "99760e2bed5d2382de7acb81253397baa036e618a1095a47cc76151b2956c8cc",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/html/2501.13351v3",
+      "title": "50 Shades of Deceptive Patterns: A Unified Taxonomy, Multimodal Detection, and Security Implications",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn23view1",
+        "turn23view2",
+        "turn17view7",
+        "turn24view1",
+        "turn16view2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "337861af8a0092db982309f21779dd2f3cf9d23bf6c00987366355323e5cefc5",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "151a939eaef2053f3dad4ac889806c275845d4dfab8765ea3be9e97290a29f69",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "a7e8cd51879ea637aa9f274589ec419201b2a466a7007b9b510c7b0ba26ce9b7",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "3c802ba7194ddd0261ca7382333e5fc411301ffa3b2f3b019eb3e3f19def6f51",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "27a7dcfbec209f0c43e22654fc158de1a0e7f7487f67b46d4e9cf6053ad3a504",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.13313",
+      "title": "[2506.13313] Large Language Models as 'Hidden Persuaders': Fake Product Reviews are Indistinguishable to Humans and Machines",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn17view1",
+        "turn14academia6"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "3ed2bad8ade53c6692e6d95a14a53f9e3c7571bf88c11f7006b0211b5d9cc9d3",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "bbfb606cfcea85c0eabb47449640383f67278b7ca940e754c3a4c0a61a58fdc7",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2403.11593",
+      "title": "[2403.11593] End-to-end multi-modal product matching in fashion e-commerce",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn17view2",
+        "turn14academia4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "72d5644143b098455d70e038deeac76fdd22d475f72d54d43a3bb98bdff10cc0",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "203b12dbea75a4cc6897de71acb76a9c4d080347eaa1b6b89ffdd7170042a0e9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.02779",
+      "title": "[2410.02779] Learning variant product relationship and variation attributes from e-commerce website structures",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn17view3",
+        "turn14academia5"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "569197ae2fa904b7f445a6a12862cf9f0cf609731ca10ecf6ad8c26e36ca16c8",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "c83bb3dac6932a59ac3eee594749d6d81446272cd1259bd61a7d24b83c6d00fa",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/html/2509.15858v2",
+      "title": "Optimizing Product Deduplication in E-Commerce with Multimodal Embeddings",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn17view4",
+        "turn17view5",
+        "turn16view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "7e4b619abe8e49cb5dda00f37158753c9f17b04c9b93bdb8b5679433c61f08e9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "a1e1b7017c5513b9ee09d23aa663194f0295fc6ae96a0a34da9ec62f31b677b0",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "d61fbf18f7c40a573839371462f10eb1c41d3d5ddbf65c911ecd4ee6e174ce3b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.37713",
+      "title": "Billiger.de Products: A Bilingual Entity Matching Benchmark",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn14academia3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "cdf7ad9e8410bcba06d67e46c727e5c393bf4753647f3ae9a668f774c53aadd1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/",
+      "title": "DINOv3 access request form - Meta AI",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn14search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "16c9cae1054f1d98d9e3c9f702b68f65d97ca3d55e524513fca96fa76d962106",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.dear-lover.com/",
+      "title": "Wholesale Women's Clothing & Custom ODM Manufacturer",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn3search0",
+        "turn10search4",
+        "turn6view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "68a80f0a9c7687ee1f4a0653a17bfdfa2e45a472bd4b0eb9a52419a74187379a",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "87f543f9fe77a50d461cc8fc945113e9541b884f8a5efb1c1a5b41098c4e006a",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "b8fbb81cc961e4a614493fcdddf5d7b49b30f03f111a874610215ab1008e523f",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.trendsi.com/private-labeling",
+      "title": "Private Label Clothing Manufacturer | Custom Apparel Production, Quality Fabrics, Wholesale Fashion Solutions with Your Own Custom Private",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn3search2",
+        "turn16view6",
+        "turn6view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "bab5363a790baf198956c4a39197a14f90c15f112e21556bb4c7335f218b02f8",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "6bd53ca30c32560b82cd4cecaadbe0ef9da316a130f49f644e6717a7751345b1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "6906cc209812fa3ce59bed6425fde205eea31337ac557991b4e3ac6a14a987ce",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.ccwholesaleclothing.com/faq",
+      "title": "",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn3search4",
+        "turn16view7",
+        "turn6view2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "789cc4f3034902eb643ce463832d8bde43858c611b052180dcea4bb16d774af7",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "0424ded74e497c6f03641cba71c68ce04a8ae1c59292370ebcfe7d2ba6e2f79b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "282faa29c532181c8b31be268a5b96bc75e8faea47a40f88565265c1d7221ee0",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.printful.com/uk/blog/white-label-clothing",
+      "title": "The Complete Guide to Private and White Label Clothing | Printful",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn3search7",
+        "turn6view3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "492bc40c482eedaf0ae478034eb92fb2d4de67023a1fcb150509239cdc55110e",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "2cd8b0c8d92b4855d98199832ed21c53f0b1456e444a6ccc0fbf0e5467ae53bf",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/how-to/test/puppeteer?authuser=31",
+      "title": "Test Chrome Extensions with Puppeteer | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn18search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "a75beaa2d596df909461d01f36f9beacbc7805dc769d5bd08cc55ec8a2531712",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/how-to/test/end-to-end-testing",
+      "title": "End-to-end testing for Chrome Extensions | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn18search1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "3fc7f86b95bd4c04c7e47b13c820085bc0edfdbd51cdb0d9e08edb31b82dc63d",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://data.iana.org/rdap/dns.json",
+      "title": "",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn18view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "069ad95f150345bf3b402df58e12bccef6cf4f268590861482aba0d11443761c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/develop/concepts/network-requests",
+      "title": "Cross-origin network requests | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn2search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "34576d038c43e9166436dcd9e7c8faa01edc0f0783db761cb9223cbc37c8d665",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/permissions?hl=en",
+      "title": "chrome.permissions | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn2search1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "02427a22eb49a2e561c1b0e36d145f7a1c33399f4dce5342d550092377c4df7b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/mv3/security",
+      "title": "Stay secure | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn2search3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "70ad10768ca233b7fb9e0577e99a9e3270ef4fde9c53ad2bd13f4bfa933f4af2",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/webNavigation?authuser=3",
+      "title": "browser.webNavigation | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn2search4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "1a4cd1c14ff63462e1cd6d4bdaf7cfb093da89aaddfa9b4a8d9afa248fbfffe9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://docs.parcelpanel.com/shopify/getting-started/dropshipping/",
+      "title": "Tracking-mode documentation",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn20search0",
+        "turn21view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "f9e8a0494e95bd37b0a325b089b5c50cdd1b4abbba43c9cc0ff752908ce52d60",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "241054d62284e731b9e06e5abb78adc3a25463338bec328e65d78aec2f03a71c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth",
+      "shortExcerpt": "One-click hide Chinese origins"
+    },
+    {
+      "url": "https://help.autods.com/en/articles/12699792-products-and-drafts-pages-manage-filter-and-edit-your-listings",
+      "title": "Products and Drafts pages: manage, filter, and edit your listings | AutoDS Help Center - Empowering your dropshipping",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn20search2",
+        "turn21view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "5b07351a9862c80aec44b8460dbf8fabbe01da1fa15045719f16d36b4cc30422",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "c501c809ab19b29fd9c3c8ba2c91f5469695ddeebf511f452580cbc0d1e87094",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.shopify.com/blog/blind-shipping/",
+      "title": "What Is Blind Shipping? Definition, Benefits, and Best Practices - Shopify",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "0eef963170b9a37381a16f1aa5b766a0639a8f8c994de2cca24e54a39208d5c7",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://usadrop.com/blind-dropshipping-ship-without-revealing-supplier/",
+      "title": "Blind-fulfillment documentation",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "b261fea4fe74c9ae091962dac31f13e95857042ba3090245a935faf395049623",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth",
+      "shortExcerpt": "No supplier invoices."
+    },
+    {
+      "url": "https://shotbg.com/use-cases/dropshipping",
+      "title": "Dropshipping Product Photo Editor: Replace Supplier Images in Bulk | ShotBG",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view3",
+        "turn6view6"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "5280ee88c6360369cdc2950df706a4c75b9150227984478fdad57afc5d49bc20",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "9e32572b166362c91d664f08856035dc34c261d0052bd8a8583587b00a20865c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://piratify.io/blog-posts/dropship-without-showing-aliexpress-branding-eykm",
+      "title": "Supplier-obscuring vendor tutorial",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view4",
+        "turn6view4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "7ca65212f776300dbe09c7ebf431d1e761ced5900ad00b9beeeb53d8d1b1f61f",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "dc4f0f92e254d82bb60235a5eb423c50a280cc81efad5688499ced9ee54039b2",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth",
+      "shortExcerpt": "Tracking pages are the most overlooked branding leak in dropshipping."
+    },
+    {
+      "url": "https://sourcingpioneer.com/blind-dropshipping-from-china-how-to-remove-supplier-invoices-guide/",
+      "title": "Blind Dropshipping From China: Remove Invoices & Add Custom Branding (2026)",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view5",
+        "turn6view5"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "5169dea4564601600582adc4e89355d75f777da2fb8aac564ad9c1804ed6453f",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "265338a07b89bc41ef695c1ea270881e7db94faeeedfb41a3e77a7945c58d3d8",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://utilpix.com/blog/dropshipping-product-photos-guide",
+      "title": "Dropshipping Product Photos: How to Make Supplier Images Look Professional | UtilPix",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn5view6"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "4eca1e5a92d68561cbf57cb36bbf1ed29e8f7b699f6258c0a82ded485ee7dca0",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/blog/structured-clone-messaging?hl=en",
+      "title": "Unlock Structured Clone for Chrome Extension Messaging | Blog | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "e2b984d38c575bdfe4f83b7be755430e358d8c36da99d4c1159351f40a3e7b58",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://github.com/naptha/tesseract.js/",
+      "title": "GitHub - naptha/tesseract.js: Pure Javascript OCR for more than 100 Languages \ud83d\udcd6\ud83c\udf89\ud83d\udda5 \u00b7 GitHub",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search1",
+        "turn7search2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "294c6944f68fbedbf13150f6f9609d2afab91549cb8b044d7ce72a2176c689c9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "bdc49b0a8c580c4b8ff58813c6f863288f19f2eae5bdc3858e8ae93cd22e416b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://github.com/naptha/tesseract.js/blob/master/package.json",
+      "title": "tesseract.js/package.json at master \u00b7 naptha/tesseract.js \u00b7 GitHub",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search2",
+        "turn7search3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "6a4f703387c3faf4e2a647dfc149f8c8f0317fb579050a5c1835bef7d267190a",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "d716ec5fcec498765be6efd8d1eaba074e863d3ae40acdc4e331dadaae6a71ec",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://github.com/remusao/tldts",
+      "title": "GitHub - remusao/tldts: JavaScript Library to extract domains, subdomains and public suffixes from complex URIs. \u00b7 GitHub",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search3",
+        "turn7search4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "9fc4303b2dbc641f92aba5323e878927536ff7b6c68bb07b5a262176a96d410c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "5f78d854a1bae13f67432ff7697c1b8e64f77d6828b61badb3c78921545d3669",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://fondmart.com/private-label.html/",
+      "title": "Apparel relabeling documentation",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search4",
+        "turn10search10",
+        "turn15view3",
+        "turn16view5"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "c49f7dc78a96883992c24ce00052c48cc1efe0f3c8a017a4904f32f0a5f0d4bc",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "84cbc6ef6efd2a7286c41927ab3fccce8b01b6935fcd20f1ef8f412b96050ce1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "3140fec7f728a768f0b8a4a6550829aa9393d15f543e5810d40120e3d237a018",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "fb88df4449213da497e3eb3b505c57987b35fbcfa6084a19e4a73542686947c9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth",
+      "shortExcerpt": "remove the manufacturer\u2019s tag"
+    },
+    {
+      "url": "https://fondmart.com/dropshipping.html",
+      "title": "Best Womens Clothing Fashion Dropshipping Platform | FondMart",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn12search5",
+        "turn15view4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "a52218361bee667ef5db1de84ef80a2acd560417b7feab501e8d62a348c13172",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "f5838153d0eac4a4858ecc4f4ca547aa1f23eab8faa71e54a774bbad66012559",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.dear-lover.com/page/about-dear-lover-wholesale",
+      "title": "About Dear-Lover.com\u4e28What is dear-lover? Is dear-lover.com legit?",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn10search0",
+        "turn15view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "cbb817344b2c4adcd82c09036a2fccb4bb066b350d5fa6f54b5a3e5e5e26e0f1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "a462c027522e04f333b32aed74b98f8fb340474c20814908370aa17b72e587c7",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.dear-lover.com/page/privacy-and-cookies-policy",
+      "title": "Privacy Policy - www.dear-lover.com",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn10search5",
+        "turn15view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "c09258b9ee42c685400d7ba7ace1f1dfc6da1d9f2d68ffe28adc367ffea68608",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "36baa0abd1be08ccd9fac8a41dacafe371b4dcab9cf67146c0a9c5ad04f33b7c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.wholesale7.net/about-us_a15.html",
+      "title": "About Us, Company Information",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn10search6"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "9d1ee5752dfa9179309c80c0f96d4f78ffba3781edc038ed9cb214d91e3854e1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.wholesale7.net/faq_detail.php",
+      "title": "FAQ Detail - W7 Order Helps | Wholesale7.net",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn10search7",
+        "turn15view2",
+        "turn16view4",
+        "turn13view6"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "b23b157b31525087931b9011f375aaa6a722523623533794ca32b466d7a5ecf9",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "900b9114708b88329540d9026858837053fdc98d110830524033e05f6ffa8afb",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "2a2ffc041a65db01820d88dfdd10e729707556fad3b48f9abbfd079d371a3e00",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "60554659072b7c250ffe97bab76e306ac67c7fc917e33053723ad59301de6200",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/storage",
+      "title": "browser.storage | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn24view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "53cb817208318d161565b7d3cb59e301158f0db22cca6fed16dadf6f7051133b",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.greenpeace.org/static/planet4-sweden-stateless/2025/11/059bc831-20251118_shameonyoushein.pdf",
+      "title": "Shame on you, Shein",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn15view5",
+        "turn8search9"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "26051c4dd0d498220e064cc9889308d18e7232cacbc38a1ac15add535da562f3",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "28541c3ab0c8db6fb6853284754aa7a63c358fc6e5d82a459f4191a2580ea929",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/storage?hl=en",
+      "title": "chrome.storage | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn22search2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "ba5dc9190c2839cf1354d9526a2fb31ec273f7c73bd280839b608fbbf7925e3c",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://aclanthology.org/2025.ranlp-1.78/",
+      "title": "Exploring the Usage of Knowledge Graphs in Identifying Human and LLM-Generated Fake Reviews - ACL Anthology",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn22search4",
+        "turn16view3",
+        "turn13view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "4ca9fe16bfaf4adf1ca109b9ec5caad00123da0f0948bc57320072431ba2b7ef",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "0cf7c7e63c6cf0045b7e9daf1669009a10d0872034ae04ef81c51dd56cf2b597",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "f2962499bf30e0009d879aae444288c3b3577194d24f9d419f166ba881bc20a6",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/publicSuffix",
+      "title": "browser.publicSuffix | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn9view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "2cd95e4095bffc991d3fe4b8e60311001bb236739ec506c07d8cc505e7458c34",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/sidePanel",
+      "title": "browser.sidePanel | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn9view3",
+        "turn13view5"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "363e28bf34dc1382406afa6af3be267763995c867c9a089dbef26d248ae03e39",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "98f6a6493c3365b915728ff3d6cf462aa31fe1084647122efcbc6d1e0886dfc3",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.15858",
+      "title": "[2509.15858] Optimizing Product Deduplication in E-Commerce with Multimodal Embeddings",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn13view1",
+        "turn11view0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "9ba56a8841a5c36a32485e631141ec544b74bd6426319df1cf351a3a43b7819d",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "82666f2656d1f93e18ff6ad14be057c6f3545e49e25e890d8c00d1e63592a7da",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.11733",
+      "title": "[2602.11733] Adapting Vision-Language Models for E-commerce Understanding at Scale",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn13view2",
+        "turn11view1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "e3b6c13f3268c1c9431992d45503143d48b03700b3489da405c992169ece9986",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "e8b735fdcd6414eb59ee307c1350c5212eb1be959775a3d70622c9b45b426e8f",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2501.13351",
+      "title": "[2501.13351] 50 Shades of Deceptive Patterns: A Unified Taxonomy, Multimodal Detection, and Security Implications",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn13view3",
+        "turn4academia36",
+        "turn11view2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "bff60840a14e51456d5aefdd7326351d67991e57dde19edbd01b7369c2c53478",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "43f56c9892e7a0e3dc1cadb69907b0a9524d8d4b4a1eb0f79fd29694dda823b1",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "202505fd7396c7de130d1e488ee7f9f5cb92aae1178d122d05e94896b2bd2e63",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.18269",
+      "title": "[2512.18269] Building UI/UX Dataset for Dark Pattern Detection and YOLOv12x-based Real-Time Object Recognition Detection System",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn13view4",
+        "turn4academia37",
+        "turn11view3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "f75b11411a6b8bda9f4f783c43a44b82b2afc5a3448dab137824db9ce15f8eff",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "b56313d290c1cbc7ea48e951e2523e0d86835baf65deb1ed77012cf12321bd09",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "031eabc4366c90e574c8cedbef7fb673733b75aaa7e6f0af5a83eebdbf757aa4",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers.js/guides/webgpu",
+      "title": "Running models on WebGPU \u00b7 Hugging Face",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn4search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "d0e830532b3bc79cedb2de52da49a4d14d2af422fd0625fb2c691cc8f98793dd",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://huggingface.co/blog/transformersjs-chrome-extension",
+      "title": "How to Use Transformers.js in a Chrome Extension",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn4search3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "f34f9dbbdb32d9dd6ed7e9e1ea021988576ac4a90d48336915700c95c920e0f8",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://onnxruntime.ai/docs/get-started/with-javascript/web.html",
+      "title": "Web | onnxruntime",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn4search12",
+        "turn21view4"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "6717c41f134882b6b5175b69859512ca095a847f33495bdb18dc7d832687a6c2",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "106f4721f5b123a35be7d6e0d4ae750a608deef5e918dfb8830cef5ff5479938",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.beuc.eu/sites/default/files/publications/BEUC-X-2025-051_How_fast_fashion_giant_SHEIN_uses_dark_patterns.pdf",
+      "title": "Click to buy (more)",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn8search7"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "39256207692e83cca09495f37f0146deb09070c6932ab8030816c7c5cd954bdb",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.greenpeace.org/eu-unit/issues/pollution/47807/new-report-hazardous-chemicals-in-shein-clothing-continue-to-violate-eu-limits/",
+      "title": "New Report: Hazardous chemicals in Shein clothing continue to violate EU limits - Greenpeace European Unit",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn8search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "8bcd2030a06baf946783edf19ff911ed79e3876429d1c206793d5159e7e250c2",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://www.beuc.eu/reports/tests-temu-products-by-consumer-groups",
+      "title": "Under the Microscope: Tests of Temu Products by Consumer Groups",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn8search2"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "c134d7abc75a26c40be4cfafd20247b1c71d3c7001ecf0362fb7c5743986a8fd",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/whats-new?authuser=1",
+      "title": "What's new in Chrome extensions | Chrome Extensions | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn7search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "1b36bc1da4f3437507eba30e94aff97b4d5d71ab8e022be4e7e2f5e6662eb61f",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/extensions/reference/api/sidePanel?authuser=2",
+      "title": "browser.sidePanel | API | Chrome for Developers",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn7search1"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "73a26445034f6f7b68de1c77161ce4ee0669c91e03f23709222ebf13392baac3",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://github.com/ajv-validator/ajv/blob/master/LICENSE",
+      "title": "ajv/LICENSE at master \u00b7 ajv-validator/ajv \u00b7 GitHub",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn19search0"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "ba7ff6d0d3574b023a6e895a8b7d9b3a502dd0bf13e163939c7a5ee8c2fbfe9a",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    },
+    {
+      "url": "https://github.com/Microsoft/onnxruntime/blob/main/LICENSE",
+      "title": "onnxruntime/LICENSE at main \u00b7 microsoft/onnxruntime \u00b7 GitHub",
+      "retrievedAt": "2026-10-08",
+      "retrievalRefs": [
+        "turn19search2",
+        "turn21view3"
+      ],
+      "retrievalEvidence": [
+        {
+          "retrievalType": "search",
+          "returnedExcerptSha256": "fe85df6806dd96d3f8190d6d685924f8ca36e9b0514a5c05e71121a022b4e298",
+          "hashScope": "tool-returned excerpt, not full source page"
+        },
+        {
+          "retrievalType": "open-or-find",
+          "returnedExcerptSha256": "d5f365eae1934ca20bb3b3596b5b85a5c2aab5b3b772ff8b636a19d8fc74b959",
+          "hashScope": "tool-returned excerpt, not full source page"
+        }
+      ],
+      "snapshotAvailable": false,
+      "reviewStatus": "see linked finding for review depth"
+    }
+  ]
+}

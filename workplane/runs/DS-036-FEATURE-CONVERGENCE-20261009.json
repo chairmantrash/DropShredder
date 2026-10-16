@@ -1,0 +1,33 @@
+{
+  "task": "DS-036",
+  "date": "2026-10-09",
+  "repository": "chairmantrash/DropShredder",
+  "branch": "release/security-performance-hardening",
+  "prNumber": 9,
+  "releaseStatus": "DRAFT_NOT_MERGED_TO_MAIN",
+  "engineeringStatus": "IMPLEMENTATION_COMMITTED_BROWSER_GATE_PENDING",
+  "features": [
+    "opt-in weekly Ed25519 signed subscription refresh via chrome.alarms",
+    "bounded optional marketplace results badges",
+    "sourced role-specific local manufacturer/importer/seller graph",
+    "offline 192d lexical feature hashing retrieval (not neural embedding)",
+    "packaged local Tesseract OCR and barcode reader",
+    "optional session-only BYO-key Brave search"
+  ],
+  "limits": [
+    "No free unconditional live publisher-authenticated feed exists out of box",
+    "No automatic third-party issuer key rotation",
+    "No genuine factory/supply-chain link inferred from similar product titles",
+    "No neural model downloaded/inferred",
+    "No independent real-world classification or OCR accuracy guarantee",
+    "Optional Brave plan can charge, never mandatory"
+  ],
+  "qa": [
+    "exact package hash manifest",
+    "hosted Chromium native/headed",
+    "full independent A01-D06",
+    "live provider and rights verification",
+    "representative false-positive/false-negative/abstention calibration"
+  ],
+  "ownerAuthorization": "DO_NOT_MERGE_MAIN_OR_PUBLISH"
+}

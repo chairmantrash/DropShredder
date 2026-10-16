@@ -1,0 +1,1755 @@
+{
+  "sourceCommit": "9d79f4140704b7140d052b7b4a9d25a295f8c046",
+  "startedAt": "2026-10-10T10:53:31.079Z",
+  "mode": "headed Chromium / Xvfb",
+  "status": "FAIL OR ENVIRONMENT BLOCKED",
+  "tests": [
+    {
+      "id": "N01",
+      "description": "Reviewed package mounts in the native side panel without host grants",
+      "status": "PASS",
+      "elapsedMs": 1469,
+      "details": {
+        "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+        "files": 51
+      }
+    },
+    {
+      "id": "N02",
+      "description": "Trusted native source-hunt toggle saves through the background writer",
+      "status": "PASS",
+      "elapsedMs": 6376
+    },
+    {
+      "id": "N03",
+      "description": "Native origin and tone changes preserve the previous feature patch",
+      "status": "PASS",
+      "elapsedMs": 1214
+    },
+    {
+      "id": "N04",
+      "description": "Nondefault preferences survive a full native-profile restart",
+      "status": "PASS",
+      "elapsedMs": 531
+    },
+    {
+      "id": "N05",
+      "description": "Native product scan fails closed without host access",
+      "status": "PASS",
+      "elapsedMs": 507,
+      "details": {
+        "status": "Chrome needs permission for this site. Click Allow for DropShredder in Chrome’s extension controls, then click CHECK THIS PRODUCT again.",
+        "raw": "",
+        "exportDisabled": true
+      }
+    },
+    {
+      "id": "N06",
+      "description": "Native remove-access control is safe without grants and preserves other preferences",
+      "status": "PASS",
+      "elapsedMs": 921,
+      "details": {
+        "status": "DropShredder didn’t have any extra site access to remove.",
+        "scope": "No-grant removal, not revocation of an accepted grant"
+      }
+    },
+    {
+      "id": "N07",
+      "description": "Native checks produce no uncaught errors or external investigations",
+      "status": "PASS",
+      "elapsedMs": 0
+    },
+    {
+      "id": "N08",
+      "description": "Genuine Chrome Deny leaves monitoring and host access off",
+      "status": "PASS",
+      "elapsedMs": 95
+    },
+    {
+      "id": "N09",
+      "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+      "status": "PASS",
+      "elapsedMs": 3117
+    },
+    {
+      "id": "N10",
+      "description": "Owned product fixture gets exactly one automatic alert after consent",
+      "status": "PASS",
+      "elapsedMs": 843
+    },
+    {
+      "id": "N11",
+      "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+      "status": "PASS",
+      "elapsedMs": 924,
+      "details": {
+        "status": "Scan complete for fixture.example.com.",
+        "product": {
+          "capturedAt": "2026-10-10T10:53:56.976Z",
+          "claims": [],
+          "currency": "USD",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [],
+          "jsonLdProductCount": 1,
+          "pageSignals": [],
+          "price": 12,
+          "sku": "FIXTURE-MUG-001",
+          "specifications": {},
+          "title": "Fixture mug",
+          "url": "https://fixture.example.com/products/mug",
+          "variantId": "FIXTURE-MUG-001",
+          "technicalFingerprint": "012345678905|fixture-mug-001"
+        },
+        "scope": "Owned fixture, no merchant accuracy/explicit prompt acceptance claim"
+      }
+    },
+    {
+      "id": "N15",
+      "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields",
+      "status": "PASS",
+      "elapsedMs": 1002,
+      "details": {
+        "filename": "DropShredder-current-scan.json",
+        "bytes": 3079,
+        "product": {
+          "url": "https://fixture.example.com/products/mug",
+          "title": "Fixture mug",
+          "brand": "",
+          "model": "",
+          "gtin": "012345678905",
+          "capturedAt": "2026-10-10T10:53:57.922Z"
+        }
+      }
+    },
+    {
+      "id": "N16",
+      "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports",
+      "status": "PASS",
+      "elapsedMs": 6541,
+      "details": {
+        "status": "This looks like a sign-in or payment page, so DropShredder is staying out of it.",
+        "raw": ""
+      }
+    },
+    {
+      "id": "N17",
+      "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it",
+      "status": "PASS",
+      "elapsedMs": 3579
+    },
+    {
+      "id": "N18",
+      "description": "Rapid tab switching invalidates reports and scans the actual active product tab",
+      "status": "PASS",
+      "elapsedMs": 1043
+    },
+    {
+      "id": "N19",
+      "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs",
+      "status": "PASS",
+      "elapsedMs": 3758
+    },
+    {
+      "id": "N20",
+      "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection",
+      "status": "PASS",
+      "elapsedMs": 1956
+    },
+    {
+      "id": "N25",
+      "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title",
+      "status": "PASS",
+      "elapsedMs": 1010,
+      "details": {
+        "scope": "Owned intercepted Amazon page; live store remains separately observed"
+      }
+    },
+    {
+      "id": "N21",
+      "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational",
+      "status": "PASS",
+      "elapsedMs": 4421,
+      "details": {
+        "scope": "Owned intercepted RDAP response, not live provider accuracy"
+      }
+    },
+    {
+      "id": "N22",
+      "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query",
+      "status": "PASS",
+      "elapsedMs": 4899,
+      "details": {
+        "scope": "Owned intercepted CPSC notice, exact unit still unverified"
+      }
+    },
+    {
+      "id": "N23",
+      "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls",
+      "status": "PASS",
+      "elapsedMs": 5652
+    },
+    {
+      "id": "N26",
+      "description": "Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions",
+      "status": "PASS",
+      "elapsedMs": 3462,
+      "details": {
+        "scope": "Ephemeral owned Ed25519 test key; genuine native panel controls; no real issuer authenticated",
+        "signedVersion": 4
+      }
+    },
+    {
+      "id": "N27",
+      "description": "Chrome file-input dispatch previews JSON without saving and rejects malformed local files",
+      "status": "PASS",
+      "elapsedMs": 275,
+      "details": {
+        "scope": "Real native panel and Chrome CDP DOM.setFileInputFiles; operating system file-picker dialog NOT tested"
+      }
+    },
+    {
+      "id": "N30",
+      "description": "Native origin file requires user review, exact seller/product scope and eight fresh stages without score changes",
+      "status": "PASS",
+      "elapsedMs": 2067,
+      "details": {
+        "scope": "Real native panel / CDP file input on owned synthetic source records; no source authentication or OS picker claim"
+      }
+    },
+    {
+      "id": "N31",
+      "description": "Native regional map filters Mexico without source requests or trust scores",
+      "status": "PASS",
+      "elapsedMs": 1214,
+      "details": {
+        "records": 34,
+        "filtered": 18,
+        "automaticSourceRequests": 0
+      }
+    },
+    {
+      "id": "N32",
+      "description": "Native standing rating requires source review and entity binding; categories are local and navigation clears the rating",
+      "status": "PASS",
+      "elapsedMs": 4232,
+      "details": {
+        "sources": 32,
+        "dimensions": 7,
+        "automaticSourceRequests": 0,
+        "scope": "User-confirmed entity and synthetic records in real native Chrome panel; no real company certified"
+      }
+    },
+    {
+      "id": "N33",
+      "description": "Native litigation preview shows scope and pending allegations; a later vacatur removes unresolved context",
+      "status": "PASS",
+      "elapsedMs": 3622,
+      "details": {
+        "scope": "Synthetic docket in actual native panel; no real case authenticity or comprehensive court coverage claimed",
+        "automaticSourceRequests": 0
+      }
+    },
+    {
+      "id": "N28",
+      "description": "Packaged local OCR engine and language data exist without making a remote request at panel startup",
+      "status": "PASS",
+      "elapsedMs": 39,
+      "details": {
+        "files": [
+          {
+            "path": "ocr/tesseract.min.js",
+            "bytes": 62953
+          },
+          {
+            "path": "ocr/worker.min.js",
+            "bytes": 111280
+          },
+          {
+            "path": "ocr/eng.traineddata.gz",
+            "bytes": 1976293
+          },
+          {
+            "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm.js",
+            "bytes": 3905767
+          },
+          {
+            "path": "ocr/tesseract-core-relaxedsimd-lstm.wasm",
+            "bytes": 2862266
+          }
+        ],
+        "scope": "Packaged local assets, not accuracy or photographed-label recognition"
+      }
+    },
+    {
+      "id": "N29",
+      "description": "Actual native panel invokes bundled offline OCR on a synthetic local image",
+      "status": "PASS",
+      "elapsedMs": 541,
+      "details": {
+        "scope": "Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested",
+        "output": "Barcodes read: 0; text lines: 1. Barcode support: unavailable. OCR support: available.Recognized text (unverified): PRODUCT 12345Search sources for this text"
+      }
+    },
+    {
+      "id": "N24",
+      "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict",
+      "status": "PASS",
+      "elapsedMs": 2296,
+      "details": {
+        "endpoint": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+        "scope": "Live public CC0 identity record only; not merchant/product attribution"
+      }
+    },
+    {
+      "id": "M-en",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1583,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "en",
+        "url": "https://fixture.example.com/languages/en/detail/products/lamp",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:55:08.938Z",
+          "claims": [
+            "Handmade",
+            "Only 3 left"
+          ],
+          "currency": "USD",
+          "description": "Ceramic 12 cm",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/en/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "Delivery: 12–20 business days",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "Ceramic table lamp",
+          "url": "https://fixture.example.com/languages/en/detail/products/lamp",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "Delivery: 12–20 business days"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "Only 3 left"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "Customers pay international return costs. Return"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "restocking fee of 25%"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "Return within 3 days"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-en",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1283,
+      "details": {
+        "url": "https://fixture.example.com/languages/en/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "USD",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-en",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13132,
+      "details": {
+        "paths": [
+          "/collections/lamps",
+          "/blog/lamp",
+          "/account"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-zh",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1552,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "zh",
+        "url": "https://fixture.example.com/languages/zh/detail/%E5%95%86%E5%93%81/%E5%8F%B0%E7%81%AF",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:55:24.905Z",
+          "claims": [
+            "手工制作",
+            "仅剩３件"
+          ],
+          "currency": "CNY",
+          "description": "陶瓷 １２ 厘米",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/zh/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "配送：１２–２０工作日",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "陶瓷台灯",
+          "url": "https://fixture.example.com/languages/zh/detail/%E5%95%86%E5%93%81/%E5%8F%B0%E7%81%AF",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "配送：１２–２０工作日"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "仅剩３件"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "３天内退货"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "买家承担国际退货费用。３天内退货"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "补货费２５%"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-zh",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1288,
+      "details": {
+        "url": "https://fixture.example.com/languages/zh/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "CNY",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-zh",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13148,
+      "details": {
+        "paths": [
+          "/分类/灯具",
+          "/blog/lamp",
+          "/账户"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-hi",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1529,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "hi",
+        "url": "https://fixture.example.com/languages/hi/detail/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%BE%E0%A4%A6/%E0%A4%B2%E0%A5%88%E0%A4%82%E0%A4%AA",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:55:40.871Z",
+          "claims": [
+            "हस्तनिर्मित",
+            "केवल ३ बचे"
+          ],
+          "currency": "INR",
+          "description": "सिरेमिक १२ सेंटीमीटर",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/hi/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "डिलीवरी: १२–२० कार्य दिवस",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "सिरेमिक टेबल लैंप",
+          "url": "https://fixture.example.com/languages/hi/detail/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%BE%E0%A4%A6/%E0%A4%B2%E0%A5%88%E0%A4%82%E0%A4%AA",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "डिलीवरी: १२–२० कार्य दिवस"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "केवल ३ बचे"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "३ दिन के भीतर वापसी"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "ग्राहक भुगतान करता है अंतरराष्ट्रीय वापसी"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "रीस्टॉकिंग शुल्क २५%"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-hi",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1289,
+      "details": {
+        "url": "https://fixture.example.com/languages/hi/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "INR",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-hi",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13151,
+      "details": {
+        "paths": [
+          "/संग्रह/लैंप",
+          "/blog/lamp",
+          "/खाता"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-es",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1526,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "es",
+        "url": "https://fixture.example.com/languages/es/detail/productos/lampara",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:55:56.837Z",
+          "claims": [
+            "Hecho a mano",
+            "Solo quedan 3"
+          ],
+          "currency": "EUR",
+          "description": "Cerámica 12 centímetros",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/es/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "Entrega: 12–20 días laborables",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "Lámpara de mesa de cerámica",
+          "url": "https://fixture.example.com/languages/es/detail/productos/lampara",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "Entrega: 12–20 días laborables"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "Solo quedan 3"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "El cliente paga la devolución internacional. Devoluciones"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "Tarifa de reposición del 25%"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "Devoluciones dentro de 3 días"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-es",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1292,
+      "details": {
+        "url": "https://fixture.example.com/languages/es/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "EUR",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-es",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13195,
+      "details": {
+        "paths": [
+          "/colecciones/lamparas",
+          "/blog/lamp",
+          "/cuenta"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-ar",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1549,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "ar",
+        "url": "https://fixture.example.com/languages/ar/detail/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/%D9%85%D8%B5%D8%A8%D8%A7%D8%AD",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:56:12.871Z",
+          "claims": [
+            "مصنوع يدويًا",
+            "بقي ٣ فقط"
+          ],
+          "currency": "SAR",
+          "description": "سيراميك ١٢ سنتيمتر",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/ar/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "التوصيل: ١٢–٢٠ أيام عمل",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "مصباح طاولة سيراميك",
+          "url": "https://fixture.example.com/languages/ar/detail/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA/%D9%85%D8%B5%D8%A8%D8%A7%D8%AD",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "التوصيل: ١٢–٢٠ أيام عمل"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "بقي ٣ فقط"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "يدفع العميل تكلفة إرجاع دولي. الإرجاع"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "رسوم إعادة التخزين ٢٥%"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "الإرجاع خلال ٣ أيام"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-ar",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1292,
+      "details": {
+        "url": "https://fixture.example.com/languages/ar/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "SAR",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-ar",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13166,
+      "details": {
+        "paths": [
+          "/فئات/مصابيح",
+          "/blog/lamp",
+          "/حساب"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-fr",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1559,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "fr",
+        "url": "https://fixture.example.com/languages/fr/detail/produits/lampe",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:56:28.885Z",
+          "claims": [
+            "Fait main",
+            "Il ne reste que 3"
+          ],
+          "currency": "EUR",
+          "description": "Céramique 12 centimètres",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/fr/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "Livraison : 12–20 jours ouvrés",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "Lampe de table en céramique",
+          "url": "https://fixture.example.com/languages/fr/detail/produits/lampe",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "Livraison : 12–20 jours ouvrés"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "Il ne reste que 3"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "Le client paie le retour international. Retours"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "Frais de restockage de 25%"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "Retours sous 3 jours"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-fr",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1290,
+      "details": {
+        "url": "https://fixture.example.com/languages/fr/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "EUR",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-fr",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13177,
+      "details": {
+        "paths": [
+          "/catégories/lampes",
+          "/blog/lamp",
+          "/compte"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-bn",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1547,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "bn",
+        "url": "https://fixture.example.com/languages/bn/detail/%E0%A6%AA%E0%A6%A3%E0%A7%8D%E0%A6%AF/%E0%A6%AC%E0%A6%BE%E0%A6%A4%E0%A6%BF",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:56:44.904Z",
+          "claims": [
+            "হাতে তৈরি",
+            "মাত্র ৩টি বাকি"
+          ],
+          "currency": "BDT",
+          "description": "সিরামিক ১২ সেন্টিমিটার",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/bn/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "ডেলিভারি: ১২–২০ কর্মদিবস",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "সিরামিক টেবিল বাতি",
+          "url": "https://fixture.example.com/languages/bn/detail/%E0%A6%AA%E0%A6%A3%E0%A7%8D%E0%A6%AF/%E0%A6%AC%E0%A6%BE%E0%A6%A4%E0%A6%BF",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "ডেলিভারি: ১২–২০ কর্মদিবস"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "মাত্র ৩টি বাকি"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "৩ দিনের মধ্যে ফেরত"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "ক্রেতা পরিশোধ করে আন্তর্জাতিক ফেরত"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "পুনঃমজুত ফি ২৫%"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-bn",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1286,
+      "details": {
+        "url": "https://fixture.example.com/languages/bn/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "BDT",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-bn",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13182,
+      "details": {
+        "paths": [
+          "/সংগ্রহ/বাতি",
+          "/blog/lamp",
+          "/অ্যাকাউন্ট"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-pt-BR",
+      "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+      "status": "PASS",
+      "elapsedMs": 1546,
+      "details": {
+        "uiLanguage": "en-US",
+        "merchantLanguage": "pt-BR",
+        "url": "https://fixture.example.com/languages/pt-BR/detail/produtos/luminaria",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:57:00.918Z",
+          "claims": [
+            "Feito à mão",
+            "Restam apenas 3"
+          ],
+          "currency": "BRL",
+          "description": "Cerâmica 12 centímetros",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/pt-BR/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "Entrega: 12–20 dias úteis",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "Luminária de mesa de cerâmica",
+          "url": "https://fixture.example.com/languages/pt-BR/detail/produtos/luminaria",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        },
+        "evidence": [
+          {
+            "id": "LONG_SHIPPING_WINDOW",
+            "weight": 10,
+            "observedValue": "Entrega: 12–20 dias úteis"
+          },
+          {
+            "id": "SCARCITY_LANGUAGE",
+            "weight": 4,
+            "observedValue": "Restam apenas 3"
+          },
+          {
+            "id": "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+            "weight": 9,
+            "observedValue": "O cliente paga a devolução internacional. Devoluções"
+          },
+          {
+            "id": "RESTOCKING_FEE",
+            "weight": 8,
+            "observedValue": "Taxa de reposição de 25%"
+          },
+          {
+            "id": "VERY_SHORT_RETURN_WINDOW",
+            "weight": 9,
+            "observedValue": "Devoluções dentro de 3 dias"
+          },
+          {
+            "id": "PRODUCT_IDENTIFIERS_PRESENT",
+            "weight": 0,
+            "observedValue": "012345678905, lamp-123, model-123"
+          },
+          {
+            "id": "REVIEW_TEXT_DUPLICATION",
+            "weight": 19,
+            "observedValue": "6 high-similarity review pair(s)"
+          },
+          {
+            "id": "SUPPLY_CHAIN_PROFILE",
+            "weight": 0,
+            "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+          },
+          {
+            "id": "CROSS_DOMAIN_SHARED_PRODUCT_IDENTIFIER",
+            "weight": 0,
+            "observedValue": "fixture.example.net: gtin"
+          }
+        ],
+        "verdict": {
+          "massResellLikelihood": null,
+          "dropshipLikelihood": 5,
+          "deceptionRisk": "low",
+          "merchantRisk": "low",
+          "manipulationRisk": "moderate",
+          "fulfillmentRisk": "low",
+          "severeWarningAllowed": false,
+          "reason": "Product evidence is not yet independent/strong enough for a severe automatic accusation."
+        },
+        "scope": "Owned equivalent fixture, native panel and original product attribution; not live-market accuracy"
+      }
+    },
+    {
+      "id": "P-pt-BR",
+      "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+      "status": "PASS",
+      "elapsedMs": 1301,
+      "details": {
+        "url": "https://fixture.example.com/languages/pt-BR/plain/unique-model-123",
+        "price": 1234.56,
+        "currency": "BRL",
+        "structuredIdentityResolved": false
+      }
+    },
+    {
+      "id": "Q-pt-BR",
+      "description": "Localized collection, editorial, home and private pages remain quiet",
+      "status": "PASS",
+      "elapsedMs": 13180,
+      "details": {
+        "paths": [
+          "/coleções/lampadas",
+          "/blog/lamp",
+          "/conta"
+        ],
+        "scope": "Explicit translated path exclusions, including percent-encoded Unicode; no scan of credentials"
+      }
+    },
+    {
+      "id": "M-browser-translated",
+      "description": "Visible French heading with unchanged English schema retains exact original identifiers",
+      "status": "PASS",
+      "elapsedMs": 497,
+      "details": {
+        "scope": "Owned modeled translated-DOM state, not a Google Translate service test",
+        "product": {
+          "brand": "灯品牌",
+          "capturedAt": "2026-10-10T10:57:15.956Z",
+          "claims": [
+            "Fait main",
+            "Il ne reste que 3"
+          ],
+          "currency": "EUR",
+          "description": "Céramique 12 centimètres",
+          "domain": "fixture.example.com",
+          "extraction": {
+            "method": "current-product JSON-LD",
+            "offerResolved": true,
+            "originalStructuredTitle": "Ceramic table lamp",
+            "structuredIdentityResolved": true
+          },
+          "gtin": "012345678905",
+          "imageUrls": [
+            "https://fixture.example.com/languages/fr/hero"
+          ],
+          "jsonLdProductCount": 1,
+          "mpn": "LAMP-123",
+          "pageSignals": [],
+          "price": 1234.56,
+          "shippingText": "Livraison : 12–20 jours ouvrés",
+          "sku": "MODEL-123",
+          "specifications": {},
+          "title": "Lampe de table en céramique",
+          "url": "https://fixture.example.com/languages/fr/translated/produits/lampe",
+          "variantId": "MODEL-123",
+          "technicalFingerprint": "012345678905|12 cm|ceramic|ceramic|lamp-123|model-123"
+        }
+      }
+    },
+    {
+      "id": "M-large",
+      "description": "Bounded manual scan of a 20,000-element original-language product page",
+      "status": "PASS",
+      "elapsedMs": 816,
+      "details": {
+        "elements": 20000,
+        "elapsedMs": 599,
+        "scope": "Owned large fixture; wall time includes panel/IPC/intelligence, not isolated CPU benchmark"
+      }
+    },
+    {
+      "id": "O-chi_sim",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label",
+      "status": "PASS",
+      "elapsedMs": 1488,
+      "details": {
+        "language": "chi_sim",
+        "text": "产品型号 测试",
+        "recognized": "Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): 产品型号 测试Recognized text (unverified): MODEL12345Search sources for this text",
+        "scope": "Packaged model invocation on a synthetic known-script label; independent photo accuracy untested"
+      }
+    },
+    {
+      "id": "O-hin",
+      "description": "Native reader selects a packaged offline language model on a synthetic local label",
+      "status": "FAIL",
+      "elapsedMs": 1494,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /MODEL\\s*12345/i. Input:\n\n'Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): उत्पाद मॉडलRecognized text (unverified): |॥0/05। 42345Search sources for this text'\n"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [
+    "https://rdap.verisign.com",
+    "https://rdap.verisign.com",
+    "https://rdap.verisign.com",
+    "https://www.saferproducts.gov",
+    "https://www.saferproducts.gov",
+    "https://www.saferproducts.gov",
+    "https://publisher.example.com",
+    "https://publisher.example.com",
+    "https://publisher.example.com",
+    "https://publisher.example.com",
+    "https://api.gleif.org",
+    "https://rdap.verisign.com",
+    "https://www.saferproducts.gov"
+  ],
+  "providerRequests": [
+    {
+      "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+      "mode": "delay",
+      "at": "2026-10-10T10:54:17.363Z"
+    },
+    {
+      "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+      "mode": "error",
+      "at": "2026-10-10T10:54:20.382Z"
+    },
+    {
+      "url": "https://rdap.verisign.com/com/v1/domain/example.com",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:20.842Z"
+    },
+    {
+      "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+      "mode": "delay",
+      "at": "2026-10-10T10:54:22.258Z"
+    },
+    {
+      "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+      "mode": "error",
+      "at": "2026-10-10T10:54:25.279Z"
+    },
+    {
+      "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Fixture",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:25.740Z"
+    },
+    {
+      "url": "https://publisher.example.com/products.json",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:27.658Z"
+    },
+    {
+      "url": "https://publisher.example.com/products.json",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:29.039Z"
+    },
+    {
+      "url": "https://publisher.example.com/products.json",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:30.417Z"
+    },
+    {
+      "url": "https://publisher.example.com/products.json",
+      "mode": "normal",
+      "at": "2026-10-10T10:54:33.878Z"
+    }
+  ],
+  "notTested": [
+    "Independent A01-D06 desktop QA",
+    "Live merchant/category accuracy",
+    "Concurrent native panels; malformed storage tested in core, not browser; native context-menu UI; live-store accuracy; RDAP/CPSC live endpoints"
+  ],
+  "packagedSourceCommit": "3fe9afe3441953f907fe46693033110b39a6ce2f",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.4",
+    "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75"
+  },
+  "actionOptions": {
+    "enabled": true,
+    "path": "sidepanel.html"
+  },
+  "actionTargets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/"
+    },
+    {
+      "type": "page",
+      "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+    }
+  ],
+  "nativeDesktopGeometry": {
+    "bounds": {
+      "left": 10,
+      "top": 10,
+      "width": 1288,
+      "height": 851,
+      "windowState": "normal"
+    },
+    "viewport": {
+      "width": 360,
+      "height": 716
+    },
+    "insetRight": 9,
+    "insetBottom": 8
+  },
+  "permissionExploration": {
+    "status": "EXPLICIT NATIVE DENY THEN ALLOW OBSERVED",
+    "settled": false,
+    "granted": false,
+    "ui": {
+      "checked": true,
+      "disabled": true,
+      "status": "Asking Chrome to allow automatic product alerts…"
+    },
+    "scripts": [],
+    "targets": [
+      {
+        "type": "service_worker",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+      },
+      {
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+      },
+      {
+        "type": "browser_ui",
+        "url": "chrome://omnibox-popup.top-chrome/"
+      },
+      {
+        "type": "page",
+        "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+      },
+      {
+        "type": "page",
+        "url": "https://fixture.example.com/products/mug"
+      }
+    ],
+    "afterDecision": {
+      "granted": true,
+      "scripts": [
+        {
+          "allFrames": false,
+          "id": "dropshredder-auto-shopping-v1",
+          "js": [
+            "content-scripts/auto.js"
+          ],
+          "matchOriginAsFallback": false,
+          "matches": [
+            "https://*/*"
+          ],
+          "persistAcrossSessions": true,
+          "runAt": "document_idle",
+          "world": "ISOLATED"
+        }
+      ]
+    }
+  },
+  "liveProviders": [
+    {
+      "id": "BETA-P01",
+      "endpoint": "https://rdap.verisign.com/net/v1/domain/example.net",
+      "status": "OBSERVED_RESPONSE",
+      "scope": "Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy",
+      "uiMessage": "Domain registration information retrieved. It does not establish the business’s age.",
+      "observation": "registered domain example.net • registered 1995-08-31 • registrar RESERVED-Internet Assigned Numbers Authority",
+      "elapsedMs": 460
+    },
+    {
+      "id": "BETA-P02",
+      "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+      "query": "RecallTitle=Anker",
+      "status": "OBSERVED_RESPONSE",
+      "uiMessage": "Candidate notices: 8; retrieved 2026-10-10T10:54:51.481Z. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+      "notices": [
+        {
+          "title": "Trankerloop Baby Bath Seats Recalled Due to Risk of Serious Injury or Death to Children from Drowning; Violates Mandatory Standard for Infant Bath Seats",
+          "url": "https://www.cpsc.gov/Recalls/2026/Trankerloop-Baby-Bath-Seats-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Drowning-Violates-Mandatory-Standard-for-Infant-Bath-Seats"
+        },
+        {
+          "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker Soundcore Lithium-Ion Battery Powered Bluetooth Speakers Recalled Due to Fire Hazard; Sold Exclusively on Amazon.com by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/Anker-Soundcore-Lithium-Ion-Battery-Powered-Bluetooth-Speakers-Recalled-Due-to-Fire-Hazard-Sold-Exclusively-on-Amazon-com-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker EverFrost Lithium-Ion Battery Powered Coolers Recalled Due to Battery Fire Hazard; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2024/Anker-EverFrost-Lithium-Ion-Battery-Powered-Coolers-Recalled-Due-to-Battery-Fire-Hazard-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Fantasia Trading Recalls Anker Power Banks Due to Fire Hazard",
+          "url": "https://www.cpsc.gov/Recalls/2023/Fantasia-Trading-Recalls-Anker-Power-Banks-Due-to-Fire-Hazard"
+        },
+        {
+          "title": "Anker Play Products Recalls Bolt Foldable Children's Scooters Due to Violation of Federal Lead Paint Ban; Lead Poisoning Hazard",
+          "url": "https://www.cpsc.gov/Recalls/2023/Anker-Play-Products-Recalls-Bolt-Foldable-Childrens-Scooters-Due-to-Violation-of-Federal-Lead-Paint-Ban-Lead-Poisoning-Hazard"
+        },
+        {
+          "title": "Anker Play Products Recalls 10-in-1 Incredible Inventions Science Kit Due to Violation of the Federal Lead Paint Ban",
+          "url": "https://www.cpsc.gov/Recalls/2021/Anker-Play-Products-Recalls-10-in-1-Incredible-Inventions-Science-Kit-Due-to-Violation-of-the-Federal-Lead-Paint-Ban"
+        }
+      ],
+      "scope": "Live incomplete candidate feed; no unit or product safety verification"
+    }
+  ],
+  "liveSurfaces": [
+    {
+      "kind": "direct manufacturer / cooling fan",
+      "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "expected": "NF-A12x25",
+      "startedAt": "2026-10-10T10:54:51.556Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 429,
+      "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "finishedAt": "2026-10-10T10:54:54.151Z"
+    },
+    {
+      "kind": "Amazon / cooling fan",
+      "url": "https://www.amazon.com/dp/B0FC636JBS",
+      "expected": "Noctua",
+      "startedAt": "2026-10-10T10:54:54.151Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+      "panelStatus": "Scan complete for www.amazon.com.",
+      "product": {
+        "url": "https://www.amazon.com/dp/B0FC636JBS",
+        "title": "Noctua NF-A12x25 G2 PWM, High-Performance Quiet Fan 120mm",
+        "asin": "B0FC636JBS",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "moderate",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "evidence": [
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "REVIEW_PRODUCT_MISMATCH",
+          "severity": "strong",
+          "weight": 21
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-10T10:55:00.903Z"
+    },
+    {
+      "kind": "Etsy / ceramic mug",
+      "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "expected": "Mug",
+      "startedAt": "2026-10-10T10:55:00.903Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 403,
+      "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "finishedAt": "2026-10-10T10:55:03.152Z"
+    },
+    {
+      "kind": "Walmart / construction toy",
+      "url": "https://www.walmart.com/ip/41004055",
+      "expected": "LEGO",
+      "startedAt": "2026-10-10T10:55:03.152Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+      "panelStatus": "Scan complete for www.walmart.com.",
+      "product": {
+        "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-10T10:55:07.660Z"
+    }
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /MODEL\\s*12345/i. Input:\n\n'Barcodes read: 0; text lines: 2. Barcode support: unavailable. OCR support: available.Recognized text (unverified): उत्पाद मॉडलRecognized text (unverified): |॥0/05। 42345Search sources for this text'\n",
+  "failureState": {
+    "status": "The page changed. Check this product again.",
+    "settingsOpen": false,
+    "sourceChecked": true,
+    "autoStatus": "Automatic alerts are on for supported shopping pages. Other pages stay quiet.",
+    "focused": "<body>\n    <main id=\"app\">\n      <header class=\"masthead\">\n        <div class=\"brand-row\">\n          <div>\n            <div class=\"eyebrow\">DROPSHREDDER</div>\n            <h1>Know what you’re really buying.</h1>\n          </div>\n          <span class=\"privacy-badge\">STAYS ON YOUR DEVICE</span>\n     ",
+    "documentFocused": true
+  },
+  "savedFeaturesAtFailure": {
+    "autoProtection": true,
+    "autoSourceHunt": true,
+    "preferMadeInUSA": true,
+    "toneMode": "nuclear",
+    "weeklyIntelligenceUpdates": false
+  },
+  "finishedAt": "2026-10-10T10:57:20.063Z",
+  "testsPassed": 57
+}

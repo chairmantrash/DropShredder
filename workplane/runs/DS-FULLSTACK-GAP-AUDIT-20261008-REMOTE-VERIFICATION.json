@@ -1,0 +1,100 @@
+{
+  "task": "DS-FULLSTACK-GAP-AUDIT-20261008",
+  "verifiedAt": "2026-10-08",
+  "implementationCommit": "8035b0bc6421f379c865cc0eb21453fcafcf5b42",
+  "implementationTree": "9ad75d40d87b9493ee9fa3c84194731762e329c9",
+  "workflowRuns": [
+    {
+      "id": 37789209943,
+      "name": "DropShredder CI",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 391,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37789209943/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37789209943/logs",
+      "workflow_id": 376429085
+    },
+    {
+      "id": 37789209588,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 228,
+      "jobs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37789209588/jobs",
+      "logs_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/runs/37789209588/logs",
+      "workflow_id": 376732497
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11555487182,
+      "name": "dropshredder-chrome-mv3",
+      "size_in_bytes": 75710,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11555487182",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11555487182/zip",
+      "expired": false,
+      "created_at": "2026-10-08T14:02:58Z",
+      "expires_at": "2027-01-06T14:02:31Z",
+      "updated_at": "2026-10-08T14:02:58Z",
+      "digest": "sha256:b15e93d973f8308f06c6e1e13d98ff4fe8367da60c978a323c4be1fce2c95a4c",
+      "workflow_run": {
+        "id": 37789209943,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/research-enhancement-audit-20261008",
+        "head_sha": "8035b0bc6421f379c865cc0eb21453fcafcf5b42"
+      }
+    },
+    {
+      "id": 11555104003,
+      "name": "dropshredder-chrome-store",
+      "size_in_bytes": 75074,
+      "url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11555104003",
+      "archive_download_url": "https://api.github.com/repos/chairmantrash/DropShredder/actions/artifacts/11555104003/zip",
+      "expired": false,
+      "created_at": "2026-10-08T14:02:57Z",
+      "expires_at": "2027-01-06T14:02:31Z",
+      "updated_at": "2026-10-08T14:02:57Z",
+      "digest": "sha256:58fbb042ee43c59fb895d303c79da72c8933c9dc5b7f642f241ae024f852abec",
+      "workflow_run": {
+        "id": 37789209943,
+        "repository_id": 1407325128,
+        "head_repository_id": 1407325128,
+        "head_branch": "feature/research-enhancement-audit-20261008",
+        "head_sha": "8035b0bc6421f379c865cc0eb21453fcafcf5b42"
+      }
+    }
+  ],
+  "dependencyAdvisoryReview": {
+    "command": "npm audit --json under Node 22.20.0",
+    "exitCode": 0,
+    "result": "No reported advisories at review time",
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 1,
+        "dev": 184,
+        "optional": 53,
+        "peer": 35,
+        "peerOptional": 0,
+        "total": 184
+      }
+    },
+    "vulnerabilities": {},
+    "limitations": "Advisory registry result, not proof of vulnerability absence. Metadata includes platform optional/development dependencies; no runtime dependencies added."
+  },
+  "protectedState": {
+    "pr9": "open/draft/unmerged",
+    "releaseHead": "2f89ddaac2037dbeb78be5a39ae7254b68394a78",
+    "publishedExtension": false
+  },
+  "remainingGate": "Actual desktop Chrome 133+ unpacked QA, native permission/download/layout/lifecycle behavior",
+  "note": "This receipt records the verified implementation commit; the documentation-only receipt commit and its checks are recorded in the owner report."
+}

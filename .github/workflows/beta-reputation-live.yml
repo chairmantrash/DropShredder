@@ -1,0 +1,84 @@
+name: DropShredder reputation and evidence live retest
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-reputation-live.yml', 'tools/beta/reputation/stage.py']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  native-live:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/reputation-and-detection-20261013' && github.event.pull_request.head.sha == 'ac52c91f4e082fafc5ba7358aecdd39742d48adb'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Require green source gates and stage frozen targets with predeclared controls
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACCEPTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,io,json,os,pathlib,subprocess,time,zipfile
+          def api(path):return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          for attempt in range(90):
+              runs=api('actions/runs?event=pull_request&head_sha='+os.environ['ACCEPTED_HEAD']+'&per_page=100')['workflow_runs']
+              latest={}
+              for g in runs:
+                  if g['name'] in ['DropShredder CI','CodeQL','DropShredder Chromium Runtime']:latest.setdefault(g['name'],g)
+              gates=list(latest.values())
+              if len(gates)<3:time.sleep(5);continue
+              if all(g['status']=='completed' for g in gates):
+                  assert all(g['conclusion']=='success' for g in gates),gates;break
+              time.sleep(5)
+          else:raise SystemExit('Accepted source gates incomplete; no live test')
+          old=api('actions/runs/38401263017');assert old['status']=='completed' and old['conclusion']=='success' and old['head_sha']=='c2fa68b38ea352e7de485ff67ce623264d980d01'
+          changed=subprocess.check_output(['git','diff','--name-only','c2fa68b38ea352e7de485ff67ce623264d980d01','HEAD'],text=True).splitlines()
+          assert all(p.startswith(('tests/','tools/beta/','tools/browser-smoke/','.github/workflows/')) for p in changed),changed
+          a=next(a for a in api('actions/runs/38401263017/artifacts')['artifacts'] if a['name']=='dropshredder-chrome-store')
+          pathlib.Path('ci-artifact.json').write_text(json.dumps(a))
+          b=subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/actions/artifacts/11786149218/zip'])
+          assert hashlib.sha256(b).hexdigest()=='8c89e38edbad9c2d73bf0e69575cea08c301dd6c936b73bdd05219274ee62a42'
+          with zipfile.ZipFile(io.BytesIO(b)) as z:b=z.read('frozen-targets.json')
+          oldhash=hashlib.sha256(b).hexdigest();assert oldhash=='fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98'
+          m=json.loads(b);assert len(m['targets'])==259
+          c=json.loads(pathlib.Path('tools/beta/reputation/controls.json').read_text());assert len(c['targets'])==9
+          m['originalFrozenManifestSha256']=oldhash;m['controlsFrozenAt']=c['frozenAt'];m['targets']+=c['targets']
+          assert len(m['targets'])==268 and len({t['id'] for t in m['targets']})==268
+          pathlib.Path('frozen-targets.json').write_text(json.dumps(m,indent=2)+'\n')
+          data=subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/artifacts/{a["id"]}/zip']);pathlib.Path('accepted-ci.zip').write_bytes(data)
+          PY
+          python3 tools/beta/reputation/stage.py accepted-ci.zip ci-artifact.json
+      - name: Install isolated genuine native browser tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 tools/beta/audit150/make-runner.py
+      - name: Retest all frozen targets using actual native controls
+        env:
+          DS_NATIVE_HEADED: '1'
+          DS_OUTSIDE_LIVE: '1'
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_MANIFEST: frozen-targets.json
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-audit-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds056-live-${{ matrix.shard }}
+          path: |
+            browser-smoke-results/
+            frozen-targets.json
+            ci-artifact.json
+          if-no-files-found: error
+          retention-days: 90

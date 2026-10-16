@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "pin": {
+    "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+    "artifactSha256": "c779fbd557e0e02d05b6513740e6d596cfcccfe9efb09d97a0a50ea4edceaedf"
+  },
+  "provenance": {
+    "independentGroundTruth": false,
+    "rightsCleared": false,
+    "thresholdApproval": null,
+    "clusterDependenceReviewed": false
+  },
+  "calibrationGroups": {
+    "merchants": [],
+    "products": []
+  },
+  "requiredStrata": {
+    "category": [
+      "apparel",
+      "accessories",
+      "electronics",
+      "furniture",
+      "pet-goods",
+      "cosmetics",
+      "toys"
+    ],
+    "platform": [
+      "Shopify",
+      "Shopline",
+      "Shoplazza",
+      "Wix",
+      "Squarespace",
+      "WooCommerce",
+      "custom",
+      "Amazon",
+      "Etsy",
+      "Walmart",
+      "manufacturer-direct",
+      "local-seller",
+      "made-to-order",
+      "print-on-demand",
+      "legitimate-reseller"
+    ],
+    "language": [
+      "en",
+      "zh",
+      "hi",
+      "es",
+      "ar",
+      "fr",
+      "bn",
+      "pt-BR"
+    ]
+  },
+  "thresholds": null,
+  "cases": []
+}

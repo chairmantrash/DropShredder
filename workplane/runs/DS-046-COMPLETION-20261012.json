@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-046",
+  "recordedAt": "2026-10-12T11:48:40.258695+00:00",
+  "status": "DONE — browser engineering acceptance and current distribution preparation; independent acceptance open",
+  "ownerDirective": "Finish the queue...",
+  "baselineRemote": "a222862e711b1680cb6e058f1ad9a167324fd094",
+  "production": {
+    "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
+    "sourceTree": "db63f2b26bc569ffb7f7585b544d032436014386",
+    "files": 51,
+    "bytes": 54940159,
+    "runtimeChangesThisTask": false,
+    "rawLocalStoreZip": {
+      "bytes": 25848653,
+      "sha256": "24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1",
+      "scope": "Local raw install ZIP; not the hosted QA artifact wrapper or Store approval"
+    }
+  },
+  "testedHarness": {
+    "remoteCommit": "8bc3d70b429809ee5a12f819541e6b0c0bbe9097",
+    "localCommit": "020dfc8",
+    "tree": "f45511dc094882ad4c80bd0a9d0332e367d25c11",
+    "localRemoteTreeEqual": true
+  },
+  "integration": {
+    "pr": 13,
+    "url": "https://github.com/chairmantrash/DropShredder/pull/13",
+    "releaseBranch": "release/security-performance-hardening",
+    "mergeSha": "8940834e10581572f97f0912f9dc996a3450aae4",
+    "merged": true,
+    "mainMerged": false,
+    "publicPr9Draft": true,
+    "storeSubmitted": false,
+    "externalBetaStarted": false
+  },
+  "verification": {
+    "ci": {
+      "id": 38187268119,
+      "status": "success",
+      "coreTests": 394,
+      "failures": 0,
+      "skips": 0
+    },
+    "codeql": {
+      "id": 38187268158,
+      "status": "success"
+    },
+    "chromium": {
+      "id": 38187268027,
+      "status": "success",
+      "headedCases": 77,
+      "packagedCases": 9,
+      "localeGroups": 7,
+      "chrome133Cases": 9,
+      "chrome155Cases": 9,
+      "totalBrowserCaseExecutions": 111,
+      "uniqueCaseIds": 93,
+      "excludedHeadlessNativeRepeats": 7,
+      "nativeBrowser": "Chrome/156.0.8078.4",
+      "compatibilityBrowsers": [
+        "Chrome/133.0.6943.141",
+        "Chrome/155.0.8059.39"
+      ]
+    },
+    "local": [
+      "Node22 syntax checks on changed harness",
+      "git diff --check",
+      "current QA archive digest and all51 packaged file size/SHA256 checks",
+      "six Store asset PNG dimensions/hash checks",
+      "four exact source-crop pixel comparisons",
+      "deterministic asset regeneration",
+      "bounded visual inspection of current assets and native image/menu/OCR/window frames",
+      "Updated empty/unapproved corpus pin exercised: exit2 NOT_ACCEPTED, zero independent observations"
+    ]
+  },
+  "newNativeChecks": [
+    {
+      "id": "N35",
+      "description": "Two simultaneous native panels preserve independent settings patches and target their focused windows",
+      "status": "PASS",
+      "elapsedMs": 5311,
+      "details": {
+        "windowIds": [
+          1866658425,
+          1866658429
+        ],
+        "products": [
+          "https://fixture.example.com/products/mug",
+          "https://fixture.example.net/products/window-two"
+        ],
+        "preservedPatches": {
+          "autoProtection": true,
+          "autoSourceHunt": false,
+          "preferMadeInUSA": false,
+          "toneMode": "nuclear",
+          "weeklyIntelligenceUpdates": false
+        },
+        "scope": "Two actual native panels, user controls and focused-window scans; no independent tester"
+      }
+    },
+    {
+      "id": "N38-page",
+      "description": "Actual page/product context menu opens a local chooser, cancellation shares nothing and selected searches are bounded",
+      "status": "PASS",
+      "elapsedMs": 2473,
+      "details": {
+        "destinations": [
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Amercadolibre.com.mx%20OR%20site%3Aaliexpress.com%20OR%20site%3Atemu.com%20OR%20site%3Abanggood.com%20OR%20site%3Ataobao.com%20OR%20site%3Atmall.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aprintify.com%20OR%20site%3Aprintful.com%20OR%20site%3Agelato.com%20OR%20site%3Atapstitch.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20reddit",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aamazon.ca%20OR%20site%3Aamazon.com.mx%20OR%20site%3Awalmart.ca%20OR%20site%3Awalmart.com.mx%20OR%20site%3Alightinthebox.com%20OR%20site%3Ashein.com%20OR%20site%3Aamazon.com%20OR%20site%3Aebay.com%20OR%20site%3Awalmart.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Adropcommerce.com%20OR%20site%3Adropi.com.mx%20OR%20site%3Asourcinbox.com%20OR%20site%3Ahypersku.com%20OR%20site%3Acjdropshipping.com%20OR%20site%3Azendrop.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aspocket.co%20OR%20site%3Adoba.com%20OR%20site%3Asalehoo.com%20OR%20site%3Awholesale2b.com%20OR%20site%3Amodalyst.co%20OR%20site%3Asyncee.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22%20(site%3Aautods.com%20OR%20site%3Ainventorysource.com%20OR%20site%3Adropified.com%20OR%20site%3Adsers.com%20OR%20site%3Atrendsi.com%20OR%20site%3Ausadrop.com)",
+          "https://www.google.com/search?q=%22Owned%20menu%20product%22"
+        ],
+        "scope": "Real native menu/chooser and actual Chrome pending/committed target URLs; DNS-refused engineering destinations, no claim remote results loaded"
+      }
+    },
+    {
+      "id": "N38-selection",
+      "description": "Actual selected-text context menu searches the selection rather than the tab title",
+      "status": "PASS",
+      "elapsedMs": 1442,
+      "details": {
+        "selection": "Selection Model 076",
+        "queries": [
+          "\"Selection Model 076\" (site:mercadolibre.com.mx OR site:aliexpress.com OR site:temu.com OR site:banggood.com OR site:taobao.com OR site:tmall.com)",
+          "\"Selection Model 076\" (site:printify.com OR site:printful.com OR site:gelato.com OR site:tapstitch.com)",
+          "\"Selection Model 076\" reddit",
+          "\"Selection Model 076\" (site:amazon.ca OR site:amazon.com.mx OR site:walmart.ca OR site:walmart.com.mx OR site:lightinthebox.com OR site:shein.com OR site:amazon.com OR site:ebay.com OR site:walmart.com)",
+          "\"Selection Model 076\" (site:dropcommerce.com OR site:dropi.com.mx OR site:sourcinbox.com OR site:hypersku.com OR site:cjdropshipping.com OR site:zendrop.com)",
+          "\"Selection Model 076\" (site:spocket.co OR site:doba.com OR site:salehoo.com OR site:wholesale2b.com OR site:modalyst.co OR site:syncee.com)",
+          "\"Selection Model 076\" (site:autods.com OR site:inventorysource.com OR site:dropified.com OR site:dsers.com OR site:trendsi.com OR site:usadrop.com)",
+          "\"Selection Model 076\""
+        ]
+      }
+    },
+    {
+      "id": "N38-store",
+      "description": "Actual store context menu offers domain-scoped destinations without opening them before selection",
+      "status": "PASS",
+      "elapsedMs": 1436,
+      "details": {
+        "choices": 7,
+        "openedBeforeSelection": 0,
+        "openedAfterSelection": 1,
+        "destination": "https://www.google.com/search?q=%22fixture.example.com%22%20site%3Abbb.org"
+      }
+    },
+    {
+      "id": "N38-image",
+      "description": "Actual image context menu preserves the chosen public image URL and sends nothing before destination selection",
+      "status": "PASS",
+      "elapsedMs": 1254,
+      "details": {
+        "imageUrl": "https://fixture.example.com/menu-image.png",
+        "destination": "https://lens.google.com/uploadbyurl?url=https%3A%2F%2Ffixture.example.com%2Fmenu-image.png",
+        "openedBeforeSelection": 0,
+        "openedAfterSelection": 1,
+        "scope": "Actual selected destination URL, intercepted HTTP; no image URL sent externally"
+      }
+    },
+    {
+      "id": "N36",
+      "description": "32 quiet background tabs cause no toast flood, registration growth or unsolicited investigation",
+      "status": "PASS",
+      "elapsedMs": 10825,
+      "details": {
+        "backgroundTabs": 32,
+        "beforeRss": {
+          "processCount": 11,
+          "rssKiB": 1554196,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "loadedRss": {
+          "processCount": 43,
+          "rssKiB": 6019596,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "afterCloseRss": {
+          "processCount": 11,
+          "rssKiB": 1556960,
+          "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+        },
+        "idle": {
+          "elapsedMs": 5473,
+          "pageTaskSeconds": 0.0031839999999999993,
+          "panelTaskSeconds": 0.006711,
+          "pageHeapBytes": 3502232,
+          "panelHeapBytes": 2935744
+        },
+        "scope": "Owned quiet pages,5-second observed idle interval, DevTools-attached page/panel; descriptive measurements, not real-page CPU or a population/performance budget pass"
+      }
+    },
+    {
+      "id": "N39",
+      "description": "Changing the selected OCR language cancels or invalidates pending results and the next native read recovers",
+      "status": "PASS",
+      "elapsedMs": 6138,
+      "details": {
+        "pending": {
+          "disabled": true,
+          "status": "Reading image locally. No image is sent to a server."
+        },
+        "recovered": "Barcodes read: 0; text lines: 1. Barcode support: unavailable. OCR support: available.Recognized text (unverified): PRODUCT 12345Search sources for this text",
+        "scope": "Real native model change, no stale result, successful next read; no independent photo/blur/rotation accuracy"
+      }
+    },
+    {
+      "id": "N37",
+      "description": "Actual malformed Chrome storage fails closed across a browser restart and normal native writes recover canonical settings",
+      "status": "PASS",
+      "elapsedMs": 2343,
+      "details": {
+        "faults": {
+          "dropshredder-feature-settings-v1": {
+            "autoProtection": "true",
+            "weeklyIntelligenceUpdates": "true",
+            "autoSourceHunt": 1,
+            "preferMadeInUSA": [],
+            "toneMode": "unsupported"
+          },
+          "dropshredder-display-v1": {
+            "theme": "unsupported",
+            "density": [],
+            "textScale": 9000
+          },
+          "dropshredder-user-lists-v1": {
+            "schemaVersion": 1,
+            "lists": [
+              {
+                "current": {
+                  "list": {
+                    "id": "untrusted-invalid",
+                    "version": 999999
+                  },
+                  "authentication": "signed"
+                }
+              }
+            ],
+            "keys": [
+              {
+                "trusted": true
+              }
+            ]
+          }
+        },
+        "controls": {
+          "source": false,
+          "auto": false,
+          "weekly": false,
+          "origin": false,
+          "tone": "professional",
+          "theme": "dark",
+          "textScale": "100",
+          "savedLists": "No user-added lists."
+        },
+        "canonical": {
+          "autoProtection": false,
+          "autoSourceHunt": true,
+          "preferMadeInUSA": false,
+          "toneMode": "professional",
+          "weeklyIntelligenceUpdates": false
+        },
+        "scope": "Explicit engineering-only Chrome storage fault and full profile restart, not unmodified independent QA"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11720560697,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "digest": "sha256:e015d8a83e4fcb1a8a449f652666d98e17b7ae95b8ca1e1ad20d983a1dd3a422",
+      "expiresAt": "2026-11-11T00:15:43Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11720560697"
+    },
+    {
+      "id": 11720431432,
+      "name": "dropshredder-chrome155-evidence",
+      "digest": "sha256:322fb65b03dee080058627b5ece9defb5881bb9f76e4664e8fd657417873724c",
+      "expiresAt": "2026-11-11T00:15:40Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11720431432"
+    },
+    {
+      "id": 11720232054,
+      "name": "dropshredder-unpacked-qa",
+      "digest": "sha256:62747c7be5ba854519dece8d5ba2259092edc796cd71e9225410277dcdcd8430",
+      "expiresAt": "2026-11-11T00:15:40Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11720232054"
+    },
+    {
+      "id": 11719987649,
+      "name": "dropshredder-native-panel-evidence",
+      "digest": "sha256:b0aa14b019bc722585ede8529fc1be72b32d5d3e23fd6f02e84eedef723d31b1",
+      "expiresAt": "2026-11-11T00:15:41Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11719987649"
+    },
+    {
+      "id": 11719947836,
+      "name": "dropshredder-chrome133-evidence",
+      "digest": "sha256:b044345bb318344e34f811a3f03407cd0670000a89c3ac7c59e77fdb01d9d64c",
+      "expiresAt": "2026-11-11T00:15:47Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11719947836"
+    },
+    {
+      "id": 11719943439,
+      "name": "dropshredder-headed-permission-evidence",
+      "digest": "sha256:f0810a2da3a30a2502b7827cc37f2b5906e538cd40718ecad0701bd861a5771d",
+      "expiresAt": "2026-11-11T00:20:44Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11719943439"
+    },
+    {
+      "id": 11719684695,
+      "name": "dropshredder-localization-evidence",
+      "digest": "sha256:1d89cc474eca7513fd19bd7531dd216a7f9674535ffa877c9f60b053319aad8a",
+      "expiresAt": "2026-11-11T00:15:48Z",
+      "url": "https://github.com/chairmantrash/DropShredder/actions/runs/38187268027/artifacts/11719684695"
+    }
+  ],
+  "downloadedAndVerified": {
+    "qaArchiveSha256": "62747c7be5ba854519dece8d5ba2259092edc796cd71e9225410277dcdcd8430",
+    "all51PackageFiles": true,
+    "headedArchiveSha256": "f0810a2da3a30a2502b7827cc37f2b5906e538cd40718ecad0701bd861a5771d"
+  },
+  "compatibilityBrowserArchives": {
+    "chrome133Sha256": "0e51d229098b5c2330ec91190bae6e48bb5b8a5cff2e2593b03af573221816e1",
+    "chrome155Sha256": "55672d1f392fd3e7b7a08621b6e804e6bcb39d40cf155504abb74b3a021ea8ea",
+    "stableSource": "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json",
+    "stableSourceTimestamp": "2026-10-11T20:21:20.493Z",
+    "scope": "Official HTTPS pinned downloads;133 hash checked in workflow,155 hash observed; compatibility jobs cover packaged runtime, not every native feature"
+  },
+  "historicalRuns": [
+    {
+      "commit": "7ba9329291434ea8627f358f8db4d59ce999322e",
+      "run": 38186085864,
+      "result": "GREEN",
+      "headedCases": 72,
+      "scope": "First completed new window/storage/32-tab/minimum-version checks; source of unchanged current-runtime Store captures"
+    },
+    {
+      "commit": "2ce7d6b335d8179a77066bb55a20441b2819023a",
+      "run": 38186731815,
+      "result": "FAIL",
+      "artifact": 11719777350,
+      "digest": "sha256:890af3ff4e092a25f2dd95cd5ccb56df3f2fdfdab2a88e8c7bd39fb1cb6523ba",
+      "failure": "N38-page: Playwright committed page URL assumption; native chooser and8 Chrome targets opened; not a product code failure"
+    },
+    {
+      "commit": "5c00ac6c5441a9e4188d3ad7c12655f2bb5fdcf9",
+      "run": 38187036101,
+      "result": "FAIL",
+      "artifact": 11720131950,
+      "digest": "sha256:90014a7c71d8dce402593f20a8dd0e611deaf67727d4bb67fba80b303587d7a0",
+      "failure": "N38-image: first checkbox was Bing after Chrome storage key ordering; fixed test selection to visible Google Lens label"
+    }
+  ],
+  "resourceObservations": {
+    "backgroundTabs": 32,
+    "beforeRss": {
+      "processCount": 11,
+      "rssKiB": 1554196,
+      "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+    },
+    "loadedRss": {
+      "processCount": 43,
+      "rssKiB": 6019596,
+      "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+    },
+    "afterCloseRss": {
+      "processCount": 11,
+      "rssKiB": 1556960,
+      "scope": "All Chrome processes on this isolated hosted job; RSS includes shared-memory double counting"
+    },
+    "idle": {
+      "elapsedMs": 5473,
+      "pageTaskSeconds": 0.0031839999999999993,
+      "panelTaskSeconds": 0.006711,
+      "pageHeapBytes": 3502232,
+      "panelHeapBytes": 2935744
+    },
+    "scope": "Owned quiet pages,5-second observed idle interval, DevTools-attached page/panel; descriptive measurements, not real-page CPU or a population/performance budget pass"
+  },
+  "livePublicSurfaces": [
+    {
+      "kind": "direct manufacturer / cooling fan",
+      "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "expected": "NF-A12x25",
+      "startedAt": "2026-10-12T00:17:34.830Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 429,
+      "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "finishedAt": "2026-10-12T00:17:37.440Z"
+    },
+    {
+      "kind": "Amazon / cooling fan",
+      "url": "https://www.amazon.com/dp/B0FC636JBS",
+      "expected": "Noctua",
+      "startedAt": "2026-10-12T00:17:37.440Z",
+      "status": "ENVIRONMENT_OR_SURFACE_UNAVAILABLE",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "error": "Error: page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.amazon.com/dp/B0FC636JBS\nCall log:\n  - navigating to \"https://www.amazon.com/dp/B0FC636JBS\", waiting until \"domcontentloaded\"\n",
+      "finishedAt": "2026-10-12T00:17:37.523Z"
+    },
+    {
+      "kind": "Etsy / ceramic mug",
+      "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "expected": "Mug",
+      "startedAt": "2026-10-12T00:17:37.523Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 403,
+      "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "finishedAt": "2026-10-12T00:17:39.792Z"
+    },
+    {
+      "kind": "Walmart / construction toy",
+      "url": "https://www.walmart.com/ip/41004055",
+      "expected": "LEGO",
+      "startedAt": "2026-10-12T00:17:39.792Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+      "panelStatus": "Scan complete for www.walmart.com.",
+      "product": {
+        "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "resources": {
+        "status": "OBSERVED",
+        "intervalMs": 5002,
+        "taskSeconds": 0.18626299999999998,
+        "scriptSeconds": 0.035992,
+        "heapBytes": 91882328,
+        "dom": {
+          "elements": 5402,
+          "scrollHeight": 7957,
+          "viewport": 720
+        },
+        "scrollFrameMs": 13,
+        "scope": "Current public product page, read-only DevTools metrics and one real wheel input; all site/page CPU, not extension-only CPU or calibrated resource acceptance"
+      },
+      "finishedAt": "2026-10-12T00:17:50.557Z"
+    }
+  ],
+  "storeAssets": {
+    "manifest": "store-assets/ASSET-MANIFEST.json",
+    "sourceRun": 38186085864,
+    "nativeArtifact": 11719906717,
+    "packagedArtifact": 11719935779,
+    "sourceCommit": "2641a597573f071f8360492d6dc577983c38c144",
+    "scope": "Unchanged candidate's genuine native/document frames; controlled labels/feed, cropped without UI-pixel editing; not accuracy/publication approval"
+  },
+  "conditionalReadinessCheck": {
+    "title": "DropShredder beta readiness",
+    "enabled": true,
+    "scope": "Canonical repository condition watch; no automatic fabricated acceptance, invitations, main merge or Store publication"
+  },
+  "remainingAcceptance": [
+    "Independent rights-cleared merchant/product-disjoint ground truth, reviewed clustering and owner-approved launch thresholds; corpus remains empty/unapproved",
+    "Full independent A01-D06/F01-F07 operator/site/accessibility/OS review; engineering mapping is not an operator signature",
+    "Native-speaker/legal-copy review of all eight419-message UI catalogs",
+    "Independent photographed/blurred/rotated labels and cross-OS chooser accuracy",
+    "Applicable real publisher/source authenticity and naturally elapsed weekly signed-feed lifecycle; owned fixtures do not authenticate external issuers",
+    "Accepted-source distribution/publisher/contact settings and public release steps; main/tag/Store are held"
+  ],
+  "externalBeta": {
+    "status": "NOT_STARTED — independent acceptance incomplete",
+    "ready": false,
+    "participantsInvented": false,
+    "accuracyClaimed": false
+  },
+  "maintenance": {
+    "DS021": "ONGOING — not overdue finite work",
+    "weeklyResearchEnabled": true
+  },
+  "verifiedAt": "2026-10-12T00:20:44.362Z"
+}

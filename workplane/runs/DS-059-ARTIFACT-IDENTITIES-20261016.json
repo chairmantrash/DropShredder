@@ -1,0 +1,86 @@
+{
+  "acceptedHead": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "productionSource": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
+  "productionTree": "ab126afcadd7c0b6015fc5e324ab45f33eadf569",
+  "liveArtifacts": [
+    {
+      "id": 12035921218,
+      "name": "ds059-live-5",
+      "wrapperDigest": "sha256:c050f099b659af7919b366c49162a8f967e479a7447488c72e0f687f6fbee8d6",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12035877587,
+      "name": "ds059-live-6",
+      "wrapperDigest": "sha256:fd3945ada81bd16b89e355dee6c5c842d08a492181228694fd92210ab059ab7f",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12035700804,
+      "name": "ds059-live-3",
+      "wrapperDigest": "sha256:913e5f97560b6c460f23ab5087ca6155b04f03483d662d3df953862d79f3a7ac",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12035587544,
+      "name": "ds059-live-1",
+      "wrapperDigest": "sha256:4f939f747df8ab9728408bd1938e7d1e24c574583becf772d0c454d6b6df3adb",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12035407847,
+      "name": "ds059-live-4",
+      "wrapperDigest": "sha256:a661cf9a03bd509542728c5dbfc9e334ecb238c05990dfd823717e7942af5295",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12035203315,
+      "name": "ds059-live-2",
+      "wrapperDigest": "sha256:020b356c1f7b2f5d358b8d327b05a8e58857f058dfc3921bd4126d5850155472",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12034954239,
+      "name": "ds059-live-7",
+      "wrapperDigest": "sha256:850ba04861560536da4f0612574bd5d364c187466cf61b8ab1bd5d0cf2bba0c0",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    },
+    {
+      "id": 12034759981,
+      "name": "ds059-live-0",
+      "wrapperDigest": "sha256:0cdc106e10bf9f0ae028c630a63ed36dde3d7ba09ac768a44ec1287ea688159f",
+      "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+      "run": 38875762984
+    }
+  ],
+  "native": {
+    "id": 12035088264,
+    "digest": "sha256:aee1f1a8a1390953893ba82260791d9c7701c2107cba23fbf317c1173406a50d",
+    "run": 38875762651
+  },
+  "codeql": {
+    "id": 12034379951,
+    "digest": "sha256:ac9dcb37c2f4cae89e787c67340778bac6cddb5a055f157373c5dd549f1db214",
+    "run": 38875762577
+  },
+  "ci": {
+    "id": 12035137095,
+    "digest": "sha256:7134a24cde3be14f944a22080c4a1d9b9855af4ec99ac2ff9b6ed369ca36c50d",
+    "run": 38875762516,
+    "innerZipSha256": "83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b"
+  },
+  "originalBootstrapFailure": {
+    "id": 12035162343,
+    "digest": "sha256:e6896ed9ef999b0e462aa7f6d8210027f144f1ba596a48051cb5496ddd5eb040",
+    "casesObserved": 0,
+    "retryArtifact": 12035877587
+  },
+  "scope": "All eight final profiles use the same accepted harness head and byte-identical 54-file CI package; original blank-browser failure and blocked initial outcomes retained."
+}

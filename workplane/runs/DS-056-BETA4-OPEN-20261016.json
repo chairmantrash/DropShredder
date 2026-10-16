@@ -1,0 +1,48 @@
+{
+  "publishedAt": "2026-10-16T05:49:10Z",
+  "verifiedAt": "2026-10-16T05:50:09.468334+00:00",
+  "release": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.4",
+  "productionSource": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+  "publicationHead": "b6ec6abca04584f231522d69294a62ac65564568",
+  "publicationRun": 38857635951,
+  "authenticated": false,
+  "all54PublicPackageHashesMatch": true,
+  "assets": [
+    {
+      "name": "NATIVE-PROTOCOL.json",
+      "bytes": 89018,
+      "sha256": "0abac7608e8863f20ed53aa8bbff81115c425a74d5954ebac1089e1b460992af"
+    },
+    {
+      "name": "DropShredder-0.2.0-beta.4-chrome.zip",
+      "bytes": 25985652,
+      "sha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752"
+    },
+    {
+      "name": "LIVE-PAGE-OUTCOMES.json",
+      "bytes": 3806053,
+      "sha256": "fcf951396e0b003a3d25a49222bd8584f028e809f94d69a2fe329d29ee401df6"
+    },
+    {
+      "name": "INSTALL-AND-REPORT.md",
+      "bytes": 2530,
+      "sha256": "a5358d27ad59cbf92916c0cf88e4b4b5a33001a9b0aab5d2ac7c66407495cac6"
+    },
+    {
+      "name": "BETA-OBSERVATIONS.json",
+      "bytes": 18694,
+      "sha256": "9a1344f384deae2a6bed8e6f2f1abb6603352df35ea2c1740485b5ebcb893621"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 103,
+      "sha256": "121f8c3ee14c87945fe62f9746ae5d30bb4e5c5a26f7d1288cf7c3afb5f4b71a"
+    },
+    {
+      "name": "BUILD-INFO.json",
+      "bytes": 9231,
+      "sha256": "5d020a100e05d24c7ad5134ff222404cf53b46abe1bfc9707685eb05347c3314"
+    }
+  ],
+  "freshRetest": "DS-057 running; not included in original acceptance observations"
+}

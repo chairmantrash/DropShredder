@@ -1,0 +1,278 @@
+{
+  "repository": "ScamFerret/artifact",
+  "commit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+  "scope": "Historical GPT-4.1 classifications matching DS-054 candidate hosts; not fresh ground truth or runtime answers",
+  "license": "GPL-3.0; see tools/beta/audit150/SOURCE-LICENSE-GPL-3.0.txt",
+  "paths": [
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json",
+      "name": "18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json"
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json",
+      "name": "33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json"
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json",
+      "name": "54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json"
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json",
+      "name": "804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json"
+    },
+    {
+      "language": "dutch",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json",
+      "name": "97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json"
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json",
+      "name": "9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json"
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json",
+      "name": "b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json"
+    },
+    {
+      "language": "english",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json",
+      "name": "d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json"
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json",
+      "name": "5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json"
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json",
+      "name": "7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json"
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json",
+      "name": "d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json"
+    },
+    {
+      "language": "french",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json",
+      "name": "eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json",
+      "name": "04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json",
+      "name": "2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json",
+      "name": "2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json",
+      "name": "458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json",
+      "name": "46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json",
+      "name": "4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json",
+      "name": "5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json",
+      "name": "628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json",
+      "name": "906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json",
+      "name": "a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json",
+      "name": "b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json",
+      "name": "c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json",
+      "name": "c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json",
+      "name": "c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json",
+      "name": "c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json",
+      "name": "c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json"
+    },
+    {
+      "language": "german",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json",
+      "name": "d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json",
+      "name": "03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json",
+      "name": "228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json",
+      "name": "33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json",
+      "name": "412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json",
+      "name": "74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json",
+      "name": "847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json",
+      "name": "895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json",
+      "name": "952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json",
+      "name": "a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json"
+    },
+    {
+      "language": "italian",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json",
+      "name": "a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json"
+    },
+    {
+      "language": "japanese",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_japanese/386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json",
+      "name": "386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json",
+      "name": "07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json",
+      "name": "33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json",
+      "name": "49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+      "name": "61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json",
+      "name": "70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json",
+      "name": "76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json",
+      "name": "7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+      "name": "82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json",
+      "name": "8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json",
+      "name": "97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json",
+      "name": "bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json",
+      "name": "c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json",
+      "name": "d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json"
+    },
+    {
+      "language": "spanish",
+      "path": "expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json",
+      "name": "dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json"
+    }
+  ]
+}

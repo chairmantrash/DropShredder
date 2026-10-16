@@ -3,8 +3,13 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   manifest: {
     name: 'DropShredder',
-    description: 'Local-first commerce forensics and product provenance analysis.',
-    permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', 'sidePanel'],
+    default_locale: 'en',
+    description: '__MSG_extension_description__',
+    minimum_chrome_version: '133',
+    content_security_policy: {
+      extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';",
+    },
+    permissions: ['scripting', 'storage', 'contextMenus', 'sidePanel', 'alarms'],
     optional_host_permissions: ['https://*/*'],
     icons: {
       16: 'icon/16.png',
@@ -13,7 +18,7 @@ export default defineConfig({
       128: 'icon/128.png',
     },
     action: {
-      default_title: 'Open DropShredder',
+      default_title: '__MSG_open_extension__',
       default_icon: {
         16: 'icon/16.png',
         32: 'icon/32.png',

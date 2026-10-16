@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "status": "PROPOSED_OWNER_APPROVAL_REQUIRED",
+  "ownerApproval": null,
+  "thresholds": {
+    "minSamples": 200,
+    "minPrecisionLower95": 0.95,
+    "minRecallLower95": 0.8,
+    "maxFalsePositiveUpper95": 0.02,
+    "maxUnknownUpper95": 0.8
+  },
+  "scope": "Applied overall, to every required category/platform/language marginal stratum and every observed joint cell, as implemented in metrics.mjs. No approval is inferred from the instruction to finish work.",
+  "interpretation": "Severe provenance/fulfillment warning precision is primary. UNKNOWN is counted separately and is not a clean verdict. Merchant/product clustering and independent evidence require review; Wilson intervals are descriptive under independence assumptions.",
+  "zeroErrorPlanningOnly": {
+    "trueWarningsNeededForPrecisionLower95": 73,
+    "benignCasesNeededForFalsePositiveUpper95": 189,
+    "note": "Even perfect observations need at least these denominators for the proposed bounds; they are not a claim that observations exist. Minimum totals, positive/negative coverage, recall, abstention and every required stratum must also pass."
+  }
+}

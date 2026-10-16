@@ -2,8 +2,12 @@ export interface ProductSnapshot {
   url: string;
   domain: string;
   canonicalUrl?: string;
+  variantId?: string;
+  extraction?: {method:string;structuredIdentityResolved:boolean;offerResolved:boolean;originalStructuredTitle?:string};
   title?: string;
   description?: string;
+  /** Bounded public site-name/title-suffix claims, separate from current product identity. */
+  merchantIdentity?: string[];
   price?: number;
   currency?: string;
   brand?: string;

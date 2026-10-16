@@ -1,0 +1,1258 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-08",
+  "task": "DS-ENHANCEMENT-AUDIT-20261008",
+  "branch": "feature/research-enhancement-audit-20261008",
+  "releaseBaseline": "2f89ddaac2037dbeb78be5a39ae7254b68394a78",
+  "researchBaseline": "62a46d7be0ffc312b40f3a39fe12fe3f5a3143b0",
+  "applications": [
+    {
+      "area": "Typed product identity and selected-variant abstention",
+      "research": [
+        "research-catalogue:PAP-008",
+        "research-gaps-catalogue:NEW-012",
+        "research-gaps-catalogue:NEW-013",
+        "research-gaps-catalogue:NEW-014"
+      ],
+      "files": [
+        "src/analysis/product-identity.ts",
+        "src/forensics/product-fingerprint.ts",
+        "src/analysis/source-match.ts",
+        "src/analysis/product-mutation.ts"
+      ],
+      "scope": "GTIN checksum/14-digit padding and packaging separation; ASIN/brand-model namespaces; Unicode preservation; store-local SKU exclusion; conflicting observed variants abstain. ProductGroup DOM extraction remains an owner follow-up."
+    },
+    {
+      "area": "Observation lineage and bounded scoring",
+      "research": [
+        "research-gaps-catalogue:NEW-019",
+        "research-catalogue:EVA-002",
+        "additional-storefronts:SF33"
+      ],
+      "files": [
+        "src/analysis/evidence-independence.ts",
+        "src/analysis/evidence-engine.ts",
+        "src/analysis/evidence-fusion.ts",
+        "src/forensics/image-history.ts"
+      ],
+      "scope": "Connected and transitive correlation keys count once; known source observations count once; reject nonfinite scores; empty coverage cannot establish trust. Metadata foundation, not a full W3C PROV implementation or review-network classifier."
+    },
+    {
+      "area": "Certification claim scope",
+      "research": [
+        "research-gaps-catalogue:NEW-001",
+        "research-gaps-catalogue:NEW-002",
+        "research-gaps-catalogue:NEW-003",
+        "retail-category-gaps:CG03",
+        "retail-category-gaps:CG05",
+        "retail-category-gaps:CG15",
+        "retail-category-gaps:CG16",
+        "retail-category-gaps:CG17"
+      ],
+      "files": [
+        "src/analysis/certification-claims.ts",
+        "src/analysis/passive-rules.ts"
+      ],
+      "scope": "Bounded product text; case-preserving claimed certificate identifier; component/product scope; OEKO-TEX, GOTS, UL, ETL, USB-IF and FDA cosmetic registration claim-only context. No remote verification or legal compliance determination."
+    },
+    {
+      "area": "Marketplace policy context",
+      "research": [
+        "additional-storefronts:SF01",
+        "additional-storefronts:SF03",
+        "additional-storefronts:SF05",
+        "additional-storefronts:SF06",
+        "additional-storefronts:SF07",
+        "additional-storefronts:SF30",
+        "additional-storefronts:SF31"
+      ],
+      "files": [
+        "src/analysis/marketplace-policy.ts",
+        "src/analysis/passive-rules.ts"
+      ],
+      "scope": "Six dated contexts, hostname boundaries, policy exceptions and market limits; all information only. No automatic policy-violation decision. Etsy adapter routing is separately handed off."
+    },
+    {
+      "area": "Official model notice with unresolved unit coverage",
+      "research": [
+        "retail-category-gaps:CG01",
+        "retail-category-gaps:CG02",
+        "retail-category-gaps:CG07",
+        "retail-category-gaps:CG22",
+        "furniture-pets-catalogue:FP-003"
+      ],
+      "files": [
+        "src/intelligence/regulatory-match.ts",
+        "src/intelligence/focused-safety.ts",
+        "src/analysis/passive-rules.ts"
+      ],
+      "scope": "Serial ranges/exact lists, attributes and exclusion states; limited CPSC Anker/Frigidaire model subset, reviewed 2026-10-08. Never collects a serial or claims full recall coverage; furniture network corpus is not promoted."
+    },
+    {
+      "area": "Origin roles and history comparability",
+      "research": [
+        "research-catalogue:EVA-001",
+        "research-catalogue:EVA-004",
+        "research-catalogue:EVA-005",
+        "furniture-pets-catalogue:FP-005",
+        "furniture-pets-catalogue:FP-007",
+        "additional-storefronts:SF09"
+      ],
+      "files": [
+        "src/analysis/merchant-origin.ts",
+        "src/analysis/contradictions.ts",
+        "src/analysis/history-signals.ts",
+        "src/analysis/merchant-network.ts"
+      ],
+      "scope": "Business, manufacturing, shipment and returns stay separate; geographic aliases; explicit return friction only; same-offer/compatible-variant/earlier/same-currency history; shared product identity is not common merchant ownership."
+    }
+  ],
+  "catalogues": [
+    {
+      "path": "intelligence/research-catalogue-20261008.json",
+      "primaryRecordCount": 41,
+      "records": [
+        {
+          "id": "CHR-001",
+          "title": "User gestures govern side panel opening",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-002",
+          "title": "Service workers are disposable",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-003",
+          "title": "Package executable dependencies",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-004",
+          "title": "Offscreen work has explicit limits",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "ORI-001",
+          "title": "Archived workplane is superseded for runtime status",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-005",
+          "title": "Bind document identity as well as tab identity",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-006",
+          "title": "Isolated content scripts are still untrusted inputs",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "EVA-001",
+          "title": "Blind shipping erases visible supplier cues",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "EVA-002",
+          "title": "Supplier imagery can be transformed",
+          "disposition": "partially-applied-see-scope",
+          "application": "Observation lineage and bounded scoring"
+        },
+        {
+          "id": "ORI-002",
+          "title": "Current release source loaded",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "EVA-003",
+          "title": "Branded tracking and upstream sourcing are explicit public advice",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SUP-001",
+          "title": "Apparel provider catalogue, not a bad-quality blacklist",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-001",
+          "title": "Local inference is feasible but optional",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-007",
+          "title": "New Chrome features must retain the 133 baseline",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-001",
+          "title": "Dark-pattern research is methodological evidence",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-002",
+          "title": "Multimodal product deduplication is a promising candidate",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SUP-002",
+          "title": "One named apparel operator verified from its own disclosure",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SUP-003",
+          "title": "Wholesale7 has an explicit apparel dropship programme",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "QLT-001",
+          "title": "Concrete garment safety testing exists",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "QLT-002",
+          "title": "Consumer group tests and manipulation dossiers are separate evidence",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-008",
+          "title": "Native public suffix support is 153+ and permissioned",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-003",
+          "title": "Newer catalogue VLM adaptation needs category-aware evaluation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-004",
+          "title": "Visual dark-pattern detection needs domain limits",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-009",
+          "title": "Structured clone copies richer data and changes sanitation semantics",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-002",
+          "title": "Tesseract.js is a local OCR candidate",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-003",
+          "title": "Public-suffix fallback candidate",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SUP-004",
+          "title": "FondMart documents rebranding and direct fulfillment",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-005",
+          "title": "Fake reviews can incorporate product knowledge",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-006",
+          "title": "Fresh bilingual matching benchmark includes clothing",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-007",
+          "title": "Fashion matching benefits from human confirmation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-008",
+          "title": "Variant identity is different from duplicate identity",
+          "disposition": "partially-applied-see-scope",
+          "application": "Typed product identity and selected-variant abstention"
+        },
+        {
+          "id": "PAP-009",
+          "title": "Review authenticity cannot be established by prose alone",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-004",
+          "title": "DINOv3 has a separate model license",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-010",
+          "title": "End-to-end framework choice can hide worker-lifecycle bugs",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "EVA-004",
+          "title": "Tracking-origin concealment is a documented feature",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "EVA-005",
+          "title": "Even specification fields can be edited",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "TOOL-005",
+          "title": "Schema validation and dependency decisions",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-011",
+          "title": "Keep research-to-runtime status explicit",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CHR-012",
+          "title": "Review data access scope explicitly",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-006",
+          "title": "Use current RDAP bootstrap, not guessed endpoints",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "PAP-010",
+          "title": "Dark-pattern model performance varies by class",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        }
+      ]
+    },
+    {
+      "path": "intelligence/research-gaps-catalogue-20261008.json",
+      "primaryRecordCount": 19,
+      "records": [
+        {
+          "id": "NEW-001",
+          "title": "Verify the scope of textile certifications, not just the logo",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "NEW-002",
+          "title": "GOTS company certification is different from shipment traceability",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "NEW-003",
+          "title": "Certification rules need effective dates and versions",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "NEW-004",
+          "title": "Intelligence feeds face rollback and freeze attacks",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-005",
+          "title": "Content Credentials can verify an edit history, not garment truth",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-006",
+          "title": "Measure errors among displayed warnings",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-007",
+          "title": "Prefer offline threshold calibration to costly per-page recomputation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-008",
+          "title": "Freshness weighting does not remove distribution-shift risk",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-009",
+          "title": "Future AI extraction must have no authority over browser actions",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-010",
+          "title": "Test contamination across a research chain",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-011",
+          "title": "A browser C2PA tool exists, with important resource and trust choices",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-012",
+          "title": "GTIN validation is not product authenticity or country evidence",
+          "disposition": "partially-applied-see-scope",
+          "application": "Typed product identity and selected-variant abstention"
+        },
+        {
+          "id": "NEW-013",
+          "title": "Confusable text must never become an authorization identity",
+          "disposition": "partially-applied-see-scope",
+          "application": "Typed product identity and selected-variant abstention"
+        },
+        {
+          "id": "NEW-014",
+          "title": "ProductGroup markup can explain legitimate shared reviews and variants",
+          "disposition": "partially-applied-see-scope",
+          "application": "Typed product identity and selected-variant abstention"
+        },
+        {
+          "id": "NEW-015",
+          "title": "Fibre marketing offers a more concrete quality-claim check",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-016",
+          "title": "A fabric model trained on merchant labels learns declared composition",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-017",
+          "title": "Modern cotton-recognition research supports triage, with limits",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-018",
+          "title": "Portable archives preserve observations, not automatic truth",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "NEW-019",
+          "title": "Represent evidence derivation explicitly for agent handoffs",
+          "disposition": "partially-applied-see-scope",
+          "application": "Observation lineage and bounded scoring"
+        }
+      ]
+    },
+    {
+      "path": "intelligence/existing-tools-catalogue-20261008.json",
+      "primaryRecordCount": 18,
+      "records": [
+        {
+          "id": "TOOL-001",
+          "title": "Fakespot / Firefox Review Checker",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-002",
+          "title": "Product BS Detector",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-003",
+          "title": "ReviewMeta",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-004",
+          "title": "Fake-Shop Detector (\u00d6IAT / AIT / X-Net)",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-005",
+          "title": "changedetection.io",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-006",
+          "title": "Distill",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-007",
+          "title": "Open Prices (Open Food Facts)",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-008",
+          "title": "SingleFile",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-009",
+          "title": "extruct",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-010",
+          "title": "Scavenge",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-011",
+          "title": "Web-Check",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-012",
+          "title": "urlscan.io",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-013",
+          "title": "imagededup (idealo)",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-014",
+          "title": "ImageHash",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-015",
+          "title": "Opentechalyzer / Wappalyzer-format ecosystem",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-016",
+          "title": "Mozilla Readability",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-017",
+          "title": "RapidFuzz",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "TOOL-018",
+          "title": "TinEye",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        }
+      ]
+    },
+    {
+      "path": "intelligence/furniture-pets-catalogue-20261008.json",
+      "primaryRecordCount": 17,
+      "records": [
+        {
+          "id": "FP-001",
+          "title": "Recalled furniture can reappear through liquidation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-002",
+          "title": "An official multi-brand recall supplies useful entity aliases",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-003",
+          "title": "Furniture recall matching must survive different retail brands",
+          "disposition": "partially-applied-see-scope",
+          "application": "Official model notice with unresolved unit coverage"
+        },
+        {
+          "id": "FP-004",
+          "title": "A pet toy can have a documented child-safety hazard",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-005",
+          "title": "Bulky-goods dropshipping can use domestic fulfillment",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "FP-006",
+          "title": "Marketplace safety-control claims do not quantify remaining risk",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-007",
+          "title": "Walmart fulfillment is distinct from manufacture and seller identity",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "FP-008",
+          "title": "Tip-over rule applicability needs dimensions, weight and intended use",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-009",
+          "title": "Composite-wood labels verify a limited emissions claim",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-010",
+          "title": "CPSC offers a usable public recall-data interface",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-011",
+          "title": "Pet-toy chemical migration depends on formulation and use",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-012",
+          "title": "A newer dog-toy study still does not prove clinical disease",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-013",
+          "title": "Clinical obstruction cases are not a product failure denominator",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-014",
+          "title": "Wood emissions require test conditions and balanced findings",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-015",
+          "title": "Pet-toy suitability is use- and animal-dependent",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-016",
+          "title": "A regional-weight hypothesis needs denominators and independent evaluation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "FP-017",
+          "title": "Import certificate collection changed in July 2026",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        }
+      ]
+    },
+    {
+      "path": "intelligence/manufacturer-networks-20261008.json",
+      "primaryRecordCount": 23,
+      "records": [
+        {
+          "id": "N01",
+          "title": "Fujian Xiniuniu / Timechee",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N02",
+          "title": "Xiniuniu / OXYLIFE / FUFU&GAGA sample-label chain",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N03",
+          "title": "Fujian Ming Jin / Areson / Rolanstar",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N04",
+          "title": "Wuxi Leclaire / Ningbo Jiangdong Peter / Annyka",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N05",
+          "title": "Anji Guyou / Sivan",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N06",
+          "title": "Shenzhen Aojieni / Sili Factory",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N07",
+          "title": "Shenzhen Xingchuangyi / Chillife",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N08",
+          "title": "Shenzhen Yuejia Mei / BUSOHA",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N09",
+          "title": "Shenzhen Huakechuang / Huaker",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N10",
+          "title": "Jiangsu Liangjiang / Ningbo Tianqi / FUFU&GAGA",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N11",
+          "title": "An official multi-brand recall supplies useful entity aliases",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N12",
+          "title": "Furniture recall matching must survive different retail brands",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N13",
+          "title": "Recalled furniture can reappear through liquidation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N14",
+          "title": "A pet toy can have a documented child-safety hazard",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N15",
+          "title": "GigaCloud / Noble House / Wondersign transaction history",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N16",
+          "title": "Legacy Noble House product events",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "N17",
+          "title": "Joybuy seller/channel history",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H01",
+          "title": "Historic port-seizure lead: ALLIANCE (HK) ENTERPRISE LIMITED",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H02",
+          "title": "Historic port-seizure lead: ANKYO DEVELOPMENT LIMITED",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H03",
+          "title": "Historic port-seizure lead: SHENZHEN KEDESHUN TRADING CO. LTD.",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H04",
+          "title": "Historic port-seizure lead: SHAINTOU CHENGHAI TOMADE CO. LTD.",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H05",
+          "title": "Historic port-seizure lead: HANG WING PLASTIC INDUSTRY CO. LTD.",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "H06",
+          "title": "Historic port-seizure lead: SHANTOU MING HONG PLASTIC TOYS FACTORY",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        }
+      ]
+    },
+    {
+      "path": "intelligence/retail-category-gaps-20261008.json",
+      "primaryRecordCount": 22,
+      "records": [
+        {
+          "id": "CG01",
+          "title": "Serial numbers matter in a major battery recall",
+          "disposition": "partially-applied-see-scope",
+          "application": "Official model notice with unresolved unit coverage"
+        },
+        {
+          "id": "CG02",
+          "title": "Vendor serial-check guidance is not an open lookup API",
+          "disposition": "partially-applied-see-scope",
+          "application": "Official model notice with unresolved unit coverage"
+        },
+        {
+          "id": "CG03",
+          "title": "USB certification is capability-specific",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "CG04",
+          "title": "Power rating and data speed are separate claims",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG05",
+          "title": "FDA registration certificates are a misleading-claim gap",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "CG06",
+          "title": "A tested-product list supplies precise safety leads across platforms",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG07",
+          "title": "Serial-restricted licensed-brand appliance recall",
+          "disposition": "partially-applied-see-scope",
+          "application": "Official model notice with unresolved unit coverage"
+        },
+        {
+          "id": "CG08",
+          "title": "Historical seller changes can alter recall remedy",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG09",
+          "title": "Small coin-battery lights can create household hazards",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG10",
+          "title": "USB low-voltage products can still have fire hazards",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG11",
+          "title": "Packaging identifiers can outperform title aliases",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG12",
+          "title": "Set descriptions and retailer identity matter without a SKU",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG13",
+          "title": "USCG equipment lookup has explicit coverage exceptions",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG14",
+          "title": "Approval expiry does not always invalidate an existing item",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG15",
+          "title": "UL country codes describe standards geography, not origin",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "CG16",
+          "title": "UL Product iQ is an account-based research option",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "CG17",
+          "title": "ETL Listed and ETL Verified scopes differ",
+          "disposition": "partially-applied-see-scope",
+          "application": "Certification claim scope"
+        },
+        {
+          "id": "CG18",
+          "title": "Targeted inspection results include both failures and no-action samples",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG19",
+          "title": "Small XRF study is a physical-test lead",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG20",
+          "title": "Recent publication uses old targeted surveillance samples",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG21",
+          "title": "Online cosmetics assay study deserves deeper method review",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "CG22",
+          "title": "Official linked notices can contain conflicting dates and model exclusions",
+          "disposition": "partially-applied-see-scope",
+          "application": "Official model notice with unresolved unit coverage"
+        }
+      ]
+    },
+    {
+      "path": "intelligence/additional-storefronts-20261008.json",
+      "primaryRecordCount": 34,
+      "records": [
+        {
+          "id": "SF01",
+          "title": "Exceptions belong in the policy model",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF02",
+          "title": "Production-partner disclosure is broader than a supplier brand name",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF03",
+          "title": "Wholesale fulfillment and retail-to-customer purchase differ",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF04",
+          "title": "Third-party fulfillment has inventory and packaging conditions",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF05",
+          "title": "Dropshipping is a normal fulfillment model",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF06",
+          "title": "Supplier requirements reveal good matching fields",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF07",
+          "title": "Plain packaging and documented testing are platform requirements",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF08",
+          "title": "Current regulator finding goes beyond a preliminary allegation",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF09",
+          "title": "An integration default can mislabel seller role",
+          "disposition": "partially-applied-see-scope",
+          "application": "Origin roles and history comparability"
+        },
+        {
+          "id": "SF10",
+          "title": "Commercial import/automation claims exceed a policy guarantee",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF11",
+          "title": "Enforcement totals do not measure residual violative inventory",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF12",
+          "title": "Final enforcement and relisting failure modes",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF13",
+          "title": "Hidden links and researcher-access eligibility",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF14",
+          "title": "Source identifiers survive rewritten listing copy",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF15",
+          "title": "A compliant production-partner tutorial is a necessary control",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF16",
+          "title": "Seller extensions must not be conflated",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF17",
+          "title": "Buyer allegation: quality disappointment and image match",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF18",
+          "title": "Buyer allegation: inconsistent delivery dates",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF19",
+          "title": "Buyer allegation: Amazon fulfillment",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF20",
+          "title": "Buyer discussion: renamed matching furniture",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF21",
+          "title": "Self-described retail arbitrage is an investigation lead",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF22",
+          "title": "Buyer detection tool: Etsy Guardian",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF23",
+          "title": "Etsy Guardian's local-storage and AI-egress claims differ",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF24",
+          "title": "Product Sniffer reverse-image shortcuts",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF25",
+          "title": "CopyRadar cross-platform visual triage",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF26",
+          "title": "Hosted supplier-finder actor",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF27",
+          "title": "Chinese counterfeit-text model is not product authentication",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF28",
+          "title": "Physical garment photos and abstention",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF29",
+          "title": "Resale prices include symbolic value",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF30",
+          "title": "Original-design exception still requires original photos",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF31",
+          "title": "Rules need market-specific scope",
+          "disposition": "partially-applied-see-scope",
+          "application": "Marketplace policy context"
+        },
+        {
+          "id": "SF32",
+          "title": "Seller allegation of false counterfeit enforcement",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        },
+        {
+          "id": "SF33",
+          "title": "Graph evidence targets products buying reviews",
+          "disposition": "partially-applied-see-scope",
+          "application": "Observation lineage and bounded scoring"
+        },
+        {
+          "id": "SF34",
+          "title": "Recent survey retained as an access-limited lead",
+          "disposition": "retained-research-no-new-runtime-rule",
+          "application": null
+        }
+      ]
+    }
+  ],
+  "otherAgentResearchRetained": [
+    "brain/research/2026-10-06-AMAZON-WALMART-POLICY-BASELINE.md",
+    "brain/research/2026-10-06-DROPSHIP-TOOLING-INTELLIGENCE.md",
+    "brain/research/2026-10-06-ETSY-POLICY-BASELINE.md",
+    "brain/research/2026-10-08-ADDITIONAL-STOREFRONTS.md",
+    "brain/research/2026-10-08-DEFENSIVE-INTELLIGENCE.md",
+    "brain/research/2026-10-08-EXISTING-TOOLS.md",
+    "brain/research/2026-10-08-FURNITURE-PETS.md",
+    "brain/research/2026-10-08-GITHUB-REDDIT-OPEN-SOURCE-LANDSCAPE.md",
+    "brain/research/2026-10-08-MANUFACTURER-NETWORKS.md",
+    "brain/research/2026-10-08-RESEARCH-GAPS.md",
+    "brain/research/2026-10-08-RETAIL-CATEGORY-GAPS.md",
+    "brain/research/2026-10-08-SHOPPING-PAGE-DETECTION.md",
+    "brain/research/ADJACENT-EXTENSION-ANALYSIS-2026-10-06.md",
+    "brain/research/AI-VIBE-CODING-PROFESSIONALIZATION-2026-10-07.md",
+    "brain/research/AMAZON-MARKETPLACE-EXTENSION-CLEANROOM-2026-10-06.md",
+    "brain/research/COMMERCE-PLATFORM-SUPPLY-CHAIN-INTELLIGENCE-2026-10-06.md",
+    "brain/research/COMPETITOR-ADJACENT-WATCHLIST.md",
+    "brain/research/CORE-DETECTION-METHODS-AND-FREE-API-MAP-2026-10-07.md",
+    "brain/research/DROPSHIPPER-ENABLEMENT-BASELINE-2026-10-06.md",
+    "brain/research/DROPSHIPPING-ECOSYSTEM-COMBAT-INTELLIGENCE-2026-10-06.md",
+    "brain/research/FAKE-REVIEW-ADVERSARY-RESEARCH-2026-10-07.md",
+    "brain/research/FREE-PUBLIC-API-INTELLIGENCE-2026-10-06.md",
+    "brain/research/FULL-SPECTRUM-SCOPE-REDUNDANCY-AUDIT-2026-10-07.md",
+    "brain/research/HAREMPANTS-SUREDESIGN-MERCHANT-NETWORK-2026-10-06.md",
+    "brain/research/SCAM-QUALITY-DETECTION-ARCHITECTURE-2026-10-06.md",
+    "brain/research/SELLER-TOOL-EXTENSION-CLEANROOM-2026-10-06.md",
+    "brain/research/SPYTREND-EXTENSION-CLEANROOM-2026-10-06.md",
+    "brain/research/SPYTREND-PUBLIC-INTELLIGENCE-2026-10-06.md",
+    "brain/research/STABILITY-GAPS-DEEPENING-2026-10-07.md",
+    "brain/research/TECHNICAL-SIGNATURE-SOURCES.md",
+    "brain/research/WEEKLY-INTEL-PROTOCOL.md",
+    "brain/research/WEEKLY-INTEL-WATCHLIST.md",
+    "brain/research/ZENDROP-COMBAT-INTELLIGENCE-2026-10-06.md"
+  ],
+  "existingBaselineFeaturesRetained": [
+    "Chrome 133 document/tab targeting and optional consent gates",
+    "bounded serialized extraction",
+    "foreground-only external research",
+    "RDAP and image acquisition controls",
+    "shopper report renderer and severe evidence gate"
+  ],
+  "notAdded": [
+    "Foreign code or dependencies from comparison tools",
+    "Unreviewed manufacturer graph as a blacklist",
+    "Country/nationality quality penalty",
+    "Comprehensive recall feed",
+    "Cloud OCR or model upload",
+    "Embeddings or claims of physical quality from photographs",
+    "Paid API, backend, telemetry or broad crawling",
+    "Signed feed updates or WACZ/PROV archive implementation",
+    "Calibrated population error rates without a representative labeled evaluation"
+  ],
+  "runtimeFollowup": "workplane/tasks/DS-RUNTIME-AUDIT-FOLLOWUP-20261008.md",
+  "limitations": [
+    "All applied catalogue findings are partial; read application scope. Retained records are searchable references, not validated runtime detectors.",
+    "Source-presence archives preserve research observations and links, not complete third-party page copies.",
+    "No real desktop Chrome test or measured product-quality accuracy performed.",
+    "Static conformance checks pass while identified routing/price/extraction risks still require owning-agent work."
+  ]
+}

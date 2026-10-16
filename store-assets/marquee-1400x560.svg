@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="560" viewBox="0 0 1400 560">
+<rect width="1400" height="560" fill="#090b0f"/>
+<rect x="0" y="0" width="12" height="560" fill="#ff4d43"/>
+<rect x="70" y="120" width="20" height="210" fill="#ff4d43"/>
+<rect x="132" y="120" width="20" height="210" fill="#ff4d43"/>
+<rect x="194" y="120" width="20" height="210" fill="#ff4d43"/>
+<rect x="256" y="120" width="20" height="210" fill="#ff4d43"/>
+<rect x="60" y="98" width="270" height="10" fill="#f5f7fc"/>
+<text x="420" y="248" fill="#f5f7fc" font-family="DejaVu Sans" font-weight="700" font-size="88">DropShredder</text>
+<text x="426" y="316" fill="#aebed0" font-family="DejaVu Sans" font-weight="400" font-size="34">Product clues. Your control.</text>
+<text x="426" y="394" fill="#aebed0" font-family="DejaVu Sans" font-weight="400" font-size="24">Local evidence · optional research · clear limits</text>
+</svg>

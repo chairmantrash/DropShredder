@@ -1,0 +1,633 @@
+{
+  "task": "DS-051",
+  "status": "ENGINEERING_REPAIR_VERIFIED",
+  "date": "2026-10-12",
+  "preRepairCompletionCommit": "cc24ad0c425e11f87ba192b3af25cc5f1f002644",
+  "productionSource": "a345e6cc58571f8aac979dd311b2ec62954824d3",
+  "productionTree": "25d9fb2daa8d6f135f4e5f2629d3b88ee9abf249",
+  "testedHead": "5f503dd294674594cd840c84410ec7848eaa316e",
+  "testedTree": "bfe915bee31c1e55b8244632762d3beeef4df2e6",
+  "changes": [
+    "Return bounded policy HTTP status as data from the self-contained injected callback and localize the error in panel scope",
+    "Test-only N39 accounts for a read already completed before the pending sample while retaining actual invalidation/recovery and original-script assertions"
+  ],
+  "package": {
+    "artifact": 11776283604,
+    "wrapperSha256": "fded1f6a0e52674786a110b1512c3896c72931fd384afcb583c9860f8a5a6d7b",
+    "installBytes": 25849036,
+    "installSha256": "cf6e3a162cd30b5c4f7fa7aefd64707b569d8ea80d44f4582c912ef19bfc20c7",
+    "all51PackageHashesVerified": true,
+    "files": 51,
+    "bytes": 54941386
+  },
+  "qaPackageAll51HashesMatchInstall": true,
+  "gates": {
+    "CI": {
+      "run": 38315496995,
+      "status": "success",
+      "coreTests": 405,
+      "failed": 0,
+      "skipped": 0
+    },
+    "CodeQL": {
+      "run": 38315496998,
+      "status": "success",
+      "receipt": {
+        "sourceCommit": "5f503dd294674594cd840c84410ec7848eaa316e",
+        "recordedAt": "2026-10-12T22:15:16.974Z",
+        "status": "NO_FINDINGS",
+        "reports": [
+          {
+            "file": "javascript.sarif",
+            "sha256": "132a4e07eeadb4885a7be91eb8133a7bee83c96f4ec4c988faec332ddbcd45a9",
+            "status": "NO_FINDINGS",
+            "findings": []
+          }
+        ]
+      }
+    },
+    "Chromium": {
+      "run": 38315497062,
+      "status": "success",
+      "native": 77,
+      "packagedDefault": 9,
+      "chrome133": 9,
+      "chrome155": 9,
+      "locales": 7,
+      "lifecycle": 6,
+      "uniqueCoverage": 99
+    },
+    "extendedNative": {
+      "run": 38315497031,
+      "job": 115031017886,
+      "status": "success",
+      "passed": 83,
+      "failed": 0
+    }
+  },
+  "targetedChecks": [
+    {
+      "id": "N39",
+      "description": "Changing the selected OCR language cancels or invalidates pending results and the next native read recovers",
+      "status": "PASS",
+      "elapsedMs": 6126,
+      "details": {
+        "pending": {
+          "disabled": true,
+          "status": "Reading image locally. No image is sent to a server."
+        },
+        "pendingReadObserved": true,
+        "recovered": "Barcodes read: 0; text lines: 1. Barcode support: unavailable. OCR support: available.Recognized text (unverified): PRODUCT 12345Search sources for this text",
+        "scope": "Real native model change invalidates the actually observed pending or completed result and the next read succeeds; no fabricated cancellation interval or independent photo/blur/rotation accuracy"
+      }
+    },
+    {
+      "id": "N53",
+      "description": "Native return-policy button reads a bounded same-origin policy and displays its actual findings",
+      "status": "PASS",
+      "elapsedMs": 930,
+      "details": {
+        "status": "Return-policy findings to review before buying: 3.",
+        "evidence": [
+          "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "PRODUCT_IDENTIFIERS_PRESENT",
+          "SUPPLY_CHAIN_PROFILE",
+          "INTERNATIONAL_RETURN_AT_CUSTOMER_COST",
+          "RESTOCKING_FEE",
+          "VERY_SHORT_RETURN_WINDOW"
+        ],
+        "scope": "Owned policy text served to the unchanged installed beta"
+      }
+    },
+    {
+      "id": "N54",
+      "description": "Native non200 return-policy action reports the HTTP status rather than a script-scope error",
+      "status": "PASS",
+      "elapsedMs": 988,
+      "details": {
+        "status": "Policy fetch failed: HTTP 503"
+      }
+    }
+  ],
+  "publication": "Repaired candidate not yet published; public beta1 remains downloadable. DS-052 adds known-source live observations before another beta iteration.",
+  "scopeLimits": [
+    "Owned engineering fixtures do not establish independent accuracy",
+    "Valid provider key, rights-reviewed original photographs/transcriptions, real publisher identity/rights, actual elapsed weekly/180-day lifecycle, other OS/accessibility, independent corpus/approved thresholds and native/legal review remain open",
+    "No main merge, Store submission, invitation or invented acceptance"
+  ],
+  "nativeEvidence": {
+    "artifact": 11776598639,
+    "wrapperSha256": "9d74d32210073d602c6fcc03801d23631d0bd95101921b8e2f15d409807e6193",
+    "reportPath": "browser-smoke-results/native-probe.json",
+    "reportSha256": "0f6fa685bc0eb372e8017f76d4e1a16411ffe115b4245670295cfd984849b04b",
+    "status": "PASS — NATIVE RUNTIME SUBSET",
+    "tests": [
+      {
+        "id": "N01",
+        "description": "Reviewed package mounts in the native side panel without host grants",
+        "status": "PASS",
+        "elapsedMs": 1031
+      },
+      {
+        "id": "N02",
+        "description": "Trusted native source-hunt toggle saves through the background writer",
+        "status": "PASS",
+        "elapsedMs": 943
+      },
+      {
+        "id": "N03",
+        "description": "Native origin and tone changes preserve the previous feature patch",
+        "status": "PASS",
+        "elapsedMs": 1228
+      },
+      {
+        "id": "N04",
+        "description": "Nondefault preferences survive a full native-profile restart",
+        "status": "PASS",
+        "elapsedMs": 592
+      },
+      {
+        "id": "N05",
+        "description": "Native product scan fails closed without host access",
+        "status": "PASS",
+        "elapsedMs": 506
+      },
+      {
+        "id": "N06",
+        "description": "Native remove-access control is safe without grants and preserves other preferences",
+        "status": "PASS",
+        "elapsedMs": 933
+      },
+      {
+        "id": "N07",
+        "description": "Native checks produce no uncaught errors or external investigations",
+        "status": "PASS",
+        "elapsedMs": 0
+      },
+      {
+        "id": "N08",
+        "description": "Genuine Chrome Deny leaves monitoring and host access off",
+        "status": "PASS",
+        "elapsedMs": 96
+      },
+      {
+        "id": "N09",
+        "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+        "status": "PASS",
+        "elapsedMs": 3122
+      },
+      {
+        "id": "N34",
+        "description": "Native operating-system file picker selects an unchanged local label through desktop input",
+        "status": "PASS",
+        "elapsedMs": 2418
+      },
+      {
+        "id": "N10",
+        "description": "Owned product fixture gets exactly one automatic alert after consent",
+        "status": "PASS",
+        "elapsedMs": 62
+      },
+      {
+        "id": "N11",
+        "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+        "status": "PASS",
+        "elapsedMs": 520
+      },
+      {
+        "id": "N35",
+        "description": "Two simultaneous native panels preserve independent settings patches and target their focused windows",
+        "status": "PASS",
+        "elapsedMs": 5206
+      },
+      {
+        "id": "N38-page",
+        "description": "Actual page/product context menu opens a local chooser, cancellation shares nothing and selected searches are bounded",
+        "status": "PASS",
+        "elapsedMs": 2451
+      },
+      {
+        "id": "N38-selection",
+        "description": "Actual selected-text context menu searches the selection rather than the tab title",
+        "status": "PASS",
+        "elapsedMs": 1373
+      },
+      {
+        "id": "N38-store",
+        "description": "Actual store context menu offers domain-scoped destinations without opening them before selection",
+        "status": "PASS",
+        "elapsedMs": 1400
+      },
+      {
+        "id": "N38-image",
+        "description": "Actual image context menu preserves the chosen public image URL and sends nothing before destination selection",
+        "status": "PASS",
+        "elapsedMs": 1224
+      },
+      {
+        "id": "N36",
+        "description": "32 quiet background tabs cause no toast flood, registration growth or unsolicited investigation",
+        "status": "PASS",
+        "elapsedMs": 10539
+      },
+      {
+        "id": "N15",
+        "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields",
+        "status": "PASS",
+        "elapsedMs": 1010
+      },
+      {
+        "id": "N16",
+        "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports",
+        "status": "PASS",
+        "elapsedMs": 6559
+      },
+      {
+        "id": "N17",
+        "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it",
+        "status": "PASS",
+        "elapsedMs": 3587
+      },
+      {
+        "id": "N18",
+        "description": "Rapid tab switching invalidates reports and scans the actual active product tab",
+        "status": "PASS",
+        "elapsedMs": 1047
+      },
+      {
+        "id": "N19",
+        "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs",
+        "status": "PASS",
+        "elapsedMs": 3074
+      },
+      {
+        "id": "N20",
+        "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection",
+        "status": "PASS",
+        "elapsedMs": 1949
+      },
+      {
+        "id": "N25",
+        "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title",
+        "status": "PASS",
+        "elapsedMs": 1027
+      },
+      {
+        "id": "N21",
+        "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational",
+        "status": "PASS",
+        "elapsedMs": 4442
+      },
+      {
+        "id": "N22",
+        "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query",
+        "status": "PASS",
+        "elapsedMs": 4915
+      },
+      {
+        "id": "N23",
+        "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls",
+        "status": "PASS",
+        "elapsedMs": 5679
+      },
+      {
+        "id": "N50",
+        "description": "Native weekly ON/OFF creates and removes a real Chrome alarm without an immediate feed request",
+        "status": "PASS",
+        "elapsedMs": 929
+      },
+      {
+        "id": "N26",
+        "description": "Native publisher-key review, explicit pin and exact-byte signed feed preview require separate user actions",
+        "status": "PASS",
+        "elapsedMs": 4420
+      },
+      {
+        "id": "N27",
+        "description": "Chrome file-input dispatch previews JSON without saving and rejects malformed local files",
+        "status": "PASS",
+        "elapsedMs": 273
+      },
+      {
+        "id": "N30",
+        "description": "Native origin file requires user review, exact seller/product scope and eight fresh stages without score changes",
+        "status": "PASS",
+        "elapsedMs": 2075
+      },
+      {
+        "id": "N31",
+        "description": "Native regional map filters Mexico without source requests or trust scores",
+        "status": "PASS",
+        "elapsedMs": 1216
+      },
+      {
+        "id": "N32",
+        "description": "Native standing rating requires source review and entity binding; categories are local and navigation clears the rating",
+        "status": "PASS",
+        "elapsedMs": 4268
+      },
+      {
+        "id": "N33",
+        "description": "Native litigation preview shows scope and pending allegations; a later vacatur removes unresolved context",
+        "status": "PASS",
+        "elapsedMs": 3631
+      },
+      {
+        "id": "N28",
+        "description": "Packaged local OCR engine and language data exist without making a remote request at panel startup",
+        "status": "PASS",
+        "elapsedMs": 38
+      },
+      {
+        "id": "N29",
+        "description": "Actual native panel invokes bundled offline OCR on a synthetic local image",
+        "status": "PASS",
+        "elapsedMs": 1539
+      },
+      {
+        "id": "N39",
+        "description": "Changing the selected OCR language cancels or invalidates pending results and the next native read recovers",
+        "status": "PASS",
+        "elapsedMs": 6126
+      },
+      {
+        "id": "N24",
+        "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict",
+        "status": "PASS",
+        "elapsedMs": 2202
+      },
+      {
+        "id": "N51",
+        "description": "Native optional Brave empty-key request refuses without sending an API request",
+        "status": "PASS",
+        "elapsedMs": 1911
+      },
+      {
+        "id": "N53",
+        "description": "Native return-policy button reads a bounded same-origin policy and displays its actual findings",
+        "status": "PASS",
+        "elapsedMs": 930
+      },
+      {
+        "id": "N54",
+        "description": "Native non200 return-policy action reports the HTTP status rather than a script-scope error",
+        "status": "PASS",
+        "elapsedMs": 988
+      },
+      {
+        "id": "N55",
+        "description": "Native shipping action keeps an explicit origin informational without accusing a country",
+        "status": "PASS",
+        "elapsedMs": 931
+      },
+      {
+        "id": "N56",
+        "description": "Native evidence search and informational filter change visible rows and restore the full list",
+        "status": "PASS",
+        "elapsedMs": 3093
+      },
+      {
+        "id": "M-en",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1544
+      },
+      {
+        "id": "P-en",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1299
+      },
+      {
+        "id": "Q-en",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13174
+      },
+      {
+        "id": "M-zh",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1561
+      },
+      {
+        "id": "P-zh",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1296
+      },
+      {
+        "id": "Q-zh",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13174
+      },
+      {
+        "id": "M-hi",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1546
+      },
+      {
+        "id": "P-hi",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1296
+      },
+      {
+        "id": "Q-hi",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13191
+      },
+      {
+        "id": "M-es",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1557
+      },
+      {
+        "id": "P-es",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1299
+      },
+      {
+        "id": "Q-es",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13202
+      },
+      {
+        "id": "M-ar",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1554
+      },
+      {
+        "id": "P-ar",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1296
+      },
+      {
+        "id": "Q-ar",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13207
+      },
+      {
+        "id": "M-fr",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1568
+      },
+      {
+        "id": "P-fr",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1308
+      },
+      {
+        "id": "Q-fr",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13210
+      },
+      {
+        "id": "M-bn",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1559
+      },
+      {
+        "id": "P-bn",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1315
+      },
+      {
+        "id": "Q-bn",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13216
+      },
+      {
+        "id": "M-pt-BR",
+        "description": "Native toast-to-panel and repeated manual scan of an owned original-language product",
+        "status": "PASS",
+        "elapsedMs": 1551
+      },
+      {
+        "id": "P-pt-BR",
+        "description": "Schema-free translated purchase, price and hero detection without guessed identity",
+        "status": "PASS",
+        "elapsedMs": 1310
+      },
+      {
+        "id": "Q-pt-BR",
+        "description": "Localized collection, editorial, home and private pages remain quiet",
+        "status": "PASS",
+        "elapsedMs": 13209
+      },
+      {
+        "id": "M-browser-translated",
+        "description": "Visible French heading with unchanged English schema retains exact original identifiers",
+        "status": "PASS",
+        "elapsedMs": 537
+      },
+      {
+        "id": "M-large",
+        "description": "Bounded manual scan of a 20,000-element original-language product page",
+        "status": "PASS",
+        "elapsedMs": 825
+      },
+      {
+        "id": "O-chi_sim",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2509
+      },
+      {
+        "id": "O-hin",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2523
+      },
+      {
+        "id": "O-spa",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2633
+      },
+      {
+        "id": "O-ara",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2842
+      },
+      {
+        "id": "O-fra",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2842
+      },
+      {
+        "id": "O-ben",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 2977
+      },
+      {
+        "id": "O-por",
+        "description": "Native reader selects a packaged offline language model on a synthetic local label",
+        "status": "PASS",
+        "elapsedMs": 3088
+      },
+      {
+        "id": "O-hin-original",
+        "description": "Original failed label preserves both native text and the literal Latin model identifier",
+        "status": "PASS",
+        "elapsedMs": 2466
+      },
+      {
+        "id": "O-ara-original",
+        "description": "Original failed label preserves both native text and the literal Latin model identifier",
+        "status": "PASS",
+        "elapsedMs": 2786
+      },
+      {
+        "id": "N12",
+        "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+        "status": "PASS",
+        "elapsedMs": 9678
+      },
+      {
+        "id": "N13",
+        "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+        "status": "PASS",
+        "elapsedMs": 5074
+      },
+      {
+        "id": "N14",
+        "description": "Explicit fixture/provider/store checks cause no uncaught errors or unapproved external origins",
+        "status": "PASS",
+        "elapsedMs": 4
+      },
+      {
+        "id": "N37",
+        "description": "Actual malformed Chrome storage fails closed across a browser restart and normal native writes recover canonical settings",
+        "status": "PASS",
+        "elapsedMs": 2372
+      }
+    ]
+  },
+  "baselineNativeEvidence": {
+    "artifact": 11777295051,
+    "wrapperSha256": "e3da6c800db4be30bc385562cb71ae4e400e28947f4f65d2ea9213ba11adaf6c",
+    "reportPath": "native-probe.json",
+    "reportSha256": "9c0a390eeb11b231889c1bc4a65443734356098e66e7de182fbc372a65cc2aff",
+    "status": "PASS — NATIVE RUNTIME SUBSET",
+    "testsPassed": 77
+  }
+}

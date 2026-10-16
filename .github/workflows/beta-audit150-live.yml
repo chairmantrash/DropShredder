@@ -1,0 +1,65 @@
+name: DropShredder published beta2 150-page native audit
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-audit150-live.yml', 'tools/beta/audit150/live.mjs', 'tools/beta/audit150/make-runner.py', 'tools/beta/audit150/stage.py']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  native-audit:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-audit150-20261013' && github.event.pull_request.head.sha == 'aa37c108ffb07a2c370bf75652c3b2ba06a8f2f1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Require and stage the pre-verdict frozen target manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/chairmantrash/DropShredder/actions/artifacts/11786149218/zip > frozen.zip
+          python3 - <<'PY'
+          import hashlib,io,json,pathlib,zipfile
+          b=pathlib.Path('frozen.zip').read_bytes()
+          assert hashlib.sha256(b).hexdigest()=='8c89e38edbad9c2d73bf0e69575cea08c301dd6c936b73bdd05219274ee62a42'
+          with zipfile.ZipFile(io.BytesIO(b)) as z:
+              b=z.read('frozen-targets.json')
+          assert hashlib.sha256(b).hexdigest()=='fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98'
+          m=json.loads(b);assert m['sourceCommit']=='6a9cef93d5853cfa2588df63999dfd49f51ab964'
+          assert m['poolSha256']==hashlib.sha256(pathlib.Path('tools/beta/audit150/seed-pool.json').read_bytes()).hexdigest()
+          pathlib.Path('frozen-targets.json').write_bytes(b)
+          print(json.dumps(m['counts']))
+          PY
+      - name: Stage the actual public beta2 ZIP without rebuilding
+        run: python3 tools/beta/audit150/stage.py
+      - name: Install isolated genuine native browser tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 tools/beta/audit150/make-runner.py
+          node --check tools/browser-smoke/probe-native-audit-beta.mjs
+      - name: Test every assigned real public page before any detector repair
+        env:
+          DS_NATIVE_HEADED: '1'
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_MANIFEST: frozen-targets.json
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-audit-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit150-native-${{ matrix.shard }}
+          path: |
+            browser-smoke-results/
+            frozen-targets.json
+          if-no-files-found: error
+          retention-days: 90

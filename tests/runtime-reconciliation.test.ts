@@ -1,0 +1,185 @@
+import {COMMERCE_LANGUAGE_KIT} from '../src/languages/commerce-kit';
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { parseHTML } from 'linkedom';
+import { extractPageScan } from '../src/extraction/page-scan';
+import { collectShoppingPageFacts } from '../src/detection/page-facts';
+import { applyFeaturePatch, normalizeFeatureSettings } from '../src/settings/features';
+import { lookupDomainRdap, registeredDomain, rdapEndpoint } from '../src/osint/rdap';
+import { isEtsyDomain } from '../src/adapters/etsy';
+import { showSearchChooser } from '../src/ui/search-chooser';
+
+function page(nodes:unknown,href='https://shop.example/products/lamp',price='$29.99',resources=''){
+  const w=parseHTML(`<html><head><link rel="canonical" href="https://shop.example/products/lamp"><script type="application/ld+json">${JSON.stringify(nodes)}</script>${resources}</head><body><main><h1>Target Lamp</h1><div class="product-price">${price}</div><button name="add">Add to cart</button></main></body></html>`);
+  const doc=w.document;
+  for(const [key,selector] of [['scripts','script'],['images','img']] as const){
+    const elements=Array.from(doc.querySelectorAll(selector));
+    Object.defineProperty(doc,key,{value:{length:elements.length,item:(i:number)=>elements[i]}});
+  }
+  return {w,doc,href};
+}
+function scan(nodes:unknown,href?:string,controls='',resources=''){
+  const {w,doc,href:url}=page(nodes,href,undefined,resources),g=globalThis as unknown as Record<string,unknown>;
+  if(controls){const holder=doc.createElement('div');holder.innerHTML=controls;doc.querySelector('main')?.append(holder);}
+  const values={document:doc,window:w,location:new URL(url),NodeFilter:{SHOW_TEXT:4,SHOW_ELEMENT:1},HTMLElement:w.HTMLElement};
+  const old=Object.fromEntries(Object.keys(values).map(k=>[k,g[k]]));Object.assign(g,values);
+  try{return extractPageScan(COMMERCE_LANGUAGE_KIT);}finally{for(const k of Object.keys(values)) if(old[k]===undefined) delete g[k];else g[k]=old[k];}
+}
+const product=(name='Target Lamp',url='https://shop.example/products/lamp',price=29)=>({'@type':'Product',name,url,sku:name,image:`https://images.example/${name}.jpg`,offers:{'@type':'Offer',price,priceCurrency:'USD'},aggregateRating:{ratingValue:4.8,reviewCount:100}});
+
+test('platform and provider signatures reject lookalike hosts, credentials, paths, query and fragments',()=>{
+  const resources=['https://cdn.shopify.com.evil.example/a.js','https://cdn.shopify.com@evil.example/a.js','https://evil.example/bigcommerce.com/a.js','https://evil.example/a.js?cdn=cdn.shopify.com#myshopline.com','https://evil.example/loox.io/widget/loox.js','https://evil.example/a.js?u=track123.com/track123-widget.min.js','https://evil.example/parcelpanel.com/assets/tracking/track-page.js','data:text/javascript,myshopline.com'].map(src=>`<script src="${src}"></script>`).join('')+'<link href="https://myshopline.com.evil.example/style.css">';
+  assert.deepEqual(scan(product(),undefined,'',resources).product.pageSignals,[]);
+});
+
+test('real provider hosts and exact script paths still yield neutral resource signals',()=>{
+  const resources=['https://cdn.shopify.com/a.js?cache=1','https://cdn.bigcommerce.com/a.js','https://cdn.myshopline.com/a.js','https://loox.io/widget/loox.js?v=1','https://shp.track123.com/tracking-page/build/widget.min.js','https://shopify-edd.parcelpanel.com/loader.js'].map(src=>`<script src="${src}"></script>`).join('');
+  assert.deepEqual(scan(product(),undefined,'',resources).product.pageSignals,['platform:shopify','platform:bigcommerce','platform:shopline','review-platform:loox','tracking-platform:track123','tracking-platform:parcelpanel']);
+});
+
+test('platform stylesheet hosts and path signatures stay separate from unrelated query tokens',()=>{
+  const real='<link href="//cdn.shopify.com/theme.css"><script src="/wc-add-to-cart.js?cache=1"></script>';
+  assert.deepEqual(scan(product(),undefined,'',real).product.pageSignals,['platform:shopify','platform:woocommerce']);
+  assert.deepEqual(scan(product(),undefined,'','<script src="/app.js?wc-add-to-cart=1&requirejs=1"></script>').product.pageSignals,[]);
+});
+
+test('Amazon product title takes precedence over an unrelated first heading and stays host-scoped',()=>{
+  const controls='<span id="productTitle">Noctua fixture cooling fan</span>';
+  assert.equal(scan({},'https://www.amazon.com/dp/B000000001',controls).product.title,'Noctua fixture cooling fan');
+  assert.equal(scan({},'https://amazon.com.evil.example/dp/B000000001',controls).product.title,'Target Lamp');
+});
+
+test('recommendations before the target cannot supply price, ratings, images or identity',()=>{
+  const s=scan([product('Recommendation','https://shop.example/products/other',999),product()]);
+  assert.equal(s.product.title,'Target Lamp');assert.equal(s.product.price,29);
+  assert.equal(s.hostedReviews?.subjectId,'Target Lamp');assert.deepEqual(s.product.imageUrls,['https://images.example/Target Lamp.jpg']);
+});
+test('ProductGroup selects the current variant URL and abstains at ambiguous parent',()=>{
+  const variants=[product('Small','https://shop.example/products/lamp?variant=1',10),product('Large','https://shop.example/products/lamp?variant=2',20)];
+  const group={'@type':'ProductGroup',hasVariant:variants};
+  assert.equal(scan(group,'https://shop.example/products/lamp?variant=2').product.price,20);
+  const unknown=scan(group);assert.equal(unknown.product.price,undefined);assert.equal(unknown.product.sku,undefined);assert.equal(unknown.hostedReviews,undefined);
+});
+test('explicit current-product SKU survives unresolved variants without selecting their offer or global identity',()=>{
+  const group={'@type':'ProductGroup',hasVariant:[product('Small','https://shop.example/products/lamp?variant=1',10),product('Large','https://shop.example/products/lamp?variant=2',20)]};
+  const s=scan(group,undefined,'<p>SKU: <span>GPH42-Black</span></p>');
+  assert.equal(s.product.sku,'GPH42-Black');assert.equal(s.product.price,undefined);assert.equal(s.product.variantId,undefined);assert.equal(s.product.gtin,undefined);
+  assert.equal(s.product.extraction?.structuredIdentityResolved,false);assert.equal(s.product.extraction?.offerResolved,false);assert.match(s.product.extraction?.method??'',/explicit visible SKU/);
+});
+test('conflicting, hidden, review and recommendation SKU labels cannot resolve the current product',()=>{
+  assert.equal(scan({},undefined,'<p>SKU: TARGET-1</p><p>SKU: TARGET-2</p>').product.sku,undefined);
+  assert.equal(scan({},undefined,'<p hidden>SKU: HIDDEN-1</p><div class="reviews">SKU: REVIEW-1</div><div class="related-products"><p>SKU: RELATED-1</p></div><a href="/products/other">SKU: OTHER-1</a>').product.sku,undefined);
+  assert.equal(scan({},undefined,'<p>SKU: N/A</p>').product.sku,undefined);
+  assert.equal(scan({},'https://shop.example/blog/lamp','<p>SKU: EDITORIAL-1</p>').product.sku,undefined);
+});
+test('visible SKU fallback does not replace the bound structured SKU or infer common ownership',()=>{
+  assert.equal(scan(product(),undefined,'<p>SKU: ANOTHER-SKU</p>').product.sku,'Target Lamp');
+  const s=scan({},undefined,'<p>SKU: CURRENT-1</p><div class="product-card"><p>SKU: RECOMMENDED-1</p></div>');assert.equal(s.product.sku,'CURRENT-1');assert.equal(s.product.variantId,undefined);
+});
+test('same-URL ProductGroup uses explicit selected variant attributes and abstains when ambiguous',()=>{
+  const base='https://shop.example/products/lamp';
+  const red={...product('Red lamp',base,10),color:'red',material:'cotton'};
+  const blue={...product('Blue lamp',base,20),color:'blue',material:'cotton'};
+  const group={'@type':'ProductGroup',name:'Target Lamp',url:base,hasVariant:[red,blue]};
+  const control='<input type="radio" name="color" value="blue" checked>';
+  const selected=scan(group,base,control);assert.equal(selected.product.price,20);assert.equal(selected.product.sku,'Blue lamp');assert.match(selected.product.extraction!.method,/selected controls/);
+  assert.equal(scan(group).product.price,undefined);
+  assert.equal(scan({...group,hasVariant:[red,blue,{...blue,sku:'ambiguous'}]},base,control).product.price,undefined);
+  assert.equal(scan(group,base,'<input type="radio" name="color" value="green" checked>').product.sku,undefined);
+});
+
+test('named pressed swatch controls identify one same-URL ProductGroup variant, never a generic CTA',()=>{
+  const url='https://shop.example/products/lamp';
+  const red={...product('Red lamp',url,10),color:'red'};
+  const blue={...product('Blue lamp',url,20),color:'blue'};
+  const group={'@type':'ProductGroup',name:'Target Lamp',url,hasVariant:[red,blue]};
+  const namedButton='<button type="button" data-option-name="color" data-option-value="blue" aria-pressed="true">Blue</button>';
+  const chosen=scan(group,url,namedButton);
+  assert.equal(chosen.product.sku,'Blue lamp');assert.equal(chosen.product.price,20);
+  assert.equal(scan(group,url,'<button aria-pressed="true" value="blue">Blue</button>').product.price,undefined);
+  assert.equal(scan(group,url,namedButton+'<button data-option-name="color" data-option-value="red" aria-pressed="true">Red</button>').product.price,undefined);
+  assert.equal(scan(group,url,'<button data-option-name="color" data-option-value="green" aria-pressed="true">Green</button>').product.price,undefined);
+});
+
+test('RDAP cancellation before consent prevents cache reads and network work',async()=>{
+  const g=globalThis as unknown as {chrome:unknown},old=g.chrome;let resolve!:(v:boolean)=>void,reads=0;
+  g.chrome={permissions:{request:()=>new Promise<boolean>(r=>{resolve=r;})},storage:{session:{get:async()=>{reads++;return {};}}}};
+  try{const c=new AbortController(),pending=lookupDomainRdap('example.com',c.signal);c.abort();resolve(true);await assert.rejects(pending,{name:'AbortError'});assert.equal(reads,0);}finally{g.chrome=old;}
+});
+test('unresolved offers and unrelated aggregate ratings remain unknown',()=>{
+  const p={...product(),offers:[{price:1},{price:99}],aggregateRating:undefined};
+  const s=scan([p,{'@type':'Organization',aggregateRating:{ratingValue:5,reviewCount:999}}]);
+  assert.equal(s.product.price,undefined);assert.equal(s.hostedReviews,undefined);
+});
+test('URL-less metadata requires matching visible identity and no unresolved variant selection',()=>{
+  assert.equal(scan({...product(),url:undefined}).product.price,29);
+  assert.equal(scan({...product('Other'),url:undefined}).product.price,undefined);
+  assert.equal(scan({...product(),url:undefined},'https://shop.example/products/lamp?variant=2').product.price,undefined);
+});
+test('schema-free visible currency prices are detected without mistaking arbitrary text for prices',()=>{
+  for(const price of ['$29.99','29.99 USD','€ 29,99']){const {doc,href}=page({},undefined,price);assert.equal(collectShoppingPageFacts(doc,href).visiblePrice,true);}
+  const {doc,href}=page({},undefined,'Call for details');assert.equal(collectShoppingPageFacts(doc,href).visiblePrice,false);
+});
+test('malformed persisted settings cannot enable monitoring',()=>{
+  assert.deepEqual(normalizeFeatureSettings({autoProtection:'false',autoSourceHunt:1,preferMadeInUSA:[],toneMode:'anything',unknown:true}),{autoProtection:false,autoSourceHunt:false,weeklyIntelligenceUpdates:false,preferMadeInUSA:false,toneMode:'professional'});
+});
+test('concurrent setting patches preserve unrelated changes and recover after a failed write',async()=>{
+  const g=globalThis as unknown as {chrome:unknown},old=g.chrome;let stored:Record<string,unknown>={};let fail=false;
+  g.chrome={storage:{local:{get:async()=>({...stored}),set:async(v:Record<string,unknown>)=>{await new Promise(r=>setTimeout(r,2));if(fail){fail=false;throw Error('disk');}stored={...stored,...v};}}}};
+  try{
+    await Promise.all([applyFeaturePatch({autoSourceHunt:true}),applyFeaturePatch({preferMadeInUSA:true}),applyFeaturePatch({toneMode:'nuclear'})]);
+    const s=normalizeFeatureSettings(stored['dropshredder-feature-settings-v1']);assert.equal(s.autoSourceHunt,true);assert.equal(s.preferMadeInUSA,true);assert.equal(s.toneMode,'nuclear');
+    await assert.rejects(applyFeaturePatch({autoProtection:'true'}));fail=true;await assert.rejects(applyFeaturePatch({autoProtection:true}));
+    assert.equal((await applyFeaturePatch({toneMode:'professional'})).autoSourceHunt,true);
+  }finally{g.chrome=old;}
+});
+test('RDAP resolves registered domains and uses the published HTTPS registry endpoint',()=>{
+  assert.equal(registeredDomain('shop.example.co.uk'),'example.co.uk');
+  assert.equal(registeredDomain('https://www.example.com/path'),'example.com');
+  for(const value of ['127.0.0.1','localhost','https://secret@example.com','https://example.com:4433','http://example.com']) assert.equal(registeredDomain(value),undefined);
+  assert.match(rdapEndpoint('example.com')??'',/^https:\/\/rdap\.verisign\.com\/com\/v1\/domain\/example.com$/);
+});
+test('cached RDAP results wait for consent, and denied consent performs no cache read or fetch',async()=>{
+  const g=globalThis as unknown as {chrome:unknown},old=g.chrome,oldFetch=globalThis.fetch;let reads=0,requests=0,consent!:(v:boolean)=>void;
+  g.chrome={permissions:{request:()=>new Promise<boolean>(r=>{consent=r;}),contains:async()=>true},storage:{session:{get:async()=>{reads++;return {'rdap:example.com':{at:Date.now(),value:{domain:'example.com',source:rdapEndpoint('example.com'),retrievedAt:new Date().toISOString(),nameservers:[],statuses:[]}}};}}}};
+  globalThis.fetch=async()=>{requests++;throw Error('should not fetch');};
+  try{const pending=lookupDomainRdap('example.com');assert.equal(reads,0);consent(false);assert.equal(await pending,undefined);assert.equal(reads,0);assert.equal(requests,0);
+    const allowed=lookupDomainRdap('example.com');assert.equal(reads,0);consent(true);assert.equal((await allowed)?.domain,'example.com');assert.equal(reads,1);
+  }finally{g.chrome=old;globalThis.fetch=oldFetch;}
+});
+test('RDAP rejects another domain response and never follows redirects or sends credentials',async()=>{
+  const g=globalThis as unknown as {chrome:unknown},old=g.chrome,oldFetch=globalThis.fetch;
+  g.chrome={permissions:{request:async()=>true,contains:async()=>true},storage:{session:{get:async()=>({}),set:async()=>{}}}};
+  globalThis.fetch=async(_url,init)=>{assert.equal(init?.redirect,'error');assert.equal(init?.credentials,'omit');assert.equal(init?.referrerPolicy,'no-referrer');return new Response(JSON.stringify({ldhName:'other.com'}));};
+  try{await assert.rejects(lookupDomainRdap('example.com'),/did not identify/);}finally{g.chrome=old;globalThis.fetch=oldFetch;}
+});
+test('search picker exposes all sources and opens only explicit bounded batches',async()=>{
+  const {document:doc}=parseHTML('<html><body></body></html>'),g=globalThis as unknown as {chrome:unknown},old=g.chrome;const opened:string[]=[];
+  // LinkeDOM has no native dialog method; this test covers controls, not modal rendering.
+  const create=doc.createElement.bind(doc);doc.createElement=((name:string)=>{const el=create(name);if(name==='dialog') Object.assign(el,{showModal(){}});return el;}) as typeof doc.createElement;
+  g.chrome={tabs:{create:async({url}:{url:string})=>{opened.push(url);}}};
+  try{
+    showSearchChooser(Object.fromEntries(Array.from({length:10},(_,i)=>[`source-${i}`,`https://google.com/search?q=${i}`])),doc);
+    assert.equal(doc.querySelectorAll('label').length,10);assert.equal(opened.length,0);
+    const button=doc.querySelector('button')!;button.click();await new Promise(r=>setImmediate(r));assert.equal(opened.length,8);
+    button.click();await new Promise(r=>setImmediate(r));assert.equal(opened.length,10);
+  }finally{g.chrome=old;}
+});
+
+test('Etsy routing accepts real subdomains and rejects hostname lookalikes',()=>{for(const host of ['etsy.com','www.etsy.com','www.ETSY.com']) assert.equal(isEtsyDomain(host),true);for(const host of ['notetsy.com','etsy.com.evil.test','etsyXcom']) assert.equal(isEtsyDomain(host),false);});
+
+test('a recommendation fragment identifier cannot override its different product URL',()=>{
+  const wrong={...product('Wrong','https://shop.example/products/other',999),'@id':'#recommendation'};
+  assert.equal(scan([wrong,product()]).product.price,29);
+  assert.equal(scan({...wrong,url:undefined}).product.price,undefined);
+});
+test('blank and null price values are not interpreted as free products',()=>{
+  for(const price of [null,'',' ','NaN']) assert.equal(scan({...product(),offers:{price}}).product.price,undefined);
+  assert.equal(scan({...product(),offers:{price:0}}).product.price,0);
+});
+test('revoking RDAP permission during fetch suppresses the result',async()=>{
+ const g=globalThis as unknown as {chrome:unknown},old=g.chrome,oldFetch=globalThis.fetch;let allowed=true,writes=0;
+ g.chrome={permissions:{request:async()=>true,contains:async()=>allowed},storage:{session:{get:async()=>({}),set:async()=>{writes++;}}}};
+ globalThis.fetch=async()=>{allowed=false;return new Response(JSON.stringify({ldhName:'example.com',events:[{eventAction:'registration',eventDate:'2020-01-01'}]}));};
+ try{assert.equal(await lookupDomainRdap('example.com'),undefined);assert.equal(writes,0);}finally{g.chrome=old;globalThis.fetch=oldFetch;}
+});

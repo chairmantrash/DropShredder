@@ -1,0 +1,114 @@
+{
+  "sourceCommit": "ac52c91f4e082fafc5ba7358aecdd39742d48adb",
+  "startedAt": "2026-10-13T13:15:16.183Z",
+  "mode": "headed Chromium / Xvfb",
+  "status": "FAIL OR ENVIRONMENT BLOCKED",
+  "tests": [
+    {
+      "id": "N01",
+      "description": "Reviewed package mounts in the native side panel without host grants",
+      "status": "PASS",
+      "elapsedMs": 6265,
+      "details": {
+        "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+        "files": 54
+      }
+    },
+    {
+      "id": "N02",
+      "description": "Trusted native source-hunt toggle saves through the background writer",
+      "status": "FAIL",
+      "elapsedMs": 10020,
+      "error": "Error: Timed out: visible control .settings-panel > summary"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "providerRequests": [],
+  "notTested": [
+    "Independent A01-D06 desktop QA",
+    "Explicit operator accept/deny of native Chrome permission UI",
+    "Live merchant/category accuracy",
+    "Concurrent native panels; malformed storage tested in core, not browser; native context-menu UI; live-store accuracy; RDAP/CPSC live endpoints"
+  ],
+  "packagedSourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+  "fixtureSearchNetworkIsolation": {
+    "hosts": [
+      "www.google.com",
+      "lens.google.com",
+      "www.bing.com",
+      "yandex.com",
+      "tineye.com"
+    ],
+    "scope": "Disposable engineering browser only: owned HTTP routes plus DNS refusal fallback; selected destinations are checked from actual Chrome pending/committed tab URLs, not remote search content"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.4",
+    "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75"
+  },
+  "actionOptions": {
+    "enabled": true,
+    "path": "sidepanel.html"
+  },
+  "actionTargets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js"
+    },
+    {
+      "type": "page",
+      "url": "about:blank"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome/"
+    },
+    {
+      "type": "page",
+      "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/sidepanel.html"
+    }
+  ],
+  "failure": "Error: Timed out: visible control .settings-panel > summary",
+  "failureState": {
+    "status": "Ready when you are.",
+    "settingsOpen": false,
+    "sourceChecked": false,
+    "autoStatus": "",
+    "focused": "<body>\n    <main id=\"app\">\n      <header class=\"masthead\">\n        <div class=\"brand-row\">\n          <div>\n            <div class=\"eyebrow\">DROPSHREDDER</div>\n            <h1>Know what you’re really buying.</h1>\n          </div>\n          <span class=\"privacy-badge\">STAYS ON YOUR DEVICE</span>\n     ",
+    "documentFocused": true
+  },
+  "chromeTabsAtFailure": [
+    {
+      "active": true,
+      "audible": false,
+      "autoDiscardable": true,
+      "discarded": false,
+      "frozen": false,
+      "groupId": -1,
+      "height": 764,
+      "highlighted": true,
+      "id": 351688439,
+      "incognito": false,
+      "index": 0,
+      "lastAccessed": 1791897322052.066,
+      "mutedInfo": {
+        "muted": false
+      },
+      "pinned": false,
+      "selected": true,
+      "splitViewId": -1,
+      "status": "complete",
+      "width": 1288,
+      "windowId": 351688438
+    }
+  ],
+  "finishedAt": "2026-10-13T13:15:32.573Z",
+  "testsPassed": 1
+}

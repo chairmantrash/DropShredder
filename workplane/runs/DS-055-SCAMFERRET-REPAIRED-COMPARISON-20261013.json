@@ -1,0 +1,1204 @@
+{
+  "sourceCommit": "8cf8dc631edafe584141e2f95f0c0f51855fb7bc",
+  "auditSha256": "671dd61d475c5a868ffa600e97dde5d96b5309044e7227b5fb52bd3f7f1a6773",
+  "historicalOutputCounts": {
+    "SCAM": 50,
+    "NON_SCAM": 1,
+    "INVALID_MACHINE_READABLE_OUTPUT": 3
+  },
+  "sourceOutputFiles": 54,
+  "sourceHostnames": 49,
+  "outputsWithSameResourcePath": 2,
+  "records": [
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/18577650-5bbe-513a-8042-3fc1643b3db0_bagsoutletonlineshop.com.json",
+      "sourceSha256": "19d5fe2a380506ac16a4e1d425856be0c2821496aa17c721c9ff886f3686eed8",
+      "historicalTarget": "https://bagsoutletonlineshop.com/",
+      "historicalDate": "2025-08-31 03:44:21",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0149",
+        "AUDIT-0150",
+        "AUDIT-0151",
+        "AUDIT-0152",
+        "AUDIT-0153"
+      ],
+      "historicalCostUsd": 0.024282000000000005,
+      "historicalElapsedSeconds": 19.09,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/33662d90-c391-5f9d-aaf0-be58612875a5_beringhorloges.com.json",
+      "sourceSha256": "c11c738d59b99777fcd997c84f53674d974c3ee55392407bb87b34fa9932f1a1",
+      "historicalTarget": "https://beringhorloges.com/",
+      "historicalDate": "2025-08-31 04:04:50",
+      "model": "gpt-4.1",
+      "historicalPrediction": "NON_SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0056",
+        "AUDIT-0057",
+        "AUDIT-0058",
+        "AUDIT-0059",
+        "AUDIT-0060"
+      ],
+      "historicalCostUsd": 0.029876000000000003,
+      "historicalElapsedSeconds": 164.63,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/54c16f29-dbe5-5599-b255-c95df65ddc84_koolesports.com.json",
+      "sourceSha256": "6245b6243cae8a919b7859996944394641dd9f09907551b532fde5619b78ccb9",
+      "historicalTarget": "https://koolesports.com/",
+      "historicalDate": "2025-08-31 04:33:46",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0154",
+        "AUDIT-0155",
+        "AUDIT-0156",
+        "AUDIT-0157",
+        "AUDIT-0158"
+      ],
+      "historicalCostUsd": 0.025428,
+      "historicalElapsedSeconds": 13.57,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/804b5706-14da-551a-8d7c-88fdb43ac044_vrouwelijkschoenen.com.json",
+      "sourceSha256": "ba83ce1fb0de69bd35cb7dc12e47168a690f15429e65aca77938a32f7b499bba",
+      "historicalTarget": "https://vrouwelijkschoenen.com/",
+      "historicalDate": "2025-08-31 04:55:02",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0104",
+        "AUDIT-0105",
+        "AUDIT-0106",
+        "AUDIT-0107",
+        "AUDIT-0108"
+      ],
+      "historicalCostUsd": 0.024658,
+      "historicalElapsedSeconds": 24.49,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_dutch/97d5e556-e8ab-5ebe-81af-2ba30a987bd6_favorieteaction.com.json",
+      "sourceSha256": "3d1ecadaad8e4f930bbf72a56f78c0fdde5afc20f38b7dfc4ffe3bf8474c849a",
+      "historicalTarget": "https://favorieteaction.com/",
+      "historicalDate": "2025-08-31 05:10:59",
+      "model": "gpt-4.1",
+      "historicalPrediction": "INVALID_MACHINE_READABLE_OUTPUT",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0134",
+        "AUDIT-0135",
+        "AUDIT-0136",
+        "AUDIT-0137",
+        "AUDIT-0138"
+      ],
+      "historicalCostUsd": 0.027492000000000003,
+      "historicalElapsedSeconds": 17.27,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/9e52ae2a-a106-599b-88ef-7314822f58d2_www.stellamccartneys.us.json",
+      "sourceSha256": "de652e1825fffc4baa7f3dbc2791fdc7389023ffe14c30240f6759b86c103f96",
+      "historicalTarget": "https://www.stellamccartneys.us/",
+      "historicalDate": "2025-08-30 16:25:22",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0169",
+        "AUDIT-0170",
+        "AUDIT-0171",
+        "AUDIT-0172",
+        "AUDIT-0173"
+      ],
+      "historicalCostUsd": 0.020434,
+      "historicalElapsedSeconds": 20.17,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/b4b561ea-fb0d-5796-ad28-50caa8148dd4_jordans.com.mx.json",
+      "sourceSha256": "b907a6310de5bf082e8f16ef61b209243cfac352d3b2555bdae8bb4efa9601cf",
+      "historicalTarget": "https://jordans.com.mx/t/jordan-40",
+      "historicalDate": "2025-08-30 16:31:09",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0086",
+        "AUDIT-0087",
+        "AUDIT-0088"
+      ],
+      "historicalCostUsd": 0.020666,
+      "historicalElapsedSeconds": 24.6,
+      "currentCaseStatuses": {
+        "ENVIRONMENT_OR_ACTION_ERROR": 3
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_english/d5af6f77-2632-5be7-bc73-6190bc82ea40_www.pokemoncenterca.com.json",
+      "sourceSha256": "d3fd345370c724d56d1e3e48318d7223eb08abb011797fd84eb3e322cf72bafc",
+      "historicalTarget": "https://www.pokemoncenterca.com/",
+      "historicalDate": "2025-08-30 16:45:00",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0214",
+        "AUDIT-0215",
+        "AUDIT-0216",
+        "AUDIT-0217",
+        "AUDIT-0218"
+      ],
+      "historicalCostUsd": 0.030100000000000002,
+      "historicalElapsedSeconds": 17.64,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/5f71f499-80d7-5f30-9dd0-e65e196b270b_www.happysocksfr.fr.json",
+      "sourceSha256": "1e54227b4667dd6a0d1e96234c96f159e2844a5eb1eabe2fb890d5f408d3f28f",
+      "historicalTarget": "https://www.happysocksfr.fr/",
+      "historicalDate": "2025-08-31 04:04:46",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0244",
+        "AUDIT-0245",
+        "AUDIT-0246",
+        "AUDIT-0247",
+        "AUDIT-0248"
+      ],
+      "historicalCostUsd": 0.032016,
+      "historicalElapsedSeconds": 175.5,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/7d5bc053-9fc4-526a-ae1b-09085e0e7e99_chromehearts-france.fr.json",
+      "sourceSha256": "a3e8357cb26923ccb5634c9e119e7cfc29eec98b63bc46acdd0644c7a5e5b5ac",
+      "historicalTarget": "http://chromehearts-france.fr/",
+      "historicalDate": "2025-08-31 04:24:45",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0144",
+        "AUDIT-0145",
+        "AUDIT-0146",
+        "AUDIT-0147",
+        "AUDIT-0148"
+      ],
+      "historicalCostUsd": 0.039548,
+      "historicalElapsedSeconds": 35.56,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/d589c95b-27d9-59e8-a236-089212d3d9b5_www.akufrance.com.json",
+      "sourceSha256": "47c82ceac5a5c06d72d54ce7f29efc363a4190d21bb7d80aa02602ccbb31a20f",
+      "historicalTarget": "http://www.akufrance.com/",
+      "historicalDate": "2025-08-31 04:57:14",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0036",
+        "AUDIT-0037",
+        "AUDIT-0038",
+        "AUDIT-0039",
+        "AUDIT-0040"
+      ],
+      "historicalCostUsd": 0.022709999999999998,
+      "historicalElapsedSeconds": 20.69,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_french/eccb3967-3a49-5529-9a3c-a3057200311d_www.akufrance.com.json",
+      "sourceSha256": "ced5ce6ca88cafbc934295f378cbee3654b40bb25913b9162460b06779d48883",
+      "historicalTarget": "https://www.akufrance.com/",
+      "historicalDate": "2025-08-31 05:08:24",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0036",
+        "AUDIT-0037",
+        "AUDIT-0038",
+        "AUDIT-0039",
+        "AUDIT-0040"
+      ],
+      "historicalCostUsd": 0.026326,
+      "historicalElapsedSeconds": 35.3,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/04516bc9-a515-5e47-a892-02b4d3a11c2a_www.uggat.at.json",
+      "sourceSha256": "5eac4b050def042d209f044d681e85cb8509ca3245c2a1714fbf2939e6981204",
+      "historicalTarget": "https://www.uggat.at/",
+      "historicalDate": "2025-08-30 16:00:23",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0026",
+        "AUDIT-0027",
+        "AUDIT-0028",
+        "AUDIT-0029",
+        "AUDIT-0030"
+      ],
+      "historicalCostUsd": 0.046146000000000006,
+      "historicalElapsedSeconds": 125.35,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2bbe19ee-c132-57fe-b7d2-3e9a0741d971_www.teva-osterreich.at.json",
+      "sourceSha256": "24179b1066a73ebc6ec27ce1c0ca738083b46b73ed62d7501183b8f4f4ee8069",
+      "historicalTarget": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "historicalDate": "2025-08-30 16:17:21",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0229",
+        "AUDIT-0230",
+        "AUDIT-0231",
+        "AUDIT-0232",
+        "AUDIT-0233"
+      ],
+      "historicalCostUsd": 0.03652,
+      "historicalElapsedSeconds": 159.38,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/2d289681-d7a9-5969-b264-bc8c7d42b083_www.champion.co.at.json",
+      "sourceSha256": "7e49fafcbac29f52a472ae16a19f1589bbb0da0bef7b517340f8a5cfb1aeffe1",
+      "historicalTarget": "https://www.champion.co.at/",
+      "historicalDate": "2025-08-30 16:17:54",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0129",
+        "AUDIT-0130",
+        "AUDIT-0131",
+        "AUDIT-0132",
+        "AUDIT-0133"
+      ],
+      "historicalCostUsd": 0.042414,
+      "historicalElapsedSeconds": 183.14,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/458060bf-0e68-5314-a37b-d9bc02431f2a_barboursuk.com.json",
+      "sourceSha256": "b75d166fd4df7c09224d5f05f211148bd5c6ab22d44a536aacaeb764ccdb5714",
+      "historicalTarget": "https://barboursuk.com/",
+      "historicalDate": "2025-08-30 16:30:36",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0184",
+        "AUDIT-0185",
+        "AUDIT-0186",
+        "AUDIT-0187",
+        "AUDIT-0188"
+      ],
+      "historicalCostUsd": 0.023208,
+      "historicalElapsedSeconds": 17.94,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/46019f59-d2f9-5b48-b165-6e912b016f7f_specialized-gb.com.json",
+      "sourceSha256": "3919b2506ab531077e69dd83d0ddbefcfc43584ea2c14ed535040a28c663e0f6",
+      "historicalTarget": "https://specialized-gb.com/",
+      "historicalDate": "2025-08-30 16:31:06",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0124",
+        "AUDIT-0125",
+        "AUDIT-0126",
+        "AUDIT-0127",
+        "AUDIT-0128"
+      ],
+      "historicalCostUsd": 0.023102,
+      "historicalElapsedSeconds": 22.14,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/4928ca0c-ea02-5c07-898f-349899dab11a_napapijris.de.json",
+      "sourceSha256": "a50fdf3bc7160fe5f75913b305c9643907c04cbdba8be952c32c8abe4eeaa7d6",
+      "historicalTarget": "https://napapijris.de/",
+      "historicalDate": "2025-08-30 16:31:55",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0164",
+        "AUDIT-0165",
+        "AUDIT-0166",
+        "AUDIT-0167",
+        "AUDIT-0168"
+      ],
+      "historicalCostUsd": 0.021952,
+      "historicalElapsedSeconds": 14.86,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/5b758966-7e95-5a0b-a8cf-a876baf8e225_superdry.co.at.json",
+      "sourceSha256": "7f2571d40149c9b6a39c3df2c2986837b9da2ab35f589835357ca209e05a365a",
+      "historicalTarget": "https://superdry.co.at/",
+      "historicalDate": "2025-08-30 16:36:17",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0119",
+        "AUDIT-0120",
+        "AUDIT-0121",
+        "AUDIT-0122",
+        "AUDIT-0123"
+      ],
+      "historicalCostUsd": 0.047577999999999995,
+      "historicalElapsedSeconds": 89.47,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/628dda9b-3a2d-5d7c-8b5a-f40652b936b5_www.nike-blazer.de.json",
+      "sourceSha256": "031248b4ce1fde5cc22d15990425eca2ea986f7f8b5dc042f6d686e88d3cb649",
+      "historicalTarget": "https://www.nike-blazer.de/",
+      "historicalDate": "2025-08-30 16:37:47",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0209",
+        "AUDIT-0210",
+        "AUDIT-0211",
+        "AUDIT-0212",
+        "AUDIT-0213"
+      ],
+      "historicalCostUsd": 0.030350000000000002,
+      "historicalElapsedSeconds": 37.35,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/906b9924-6b89-5c69-8bba-f2832be3e621_www.adidas-campus.de.json",
+      "sourceSha256": "0ccccc1c4739ff1715f10da2bcf0184cc512e89bcb41315834d7036aacaa0b4b",
+      "historicalTarget": "https://www.adidas-campus.de/",
+      "historicalDate": "2025-08-30 16:59:39",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0199",
+        "AUDIT-0200",
+        "AUDIT-0201",
+        "AUDIT-0202",
+        "AUDIT-0203"
+      ],
+      "historicalCostUsd": 0.033256,
+      "historicalElapsedSeconds": 103.08,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/a4fa3c5b-8538-526f-85ff-5fc2ff0209fa_pokemoncenter.co.at.json",
+      "sourceSha256": "a8879325fbf8cb4001fbd8cf4e1ccb6dbd65cef65ee6ccfab7b55afb2f153f66",
+      "historicalTarget": "http://pokemoncenter.co.at/",
+      "historicalDate": "2025-08-30 17:08:47",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0071",
+        "AUDIT-0072",
+        "AUDIT-0073",
+        "AUDIT-0074",
+        "AUDIT-0075"
+      ],
+      "historicalCostUsd": 0.027418,
+      "historicalElapsedSeconds": 28.17,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/b03541d5-9917-545c-899b-2f6259ffd391_www.adidas-samba.at.json",
+      "sourceSha256": "683c0ae70d163bc152053548a17a462e9c1e2cd536a8768a06af893a914eaf44",
+      "historicalTarget": "https://www.adidas-samba.at/",
+      "historicalDate": "2025-08-30 17:13:03",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0081",
+        "AUDIT-0082",
+        "AUDIT-0083",
+        "AUDIT-0084",
+        "AUDIT-0085"
+      ],
+      "historicalCostUsd": 0.025375999999999996,
+      "historicalElapsedSeconds": 20.57,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c01acb73-56e9-5cab-817b-8a968c21789a_owalasale.de.json",
+      "sourceSha256": "de10a2c0f58998e12b811462ce23f8a980a0684adbcc44b502eb6b12c3aad82c",
+      "historicalTarget": "http://owalasale.de/",
+      "historicalDate": "2025-08-30 17:22:17",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0061",
+        "AUDIT-0062",
+        "AUDIT-0063",
+        "AUDIT-0064",
+        "AUDIT-0065"
+      ],
+      "historicalCostUsd": 0.03197,
+      "historicalElapsedSeconds": 79.09,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 1,
+        "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c43c01ff-5e83-57f3-939a-0d90a448f26f_labubu.co.at.json",
+      "sourceSha256": "89bdaf5869d0f11bc8e4d102bb22664f0351789ad8e980300de9cc08c40301d2",
+      "historicalTarget": "http://labubu.co.at/",
+      "historicalDate": "2025-08-30 17:27:33",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0194",
+        "AUDIT-0195",
+        "AUDIT-0196",
+        "AUDIT-0197",
+        "AUDIT-0198"
+      ],
+      "historicalCostUsd": 0.048566000000000005,
+      "historicalElapsedSeconds": 163.96,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c532e216-84f3-53a8-baa2-e765c276cd44_zippoes.es.json",
+      "sourceSha256": "32a5124e28e7d74d2c74860d838841ce46e7ae68303d20c84758aa3baffb7cc9",
+      "historicalTarget": "https://zippoes.es/",
+      "historicalDate": "2025-08-30 17:29:12",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0076",
+        "AUDIT-0077",
+        "AUDIT-0078",
+        "AUDIT-0079",
+        "AUDIT-0080"
+      ],
+      "historicalCostUsd": 0.023338,
+      "historicalElapsedSeconds": 18.27,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c7d3cd9f-0407-58f1-8d58-b615b947c144_ninewest.com.de.json",
+      "sourceSha256": "8dff75ee38c8c953939103cdd7e2feae05fb96bf9309bb495b4203747dbc658d",
+      "historicalTarget": "https://ninewest.com.de/",
+      "historicalDate": "2025-08-30 17:31:06",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0006",
+        "AUDIT-0007",
+        "AUDIT-0008",
+        "AUDIT-0009",
+        "AUDIT-0010"
+      ],
+      "historicalCostUsd": 0.024944,
+      "historicalElapsedSeconds": 27.39,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/c9cc1568-bd73-5d81-9933-603a05553358_kickers.co.at.json",
+      "sourceSha256": "2534865015ee9caecd0e652c6d7928189bae018ab862384e4e7a535525dc1a9c",
+      "historicalTarget": "https://kickers.co.at/",
+      "historicalDate": "2025-08-30 17:33:48",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0250",
+        "AUDIT-0251",
+        "AUDIT-0252",
+        "AUDIT-0253",
+        "AUDIT-0254"
+      ],
+      "historicalCostUsd": 0.09665,
+      "historicalElapsedSeconds": 48.46,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_german/d40d0d33-551c-5474-9703-e5954cc9d9ae_salomons.gr.json",
+      "sourceSha256": "6bb7e7f8840f0933069406d9b77d1d417aadd5001e8eaa42f3aea9e2a426c199",
+      "historicalTarget": "https://salomons.gr/",
+      "historicalDate": "2025-08-30 17:37:14",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0066",
+        "AUDIT-0067",
+        "AUDIT-0068",
+        "AUDIT-0069",
+        "AUDIT-0070"
+      ],
+      "historicalCostUsd": 0.019256000000000002,
+      "historicalElapsedSeconds": 18.94,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/03db3a89-9b46-5510-a219-141d98cfc9aa_pokemoncenter.co.it.json",
+      "sourceSha256": "3b24ba98355105179506b894bb9e04f9d747fc972b368be24d29f269d509c24c",
+      "historicalTarget": "http://pokemoncenter.co.it/",
+      "historicalDate": "2025-08-31 03:14:00",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0051",
+        "AUDIT-0052",
+        "AUDIT-0053",
+        "AUDIT-0054",
+        "AUDIT-0055"
+      ],
+      "historicalCostUsd": 0.028518,
+      "historicalElapsedSeconds": 22.71,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/228d6afa-c191-544a-a161-9ad41d887425_bambiniattivi.com.json",
+      "sourceSha256": "d0268caa2bf5541772e65ec8db4ae6817e2b6b1c8c698e085518269c796cc2ea",
+      "historicalTarget": "https://bambiniattivi.com/",
+      "historicalDate": "2025-08-31 03:41:32",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0189",
+        "AUDIT-0190",
+        "AUDIT-0191",
+        "AUDIT-0192",
+        "AUDIT-0193"
+      ],
+      "historicalCostUsd": 0.024390000000000002,
+      "historicalElapsedSeconds": 116.15,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/33e53eaa-12c6-584f-befe-767537a90cf4_www.bershka.co.it.json",
+      "sourceSha256": "797471f0a3be2573a551020f8b59f0d8afe10d81dedec1529a3c84e3d988d417",
+      "historicalTarget": "https://www.bershka.co.it/",
+      "historicalDate": "2025-08-31 03:54:37",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0224",
+        "AUDIT-0225",
+        "AUDIT-0226",
+        "AUDIT-0227",
+        "AUDIT-0228"
+      ],
+      "historicalCostUsd": 0.025300000000000003,
+      "historicalElapsedSeconds": 19.32,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/412094ca-ad50-540e-9d9e-81f25b4afab9_www.pokemoncenter.co.it.json",
+      "sourceSha256": "1a1b6800f3c3c0349a3b3827b0461505fcde5a39b80068b96d69f52a31e51eea",
+      "historicalTarget": "http://www.pokemoncenter.co.it/",
+      "historicalDate": "2025-08-31 04:02:13",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0051",
+        "AUDIT-0052",
+        "AUDIT-0053",
+        "AUDIT-0054",
+        "AUDIT-0055"
+      ],
+      "historicalCostUsd": 0.030794,
+      "historicalElapsedSeconds": 25.18,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/74974f04-1801-5416-b08a-bdf1e95e42eb_happysocksit.it.json",
+      "sourceSha256": "ad6f76cd4846166e1e649dc0dae11e7a30ca1fe892895d41ef931d613c8c6fbb",
+      "historicalTarget": "https://happysocksit.it/",
+      "historicalDate": "2025-08-31 04:33:59",
+      "model": "gpt-4.1",
+      "historicalPrediction": "INVALID_MACHINE_READABLE_OUTPUT",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0011",
+        "AUDIT-0012",
+        "AUDIT-0013",
+        "AUDIT-0014",
+        "AUDIT-0015"
+      ],
+      "historicalCostUsd": 0.033268,
+      "historicalElapsedSeconds": 32.2,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/847294e4-bf91-5e55-b443-872f3f5734d0_www.happysocksit.it.json",
+      "sourceSha256": "303e71469e7e3930b620a3eb14bfdfd54ce377057e9e141457451a7a1b43a372",
+      "historicalTarget": "https://www.happysocksit.it/",
+      "historicalDate": "2025-08-31 04:42:00",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0011",
+        "AUDIT-0012",
+        "AUDIT-0013",
+        "AUDIT-0014",
+        "AUDIT-0015"
+      ],
+      "historicalCostUsd": 0.039846,
+      "historicalElapsedSeconds": 122.65,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/895a54f5-35af-5184-8240-61a7f522cd45_www.cannondales.it.json",
+      "sourceSha256": "a6bcb93675634d1501e022ed28e121494f15609c0f575672a272c16fbfeed784",
+      "historicalTarget": "https://www.cannondales.it/",
+      "historicalDate": "2025-08-31 04:45:02",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0179",
+        "AUDIT-0180",
+        "AUDIT-0181",
+        "AUDIT-0182",
+        "AUDIT-0183"
+      ],
+      "historicalCostUsd": 0.03769,
+      "historicalElapsedSeconds": 117.74,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/952cb188-8b0f-5030-971f-66534114a656_www.lowa.co.it.json",
+      "sourceSha256": "9a1996a463a21d14194fab18e0d911e97efe2940263073a5f7d80fa29040cbab",
+      "historicalTarget": "https://www.lowa.co.it/",
+      "historicalDate": "2025-08-31 04:56:03",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0046",
+        "AUDIT-0047",
+        "AUDIT-0048",
+        "AUDIT-0049",
+        "AUDIT-0050"
+      ],
+      "historicalCostUsd": 0.049638,
+      "historicalElapsedSeconds": 203.64,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a34ac103-a711-530c-90e4-b4c8943cd91b_jordan4.it.json",
+      "sourceSha256": "be5509201424b7f55baa9b6443a93534f0b46121003f325d85faf4f0538b1cbb",
+      "historicalTarget": "http://jordan4.it/",
+      "historicalDate": "2025-08-31 05:03:47",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0255",
+        "AUDIT-0256",
+        "AUDIT-0257",
+        "AUDIT-0258",
+        "AUDIT-0259"
+      ],
+      "historicalCostUsd": 0.039888,
+      "historicalElapsedSeconds": 27.28,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_italian/a6296d15-cc63-53b5-8b80-a953140199b5_baggu-it.it.json",
+      "sourceSha256": "0272674347b0f0619b0c5007a5d7df533162fba1f634e5304d4b3d3ffe630c34",
+      "historicalTarget": "https://baggu-it.it/",
+      "historicalDate": "2025-08-31 05:04:35",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0239",
+        "AUDIT-0240",
+        "AUDIT-0241",
+        "AUDIT-0242",
+        "AUDIT-0243"
+      ],
+      "historicalCostUsd": 0.027326000000000003,
+      "historicalElapsedSeconds": 25.67,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_japanese/386dee20-1524-510e-ad5e-9b45b2326b39_tuketa1.com.json",
+      "sourceSha256": "d6ac5ec7721e39bd717df41b525d13bdd3cece6189d7b032c9f57ca2371c32d5",
+      "historicalTarget": "https://tuketa1.com/",
+      "historicalDate": "2025-09-01 13:22:00",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0159",
+        "AUDIT-0160",
+        "AUDIT-0161",
+        "AUDIT-0162",
+        "AUDIT-0163"
+      ],
+      "historicalCostUsd": 0.028824000000000002,
+      "historicalElapsedSeconds": 22.83,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/07abeeb4-4e2b-55db-97ef-121029c7bd45_ninewest.com.mx.json",
+      "sourceSha256": "0246535e157462869fe4de233aabe745ecb6ab239862e771731b5149903c291f",
+      "historicalTarget": "http://ninewest.com.mx/",
+      "historicalDate": "2025-08-31 03:12:02",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0139",
+        "AUDIT-0140",
+        "AUDIT-0141",
+        "AUDIT-0142",
+        "AUDIT-0143"
+      ],
+      "historicalCostUsd": 0.027218000000000003,
+      "historicalElapsedSeconds": 25.6,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/33631d16-1bc8-58cb-890d-32b45989b546_www.jwpeis.com.mx.json",
+      "sourceSha256": "78c5c4f5806534cd698ed54336e54b2da3a61a68efacf672bb0c8908e6d5efa6",
+      "historicalTarget": "https://www.jwpeis.com.mx/",
+      "historicalDate": "2025-08-31 03:41:03",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0114",
+        "AUDIT-0115",
+        "AUDIT-0116",
+        "AUDIT-0117",
+        "AUDIT-0118"
+      ],
+      "historicalCostUsd": 0.04332,
+      "historicalElapsedSeconds": 242.23,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/49e12a13-2ad5-5be2-a207-42470cbcc3ae_pokemonmx.com.mx.json",
+      "sourceSha256": "91adc4fe8dffc0504320a349f6e7e5233685cea491b9327bdfd21f0cd43ff237",
+      "historicalTarget": "https://pokemonmx.com.mx/",
+      "historicalDate": "2025-08-31 03:51:38",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [
+        "AUDIT-0249"
+      ],
+      "sameHostCaseIds": [
+        "AUDIT-0249"
+      ],
+      "historicalCostUsd": 0.032364000000000004,
+      "historicalElapsedSeconds": 143.42,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 1
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+      "sourceSha256": "c54dad8be9c8f91b52c9f18b797849549557774e170f90b6188b397315bc9924",
+      "historicalTarget": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-oreo-by1604/",
+      "historicalDate": "2025-08-31 04:01:31",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0001",
+        "AUDIT-0002",
+        "AUDIT-0003",
+        "AUDIT-0004",
+        "AUDIT-0005"
+      ],
+      "historicalCostUsd": 0.0603,
+      "historicalElapsedSeconds": 181.51,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/70eb54ca-fd04-55de-9a9d-69642fc5e381_www.keensoutletcolombia.com.json",
+      "sourceSha256": "8b176c0e55f94dabdace471cfe604f49677669560a943b7ad02cdd3ef587799e",
+      "historicalTarget": "https://www.keensoutletcolombia.com/",
+      "historicalDate": "2025-08-31 04:07:59",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0089",
+        "AUDIT-0090",
+        "AUDIT-0091",
+        "AUDIT-0092",
+        "AUDIT-0093"
+      ],
+      "historicalCostUsd": 0.02056,
+      "historicalElapsedSeconds": 25.03,
+      "currentCaseStatuses": {
+        "CURRENT_COMMERCE_UNCONFIRMED": 3,
+        "OBSERVED_SCAN": 2
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/76dcbc01-23eb-5b4d-a51a-e22d785510b6_happysocksmx.com.mx.json",
+      "sourceSha256": "23c0f5e5ba3b72e528a45bd5373aa2417655b692b7e4804e4e112d8274f15ad2",
+      "historicalTarget": "https://happysocksmx.com.mx/",
+      "historicalDate": "2025-08-31 04:10:24",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0219",
+        "AUDIT-0220",
+        "AUDIT-0221",
+        "AUDIT-0222",
+        "AUDIT-0223"
+      ],
+      "historicalCostUsd": 0.028418,
+      "historicalElapsedSeconds": 22.74,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/7bdef5fe-e9c4-593f-9bbe-3b61096aaa01_www.salomonoutletbarcelona.com.json",
+      "sourceSha256": "260ae29e0296e1e7453f6d28ad60c5b2ee9003ef676f1b385d81cfd802c4ccdf",
+      "historicalTarget": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "historicalDate": "2025-08-31 04:18:43",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0021",
+        "AUDIT-0022",
+        "AUDIT-0023",
+        "AUDIT-0024",
+        "AUDIT-0025"
+      ],
+      "historicalCostUsd": 0.018052,
+      "historicalElapsedSeconds": 22.8,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 4,
+        "CURRENT_COMMERCE_UNCONFIRMED": 1
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+      "sourceSha256": "fc9ab033b2fe2f60436d127e969eb9ac8eae7cf5eb0e17837fa86f3e90823822",
+      "historicalTarget": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "historicalDate": "2025-08-31 04:20:37",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [
+        "AUDIT-0001"
+      ],
+      "sameHostCaseIds": [
+        "AUDIT-0001",
+        "AUDIT-0002",
+        "AUDIT-0003",
+        "AUDIT-0004",
+        "AUDIT-0005"
+      ],
+      "historicalCostUsd": 0.036809999999999996,
+      "historicalElapsedSeconds": 22.55,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/8f1ad9e7-1576-51dd-b9ec-4d12b783736f_www.tiendafilaespana.es.json",
+      "sourceSha256": "4cc750f9be3fa2b95b7cdbcf5beaf48e4906ee9aa42f6ee8f170b5bc4b656db3",
+      "historicalTarget": "https://www.tiendafilaespana.es/",
+      "historicalDate": "2025-08-31 04:27:34",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0174",
+        "AUDIT-0175",
+        "AUDIT-0176",
+        "AUDIT-0177",
+        "AUDIT-0178"
+      ],
+      "historicalCostUsd": 0.026612,
+      "historicalElapsedSeconds": 34.19,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/97a94c17-c1e4-56ab-b802-9789e6b3a3fc_laneiges.com.mx.json",
+      "sourceSha256": "bf414b5dc26bf04db93f507f1d47ff9080391cff8c2d18c493cdf7a637b3896b",
+      "historicalTarget": "https://laneiges.com.mx/",
+      "historicalDate": "2025-08-31 04:33:33",
+      "model": "gpt-4.1",
+      "historicalPrediction": "INVALID_MACHINE_READABLE_OUTPUT",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0109",
+        "AUDIT-0110",
+        "AUDIT-0111",
+        "AUDIT-0112",
+        "AUDIT-0113"
+      ],
+      "historicalCostUsd": 0.030896,
+      "historicalElapsedSeconds": 22.74,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/bebaddd4-652b-5a12-b115-1659b81fdc18_yeezys.com.mx.json",
+      "sourceSha256": "0129fb564df2281452f02ae8e2f138963bdcd816738e0bbc1b596e5905f17213",
+      "historicalTarget": "http://yeezys.com.mx/",
+      "historicalDate": "2025-08-31 04:49:54",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0001",
+        "AUDIT-0002",
+        "AUDIT-0003",
+        "AUDIT-0004",
+        "AUDIT-0005"
+      ],
+      "historicalCostUsd": 0.033356000000000004,
+      "historicalElapsedSeconds": 12.55,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/c6111558-d21b-537c-9001-f5d71fe41a0a_www.vionic.es.json",
+      "sourceSha256": "17bde614fb1a15fb70158a84ad6a230eb3f28264b931708178a9bbf324918100",
+      "historicalTarget": "https://www.vionic.es/",
+      "historicalDate": "2025-08-31 04:53:31",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0016",
+        "AUDIT-0017",
+        "AUDIT-0018",
+        "AUDIT-0019",
+        "AUDIT-0020"
+      ],
+      "historicalCostUsd": 0.027574,
+      "historicalElapsedSeconds": 143.76,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/d041675d-accc-5e1c-a71e-f8cc5c9bbb8d_pokemon-center.es.json",
+      "sourceSha256": "53e66f2ab20890b54d4afc5c7aaaebe02b926d24d869fecef4456dc3691a0ba4",
+      "historicalTarget": "http://pokemon-center.es/",
+      "historicalDate": "2025-08-31 04:58:25",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0031",
+        "AUDIT-0032",
+        "AUDIT-0033",
+        "AUDIT-0034",
+        "AUDIT-0035"
+      ],
+      "historicalCostUsd": 0.044300000000000006,
+      "historicalElapsedSeconds": 24.59,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    },
+    {
+      "sourceUrl": "https://github.com/ScamFerret/artifact/blob/8cf8dc631edafe584141e2f95f0c0f51855fb7bc/expanded_evaluation/gpt-4.1_results/scam_websites/online_shopping_spanish/dcfd5e3c-3d53-5cf7-a946-49b010508ae3_yeezys.com.es.json",
+      "sourceSha256": "42ac7abc2c7773c5794b5713aac383063d502c1b9e4c2460c61cbb2e49d68db0",
+      "historicalTarget": "http://yeezys.com.es/",
+      "historicalDate": "2025-08-31 05:03:06",
+      "model": "gpt-4.1",
+      "historicalPrediction": "SCAM",
+      "sameResourcePathCaseIds": [],
+      "sameHostCaseIds": [
+        "AUDIT-0204",
+        "AUDIT-0205",
+        "AUDIT-0206",
+        "AUDIT-0207",
+        "AUDIT-0208"
+      ],
+      "historicalCostUsd": 0.082226,
+      "historicalElapsedSeconds": 36.44,
+      "currentCaseStatuses": {
+        "OBSERVED_SCAN": 5
+      },
+      "scope": "Historical LLM conclusion; same-host/path match does not establish current content, truth, licensing or independent operator identity"
+    }
+  ],
+  "currentAccuracyAccepted": false
+}

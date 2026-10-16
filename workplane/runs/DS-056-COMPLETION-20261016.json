@@ -1,0 +1,225 @@
+{
+  "recordedAt": "2026-10-16T05:44:21.709064+00:00",
+  "productionSource": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+  "productionTree": "5956c9f997fd58ef24c360c1679af40a50bcc8a3",
+  "acceptedHarnessHead": "ac52c91f4e082fafc5ba7358aecdd39742d48adb",
+  "ciHead": "c2fa68b38ea352e7de485ff67ce623264d980d01",
+  "ciArtifact": 11815875609,
+  "ciWrapperSha256": "e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+  "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+  "zipBytes": 25985652,
+  "packageFiles": 54,
+  "allPackageHashesVerified": true,
+  "corePassed": 428,
+  "nativePassed": 86,
+  "browserJobGroups": 7,
+  "acceptedGates": [
+    38402573466,
+    38402573495,
+    38402573498,
+    38402573507
+  ],
+  "baseline": {
+    "sameFrozenTargets": 259,
+    "accessibleReports": 227,
+    "positiveEvidencePages": 10,
+    "severeWarnings": 0
+  },
+  "result": {
+    "plannedPages": 268,
+    "recordedPageOutcomes": 268,
+    "accessibleDistinctPages": 235,
+    "distinctHostnames": 55,
+    "positiveWeightEvidencePages": 38,
+    "bothNumericalEstimatesUnknownPages": 235,
+    "severeWarningPages": 0,
+    "rowStatusCounts": {
+      "OBSERVED_SCAN": 235,
+      "CURRENT_COMMERCE_UNCONFIRMED": 26,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 3
+    },
+    "positiveSignalCounts": {
+      "OFFICIAL_STORE_CLAIM_UNVERIFIED": 15,
+      "CATALOG_SALE_PREVALENCE": 5,
+      "FINAL_SALE_BROAD": 16,
+      "SCARCITY_LANGUAGE": 1,
+      "KNOWN_AFFILIATED_MERCHANT_NETWORK": 1
+    },
+    "nativeScanRefusalCounts": {}
+  },
+  "sameFrozenTargetResult": {
+    "scanned": 227,
+    "positiveEvidencePages": 36
+  },
+  "controls": [
+    {
+      "id": "CONTROL-001",
+      "host": "salomon.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-002",
+      "host": "ninewest.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-003",
+      "host": "zippo.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-004",
+      "host": "footlocker.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-005",
+      "host": "nordstrom.com",
+      "status": "CURRENT_COMMERCE_UNCONFIRMED",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-006",
+      "host": "target.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-007",
+      "host": "bestbuy.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [],
+      "dispatchDisclosure": null
+    },
+    {
+      "id": "CONTROL-008",
+      "host": "warmlydecor.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [
+        "FINAL_SALE_BROAD"
+      ],
+      "dispatchDisclosure": {
+        "model": "factory-direct",
+        "quote": "we ship directly from the top factories",
+        "sourceUrl": "https://warmlydecor.com/pages/why-choose-warmly",
+        "observedAt": "2026-10-13T13:20:34.216Z"
+      }
+    },
+    {
+      "id": "CONTROL-009",
+      "host": "harempants.com",
+      "status": "OBSERVED_SCAN",
+      "positiveEvidence": [
+        "KNOWN_AFFILIATED_MERCHANT_NETWORK"
+      ],
+      "dispatchDisclosure": null
+    }
+  ],
+  "outsideObservation": [
+    {
+      "action": "scan",
+      "status": "OBSERVED",
+      "elapsedMs": 1944,
+      "message": "Scan complete for www.yeezys.com.mx."
+    },
+    {
+      "action": "policy",
+      "status": "OBSERVED",
+      "message": "Couldn\u2019t find a clear return or refund policy on this store.",
+      "elapsedMs": 472
+    },
+    {
+      "action": "shipping",
+      "status": "OBSERVED",
+      "message": "The page doesn\u2019t clearly say where the order ships from.",
+      "elapsedMs": 472
+    },
+    {
+      "action": "published-outside",
+      "status": "OBSERVED_UI_OUTCOME",
+      "elapsedMs": 572,
+      "message": "Outside records: 2. Dates and scope are shown; product scores are unchanged.",
+      "results": [
+        {
+          "provider": "ScamFerret research",
+          "domain": "yeezys.com.mx",
+          "reportedAt": "2025-08-31",
+          "retrievedAt": "2026-10-13T13:15:12.709Z",
+          "outcome": "reported-concern",
+          "scope": "historical-opinion",
+          "stale": true,
+          "recordId": "61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+          "reason": "The website exhibits multiple scam indicators: (1) Unusually low prices and claims of free shipping/returns (far below market value for Yeezy/Adidas products); (2) Spoofs 'Yeezy Mexico Oficial' and Adidas branding without legal connection; (3) Psychological tactics aimed at urgency/fear of missing deals; (4) The company info and domain contact reference an individual in Germany, not a registered business in Mexico or an Adidas partner; (5) No legitimate contact details, only generic forms; (6) No clear privacy or payment gateway information; (7) SSL certificate/security issues; (8) The website's structure, business claim, and behavior all match major hallmarks of a 'Fake Online Shopping' scam."
+        },
+        {
+          "provider": "ScamFerret research",
+          "domain": "yeezys.com.mx",
+          "reportedAt": "2025-08-31",
+          "retrievedAt": "2026-10-13T13:15:12.709Z",
+          "outcome": "reported-concern",
+          "scope": "historical-opinion",
+          "stale": true,
+          "recordId": "82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+          "reason": "The product prices are far below market value, there are claims of official status and free shipping/returns, no verified company information or real contact details are shown, use of official Adidas/Yeezy branding is intended to deceive. Multiple authoritative scam-checking services consistently rate yeezys.com.mx as a scam, with consumer reports of lost money and non-delivery. These points meet key scam indicators (characteristics 1, 3, 4, 6, 7, 16), and external evidence strongly corroborates that this is a fraudulent shopping website."
+        }
+      ]
+    },
+    {
+      "action": "security-outside",
+      "status": "OBSERVED_UI_OUTCOME",
+      "elapsedMs": 1077,
+      "message": "Public lookup failed: HTTP 403",
+      "results": [
+        {
+          "provider": "ScamFerret research",
+          "domain": "yeezys.com.mx",
+          "reportedAt": "2025-08-31",
+          "retrievedAt": "2026-10-13T13:15:12.709Z",
+          "outcome": "reported-concern",
+          "scope": "historical-opinion",
+          "stale": true,
+          "recordId": "61ddf31a-cbe1-57f2-aa03-8a8c0715e886_www.yeezys.com.mx.json",
+          "reason": "The website exhibits multiple scam indicators: (1) Unusually low prices and claims of free shipping/returns (far below market value for Yeezy/Adidas products); (2) Spoofs 'Yeezy Mexico Oficial' and Adidas branding without legal connection; (3) Psychological tactics aimed at urgency/fear of missing deals; (4) The company info and domain contact reference an individual in Germany, not a registered business in Mexico or an Adidas partner; (5) No legitimate contact details, only generic forms; (6) No clear privacy or payment gateway information; (7) SSL certificate/security issues; (8) The website's structure, business claim, and behavior all match major hallmarks of a 'Fake Online Shopping' scam."
+        },
+        {
+          "provider": "ScamFerret research",
+          "domain": "yeezys.com.mx",
+          "reportedAt": "2025-08-31",
+          "retrievedAt": "2026-10-13T13:15:12.709Z",
+          "outcome": "reported-concern",
+          "scope": "historical-opinion",
+          "stale": true,
+          "recordId": "82c6e9f4-86ab-555e-8832-d881c76ad0ed_www.yeezys.com.mx.json",
+          "reason": "The product prices are far below market value, there are claims of official status and free shipping/returns, no verified company information or real contact details are shown, use of official Adidas/Yeezy branding is intended to deceive. Multiple authoritative scam-checking services consistently rate yeezys.com.mx as a scam, with consumer reports of lost money and non-delivery. These points meet key scam indicators (characteristics 1, 3, 4, 6, 7, 16), and external evidence strongly corroborates that this is a fraudulent shopping website."
+        }
+      ]
+    }
+  ],
+  "independentAccuracyAccepted": false,
+  "limits": [
+    "Historical source shopping-scam labels are not independent current fraud/dropshipping truth",
+    "Multiple correlated products per merchant and unresolved operator clusters; hostname count is not independent operator count",
+    "ScamFerret was known in development research; historical opinions displayed separately without risk-weight import",
+    "No accepted precision/recall/false-warning rate; no delivery/checkout/authentication test",
+    "Positive-weight evidence can concern manipulation rather than dropshipping or deception",
+    "UNKNOWN is abstention, never clean or a correct scam detection"
+  ],
+  "beta4Publication": {
+    "publishedAt": "2026-10-16T05:49:10Z",
+    "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.4",
+    "all7PublicAssetsVerified": true,
+    "all54PackageFilesVerified": true,
+    "receipt": "workplane/runs/DS-056-BETA4-OPEN-20261016.json"
+  }
+}

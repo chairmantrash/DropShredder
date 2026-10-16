@@ -1,0 +1,18 @@
+{
+  "reviewedAt": "2026-10-09",
+  "endpoint": "https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
+  "method": "Unauthenticated HTTPS GET; direct local network probe, not Chrome",
+  "httpStatus": 200,
+  "contentType": "application/vnd.api+json",
+  "authentication": "none supplied",
+  "bodyBytes": 2627,
+  "bodySha256": "2a572d9cc8d42f3d73ea62b36bbabe6525eaadbbfedc5a1290034fef2a687223",
+  "responseIdentity": "5493001KJTIIGC8Y1R12",
+  "legalName": "Bloomberg Finance L.P.",
+  "goldenCopyDate": "2026-10-09T00:00:00Z",
+  "terms": "https://www.gleif.org/en/meta/lei-data-terms-of-use",
+  "dataLicense": "CC0",
+  "rateLimit": "No universal published limit verified; single manual request, no retry/poll/pagination; fail on 429",
+  "chromeVerified": false,
+  "privacy": "No request credentials or raw response headers retained; no cookie/address/relationship data copied to runtime output"
+}

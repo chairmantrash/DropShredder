@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {auditCommerceAdmission,auditPrivatePath,publicAuditUrl} from './public-page.mjs';
+test('current structured quote-only umbrella product is tested without inventing a price',()=>{const r=auditCommerceAdmission({structuredCurrentProduct:true,h1:'Custom Golf Umbrella Manufacturer',products:1,text:'Request a quote'});assert.equal(r.allowed,true);assert.match(r.reason,/unresolved/);});
+test('named multiple-offer product remains testable without selecting one variant price',()=>{assert.equal(auditCommerceAdmission({structuredCurrentProduct:true,h1:'Tasse',products:2,text:'Choose a style'}).allowed,true);});
+test('unrelated Product markup alone cannot bypass the price or current-product gate',()=>{assert.equal(auditCommerceAdmission({products:1,h1:'Blog post',text:'A story'}).allowed,false);});
+test('ordinary priced public-commerce admission remains supported',()=>{assert.equal(auditCommerceAdmission({h1:'Lamp',products:0,productLinks:3,text:'Add to cart $12'}).allowed,true);});
+test('general text with a price alone remains unconfirmed',()=>{assert.equal(auditCommerceAdmission({h1:'Article',text:'Our budget was $12'}).allowed,false);});
+test('variant attribution survives scrubbed tracking URLs',()=>{assert.equal(publicAuditUrl('https://shop.example/p?variant=one&utm_source=private#x'),'https://shop.example/p?variant=one');assert.notEqual(publicAuditUrl('https://shop.example/p?variant=one'),publicAuditUrl('https://shop.example/p?variant=two'));});
+test('legacy cart/account HTML paths are refused before navigation',()=>{for(const path of ['/shopping_cart.html','/create_account.html','/my-account/login','/checkout'])assert.equal(auditPrivatePath(path),true);assert.equal(auditPrivatePath('/products/lamp'),false);});

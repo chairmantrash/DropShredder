@@ -1,0 +1,100 @@
+{
+  "task": "DS-058",
+  "status": "BETA5_OPEN",
+  "release": {
+    "id": 414640204,
+    "html_url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5",
+    "tag_name": "v0.2.0-beta.5",
+    "published_at": "2026-10-16T06:53:49Z",
+    "target_commitish": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+    "draft": false,
+    "prerelease": true,
+    "assets": [
+      {
+        "id": 646444339,
+        "name": "BETA-OBSERVATIONS.json",
+        "bytes": 18741,
+        "digest": "sha256:55205ecae1773132342df20c44429b48e811510f9d3bc579ee0401cde85515a4",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/BETA-OBSERVATIONS.json"
+      },
+      {
+        "id": 646444340,
+        "name": "BUILD-INFO.json",
+        "bytes": 9310,
+        "digest": "sha256:c68f589f3e93bf7bb05e59ca271e1dc4bb3b5e1fb7f532f273252cdfa3d01769",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/BUILD-INFO.json"
+      },
+      {
+        "id": 646444337,
+        "name": "DropShredder-0.2.0-beta.5-chrome.zip",
+        "bytes": 25986104,
+        "digest": "sha256:17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/DropShredder-0.2.0-beta.5-chrome.zip"
+      },
+      {
+        "id": 646444338,
+        "name": "INSTALL-AND-REPORT.md",
+        "bytes": 3150,
+        "digest": "sha256:f893ab9e30014411ff1c9d3cf706c8f6ce4b4b295034437f3bd333e44b1554d0",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/INSTALL-AND-REPORT.md"
+      },
+      {
+        "id": 646444342,
+        "name": "LIVE-PAGE-OUTCOMES.json",
+        "bytes": 3726970,
+        "digest": "sha256:43a74c58f50c2df33b7e44bf8719e95a57d6d0c1cbcbe6c284de6803273e80e5",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/LIVE-PAGE-OUTCOMES.json"
+      },
+      {
+        "id": 646444374,
+        "name": "NATIVE-PROTOCOL.json",
+        "bytes": 89166,
+        "digest": "sha256:03991a183fa6a8cf26880a0bdfc53ce1bb92f1f7740f7d638be3fecba34f75b4",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/NATIVE-PROTOCOL.json"
+      },
+      {
+        "id": 646444373,
+        "name": "SHA256SUMS.txt",
+        "bytes": 103,
+        "digest": "sha256:18890b11cbe76062ffbef2078446f021fb8a8c7155aa75d0f03c6b0f86370dba",
+        "browser_download_url": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.5/SHA256SUMS.txt"
+      }
+    ]
+  },
+  "productionSource": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+  "productionTree": "175ee8f1c2148fd774288bb5d1937731b71e3ff0",
+  "acceptedHarnessHead": "aa84acc6207340755ffb55b5c8d956995f57b504",
+  "publicationHead": "56595b2b262db6884458d79507614526faa9c7d7",
+  "publicationChecks": [
+    {
+      "name": "DropShredder CI",
+      "id": 38863681460,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "CodeQL",
+      "id": 38863681463,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "DropShredder accepted beta5 publication",
+      "id": 38863681505,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "publicationPacketArtifact": {
+    "id": 12030406842,
+    "digest": "sha256:ed50fc83f997a31d4e0a16cd454955451e9cde5574373d1094709f767668700c"
+  },
+  "publicDownloads": "DS-058-BETA5-PUBLIC-DOWNLOAD-VERIFIED-20261016.json",
+  "allSevenAssetsUnauthenticatedByteVerified": true,
+  "all54PackageHashesMatch": true,
+  "rebuiltForPublication": false,
+  "independentAccuracyAccepted": false,
+  "mainUnchanged": "7000cc3a0da5ec6a61bf417628ebc12a1cbcc096",
+  "pr9": "DRAFT",
+  "storeSubmitted": false
+}

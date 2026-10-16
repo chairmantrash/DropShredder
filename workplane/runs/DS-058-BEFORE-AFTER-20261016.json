@@ -1,0 +1,278 @@
+{
+  "scope": "Same frozen public targets; different live responses and repaired collector isolation. Code identity is from explicit merchant labels, not independently verified manufacture. No fraud/dropshipping accuracy claim.",
+  "before": {
+    "accessibleDistinctPages": 221,
+    "distinctHostnames": 50,
+    "positiveWeightEvidencePages": 36,
+    "severeWarningPages": 0,
+    "rowStatusCounts": {
+      "OBSERVED_SCAN": 221,
+      "CURRENT_COMMERCE_UNCONFIRMED": 21,
+      "ENVIRONMENT_OR_ACTION_ERROR": 22,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4
+    }
+  },
+  "after": {
+    "accessibleDistinctPages": 230,
+    "distinctHostnames": 54,
+    "positiveWeightEvidencePages": 38,
+    "severeWarningPages": 0,
+    "rowStatusCounts": {
+      "OBSERVED_SCAN": 230,
+      "CURRENT_COMMERCE_UNCONFIRMED": 25,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 8,
+      "REDIRECT_OR_PRIVATE_SURFACE_REFUSED": 1
+    }
+  },
+  "beforeMpnReports": 0,
+  "afterMpnReports": 10,
+  "changes": [
+    {
+      "id": "AUDIT-0001",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "GW3773",
+      "afterSku": "GW3773",
+      "manufacturerCodeObservation": {
+        "rowVisible": true,
+        "wasVisibleBefore": true,
+        "text": "C\u00f3digo del fabricante: GW3773",
+        "observedMpn": "GW3773",
+        "pass": true
+      }
+    },
+    {
+      "id": "AUDIT-0002",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-380-lmnte-reflective-h02541/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "H02541",
+      "afterSku": "H02541",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0003",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-blue-tint-b37571/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "B37571",
+      "afterSku": "B37571",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0004",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-350-boost-v2-slate-hp7870/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "HP7870",
+      "afterSku": "HP7870",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0005",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-700-utility-black-fv5304/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "FV5304",
+      "afterSku": "FV5304",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0041",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0042",
+      "url": "https://orderumbrella.com/product/custom-umbrellas-with-logo-no-minimum/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0043",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrellas-with-logo/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0044",
+      "url": "https://orderumbrella.com/product/travel-umbrella-with-logo/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0045",
+      "url": "https://orderumbrella.com/product/custom-printed-umbrella/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0104",
+      "url": "https://vrouwelijkschoenen.com/product/sandalen-goud-248/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0204",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-boost-v2-td-slate-hp7871/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "HP7871",
+      "afterSku": "HP7871",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0205",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-boost-v2-cmpct-slate-carbon-hq6319/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "HQ6319",
+      "afterSku": "HQ6319",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0206",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-boost-350-infant-ash-pearl-gy7735/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "GY7735",
+      "afterSku": "GY7735",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0207",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-v2-dazzling-blue-gy7164/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "GY7164",
+      "afterSku": "GY7164",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0208",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-boost-350-moonrock-aq2660/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": "AQ2660",
+      "afterSku": "AQ2660",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0214",
+      "url": "https://www.pokemoncenterca.com/p/aipom-sitting-cuties-plush-5-%c2%bc-in/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": "701-06187",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0215",
+      "url": "https://www.pokemoncenterca.com/p/alcremie-pokemon-winter-carnival-poke-plush-key-chain/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": "701-08423",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0216",
+      "url": "https://www.pokemoncenterca.com/p/alolan-exeggutor-poke-plush-13-in/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": "72-10119-101",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0217",
+      "url": "https://www.pokemoncenterca.com/p/aegislash-shield-forme-sitting-cuties-plush-7-%c2%bd-in/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": "701-98804",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "AUDIT-0218",
+      "url": "https://www.pokemoncenterca.com/p/alakazam-sitting-cuties-plush-6-in/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": "701E13389",
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "CONTROL-001",
+      "url": "https://www.salomon.com/en-us/product/snowclog-og-li9280",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "CONTROL-005",
+      "url": "https://www.nordstrom.com/",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "REDIRECT_OR_PRIVATE_SURFACE_REFUSED",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    },
+    {
+      "id": "CONTROL-008",
+      "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+      "beforeStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "afterStatus": "OBSERVED_SCAN",
+      "beforeMpn": null,
+      "afterMpn": null,
+      "afterSku": null,
+      "manufacturerCodeObservation": null
+    }
+  ]
+}

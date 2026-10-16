@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+ok 1 - official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+  ---
+  duration_ms: 4.13285
+  type: 'test'
+  ...
+# Subtest: official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+ok 2 - official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+  ---
+  duration_ms: 26.894204
+  type: 'test'
+  ...
+# Subtest: official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+ok 3 - official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+  ---
+  duration_ms: 1.047221
+  type: 'test'
+  ...
+# Subtest: supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+ok 4 - supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+  ---
+  duration_ms: 1.431066
+  type: 'test'
+  ...
+# Subtest: current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+ok 5 - current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+  ---
+  duration_ms: 17.342392
+  type: 'test'
+  ...
+# Subtest: fetched detached policy excludes script/hidden/credential text without inspecting field values
+ok 6 - fetched detached policy excludes script/hidden/credential text without inspecting field values
+  ---
+  duration_ms: 17.541486
+  type: 'test'
+  ...
+# Subtest: policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+ok 7 - policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+  ---
+  duration_ms: 0.887726
+  type: 'test'
+  ...
+# Subtest: published ScamFerret uses original strict output and source date, never its dataset folder label
+ok 8 - published ScamFerret uses original strict output and source date, never its dataset folder label
+  ---
+  duration_ms: 1.426739
+  type: 'test'
+  ...
+# Subtest: published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+ok 9 - published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+  ---
+  duration_ms: 1.377707
+  type: 'test'
+  ...
+# Subtest: security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+ok 10 - security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+  ---
+  duration_ms: 0.676475
+  type: 'test'
+  ...
+# Subtest: security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+ok 11 - security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+  ---
+  duration_ms: 0.344937
+  type: 'test'
+  ...
+# Subtest: security lookup has at most three credentialless bounded GETs, and query is domain-only
+ok 12 - security lookup has at most three credentialless bounded GETs, and query is domain-only
+  ---
+  duration_ms: 0.763283
+  type: 'test'
+  ...
+# Subtest: consumer navigation has only approved originals and rejects injected/private domains
+ok 13 - consumer navigation has only approved originals and rejects injected/private domains
+  ---
+  duration_ms: 0.334582
+  type: 'test'
+  ...
+# Subtest: native widget model never links to outside scam services or requests data after failed current-page guard
+ok 14 - native widget model never links to outside scam services or requests data after failed current-page guard
+  ---
+  duration_ms: 22.660996
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: Spanish span
+ok 15 - split public manufacturer-code extraction: Spanish span
+  ---
+  duration_ms: 3.493189
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: English strong
+ok 16 - split public manufacturer-code extraction: English strong
+  ---
+  duration_ms: 2.822251
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: table cells
+ok 17 - split public manufacturer-code extraction: table cells
+  ---
+  duration_ms: 2.642437
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: review exclusion
+ok 18 - split public manufacturer-code extraction: review exclusion
+  ---
+  duration_ms: 6.462276
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: related exclusion
+ok 19 - split public manufacturer-code extraction: related exclusion
+  ---
+  duration_ms: 3.02518
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: hidden value exclusion
+ok 20 - split public manufacturer-code extraction: hidden value exclusion
+  ---
+  duration_ms: 2.996017
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: CSS-hidden value exclusion
+ok 21 - split public manufacturer-code extraction: CSS-hidden value exclusion
+  ---
+  duration_ms: 3.394443
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: field value exclusion
+ok 22 - split public manufacturer-code extraction: field value exclusion
+  ---
+  duration_ms: 2.524945
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: ambiguous codes
+ok 23 - split public manufacturer-code extraction: ambiguous codes
+  ---
+  duration_ms: 3.216151
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: no cross-row borrowing
+ok 24 - split public manufacturer-code extraction: no cross-row borrowing
+  ---
+  duration_ms: 2.47395
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: quote exclusion
+ok 25 - split public manufacturer-code extraction: quote exclusion
+  ---
+  duration_ms: 2.838205
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: private account exclusion
+ok 26 - split public manufacturer-code extraction: private account exclusion
+  ---
+  duration_ms: 3.988898
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 464.498435

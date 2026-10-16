@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "task": "DS-043",
+  "checkedAt": "2026-10-10",
+  "scope": "Source/access research only; no authenticated API, completed company/court query, bulk retrieval or case authenticity validation",
+  "sources": [
+    {
+      "url": "https://pacer.uscourts.gov/pacer-pricing-how-fees-work",
+      "title": "PACER pricing",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://pacer.uscourts.gov/find-case/court-opinions",
+      "title": "PACER free opinions",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://wiki.free.law/c/courtlistener/help/api/rest/v4/alerts",
+      "title": "CourtListener alerts and membership limits",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://wiki.free.law/c/courtlistener/help/api/rest/v4/recap",
+      "title": "RECAP fetch and PACER purchase distinction",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://wiki.free.law/c/courtlistener/help/search/i-cant-find-something-when-i-search-courtlistener-help",
+      "title": "CourtListener coverage and separate searches",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://www.fct-cf.ca/en/court-files-and-decisions/court-files",
+      "title": "Canada Federal Court files",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://www.fct-cf.ca/Content/assets/html/FC_Search_Syntax_EN.html",
+      "title": "Federal Court search syntax",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://www.canlii.org/rss",
+      "title": "CanLII bounded RSS",
+      "status": "primary-search-result-open-failed",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://www.canlii.org/info/terms.html",
+      "title": "CanLII automated retrieval terms",
+      "status": "primary-search-result-open-failed",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://sise.cjf.gob.mx/consultasvp/default.aspx",
+      "title": "CJF public decisions form",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://serviciosenlinea.pjf.cjf.gob.mx/juicioenlinea/juicioenlinea/Comunes/BusquedaExpediente",
+      "title": "PJF expediente form",
+      "status": "primary-search-result-open-failed",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://www.scjn.gob.mx/transparencia/consulta-informacion/Informacion-jurisdiccional",
+      "title": "SCJN judicial information",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://transparencia-ciudadana.scjn.gob.mx/Transparencia-Judicial-M",
+      "title": "SCJN citizen portal",
+      "status": "primary-search-result-open-failed",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://safer.fmcsa.dot.gov/CompanySnapShot.aspx",
+      "title": "FMCSA carrier snapshot",
+      "status": "primary-search-result",
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "url": "https://safer.fmcsa.dot.gov/faq.aspx",
+      "title": "FMCSA data scope and updates",
+      "status": "page-retrieved",
+      "checkedAt": "2026-10-10"
+    }
+  ]
+}

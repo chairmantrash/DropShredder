@@ -1,0 +1,1598 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-09",
+  "task": "DS-030",
+  "baseline": "0c826f9dc5c02f65760a203469bc218dd75fd9ba",
+  "meaning": "Reconciles all retained records; grouping is an investigation queue, not a commitment to adopt every tool or deploy a detector. Earlier partial scopes remain in the integration matrix.",
+  "runtimeCorrections": [
+    "Etsy hostname routing",
+    "Visible-price regex",
+    "Current Product/Offer/variant URL selection and ambiguity abstention",
+    "Background settings validation and serialized patches",
+    "RDAP consent before cache; local registered domain; IANA HTTPS endpoint; reject redirects; matching response identity",
+    "All search destinations visible with explicit max-eight batches",
+    "Local-rule and RDAP provenance; neutral quick-check/domain-age wording"
+  ],
+  "remaining": {
+    "DS-031": "Real Chrome gate, core end-to-end regressions and representative category false-positive/miss evaluation",
+    "DS-032": "Inert import/list subscriptions, authenticated signatures and bounded user-controlled freshness",
+    "DS-033": "Exact entity/product graph investigations, stronger local matching and research-tool methods with licensing/performance evaluation",
+    "DS-034": "Broader safety/certification and selected public entity APIs; endpoint and rights validation; optional session-only credentials if truly needed"
+  },
+  "excluded": [
+    "Country/nationality quality penalties",
+    "Factory or merchant accusations from graph proximity alone",
+    "Failure-as-safe provider grades",
+    "Mandatory paid APIs/backend",
+    "Credential persistence or telemetry",
+    "Unlicensed third-party code/data/model copies"
+  ],
+  "records": [
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-001",
+      "title": "User gestures govern side panel opening",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-002",
+      "title": "Service workers are disposable",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-003",
+      "title": "Package executable dependencies",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-004",
+      "title": "Offscreen work has explicit limits",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "ORI-001",
+      "title": "Archived workplane is superseded for runtime status",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-032"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-005",
+      "title": "Bind document identity as well as tab identity",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-006",
+      "title": "Isolated content scripts are still untrusted inputs",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "EVA-001",
+      "title": "Blind shipping erases visible supplier cues",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "EVA-002",
+      "title": "Supplier imagery can be transformed",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Observation lineage and bounded scoring",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "ORI-002",
+      "title": "Current release source loaded",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "EVA-003",
+      "title": "Branded tracking and upstream sourcing are explicit public advice",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "SUP-001",
+      "title": "Apparel provider catalogue, not a bad-quality blacklist",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-001",
+      "title": "Local inference is feasible but optional",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-007",
+      "title": "New Chrome features must retain the 133 baseline",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-001",
+      "title": "Dark-pattern research is methodological evidence",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-002",
+      "title": "Multimodal product deduplication is a promising candidate",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "SUP-002",
+      "title": "One named apparel operator verified from its own disclosure",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "SUP-003",
+      "title": "Wholesale7 has an explicit apparel dropship programme",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "QLT-001",
+      "title": "Concrete garment safety testing exists",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "QLT-002",
+      "title": "Consumer group tests and manipulation dossiers are separate evidence",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-008",
+      "title": "Native public suffix support is 153+ and permissioned",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-003",
+      "title": "Newer catalogue VLM adaptation needs category-aware evaluation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-004",
+      "title": "Visual dark-pattern detection needs domain limits",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-009",
+      "title": "Structured clone copies richer data and changes sanitation semantics",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-002",
+      "title": "Tesseract.js is a local OCR candidate",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-003",
+      "title": "Public-suffix fallback candidate",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "SUP-004",
+      "title": "FondMart documents rebranding and direct fulfillment",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-005",
+      "title": "Fake reviews can incorporate product knowledge",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-006",
+      "title": "Fresh bilingual matching benchmark includes clothing",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-007",
+      "title": "Fashion matching benefits from human confirmation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-008",
+      "title": "Variant identity is different from duplicate identity",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Typed product identity and selected-variant abstention",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-009",
+      "title": "Review authenticity cannot be established by prose alone",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-004",
+      "title": "DINOv3 has a separate model license",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-032"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-010",
+      "title": "End-to-end framework choice can hide worker-lifecycle bugs",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "EVA-004",
+      "title": "Tracking-origin concealment is a documented feature",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "EVA-005",
+      "title": "Even specification fields can be edited",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-005",
+      "title": "Schema validation and dependency decisions",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-011",
+      "title": "Keep research-to-runtime status explicit",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "CHR-012",
+      "title": "Review data access scope explicitly",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "TOOL-006",
+      "title": "Use current RDAP bootstrap, not guessed endpoints",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/research-catalogue-20261008.json",
+      "id": "PAP-010",
+      "title": "Dark-pattern model performance varies by class",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-001",
+      "title": "Verify the scope of textile certifications, not just the logo",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-002",
+      "title": "GOTS company certification is different from shipment traceability",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-003",
+      "title": "Certification rules need effective dates and versions",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-004",
+      "title": "Intelligence feeds face rollback and freeze attacks",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-005",
+      "title": "Content Credentials can verify an edit history, not garment truth",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-006",
+      "title": "Measure errors among displayed warnings",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-007",
+      "title": "Prefer offline threshold calibration to costly per-page recomputation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-008",
+      "title": "Freshness weighting does not remove distribution-shift risk",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-009",
+      "title": "Future AI extraction must have no authority over browser actions",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-010",
+      "title": "Test contamination across a research chain",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-011",
+      "title": "A browser C2PA tool exists, with important resource and trust choices",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-012",
+      "title": "GTIN validation is not product authenticity or country evidence",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Typed product identity and selected-variant abstention",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-013",
+      "title": "Confusable text must never become an authorization identity",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Typed product identity and selected-variant abstention",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-014",
+      "title": "ProductGroup markup can explain legitimate shared reviews and variants",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Typed product identity and selected-variant abstention",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-015",
+      "title": "Fibre marketing offers a more concrete quality-claim check",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-016",
+      "title": "A fabric model trained on merchant labels learns declared composition",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-017",
+      "title": "Modern cotton-recognition research supports triage, with limits",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-018",
+      "title": "Portable archives preserve observations, not automatic truth",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-032"
+    },
+    {
+      "catalogue": "intelligence/research-gaps-catalogue-20261008.json",
+      "id": "NEW-019",
+      "title": "Represent evidence derivation explicitly for agent handoffs",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Observation lineage and bounded scoring",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-001",
+      "title": "Fakespot / Firefox Review Checker",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-002",
+      "title": "Product BS Detector",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-003",
+      "title": "ReviewMeta",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-004",
+      "title": "Fake-Shop Detector (\u00d6IAT / AIT / X-Net)",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-005",
+      "title": "changedetection.io",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-006",
+      "title": "Distill",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-007",
+      "title": "Open Prices (Open Food Facts)",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-008",
+      "title": "SingleFile",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-009",
+      "title": "extruct",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-010",
+      "title": "Scavenge",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-011",
+      "title": "Web-Check",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-012",
+      "title": "urlscan.io",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-013",
+      "title": "imagededup (idealo)",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-014",
+      "title": "ImageHash",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-015",
+      "title": "Opentechalyzer / Wappalyzer-format ecosystem",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-016",
+      "title": "Mozilla Readability",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-017",
+      "title": "RapidFuzz",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/existing-tools-catalogue-20261008.json",
+      "id": "TOOL-018",
+      "title": "TinEye",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-001",
+      "title": "Recalled furniture can reappear through liquidation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-002",
+      "title": "An official multi-brand recall supplies useful entity aliases",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-003",
+      "title": "Furniture recall matching must survive different retail brands",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Official model notice with unresolved unit coverage",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-004",
+      "title": "A pet toy can have a documented child-safety hazard",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-005",
+      "title": "Bulky-goods dropshipping can use domestic fulfillment",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-006",
+      "title": "Marketplace safety-control claims do not quantify remaining risk",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-007",
+      "title": "Walmart fulfillment is distinct from manufacture and seller identity",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-008",
+      "title": "Tip-over rule applicability needs dimensions, weight and intended use",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-009",
+      "title": "Composite-wood labels verify a limited emissions claim",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-010",
+      "title": "CPSC offers a usable public recall-data interface",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-011",
+      "title": "Pet-toy chemical migration depends on formulation and use",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-012",
+      "title": "A newer dog-toy study still does not prove clinical disease",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-013",
+      "title": "Clinical obstruction cases are not a product failure denominator",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-014",
+      "title": "Wood emissions require test conditions and balanced findings",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-015",
+      "title": "Pet-toy suitability is use- and animal-dependent",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-016",
+      "title": "A regional-weight hypothesis needs denominators and independent evaluation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/furniture-pets-catalogue-20261008.json",
+      "id": "FP-017",
+      "title": "Import certificate collection changed in July 2026",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N01",
+      "title": "Fujian Xiniuniu / Timechee",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N02",
+      "title": "Xiniuniu / OXYLIFE / FUFU&GAGA sample-label chain",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N03",
+      "title": "Fujian Ming Jin / Areson / Rolanstar",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N04",
+      "title": "Wuxi Leclaire / Ningbo Jiangdong Peter / Annyka",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N05",
+      "title": "Anji Guyou / Sivan",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N06",
+      "title": "Shenzhen Aojieni / Sili Factory",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N07",
+      "title": "Shenzhen Xingchuangyi / Chillife",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N08",
+      "title": "Shenzhen Yuejia Mei / BUSOHA",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N09",
+      "title": "Shenzhen Huakechuang / Huaker",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N10",
+      "title": "Jiangsu Liangjiang / Ningbo Tianqi / FUFU&GAGA",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N11",
+      "title": "An official multi-brand recall supplies useful entity aliases",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N12",
+      "title": "Furniture recall matching must survive different retail brands",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N13",
+      "title": "Recalled furniture can reappear through liquidation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N14",
+      "title": "A pet toy can have a documented child-safety hazard",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N15",
+      "title": "GigaCloud / Noble House / Wondersign transaction history",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N16",
+      "title": "Legacy Noble House product events",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "N17",
+      "title": "Joybuy seller/channel history",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H01",
+      "title": "Historic port-seizure lead: ALLIANCE (HK) ENTERPRISE LIMITED",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H02",
+      "title": "Historic port-seizure lead: ANKYO DEVELOPMENT LIMITED",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H03",
+      "title": "Historic port-seizure lead: SHENZHEN KEDESHUN TRADING CO. LTD.",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H04",
+      "title": "Historic port-seizure lead: SHAINTOU CHENGHAI TOMADE CO. LTD.",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H05",
+      "title": "Historic port-seizure lead: HANG WING PLASTIC INDUSTRY CO. LTD.",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/manufacturer-networks-20261008.json",
+      "id": "H06",
+      "title": "Historic port-seizure lead: SHANTOU MING HONG PLASTIC TOYS FACTORY",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG01",
+      "title": "Serial numbers matter in a major battery recall",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Official model notice with unresolved unit coverage",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG02",
+      "title": "Vendor serial-check guidance is not an open lookup API",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Official model notice with unresolved unit coverage",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG03",
+      "title": "USB certification is capability-specific",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG04",
+      "title": "Power rating and data speed are separate claims",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG05",
+      "title": "FDA registration certificates are a misleading-claim gap",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG06",
+      "title": "A tested-product list supplies precise safety leads across platforms",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG07",
+      "title": "Serial-restricted licensed-brand appliance recall",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Official model notice with unresolved unit coverage",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG08",
+      "title": "Historical seller changes can alter recall remedy",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG09",
+      "title": "Small coin-battery lights can create household hazards",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG10",
+      "title": "USB low-voltage products can still have fire hazards",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG11",
+      "title": "Packaging identifiers can outperform title aliases",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG12",
+      "title": "Set descriptions and retailer identity matter without a SKU",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG13",
+      "title": "USCG equipment lookup has explicit coverage exceptions",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG14",
+      "title": "Approval expiry does not always invalidate an existing item",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG15",
+      "title": "UL country codes describe standards geography, not origin",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG16",
+      "title": "UL Product iQ is an account-based research option",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG17",
+      "title": "ETL Listed and ETL Verified scopes differ",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Certification claim scope",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG18",
+      "title": "Targeted inspection results include both failures and no-action samples",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG19",
+      "title": "Small XRF study is a physical-test lead",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG20",
+      "title": "Recent publication uses old targeted surveillance samples",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG21",
+      "title": "Online cosmetics assay study deserves deeper method review",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/retail-category-gaps-20261008.json",
+      "id": "CG22",
+      "title": "Official linked notices can contain conflicting dates and model exclusions",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Official model notice with unresolved unit coverage",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-034"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF01",
+      "title": "Exceptions belong in the policy model",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF02",
+      "title": "Production-partner disclosure is broader than a supplier brand name",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF03",
+      "title": "Wholesale fulfillment and retail-to-customer purchase differ",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF04",
+      "title": "Third-party fulfillment has inventory and packaging conditions",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF05",
+      "title": "Dropshipping is a normal fulfillment model",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF06",
+      "title": "Supplier requirements reveal good matching fields",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF07",
+      "title": "Plain packaging and documented testing are platform requirements",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF08",
+      "title": "Current regulator finding goes beyond a preliminary allegation",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF09",
+      "title": "An integration default can mislabel seller role",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Origin roles and history comparability",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF10",
+      "title": "Commercial import/automation claims exceed a policy guarantee",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF11",
+      "title": "Enforcement totals do not measure residual violative inventory",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF12",
+      "title": "Final enforcement and relisting failure modes",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF13",
+      "title": "Hidden links and researcher-access eligibility",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF14",
+      "title": "Source identifiers survive rewritten listing copy",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF15",
+      "title": "A compliant production-partner tutorial is a necessary control",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF16",
+      "title": "Seller extensions must not be conflated",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF17",
+      "title": "Buyer allegation: quality disappointment and image match",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF18",
+      "title": "Buyer allegation: inconsistent delivery dates",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF19",
+      "title": "Buyer allegation: Amazon fulfillment",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF20",
+      "title": "Buyer discussion: renamed matching furniture",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF21",
+      "title": "Self-described retail arbitrage is an investigation lead",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF22",
+      "title": "Buyer detection tool: Etsy Guardian",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF23",
+      "title": "Etsy Guardian's local-storage and AI-egress claims differ",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF24",
+      "title": "Product Sniffer reverse-image shortcuts",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF25",
+      "title": "CopyRadar cross-platform visual triage",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF26",
+      "title": "Hosted supplier-finder actor",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF27",
+      "title": "Chinese counterfeit-text model is not product authentication",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF28",
+      "title": "Physical garment photos and abstention",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF29",
+      "title": "Resale prices include symbolic value",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF30",
+      "title": "Original-design exception still requires original photos",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-033"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF31",
+      "title": "Rules need market-specific scope",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Marketplace policy context",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF32",
+      "title": "Seller allegation of false counterfeit enforcement",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF33",
+      "title": "Graph evidence targets products buying reviews",
+      "priorDisposition": "partially-applied-see-scope",
+      "priorApplication": "Observation lineage and bounded scoring",
+      "reconciliation": "scoped-runtime-plus-further-validation",
+      "followupTask": "DS-031"
+    },
+    {
+      "catalogue": "intelligence/additional-storefronts-20261008.json",
+      "id": "SF34",
+      "title": "Recent survey retained as an access-limited lead",
+      "priorDisposition": "retained-research-no-new-runtime-rule",
+      "priorApplication": null,
+      "reconciliation": "reference-or-candidate-not-promoted-to-detector",
+      "followupTask": "DS-031"
+    }
+  ]
+}

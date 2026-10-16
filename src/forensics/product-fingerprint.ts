@@ -1,3 +1,6 @@
+import {canonicalCommerceText,commerceTokens} from '../languages/commerce-text';
+import { normalizeGtin, normalizeProductIdentifier } from '../analysis/product-identity';
+
 const MARKETING_STOPWORDS=new Set([
   'premium','luxury','ultimate','revolutionary','exclusive','amazing','best','perfect','new',
   'improved','professional','innovative','advanced','stylish','beautiful','high','quality',
@@ -13,10 +16,11 @@ const MATERIALS=[
 ];
 
 function normalizeText(value:string):string {
-  return value
+  return canonicalCommerceText(value,10000)
+    .normalize('NFKC')
     .toLowerCase()
     .replace(/[×x]/g,'x')
-    .replace(/[^a-z0-9.°+\-\s]/g,' ')
+    .replace(/[^\p{L}\p{M}\p{N}.°+\-\s]/gu,' ')
     .replace(/\s+/g,' ')
     .trim();
 }
@@ -75,4 +79,89 @@ export function fingerprintSimilarity(a:ProductFingerprint,b:ProductFingerprint)
   let common=0;
   for(const token of left) if(right.has(token)) common++;
   return common/(left.size+right.size-common);
+}
+
+
+export interface ExactProductFingerprintInput {
+  gtin?:string;
+  brand?:string;
+  mpn?:string;
+  sku?:string;
+  variantId?:string;
+  title?:string;
+  specs?:Record<string,string|number>;
+  imageHashes?:string[];
+}
+
+export interface ExactProductFingerprint {
+  gtin?:string;
+  brand?:string;
+  mpn?:string;
+  sku?:string;
+  variantId?:string;
+  titleTokens:string[];
+  specTokens:string[];
+  imageHashes:string[];
+}
+
+const normalizeExactText=(value:string|undefined)=>
+  value?.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{M}\p{N}]+/gu,' ').trim()||undefined;
+const normalizeExactIdentifier=normalizeProductIdentifier;
+
+export function buildExactProductFingerprint(input:ExactProductFingerprintInput):ExactProductFingerprint {
+  const titleTokens=[...new Set(commerceTokens(input.title??'').filter(token=>token.length>=3||/\p{Script=Han}/u.test(token)))].sort().slice(0,40);
+  const specTokens=Object.entries(input.specs??{})
+    .map(([key,value])=>`${normalizeExactText(canonicalCommerceText(key,200))}=${normalizeExactText(String(value))}`)
+    .filter(Boolean)
+    .sort()
+    .slice(0,50);
+  return {
+    gtin:normalizeGtin(input.gtin),
+    brand:normalizeProductIdentifier(input.brand),
+    mpn:normalizeProductIdentifier(input.mpn),
+    sku:normalizeExactIdentifier(input.sku),
+    variantId:normalizeExactIdentifier(input.variantId),
+    titleTokens,
+    specTokens,
+    imageHashes:[...new Set(input.imageHashes??[])].sort().slice(0,12),
+  };
+}
+
+export function compareExactProductFingerprints(a:ExactProductFingerprint,b:ExactProductFingerprint){
+  const reasons:string[]=[];
+  const conflicts:string[]=[];
+  if(a.gtin && b.gtin && a.gtin!==b.gtin) conflicts.push('Different GTINs');
+  if(a.brand && b.brand && a.brand===b.brand && a.mpn && b.mpn && a.mpn!==b.mpn) conflicts.push('Different model numbers');
+  for(const key of ['color','colour','size','capacity']){
+    const value=(v:ExactProductFingerprint)=>v.specTokens.find(token=>token.startsWith(key+'='));
+    if(value(a) && value(b) && value(a)!==value(b)) conflicts.push(`Different ${key}`);
+  }
+  if(conflicts.length) return {score:0,reasons:conflicts,exactIdentity:false,conflicts};
+  let score=0;
+  if(a.gtin&&b.gtin&&a.gtin===b.gtin){
+    score=1;
+    reasons.push('Same GTIN');
+  }else{
+    if(a.brand&&b.brand&&a.brand===b.brand&&a.mpn&&b.mpn&&a.mpn===b.mpn){
+      score+=.72;
+      reasons.push('Same brand and model number');
+    }
+    const images=a.imageHashes.filter(hash=>b.imageHashes.includes(hash)).length;
+    if(images){
+      score+=Math.min(.5,images*.25);
+      reasons.push('Same product image');
+    }
+    const specs=a.specTokens.filter(token=>b.specTokens.includes(token)).length;
+    if(specs>=3){
+      score+=Math.min(.35,specs*.06);
+      reasons.push('Matching product details');
+    }
+    const title=a.titleTokens.filter(token=>b.titleTokens.includes(token)).length;
+    const denominator=Math.max(1,new Set([...a.titleTokens,...b.titleTokens]).size);
+    if(title/denominator>=.55){
+      score+=.18;
+      reasons.push('Very similar product name');
+    }
+  }
+  return {score:Math.min(1,score),reasons,exactIdentity:Boolean(a.gtin&&b.gtin&&a.gtin===b.gtin),conflicts};
 }

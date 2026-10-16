@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "baseCommit": "1507b551c8526b52a7201f3331f765f1735ff847",
+  "node": "24.19.0",
+  "canonicalNode": "22",
+  "checks": {
+    "researchCatalogue": "PASS",
+    "dataLint": "PASS: 37 sources, 14 platforms, 18 networks, 5 signatures, 8 APIs",
+    "typecheck": "PASS",
+    "relevantExistingTests": "PASS: 10 tests",
+    "browserQA": "ENVIRONMENT BLOCKED; NOT RUN",
+    "modelIntegration": "NOT RUN; research only"
+  },
+  "limits": [
+    "Canonical Node 22 CI remains pending",
+    "No extension build or public release performed",
+    "Presence archive is not a full-page snapshot",
+    "Sampled garment quality is not platform-wide quality"
+  ]
+}

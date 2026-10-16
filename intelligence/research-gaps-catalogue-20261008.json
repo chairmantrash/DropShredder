@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "cataloguedAtUTC": "2026-10-08T09:34:20.475638+00:00",
+  "scope": "Public-source research handoff; no automatic detection rules or runtime code",
+  "baseBuild": "1507b551c8526b52a7201f3331f765f1735ff847",
+  "researchBranch": "research/20261008-defensive-intelligence",
+  "reportPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+  "findings": [
+    {
+      "id": "NEW-001",
+      "title": "Verify the scope of textile certifications, not just the logo",
+      "applicationHypothesis": "Verify claim subject and certificate scope; unresolved official lookups do not establish counterfeit goods.",
+      "sources": [
+        "https://www.oeko-tex.com/en/news/infocenter/labelling-and-greenwashing",
+        "https://www.oeko-tex.com/en/label-check"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-002",
+      "title": "GOTS company certification is different from shipment traceability",
+      "applicationHypothesis": "Keep entity certification separate from product and shipment linkage; directory migration can explain missing records.",
+      "sources": [
+        "https://global-standard.org/images/resource-library/documents/standard-and-manual/GOTS_v8.0_signed.pdf",
+        "https://global-standards.org/suppliers/certified-suppliers"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-003",
+      "title": "Certification rules need effective dates and versions",
+      "applicationHypothesis": "Apply certification rules by effective version and observation date, with transition periods preserved.",
+      "sources": [
+        "https://global-standard.org/images/resource-library/documents/standard-and-manual/GOTS_v8.0_signed.pdf"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-004",
+      "title": "Intelligence feeds face rollback and freeze attacks",
+      "applicationHypothesis": "Protect future intelligence updates against rollback and freeze; signatures authenticate publishers, not factual allegations.",
+      "sources": [
+        "https://theupdateframework.io/docs/security/",
+        "https://github.com/theupdateframework/specification/blob/master/tuf-spec.md"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-005",
+      "title": "Content Credentials can verify an edit history, not garment truth",
+      "applicationHypothesis": "Interpret media provenance under its trust model without equating credentials with garment quality.",
+      "sources": [
+        "https://spec.c2pa.org/specifications/specifications/2.2/explainer/Explainer.html"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-006",
+      "title": "Measure errors among displayed warnings",
+      "applicationHypothesis": "Measure warning precision among displayed alerts together with abstention, coverage and missed positives.",
+      "sources": [
+        "https://arxiv.org/html/2603.24704v1"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-007",
+      "title": "Prefer offline threshold calibration to costly per-page recomputation",
+      "applicationHypothesis": "Evaluate offline calibrated thresholds before adopting per-page transductive computations.",
+      "sources": [
+        "https://arxiv.org/html/2512.12844v2"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-008",
+      "title": "Freshness weighting does not remove distribution-shift risk",
+      "applicationHypothesis": "Test future time periods and unseen supplier lineages; recent labels alone do not remove drift.",
+      "sources": [
+        "https://arxiv.org/html/2310.01262v2"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-009",
+      "title": "Future AI extraction must have no authority over browser actions",
+      "applicationHypothesis": "Constrain future model extraction to typed observations; keep browser authority in deterministic code.",
+      "sources": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-010",
+      "title": "Test contamination across a research chain",
+      "applicationHypothesis": "Include multi-page contamination in future Deep Hunt fixtures; benchmark results are not extension accuracy.",
+      "sources": [
+        "https://arxiv.org/html/2608.06477v1"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-011",
+      "title": "A browser C2PA tool exists, with important resource and trust choices",
+      "applicationHypothesis": "Evaluate packaged C2PA verification only as an explicit, bounded selected-image action.",
+      "sources": [
+        "https://github.com/contentauth/c2pa-js/blob/main/packages/c2pa-web/README.md",
+        "https://github.com/contentauth/c2pa-js/blob/main/LICENSE"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-012",
+      "title": "GTIN validation is not product authenticity or country evidence",
+      "applicationHypothesis": "Validate identifier association and selected variants without treating barcode prefixes as origin evidence.",
+      "sources": [
+        "https://support.gs1.org/support/solutions/articles/43000734137-what-is-the-gs1-barcode-commonly-used-for-trade-item-identification-",
+        "https://support.gs1.org/support/solutions/articles/43000734188-does-the-gs1-prefix-first-3-digits-of-the-ean-13-barcode-number-show-the-country-of-origin-",
+        "https://www.gs1.org/services/selling-online/verified-by-gs1-marketplaces"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-013",
+      "title": "Confusable text must never become an authorization identity",
+      "applicationHypothesis": "Separate text similarity from exact network and authorization identities.",
+      "sources": [
+        "https://unicode.org/reports/tr39/"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-014",
+      "title": "ProductGroup markup can explain legitimate shared reviews and variants",
+      "applicationHypothesis": "Recover bounded product-group relationships and attribute offers to the visibly selected variant.",
+      "sources": [
+        "https://developers.google.com/search/docs/appearance/structured-data/product-variants?hl=en"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-015",
+      "title": "Fibre marketing offers a more concrete quality-claim check",
+      "applicationHypothesis": "Compare garment marketing and composition labels under the applicable jurisdiction; missing data remains unresolved.",
+      "sources": [
+        "https://www.ftc.gov/bamboo-textiles"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-016",
+      "title": "A fabric model trained on merchant labels learns declared composition",
+      "applicationHypothesis": "Distinguish vendor annotations from independent measurements before material-model promotion.",
+      "sources": [
+        "https://arxiv.org/html/2601.09658v4"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-017",
+      "title": "Modern cotton-recognition research supports triage, with limits",
+      "applicationHypothesis": "Validate specimen-grouped generalization before transferring fabric recognition to marketing photos.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13143062/"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-018",
+      "title": "Portable archives preserve observations, not automatic truth",
+      "applicationHypothesis": "Preserve redacted observations with declared capture limits; archive integrity does not establish factual truth.",
+      "sources": [
+        "https://specs.webrecorder.net/wacz/1.2.0/",
+        "https://specs.webrecorder.net/wacz-auth/0.1.0/",
+        "https://webrecorder.net/legal/archivewebpage-privacy-policy/",
+        "https://github.com/webrecorder/archiveweb.page/blob/main/LICENSE.md"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    },
+    {
+      "id": "NEW-019",
+      "title": "Represent evidence derivation explicitly for agent handoffs",
+      "applicationHypothesis": "Represent derivation edges explicitly without automatically assuming independence from graph structure.",
+      "sources": [
+        "https://www.w3.org/TR/prov-dm/"
+      ],
+      "reviewedOn": "2026-10-08",
+      "promotionStatus": "RESEARCH_ONLY",
+      "automaticRiskWeight": 0,
+      "browserValidated": false,
+      "detailPath": "brain/research/2026-10-08-RESEARCH-GAPS.md",
+      "verificationNeeded": "See acceptance examples, limits and promotion gates in the report."
+    }
+  ],
+  "sourcePresence": [
+    {
+      "id": "SRC-001",
+      "url": "https://www.oeko-tex.com/en/news/infocenter/labelling-and-greenwashing",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn27view0"
+    },
+    {
+      "id": "SRC-002",
+      "url": "https://www.oeko-tex.com/en/label-check",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn27view1"
+    },
+    {
+      "id": "SRC-003",
+      "url": "https://global-standard.org/images/resource-library/documents/standard-and-manual/GOTS_v8.0_signed.pdf",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn29view6"
+    },
+    {
+      "id": "SRC-004",
+      "url": "https://global-standards.org/suppliers/certified-suppliers",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-via-redirect",
+      "webRef": "turn27view2",
+      "originalUrl": "https://global-standard.org/find-suppliers-shops-and-inputs/certified-suppliers/database/search_result/42706"
+    },
+    {
+      "id": "SRC-005",
+      "url": "https://theupdateframework.io/docs/security/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn27view4"
+    },
+    {
+      "id": "SRC-006",
+      "url": "https://github.com/theupdateframework/specification/blob/master/tuf-spec.md",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn28view0"
+    },
+    {
+      "id": "SRC-007",
+      "url": "https://spec.c2pa.org/specifications/specifications/2.2/explainer/Explainer.html",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn27view5"
+    },
+    {
+      "id": "SRC-008",
+      "url": "https://arxiv.org/html/2603.24704v1",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn34view1"
+    },
+    {
+      "id": "SRC-009",
+      "url": "https://arxiv.org/html/2512.12844v2",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn36view7"
+    },
+    {
+      "id": "SRC-010",
+      "url": "https://arxiv.org/html/2310.01262v2",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn34view3"
+    },
+    {
+      "id": "SRC-011",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn32view0"
+    },
+    {
+      "id": "SRC-012",
+      "url": "https://arxiv.org/html/2608.06477v1",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn35view1"
+    },
+    {
+      "id": "SRC-013",
+      "url": "https://github.com/contentauth/c2pa-js/blob/main/packages/c2pa-web/README.md",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn36view3"
+    },
+    {
+      "id": "SRC-014",
+      "url": "https://github.com/contentauth/c2pa-js/blob/main/LICENSE",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-license-text",
+      "webRef": "turn38view6"
+    },
+    {
+      "id": "SRC-015",
+      "url": "https://support.gs1.org/support/solutions/articles/43000734137-what-is-the-gs1-barcode-commonly-used-for-trade-item-identification-",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn38view2"
+    },
+    {
+      "id": "SRC-016",
+      "url": "https://support.gs1.org/support/solutions/articles/43000734188-does-the-gs1-prefix-first-3-digits-of-the-ean-13-barcode-number-show-the-country-of-origin-",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn38view1"
+    },
+    {
+      "id": "SRC-017",
+      "url": "https://www.gs1.org/services/selling-online/verified-by-gs1-marketplaces",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "primary-search-only; direct-open-failed",
+      "webRef": "turn37search6"
+    },
+    {
+      "id": "SRC-018",
+      "url": "https://unicode.org/reports/tr39/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn43view7"
+    },
+    {
+      "id": "SRC-019",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/product-variants?hl=en",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn38view4"
+    },
+    {
+      "id": "SRC-020",
+      "url": "https://www.ftc.gov/bamboo-textiles",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn38view5"
+    },
+    {
+      "id": "SRC-021",
+      "url": "https://arxiv.org/html/2601.09658v4",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn43view5"
+    },
+    {
+      "id": "SRC-022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13143062/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn44view0"
+    },
+    {
+      "id": "SRC-023",
+      "url": "https://specs.webrecorder.net/wacz/1.2.0/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn43view1"
+    },
+    {
+      "id": "SRC-024",
+      "url": "https://specs.webrecorder.net/wacz-auth/0.1.0/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn41view6"
+    },
+    {
+      "id": "SRC-025",
+      "url": "https://webrecorder.net/legal/archivewebpage-privacy-policy/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened",
+      "webRef": "turn43view0"
+    },
+    {
+      "id": "SRC-026",
+      "url": "https://github.com/webrecorder/archiveweb.page/blob/main/LICENSE.md",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-license-text",
+      "webRef": "turn43view6"
+    },
+    {
+      "id": "SRC-027",
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "reviewedOn": "2026-10-08",
+      "sourceClass": "primary",
+      "fullPageSnapshotPreserved": false,
+      "presenceStatus": "opened-selected-sections",
+      "webRef": "turn41view9"
+    }
+  ],
+  "notReviewedLeads": [
+    {
+      "url": "https://doi.org/10.3390/jimaging11040096",
+      "title": "Identification of Textile Fibres Using a Near Infra-Red (NIR) Camera",
+      "status": "primary-full-text-open-failed",
+      "webRef": "turn42view0"
+    },
+    {
+      "url": "https://github.com/theupdateframework/tuf-js/tree/main/packages/client",
+      "title": "tuf-js client",
+      "status": "primary-open-failed; browser feasibility not established",
+      "webRef": "turn33view2"
+    }
+  ],
+  "limits": [
+    "Own summaries and URL presence, not full web snapshots",
+    "No Chrome installation or runtime testing",
+    "No statistical guarantee or model adoption",
+    "Licenses for paper, code, data, weights and trust lists are distinct"
+  ],
+  "followUpReviewPolicy": "Reverify live lookup limits and service availability before integration. Use the applicable effective standard version; no automatic expiry-based guilt."
+}

@@ -1,0 +1,808 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-10-08",
+  "status": "complete-bounded-batch",
+  "integration": "research-only",
+  "runtimeRiskWeight": 0,
+  "regionalWeightEstablished": false,
+  "selection": "Common retail categories with weaker category-specific coverage in this research corpus; not a measured sales ranking.",
+  "entries": [
+    {
+      "id": "CG01",
+      "category": "chargers and power banks",
+      "title": "Serial numbers matter in a major battery recall",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations-1",
+          "ref": "turn91view0",
+          "depth": "opened"
+        }
+      ],
+      "finding": "Recall 25-466 (2025-09-18) names Anker A1647/A1652/A1257/A1681/A1689; CPSC directs consumers to verify serial numbers. Reported fire/burn incidents are product-specific.",
+      "identifiers": {
+        "models": [
+          "A1647",
+          "A1652",
+          "A1257",
+          "A1681",
+          "A1689"
+        ],
+        "noticeId": "25-466",
+        "serialLocation": "back or side, SN Code"
+      },
+      "application": "Match model first, then official serial scope; do not collect/upload serial numbers or identity passively. Preserve exact model/serial distinction.",
+      "limits": "No all-Anker warning; no current listing inspected or serial lookup submitted.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG02",
+      "category": "chargers and power banks",
+      "title": "Vendor serial-check guidance is not an open lookup API",
+      "sources": [
+        {
+          "url": "https://www.anker.com/rc2506",
+          "ref": "turn89search5",
+          "depth": "primary manufacturer search excerpt"
+        }
+      ],
+      "finding": "Vendor lists the same five models and a serial/proof-of-purchase recall form; warns about confusable characters.",
+      "identifiers": {
+        "form": "https://www.anker.com/rc2506-form"
+      },
+      "application": "Offer explicit official lookup; retain raw OCR and ask user to verify confusable characters.",
+      "limits": "No undocumented API or automatic claim submission; never silently correct a serial.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG03",
+      "category": "cables and chargers",
+      "title": "USB certification is capability-specific",
+      "sources": [
+        {
+          "url": "https://www.usb.org/products",
+          "ref": "turn90search5 / turn91view3",
+          "depth": "opened; product-search description read, no lookup submitted"
+        }
+      ],
+      "finding": "USB-IF public search covers products certified for its logo, maintained by member firms; default filter shows only two years. Older records require date filtering.",
+      "identifiers": {
+        "capture": [
+          "manufacturer",
+          "product name",
+          "certification date",
+          "TID if present",
+          "claimed logo/capability"
+        ]
+      },
+      "application": "Preserve lookup filter and age before declaring missing certification; a found record supports its own tested scope.",
+      "limits": "No exact product lookup made. Absence is unresolved, not counterfeit; USB compliance is not general electrical/fire certification.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG04",
+      "category": "cables and chargers",
+      "title": "Power rating and data speed are separate claims",
+      "sources": [
+        {
+          "url": "https://www.usb.org/cable_connector",
+          "ref": "turn90search6",
+          "depth": "primary official search excerpt"
+        }
+      ],
+      "finding": "USB-IF cable program distinguishes purposes/capabilities; its current USB-C-to-C certification label guidance lists 60W or 240W power icons.",
+      "identifiers": {
+        "capture": [
+          "power wattage",
+          "data speed",
+          "connector type",
+          "cable length",
+          "e-marker claim"
+        ]
+      },
+      "application": "Extract power/data features independently; retain label-claim versus certification-verified states.",
+      "limits": "Do not call a legacy 100W cable unsafe based on a newer logo scheme; no physical/e-marker/protocol test performed.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG05",
+      "category": "cosmetics and skincare",
+      "title": "FDA registration certificates are a misleading-claim gap",
+      "sources": [
+        {
+          "url": "https://www.fda.gov/cosmetics/registration-listing-cosmetic-product-facilities-and-products",
+          "ref": "turn91view2",
+          "depth": "opened"
+        }
+      ],
+      "finding": "FDA's 2026-09-09 update says it does not issue cosmetic registration/listing verification certificates. Registration/listing does not establish FDA approval; some small businesses are exempt.",
+      "identifiers": {
+        "capture": [
+          "exact FDA claim",
+          "document issuer",
+          "facility versus product",
+          "ingredients",
+          "responsible person",
+          "batch"
+        ]
+      },
+      "application": "A claim of FDA-issued cosmetic registration certificate deserves source/issuer checking. Compare exact claim to FDA statement and preserve quote/locator.",
+      "limits": "A third-party registration service is not automatically fraud; missing listing is not proof of illegality. Drug/medical claims require separate classification.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG06",
+      "category": "cosmetics and skincare",
+      "title": "A tested-product list supplies precise safety leads across platforms",
+      "sources": [
+        {
+          "url": "https://www.fda.gov/consumers/health-fraud-scams/fda-warns-consumers-skin-products-containing-mercury-andor-hydroquinone",
+          "ref": "turn89search4",
+          "depth": "primary FDA search excerpt"
+        }
+      ],
+      "finding": "FDA's product-specific laboratory table includes Collagen Plus Vit-E Night Cream sold on Etsy (2022: mercury 3,670ppm; hydroquinone 2.0%) and Deluxe Silken Bleaching Cream sold on eBay (2026: mercury 19,027ppm; reported Jamaica origin). Those sampled products are not a platform prevalence estimate.",
+      "identifiers": {
+        "products": [
+          {
+            "name": "Collagen Plus - Vit E Cream, Night Cream",
+            "platform": "Etsy",
+            "sampleYear": 2022
+          },
+          {
+            "name": "Deluxe Silken Bleaching Cream",
+            "platform": "eBay",
+            "sampleYear": 2026
+          }
+        ]
+      },
+      "application": "Match exact name/package and sample year; source hazard to tested product; keep listing-removal, warning and recall states separate.",
+      "limits": "Current listings and same-name batches unverified; no new product laboratory testing. Region is table metadata, not inferred.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG07",
+      "category": "small appliances",
+      "title": "Serial-restricted licensed-brand appliance recall",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2026/Curtis-International-Expands-Recall-of-Frigidaire-brand-Minifridges-Due-to-Fire-and-Burn-Hazards",
+          "ref": "turn91view1",
+          "depth": "opened"
+        }
+      ],
+      "finding": "Recall expansion 26-199 (2026-01-15) names red EFMIS121 minifridges, serials A2001–A2310, Target sales. Manufacturer ShangYu North Electron Manufacture; importer Curtis International of Canada; origin China. CPSC reports at least six fires with property damage.",
+      "identifiers": {
+        "model": "EFMIS121",
+        "serialRange": [
+          "A2001",
+          "A2310"
+        ],
+        "noticeId": "26-199",
+        "manufacturer": "ShangYu North Electron Manufacture Co. Ltd.",
+        "importer": "Curtis International Ltd."
+      },
+      "application": "Separate brand license/marketing identity, manufacturer and importer; preserve bounded serial scope and expansion lineage.",
+      "limits": "Expansion text says July 2024, but its linked original 25-395 is dated July 24, 2025. Preserve source conflict. Serial scope and EFMIS129 suffix exclusions govern; do not warn on every Frigidaire model.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG08",
+      "category": "fitness equipment",
+      "title": "Historical seller changes can alter recall remedy",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+          "ref": "turn89search1",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "Recall 25-311 (2025-06-05) covers BowFlex 552/1090 and listed serial ranges. Notice distinguishes units sold by pre-bankruptcy BowFlex/Nautilus from Johnson Health Tech Trading and different remedies. Origin China.",
+      "identifiers": {
+        "models": [
+          "552",
+          "1090"
+        ],
+        "noticeId": "25-311",
+        "serialLocation": "bottom of molded tray",
+        "exampleSerialRange": [
+          "4551MAG21452813",
+          "4551MAG23350381"
+        ],
+        "exampleScope": "1090; illustrative one range, not complete list"
+      },
+      "application": "Use exact serial-family ranges and purchase period; importing brand-wide current safety or remedy status would be wrong.",
+      "limits": "Weights/capacity cannot be verified from listing photos. No physical retention/strength test, exhaustive serial transcription or current notice refresh beyond this retrieval.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG09",
+      "category": "decorative lighting",
+      "title": "Small coin-battery lights can create household hazards",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2026/LED-Lights-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violates-Mandatory-Standard-for-Consumer-Products-with-Coin-Batteries-Sold-on-Amazon-by-Happiness-Light",
+          "ref": "turn90search3",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "26-403 (2026-04-09): Happiness Light 24-pack, two CR2032 cells per round light, accessible batteries/missing warnings. Retailer J U Kai Technology; China origin.",
+      "identifiers": {
+        "noticeId": "26-403",
+        "product": "Happiness Light LED lights, 24-pack",
+        "dimensions": "about 1.18in diameter"
+      },
+      "application": "Classify components as well as intended decor use. Store exact package/count/design scope.",
+      "limits": "No general battery-accessibility judgment from a photo. Factory unknown; no unique SKU obtained.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG10",
+      "category": "decorative lighting",
+      "title": "USB low-voltage products can still have fire hazards",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2025/Five-Below-Recalls-Room2Room-LED-Iridescent-Bear-Lights-Due-to-Fire-and-Burn-Hazards",
+          "ref": "turn90search4",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "25-204 (2025-04-03): Room2Room bear-light USB switch overheating/melting, with burns/property damage. Distributor 1616 Holdings; retailer Five Below; China origin.",
+      "identifiers": {
+        "noticeId": "25-204",
+        "model": "LD-0030",
+        "rawSourceUPC": "1922340368444",
+        "identifierCaution": "Source labels 13-digit value UPC; preserve raw rather than changing its type/value automatically."
+      },
+      "application": "Match exact model/packaging and hazard component; avoid a rule that all USB-powered products are safe.",
+      "limits": "No all-Five Below or all-LED warning; performance/brightness/flicker untested.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG11",
+      "category": "children's jewelry",
+      "title": "Packaging identifiers can outperform title aliases",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2024/Childrens-Jewelry-Sets-Recalled-Due-to-Risk-of-Lead-and-Cadmium-Poisoning-Violations-of-the-Federal-Lead-Content-Ban-and-Federal-Hazardous-Substances-Act-Sold-Exclusively-on-Amazon-com-by-Newmemo",
+          "ref": "turn92search1",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "24-366 (2024-09-19) names Newmemo 36-ring sets, pink heart case, FNSKU X0034COQMP; importer Memovan Technology Industrial dba Newmemo. Lead/cadmium violations; China origin.",
+      "identifiers": {
+        "noticeId": "24-366",
+        "FNSKU": "X0034COQMP",
+        "sellerId": "AVVUCA891OMBV"
+      },
+      "application": "Keep FNSKU, ASIN, seller ID and GTIN as different identifier types. Product matching must retain 36-ring/case scope.",
+      "limits": "No chemical-composition inference from silver-colored appearance. Historical seller ID does not prove present identity.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG12",
+      "category": "children's jewelry",
+      "title": "Set descriptions and retailer identity matter without a SKU",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2025/Yaomiao-Childrens-Jewelry-Sets-Recalled-Due-to-Risk-of-Lead-and-Cadmium-Poisoning-Violations-of-the-Federal-Lead-Content-Ban-and-Federal-Hazardous-Substances-Act-Sold-Exclusively-on-Amazon-by-LordRoads",
+          "ref": "turn92search0",
+          "depth": "primary regulator search excerpt"
+        }
+      ],
+      "finding": "25-082 (2025-01-02) names three Yaomiao sets, retailer Wuhannuoyunxindianzikejiyouxiangongsi dba LordRoads, lavender packaging; lead/cadmium violations, China origin.",
+      "identifiers": {
+        "noticeId": "25-082",
+        "brand": "Yaomiao",
+        "packagePhrase": "A Special Gift for the Charming You"
+      },
+      "application": "Combine package phrase, set composition, source images and retailer history as identity candidates.",
+      "limits": "Phrase alone is nonunique; no all-Yaomiao product warning, no chemical tests executed.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG13",
+      "category": "outdoor and water-safety gear",
+      "title": "USCG equipment lookup has explicit coverage exceptions",
+      "sources": [
+        {
+          "url": "https://cgmix.uscg.mil/equipment/Default.aspx",
+          "ref": "turn92search4",
+          "depth": "primary official database description read"
+        }
+      ],
+      "finding": "CGMIX lists approved/certified vessel/boat equipment, with some European Notified Body MRA approvals located elsewhere.",
+      "identifiers": {
+        "capture": [
+          "approval number",
+          "manufacturer",
+          "brand/model",
+          "approval status",
+          "jurisdiction",
+          "production date"
+        ]
+      },
+      "application": "Offer official approval lookup; preserve jurisdiction and exceptions before evaluating a missing result.",
+      "limits": "Database/API access, exact product searches and other-jurisdiction coverage untested. Unknown is not fake approval.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG14",
+      "category": "outdoor and water-safety gear",
+      "title": "Approval expiry does not always invalidate an existing item",
+      "sources": [
+        {
+          "url": "https://cgmix.uscg.mil/Equipment/Definitions.aspx",
+          "ref": "turn92search8",
+          "depth": "primary official definitions read"
+        }
+      ],
+      "finding": "CGMIX distinguishes Approved, Former-May Use, Former-May Not Use and Expired. Its Expired definition says items manufactured before expiration are considered approved.",
+      "identifiers": {
+        "statuses": [
+          "APPROVED",
+          "FORMER-MAY USE",
+          "FORMER-MAY NOT USE",
+          "EXPIRED"
+        ]
+      },
+      "application": "Store approval status and manufacture date together; avoid a simplistic expired=unsafe rule.",
+      "limits": "Current serviceability, intended use, size/fit and physical buoyancy untested; no product approved by this research.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG15",
+      "category": "electrical goods / shared verification",
+      "title": "UL country codes describe standards geography, not origin",
+      "sources": [
+        {
+          "url": "https://www.ul.com/thecodeauthority/knowledge/faq-enhanced-and-smart-ul-certification-mark",
+          "ref": "turn92search7",
+          "depth": "primary official FAQ search excerpt"
+        }
+      ],
+      "finding": "UL says enhanced-mark country codes identify standards geography. File/unique IDs can be checked in Product iQ; Listed/Classified/enhanced variants have legitimate meanings.",
+      "identifiers": {
+        "capture": [
+          "mark variant",
+          "file/unique ID",
+          "product category",
+          "standard geography",
+          "model scope"
+        ]
+      },
+      "application": "Record label claim and exact lookup scope; do not treat a US mark as Made in USA or a nonpreferred mark variant as forged.",
+      "limits": "Logo is not self-authenticating; component recognition and end-product scope still need verification; no exact product lookup made.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG16",
+      "category": "electrical goods / shared verification",
+      "title": "UL Product iQ is an account-based research option",
+      "sources": [
+        {
+          "url": "https://code-authorities.ul.com/about/certifications/",
+          "ref": "turn92search6",
+          "depth": "primary official description read"
+        }
+      ],
+      "finding": "UL describes a complimentary Product iQ account for manufacturer certification/category records.",
+      "identifiers": {
+        "tool": "UL Product iQ",
+        "access": "complimentary account described"
+      },
+      "application": "Explicit user research action; confirm access/API terms before any engineering integration.",
+      "limits": "No account created, login, requests or certificate authentication performed. No keyless bulk API assumed.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG17",
+      "category": "electrical goods / shared verification",
+      "title": "ETL Listed and ETL Verified scopes differ",
+      "sources": [
+        {
+          "url": "https://www.intertek.com/directories/",
+          "ref": "turn93search2",
+          "depth": "primary provider description read"
+        }
+      ],
+      "finding": "Intertek directories distinguish ETL Listed product safety scope from other verification directories, including cabling and specific modules.",
+      "identifiers": {
+        "tool": "Intertek product directories",
+        "capture": [
+          "mark type",
+          "control number if present",
+          "manufacturer",
+          "model",
+          "standard",
+          "report scope"
+        ]
+      },
+      "application": "Select correct directory and compare complete model/category; keep multiple-listing brands and basic listee roles distinct.",
+      "limits": "No automated endpoint/CORS/quota/redistribution license or exact certificate tested; a directory miss is unresolved.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG18",
+      "category": "children's jewelry / sampling evidence",
+      "title": "Targeted inspection results include both failures and no-action samples",
+      "sources": [
+        {
+          "url": "https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/industry-professionals/enforcement-summary-report/compliance-verification-project-2024-2025-children-jewellery-regulations.html",
+          "ref": "turn94view3",
+          "depth": "opened; sampling method and selected result rows read"
+        }
+      ],
+      "finding": "Health Canada's 2024–25 project tested 38 imported children's-jewelry products after market survey/XRF screening, reporting three recalls, two alerts and 33 no-corrective-action instances. Several China-origin rows report no compliance issue detected.",
+      "identifiers": {
+        "samplePeriod": "FY2024-2025",
+        "productsTested": 38
+      },
+      "application": "Use exact adverse product rows; retain jurisdiction/method/sampling selection. XRF screening and confirmatory laboratory testing are distinct.",
+      "limits": "This is targeted selection, not population failure rate or proof all no-action products are safe forever. Country alone cannot reproduce the observed product distinctions.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG19",
+      "category": "adult jewelry / academic",
+      "title": "Small XRF study is a physical-test lead",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37619281/",
+          "ref": "turn94view1 / turn93search14",
+          "depth": "metadata and abstract opening read; full paper not reviewed"
+        }
+      ],
+      "finding": "2023 DOI 10.1016/j.jhazmat.2023.132167 describes pXRF analysis of eight low-cost adult jewelry samples from Chinese e-commerce platforms.",
+      "identifiers": {
+        "DOI": "10.1016/j.jhazmat.2023.132167",
+        "PMID": "37619281",
+        "n": 8
+      },
+      "application": "Physical-assay evidence design lead; source sample/package identity must connect a tested item to a retail item.",
+      "limits": "Tiny selected sample; platforms/factory identities and current batches not independently verified. Browser images cannot measure metal content or migration.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG20",
+      "category": "cosmetics / academic",
+      "title": "Recent publication uses old targeted surveillance samples",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41370-026-00961-9",
+          "ref": "turn94view2",
+          "depth": "abstract/metadata read; follow-up methods retrieval failed"
+        }
+      ],
+      "finding": "Published 2026-08-15; paper describes 197 products collected during 2009–2022 NYC store investigations, mercury testing and an associated NYC Open Data source. Ingredients alone can omit measured mercury.",
+      "identifiers": {
+        "DOI": "10.1038/s41370-026-00961-9",
+        "publicationDate": "2026-08-15",
+        "samplePeriod": "2009-2022"
+      },
+      "application": "Do not confuse publication date with current-product sample date. Ingredient parsing is claim analysis, not chemical clearance.",
+      "limits": "Targeted store/community selection; not present marketplace prevalence. Percentages/denominator details not reproduced because deeper methods retrieval failed.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG21",
+      "category": "cosmetics / academic",
+      "title": "Online cosmetics assay study deserves deeper method review",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40754048/",
+          "ref": "turn93search15",
+          "depth": "primary abstract search excerpt; direct opening empty"
+        }
+      ],
+      "finding": "2025 study 'Mercury in online skin-lightening cosmetics' reports XRF testing of 134 online-purchased products from seven Asian countries.",
+      "identifiers": {
+        "PMID": "40754048",
+        "n": 134,
+        "publicationPeriod": "2025-10"
+      },
+      "application": "Follow up sampled names, selection process, laboratory confirmation and product provenance before proposing category predictors.",
+      "limits": "Full abstract/methods not obtained; no numerical regional failure coefficient adopted, no paper replication.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    },
+    {
+      "id": "CG22",
+      "category": "small appliances",
+      "title": "Official linked notices can contain conflicting dates and model exclusions",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2025/Curtis-International-Recalls-Frigidaire-brand-Minifridges-Due-to-Fire-and-Burn-Hazards-More-Than-700-000-Reported-in-Property-Damage",
+          "ref": "turn97view0",
+          "depth": "opened; full model/serial table read"
+        }
+      ],
+      "finding": "Original recall 25-395 is dated 2025-07-24. It lists EFMIS129/137/149/175 and serial boundaries, with EFMIS129-B/C excluded. Expansion 26-199 incorrectly or inconsistently refers to July 2024; seek agency clarification rather than invent chronology.",
+      "identifiers": {
+        "noticeId": "25-395",
+        "models": {
+          "EFMIS129": {
+            "serialRange": [
+              "A2001",
+              "A2308"
+            ],
+            "excludedSuffixes": [
+              "-B",
+              "-C"
+            ]
+          },
+          "EFMIS137": {
+            "serialRange": [
+              "A2001",
+              "A2312"
+            ]
+          },
+          "EFMIS149": {
+            "serialRange": [
+              "A2001",
+              "A2308"
+            ]
+          },
+          "EFMIS175": {
+            "serialRange": [
+              "A2001",
+              "A2310"
+            ]
+          }
+        }
+      },
+      "application": "Store original and expansion as one lineage with source-specific dates, plus explicit exclusion predicates. Source date conflict remains a flag in the research record.",
+      "limits": "No agency clarification sought, remedy performed or current retail unit matched. Source notices remain primary evidence of their own stated scope.",
+      "checkedAt": "2026-10-08",
+      "integration": "research-only",
+      "runtimeRiskWeight": 0
+    }
+  ],
+  "sourcePresence": [
+    {
+      "findingId": "CG01",
+      "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations-1",
+      "ref": "turn91view0",
+      "depth": "opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG02",
+      "url": "https://www.anker.com/rc2506",
+      "ref": "turn89search5",
+      "depth": "primary manufacturer search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG03",
+      "url": "https://www.usb.org/products",
+      "ref": "turn90search5 / turn91view3",
+      "depth": "opened; product-search description read, no lookup submitted",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG04",
+      "url": "https://www.usb.org/cable_connector",
+      "ref": "turn90search6",
+      "depth": "primary official search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG05",
+      "url": "https://www.fda.gov/cosmetics/registration-listing-cosmetic-product-facilities-and-products",
+      "ref": "turn91view2",
+      "depth": "opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG06",
+      "url": "https://www.fda.gov/consumers/health-fraud-scams/fda-warns-consumers-skin-products-containing-mercury-andor-hydroquinone",
+      "ref": "turn89search4",
+      "depth": "primary FDA search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG07",
+      "url": "https://www.cpsc.gov/Recalls/2026/Curtis-International-Expands-Recall-of-Frigidaire-brand-Minifridges-Due-to-Fire-and-Burn-Hazards",
+      "ref": "turn91view1",
+      "depth": "opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG08",
+      "url": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+      "ref": "turn89search1",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG09",
+      "url": "https://www.cpsc.gov/Recalls/2026/LED-Lights-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violates-Mandatory-Standard-for-Consumer-Products-with-Coin-Batteries-Sold-on-Amazon-by-Happiness-Light",
+      "ref": "turn90search3",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG10",
+      "url": "https://www.cpsc.gov/Recalls/2025/Five-Below-Recalls-Room2Room-LED-Iridescent-Bear-Lights-Due-to-Fire-and-Burn-Hazards",
+      "ref": "turn90search4",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG11",
+      "url": "https://www.cpsc.gov/Recalls/2024/Childrens-Jewelry-Sets-Recalled-Due-to-Risk-of-Lead-and-Cadmium-Poisoning-Violations-of-the-Federal-Lead-Content-Ban-and-Federal-Hazardous-Substances-Act-Sold-Exclusively-on-Amazon-com-by-Newmemo",
+      "ref": "turn92search1",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG12",
+      "url": "https://www.cpsc.gov/Recalls/2025/Yaomiao-Childrens-Jewelry-Sets-Recalled-Due-to-Risk-of-Lead-and-Cadmium-Poisoning-Violations-of-the-Federal-Lead-Content-Ban-and-Federal-Hazardous-Substances-Act-Sold-Exclusively-on-Amazon-by-LordRoads",
+      "ref": "turn92search0",
+      "depth": "primary regulator search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG13",
+      "url": "https://cgmix.uscg.mil/equipment/Default.aspx",
+      "ref": "turn92search4",
+      "depth": "primary official database description read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG14",
+      "url": "https://cgmix.uscg.mil/Equipment/Definitions.aspx",
+      "ref": "turn92search8",
+      "depth": "primary official definitions read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG15",
+      "url": "https://www.ul.com/thecodeauthority/knowledge/faq-enhanced-and-smart-ul-certification-mark",
+      "ref": "turn92search7",
+      "depth": "primary official FAQ search excerpt",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG16",
+      "url": "https://code-authorities.ul.com/about/certifications/",
+      "ref": "turn92search6",
+      "depth": "primary official description read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG17",
+      "url": "https://www.intertek.com/directories/",
+      "ref": "turn93search2",
+      "depth": "primary provider description read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG18",
+      "url": "https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/industry-professionals/enforcement-summary-report/compliance-verification-project-2024-2025-children-jewellery-regulations.html",
+      "ref": "turn94view3",
+      "depth": "opened; sampling method and selected result rows read",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37619281/",
+      "ref": "turn94view1 / turn93search14",
+      "depth": "metadata and abstract opening read; full paper not reviewed",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG20",
+      "url": "https://www.nature.com/articles/s41370-026-00961-9",
+      "ref": "turn94view2",
+      "depth": "abstract/metadata read; follow-up methods retrieval failed",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40754048/",
+      "ref": "turn93search15",
+      "depth": "primary abstract search excerpt; direct opening empty",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated source presence and own notes; no complete capture."
+    },
+    {
+      "findingId": "CG22",
+      "url": "https://www.cpsc.gov/Recalls/2025/Curtis-International-Recalls-Frigidaire-brand-Minifridges-Due-to-Fire-and-Burn-Hazards-More-Than-700-000-Reported-in-Property-Damage",
+      "ref": "turn97view0",
+      "depth": "opened",
+      "observedAt": "2026-10-08",
+      "archiveScope": "Dated presence and own notes."
+    }
+  ],
+  "categoryGroups": [
+    "battery/charging/cables",
+    "cosmetics/skincare",
+    "small appliances",
+    "fitness equipment",
+    "decorative lighting",
+    "jewelry",
+    "outdoor/water safety"
+  ],
+  "detectionEvidenceStates": [
+    "visible-claim",
+    "candidate-identity",
+    "authoritative-scope-match",
+    "unresolved-serial-or-batch",
+    "source-conflict",
+    "scope-excluded",
+    "historical-event",
+    "current-status-needs-refresh"
+  ],
+  "notPerformed": [
+    "physical or laboratory testing",
+    "live shopping listing scans",
+    "serial/approval/certificate lookups",
+    "login/account creation",
+    "API integration",
+    "regional calibration",
+    "Chrome QA",
+    "runtime or build edits"
+  ]
+}

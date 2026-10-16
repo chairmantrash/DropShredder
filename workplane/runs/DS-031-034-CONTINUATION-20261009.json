@@ -1,0 +1,390 @@
+{
+  "task": "DS-031–034",
+  "status": "BOUNDED ENGINEERING IMPLEMENTATION VERIFIED; FULL RELEASE/ACCURACY GATES OPEN",
+  "verifiedAt": "2026-10-09",
+  "owner": "/root",
+  "harnessCommit": "2fd69e5de3fb48121a1c5d938048af669a70eaf0",
+  "packagedSourceCommit": "cb82ea8a06f987a529dc8fc70914aa36eb6c5377",
+  "packagedSourceTree": "b801669d0251cc280186354f6fd615b4d11f1ea7",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.4",
+    "revision": "@f842f52ef39fd97b449eb27cff414bf05a98ddce",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75"
+  },
+  "distinctBrowserChecks": 34,
+  "packagedChecks": 9,
+  "nativeHeadedChecks": 25,
+  "duplicateHeadlessNativeChecks": 7,
+  "localCoreTests": {
+    "passed": 246,
+    "failed": 0
+  },
+  "checks": [
+    "typecheck",
+    "security",
+    "Chrome runtime conformance",
+    "data lint",
+    "professionalism",
+    "clean build",
+    "release package audit",
+    "performance audit",
+    "hosted CI",
+    "CodeQL"
+  ],
+  "package": {
+    "filename": "DropShredder-Candidate-20261009.zip",
+    "sha256": "910a9bfee28cbc42d17a735300510c50222e2d29eb2def897b124bf2147f8b0e",
+    "zipBytes": 217113,
+    "unpackedBytes": 576354,
+    "files": 14
+  },
+  "runs": [
+    {
+      "id": 37912196825,
+      "name": "DropShredder CI",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 37912196901,
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 37912196853,
+      "name": "DropShredder Chromium Runtime",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11607575320,
+      "name": "dropshredder-native-panel-evidence",
+      "sizeBytes": 203037,
+      "digest": "sha256:16a379849af3a4e02c1256b1bae7b7a078c5c14bd915cdaa02dc470c1a045022",
+      "expiresAt": "2026-11-08T09:36:02Z"
+    },
+    {
+      "id": 11606908425,
+      "name": "dropshredder-headed-permission-evidence",
+      "sizeBytes": 1173077,
+      "digest": "sha256:936567fee3d873deac62bc912ef76c7ca82d9025899953203e7844b9a3176e7b",
+      "expiresAt": "2026-11-08T09:37:12Z"
+    },
+    {
+      "id": 11606493154,
+      "name": "dropshredder-chromium-runtime-evidence",
+      "sizeBytes": 1067955,
+      "digest": "sha256:6dba8d41aaede6f59e89ff837a0ee6440919e8da01e6e1ab043c91aad919a57b",
+      "expiresAt": "2026-11-08T09:35:36Z"
+    }
+  ],
+  "nativeChecks": [
+    {
+      "id": "N01",
+      "description": "Reviewed package mounts in the native side panel without host grants",
+      "status": "PASS"
+    },
+    {
+      "id": "N02",
+      "description": "Trusted native source-hunt toggle saves through the background writer",
+      "status": "PASS"
+    },
+    {
+      "id": "N03",
+      "description": "Native origin and tone changes preserve the previous feature patch",
+      "status": "PASS"
+    },
+    {
+      "id": "N04",
+      "description": "Nondefault preferences survive a full native-profile restart",
+      "status": "PASS"
+    },
+    {
+      "id": "N05",
+      "description": "Native product scan fails closed without host access",
+      "status": "PASS"
+    },
+    {
+      "id": "N06",
+      "description": "Native remove-access control is safe without grants and preserves other preferences",
+      "status": "PASS"
+    },
+    {
+      "id": "N07",
+      "description": "Native checks produce no uncaught errors or external investigations",
+      "status": "PASS"
+    },
+    {
+      "id": "N08",
+      "description": "Genuine Chrome Deny leaves monitoring and host access off",
+      "status": "PASS"
+    },
+    {
+      "id": "N09",
+      "description": "Genuine Chrome Allow enables host access and the isolated automatic script",
+      "status": "PASS"
+    },
+    {
+      "id": "N10",
+      "description": "Owned product fixture gets exactly one automatic alert after consent",
+      "status": "PASS"
+    },
+    {
+      "id": "N11",
+      "description": "Full native product scan after an observed grant on an owned HTTPS fixture",
+      "status": "PASS"
+    },
+    {
+      "id": "N15",
+      "description": "Actual native JSON download redacts URL query/fragment and excludes raw fields",
+      "status": "PASS"
+    },
+    {
+      "id": "N16",
+      "description": "Sensitive field on an ordinary product URL refuses manual scans and stale exports",
+      "status": "PASS"
+    },
+    {
+      "id": "N17",
+      "description": "SPA URL change invalidates the old report; an in-flight older scan cannot replace it",
+      "status": "PASS"
+    },
+    {
+      "id": "N18",
+      "description": "Rapid tab switching invalidates reports and scans the actual active product tab",
+      "status": "PASS"
+    },
+    {
+      "id": "N19",
+      "description": "Search chooser exposes destinations, traps focus, closes on Escape and opens at most eight background tabs",
+      "status": "PASS"
+    },
+    {
+      "id": "N20",
+      "description": "Same-URL selected variants extract the chosen SKU/price and reject export after changing selection",
+      "status": "PASS"
+    },
+    {
+      "id": "N25",
+      "description": "Amazon extraction ignores an earlier accessibility heading in favor of the product title",
+      "status": "PASS"
+    },
+    {
+      "id": "N21",
+      "description": "RDAP cancellation and HTTP failure do not publish; explicit successful lookup stays informational",
+      "status": "PASS"
+    },
+    {
+      "id": "N22",
+      "description": "CPSC cancel/error/candidate notices leave verdict unchanged and use only the chosen public query",
+      "status": "PASS"
+    },
+    {
+      "id": "N23",
+      "description": "Feed preview needs explicit save; update, rollback, exact product leads and deletion use real native controls",
+      "status": "PASS"
+    },
+    {
+      "id": "N24",
+      "description": "Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict",
+      "status": "PASS"
+    },
+    {
+      "id": "N12",
+      "description": "Granted-access article and sign-in fixtures stay quiet; manual sign-in scan refuses",
+      "status": "PASS"
+    },
+    {
+      "id": "N13",
+      "description": "Revoking an accepted host grant disables scripts and alerts without losing preferences",
+      "status": "PASS"
+    },
+    {
+      "id": "N14",
+      "description": "Granted fixture scans cause no uncaught errors or external investigations",
+      "status": "PASS"
+    }
+  ],
+  "liveSurfaces": [
+    {
+      "kind": "direct manufacturer / cooling fan",
+      "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "expected": "NF-A12x25",
+      "startedAt": "2026-10-09T09:36:41.938Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 429,
+      "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "finishedAt": "2026-10-09T09:36:44.545Z"
+    },
+    {
+      "kind": "Amazon / cooling fan",
+      "url": "https://www.amazon.com/dp/B0FC636JBS",
+      "expected": "Noctua",
+      "startedAt": "2026-10-09T09:36:44.545Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+      "panelStatus": "Scan complete for www.amazon.com.",
+      "product": {
+        "url": "https://www.amazon.com/dp/B0FC636JBS",
+        "title": "Noctua NF-A12x25 G2 PWM, High-Performance Quiet Fan 120mm",
+        "asin": "B0FC636JBS",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-09T09:36:50.524Z"
+    },
+    {
+      "kind": "Etsy / ceramic mug",
+      "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "expected": "Mug",
+      "startedAt": "2026-10-09T09:36:50.524Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 403,
+      "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "finishedAt": "2026-10-09T09:36:52.799Z"
+    },
+    {
+      "kind": "Walmart / construction toy",
+      "url": "https://www.walmart.com/ip/41004055",
+      "expected": "LEGO",
+      "startedAt": "2026-10-09T09:36:52.799Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+      "panelStatus": "Scan complete for www.walmart.com.",
+      "product": {
+        "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-09T09:36:57.337Z"
+    }
+  ],
+  "scope": {
+    "ownedFixtures": "Product/variant/sensitive/SPA/tab/export/search/import fixtures; HTTP response fixtures for RDAP/CPSC, not provider accuracy.",
+    "liveProvider": "N24 uses actual GLEIF HTTPS API from native controls, exact supplied LEI only; no interception, key or score changes.",
+    "consent": "Genuine Chrome Deny/Allow/revoke through actual X11 input; no API overrides or direct storage writes.",
+    "signatures": "Core tests exercise Ed25519, tampering, unknown keys and expiry; native N23 verifies unsigned feed lifecycle, not signed-key onboarding.",
+    "visualInspection": [
+      "Final actual export screenshot",
+      "Final 320px/130% reflow screenshot",
+      "Native list and live GLEIF controls"
+    ],
+    "release": "No merge, closure, publishing or independent release acceptance."
+  },
+  "historicalRuns": [
+    {
+      "id": 37910124252,
+      "head": "d7ee27263c3243f7a63b95acc3de444ac07946d4",
+      "outcome": "Failed before browser checks: stale local build assets in inventory; corrected via clean build and exact file-list assertion."
+    },
+    {
+      "id": 37910612979,
+      "head": "4462e11d5554a18c68e2e5763b94336b65dc7861",
+      "outcome": "9 packaged + 15 native checks passed; N19 failed keyboard focus. Production dialog boundary corrected; failure artifact preserved."
+    },
+    {
+      "id": 37911384894,
+      "head": "5a874e4174ef9812bd39f02df4fe32fdf3f0ebad",
+      "outcome": "9 packaged + 24 native checks passed. Live Amazon exposed accessibility heading title defect; corrected and regression added."
+    },
+    {
+      "id": 37911937487,
+      "head": "4bb0e94e518245184cf1aab743dea18519dccb4e",
+      "outcome": "Amazon regression passed. Native job failed at N12 because late live-store navigation interrupted fixture navigation. Harness now isolates each live site in a separate disposable tab; production bytes unchanged.",
+      "artifacts": [
+        {
+          "id": 11607545112,
+          "name": "dropshredder-chromium-runtime-evidence",
+          "digest": "sha256:cd0260f40e8b4142f0f5703cef26bf868cead2c3e5838fb49275b9c4f7370385"
+        },
+        {
+          "id": 11606882875,
+          "name": "dropshredder-native-panel-evidence",
+          "digest": "sha256:bf71a6bfea325146ff8a08fd6b246ea04923433317ccb53c139dd9b526996601"
+        },
+        {
+          "id": 11606837326,
+          "name": "dropshredder-headed-permission-evidence",
+          "digest": "sha256:68a7210070510f8193c9a6cbae76ae6373c07e9884c84a3ac839376cffd6ec35"
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Independent A01–D06",
+    "Representative rights-cleared, merchant/product-disjoint category false positives, misses and abstentions",
+    "Concurrent native panels and full context-menu UI",
+    "Native file-picker import, signed-key onboarding and malformed storage",
+    "Live RDAP/CPSC endpoint behavior and certification issuer/serial/model exclusions",
+    "Real feed issuer provenance and automated key rotation; automatic refresh is not implemented",
+    "OCR/embedding and empirical local image/text method licensing/performance/error evaluation",
+    "Nonstandard variant widgets outside explicit bounded controls"
+  ]
+}

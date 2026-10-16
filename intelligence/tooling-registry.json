@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-08",
   "policy": {
     "toolPresenceDefaultWeight": 0,
     "toolPresenceMaximumSeverityWithoutCorroboration": "weak",
@@ -9,33 +9,178 @@
   "families": [
     {
       "id": "sourcing-fulfillment",
-      "examples": ["DSers", "AutoDS", "CJdropshipping", "Zendrop", "Spocket", "Syncee"],
-      "capabilities": ["product import", "supplier sourcing", "order automation", "tracking sync", "inventory/price sync", "local warehouse fulfillment", "private labeling", "custom packaging"],
-      "detectionImplications": ["long shipping is no longer dependable", "brand packaging is not proof of original manufacture", "compare product invariants and provenance claims"]
+      "examples": [
+        "DSers",
+        "AutoDS",
+        "CJdropshipping",
+        "Zendrop",
+        "Spocket",
+        "Syncee"
+      ],
+      "capabilities": [
+        "product import",
+        "supplier sourcing",
+        "order automation",
+        "tracking sync",
+        "inventory/price sync",
+        "local warehouse fulfillment",
+        "private labeling",
+        "custom packaging"
+      ],
+      "detectionImplications": [
+        "long shipping is no longer dependable",
+        "brand packaging is not proof of original manufacture",
+        "compare product invariants and provenance claims"
+      ]
     },
     {
       "id": "ad-product-research",
-      "examples": ["Minea", "PiPiADS", "WinningHunter", "Dropship.io", "Sell The Trend"],
-      "capabilities": ["ad discovery", "competitor tracking", "product discovery", "sales/revenue estimation", "trend/saturation analysis"],
-      "detectionImplications": ["catalogs can clone trends rapidly", "prefer chronology and product fingerprints over marketing-copy similarity"]
+      "examples": [
+        "Minea",
+        "PiPiADS",
+        "WinningHunter",
+        "Dropship.io",
+        "Sell The Trend"
+      ],
+      "capabilities": [
+        "ad discovery",
+        "competitor tracking",
+        "product discovery",
+        "sales/revenue estimation",
+        "trend/saturation analysis"
+      ],
+      "detectionImplications": [
+        "catalogs can clone trends rapidly",
+        "prefer chronology and product fingerprints over marketing-copy similarity"
+      ]
     },
     {
       "id": "review-import-syndication",
-      "examples": ["Ali Reviews", "Loox", "Judge.me Ali Reviews Importer"],
-      "capabilities": ["review import", "review transfer", "AI translation", "photo/video review display", "review syndication"],
-      "detectionImplications": ["review count does not imply listing-native provenance", "test product/review mismatch, chronology, duplication, and disclosure"]
+      "examples": [
+        "Ali Reviews",
+        "Loox",
+        "Judge.me Ali Reviews Importer"
+      ],
+      "capabilities": [
+        "review import",
+        "review transfer",
+        "AI translation",
+        "photo/video review display",
+        "review syndication"
+      ],
+      "detectionImplications": [
+        "review count does not imply listing-native provenance",
+        "test product/review mismatch, chronology, duplication, and disclosure",
+        "Imported reviewer names, country flags and normalized relative dates can be rewritten/defaulted; do not independently infer native purchase, reviewer nationality or product origin.",
+        "Review import, translation and migration remain informational; explicit disclosure, product mismatch and independent chronology evidence are required."
+      ]
     },
     {
       "id": "tracking-branding",
-      "examples": ["Track123", "ParcelPanel"],
-      "capabilities": ["branded tracking pages", "carrier aggregation", "tracking emails", "tracking-number synchronization"],
-      "detectionImplications": ["branded tracking UI can mask underlying fulfillment chain", "compare carrier evidence with shipping-origin claims"]
+      "examples": [
+        "Track123",
+        "ParcelPanel"
+      ],
+      "capabilities": [
+        "branded tracking pages",
+        "carrier aggregation",
+        "tracking emails",
+        "tracking-number synchronization"
+      ],
+      "detectionImplications": [
+        "branded tracking UI can mask underlying fulfillment chain",
+        "compare carrier evidence with shipping-origin claims"
+      ]
     },
     {
       "id": "scarcity-conversion",
-      "examples": ["Essential Countdown Timer Bar", "GSC Countdown Timer Bar", "VR Urgency Countdown Timer Bar", "Scarcity.AI"],
-      "capabilities": ["countdown timers", "low-stock counters", "cart timers", "urgency/FOMO banners"],
-      "detectionImplications": ["first-seen scarcity message is weak", "persistent/reset scarcity is stronger longitudinal evidence"]
+      "examples": [
+        "Essential Countdown Timer Bar",
+        "GSC Countdown Timer Bar",
+        "VR Urgency Countdown Timer Bar",
+        "Scarcity.AI"
+      ],
+      "capabilities": [
+        "countdown timers",
+        "low-stock counters",
+        "cart timers",
+        "urgency/FOMO banners"
+      ],
+      "detectionImplications": [
+        "first-seen scarcity message is weak",
+        "persistent/reset scarcity is stronger longitudinal evidence"
+      ]
+    },
+    {
+      "id": "supplier-image-transformation",
+      "examples": [
+        "AutoDS image editor",
+        "ShotBG",
+        "UtilPix"
+      ],
+      "capabilities": [
+        "supplier image crop/flip/rotate/background transformation",
+        "editable imported product specifications"
+      ],
+      "detectionImplications": [
+        "image/text resemblance generates candidates rather than proving source direction",
+        "compare independently captured product attributes and preserve variants"
+      ],
+      "sources": [
+        "https://help.autods.com/en/articles/12699792-products-and-drafts-pages-manage-filter-and-edit-your-listings",
+        "https://shotbg.com/use-cases/dropshipping"
+      ],
+      "reviewedAt": "2026-10-08",
+      "defaultRiskWeight": 0
+    },
+    {
+      "id": "apparel-blind-private-label",
+      "examples": [
+        "Dear-Lover",
+        "Trendsi",
+        "FondMart",
+        "Wholesale7",
+        "USAdrop"
+      ],
+      "capabilities": [
+        "private garment labels",
+        "neutral packaging",
+        "direct customer fulfillment"
+      ],
+      "detectionImplications": [
+        "brand label and domestic warehouse do not establish manufacturing origin",
+        "supplier comparison requires exact item evidence; do not infer physical quality"
+      ],
+      "sources": [
+        "https://www.dear-lover.com/page/about-dear-lover-wholesale",
+        "https://www.trendsi.com/private-labeling",
+        "https://fondmart.com/private-label.html/",
+        "https://www.wholesale7.net/faq_detail.php",
+        "https://usadrop.com/blind-dropshipping-ship-without-revealing-supplier/"
+      ],
+      "reviewedAt": "2026-10-08",
+      "defaultRiskWeight": 0
+    },
+    {
+      "id": "tracking-origin-presentation",
+      "examples": [
+        "CWILL Tracking (ParcelPanel Shopify documentation)",
+        "ParcelWILL (ParcelPanel WooCommerce documentation)"
+      ],
+      "capabilities": [
+        "dropshipping mode hiding origin presentation",
+        "tracking detail translation"
+      ],
+      "detectionImplications": [
+        "a branded tracking page is not independent carrier evidence",
+        "maintain separate manufacture, dispatch, merchant and returns fields; no automatic risk from service presence"
+      ],
+      "sources": [
+        "https://docs.parcelpanel.com/shopify/getting-started/dropshipping/",
+        "https://docs.parcelpanel.com/woocommerce/getting-started/dropshipping/"
+      ],
+      "reviewedAt": "2026-10-08",
+      "defaultRiskWeight": 0
     }
   ]
 }

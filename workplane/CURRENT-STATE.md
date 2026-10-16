@@ -1,55 +1,327 @@
+# Current state — October 16, 2026: beta6 OPEN; researched repairs verified
+
+DS-059 DONE — BETA6 OPEN, published 2026-10-16T15:06:09Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6. All seven public assets independently downloaded without authentication and byte/hash verified; all 54 package files match accepted inventory. Exact existing CI ZIP 25,988,814 bytes / SHA256 83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b reused without rebuilding. Production/tag source 5bdd16f282bae1aff9b2193f9c98b3fca1e89737; accepted native/live harness 0167f5b8a9beae6d87deed65c42593aaa043c690.
+
+Research-backed ProductGroup/Microdata/sole-variant-Offer identity and observed countdown-reset repairs pass 459 core tests, 94 headed native checks, all seven browser groups, complete zero-finding CodeQL and zero-advisory inventories. All 269 outcomes: 236 distinct successful scans across 56 hosts, 39 evidence-bearing pages, zero severe warnings/native privacy refusals/uncaught panel errors/profile stops. All 236 numerical estimates remain UNKNOWN; no independent detection rate is established. Real vivo selected-variant SKU/brand/479 PHP passes. Original blank-bootstrap failure is preserved; one unchanged-package retry completes its 20 cases. PR27 integrates runtime; PR28 records publication/evidence. Main and Store unchanged; PR9 draft. Independent rights-cleared/disjoint accuracy, native/legal/photo/OS/accessibility/resource/publisher/elapsed-lifecycle acceptance remains open beta and later promotion work.
+
+Receipts: workplane/runs/DS-059-COMPLETION-20261016.json, DS-059-BETA6-OPEN-20261016.json and DS-059-BETA6-PUBLIC-DOWNLOAD-VERIFIED-20261016.json. Report: workplane/research/DS-059-IMPLEMENTED-AND-RETESTED-20261016.md.
+
+## Previous beta5 checkpoint
+
+**BETA5 OPEN**, published2026-10-16T06:53:49Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5 . All7 public assets independently downloaded without authentication and byte/hash verified; all54 package files match the accepted inventory. Exact existing CI ZIP25,986,104bytes/SHA25617f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c; production/tag ae94718c310fdf253fcfbef156fc49b30bb4a8d9/tree175ee8f1c2148fd774288bb5d1937731b71e3ff0. Publication head56595b2b262db6884458d79507614526faa9c7d7 passes CI38863681460, complete finding-free CodeQL38863681463 and publication38863681505.
+
+DS-058 DONE: all268 changed-package outcomes,230 distinct successful scans/54 hosts,38 evidence-bearing pages,10 explicit manufacturer codes versus0 on the fresh beta4 baseline. Actual public GW3773 label/native MPN passes. All230 numerical estimates remain UNKNOWN;0 severe warnings,0 native privacy refusals,0 uncaught panel errors,0 profile stops.25 commerce-unconfirmed,4 unavailable/challenge,8 navigation errors,1 redirected/private surface refused.440 core,87 headed native,all7 browser groups and complete zero-finding CodeQL pass on accepted harnessaa84acc. Six complete original profiles usebbbed82; corrected profiles1/4 useaa84; all use identical compiled bytes. Original failed collections and all268 fresh beta4 outcomes are preserved. Report: workplane/research/DS-058-LIVE-BETA-ACCEPTANCE-20261016.md. Receipts: DS-058-COMPLETION-20261016.json, DS-058-BETA5-OPEN-20261016.json.
+
+PR24 integrated inside-panel outside results/public extraction improvements; PR25 integrated the manufacturer-code repair and collector isolation at canonical58856eb5226c80dfed90ad07a2d16143ef0a5fbd. PR26 records publication/evidence. Historical opinions remain dated and separate from local scores; new reputation navigation uses Trustpilot,BBB and government originals. Independent current merchant/product-disjoint accuracy, native/legal/photo/publisher/elapsed-lifecycle acceptance remain open beta validation and later promotion work. Successful extraction and historical labels do not establish a detection rate. Main/Store unchanged; PR9 draft.
+
+---
+
+# Current state — October16,2026: beta4 open, fresh testing complete; MPN repair verifying
+
+**BETA4 OPEN**, published2026-10-16T05:49:10Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.4 . All7 public assets independently downloaded without authentication and byte/hash verified; all54 package files match accepted inventory. Existing CI ZIP25,985,652bytes/SHA25684edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752; source/tag9aed11c9d26f79ba1f1824a92ccc1adec78905ce/tree5956c9f997fd58ef24c360c1679af40a50bcc8a3. Publication headb6ec6abca04584f231522d69294a62ac65564568/run38857635951.
+
+DS-056 DONE: inside-the-panel historical/security provider results with no new scam-service links; bounded public brand/MPN/store identity and private-safe policy extraction; commerce aliases, seller-evidence summary and zero-adverse dispatch disclosure. Original October13 retest:all268 outcomes,235 distinct scans/55 hosts,38 evidence-bearing pages,235 numerical UNKNOWN,zero severe warnings/private-page refusals. Same259 historical targets:227 reports/36 evidence-bearing pages versus10 before.428 core,86 headed native,seven browser groups and complete finding-free CodeQL pass. Actual historical lookup returned2 dated records; urlscan403 stayed an error. Initial harness/bootstrap failures remain preserved.
+
+DS-057 DONE: fresh October16 retest of the actual public ZIP completed all268 outcomes in eight clean genuine native Chrome profiles:221 scans/50 hosts,36 evidence-bearing pages,0 severe/privacy/uncaught-panel failures;22 navigation/environment errors,21 commerce-unconfirmed,4 unavailable. DS-058 is repairing a demonstrated split-element manufacturer-code gap and isolating failed collector navigations;440 core tests pass. Changed-package native/live acceptance is pending. Independent merchant/product-disjoint rights-cleared accuracy, native-language/legal, photographed-label and authenticated-publisher/elapsed-lifecycle acceptance are not inferred and remain later promotion work, not a new beta-entry gate. Main/Store unchanged; PR9 draft. Receipts: DS-056-COMPLETION-20261016.json and DS-056-BETA4-OPEN-20261016.json.
+
+---
+
+# Current state — October13,2026 DS-055 completed
+
+**BETA3 OPEN**, published2026-10-13T07:46:34Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3 . All7 public assets and all51 package files downloaded without authentication and byte/hash verified. Exact existing CI ZIP25,851,180bytes/SHA2560f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4;51files/54,948,488bytes. Tag points productionf2ea60e2ac42f6292d60dfe6069290a1758a6905/tree3cb142f0a06c4d9673e4c653272e8aba36433137. Accepted native/live harness8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. Publishing headc53a32366fcc344ffc923fb2c38f85a16c737cc4 passes CI38364674445, finding-free CodeQL38364674474 and publication38364674506.
+
+DS-055 DONE: same259 targets produce227 distinct successful native extractions /47 hostnames, versus11 reports/216 refusals before repair. Active credential and late-modal guards retained; private subtrees excluded.414 core,80 headed native and all7 accepted browser groups pass. All227 numerical estimates UNKNOWN;10 weak sale/policy findings, zero severe warnings. Historical labels and extraction success do not establish current fraud/dropshipping accuracy.
+
+Primary-source ScamFerret research and54 historical results are preserved with an offline comparison tool. No managed detection API found in the published artifact; cloud calls/blacklists were not added. Latest repositorySeptember30,2025; newer2026 paper lead inaccessible, similarly named screenshot service affiliation unverified. Receipts: workplane/runs/DS-055-COMPLETION-20261013.json and DS-055-BETA3-OPEN-20261013.json. Current queue: WORK-QUEUE. PR23 carries canonical release integration; PR9 remains draft; main/Store untouched. Independent promotion acceptance remains open beta work, not a new entry gate.
+
+---
+
+# Current state — October13,2026 DS-055 verified candidate
+
+**BETA2 OPEN; public-product refusal repair is verified, beta3 publication pending.** Same frozen259 outcomes:227 distinct successful product scans across47 hostnames, up from11 reports/216 refusals. Active credential and late-modal guards pass; private subtrees excluded.414 core tests,80 headed native tests, all seven standard browser job groups and finding-free CodeQL pass on accepted head8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af. All51 package hashes match exact existing CI ZIP0f52e8f4411dc49d0a64f98f6402e1c0ee68bee13a0f60927ae3a2db7f7314b4.
+
+All227 numerical estimates remain UNKNOWN;10 weak sale/policy findings and zero severe warnings. This repairs extraction coverage and does not establish current fraud/dropshipping accuracy. ScamFerret primary-source/API research and54 historical output comparisons are recorded; no public managed API found in published artifact, no model calls or runtime blacklist imports added. Receipt: workplane/runs/DS-055-COMPLETION-20261013.json; research: workplane/research/DS-055-SCAMFERRET-RESEARCH-20261013.md. Publish only these accepted bytes; main/Store untouched.
+
+---
+
+# Current state — October13,2026 DS-054
+
+**BETA2 OPEN; broader live testing exposes a public-store coverage failure.** All259 frozen candidate outcomes completed before production repair. The real native Scan control was tested on227 distinct accessible commerce pages across47 hostnames:216 refused,11 reports; all11 dropshipping/resale estimates remain UNKNOWN. Five weak final-sale policy findings, zero severe warnings. The requested150 native function tests are met;150 successful extractions are NOT met. Collection/CI/CodeQL success is not detection success.
+
+The source pool contains1,999 unique historical shopping-scam URLs from ten pinned ScamFerret datasets. Labels are source allegations, not independently accepted current fraud/dropshipping truth; operator/product independence remains unresolved. The original conservative harness-skipped collection remains preserved, followed by a full real-action collection on unchanged public beta2. Actual two-site field/desktop repros confirm dormant zero-rectangle password markup triggers native refusal. DS-055 is QUEUED for a privacy-preserving public-product extraction repair and same-corpus/private-modal regression verification. No detector/package change in DS-054.
+
+Report: workplane/research/DS-054-LIVE-AUDIT-20261013.md. Receipt: workplane/runs/DS-054-COMPLETION-20261013.json. Current tested beta2 ZIP SHA7fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8/all51 hashes verified in every profile. Main/Store untouched; no new beta-entry gate, invitations, publisher login or elapsed-time acceptance. Independent release-promotion acceptance remains open.
+
+---
+
+## Earlier checkpoints
+
+# Current state — October12 DS-053
+
+**BETA2 OPEN.** Published2026-10-12T22:59:54Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.2 . Actual public unauthenticated downloads of all6 assets and all51 package hashes are verified. ZIP25,849,500bytes/SHA2567fda25e48d7b5645140d9cda3fb4e3cd213fa659fdccfc4fecac2064955492b8;51 files/54,942,638bytes. Tag targets accepted/tested headc5326c7e7aa3deddae5cd2d2bf434fc739339e48, tree841c8e78619fd617069ab3309ad68d854e233bb4. Production6fe561807d6962fe51006eab99c0cf7017c2c6ee/tree8074e5bbcb8c678e7eacfe397457901186f0b661; existing accepted CI bytes reused without rebuilding.
+
+DS-050 completed the full260-case initial matrix before repairs; DS-051 fixed policy HTTP status transport; DS-052 tested all24 known-site cases before correcting the missing explicit HaremPants SKU.408 core,84 native and all accepted security/Chromium gates pass. Known repeat16PASS/8UNAVAILABLE/0FAIL: Warmly factory-direct statements captured; HaremPants/Sure Design affiliation and GPH42-Black captured; UntilGone404 pages unavailable. Numerical dropship/resell estimates remain UNKNOWN; this selected/correlated/development-exposed sample is not independent accuracy acceptance. The original lifecycle6 assertions passed before a temp cleanup error; that receipt remains and the affected-job rerun is green.
+
+Publishing head17bd12b83050cda525af59e096e65220c288cc91 passes CI38319642023, CodeQL38319642028 and publication38319642205. Runtime/test integration is releaseb03974f84422bc12e79b6287b4b884ee871631f9; publication documentation/receipts are tracked in PR21. Receipts: workplane/runs/DS-052-COMPLETION-20261012.json; workplane/runs/DS-053-BETA2-OPEN-20261012.json. Main7000cc3a0da5ec6a61bf417628ebc12a1cbcc096 and Store untouched. Existing GitHub release/issues route only; no participants, invitations or publisher authentication invented.
+
+Independent rights-cleared/disjoint corpus, owner-approved thresholds, real photographs/transcriptions, native/legal/other-OS/accessibility reviews, valid optional-provider key, real publisher identity/rights and actual elapsed weekly/retention lifecycle remain open beta validation/public-release-promotion work. They are not experimental beta-entry gates. DS-021 remains ongoing maintenance.
+
+---
+
+## Earlier checkpoints
+
+# Current state — October 12, 2026 DS-050/051/052
+
+**BETA OPEN; capability testing and repair verification continue.** Public beta1 remains available at the release below. DS-050 committed its matrix before execution and completed all260 initial browser outcomes before application repairs. Corrected input-driver verification on unchanged beta1 has91 live PASS/46 UNAVAILABLE/0 FAIL. The raw initial failures remain preserved. One confirmed application defect lost policy HTTP503.
+
+DS-051 is DONE: the minimal policy error transport repair passes405 core, complete zero-finding CodeQL, all seven Chromium jobs and83 extended native checks. N53 positive policy/N54 HTTP503 pass. Both headed N39 captures observed real pending work and next-read recovery. Tested head5f503dd294674594cd840c84410ec7848eaa316e; productiona345e6cc58571f8aac979dd311b2ec62954824d3/tree25d9fb2daa8d6f135f4e5f2629d3b88ee9abf249. Install ZIP25,849,036bytes/SHA256cf6e3a162cd30b5c4f7fa7aefd64707b569d8ea80d44f4582c912ef19bfc20c7; all51 files/54,941,386bytes match QA. Repaired candidate not yet published. Receipt: workplane/runs/DS-051-COMPLETION-20261012.json.
+
+DS-052 is RUNNING: six predeclared Warmly/UntilGone factory-direct listings and HaremPants/Sure Design affiliate/catalog controls,24 checks, against the existing repaired CI ZIP without rebuilding. Earlier manufacturer/marketplace surfaces did not establish known dropshipping-positive acceptance. Actual hits, misses and unavailable pages are recorded separately. This small developer-selected sample is not independent accuracy or deception truth. PR20 contains repair and prior PR19 test work; main/Store remain untouched.
+
+Independent rights-cleared/disjoint corpus, approved thresholds, real photos/transcriptions, native/legal/OS/accessibility reviewers, authorized optional-provider key, real publisher identity and actual elapsed weekly/retention lifecycle remain beta validation/public-release-promotion work, not experimental beta-entry gates.
+
+---
+
+## Previous DS-049 publication checkpoint
+
+Status: **BETA OPEN**. Published October 12 at 18:05:55Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.1 . The owner corrected the agent-imposed circular beta-entry gate. Independent accuracy/rights/threshold, native/legal/photo, broader operator/OS/resource/retention and applicable publisher/elapsed-week validation remain open beta work and later public-release promotion gates. Empty approvals are unchanged; no independent acceptance or 100% claim. Decision: `brain/decisions/20261012-002-beta-entry-and-promotion.md`.
+
+Public GitHub beta ZIP SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c`, 25,849,056 bytes; tag targets production `5e3dc52bc54630753cf37619225be49d42043a2d`, tree `e5841d40c6b22a6bdd7eb685956e221eceff0bcd`, 51 files / 54,941,299 bytes. The beta job downloads the previously verified CI artifact rather than rebuilding runtime. All 51 hashes and all six public asset digests match; the unauthenticated public ZIP was downloaded and its bytes/digest verified.
+
+Exact publishing head `a1f7556ea43e811928ef6c92b86e1aaca744e5c8` passes CI 38287899533 (405 core tests, 0 failures/skips), complete finding-free CodeQL 38287899608 and bounded-beta workflow 38287899652. Fresh dependency inventories report 0 advisories. The unchanged native/live protocol ran 18:00:18–18:05:32Z in Chrome 156.0.8078.4 / Ubuntu 24.04 Xvfb: 77 native checks pass, no stop failure; actual Walmart product scan retains UNKNOWN/no severe warning and live RDAP succeeds. Noctua 429, Etsy 403, Amazon 200/unavailable-or-identity-unconfirmed and CPSC timeout remain unavailable observations. Public resource metrics are descriptive, not independently approved budgets.
+
+PR 18 is merged into canonical release at `3200fc179c641649fa5fc455382e2680252c4ad0`, tree `310928298696ec2b3a6a8fb0001cdb58e79d4c6a`, exactly matching the tested tree. Public PR 9 remains draft; main/Store are untouched. The obsolete beta-readiness condition watch is disabled because beta is published; DS-021 weekly research continues. No participants, invitations, reviewers, rights, real publisher identity or elapsed time were invented.
+
+Current authority: `workplane/WORK-QUEUE.md`, `workplane/runs/DS-049-BETA-OPEN-20261012.json`; user installation and issue-reporting route: `BETA-TESTING.md`. Historical beta-held statements below are superseded in scope, with their original evidence retained.
+
+---
+
+## Historical DS-048 checkpoint
+
+# Current state — October 12, 2026 DS-048
+
+PRs #15–17 are integrated into canonical `release/security-performance-hardening` at `28be5696cd594fba482ae391230e38468fc63784`, tree `f2008f180ed14ed55a53639c0132ae69bbcc0694`, matching the local integration tree. PR #9 remains draft against unchanged main. External beta has not started.
+
+Current production source `5e3dc52bc54630753cf37619225be49d42043a2d`, tree `e5841d40c6b22a6bdd7eb685956e221eceff0bcd`, contains the resource host/path identity repair and source-only Trustpilot text corrections. Native harness selector values now pass as CDP arguments. Permissions, models, dependency locks and severe-verdict policy are unchanged. Clean prebuild/prezip removes obsolete generated chunks; repeated inventories match.
+
+Canonical tested head `2fa7d0a75998e6b1691060011fada9735309c94f` passes 405 core tests and 117 browser executions / 99 unique IDs: 77 headed, six natural worker/history checks, nine packaged Chromium, nine full headless Chrome 133, nine full headless Chrome 155 and seven locale groups; seven duplicate headless native checks excluded. CI 38266197583, CodeQL 38266197621 and Chromium 38266197484 are green. Full SARIF reports zero findings, with no severity/baseline/suppression exemption. Canonical natural worker shutdown took 30,136 ms with no worker debugger; actual history delete/reuse/restart remains verified. This is owned engineering evidence.
+
+Workflow-only dependency followup `3c7435f2fa2723e2b0a0914e5a428d2c8c49534b` passes CI 38267549335 and finding-free CodeQL 38267549288. Complete root and isolated browser-tool advisory inventories report zero vulnerabilities; artifact 11755192299 was downloaded/digest-verified. This is a current advisory lookup, not universal safety certification. PR #15 adds eleven scoped legal observations / eighteen original-source links, zero automatic weight and no runtime import; original-docket/access limits remain explicit.
+
+The exact 51-file / 54,941,299-byte QA payload and both actual CI Store ZIPs were downloaded and every entry/size/hash verified. QA artifact 11755200538 has archive SHA256 `c779fbd557e0e02d05b6513740e6d596cfcccfe9efb09d97a0a50ea4edceaedf`. Latest dependency-gated Store artifact 11754903493 has archive SHA256 `00fae5a5479e058430fe5ee3ce0e405bcd6bdd50b83bd31d76aa36cbcb7ffd98`; its actual install ZIP is 25,849,056 bytes, SHA256 `6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c`. Wrapper identities differ; all 51 runtime file hashes agree.
+
+Four current UI Store assets were refreshed from the green 0c4b0e96/38265325684 captures on the same exact runtime payload. Six asset PNGs decode, match dimensions/hashes and render deterministically; four UI crops are pixel-exact and visually inspected. Capture/scope provenance is retained. Synthetic owned label and signer demos are not photograph accuracy or external publisher acceptance.
+
+The independent corpus still has zero cases; the pinned empty/unapproved template returns NOT_ACCEPTED/exit 2. `workplane/evals/ACCEPTANCE-INPUTS.md`, `threshold-proposal.json` and `language-legal-review-template.json` prepare specific review inputs. Numeric proposal approval is null; none of eight 419-message catalogs has native/legal approval. Independent rights/clustering/accuracy, operator/platform/OS/accessibility/resource/long-duration/retention, real photographed labels, applicable publisher/source/elapsed-week acceptance remain required inputs. Any distribution to people must use an identified authorized channel. No reviewers, participants, rights, publisher identity or elapsed time were invented. Store-account settings are for the later Store route, not core unpacked QA.
+
+Current authority: WORK-QUEUE and `workplane/runs/DS-048-COMPLETION-20261012.json`. Earlier green CodeQL workflow conclusions did not mean zero findings; full-scan security repairs and both failed chooser-harness attempts remain traceable in the new receipt. Weekly research/readiness monitoring continues; main/tag/Store/public beta remain held.
+
+---
+
+## Historical DS-047 checkpoint
+
+# Current state — October 12, 2026 DS-047
+
+PR #14 is merged into canonical release/security-performance-hardening at 9b41362d126476461a9855d676bd22674414d59b; its tree matches tested harness add57146c60fc018fb883bd8031f11eb96af4ab7/ tree 4c5e49da18d1a4a433df678daaefde1baed6e1c8 with zero file differences. PR #9 remains draft; main/tag/Store/external beta are not published.
+
+Production 2641a597573f071f8360492d6dc577983c38c144/ tree db63f2b26bc569ffb7f7585b544d032436014386 remains unchanged: 51 files / 54,940,159 bytes. Current hosted QA artifact 11747233743, archive SHA256 1b7b785339ddfc6d0727416bcf2e45c1969e8b3f30f791a18081a74a8bed115b, is downloaded and all 51 hashes verified. Raw local install ZIP 24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1 is a different wrapper.
+
+CI 38250837430 (394 core tests, no failures/skips), CodeQL 38250837392 and Chromium 38250837414 are green. 77 headed + 6 lifecycle + 9 packaged Chromium + 9 full headless Chrome 133 + 9 full headless Chrome 155 + 7 locale groups = 117 browser case executions/99 unique IDs, excluding7 headless native repeats. Original Hindi/Arabic assertions, selected models, genuine permission UI, true Linux chooser and privacy checks remain intact.
+
+The worker was never debugger-attached. Chrome naturally stopped it after 30,157 ms with the native panel closed; a normal native action woke a fresh worker and preserved prior settings. 12 actual scans created sanitized history; the actual delete control emptied IndexedDB, a subsequent scan wrote normally, and full profile restart preserved one post-deletion row/preferences/revocation with a visible native panel. Raw Chrome experimental-hook, Details/paint and focus assumptions were corrected in the harness, with failed records retained. No production code/model/permission change.
+
+Current Store assets remain valid on identical runtime bytes. Independent corpus remains 0 cases/unapproved and is pinned to the current hosted QA archive. Full independent operator/platform/OS/accessibility/long-duration review, approved accuracy thresholds/clustering/rights, native-language/legal/photo review, applicable real publisher/source/elapsed-week acceptance and public distribution settings remain external inputs. Engineering evidence cannot supply those attestations. Conditional readiness and weekly research remain enabled. Current WORK-QUEUE and workplane/runs/DS-047-COMPLETION-20261012.json are authoritative.
+
+---
+
+## Historical DS-046 checkpoint
+
+# Current state — October12, 2026 DS-046
+
+PR13 is merged into canonical release/security-performance-hardening at8940834e10581572f97f0912f9dc996a3450aae4. Its tree exactly matches tested harness8bc3d70b429809ee5a12f819541e6b0c0bbe9097/ treef45511dc094882ad4c80bd0a9d0332e367d25c11. PR9 remains draft; no main merge, tag, Store submission or accepted external beta.
+
+Production2641a597573f071f8360492d6dc577983c38c144/ treedb63f2b26bc569ffb7f7585b544d032436014386 is unchanged.51 files/54,940,159bytes verified in hosted QA artifact11720232054, archiveSHA25662747c7be5ba854519dece8d5ba2259092edc796cd71e9225410277dcdcd8430. Raw local install ZIP remains24b365c62e640a03467e368f89a0473166597a3b3a80b1d838e394bf2b3b33a1; these are different wrappers and must not be confused.
+
+394 core tests, CI38187268119, CodeQL38187268158 and Chromium38187268027 pass.77 headed +9 Chromium packaged +9 pinned official Chrome133 +9 pinned current-stable Chrome155 +7 locale groups =111 browser case executions/93 unique case IDs;7 headless native repeats excluded. Actual two-window panels/settings, page/selection/store/image context-menu commands, model-change OCR cancellation/recovery,32 quiet tabs and malformed Chrome-local-storage restart recovery pass. Original Hindi/Arabic fixtures, all selected models, true Linux chooser and privacy N12–14 remain green. Version133/155 jobs cover packaged runtime; the expanded native suite uses156.
+
+Walmart's public product scan/resource observation succeeds on a5,402-element page. Noctua429, Etsy403 and Amazon HTTP2 transport failure remain unavailable, not accuracy passes. Idle/task/heap/aggregate-RSS observations are descriptive, not extension-only resource budgets. Two intermediate menu-harness failures remain preserved; no product code was changed for them.
+
+The release/operator checklist and four Store screenshots now use current runtime evidence, with original frames/crop hashes retained and pixels/dimensions/determinism verified. The independent corpus template is pinned to the current hosted QA archive and remains empty/unapproved. Engineering acceptance is mapped to the operator protocol without inventing an independent sign-off. Receipt: workplane/runs/DS-046-COMPLETION-20261012.json. The conditional beta-readiness check and existing weekly research are enabled.
+
+Remaining: independent rights-cleared merchant/product-disjoint accuracy and approved thresholds; full independent browser/site/OS/accessibility acceptance; native-speaker/legal-copy and photographed-label review; applicable real publisher/source authenticity and elapsed weekly lifecycle; accepted-package/account-specific public distribution. Current WORK-QUEUE is authoritative. Engineering evidence does not close those gates.
+
+---
+
+## Historical DS-045 checkpoint
+
+# Current state — October 11, 2026 DS-045 continuation
+
+Owner-directed queued completion is active. PR12 is merged into the canonical release branch at bb84b66bc65f60cd6f43f66a3f3fd2f0a8f7fa5e; public-release PR9 stays draft. The Git CLI lacked credentials; the connected GitHub app published under the renewed owner directive. Remote/local source trees were compared byte-for-byte through Git tree hashes. Earlier publication-blocked receipts below remain historical, not the current blocker.
+
+Current production2641a597573f071f8360492d6dc577983c38c144, treedb63f2b26bc569ffb7f7585b544d032436014386. Hindi uses English-first model order; selected Arabic OCR uses bounded high-quality2x enlargement, retaining1024px native detectors and a2048px OCR cap. Original failed images and strict native assertions remain.394 local tests and all required local/package gates pass;51 files/54,940,159bytes.
+
+Hosted harness4b857bf82310ac26ed286f6b737a27a237579245 passes CI38180469408, CodeQL38180469401 and Chromium38180469431:9 packaged +68 headed +7 locale groups =84 distinct checks, excluding7 headless native repeats. All selected models, both original images and N12–14 pass. Final harness480f71043c059b4695553c0718ef1d08d5c07728 passes CI38183021577, CodeQL38183021589 and Chromium38183021566:9 packaged +69 headed +7 locale groups =85 distinct checks. N34 opens the actual Linux OS chooser and selects a different image through desktop input. Downloaded QA archive and all51 package files were digest-verified; bounded native screenshots were reviewed. Integration has zero file changes from the tested head. See workplane/runs/DS-045-COMPLETION-20261011.json.
+
+Source follow-up retried all55 previously incomplete references, with four corrected primary URLs;86/98 general and10/15 litigation references have readable pages/replacements. Failed sources stay link-only and exact-entity/source authenticity remains unverified. Superseded task/continuation records were reconciled. Accuracy tooling and an empty/unapproved corpus template exist; the template intentionally fails acceptance, not a representative accuracy result.
+
+Independent corpus, native-speaker/legal review, photographs, elapsed weekly lifecycle, real publisher provenance, broader concurrent/context-menu/storage/minimum-version/performance acceptance and account-specific public release remain open. Current queue is authoritative; engineering passes do not close those gates.
+
+---
+
+## Historical October11 DS-044 checkpoint
+
+# Current state — October 11, 2026 authoritative override
+
+DS-044 completes the owner-directed orientation/remaining-implementation audit. Current remote release remains4dfa3c0 in draft PR9. Local source24089b7 repairs the known Hindi OCR failure by prioritizing English within the selected model pair; the unchanged failed input and original strict assertion are preserved, with an additional exact native-script/model-code regression.386 core tests and all clean Node22 local gates pass on51 files/54,939,890bytes; npm audit reports zero advisories at this run.
+
+**BLOCKED:** fresh repaired-package Chrome/CI/CodeQL and conditional external beta have not run. This host denies browser sockets; automatic approval review rejected remote Git publication to both release and isolated feature branches. Explicit approval to push feature/beta-readiness-20261011 to the verified chairmantrash/DropShredder repository is required for the existing hosted workflows. No remote branch changed, no main merge/tag/store publication. Full details: workplane/tasks/DS-044.md and workplane/runs/DS-044-COMPLETION-20261011.json. Current remaining-work authority: workplane/WORK-QUEUE.md.
+
+DS-041–043 implementation/research and previous bounded native checks are complete. Weekly litigation and broader source research are enabled in America/Chicago. Independent A01–D06, representative live category/language calibration, native-speaker/legal review, photo OCR and broader browser edges remain genuine acceptance work. Historical passes below do not verify repaired bytes.
+
+---
+
+## Historical checkpoints (retained; current override above takes precedence)
+
 # Current state
 
-**Phase:** Active implementation  
-**Product:** DropShredder  
-**Primary constraint:** zero-backend, zero-subscription, local-first  
-**Latest verified green lineage:** image history / provenance tests and Auto Source Hunt foundations
+**Phase:** Beta completion / verification
+**Product:** DropShredder
+**Primary constraint:** local-first, no mandatory backend, no paid API dependency
 
-## Done / green
-- Product doctrine and evidence/verdict gate
-- Agent/workplane context, memory and retrieval architecture
-- Canonical GitHub repository and CI
-- WXT/TypeScript Manifest V3 runtime
-- Side-panel active-tab scanner
-- Shadow-DOM page verdict stamp
-- Typed Product/Merchant/Evidence/Review/Report contracts
-- JSON-LD/OpenGraph product extraction foundation
-- Evidence independence/deduplication gate
-- Native IndexedDB observation history
-- Etsy claim/disclosure groundwork
-- Deep Hunt context menus for product/image/store pivots
-- Local review-provenance/anomaly engine
-- Amazon visible-review extraction path
-- Longitudinal scarcity and price-history evidence
-- Informational tracking/review technology signatures
-- Weekly dropshipper-enablement intelligence watch
-- Clean-room competitor/adjacent extension analysis
+## Current Chrome auto-alert change (2026-10-08)
+- Precision product-page classifier: independent product identity, purchase control and price/offer cues, with hard abstention for searches, collections, homepages, articles and sensitive pages.
+- Explicit optional HTTPS auto-alert permission: dynamic ISOLATED Chrome content script, no permanent all-sites host permission, no tabs/activeTab permission.
+- Short, dismissible top-right evidence toast on qualifying product listings; no trust-clean verdict from insufficient evidence.
+- Clicking toast requests side panel for the originating tab/document; manual full forensic scan remains available.
+- Auto scan is local and bounded; no background network OSINT, image acquisition, history write, or continuous DOM observers.
+- Research and browser test matrix: brain/research/2026-10-08-SHOPPING-PAGE-DETECTION.md and RELEASE-TESTING.md.
+- Chrome native code and unit tests passed CI/CodeQL on engineering SHA 7397a7c; **real Chrome runtime smoke still mandatory**.
 
-## Recently green
-- Auto Source Hunt toggle + indexed-source matching
-- Reputation Sweep launchers + complaint warning gates
-- Same-site return/refund policy analyzer + regression tests
-- Fulfillment observation parser + regression tests
+## Implemented beta scope
+- WXT/TypeScript Manifest V3 extension and active-tab scanner
+- Generic structured product extraction plus Amazon, Etsy and Walmart marketplace handling
+- Conservative evidence/verdict engine with independence/deduplication and severe-accusation gates
+- Local IndexedDB history with bounded retention
+- Longitudinal scarcity, price, review-change and stateful dark-pattern analysis
+- Review integrity/provenance, complaint consensus and adjusted visible-review rating
+- Exact-first product fingerprinting, local image hashing and cross-history image evidence
+- Merchant/origin/fulfillment/return-policy contradiction analysis
+- Explicit Deep Hunt source, image, store, reputation and RDAP investigations
+- Informational commerce/payment/supply-chain context with zero country/nationality risk weight
+- Exact-first regulatory safety matching primitive; fuzzy title matches remain candidate-only
+- Security, privacy, performance, data, architecture, release and CodeQL gates
+- Customer-facing report renderer extracted from the side-panel controller
+- Beta testing and release smoke-test protocols
 
-## In progress
-- DS-003 extraction hardening and marketplace fallbacks
-- DS-004/005 browser UX verification
-- DS-006 evidence-fusion calibration and contradiction model
-- DS-007/011 longitudinal observation calibration
-- DS-008 Etsy adapter fixtures
-- DS-009 Amazon adapter hardening
-- DS-012 image hashing/similarity
-- DS-013 reverse-image/supplier search validation
-- DS-015 review provenance fixtures and scoring calibration
-- DS-022 technology signature registry provenance/versioning
-- DS-023 fulfillment-claim vs carrier contradiction design
+## Deliberately deferred outside beta core
+These are not required for the beta mission and must not block it:
+- OCR Deep Hunt
+- local embeddings/semantic models
+- marketplace result-page badges
+- broad merchant relationship graph exploration
+- broad policy/storefront fingerprinting beyond current return/fulfillment checks
+- aggregate trade/factory intelligence
 
-## Current blockers
-- No code/build blocker.
-- Final browser interaction verification still requires loading a generated unpacked build in Chrome.
-- Some reverse-image providers do not expose stable documented direct-URL endpoints; keep fallbacks/user-triggered flows.
+They may be revisited only with a concrete shopper decision use case and performance/privacy justification.
+
+## Remaining external verification
+- Load the exact generated unpacked artifact in a real Chrome/Chromium session. CI-green static and simulated checks are not browser verification.
+- Run the mandatory browser/site smoke matrix in RELEASE-TESTING.md.
+- Record UI/runtime/performance defects and false positives from real pages.
+- Do not submit publicly until those browser checks pass.
 
 ## Scope lock
-- Maintain six modules only: provenance, merchant credibility, manipulation, fulfillment, complaints, focused safety.
-- Do not expand into generic cybersecurity or unrelated shopping intelligence.
-- Core stays local-first, zero-backend, zero-subscription.
+Default scan remains focused on provenance, merchant credibility, manipulation, fulfillment, complaints and focused safety. Country/nationality, storefront platform, importing and overseas fulfillment are never negative evidence by themselves.
+
+## Successor reconciliation — 2026-10-09
+DS-030 supersedes the open runtime handoffs on feature/runtime-reconciliation-20261009. Local runtime corrections and 230 passing tests are recorded; desktop Chrome remains unverified. All 174 research records have explicit continuation dispositions in intelligence/reconciliation-20261009.json. DS-031 through DS-034 are READY follow-ups, not shipped features. One pinned local runtime domain parser (tldts 7.4.18) replaces the prior zero-dependency baseline; see the current ADR and bundled licenses.
+
+## Browser environment attempt — 2026-10-09
+DS-031 is BLOCKED on assistant-side Chromium startup: the host denied process-singleton socket creation before extension loading. Candidate package hashes verified; zero browser passes. This is an environment blocker, not evidence of an extension defect. The owner currently has only a phone. DS-032–DS-034 implementation is independent of this verification gate. Exact receipt: workplane/runs/DS-031-BROWSER-ENVIRONMENT-20261009.json.
+
+## Assistant-side hosted browser path — 2026-10-09
+The earlier local startup blocker remains local only. GitHub hosted Chromium 156 now loads the exact candidate, and nine limited packaged-runtime checks pass. A separate native CDP diagnostic opens the actual side panel and observes a source-hunt setting save. CI/CodeQL on harness ef1e7914 are green. No production files changed. DS-031 is VERIFYING, not DONE: native consent/full scans/live merchants/category accuracy remain open. Large-text masthead reflow is an observed visual issue. Receipt: workplane/runs/DS-031-HOSTED-CHROMIUM-20261009.json. Other agents can reuse tools/browser-smoke and the native public-CDP bridge; the owner has only a phone and need not run the setup.
+
+## Findings applied / expanded hosted verification — 2026-10-09
+Latest production candidate 4fd0b24c fixes the large-text masthead with three CSS rules; production permissions, dependencies and forensic logic are unchanged. Harness cb85efb0 verifies all 14 package hashes. Nine packaged and fourteen distinct native headed checks pass (23 distinct; seven native repeats in headless). CI and CodeQL pass. Genuine Chrome Deny/Allow, one owned product alert, full title/SKU/price scan, quiet article/sign-in fixtures/manual refusal and accepted-grant revocation are observed through real desktop input. Reflow passes at 320/380/420/640px at 130% light/compact. The earlier native-consent and visual gaps are closed only for these bounded cases. Report-control enablement is not an export-download pass.
+
+Current authority: workplane/runs/DS-031-NATIVE-CONSENT-20261009.json and tools/browser-smoke/README.md. Historical receipts above are retained. DS-031 stays VERIFYING: independent A01–D06, live merchant/category accuracy, correct-tab/SPA and in-flight cases, searches/context menus, actual exports, RDAP/CPSC and concurrent panels remain open. DS-032–DS-034 stay READY. All 174 research records remain reconciled (33 scoped runtime plus further validation; 141 references/candidates not promoted to detectors). Research record counts are not shipped feature counts. Updated QA bundle/evidence and draft PR11 are available; no merge or extension publication. The owner has only a phone and needs no desktop setup for the proven hosted engineering workflow.
+
+## Active DS-031–034 continuation — 2026-10-09
+
+Owner: /root. Owner directive: “Do those things.” 245 core tests pass locally. Typecheck/security/Chrome-runtime/data/professionalism/build/package/performance checks pass. New candidate adds inert reference-list previews/signatures/manual subscriptions/rollback/expiry/role-separated unscored matching, exact LEI lookup, domain cancellation, stale-export guards and explicit same-URL variant attribution. Hosted verification is pending; do not reuse prior 23 passes as verification of the new bytes. Branch remains draft. Read brain/decisions/20261009-002-user-intelligence-and-runtime-gates.md and USER-LISTS.md.
+
+## Verified continuation — 2026-10-09
+
+This entry supersedes the pending continuation status above. Production source cb82ea8a06f987a529dc8fc70914aa36eb6c5377, exact 14-file clean package; harness 2fd69e5de3fb48121a1c5d938048af669a70eaf0. 246 core tests pass. Hosted Chromium 156.0.8078.4 passes 9 packaged plus 25 distinct native checks (34 total); 7 headless native repeats are not additional coverage. CI/CodeQL pass. Receipt: workplane/runs/DS-031-034-CONTINUATION-20261009.json; runtime workflow 37912196853, CI 37912196825, CodeQL 37912196901.
+
+Verified additions: actual redacted download; field-only sensitive refusal; tab/SPA/in-flight/selection invalidation; focus/Escape and max-eight search batches; same-URL selected SKU/price; RDAP/CPSC fixture cancellation/errors and zero-score candidates; unsigned feed preview/save/update/rollback/reset and exact zero-score role leads; live exact-LEI GLEIF. Amazon accessibility-heading extraction defect was reproduced, fixed and verified on both owned regression and the live Noctua listing. Walmart title observed. Etsy 403 / Noctua manufacturer 429 are unavailable, not accuracy passes. No severe allegation resulted from these live observations; structured identity/offers remain unresolved.
+
+DS-031–034 remain VERIFYING for their broader acceptance criteria. Native file-picker/signed-key onboarding/malformed storage, concurrent panels/full context-menu UI, live RDAP/CPSC, broader certifications, representative calibrated accuracy and independent A01–D06 remain open. Automatic weekly refresh/key rotation and OCR/embedding candidates were not shipped. Research application ledger: intelligence/application-continuation-20261009.md. PR9 -> PR10 -> PR11 ancestry verified; workplane/PR-RECONCILIATION-20261009.md records the proposed future sequence. Draft PR11 contains the work. Nothing merged, closed or published. No desktop action is required from the phone-only owner for this engineering workflow.
+
+## Canonical unified release state — 2026-10-09 (supersedes preceding PR status)
+PR #11 has now been **merged** into the internal release branch as `7271f9cafd54f6e2187a1bd4cc1835f9b09419c5`. Its engineering head `46cfa212cf92e9db8ad624741cff2a760449347d` passed 250 core tests (zero failures), nine packaged and 27 distinct native headed Chromium checks (36 total), CI and CodeQL. The previously observed revocation race was corrected with state-checked idempotent content-script registration and disabling auto-monitoring before permission cleanup. Native signed-key onboarding and CDP-dispatched actual file-input preview/malformed-file refusal now have bounded headed-browser passes, but neither authenticates an external issuer nor proves the graphical OS file picker. The exact 14-file package SHA list is pinned in `tools/browser-smoke/candidate-build-info.json`.
+
+PR #10 is integrated transitively and closed; older divergent PR #8 is closed as superseded, **not** merged; PR #5 remains internal-only. **PR #9 is the sole DRAFT consumer-release integration**, still targeting `main`. No public release, no main merge. A fresh unpacked QA-only Actions artifact is available from run `37914518107`. The independent A01–D06 matrix, representative calibrated category accuracy, concurrent native panels/context-menu, native OS file picker/malformed Chrome-storage, live RDAP/CPSC and certification-unit exclusions remain open. Optional OCR/embeddings/automated feed refresh/key rotation were not shipped. For the exact release sequence and evidence, read `workplane/PR-RECONCILIATION-20261009.md` and the latest PR #9 description.
+
+## Implementation-only continuation — 2026-10-09 (DS-035)
+Following the PR11-to-PR9 internal merge, the owner requested completing feasible **implementation** work ahead of independent acceptance. The single active integration target stays draft PR #9, `release/security-performance-hardening`. Production changes add bounded same-URL ProductGroup attribution from explicitly named selected swatches/selectors, invalidate stale report selection stamps for those controls, and extend the pure recall scope matcher to fixed-width lot numbers/ranges alongside exact serial scopes. Unnamed/ambiguous controls abstain; no arbitrary DOM widgets or credential fields are inspected. This matcher does not scrape users' serials/lot data or declare a unit recalled.
+
+Two additional corrections: the automatic evidence toast no longer suppresses itself merely because passive evidence meets a high-severity gate; it still makes no categorical fraud/safety claim. Explicit reverse-image search launchers fall back to a provider's manual search entry when the image URL is signed, fragmented, untrusted or private, rather than sharing potentially secret URL parameters. All remote searches remain user-selected and local passive scanning remains network-free.
+
+**Scope decision:** OCR models, local embeddings, background feed refresh and automatic publisher-key rotation are not bundled into the beta by default: they need rights/performance/security evidence, an approved voluntary user action model and licensing review. Treat these as optional research candidates, not secretly shipped features or claims that beta must wait for them. Real issuer authentication, category-calibrated accuracy, and live RDAP/CPSC scope are external verification/onboarding, not code completion. No `main` merge or Web Store publication.
+
+## DS-035 final engineering receipt — 2026-10-09
+Implementation complete; independent release QA remains open. The canonical production source is `f8b74a93f520a8d2982083283cfa6a9869a89143`, reproducibly packaged as 14 locked files in `tools/browser-smoke/candidate-build-info.json`. The current evaluated branch head before this receipt is `c18953c641972f7330b12c765c2747a76433fa10` (subsequent commits only adjust tests and documents). GitHub Actions CI `37917272765` passes **255/255 core tests**, CodeQL `37917272754` passes, and all three hosted Chromium jobs `37917272818` pass (**9 packaged + 27 distinct native headed checks**). This engineering suite remains distinct from independent A01–D06. Exact unpacked QA artifact: https://github.com/chairmantrash/DropShredder/actions/runs/37917272818/artifacts/11610420835 . Receipt: `workplane/runs/DS-035-IMPLEMENTATION-20261009.json`. Do not ship merely because of these engineering results.
+
+## Owner-directed full feature convergence — October 9, 2026 (DS-036)
+The owner explicitly rejected treating the earlier beta scope as project-complete. **Supersedes earlier statements in this file that OCR, automatic feed refresh and marketplace badges are unimplemented or deferred.** The only consumer release branch remains draft PR #9; changes are fully implemented on that branch but publication remains unauthorized.
+
+Implemented in the release source: (1) weekly opt-in signed intelligence feed refresh via Chrome alarms, only pre-authorized source URLs and pinned verified Ed25519 keys; no silent account or permission requests, no automatic issuer alias/rotation; (2) Amazon/Etsy/Walmart search-result badges, neutral manual-product navigation without background remote lookups; (3) bounded local 192-dimensional feature-hash product candidate similarity and separate source-scoped manufacturer/importer/seller relationship leads, unscored; (4) bundled English Tesseract worker/WASM/language data to run offline only for user-selected product label image with GTIN check and native BarcodeDetector fallback; (5) optional user-provided session-only Brave Search API key for single chosen supplier search, no storage or use in passive scan, may require a paid account/plan; all primary features function without it. Current UX/control toggles are in the native side panel.
+
+A local hashed lexical vector is **not** a neural sentence embedding; it provides a lightweight search feature within privacy and performance constraints. Exact manufacturer/retailer affiliation is not proven by text or matching products. Browser OCR availability and accuracy on real photographs, provider rights, and merchant/category false-positive calibration remain independent tests, not features asserted from code. No user secrets, raw photos or browser history should leave the core. New packaged 27-file Chrome candidate is pinned in `tools/browser-smoke/candidate-build-info.json` and GitHub Actions conducts genuine Chrome acceptance; the exact most recent acceptance result must be read rather than guessed.
+
+## DS-037 successor implementation closure — October 9, 2026
+Current owner requests finish remaining non-testing work, then resume live beta. The DS-036 implementation audit closes stale OCR fingerprint/provenance/license assembly, outdated privacy/feature disclosures, supplier-search stale consent status and broad revocation cancellation. 267 core tests, typecheck and static security/Chrome/data/architecture gates pass. Upstream OCR license notices and actual core7 provenance are retained; no WASM engine was patched. Receipt: workplane/runs/DS-037-IMPLEMENTATION-20261009.json and DS-037 task.
+
+## DS-037 live beta started — October 9, 2026
+Implementation sweep complete; release acceptance remains open. Production cc315e4690b9a3cc5a16b4d6d6e3b6dd739bb0c6, harness fe22e27b44424273d4b465d8af5cafbc40178bdb, exact 34-file package pass 267 core tests, CI37979166327, CodeQL37979166013 and Chromium37979165995. Chrome156.0.8078.4 passes 9 packaged +29 distinct headed native checks (38); repeated headless-native coverage excluded. Actual Deny/Allow/revoke, signed-feed onboarding, Chrome file-input and packaged synthetic-image OCR ran; real-photo accuracy untested.
+
+Live Amazon Noctua fan and Walmart LEGO toy titles observed with correct page attribution and UNKNOWN verdicts; structured identity/offers unresolved. Genuine RDAP reserved example.net, CPSC candidate search and exact-LEI GLEIF returned; no seller legitimacy/product safety authentication. Etsy403/Noctua429 unavailable. No uncaught extension errors/unapproved monitored origins or severe allegation. Screenshots preserved hosted; local archive download403 prevented visual review here. Receipt workplane/runs/DS-037-LIVE-BETA-20261009.json retains full executed reports/remaining tests. Historical raw notTested templates are superseded by executed tests/liveProviders and receipt scope correction.
+
+Still open: independent A01-D06, full toast/context-menu/concurrent-panel/OS-picker cases, weekly-refresh lifecycle, real-photo OCR and representative category calibration, paid-key Brave live request, Chrome133 and large real-page CPU/memory tests. Draft PR9 only; main unchanged; no public publication.
+
+## DS-038 release preparation complete — October9,2026
+The owner authorized completing records, release documentation, provenance and public-distribution preparation, followed by release only after acceptance/authorization. WORK-QUEUE and DS-036/034 records now cite the current34-file package and DS-037 outcomes. STORE-LISTING, PRIVACY refinements, STORE-PRIVACY-DECLARATIONS and RELEASE-CHECKLIST describe actual OCR, signed updates, neutral badges, transient optional key, alarms and third-party network metadata. No runtime/package byte changed.
+
+DATA-PROVENANCE and intelligence/PROVENANCE-20261009.json record sources, obligations and freshness. IANA CC0 protocol-registry terms verified and bundled RDAP services exactly match live publication2026-09-30. GLEIF CC0 Access Service terms checked.18 merchant records remain within recorded windows;31 neutral source-index rows and platform/tool patterns lack individual dates and are not advertised as universally current. Proprietary/research datasets and unverified publisher license declarations are not granted redistribution rights. No root source-reuse license selected. REGISTRY-MAINTENANCE assigns owner accountability and reviewer/release roles; no scheduled DS-021 researcher/shared hosted publisher silently installed.
+
+Recovered DS-037 screenshots now available for selected visual review. Four actual-UI1280x800 compositions, valid replacement440x280 promo,1400x560 marquee,128icon and source/transform manifest are in store-assets. Blank initial/pre-paint and Nuclear captures excluded.6 output PNGs decode, match dimensions/hashes and reproduce deterministically;4 UI crops match source pixels exactly. Data lint/security/diff/package-fingerprint checks pass. Full original beta matrix not newly repeated. Receipt: workplane/runs/DS-038-DISTRIBUTION-20261009.json.
+
+Release packet prepared for review. Independent acceptance, account-specific publisher settings and explicit owner release authorization remain pending. No main merge, release tag, Store upload/submission or publication.
+
+## Verified seven-language localization — 2026-10-10
+DS-039 production df803fec2c91ee72aedbdc8984a9c99c09ae982a, tested63056a30b8a32ce45989b8ded302c237292df3e9:42packaged files/48,018,147bytes,278core tests, CI/CodeQL and45distinct Chrome156 checks pass (9packaged+29native headed+7native-locale UI runs; headless repeats excluded). Seven additional336-message packs: Simplified Chinese/Hindi/Spanish/Arabic/French/Bengali/Brazilian Portuguese, English default. Chrome display language resolves offline; Arabic direction/isolation and320/420px enlarged-text reflow observed. Original detector notes/source data/raw exports and English OCR remain unchanged and disclosed. Locale tests render real extension documents in tabs; native consent/full scans remain English regression scope. Native-speaker/per-language full acceptance and broader independent/calibrated release gates remain open. Research/maintenance saved in Brain/TRANSLATIONS.md, exact evidence workplane/runs/DS-039-LOCALIZATION-20261010.json. New42-file/278/45results supersede old34/267/38 only for this tested localized package; historical receipts retained. Draft PR9/main7000cc3a remain release-gated.
+
+
+## DS-040 multilingual merchant verification — October10,2026
+Production ba9c51a74a9d914d5e75710902bfb1c4a431dbe5, tested b9d6bad55ac5f9d81a5300eae498e1ee4ac87774,51files/54,767,122bytes.337core tests, CI/CodeQL,9packaged,7locale profiles and53headed checks pass (69distinct; headless repeats excluded). All eight languages pass product/schema-free detection, native toast attribution/manual repeats, exclusions, source quotations/reviews/policies; modeled translated DOM and bounded20,000-element page pass. The seven added compressed OCR models total6,637,028bytes in this checked Node/zlib package.
+
+**BLOCKED at O-hin:** Hindi text is recognized but Latin MODEL12345 becomes |॥0/05। 42345. Chinese OCR passes; five later model checks and N12/N13/N14 were not executed. Reproduced unchanged in the single requested repeat; no OCR repair or assertion relaxation. Original continuation engineering agent receives workplane/handoffs/DS-040-O-HIN-20261010.md; full actual results and screenshot limitations are in workplane/runs/DS-040-MULTILINGUAL-20261010.json. No universal live-language/category accuracy, native-speaker review, real-photo OCR or independent release acceptance claimed. Draft PR9 remains unmerged/unpublished.
+
+## DS-041 regional origin implementation — October 10, 2026
+Owner authorized orientation plus Canadian/Mexican provider/sourcing research, outlet/source map and North American origin utility. Implemented eight separate stages within explicitly defined US/CA/MX scope. Claim-only manual scans cannot produce an all-local announcement. Local bounded dossiers require deliberate source review, exact product/seller/variant/specification binding, freshness and complete eligible stage coverage; positive status is DOCUMENTED from user-reviewed sources, never independent certification. Origin has zero warning-score effect. Dossiers stay in panel memory, reset on navigation and update current report/export only.
+
+34 dated authority/directory/manufacturer/provider/platform leads and five sourced relationships with zero risk weight; 90-day visible reference expiry and explicit limits, including link-only PROFECO reuse. Ten regional/provider comparison entries, preserved search bounds and regional neutral result links. 38 new messages in all eight catalogs. Documentation: NORTH-AMERICA-ORIGIN.md, regional Brain research and 20261010-003 decision. Native N30/N31 added; verification receipt pending. Prior Hindi OCR failure/independent acceptance gates remain open. No main merge, tag, store submission or public release.
+
+DS-041 local exact-source checkpoint: a80617685ad796e35cc815f79b356ab4c72c775d / tree7c2fec8dffa55b7d7938d2b7792d22431075be3f, Node22.18.0,364 core tests and all listed static/type/package/performance checks pass;51files/54,864,218bytes. Eight385-message catalogs. Candidate fingerprint and DS-041-NORTH-AMERICA receipt pinned. Native new-build acceptance pending; old69 DS-040 passes do not verify these bytes.
+
+## Standing, litigation and research refresh — 2026-10-10
+
+DS-042/043 implement seven separate evidence categories,32 sources, exact merchant/manufacturer/shipper identity binding, session-only reviewed imports and seven-day litigation expiry/status supersession.386 core tests and all local gates pass; exact candidate hosted checks pending. All38 prior research notes inventoried;98 reference checks retain failures. Weekly Monday litigation and Tuesday broader intelligence research scheduled in America/Chicago; no extension background court crawler or automatic database authenticity claimed. The f200 browser fingerprint failure was environment-only OCR manifest builder metadata and prevented all runtime checks; deterministic asset metadata correction preserves model hashes and strict Hindi assertion. DS-040 O-hin repair remains original-engineer-owned; main release stays gated.
+
+## Completed DS-041–043 engineering checkpoint — supersedes preceding pending verification
+
+Production source3fe9afe3441953f907fe46693033110b39a6ce2f, executed head9d79f4140704b7140d052b7b4a9d25a295f8c046,51 files/54,939,890bytes; zip25,848,569bytes SHA2562dc664ce6e9a4b16e4056194bc41e55874317f2a2956ab52562f3db12157159b.386 core and all local gates pass, CI38046448474/CodeQL38046448499 success. Runtime38046448478:9 packaged+57 headed+7 locale groups=73 distinct passes;7 headless duplicates excluded. N30/N31 origin/map and N32/N33 standing/litigation pass with synthetic source records and unchanged seller verdicts. Source-query grouping and changed-file test selection failures are preserved and corrected in the run receipt; no existing native assertion weakened. Four actual native screenshots downloaded/digest-checked/visually reviewed for bounded readability.
+
+The run stops at existing O-hin, MODEL12345→|॥0/05। 42345, exactly the prior failure; original-engineer repair remains required. Five later OCR and N12–14 unexecuted. Broader independent acceptance, calibration, source authenticity and native-speaker/legal review remain open. All requested research/implementation artifacts are durable in draft PR9; main unchanged, no merge/tag/store publication. Weekly litigation Monday and broader database Tuesday research enabled; source terms/coverage/expiry rules are in INTELLIGENCE-MAINTENANCE.md.

@@ -1,0 +1,44 @@
+{
+  "authenticated": false,
+  "verifier": "Separate implementing-agent anonymous HTTP downloads outside the publication workflow, compared with the locally prepared accepted CI packet; not independent human acceptance",
+  "assets": [
+    {
+      "name": "BETA-OBSERVATIONS.json",
+      "bytes": 18743,
+      "sha256": "9dee46c6e20c47c665ca3471a9c98bcb42ae0412328bb3aa1ec099fbd7119f34"
+    },
+    {
+      "name": "BUILD-INFO.json",
+      "bytes": 9331,
+      "sha256": "16f92b79e7f29de7b23c48639a08503847bf455d17068bbfb5fa3b60c1846498"
+    },
+    {
+      "name": "DropShredder-0.2.0-beta.6-chrome.zip",
+      "bytes": 25988814,
+      "sha256": "83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b"
+    },
+    {
+      "name": "INSTALL-AND-REPORT.md",
+      "bytes": 3364,
+      "sha256": "89e070b6d1d9f2ddd57ac1df1c9e511a5641f59317182560e5545eb8a676bb6d"
+    },
+    {
+      "name": "LIVE-PAGE-OUTCOMES.json",
+      "bytes": 3910587,
+      "sha256": "183244d9eaa52d87e6a2930eb77de75f6d4b2097f197ba79304a3fe24f71398f"
+    },
+    {
+      "name": "NATIVE-PROTOCOL.json",
+      "bytes": 95784,
+      "sha256": "a4aa777db4f20e8311fe3628911579a80539299d2dd0e9b0dae37e071a1fa432"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 103,
+      "sha256": "85309459e8ac65af703345d7f6e4280069e29dd56aab9d0e929170eed4a6e76e"
+    }
+  ],
+  "all54PublicPackageHashesMatch": true,
+  "startedAt": "2026-10-16T15:07:01.262385+00:00",
+  "verifiedAt": "2026-10-16T15:08:12.717982+00:00"
+}

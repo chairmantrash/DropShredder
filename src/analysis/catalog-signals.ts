@@ -16,8 +16,8 @@ export function catalogEvidence(snapshot:CatalogSnapshot):EvidenceSignal[]{
     severity:share>=.85?'moderate':'weak',
     confidence:snapshot.cardCount>=16?.82:.68,
     weight:share>=.85?9:4,
-    title:'Large share of visible catalog is marked down',
-    explanation:'A high fraction of visible product cards appear to use sale/reference pricing. This is not deceptive by itself; repeated observations can establish whether the sale state is effectively permanent.',
+    title:'Almost everything seems to be "on sale"',
+    explanation:'A large share of the store is showing sale pricing. That can be legitimate, but if the same "sale" never ends, the discount deserves a closer look.',
     observedValue:`${snapshot.saleCardCount}/${snapshot.cardCount} visible product cards appear discounted (${Math.round(share*100)}%)`,
     independentKey:'catalog-sale-prevalence',
   }];

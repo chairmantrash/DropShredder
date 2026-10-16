@@ -29,3 +29,18 @@ test('different return jurisdiction becomes friction signal',()=>{
   );
   assert.equal(result.evidence.some(e=>e.id==='RETURN_JURISDICTION_DIFFERS'),true);
 });
+
+
+test('business, manufacture and shipping claims stay separate',()=>{
+  const result=analyzeMerchantOrigin(
+    'Product details.',
+    [{
+      kind:'about',
+      url:'https://x/about',
+      text:'We are based in Austin, United States. Made in Japan. Orders ship from Canada.',
+    }]
+  );
+  assert.match(result.claims.businessLocation??'',/based in Austin/i);
+  assert.match(result.claims.manufacture??'',/Made in Japan/i);
+  assert.match(result.claims.fulfillment??'',/ship from Canada/i);
+});

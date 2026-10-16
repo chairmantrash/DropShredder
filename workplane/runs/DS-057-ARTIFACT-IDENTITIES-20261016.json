@@ -1,0 +1,124 @@
+{
+  "profiles": [
+    {
+      "shard": 0,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "ca4c20f2a73e9f6acda0046fbce4e75b047c82b2b7a8fc97ce0f738b8efbbeba",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 1,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "9143f7a68c8270eacba39fb7e84ceca8f6216be016a984bfa8e9dcd3a14426c1",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 2,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "d6e4ed41eed16cce114258746dee8d15a9b5cbbb64850d97f4c082ab6180971c",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 3,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "5626b0b037c63b31c9c806c0e52ee5508eae9382fdb30e57c9ad8e5ff1dcd5db",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 4,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "b89e43e09d8b850f2e93b0b646430afcccbdca1d369a95926d8c9feb781e0ef2",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 5,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "22f9e241b298d229b3bdc6b1fd62f7945c75354310469f0b21db31ed4efc8f73",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 6,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "c066a9404256c697d09ceddd0201bc1e29d1263300c058bf48a31bb1265fbf56",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    },
+    {
+      "shard": 7,
+      "sourceCommit": "b6ec6abca04584f231522d69294a62ac65564568",
+      "nativeProbeSha256": "6a8f3153c50abe56dd0e2b4328f9a83805e3af8b4ce2335caef9ce402adf419e",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "publicUrl": "https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.4/DropShredder-0.2.0-beta.4-chrome.zip",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false,
+        "authenticated": false
+      }
+    }
+  ]
+}

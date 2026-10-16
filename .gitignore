@@ -3,3 +3,29 @@ node_modules/
 .output/
 *.zip
 .DS_Store
+browser-smoke-results/
+beta-packet/
+tools/beta/__pycache__/
+tools/browser-smoke/*-beta.mjs
+tools/browser-smoke/beta-collector-manifest.json
+
+# Hash-checked OCR resources generated at build time; never fetched at runtime.
+/public/ocr/LANGUAGE-MODELS.json
+/public/ocr/chi_sim.traineddata.gz
+/public/ocr/hin.traineddata.gz
+/public/ocr/spa.traineddata.gz
+/public/ocr/ara.traineddata.gz
+/public/ocr/fra.traineddata.gz
+/public/ocr/ben.traineddata.gz
+/public/ocr/por.traineddata.gz
+# Generated packet contains already accepted CI bytes, not source.
+/beta2-packet/
+
+# Exact accepted beta publication packets are release artifacts.
+beta3-packet/
+
+/beta4-packet/
+
+/beta5-packet/
+
+/beta6-packet/

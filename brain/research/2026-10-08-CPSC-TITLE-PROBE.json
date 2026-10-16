@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-08",
+  "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Anker",
+  "bytes": 24938,
+  "sha256": "f574fb74dda6392e76d0d5b7153f56a218cfbdc5ed47984a78314362a779f71c",
+  "records": [
+    {
+      "id": 10631,
+      "number": "26288",
+      "title": "Trankerloop Baby Bath Seats Recalled Due to Risk of Serious Injury or Death to Children from Drowning; Violates Mandatory Standard for Infant Bath Seats",
+      "url": "https://www.cpsc.gov/Recalls/2026/Trankerloop-Baby-Bath-Seats-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Drowning-Violates-Mandatory-Standard-for-Infant-Bath-Seats"
+    },
+    {
+      "id": 10311,
+      "number": "25338",
+      "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+      "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+    },
+    {
+      "id": 10099,
+      "number": "25056",
+      "title": "Anker Soundcore Lithium-Ion Battery Powered Bluetooth Speakers Recalled Due to Fire Hazard; Sold Exclusively on Amazon.com by Anker Innovations",
+      "url": "https://www.cpsc.gov/Recalls/2025/Anker-Soundcore-Lithium-Ion-Battery-Powered-Bluetooth-Speakers-Recalled-Due-to-Fire-Hazard-Sold-Exclusively-on-Amazon-com-by-Anker-Innovations"
+    },
+    {
+      "id": 10067,
+      "number": "25011",
+      "title": "Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+      "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+    },
+    {
+      "id": 9881,
+      "number": "24146",
+      "title": "Anker EverFrost Lithium-Ion Battery Powered Coolers Recalled Due to Battery Fire Hazard; Manufactured by Anker Innovations",
+      "url": "https://www.cpsc.gov/Recalls/2024/Anker-EverFrost-Lithium-Ion-Battery-Powered-Coolers-Recalled-Due-to-Battery-Fire-Hazard-Manufactured-by-Anker-Innovations"
+    },
+    {
+      "id": 9557,
+      "number": "23147",
+      "title": "Fantasia Trading Recalls Anker Power Banks Due to Fire Hazard",
+      "url": "https://www.cpsc.gov/Recalls/2023/Fantasia-Trading-Recalls-Anker-Power-Banks-Due-to-Fire-Hazard"
+    },
+    {
+      "id": 9440,
+      "number": "23031",
+      "title": "Anker Play Products Recalls Bolt Foldable Children's Scooters Due to Violation of Federal Lead Paint Ban; Lead Poisoning Hazard",
+      "url": "https://www.cpsc.gov/Recalls/2023/Anker-Play-Products-Recalls-Bolt-Foldable-Childrens-Scooters-Due-to-Violation-of-Federal-Lead-Paint-Ban-Lead-Poisoning-Hazard"
+    },
+    {
+      "id": 9002,
+      "number": "21083",
+      "title": "Anker Play Products Recalls 10-in-1 Incredible Inventions Science Kit Due to Violation of the Federal Lead Paint Ban",
+      "url": "https://www.cpsc.gov/Recalls/2021/Anker-Play-Products-Recalls-10-in-1-Incredible-Inventions-Science-Kit-Due-to-Violation-of-the-Federal-Lead-Paint-Ban"
+    }
+  ],
+  "findings": [
+    "RecallTitle returned 8 versus ProductName 5. Fields differ; API retrieval is not comprehensive unit matching.",
+    "Both queries include Trankerloop from substring retrieval.",
+    "The packaged official Anker 25-466 notice did not appear in either query. No-result/partial feed must never establish safety.",
+    "Guide warns unknown query parameters can return all recalls. Runtime validates field enum, nonempty query and byte caps."
+  ]
+}

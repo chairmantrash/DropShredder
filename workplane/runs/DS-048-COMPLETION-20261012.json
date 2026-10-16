@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "task": "DS-048",
+  "recordedAt": "2026-10-12",
+  "status": "ENGINEERING_COMPLETE — INDEPENDENT_BETA_ACCEPTANCE_OPEN",
+  "ownerDirective": "Finish all work until beta is unblocked.",
+  "baseline": {
+    "release": "2a0745c114c2d7fab18e8e360e05dcee19fd0e38",
+    "localTree": "a32d70f46898d73e2015417336268016c5bcc336"
+  },
+  "production": {
+    "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+    "sourceTree": "e5841d40c6b22a6bdd7eb685956e221eceff0bcd",
+    "files": 51,
+    "bytes": 54941299,
+    "version": "0.2.0",
+    "runtimeChange": "Parse actual resource host/path identity; platform/provider presence remains informational. Source-only Trustpilot text cleanup also repaired.",
+    "permissionsChanged": false,
+    "modelsChanged": false,
+    "dependenciesChanged": false,
+    "severeVerdictPolicyChanged": false
+  },
+  "integration": {
+    "legalPr": 15,
+    "legalMerge": "d37a19507493b3776618c9da374a4e4a7f34a79f",
+    "securityPr": 16,
+    "securityMerge": "2fa7d0a75998e6b1691060011fada9735309c94f",
+    "dependencyPr": 17,
+    "dependencyMerge": "28be5696cd594fba482ae391230e38468fc63784",
+    "releaseBranch": "release/security-performance-hardening",
+    "integratedTree": "f2008f180ed14ed55a53639c0132ae69bbcc0694",
+    "localRemoteTreeEqual": true,
+    "mainMerged": false,
+    "publicPr9Draft": true,
+    "storeSubmitted": false
+  },
+  "verification": {
+    "canonicalTestedHead": "2fa7d0a75998e6b1691060011fada9735309c94f",
+    "canonicalTestedTree": "b018d753c966ec54814961259e2772a6a7288510",
+    "ci": {
+      "run": 38266197583,
+      "status": "success",
+      "coreTests": 405,
+      "failures": 0,
+      "skips": 0
+    },
+    "codeql": {
+      "run": 38266197621,
+      "status": "success",
+      "receipt": {
+        "sourceCommit": "2fa7d0a75998e6b1691060011fada9735309c94f",
+        "recordedAt": "2026-10-12T14:54:42.220Z",
+        "status": "NO_FINDINGS",
+        "reports": [
+          {
+            "file": "javascript.sarif",
+            "sha256": "ea036405bf7d4e1bb8ea6d9b8e463c5b83b47e61086f291df3feaf101f95e5ae",
+            "status": "NO_FINDINGS",
+            "findings": []
+          }
+        ]
+      },
+      "archiveArtifact": 11754214136,
+      "archiveSha256": "4e22263165343805b2904e57f15f423077a144e6754823271ab541c02aaaee8d"
+    },
+    "browser": {
+      "run": 38266197484,
+      "status": "success",
+      "headed": 77,
+      "lifecycle": 6,
+      "packaged": 9,
+      "chrome133": 9,
+      "chrome155": 9,
+      "localeGroups": 7,
+      "executions": 117,
+      "uniqueCaseIds": 99,
+      "excludedHeadlessNativeRepeats": 7,
+      "nativeVersion": "Chrome/156.0.8078.4",
+      "compatibilityScope": "Chrome133/155 full headless packaged-document/API subset; no claim of full native permission/OCR coverage on those versions",
+      "errors": []
+    },
+    "dependencyGate": {
+      "testedHead": "3c7435f2fa2723e2b0a0914e5a428d2c8c49534b",
+      "ciRun": 38267549335,
+      "codeqlRun": 38267549288,
+      "status": "success",
+      "advisoryArtifact": 11755192299,
+      "advisoryArchiveSha256": "c0f96e3026cf21de372cdc95d931020ff8d6be28cd4a87f1a775eff4b4540db9",
+      "rootGraphVulnerabilities": 0,
+      "browserToolGraphVulnerabilities": 0,
+      "runtimePackageAllHashesEqual": true,
+      "scope": "Current npm advisory database and pinned lockfiles; not a guarantee against all possible defects. Workflow-only followup; browser evidence remains valid on identical runtime bytes."
+    },
+    "localGates": [
+      "403 core tests after initial seven URL/CDP and two SARIF regressions;405 after two Trustpilot regressions",
+      "Strict typecheck, security/runtime/data/localization/professional audits",
+      "Clean build/ZIP/generated release/performance gates",
+      "Three current advisory audit inventories: runtime/full development/browser tools, zero vulnerabilities",
+      "Injected derived obsolete-chunk probe removed; repeated51-file clean build/ZIP inventories identical",
+      "Downloaded QA, Store and security/lifecycle artifact digests plus all51 package entries/path/size/hash checks",
+      "Six Store PNG dimensions/decodes/hashes, four exact UI crop comparisons, deterministic render and visual inspection",
+      "Current pinned empty corpus returns NOT_ACCEPTED/exit2; zero independent cases"
+    ]
+  },
+  "artifacts": {
+    "canonicalQa": {
+      "run": 38266197484,
+      "id": 11755200538,
+      "archiveSha256": "c779fbd557e0e02d05b6513740e6d596cfcccfe9efb09d97a0a50ea4edceaedf",
+      "all51FilesVerified": true,
+      "purpose": "Independent QA only; not an accepted beta"
+    },
+    "currentCiInstall": {
+      "artifactId": 11754903493,
+      "archiveSha256": "00fae5a5479e058430fe5ee3ce0e405bcd6bdd50b83bd31d76aa36cbcb7ffd98",
+      "sourceCommit": "5e3dc52bc54630753cf37619225be49d42043a2d",
+      "testedHead": "3c7435f2fa2723e2b0a0914e5a428d2c8c49534b",
+      "rawInstallSha256": "6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+      "rawInstallBytes": 25849056,
+      "files": 51,
+      "matchesCanonicalQaAllFiles": true
+    },
+    "canonicalEarlierCiInstall": {
+      "artifactId": 11754303807,
+      "archiveSha256": "c9e8c28c22718c121a5df146d876d02d552f8ad6cecf5efe3ff4d8445057a20b",
+      "rawInstallSha256": "6f29e93c4cd02c9f48e4cde3f6ded408c7a822449998b6416e2c9ccd430ab74c",
+      "rawInstallBytes": 25849056,
+      "sameAll51PayloadFiles": true
+    },
+    "lifecycle": {
+      "id": 11754867031,
+      "archiveSha256": "a78a0e266a752d0fa1ff309a22d57b98eea7e39e30bf62f2d86a4c7ef455046f"
+    },
+    "storeAssets": {
+      "manifest": "store-assets/ASSET-MANIFEST.json",
+      "capturedHarness": "0c4b0e96e9629aef2bee42cf7c0e46d7076cdc8e",
+      "capturedRun": 38265325684,
+      "nativeArtifact": 11755295027,
+      "nativeArchiveSha256": "ecdd82e25fcfa2bff577b5cdb7740494c36770f211af3a08f070b88ab24a9aaa",
+      "packagedArtifact": 11753953432,
+      "packagedArchiveSha256": "25007dfa5d543c50f301ed176ff006f880ab417ec474ac2cd555cde1c5b7893d",
+      "sameAll51RuntimeFiles": true,
+      "syntheticOwnedLabelDemo": true,
+      "uiPixelEdits": false,
+      "noPhotoAccuracyOrPublisherAuthenticationClaim": true
+    }
+  },
+  "lifecycle": {
+    "naturalIdleMs": 30136,
+    "workerDebuggerAttached": false,
+    "checks": [
+      {
+        "id": "L01",
+        "description": "Exact unmodified package mounts with a service worker that has no debugger attached",
+        "status": "PASS",
+        "elapsedMs": 6241,
+        "details": {
+          "files": 51,
+          "worker": {
+            "targetId": "D71820BBC407C6686C445C3C8D70FBD9",
+            "type": "service_worker",
+            "title": "Service Worker chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "attached": false,
+            "canAccessOpener": false,
+            "browserContextId": "9C34EF29694F13A252159581D918C3EB"
+          }
+        }
+      },
+      {
+        "id": "L02",
+        "description": "Chrome naturally terminates the idle worker after the native panel closes, without a stop or worker-debugger command",
+        "status": "PASS",
+        "elapsedMs": 30256,
+        "details": {
+          "idleElapsedMs": 30136,
+          "workerTargets": [],
+          "pageWidthBefore": 902,
+          "pageWidthAfter": 1288,
+          "panelDebuggerDetached": true,
+          "scope": "Native panel closed; browser/page remain open; no worker debugger, force stop or time manipulation"
+        }
+      },
+      {
+        "id": "L03",
+        "description": "A normal native settings action wakes a fresh worker and preserves the earlier saved patch",
+        "status": "PASS",
+        "elapsedMs": 1810,
+        "details": {
+          "worker": {
+            "targetId": "EA0AEE3B0292EDD8AFACA1B18511DC42",
+            "type": "service_worker",
+            "title": "Service Worker chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "url": "chrome-extension://hlgaipcndnmnkadbbkchamfngplnnhpg/background.js",
+            "attached": false,
+            "canAccessOpener": false,
+            "browserContextId": "9C34EF29694F13A252159581D918C3EB"
+          },
+          "settings": {
+            "autoProtection": false,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          }
+        }
+      },
+      {
+        "id": "L04",
+        "description": "Genuine Chrome consent and12 actual product scans create only sanitized local history",
+        "status": "PASS",
+        "elapsedMs": 9280,
+        "details": {
+          "count": 12,
+          "rows": [
+            {
+              "url": "https://fixture.example.com/products/history-4",
+              "id": "391ca700-013f-4257-91e7-b6a6d74b39ec",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 4"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-10",
+              "id": "75838e9c-f548-4524-b0bf-dbaee4ac43ea",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 10"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-3",
+              "id": "75d66a72-cde8-473f-878c-a75bcb06762b",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 3"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-6",
+              "id": "835272ef-eccf-49e0-bfde-ef8b932c575b",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 6"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-8",
+              "id": "857fb31d-2fa4-445c-b668-e6b790511539",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 8"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-2",
+              "id": "8d394b23-23c3-43c1-864a-b0d6e0ded3e4",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 2"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-1",
+              "id": "90a89f33-f1b7-4c4b-97cb-fdedce793915",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 1"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-0",
+              "id": "a17b71b6-f5ef-461f-85cb-5988909d0c89",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 0"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-7",
+              "id": "a52b4d19-5505-4d47-967c-47caf5e931da",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 7"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-11",
+              "id": "d2e8e0dc-b1f8-4496-9ae3-4d250768963b",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 11"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-5",
+              "id": "f6a27fba-2ab5-4dfd-9bfa-c4cd83ecad8f",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 5"
+            },
+            {
+              "url": "https://fixture.example.com/products/history-9",
+              "id": "ff94de51-d13d-4190-b32f-bcccc25cca0e",
+              "identityKey": "domain-title:fixture.example.com|owned history mug 9"
+            }
+          ]
+        }
+      },
+      {
+        "id": "L05",
+        "description": "The actual DELETE MY SCAN HISTORY control clears IndexedDB and the next real scan writes normally",
+        "status": "PASS",
+        "elapsedMs": 1514,
+        "details": {
+          "history": {
+            "count": 1,
+            "rows": [
+              {
+                "url": "https://fixture.example.com/products/history-12",
+                "id": "b265b259-2fa3-48eb-8e96-48067a191275",
+                "identityKey": "domain-title:fixture.example.com|owned history mug 12"
+              }
+            ]
+          },
+          "preservedSettings": {
+            "autoProtection": true,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          }
+        }
+      },
+      {
+        "id": "L06",
+        "description": "Full browser restart retains the post-deletion history and preferences while revoked monitoring remains off",
+        "status": "PASS",
+        "elapsedMs": 2428,
+        "details": {
+          "settings": {
+            "autoProtection": false,
+            "autoSourceHunt": true,
+            "preferMadeInUSA": true,
+            "toneMode": "professional",
+            "weeklyIntelligenceUpdates": false
+          },
+          "history": {
+            "count": 1,
+            "rows": [
+              {
+                "url": "https://fixture.example.com/products/history-12",
+                "id": "b265b259-2fa3-48eb-8e96-48067a191275",
+                "identityKey": "domain-title:fixture.example.com|owned history mug 12"
+              }
+            ]
+          },
+          "scope": "Full disposable profile restart, not elapsed-week signed publisher acceptance"
+        }
+      }
+    ],
+    "scope": "Actual native controls, naturally stopped/woken worker,12 actual scans/delete/reuse/profile restart. Owned short-interval evidence; not independently labeled merchant data, calibrated long-duration resource/retention acceptance or elapsed-week publisher lifecycle."
+  },
+  "historicalAttempts": [
+    {
+      "head": "616c6ffbc7c88ea99622fcd0949c8b2bb3eab74e",
+      "ci": 38263895924,
+      "codeql": 38263895864,
+      "browser": 38263895876,
+      "security": "Five remaining full-scan findings: Trustpilot bad-tag/double-entity extraction and three registry URL assertions. Original resource/selector findings absent.",
+      "securityArtifact": 11753134768,
+      "securityArchiveSha256": "e7806057b7d1455605b8fd9f8a22b683ef7bd0cdc86c927d10ca1289c017fae7",
+      "headed": "FAIL N38-store after15 passes: engineer incorrectly expected site:fixture.example.com; actual selected search was quoted merchant plus site:bbb.org. Not a product/runtime failure.",
+      "headedArtifact": 11754006365,
+      "headedArchiveSha256": "a585dc885a58b4d8a85e3a15411d8bd2cf95066c8e3483d1372cf51b0f3f1840"
+    },
+    {
+      "head": "b9e5516bf7a60c8d1206dc2d492f89b81fadf9a8",
+      "ci": 38264910103,
+      "codeql": 38264910127,
+      "browser": 38264910617,
+      "security": "NO_FINDINGS",
+      "securityArtifact": 11754561183,
+      "securityArchiveSha256": "52667fe64b886d7500d2b5807580caa6d5edf4f30599575e9f07bc941c255bfd",
+      "headed": "FAIL N38-store after15 passes: engineer looked for bbb.org in the label, while actual rendered choice is bbb — www.google.com. Corrected explicit choice and exact query; no max-tab/privacy/OCR assertion relaxed.",
+      "headedArtifact": 11754177242,
+      "headedArchiveSha256": "df0a13a2057d3cdb14517140eb559bf95fefdb7900f041e5a5c30a573ed48133"
+    },
+    {
+      "head": "0c4b0e96e9629aef2bee42cf7c0e46d7076cdc8e",
+      "tree": "77fd0645cf1a29ccaf2dc68a4114e2cf2c54a441",
+      "ci": 38265325734,
+      "codeql": 38265325988,
+      "browser": 38265325684,
+      "status": "ALL_GREEN;405core/117browser/zeroSARIFfindings"
+    }
+  ],
+  "reportMetadataLimit": "Raw native notTested text retains obsolete storage/context-menu phrases. Actual named N37/N38 passed outcomes and DS-046/047/048 engineering mappings supersede those phrases; independent operator review remains genuinely unperformed.",
+  "research": {
+    "legalReferencesIntegrated": 11,
+    "uniqueOriginalSourceLinks": 18,
+    "automaticRiskWeight": 0,
+    "runtimeImport": false,
+    "fullDocketAuthentication": false,
+    "photoSourceResearch": "OFF contributor-taken/CC ShareAlike documentation reviewed; separate graphical rights/database obligations and unavailable full terms remain. No images imported or blanket rights/ground truth clearance."
+  },
+  "acceptancePreparation": {
+    "packet": "workplane/evals/ACCEPTANCE-INPUTS.md",
+    "languageLegalTemplate": "workplane/evals/language-legal-review-template.json",
+    "languages": 8,
+    "messagesPerLanguage": 419,
+    "nativeApprovals": 0,
+    "legalApprovals": 0,
+    "thresholdProposal": "workplane/evals/threshold-proposal.json",
+    "thresholdOwnerApproval": null,
+    "thresholdsWrittenIntoCorpus": false,
+    "zeroErrorPlanningBounds": {
+      "precisionTrueWarnings": 73,
+      "falsePositiveBenignCases": 189,
+      "independenceAssumptionNeedsReview": true
+    }
+  },
+  "accuracyGate": {
+    "status": "NOT_ACCEPTED",
+    "independentCases": 0,
+    "issues": [
+      "Independent ground truth not attested",
+      "Corpus rights not cleared",
+      "Owner threshold approval missing",
+      "Merchant/product clustering review missing",
+      "Numeric acceptance thresholds missing",
+      "No observed evaluation cases"
+    ]
+  },
+  "remainingAcceptance": [
+    "Independent rights-cleared merchant/product-disjoint corpus, actual predictions, reviewed calibration exclusions/clustering and approved numeric thresholds",
+    "Full independent operator/platform/OS/accessibility/resource/long-duration/retention acceptance",
+    "Native-language and legal-copy review of eight419-message catalogs",
+    "Independent photographed/blurred/rotated packaging label truth and actual OCR outputs",
+    "Applicable actual publisher/source rights/key provenance and naturally elapsed weekly lifecycle",
+    "If distributing to people, identified authorized tester/distribution channels; Store account/contact/visibility only for later Store route"
+  ],
+  "externalBeta": {
+    "ready": false,
+    "started": false,
+    "status": "BLOCKED_BY_EXTERNAL_ACCEPTANCE_INPUTS",
+    "participants": [],
+    "invitationsSent": false,
+    "groundTruthReviewersRightsPublisherIdentityOrElapsedTimeInvented": false
+  }
+}

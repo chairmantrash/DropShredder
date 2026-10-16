@@ -1,0 +1,25 @@
+{
+  "task": "DS-CATEGORY-GAPS-20261008",
+  "checkedAt": "2026-10-08T10:40:18.126264+00:00",
+  "result": "PASS \u2014 research integrity only",
+  "findings": 22,
+  "sourcePresenceRecords": 22,
+  "categoryGroups": 7,
+  "checks": [
+    "unique finding IDs",
+    "source-presence coverage",
+    "provenance/depth/limitations fields",
+    "exact serial exclusions retained",
+    "no runtime risk weights"
+  ],
+  "notTested": [
+    "physical or laboratory testing",
+    "live shopping listing scans",
+    "serial/approval/certificate lookups",
+    "login/account creation",
+    "API integration",
+    "regional calibration",
+    "Chrome QA",
+    "runtime or build edits"
+  ]
+}

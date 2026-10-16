@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "8a70b96ff030ba50c1ac83e5ae3e6d0ca18837af",
+  "recordedAt": "2026-10-13T07:22:25.248Z",
+  "status": "NO_FINDINGS",
+  "reports": [
+    {
+      "file": "javascript.sarif",
+      "sha256": "57ee2a13cf9869f2debac650d0c9357c8e14f436b71ac5281be46b8e08abe0a1",
+      "status": "NO_FINDINGS",
+      "findings": []
+    }
+  ]
+}

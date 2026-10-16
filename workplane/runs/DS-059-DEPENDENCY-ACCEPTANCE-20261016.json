@@ -1,0 +1,30 @@
+{
+  "artifact": 12035097073,
+  "wrapperSha256": "5f2a73d052dd4bb33024aa66a40a00e1b69f96b329896bb7897f15c73911bdb8",
+  "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "summaries": [
+    {
+      "file": "dependency-audit.json",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      }
+    },
+    {
+      "file": "browser-tool-dependency-audit.json",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      }
+    }
+  ],
+  "scope": "Fresh advisory inventories, not universal safety certification"
+}

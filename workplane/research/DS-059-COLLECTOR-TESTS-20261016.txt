@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: current structured quote-only umbrella product is tested without inventing a price
+ok 1 - current structured quote-only umbrella product is tested without inventing a price
+  ---
+  duration_ms: 2.214052
+  type: 'test'
+  ...
+# Subtest: named multiple-offer product remains testable without selecting one variant price
+ok 2 - named multiple-offer product remains testable without selecting one variant price
+  ---
+  duration_ms: 0.250363
+  type: 'test'
+  ...
+# Subtest: unrelated Product markup alone cannot bypass the price or current-product gate
+ok 3 - unrelated Product markup alone cannot bypass the price or current-product gate
+  ---
+  duration_ms: 2.343966
+  type: 'test'
+  ...
+# Subtest: ordinary priced public-commerce admission remains supported
+ok 4 - ordinary priced public-commerce admission remains supported
+  ---
+  duration_ms: 0.222035
+  type: 'test'
+  ...
+# Subtest: general text with a price alone remains unconfirmed
+ok 5 - general text with a price alone remains unconfirmed
+  ---
+  duration_ms: 0.213739
+  type: 'test'
+  ...
+# Subtest: variant attribution survives scrubbed tracking URLs
+ok 6 - variant attribution survives scrubbed tracking URLs
+  ---
+  duration_ms: 0.361293
+  type: 'test'
+  ...
+# Subtest: legacy cart/account HTML paths are refused before navigation
+ok 7 - legacy cart/account HTML paths are refused before navigation
+  ---
+  duration_ms: 0.543109
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 195.367019

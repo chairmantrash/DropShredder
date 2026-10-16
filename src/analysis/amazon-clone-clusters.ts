@@ -83,10 +83,10 @@ export function amazonCloneClusterEvidence(cards:AmazonSearchCard[]):EvidenceSig
     severity,
     confidence:crossBrand?.9:.76,
     weight:severity==='strong'?22:11,
-    title:'Amazon commodity clone cluster detected',
+    title:'Amazon has several look-alike versions of this product',
     explanation:crossBrand
-      ? 'Multiple distinct ASINs and apparent brand identities reuse the same normalized Amazon primary-image asset. This strongly suggests a shared underlying commodity, private-label reuse, duplicate catalog creation, or closely related listings. It does not by itself identify the original manufacturer.'
-      : 'Multiple ASINs reuse the same normalized Amazon primary-image asset. These may be legitimate variations or duplicate/closely related listings; inspect brand, seller and specification differences.',
+      ? 'Several Amazon listings under different apparent brands use the same main product image. They may be private-label versions of the same underlying item or closely related listings. This still does not tell us who originally made it.'
+      : 'Several Amazon listings reuse the same main product image. They may be legitimate variations or duplicate versions, so compare the brands, sellers and specifications before assuming they are identical.',
     observedValue:`${distinctAsins} ASINs • ${distinctBrands || 'unknown'} apparent brand(s)${spread>0?` • visible price spread $${spread.toFixed(2)}`:''}`,
     independentKey:`amazon-clone:${strongest.familyKey}`,
   }];

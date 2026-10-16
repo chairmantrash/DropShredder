@@ -24,11 +24,11 @@ test('ships known HaremPants / Sure Design network out of box',()=>{
   assert.equal(merchantNetworkEvidence('harempants.com')[0]?.severity,'strong');
 });
 
-test('exact shared SKU across domains is strong network evidence',()=>{
+test('store-local SKU across domains cannot establish a merchant network',()=>{
   const current=report('harempants.com','GPH42-Black');
   const other=report('suredesigntshirts.com','GPH42-Black');
   const evidence=localMerchantNetworkEvidence(current.product,[obs(other)]);
-  assert.equal(evidence[0]?.severity,'strong');
+  assert.equal(evidence.length,0);
 });
 
 test('explicit cross-domain merchant reference is moderate evidence',()=>{

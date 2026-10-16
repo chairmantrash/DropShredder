@@ -1,0 +1,515 @@
+{
+  "task": "DS-039",
+  "date": "2026-10-10",
+  "status": "DONE — localized implementation and bounded engineering verification; independent language/release acceptance remains separate",
+  "baseline": "3426658114477de7c17bc0a178749fd1d288a273",
+  "productionSource": "df803fec2c91ee72aedbdc8984a9c99c09ae982a",
+  "sourceTree": "6277ca682cdcdc1b8e4f9c7721880ed97263cdd4",
+  "testedHarness": "63056a30b8a32ce45989b8ded302c237292df3e9",
+  "changes": {
+    "languages": [
+      "zh_CN",
+      "hi",
+      "es",
+      "ar",
+      "fr",
+      "bn",
+      "pt_BR"
+    ],
+    "default": "en",
+    "messagesPerPack": 336,
+    "framework": "native Chrome i18n; no new runtime dependency",
+    "permissionsChanged": false,
+    "scoringChanged": false,
+    "sourceFactsChanged": false,
+    "ocrModelChanged": false,
+    "rawReportSchemaChanged": false
+  },
+  "localVerification": {
+    "node": "22.20.0",
+    "coreTests": 278,
+    "coreFailures": 0,
+    "typecheck": "PASS",
+    "localizationAudit": "8 catalogs / 336 messages /205 authored literal calls PASS",
+    "security": "PASS",
+    "chromeRuntime": "PASS",
+    "professionalism": "PASS (existing size/dependency review warnings retained)",
+    "dataLint": "PASS",
+    "build": "PASS",
+    "zip": "PASS",
+    "releaseAudit": "PASS",
+    "performanceAudit": "PASS",
+    "diffCheck": "PASS"
+  },
+  "package": {
+    "files": 42,
+    "unpackedBytes": 48018147,
+    "fingerprint": "tools/browser-smoke/candidate-build-info.json",
+    "zipBytes": 19135164,
+    "zipSha256": "9201eaea403e25f6bddf64fa0cf3aaa3ea2ca424c6555536a590f9d03f3521c8"
+  },
+  "hostedVerification": {
+    "CI": {
+      "run": 38022288905,
+      "status": "success"
+    },
+    "CodeQL": {
+      "run": 38022289160,
+      "status": "success"
+    },
+    "Chromium": {
+      "run": 38022288959,
+      "status": "success",
+      "browser": "Chrome/156.0.8078.4",
+      "os": "linux 6.17.0-1022-azure",
+      "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+      "uniqueExecutedChecks": 45,
+      "packagedIds": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09"
+      ],
+      "nativeHeadedIds": [
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "N07",
+        "N08",
+        "N09",
+        "N10",
+        "N11",
+        "N15",
+        "N16",
+        "N17",
+        "N18",
+        "N19",
+        "N20",
+        "N25",
+        "N21",
+        "N22",
+        "N23",
+        "N26",
+        "N27",
+        "N28",
+        "N29",
+        "N24",
+        "N12",
+        "N13",
+        "N14"
+      ],
+      "localeIds": [
+        "L-zh_CN",
+        "L-hi",
+        "L-es",
+        "L-ar",
+        "L-fr",
+        "L-bn",
+        "L-pt_BR"
+      ],
+      "headlessNativeRepeatsExcluded": 7
+    }
+  },
+  "localeEvidence": {
+    "reportStatus": "PASS",
+    "tests": [
+      {
+        "id": "L-zh_CN",
+        "status": "PASS",
+        "elapsedMs": 7534,
+        "details": {
+          "native": {
+            "uiLanguage": "zh-CN",
+            "resolved": "zh-CN",
+            "description": "本地优先的商品取证与来源分析。",
+            "title": "打开 DropShredder"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-hi",
+        "status": "PASS",
+        "elapsedMs": 1036,
+        "details": {
+          "native": {
+            "uiLanguage": "hi",
+            "resolved": "hi",
+            "description": "स्थानीय-प्रथम वाणिज्य जाँच और उत्पाद स्रोत विश्लेषण।",
+            "title": "DropShredder खोलें"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-es",
+        "status": "PASS",
+        "elapsedMs": 1106,
+        "details": {
+          "native": {
+            "uiLanguage": "es",
+            "resolved": "es",
+            "description": "Análisis local de comercio y procedencia de productos.",
+            "title": "Abrir DropShredder"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 315,
+              "body": 315
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-ar",
+        "status": "PASS",
+        "elapsedMs": 938,
+        "details": {
+          "native": {
+            "uiLanguage": "ar",
+            "resolved": "ar",
+            "description": "تحليل محلي للتجارة ومنشأ المنتجات.",
+            "title": "افتح DropShredder"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-fr",
+        "status": "PASS",
+        "elapsedMs": 1021,
+        "details": {
+          "native": {
+            "uiLanguage": "fr",
+            "resolved": "fr",
+            "description": "Analyse locale du commerce et de l’origine des produits.",
+            "title": "Ouvrir DropShredder"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-bn",
+        "status": "PASS",
+        "elapsedMs": 976,
+        "details": {
+          "native": {
+            "uiLanguage": "bn",
+            "resolved": "bn",
+            "description": "স্থানীয়ভাবে বাণিজ্য ও পণ্যের উৎস বিশ্লেষণ।",
+            "title": "DropShredder খুলুন"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      },
+      {
+        "id": "L-pt_BR",
+        "status": "PASS",
+        "elapsedMs": 995,
+        "details": {
+          "native": {
+            "uiLanguage": "pt-BR",
+            "resolved": "pt-BR",
+            "description": "Análise local de comércio e origem de produtos.",
+            "title": "Abrir DropShredder"
+          },
+          "extensionId": "hlgaipcndnmnkadbbkchamfngplnnhpg",
+          "browser": "Chrome/156.0.8078.4",
+          "dimensions": [
+            {
+              "viewport": 320,
+              "document": 305,
+              "body": 305
+            },
+            {
+              "viewport": 420,
+              "document": 405,
+              "body": 405
+            }
+          ]
+        }
+      }
+    ],
+    "errors": [],
+    "requests": [],
+    "visualReview": "All7 actual native-locale rendered document top sections inspected: glyphs render, controls/disclosures readable, Arabic RTL observed; not native-speaker review or all-frame acceptance",
+    "artifact": 11658838379,
+    "artifactSha256": "e2b84e559a5549a13185308b8653f37ae4e0d43dc5768346d186d7e6be0ebf95",
+    "artifactExpiresAt": "2026-11-09T03:57:07Z",
+    "regeneration": "tools/browser-smoke/locales.mjs; fresh native Chrome locales, never mocked catalogs"
+  },
+  "nativeScope": "29 existing headed regression checks rerun on this localized build: native Deny/Allow/revoke; exact fixture product scan/toast/export; sensitive/tab/SPA/variant guards; search batching/focus; RDAP/CPSC fixtures; local list/signed-key/file-input controls; actual synthetic English OCR; live exact LEI. Seven native headless repeats are not extra checks. Locale UI runs are extension tabs, not seven native side panels.",
+  "liveProviders": [
+    {
+      "id": "BETA-P01",
+      "endpoint": "https://rdap.verisign.com/net/v1/domain/example.net",
+      "status": "OBSERVED_RESPONSE",
+      "scope": "Live domain registry on reserved example.net; owned product HTML, not merchant legitimacy",
+      "uiMessage": "Domain registration information retrieved. It does not establish the business’s age.",
+      "observation": "registered domain example.net • registered 1995-08-31 • registrar RESERVED-Internet Assigned Numbers Authority",
+      "elapsedMs": 460
+    },
+    {
+      "id": "BETA-P02",
+      "endpoint": "https://www.saferproducts.gov/RestWebServices/Recall",
+      "query": "RecallTitle=Anker",
+      "status": "OBSERVED_RESPONSE",
+      "uiMessage": "Candidate notices: 8; retrieved 2026-10-10T03:57:39.849Z. Substring searches can include unrelated brands. Confirm each official notice; no result changes your score.",
+      "notices": [
+        {
+          "title": "Trankerloop Baby Bath Seats Recalled Due to Risk of Serious Injury or Death to Children from Drowning; Violates Mandatory Standard for Infant Bath Seats",
+          "url": "https://www.cpsc.gov/Recalls/2026/Trankerloop-Baby-Bath-Seats-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Drowning-Violates-Mandatory-Standard-for-Infant-Bath-Seats"
+        },
+        {
+          "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker Soundcore Lithium-Ion Battery Powered Bluetooth Speakers Recalled Due to Fire Hazard; Sold Exclusively on Amazon.com by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/Anker-Soundcore-Lithium-Ion-Battery-Powered-Bluetooth-Speakers-Recalled-Due-to-Fire-Hazard-Sold-Exclusively-on-Amazon-com-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Anker EverFrost Lithium-Ion Battery Powered Coolers Recalled Due to Battery Fire Hazard; Manufactured by Anker Innovations",
+          "url": "https://www.cpsc.gov/Recalls/2024/Anker-EverFrost-Lithium-Ion-Battery-Powered-Coolers-Recalled-Due-to-Battery-Fire-Hazard-Manufactured-by-Anker-Innovations"
+        },
+        {
+          "title": "Fantasia Trading Recalls Anker Power Banks Due to Fire Hazard",
+          "url": "https://www.cpsc.gov/Recalls/2023/Fantasia-Trading-Recalls-Anker-Power-Banks-Due-to-Fire-Hazard"
+        },
+        {
+          "title": "Anker Play Products Recalls Bolt Foldable Children's Scooters Due to Violation of Federal Lead Paint Ban; Lead Poisoning Hazard",
+          "url": "https://www.cpsc.gov/Recalls/2023/Anker-Play-Products-Recalls-Bolt-Foldable-Childrens-Scooters-Due-to-Violation-of-Federal-Lead-Paint-Ban-Lead-Poisoning-Hazard"
+        },
+        {
+          "title": "Anker Play Products Recalls 10-in-1 Incredible Inventions Science Kit Due to Violation of the Federal Lead Paint Ban",
+          "url": "https://www.cpsc.gov/Recalls/2021/Anker-Play-Products-Recalls-10-in-1-Incredible-Inventions-Science-Kit-Due-to-Violation-of-the-Federal-Lead-Paint-Ban"
+        }
+      ],
+      "scope": "Live incomplete candidate feed; no unit or product safety verification"
+    }
+  ],
+  "liveSurfaces": [
+    {
+      "kind": "direct manufacturer / cooling fan",
+      "url": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "expected": "NF-A12x25",
+      "startedAt": "2026-10-10T03:57:39.929Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 429,
+      "finalUrl": "https://www.noctua.at/en/products/nf-a12x25-g2-pwm",
+      "finishedAt": "2026-10-10T03:57:42.517Z"
+    },
+    {
+      "kind": "Amazon / cooling fan",
+      "url": "https://www.amazon.com/dp/B0FC636JBS",
+      "expected": "Noctua",
+      "startedAt": "2026-10-10T03:57:42.517Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.amazon.com/dp/B0FC636JBS",
+      "panelStatus": "Scan complete for www.amazon.com.",
+      "product": {
+        "url": "https://www.amazon.com/dp/B0FC636JBS",
+        "title": "Noctua NF-A12x25 G2 PWM, High-Performance Quiet Fan 120mm",
+        "asin": "B0FC636JBS",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "MERCHANT_JURISDICTIONS_DISCLOSED",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "EXPLICIT_ORIGIN_CLAIMS",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "severity": "info",
+          "weight": 0
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-10T03:57:48.469Z"
+    },
+    {
+      "kind": "Etsy / ceramic mug",
+      "url": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "expected": "Mug",
+      "startedAt": "2026-10-10T03:57:48.469Z",
+      "status": "UNAVAILABLE_OR_IDENTITY_UNCONFIRMED",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 403,
+      "finalUrl": "https://www.etsy.com/listing/93243192/unique-handmade-pottery-mug-ceramic-mug",
+      "finishedAt": "2026-10-10T03:57:50.746Z"
+    },
+    {
+      "kind": "Walmart / construction toy",
+      "url": "https://www.walmart.com/ip/41004055",
+      "expected": "LEGO",
+      "startedAt": "2026-10-10T03:57:50.746Z",
+      "status": "OBSERVED_SCAN",
+      "limits": "Convenience sample; listing claims are not authenticated manufacturing truth; no calibrated accuracy estimate",
+      "httpStatus": 200,
+      "finalUrl": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+      "panelStatus": "Scan complete for www.walmart.com.",
+      "product": {
+        "url": "https://www.walmart.com/ip/LEGO-Classic-Medium-Creative-Brick-Box/41004055",
+        "title": "LEGO Classic Medium Creative Brick Box , Toy Set with Train, Car, Tiger, Birthday Gift for Kids 4+, 10696",
+        "extraction": {
+          "method": "page metadata; structured identity unresolved",
+          "offerResolved": false,
+          "structuredIdentityResolved": false
+        }
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "unknown",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "unknown",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "No accusation-weighted evidence is available yet."
+      },
+      "evidence": [
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "severity": "info",
+          "weight": 0
+        }
+      ],
+      "finishedAt": "2026-10-10T03:57:55.415Z"
+    }
+  ],
+  "limitations": [
+    "Translations are agent-authored; native-speaker/legal-copy review not performed.",
+    "Localized full scans and native permission/side-panel acceptance for each language not performed.",
+    "Detector notes/source quotations/exports retain original wording.",
+    "Packaged OCR remains English; no new language detector calibration or geography coverage.",
+    "Independent A01-D06, category accuracy and previous broader release cases remain separate.",
+    "Etsy403/Noctua429 remain blocked observations, not passes.",
+    "DS-038 marketing captures predate added UI disclosure; affected current screenshots require refresh before submission."
+  ],
+  "durableKnowledge": [
+    "TRANSLATIONS.md",
+    "brain/research/2026-10-10-LANGUAGE-KITS.md",
+    "brain/decisions/20261010-001-offline-localization.md",
+    "public/_locales/**",
+    "scripts/localization-audit.ts"
+  ],
+  "release": {
+    "pr": 9,
+    "draft": true,
+    "mergedToMain": false,
+    "submitted": false,
+    "published": false
+  }
+}
