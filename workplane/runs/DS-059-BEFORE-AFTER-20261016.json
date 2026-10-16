@@ -1,0 +1,742 @@
+{
+  "scope": "Original268 same targets compared separately; one additional public variant control. Changes include merchant responses, collector admission and product parsing, not independent detection accuracy. Baseline snapshot omitted specifications/shipping/fingerprints; no missing-field inference from those omissions.",
+  "beforeOriginal268": {
+    "outcomes": 268,
+    "rowStatuses": {
+      "OBSERVED_SCAN": 230,
+      "CURRENT_COMMERCE_UNCONFIRMED": 25,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 8,
+      "REDIRECT_OR_PRIVATE_SURFACE_REFUSED": 1
+    },
+    "successfulDistinctScans": 230,
+    "hosts": 54,
+    "identityFields": {
+      "brand": 20,
+      "sku": 173,
+      "mpn": 10,
+      "gtin": 1,
+      "price": 186,
+      "currency": 186
+    },
+    "structuredProductResolved": 198,
+    "selectedOfferResolved": 190,
+    "bothNumericalEstimatesUnknown": 230,
+    "structuredAdmissionsWithUnresolvedExtractedPrice": [],
+    "nativeScanElapsedMs": {
+      "observations": 230,
+      "median": 1820.5,
+      "p95": 3415
+    }
+  },
+  "afterOriginal268": {
+    "outcomes": 268,
+    "rowStatuses": {
+      "OBSERVED_SCAN": 235,
+      "CURRENT_COMMERCE_UNCONFIRMED": 18,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 9,
+      "PRIVATE_URL_REFUSED_BEFORE_NAVIGATION": 2
+    },
+    "successfulDistinctScans": 235,
+    "hosts": 55,
+    "identityFields": {
+      "brand": 20,
+      "sku": 172,
+      "mpn": 10,
+      "gtin": 1,
+      "price": 185,
+      "currency": 185
+    },
+    "structuredProductResolved": 198,
+    "selectedOfferResolved": 189,
+    "bothNumericalEstimatesUnknown": 235,
+    "structuredAdmissionsWithUnresolvedExtractedPrice": [
+      "AUDIT-0041",
+      "AUDIT-0094",
+      "AUDIT-0095",
+      "AUDIT-0096",
+      "AUDIT-0097",
+      "AUDIT-0098",
+      "AUDIT-0159",
+      "AUDIT-0160",
+      "AUDIT-0161",
+      "AUDIT-0162",
+      "AUDIT-0163",
+      "AUDIT-0234",
+      "AUDIT-0235",
+      "AUDIT-0236",
+      "AUDIT-0237",
+      "AUDIT-0238",
+      "CONTROL-002",
+      "CONTROL-003",
+      "CONTROL-004",
+      "CONTROL-009"
+    ],
+    "nativeScanElapsedMs": {
+      "observations": 235,
+      "median": 1794,
+      "p95": 3415
+    }
+  },
+  "all269": {
+    "outcomes": 269,
+    "rowStatuses": {
+      "OBSERVED_SCAN": 236,
+      "CURRENT_COMMERCE_UNCONFIRMED": 18,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 4,
+      "ENVIRONMENT_OR_ACTION_ERROR": 9,
+      "PRIVATE_URL_REFUSED_BEFORE_NAVIGATION": 2
+    },
+    "successfulDistinctScans": 236,
+    "hosts": 56,
+    "identityFields": {
+      "brand": 21,
+      "sku": 173,
+      "mpn": 10,
+      "gtin": 1,
+      "price": 186,
+      "currency": 186
+    },
+    "structuredProductResolved": 199,
+    "selectedOfferResolved": 190,
+    "bothNumericalEstimatesUnknown": 236,
+    "structuredAdmissionsWithUnresolvedExtractedPrice": [
+      "AUDIT-0041",
+      "AUDIT-0094",
+      "AUDIT-0095",
+      "AUDIT-0096",
+      "AUDIT-0097",
+      "AUDIT-0098",
+      "AUDIT-0159",
+      "AUDIT-0160",
+      "AUDIT-0161",
+      "AUDIT-0162",
+      "AUDIT-0163",
+      "AUDIT-0234",
+      "AUDIT-0235",
+      "AUDIT-0236",
+      "AUDIT-0237",
+      "AUDIT-0238",
+      "CONTROL-002",
+      "CONTROL-003",
+      "CONTROL-004",
+      "CONTROL-009"
+    ],
+    "nativeScanElapsedMs": {
+      "observations": 236,
+      "median": 1792.0,
+      "p95": 3415
+    }
+  },
+  "newPublicControl": {
+    "id": "CONTROL-010",
+    "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+    "host": "shop.vivoglobal.ph",
+    "sourceIds": [
+      "DS-059-PUBLIC-CONTROL"
+    ],
+    "sourceSeedUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable",
+    "discoveryTitle": "4A Type-C USB Cable",
+    "discoveryKind": "predeclared single explicit Offer variant control; merchant-authored identity, not independent product truth",
+    "startedAt": "2026-10-16T08:52:15.671Z",
+    "status": "OBSERVED_SCAN",
+    "actions": [
+      {
+        "action": "scan",
+        "status": "OBSERVED",
+        "elapsedMs": 471,
+        "message": "Scan complete for shop.vivoglobal.ph."
+      },
+      {
+        "action": "policy",
+        "status": "OBSERVED",
+        "message": "Couldn\u2019t find a clear return or refund policy on this store.",
+        "elapsedMs": 473
+      },
+      {
+        "action": "shipping",
+        "status": "OBSERVED",
+        "message": "The page doesn\u2019t clearly say where the order ships from.",
+        "elapsedMs": 473
+      }
+    ],
+    "httpStatus": 200,
+    "finalUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+    "pageTitle": "vivo 4A Type-C USB Cable \u2013 Official Price \u20b1479 Philippines \u2013 vivo Philippines",
+    "pageIdentity": {
+      "title": "vivo 4A Type-C USB Cable \u2013 Official Price \u20b1479 Philippines \u2013 vivo Philippines",
+      "h1": "4A Type-C USB Cable",
+      "language": "en",
+      "visibleTextSha256": "b700e4b18bc1219c9197080a19552adc4d46d63dd90779f71acbe6fc6086cefa",
+      "visibleTextChars": 2292,
+      "jsonProductBlocks": 3,
+      "productLinks": 48,
+      "credentialFieldPresent": false
+    },
+    "commerceAdmission": {
+      "allowed": true,
+      "reason": "current named structured Product/ProductGroup; price or selected offer may be unresolved"
+    },
+    "commerceIdentityConfirmed": true,
+    "automatic": {
+      "toastCount": 1,
+      "toastText": "\n    :host{all:initial}\n    @media (prefers-reduced-motion:no-preference) {\n      .card{animation:enter .32s ease-out both}\n      @keyframes enter{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}\n    }\n    .card{position:relative;width:min(340px,calc(100vw - 36px));border-radius:13px;\n      background:#101217;color:#f5f5f8;border:1px solid #49505f;box-shadow:0 10px 35px #0006;\n      font:13px/1.4 system-ui,-apple-system,sans-serif;box-sizing:border-box;overflow:hidden}\n    .body{width:100%;text-align:start;background:transparent;color:inherit;border:0;padding:13px 39px 14px 15px;\n      display:block;cursor:pointer;font:inherit;box-sizing:border-box}\n    .body:hover,.body:focus-visible{background:#202531;outline:2px solid #90b9ff;outline-offset:-3px}\n    .brand{font-size:10px;letter-spacing:.12em;font-weight:850;color:#ffb06f}\n    .heading{font-size:17px;font-weight:800;margin:5px 0 2px}\n    .product{color:#c4c7cf;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;font-size:12px}\n    .facts{margin:8px 0 8px;padding:0;list-style:none;font-size:12px}\n    .facts li{margin:3px 0}\n    .cta{color:#8ac9ff;font-weight:750;font-size:12px}\n    .close{position:absolute;right:7px;top:7px;background:none;color:#bcc2cf;cursor:pointer;\n      border:0;font-size:22px;line-height:26px;width:28px;height:28px;border-radius:5px}\n    .close:hover,.close:focus-visible{background:#333a4b;color:white}\n  DROPSHREDDER \u2022 QUICK CHECKSomething worth checking4A Type-C USB CableDetector notes (original language)\u2022 Pressure-to-buy languageListed price: PHP 479Seller trust: NOT VERIFIEDOpen full check \u2192\u00d7"
+    },
+    "nativeScanAttemptedAt": "2026-10-16T08:52:18.547Z",
+    "scanStatus": "Scan complete for shop.vivoglobal.ph.",
+    "stamp": "\n          .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;\n            box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:system-ui,sans-serif;padding:14px}\n          .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}\n          .headline{font-size:15px;font-weight:950;line-height:1.15}\n          .detail{font-size:12px;line-height:1.4;color:#b9b9c0;margin-top:8px}\n        \u00d7DROP SHREDDER\u26a0 DROPSHREDDER CAUGHT SOMETHINGMass-resell evidence score: UNKNOWN/100 \u2022 Signals: 5 \u2022 Evidence gate not satisfied; this is not a severe accusation.",
+    "zeroContextWeightsPreserved": true,
+    "finishedAt": "2026-10-16T08:52:20.078Z",
+    "scan": {
+      "product": {
+        "brand": "vivo Philippines Official Store",
+        "claims": [],
+        "currency": "PHP",
+        "domain": "shop.vivoglobal.ph",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "offerResolved": true,
+          "structuredIdentityResolved": true
+        },
+        "merchantIdentity": [
+          "vivo Philippines"
+        ],
+        "price": 479,
+        "sku": "11677981",
+        "specifications": {},
+        "title": "4A Type-C USB Cable",
+        "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "technicalFingerprint": "11677981|1mcurrent|44w|44w"
+      },
+      "merchant": {
+        "domain": "shop.vivoglobal.ph",
+        "detectedPlatform": "shopify"
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "low",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "low",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.97,
+          "weight": 0,
+          "title": "Store platform identified",
+          "explanation": "We can tell what shopping platform this store uses. That alone says nothing bad about the seller.",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "SCARCITY_LANGUAGE",
+          "family": "scarcity",
+          "severity": "weak",
+          "confidence": 0.55,
+          "weight": 4,
+          "title": "Pressure-to-buy language",
+          "explanation": "The page is pushing urgency such as limited-time or low-stock language. Legitimate stores do this too, so we only take it seriously if the claim keeps resetting or never goes away.",
+          "observedValue": "Hurry!",
+          "independentKey": "scarcity-copy",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "explanation": "General commerce platform with extensive dropshipping/POD integrations; platform presence is neutral.",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "family": "provenance",
+          "severity": "info",
+          "confidence": 0.95,
+          "weight": 0,
+          "title": "Product ID found",
+          "explanation": "This ID can help us match the exact product on other listings. Finding one is not a warning by itself.",
+          "observedValue": "11677981",
+          "independentKey": "product-identifiers"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "contradictions": [],
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "outsideResults": null,
+      "fulfillmentDisclosure": null,
+      "rawReportSha256": "83401ec13ecb67cf9d1359e17197063f0b66125ed68b157d0c430ef5aa1d6b8a"
+    },
+    "policy": {
+      "product": {
+        "brand": "vivo Philippines Official Store",
+        "claims": [],
+        "currency": "PHP",
+        "domain": "shop.vivoglobal.ph",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "offerResolved": true,
+          "structuredIdentityResolved": true
+        },
+        "merchantIdentity": [
+          "vivo Philippines"
+        ],
+        "price": 479,
+        "sku": "11677981",
+        "specifications": {},
+        "title": "4A Type-C USB Cable",
+        "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "technicalFingerprint": "11677981|1mcurrent|44w|44w"
+      },
+      "merchant": {
+        "domain": "shop.vivoglobal.ph",
+        "detectedPlatform": "shopify"
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "low",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "low",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.97,
+          "weight": 0,
+          "title": "Store platform identified",
+          "explanation": "We can tell what shopping platform this store uses. That alone says nothing bad about the seller.",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "SCARCITY_LANGUAGE",
+          "family": "scarcity",
+          "severity": "weak",
+          "confidence": 0.55,
+          "weight": 4,
+          "title": "Pressure-to-buy language",
+          "explanation": "The page is pushing urgency such as limited-time or low-stock language. Legitimate stores do this too, so we only take it seriously if the claim keeps resetting or never goes away.",
+          "observedValue": "Hurry!",
+          "independentKey": "scarcity-copy",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "explanation": "General commerce platform with extensive dropshipping/POD integrations; platform presence is neutral.",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "family": "provenance",
+          "severity": "info",
+          "confidence": 0.95,
+          "weight": 0,
+          "title": "Product ID found",
+          "explanation": "This ID can help us match the exact product on other listings. Finding one is not a warning by itself.",
+          "observedValue": "11677981",
+          "independentKey": "product-identifiers"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "contradictions": [],
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "outsideResults": null,
+      "fulfillmentDisclosure": null,
+      "rawReportSha256": "83401ec13ecb67cf9d1359e17197063f0b66125ed68b157d0c430ef5aa1d6b8a"
+    },
+    "shipping": {
+      "product": {
+        "brand": "vivo Philippines Official Store",
+        "claims": [],
+        "currency": "PHP",
+        "domain": "shop.vivoglobal.ph",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "offerResolved": true,
+          "structuredIdentityResolved": true
+        },
+        "merchantIdentity": [
+          "vivo Philippines"
+        ],
+        "price": 479,
+        "sku": "11677981",
+        "specifications": {},
+        "title": "4A Type-C USB Cable",
+        "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "technicalFingerprint": "11677981|1mcurrent|44w|44w"
+      },
+      "merchant": {
+        "domain": "shop.vivoglobal.ph",
+        "detectedPlatform": "shopify"
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "low",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "low",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.97,
+          "weight": 0,
+          "title": "Store platform identified",
+          "explanation": "We can tell what shopping platform this store uses. That alone says nothing bad about the seller.",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "SCARCITY_LANGUAGE",
+          "family": "scarcity",
+          "severity": "weak",
+          "confidence": 0.55,
+          "weight": 4,
+          "title": "Pressure-to-buy language",
+          "explanation": "The page is pushing urgency such as limited-time or low-stock language. Legitimate stores do this too, so we only take it seriously if the claim keeps resetting or never goes away.",
+          "observedValue": "Hurry!",
+          "independentKey": "scarcity-copy",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "explanation": "General commerce platform with extensive dropshipping/POD integrations; platform presence is neutral.",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "family": "provenance",
+          "severity": "info",
+          "confidence": 0.95,
+          "weight": 0,
+          "title": "Product ID found",
+          "explanation": "This ID can help us match the exact product on other listings. Finding one is not a warning by itself.",
+          "observedValue": "11677981",
+          "independentKey": "product-identifiers"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "contradictions": [],
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "outsideResults": null,
+      "fulfillmentDisclosure": null,
+      "rawReportSha256": "83401ec13ecb67cf9d1359e17197063f0b66125ed68b157d0c430ef5aa1d6b8a"
+    },
+    "final": {
+      "product": {
+        "brand": "vivo Philippines Official Store",
+        "claims": [],
+        "currency": "PHP",
+        "domain": "shop.vivoglobal.ph",
+        "extraction": {
+          "method": "current-product JSON-LD",
+          "offerResolved": true,
+          "structuredIdentityResolved": true
+        },
+        "merchantIdentity": [
+          "vivo Philippines"
+        ],
+        "price": 479,
+        "sku": "11677981",
+        "specifications": {},
+        "title": "4A Type-C USB Cable",
+        "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+        "technicalFingerprint": "11677981|1mcurrent|44w|44w"
+      },
+      "merchant": {
+        "domain": "shop.vivoglobal.ph",
+        "detectedPlatform": "shopify"
+      },
+      "verdict": {
+        "massResellLikelihood": null,
+        "dropshipLikelihood": null,
+        "deceptionRisk": "low",
+        "merchantRisk": "unknown",
+        "manipulationRisk": "low",
+        "fulfillmentRisk": "unknown",
+        "severeWarningAllowed": false,
+        "reason": "Risk signals exist, but none establish product provenance or dropshipping."
+      },
+      "evidence": [
+        {
+          "id": "COMMERCE_PLATFORM_DETECTED",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.97,
+          "weight": 0,
+          "title": "Store platform identified",
+          "explanation": "We can tell what shopping platform this store uses. That alone says nothing bad about the seller.",
+          "observedValue": "platform:shopify",
+          "independentKey": "platform:shopify",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "SCARCITY_LANGUAGE",
+          "family": "scarcity",
+          "severity": "weak",
+          "confidence": 0.55,
+          "weight": 4,
+          "title": "Pressure-to-buy language",
+          "explanation": "The page is pushing urgency such as limited-time or low-stock language. Legitimate stores do this too, so we only take it seriously if the claim keeps resetting or never goes away.",
+          "observedValue": "Hurry!",
+          "independentKey": "scarcity-copy",
+          "provenance": {
+            "sourceUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+            "observedAt": "2026-10-16T08:52:18.796Z",
+            "method": "Local rule analysis of current-product JSON-LD"
+          }
+        },
+        {
+          "id": "COMMERCE_PLATFORM_CONTEXT",
+          "family": "technology",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "Shopify commerce stack detected",
+          "explanation": "General commerce platform with extensive dropshipping/POD integrations; platform presence is neutral.",
+          "observedValue": "Shopify",
+          "independentKey": "platform-context:shopify"
+        },
+        {
+          "id": "PRODUCT_IDENTIFIERS_PRESENT",
+          "family": "provenance",
+          "severity": "info",
+          "confidence": 0.95,
+          "weight": 0,
+          "title": "Product ID found",
+          "explanation": "This ID can help us match the exact product on other listings. Finding one is not a warning by itself.",
+          "observedValue": "11677981",
+          "independentKey": "product-identifiers"
+        },
+        {
+          "id": "SUPPLY_CHAIN_PROFILE",
+          "family": "identity",
+          "severity": "info",
+          "confidence": 0.9,
+          "weight": 0,
+          "title": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+          "explanation": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+          "observedValue": "PAYMENT / BANKING JURISDICTION: UNKNOWN",
+          "independentKey": "supply-chain-profile"
+        }
+      ],
+      "contradictions": [],
+      "supplyChain": {
+        "classification": "unknown",
+        "label": "SUPPLY CHAIN ORIGIN: UNKNOWN",
+        "preferenceNote": "There is not enough origin evidence to determine whether this product meets a Made in USA preference.",
+        "nodes": [],
+        "paymentProcessors": [],
+        "paymentJurisdictionKnown": false,
+        "paymentChainLabel": "PAYMENT / BANKING JURISDICTION: UNKNOWN"
+      },
+      "outsideResults": null,
+      "fulfillmentDisclosure": null,
+      "rawReportSha256": "83401ec13ecb67cf9d1359e17197063f0b66125ed68b157d0c430ef5aa1d6b8a"
+    }
+  },
+  "changes": [
+    {
+      "id": "AUDIT-0041",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0090",
+      "url": "https://www.keensoutletcolombia.com/shopping_cart.html",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "PRIVATE_URL_REFUSED_BEFORE_NAVIGATION",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0110",
+      "url": "https://www.laneiges.com.mx/p/duo-intensivo-con-acido-hialuronico-azul-water-bank-recarga/",
+      "beforeStatus": "OBSERVED_SCAN",
+      "afterStatus": "ENVIRONMENT_OR_ACTION_ERROR",
+      "fields": {
+        "sku": {
+          "before": "laneige002",
+          "after": null
+        },
+        "price": {
+          "before": 668,
+          "after": null
+        },
+        "currency": {
+          "before": "MXN",
+          "after": null
+        }
+      }
+    },
+    {
+      "id": "AUDIT-0231",
+      "url": "https://www.teva-osterreich.at/create_account.html",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "PRIVATE_URL_REFUSED_BEFORE_NAVIGATION",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0234",
+      "url": "https://tassenbrennerei.shop/products/tasse-lieblings-postbote-herzen",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0235",
+      "url": "https://tassenbrennerei.shop/products/baumwolltasche-ich-kam-sah-und-korigierte",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0236",
+      "url": "https://tassenbrennerei.shop/products/hoodie-ein-zocker-altert-nicht-er-levelt",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0237",
+      "url": "https://tassenbrennerei.shop/products/tasse-lieber-schwager-danke-dass-du-meine-schwester-nicht-an-den-zirkus-verkauft-hast-v2",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "AUDIT-0238",
+      "url": "https://tassenbrennerei.shop/products/tasse-ich-bin-der-trainer-einer-absolut-geilen-mannschaft",
+      "beforeStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "afterStatus": "OBSERVED_SCAN",
+      "fields": {}
+    },
+    {
+      "id": "CONTROL-005",
+      "url": "https://www.nordstrom.com/",
+      "beforeStatus": "REDIRECT_OR_PRIVATE_SURFACE_REFUSED",
+      "afterStatus": "CURRENT_COMMERCE_UNCONFIRMED",
+      "fields": {}
+    }
+  ],
+  "independentAccuracyAccepted": false
+}

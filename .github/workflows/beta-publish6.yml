@@ -1,0 +1,129 @@
+name: DropShredder accepted beta6 publication
+
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-publish6.yml', 'tools/beta/prepare-beta6.py', 'tools/beta/BETA6-INSTALL-AND-REPORT.md', 'workplane/runs/DS-059-*.json', 'workplane/CURRENT-STATE.md', 'workplane/WORK-QUEUE.md', 'workplane/tasks/DS-059.md', 'workplane/research/DS-059-IMPLEMENTED-AND-RETESTED-20261016.md', 'README.md', 'BETA-TESTING.md']
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: dropshredder-v0.2.0-beta.6-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta6-publication-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Require the accepted source and all completed browser/live gates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          def api(path): return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          head='0167f5b8a9beae6d87deed65c42593aaa043c690'
+          for id in [38875762516,38875762577,38875762651,38875762984]:
+              run=api(f'actions/runs/{id}')
+              assert run['head_sha']==head and run['status']=='completed' and run['conclusion']=='success', run
+          paths=subprocess.check_output(['git','diff','--name-only',head,'HEAD'],text=True).splitlines()
+          assert all(p.startswith(('workplane/','tools/beta/','tools/evaluation/')) or p in ['BETA-TESTING.md','README.md','.github/workflows/beta-publish6.yml','.gitignore'] for p in paths), paths
+          artifact=next(a for a in api('actions/runs/38875762651/artifacts')['artifacts'] if a['name']=='dropshredder-headed-permission-evidence')
+          assert not artifact['expired'] and artifact['workflow_run']['head_sha']==head
+          open('native-artifact.json','w').write(json.dumps(artifact))
+          PY
+      - name: Download the existing accepted ZIP and actual native/live observations
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/chairmantrash/DropShredder/actions/artifacts/12035137095/zip > accepted-ci-artifact.zip
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess,zipfile,io
+          a=json.loads(pathlib.Path('native-artifact.json').read_text())
+          data=subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/artifacts/{a["id"]}/zip'])
+          assert hashlib.sha256(data).hexdigest()==a['digest'].removeprefix('sha256:')
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              name='native-probe.json'
+              assert z.namelist().count(name)==1
+              native=z.read(name)
+              assert native==pathlib.Path('workplane/runs/DS-059-NATIVE-EVIDENCE/native-probe.json').read_bytes()
+              pathlib.Path('accepted-native.json').write_bytes(native)
+          PY
+          python3 tools/beta/prepare-beta6.py accepted-ci-artifact.zip accepted-native.json
+      - name: Require green CI and finding-free CodeQL on this publication head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BETA_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import json,os,subprocess,time
+          for attempt in range(60):
+              response=subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/runs?head_sha={os.environ["BETA_HEAD"]}&event=pull_request&per_page=100'])
+              latest={}
+              for run in json.loads(response)['workflow_runs']:
+                  if run['name'] in ['DropShredder CI','CodeQL']:latest.setdefault(run['name'],run)
+              if len(latest)==2 and all(r['status']=='completed' for r in latest.values()):
+                  assert all(r['conclusion']=='success' for r in latest.values()),latest
+                  print(json.dumps({name:{'id':r['id'],'head':r['head_sha'],'conclusion':r['conclusion']} for name,r in latest.items()}));break
+              time.sleep(5)
+          else:raise SystemExit('Exact publication-head CI/CodeQL incomplete; no publication')
+          PY
+      - name: Publish beta6 through the existing authorized GitHub beta channel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd beta6-packet
+          sha256sum --check SHA256SUMS.txt
+          if gh release view v0.2.0-beta.6 --repo chairmantrash/DropShredder > /dev/null 2>&1; then
+            python3 - <<'PY'
+          import json,subprocess
+          def api(path):return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          r=api('releases/tags/v0.2.0-beta.6');assert not r['draft'] and r['prerelease']
+          a=next(a for a in r['assets'] if a['name']=='DropShredder-0.2.0-beta.6-chrome.zip')
+          assert a['size']==25988814 and a['digest']=='sha256:83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b'
+          assert api('git/ref/tags/v0.2.0-beta.6')['object']['sha']=='5bdd16f282bae1aff9b2193f9c98b3fca1e89737'
+          print('Existing identical published beta6 retained; no overwrite')
+          PY
+          else
+            gh release create v0.2.0-beta.6 ./* --repo chairmantrash/DropShredder --target 5bdd16f282bae1aff9b2193f9c98b3fca1e89737 --prerelease --latest=false --draft --title 'DropShredder 0.2.0 beta 6 — typed product identity and countdown evidence repairs' --notes-file INSTALL-AND-REPORT.md
+            gh release edit v0.2.0-beta.6 --repo chairmantrash/DropShredder --draft=false
+          fi
+          gh release view v0.2.0-beta.6 --repo chairmantrash/DropShredder --json url,isDraft,isPrerelease,tagName,assets
+      - name: Verify the actual public downloads without authentication
+        run: |
+          python3 - <<'PY'
+          import datetime,hashlib,io,json,pathlib,urllib.request,zipfile
+          packet=pathlib.Path('beta6-packet');result={'authenticated':False,'verifiedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'assets':[]}
+          base='https://github.com/chairmantrash/DropShredder/releases/download/v0.2.0-beta.6/'
+          for p in sorted(packet.iterdir()):
+              data=urllib.request.urlopen(base+p.name,timeout=60).read()
+              assert data==p.read_bytes(),p.name
+              result['assets'].append({'name':p.name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+              if p.suffix=='.zip':
+                  build=json.loads((packet/'BUILD-INFO.json').read_text());expected={e['path']:e for e in build['buildFiles']}
+                  with zipfile.ZipFile(io.BytesIO(data)) as z:
+                      assert len(z.namelist())==54 and set(z.namelist())==set(expected)
+                      for name in z.namelist():
+                          b=z.read(name);assert len(b)==expected[name]['bytes'] and hashlib.sha256(b).hexdigest()==expected[name]['sha256']
+                  result['all54PublicPackageHashesMatch']=True
+          (packet/'PUBLIC-DOWNLOAD-VERIFIED.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dropshredder-beta6-release-packet
+          path: beta6-packet/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,18 @@
+{
+  "artifact": 12035162343,
+  "run": 38875762984,
+  "job": 116890320285,
+  "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "wrapperSha256": "e6896ed9ef999b0e462aa7f6d8210027f144f1ba596a48051cb5496ddd5eb040",
+  "failure": "Error: Timed out: visible control .settings-panel > summary",
+  "testsPassed": 1,
+  "liveCasesRecorded": 0,
+  "retry": {
+    "status": "COMPLETED",
+    "sameHeadAndPackage": true,
+    "runAttempt": 2,
+    "artifact": 12035877587,
+    "plannedAndCompleted": 20,
+    "noSafetyStop": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "artifact": 12035088264,
+  "run": 38875762651,
+  "head": "0167f5b8a9beae6d87deed65c42593aaa043c690",
+  "productionSource": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
+  "wrapperSha256": "aee1f1a8a1390953893ba82260791d9c7701c2107cba23fbf317c1173406a50d",
+  "nativeJsonSha256": "a4aa777db4f20e8311fe3628911579a80539299d2dd0e9b0dae37e071a1fa432",
+  "testsPassed": 94,
+  "allTestsPass": true
+}

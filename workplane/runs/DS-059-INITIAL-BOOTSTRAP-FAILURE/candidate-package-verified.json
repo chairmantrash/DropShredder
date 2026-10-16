@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
+  "artifact": 12035137095,
+  "artifactDigest": "sha256:7134a24cde3be14f944a22080c4a1d9b9855af4ec99ac2ff9b6ed369ca36c50d",
+  "zipSha256": "83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b",
+  "zipBytes": 25988814,
+  "allPackageHashesMatch": true,
+  "files": 54,
+  "rebuilt": false
+}
