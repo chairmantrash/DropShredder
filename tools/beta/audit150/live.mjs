@@ -1,10 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {auditCommerceAdmission,observePublicAuditPage,auditPrivatePath,publicAuditUrl} from '../failures/public-page.mjs';
 
-const privatePath=/\/(?:cart|checkout|account|login|signin|sign-in|payment|admin|wp-admin)(?:\/|$)/i;
+const privatePath={test:auditPrivatePath};
 const blocked=/verify you are human|robot check|access denied|press & hold|domain (?:is )?for sale|buy this domain|sedo parking|website suspended|account suspended|checking your browser|just a moment/i;
-const clean=value=>{const u=new URL(value);u.hash='';for(const k of [...u.searchParams.keys()])if(!['products_id','product_id','id','pid','item','main_page'].includes(k))u.searchParams.delete(k);return u.href;};
+const clean=publicAuditUrl;
 
 export async function runAudit150({context,page,native,worker,until,pause,report,output}){
   const shard=Number(process.env.AUDIT_SHARD),shards=8;
@@ -30,17 +31,21 @@ export async function runAudit150({context,page,native,worker,until,pause,report
     report.audit150.rows.push(row);
     try{
       const u=new URL(target.url);
-      if(privatePath.test(u.pathname))throw Error('Private URL refused before navigation');
+      if(privatePath.test(u.pathname)){row.status='PRIVATE_URL_REFUSED_BEFORE_NAVIGATION';continue;}
       const response=await page.goto(target.url,{waitUntil:'domcontentloaded',timeout:18000});
       await pause(2200);
       row.httpStatus=response?.status();row.finalUrl=clean(page.url());row.pageTitle=await page.title();
-      const observed=await page.evaluate(()=>({language:document.documentElement.lang,title:document.title,h1:document.querySelector('h1')?.textContent?.trim(),text:(document.body?.innerText??'').slice(0,60000),privateForm:Boolean(document.querySelector('input[type=password],input[autocomplete="cc-number"],input[autocomplete="current-password"]')),products:[...document.querySelectorAll('script[type="application/ld+json"]')].map(e=>e.textContent).filter(s=>/"@type"\s*:\s*"Product"/i.test(s??'')).length,productLinks:[...document.querySelectorAll('a[href]')].filter(a=>/\/(products?|item|items|p)\//i.test(a.pathname)).length}));
+      // Refuse redirects/private paths before collecting page text or metadata.
+      const destination=new URL(row.finalUrl);
+      if(destination.hostname.replace(/^www\./,'')!==target.host||privatePath.test(destination.pathname)){row.status='REDIRECT_OR_PRIVATE_SURFACE_REFUSED';continue;}
+      const observed=await page.evaluate(observePublicAuditPage);
       row.pageIdentity={title:observed.title,h1:observed.h1,language:observed.language,visibleTextSha256:createHash('sha256').update(observed.text).digest('hex'),visibleTextChars:observed.text.length,jsonProductBlocks:observed.products,productLinks:observed.productLinks,credentialFieldPresent:observed.privateForm};
       if(diagnosticIds)row.credentialFieldDiagnostics=await page.evaluate(()=>[...document.querySelectorAll('input[type=password],input[autocomplete="cc-number"],input[autocomplete="current-password"]')].map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return {tag:e.tagName,type:e.getAttribute('type'),name:e.getAttribute('name'),autocomplete:e.getAttribute('autocomplete'),display:s.display,visibility:s.visibility,rect:{width:r.width,height:r.height},hiddenAncestor:Boolean(e.closest('[hidden],[aria-hidden="true"],dialog:not([open])')),scope:'Field structure/visibility only; no values read'};}));
       const current=new URL(row.finalUrl);
       if(current.hostname.replace(/^www\./,'')!==target.host||privatePath.test(current.pathname)||/^(?:log ?in|sign ?in|my account|checkout|payment|anmelden|connexion|iniciar sesi[oó]n)(?:\b|\s)/i.test(observed.h1??observed.title)){row.status='REDIRECT_OR_PRIVATE_SURFACE_REFUSED';continue;}
       if(row.httpStatus>=400||blocked.test(observed.text.slice(0,12000))||blocked.test(observed.title)||observed.text.length<150){row.status='UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY';continue;}
-      row.commerceIdentityConfirmed=Boolean(observed.products||observed.productLinks||/add to (?:cart|bag)|warenkorb|acheter|comprar|winkelwagen|カート|購入|aggiungi|panier/i.test(observed.text))&&/[$€£¥]|\b(?:USD|EUR|GBP|JPY)\b/.test(observed.text);
+      row.commerceAdmission=auditCommerceAdmission(observed);
+      row.commerceIdentityConfirmed=row.commerceAdmission.allowed;
       if(!row.commerceIdentityConfirmed){row.status='CURRENT_COMMERCE_UNCONFIRMED';continue;}
       await page.bringToFront();
       row.automatic=await page.evaluate(()=>({toastCount:document.querySelectorAll('#dropshredder-auto-verdict').length,toastText:document.querySelector('#dropshredder-auto-verdict')?.shadowRoot?.textContent?.slice(0,1800)??document.querySelector('#dropshredder-auto-verdict')?.textContent}));

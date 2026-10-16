@@ -8,7 +8,7 @@ import urllib.parse
 
 evidence = Path(sys.argv[1])
 protocol = sys.argv[2] if len(sys.argv) > 2 else "DS-054"
-assert protocol in ["DS-054", "DS-055", "DS-056", "DS-057", "DS-058"]
+assert protocol in ["DS-054", "DS-055", "DS-056", "DS-057", "DS-058", "DS-059"]
 root = Path(__file__).resolve().parents[3]
 manifests = list(evidence.glob("native-*/frozen-targets.json"))
 assert manifests
@@ -54,9 +54,9 @@ for row in rows:
     for stage in ["scan", "policy", "shipping", "final"]:
         report = row.get(stage+"Report")
         if report:
-            record[stage] = {"product": {k: v for k, v in report["product"].items() if k in ["url", "title", "domain", "brand", "sku", "mpn", "gtin", "price", "currency", "claims", "extraction", "merchantIdentity"]}, "merchant": report.get("merchant"), "verdict": report["verdict"], "evidence": report["evidence"], "contradictions": report.get("contradictions"), "supplyChain": report.get("supplyChain"), "outsideResults": report.get("outsideResults"), "fulfillmentDisclosure": report.get("fulfillmentDisclosure"), "rawReportSha256": hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()}
+            record[stage] = {"product": {k: v for k, v in report["product"].items() if k in ["url", "title", "domain", "brand", "sku", "mpn", "gtin", "price", "currency", "claims", "extraction", "merchantIdentity", "specifications", "shippingText", "technicalFingerprint"]}, "merchant": report.get("merchant"), "verdict": report["verdict"], "evidence": report["evidence"], "contradictions": report.get("contradictions"), "supplyChain": report.get("supplyChain"), "outsideResults": report.get("outsideResults"), "fulfillmentDisclosure": report.get("fulfillmentDisclosure"), "rawReportSha256": hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()}
     ledger.append(record)
 dest = root / "workplane/runs"
-(dest / f"{protocol}-PAGE-OUTCOMES-{'20261016' if protocol in ['DS-057','DS-058'] else '20261013'}.json").write_text(json.dumps({"summary": summary, "pages": ledger}, separators=(",", ":"), ensure_ascii=False) + "\n")
-(dest / f"{protocol}-AUDIT-SUMMARY-{'20261016' if protocol in ['DS-057','DS-058'] else '20261013'}.json").write_text(json.dumps(summary, indent=2) + "\n")
+(dest / f"{protocol}-PAGE-OUTCOMES-{'20261016' if protocol in ['DS-057','DS-058','DS-059'] else '20261013'}.json").write_text(json.dumps({"summary": summary, "pages": ledger}, separators=(",", ":"), ensure_ascii=False) + "\n")
+(dest / f"{protocol}-AUDIT-SUMMARY-{'20261016' if protocol in ['DS-057','DS-058','DS-059'] else '20261013'}.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps({k: v for k, v in summary.items() if k not in ["nativeProfiles", "allSignalCounts", "limits"]}, indent=2))

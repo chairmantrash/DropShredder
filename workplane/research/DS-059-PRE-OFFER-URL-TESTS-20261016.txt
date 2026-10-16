@@ -1,0 +1,144 @@
+TAP version 13
+# Subtest: bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+ok 1 - bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+  ---
+  duration_ms: 22.390629
+  type: 'test'
+  ...
+# Subtest: variant local properties override parent and variesBy fields are not inherited
+ok 2 - variant local properties override parent and variesBy fields are not inherited
+  ---
+  duration_ms: 4.366201
+  type: 'test'
+  ...
+# Subtest: explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+ok 3 - explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+  ---
+  duration_ms: 3.36672
+  type: 'test'
+  ...
+# Subtest: ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+ok 4 - ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+  ---
+  duration_ms: 6.780639
+  type: 'test'
+  ...
+# Subtest: unselected ProductGroup parent cannot borrow a variant brand or offer
+ok 5 - unselected ProductGroup parent cannot borrow a variant brand or offer
+  ---
+  duration_ms: 4.849263
+  type: 'test'
+  ...
+# Subtest: DefinedTerm variesBy and unknown dimensions cannot lend a variable material
+ok 6 - DefinedTerm variesBy and unknown dimensions cannot lend a variable material
+  ---
+  duration_ms: 6.090649
+  type: 'test'
+  ...
+# Subtest: one explicitly current variant Offer URL binds its parent-named Product without guessing a variant
+not ok 7 - one explicitly current variant Offer URL binds its parent-named Product without guessing a variant
+  ---
+  duration_ms: 10.310909
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:4098'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:50:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: an unrelated or multiple variant offer cannot choose canonical parent identity
+ok 8 - an unrelated or multiple variant offer cannot choose canonical parent identity
+  ---
+  duration_ms: 5.166351
+  type: 'test'
+  ...
+# Subtest: one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+ok 9 - one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+  ---
+  duration_ms: 8.27795
+  type: 'test'
+  ...
+# Subtest: Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+ok 10 - Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+  ---
+  duration_ms: 7.782664
+  type: 'test'
+  ...
+# Subtest: Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+ok 11 - Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+  ---
+  duration_ms: 7.600751
+  type: 'test'
+  ...
+# Subtest: Microdata from private fields, hidden or unrelated nested products is never collected
+ok 12 - Microdata from private fields, hidden or unrelated nested products is never collected
+  ---
+  duration_ms: 20.713121
+  type: 'test'
+  ...
+# Subtest: multiple public product scopes must abstain when current identity is ambiguous
+ok 13 - multiple public product scopes must abstain when current identity is ambiguous
+  ---
+  duration_ms: 3.038622
+  type: 'test'
+  ...
+# Subtest: typed text excludes CSS-hidden descendants and nested recommendation strings
+ok 14 - typed text excludes CSS-hidden descendants and nested recommendation strings
+  ---
+  duration_ms: 3.44947
+  type: 'test'
+  ...
+# Subtest: typed identifier fallback is recorded in the extraction method without resolving an offer
+ok 15 - typed identifier fallback is recorded in the extraction method without resolving an offer
+  ---
+  duration_ms: 3.959456
+  type: 'test'
+  ...
+# Subtest: explicit countdown remains in the evidence so a later reset can be measured
+ok 16 - explicit countdown remains in the evidence so a later reset can be measured
+  ---
+  duration_ms: 31.232974
+  type: 'test'
+  ...
+# Subtest: static low stock across real visits cannot become a strong time-limited-offer accusation
+ok 17 - static low stock across real visits cannot become a strong time-limited-offer accusation
+  ---
+  duration_ms: 7.278921
+  type: 'test'
+  ...
+# Subtest: elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+ok 18 - elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+  ---
+  duration_ms: 7.209347
+  type: 'test'
+  ...
+# Subtest: normally decreasing countdown and a malformed clock cannot imply a reset
+ok 19 - normally decreasing countdown and a malformed clock cannot imply a reset
+  ---
+  duration_ms: 4.580761
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 18
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 646.294051

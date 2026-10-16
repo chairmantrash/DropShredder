@@ -1,0 +1,149 @@
+TAP version 13
+# Subtest: bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+ok 1 - bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+  ---
+  duration_ms: 38.642556
+  type: 'test'
+  ...
+# Subtest: variant local properties override parent and variesBy fields are not inherited
+ok 2 - variant local properties override parent and variesBy fields are not inherited
+  ---
+  duration_ms: 6.921231
+  type: 'test'
+  ...
+# Subtest: explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+ok 3 - explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+  ---
+  duration_ms: 4.985348
+  type: 'test'
+  ...
+# Subtest: ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+ok 4 - ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+  ---
+  duration_ms: 9.042419
+  type: 'test'
+  ...
+# Subtest: unselected ProductGroup parent cannot borrow a variant brand or offer
+ok 5 - unselected ProductGroup parent cannot borrow a variant brand or offer
+  ---
+  duration_ms: 5.631601
+  type: 'test'
+  ...
+# Subtest: one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+ok 6 - one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+  ---
+  duration_ms: 9.315804
+  type: 'test'
+  ...
+# Subtest: Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+ok 7 - Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+  ---
+  duration_ms: 8.59862
+  type: 'test'
+  ...
+# Subtest: Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+ok 8 - Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+  ---
+  duration_ms: 11.251065
+  type: 'test'
+  ...
+# Subtest: Microdata from private fields, hidden or unrelated nested products is never collected
+ok 9 - Microdata from private fields, hidden or unrelated nested products is never collected
+  ---
+  duration_ms: 48.356051
+  type: 'test'
+  ...
+# Subtest: multiple public product scopes must abstain when current identity is ambiguous
+ok 10 - multiple public product scopes must abstain when current identity is ambiguous
+  ---
+  duration_ms: 4.077329
+  type: 'test'
+  ...
+# Subtest: typed text excludes CSS-hidden descendants and nested recommendation strings
+not ok 11 - typed text excludes CSS-hidden descendants and nested recommendation strings
+  ---
+  duration_ms: 10.757418
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:6082'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'ABC-1HIDDENOTHER'
+    - 'ABC-1'
+            ^
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ABC-1'
+  actual: 'ABC-1HIDDENOTHER'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:68:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: typed identifier fallback is recorded in the extraction method without resolving an offer
+not ok 12 - typed identifier fallback is recorded in the extraction method without resolving an offer
+  ---
+  duration_ms: 7.04048
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:6352'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /Microdata/. Input:
+    
+    'page metadata; structured identity unresolved'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'page metadata; structured identity unresolved'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:72:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: explicit countdown remains in the evidence so a later reset can be measured
+ok 13 - explicit countdown remains in the evidence so a later reset can be measured
+  ---
+  duration_ms: 27.727608
+  type: 'test'
+  ...
+# Subtest: static low stock across real visits cannot become a strong time-limited-offer accusation
+ok 14 - static low stock across real visits cannot become a strong time-limited-offer accusation
+  ---
+  duration_ms: 7.848617
+  type: 'test'
+  ...
+# Subtest: elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+ok 15 - elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+  ---
+  duration_ms: 3.239132
+  type: 'test'
+  ...
+# Subtest: normally decreasing countdown and a malformed clock cannot imply a reset
+ok 16 - normally decreasing countdown and a malformed clock cannot imply a reset
+  ---
+  duration_ms: 5.875048
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 14
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 919.039406

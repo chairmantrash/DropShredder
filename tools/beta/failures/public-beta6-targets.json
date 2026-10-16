@@ -1,0 +1,2960 @@
+{
+  "frozenAt": "2026-10-16T08:38:38.485637+00:00",
+  "poolSha256": "04a8d9b1e8abaea301b3f1d4834e89887c77719d6b3ccb76307323f6e29e338a",
+  "sourceCommit": "6a9cef93d5853cfa2588df63999dfd49f51ab964",
+  "targets": [
+    {
+      "id": "AUDIT-0001",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0002",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-380-lmnte-reflective-h02541/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0003",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-blue-tint-b37571/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0004",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-350-boost-v2-slate-hp7870/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0005",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-700-utility-black-fv5304/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0006",
+      "url": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://ninewest.com.de/",
+      "host": "ninewest.com.de",
+      "discoveryTitle": "Nine West | Schuhe, Absätze, Stiefel &amp; Taschen Sale in Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0007",
+      "url": "https://www.ninewest.com.de/p/amye-sandalen-mit-knoechelriemen-und-keilabsatz-7/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://ninewest.com.de/",
+      "host": "ninewest.com.de",
+      "discoveryTitle": "Nine West | Schuhe, Absätze, Stiefel &amp; Taschen Sale in Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0008",
+      "url": "https://www.ninewest.com.de/p/cinka-gewebte-plateausandalen-11/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://ninewest.com.de/",
+      "host": "ninewest.com.de",
+      "discoveryTitle": "Nine West | Schuhe, Absätze, Stiefel &amp; Taschen Sale in Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0009",
+      "url": "https://www.ninewest.com.de/p/baja-espadrille-keilsandalen-6/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://ninewest.com.de/",
+      "host": "ninewest.com.de",
+      "discoveryTitle": "Nine West | Schuhe, Absätze, Stiefel &amp; Taschen Sale in Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0010",
+      "url": "https://www.ninewest.com.de/p/amye-sandalen-mit-knoechelriemen-und-keilabsatz-6/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://ninewest.com.de/",
+      "host": "ninewest.com.de",
+      "discoveryTitle": "Nine West | Schuhe, Absätze, Stiefel &amp; Taschen Sale in Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0011",
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/",
+      "host": "happysocksit.it",
+      "discoveryTitle": "Happy Socks IT | Saldi su Calze Beatles da Donna e Uomo a Milano Itali",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0012",
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/",
+      "host": "happysocksit.it",
+      "discoveryTitle": "Happy Socks IT | Saldi su Calze Beatles da Donna e Uomo a Milano Itali",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0013",
+      "url": "https://www.happysocksit.it/p/calzini-a-forma-di-stella-marina-per-bambini-confezione-da-2/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/",
+      "host": "happysocksit.it",
+      "discoveryTitle": "Happy Socks IT | Saldi su Calze Beatles da Donna e Uomo a Milano Itali",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0014",
+      "url": "https://www.happysocksit.it/p/berretto-da-montagna-pieghevole-2/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/",
+      "host": "happysocksit.it",
+      "discoveryTitle": "Happy Socks IT | Saldi su Calze Beatles da Donna e Uomo a Milano Itali",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0015",
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-2/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/",
+      "host": "happysocksit.it",
+      "discoveryTitle": "Happy Socks IT | Saldi su Calze Beatles da Donna e Uomo a Milano Itali",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0016",
+      "url": "https://www.vionic.es/p/sabina-wedge/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/",
+      "host": "vionic.es",
+      "discoveryTitle": "Vionic | Cómodo Footwear For Women Sale en Outlet Oficial España",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0017",
+      "url": "https://www.vionic.es/p/sandalia-ajustable-amber-4/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/",
+      "host": "vionic.es",
+      "discoveryTitle": "Vionic | Cómodo Footwear For Women Sale en Outlet Oficial España",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0018",
+      "url": "https://www.vionic.es/p/sandalia-activate-recovery/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/",
+      "host": "vionic.es",
+      "discoveryTitle": "Vionic | Cómodo Footwear For Women Sale en Outlet Oficial España",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0019",
+      "url": "https://www.vionic.es/p/sandalia-ajustable-gerrit/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/",
+      "host": "vionic.es",
+      "discoveryTitle": "Vionic | Cómodo Footwear For Women Sale en Outlet Oficial España",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0020",
+      "url": "https://www.vionic.es/p/camina-max-wanderer/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/",
+      "host": "vionic.es",
+      "discoveryTitle": "Vionic | Cómodo Footwear For Women Sale en Outlet Oficial España",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0021",
+      "url": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "host": "salomonoutletbarcelona.com",
+      "discoveryTitle": "Botas Montaña Salomon Mujer Ofertas Y Rebajas | salomonoutletbarcelona.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0022",
+      "url": "https://www.salomonoutletbarcelona.com/return.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "host": "salomonoutletbarcelona.com",
+      "discoveryTitle": "Botas Montaña Salomon Mujer Ofertas Y Rebajas | salomonoutletbarcelona.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0023",
+      "url": "https://www.salomonoutletbarcelona.com/products/botas-montaña-salomon-quest-prime-gtx-w-mujer-turquesa-oscuro-negras-oqushy158-p-1432.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "host": "salomonoutletbarcelona.com",
+      "discoveryTitle": "Botas Montaña Salomon Mujer Ofertas Y Rebajas | salomonoutletbarcelona.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0024",
+      "url": "https://www.salomonoutletbarcelona.com/collections/zapatos-zapatillas-running-carretera-c-1_15.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "host": "salomonoutletbarcelona.com",
+      "discoveryTitle": "Botas Montaña Salomon Mujer Ofertas Y Rebajas | salomonoutletbarcelona.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0025",
+      "url": "https://www.salomonoutletbarcelona.com/collections/zapatos-zapatillas-de-trail-running-c-1_2.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/botas-botas-monta%c3%83%c2%b1a-c-13_14.html?gender=2",
+      "host": "salomonoutletbarcelona.com",
+      "discoveryTitle": "Botas Montaña Salomon Mujer Ofertas Y Rebajas | salomonoutletbarcelona.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0026",
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/",
+      "host": "uggat.at",
+      "discoveryTitle": "UGG AT | Kaufen UGGS Boots &amp; UGG Ultra Mini Im UGG AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0027",
+      "url": "https://www.uggat.at/p/ugg-ultra-mini-ankle-boot/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/",
+      "host": "uggat.at",
+      "discoveryTitle": "UGG AT | Kaufen UGGS Boots &amp; UGG Ultra Mini Im UGG AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0028",
+      "url": "https://www.uggat.at/p/ugg-ankle-boots-ultra-mini/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/",
+      "host": "uggat.at",
+      "discoveryTitle": "UGG AT | Kaufen UGGS Boots &amp; UGG Ultra Mini Im UGG AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0029",
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-white-pepper/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/",
+      "host": "uggat.at",
+      "discoveryTitle": "UGG AT | Kaufen UGGS Boots &amp; UGG Ultra Mini Im UGG AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0030",
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-imperial/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/",
+      "host": "uggat.at",
+      "discoveryTitle": "UGG AT | Kaufen UGGS Boots &amp; UGG Ultra Mini Im UGG AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0031",
+      "url": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://pokemon-center.es/",
+      "host": "pokemon-center.es",
+      "discoveryTitle": "Pokémon Center ES | Cartas TCG, Juegos Escarlata y Púrpura y Funko",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0032",
+      "url": "https://www.pokemon-center.es/p/absol-sitting-cuties-peluche-6-%c2%be-in/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://pokemon-center.es/",
+      "host": "pokemon-center.es",
+      "discoveryTitle": "Pokémon Center ES | Cartas TCG, Juegos Escarlata y Púrpura y Funko",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0033",
+      "url": "https://www.pokemon-center.es/p/bellossom-sitting-cuties-peluche-5-%c2%be-in/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://pokemon-center.es/",
+      "host": "pokemon-center.es",
+      "discoveryTitle": "Pokémon Center ES | Cartas TCG, Juegos Escarlata y Púrpura y Funko",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0034",
+      "url": "https://www.pokemon-center.es/p/blastoise-sitting-cuties-peluche-5-%c2%bc-pulgadas/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://pokemon-center.es/",
+      "host": "pokemon-center.es",
+      "discoveryTitle": "Pokémon Center ES | Cartas TCG, Juegos Escarlata y Púrpura y Funko",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0035",
+      "url": "https://www.pokemon-center.es/p/alomomola-sitting-cuties-peluche-7-%c2%be-in/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://pokemon-center.es/",
+      "host": "pokemon-center.es",
+      "discoveryTitle": "Pokémon Center ES | Cartas TCG, Juegos Escarlata y Púrpura y Funko",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0036",
+      "url": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/",
+      "host": "akufrance.com",
+      "discoveryTitle": "AKU France Outlet - Chaussures AKU Soldes | akufrance.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0037",
+      "url": "https://www.akufrance.com/bottes-randonnée-c-2.html",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/",
+      "host": "akufrance.com",
+      "discoveryTitle": "AKU France Outlet - Chaussures AKU Soldes | akufrance.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0038",
+      "url": "https://www.akufrance.com/outlet.html",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/",
+      "host": "akufrance.com",
+      "discoveryTitle": "AKU France Outlet - Chaussures AKU Soldes | akufrance.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0039",
+      "url": "https://www.akufrance.com/bottes-chasse-aku-pilgrim-ds-vert-olive-57871811-p-117.html",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/",
+      "host": "akufrance.com",
+      "discoveryTitle": "AKU France Outlet - Chaussures AKU Soldes | akufrance.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0040",
+      "url": "https://www.akufrance.com/chaussures-voyage-c-3.html",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/",
+      "host": "akufrance.com",
+      "discoveryTitle": "AKU France Outlet - Chaussures AKU Soldes | akufrance.com",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0041",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.orderumbrella.com/",
+      "host": "orderumbrella.com",
+      "discoveryTitle": "Custom Umbrellas with Logo | Wholesale &amp; No Minimum Options",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0042",
+      "url": "https://orderumbrella.com/product/custom-umbrellas-with-logo-no-minimum/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.orderumbrella.com/",
+      "host": "orderumbrella.com",
+      "discoveryTitle": "Custom Umbrellas with Logo | Wholesale &amp; No Minimum Options",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0043",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrellas-with-logo/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.orderumbrella.com/",
+      "host": "orderumbrella.com",
+      "discoveryTitle": "Custom Umbrellas with Logo | Wholesale &amp; No Minimum Options",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0044",
+      "url": "https://orderumbrella.com/product/travel-umbrella-with-logo/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.orderumbrella.com/",
+      "host": "orderumbrella.com",
+      "discoveryTitle": "Custom Umbrellas with Logo | Wholesale &amp; No Minimum Options",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0045",
+      "url": "https://orderumbrella.com/product/custom-printed-umbrella/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.orderumbrella.com/",
+      "host": "orderumbrella.com",
+      "discoveryTitle": "Custom Umbrellas with Logo | Wholesale &amp; No Minimum Options",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0046",
+      "url": "https://www.lowa.co.it/p/acquista-gtx-mid/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.lowa.co.it/",
+      "host": "lowa.co.it",
+      "discoveryTitle": "Lowa| lowa scarpe trekking, scarponi lowa Saldi Online At Italia Negoz",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0047",
+      "url": "https://www.lowa.co.it/p/carezza-gtx-lo/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.lowa.co.it/",
+      "host": "lowa.co.it",
+      "discoveryTitle": "Lowa| lowa scarpe trekking, scarponi lowa Saldi Online At Italia Negoz",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0048",
+      "url": "https://www.lowa.co.it/p/camino-evo-gtx/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.lowa.co.it/",
+      "host": "lowa.co.it",
+      "discoveryTitle": "Lowa| lowa scarpe trekking, scarponi lowa Saldi Online At Italia Negoz",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0049",
+      "url": "https://www.lowa.co.it/p/rimuovi-gtx-lo/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.lowa.co.it/",
+      "host": "lowa.co.it",
+      "discoveryTitle": "Lowa| lowa scarpe trekking, scarponi lowa Saldi Online At Italia Negoz",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0050",
+      "url": "https://www.lowa.co.it/p/camino-evo-gtx-s/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.lowa.co.it/",
+      "host": "lowa.co.it",
+      "discoveryTitle": "Lowa| lowa scarpe trekking, scarponi lowa Saldi Online At Italia Negoz",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0051",
+      "url": "https://www.pokemoncenter.co.it/p/breloom-sitting-cuties-peluche-15-cm/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://www.pokemoncenter.co.it/",
+      "host": "pokemoncenter.co.it",
+      "discoveryTitle": "Pokémon Center IT | Carte Rare, Box, TCG &amp; Giocattoli di Valore",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0052",
+      "url": "https://www.pokemoncenter.co.it/p/ariados-cuties-seduti-peluche-6-%c2%bc-pollici/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://www.pokemoncenter.co.it/",
+      "host": "pokemoncenter.co.it",
+      "discoveryTitle": "Pokémon Center IT | Carte Rare, Box, TCG &amp; Giocattoli di Valore",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0053",
+      "url": "https://www.pokemoncenter.co.it/p/basculin-forma-a-strisce-blu-cuccioli-seduti-di-peluche-4-%c2%bd-pollici/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://www.pokemoncenter.co.it/",
+      "host": "pokemoncenter.co.it",
+      "discoveryTitle": "Pokémon Center IT | Carte Rare, Box, TCG &amp; Giocattoli di Valore",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0054",
+      "url": "https://www.pokemoncenter.co.it/p/aromatisse-sitting-cuties-peluche-5-%c2%bc-pollici/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://www.pokemoncenter.co.it/",
+      "host": "pokemoncenter.co.it",
+      "discoveryTitle": "Pokémon Center IT | Carte Rare, Box, TCG &amp; Giocattoli di Valore",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0055",
+      "url": "https://www.pokemoncenter.co.it/p/arceus-poke-peluche-13-%c2%be-pollici/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://www.pokemoncenter.co.it/",
+      "host": "pokemoncenter.co.it",
+      "discoveryTitle": "Pokémon Center IT | Carte Rare, Box, TCG &amp; Giocattoli di Valore",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0056",
+      "url": "https://beringhorloges.com/product/arctic-symphony-zilver-gepolijst-716-14-05/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://beringhorloges.com/",
+      "host": "beringhorloges.com",
+      "discoveryTitle": "Sale - Voor Fashion En Accessoires Met Stijl… - BERING Horloges",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0057",
+      "url": "https://beringhorloges.com/product/arctic-symphony-blauw-633-817-x0/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://beringhorloges.com/",
+      "host": "beringhorloges.com",
+      "discoveryTitle": "Sale - Voor Fashion En Accessoires Met Stijl… - BERING Horloges",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0058",
+      "url": "https://beringhorloges.com/product/sale-rosegoud-gepolijst-729-30-05/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://beringhorloges.com/",
+      "host": "beringhorloges.com",
+      "discoveryTitle": "Sale - Voor Fashion En Accessoires Met Stijl… - BERING Horloges",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0059",
+      "url": "https://beringhorloges.com/product/arctic-symphony-goud-gepolijst-722-2150-05/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://beringhorloges.com/",
+      "host": "beringhorloges.com",
+      "discoveryTitle": "Sale - Voor Fashion En Accessoires Met Stijl… - BERING Horloges",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0060",
+      "url": "https://beringhorloges.com/product/arctic-symphony-zilver-geborsteld-wichita/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://beringhorloges.com/",
+      "host": "beringhorloges.com",
+      "discoveryTitle": "Sale - Voor Fashion En Accessoires Met Stijl… - BERING Horloges",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0061",
+      "url": "https://www.owalasale.de/outlet.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://owalasale.de/",
+      "host": "owalasale.de",
+      "discoveryTitle": "BANDARCOLOK : Portal Login Toto Online Bandar Colok Resmi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0062",
+      "url": "https://www.owalasale.de/products/mid-autumn-festival-mooncake",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://owalasale.de/",
+      "host": "owalasale.de",
+      "discoveryTitle": "BANDARCOLOK : Portal Login Toto Online Bandar Colok Resmi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0063",
+      "url": "https://www.owalasale.de/products/congraduations-bouquet",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://owalasale.de/",
+      "host": "owalasale.de",
+      "discoveryTitle": "BANDARCOLOK : Portal Login Toto Online Bandar Colok Resmi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0064",
+      "url": "https://www.owalasale.de/products/the-selena-bouquet",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://owalasale.de/",
+      "host": "owalasale.de",
+      "discoveryTitle": "BANDARCOLOK : Portal Login Toto Online Bandar Colok Resmi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0065",
+      "url": "https://www.owalasale.de/products/mid-autumn-of-joy-mooncake",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://owalasale.de/",
+      "host": "owalasale.de",
+      "discoveryTitle": "BANDARCOLOK : Portal Login Toto Online Bandar Colok Resmi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0066",
+      "url": "https://www.salomons.gr/p/mountain-flex-jkt-hd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%b1-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://salomons.gr/",
+      "host": "salomons.gr",
+      "discoveryTitle": "Salomon Ελλάδα Outlet | Salomon XT-6 Gore Tex παπούτσι Εκπτωσεις",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0067",
+      "url": "https://www.salomons.gr/p/bonatti-%ce%b1%ce%b4%ce%b9%ce%b1%ce%b2%cf%81%ce%bf%cf%87%ce%bf-%ce%bc%cf%80%ce%bf%cf%85%cf%86%ce%b1%ce%bd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%bf/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://salomons.gr/",
+      "host": "salomons.gr",
+      "discoveryTitle": "Salomon Ελλάδα Outlet | Salomon XT-6 Gore Tex παπούτσι Εκπτωσεις",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0068",
+      "url": "https://www.salomons.gr/p/mountain-flex-jkt-hd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%b1/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://salomons.gr/",
+      "host": "salomons.gr",
+      "discoveryTitle": "Salomon Ελλάδα Outlet | Salomon XT-6 Gore Tex παπούτσι Εκπτωσεις",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0069",
+      "url": "https://www.salomons.gr/p/bonatti-%ce%b1%ce%b4%ce%b9%ce%b1%ce%b2%cf%81%ce%bf%cf%87%ce%bf-%ce%bc%cf%80%ce%bf%cf%85%cf%86%ce%b1%ce%bd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%bf-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://salomons.gr/",
+      "host": "salomons.gr",
+      "discoveryTitle": "Salomon Ελλάδα Outlet | Salomon XT-6 Gore Tex παπούτσι Εκπτωσεις",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0070",
+      "url": "https://www.salomons.gr/p/bonatti-%ce%b1%ce%b4%ce%b9%ce%b1%ce%b2%cf%81%ce%bf%cf%87%ce%bf-%ce%bc%cf%80%ce%bf%cf%85%cf%86%ce%b1%ce%bd-%ce%b1%ce%bd%ce%b4%cf%81%ce%b9%ce%ba%ce%bf-3/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://salomons.gr/",
+      "host": "salomons.gr",
+      "discoveryTitle": "Salomon Ελλάδα Outlet | Salomon XT-6 Gore Tex παπούτσι Εκπτωσεις",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0071",
+      "url": "https://www.pokemoncenter.co.at/p/abomasnow-sitting-cuties-pluesch-8-%c2%be-zoll/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://pokemoncenter.co.at/",
+      "host": "pokemoncenter.co.at",
+      "discoveryTitle": "Pokémon Center AT | Hol dir Karten, Booster &amp; TCG Sammelspiele",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0072",
+      "url": "https://www.pokemoncenter.co.at/p/accelgor-sitting-cuties-pluesch-6-%c2%bc-zoll/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://pokemoncenter.co.at/",
+      "host": "pokemoncenter.co.at",
+      "discoveryTitle": "Pokémon Center AT | Hol dir Karten, Booster &amp; TCG Sammelspiele",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0073",
+      "url": "https://www.pokemoncenter.co.at/p/abra-celadon-game-corner-pluesch-schluesselanhaenger/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://pokemoncenter.co.at/",
+      "host": "pokemoncenter.co.at",
+      "discoveryTitle": "Pokémon Center AT | Hol dir Karten, Booster &amp; TCG Sammelspiele",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0074",
+      "url": "https://www.pokemoncenter.co.at/p/alcremie-pokemon-winterkarneval-poke-pluesch-schluesselanhaenger/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://pokemoncenter.co.at/",
+      "host": "pokemoncenter.co.at",
+      "discoveryTitle": "Pokémon Center AT | Hol dir Karten, Booster &amp; TCG Sammelspiele",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0075",
+      "url": "https://www.pokemoncenter.co.at/p/aegislash-blade-forme-sitting-cuties-pluesch-7-%c2%bd-zoll/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://pokemoncenter.co.at/",
+      "host": "pokemoncenter.co.at",
+      "discoveryTitle": "Pokémon Center AT | Hol dir Karten, Booster &amp; TCG Sammelspiele",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0076",
+      "url": "https://www.zippoes.es/p/anne-stokes-3/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://zippoes.es/",
+      "host": "zippoes.es",
+      "discoveryTitle": "Zippo ES | Mecheros Oficiales, Encendedores Personalizados y Gafas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0077",
+      "url": "https://www.zippoes.es/p/americana-en-blanco-y-negro/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://zippoes.es/",
+      "host": "zippoes.es",
+      "discoveryTitle": "Zippo ES | Mecheros Oficiales, Encendedores Personalizados y Gafas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0078",
+      "url": "https://www.zippoes.es/p/angeles-de-la-mlb/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://zippoes.es/",
+      "host": "zippoes.es",
+      "discoveryTitle": "Zippo ES | Mecheros Oficiales, Encendedores Personalizados y Gafas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0079",
+      "url": "https://www.zippoes.es/p/anne-stokes-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://zippoes.es/",
+      "host": "zippoes.es",
+      "discoveryTitle": "Zippo ES | Mecheros Oficiales, Encendedores Personalizados y Gafas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0080",
+      "url": "https://www.zippoes.es/p/arco-cromado-clasico/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://zippoes.es/",
+      "host": "zippoes.es",
+      "discoveryTitle": "Zippo ES | Mecheros Oficiales, Encendedores Personalizados y Gafas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0081",
+      "url": "https://www.adidas-samba.at/p/adidas-notitle-x-samba-og-pink/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-samba.at/",
+      "host": "adidas-samba.at",
+      "discoveryTitle": "Adidas Samba Kaufen | Adidas Österreich | Adidas-Samba.AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0082",
+      "url": "https://www.adidas-samba.at/p/adidas-kith-x-samba-og-classics-program-white-red/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-samba.at/",
+      "host": "adidas-samba.at",
+      "discoveryTitle": "Adidas Samba Kaufen | Adidas Österreich | Adidas-Samba.AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0083",
+      "url": "https://www.adidas-samba.at/p/adidas-kith-x-samba-og-classics-program-mango/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-samba.at/",
+      "host": "adidas-samba.at",
+      "discoveryTitle": "Adidas Samba Kaufen | Adidas Österreich | Adidas-Samba.AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0084",
+      "url": "https://www.adidas-samba.at/p/adidas-kith-x-samba-og-classics-program/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-samba.at/",
+      "host": "adidas-samba.at",
+      "discoveryTitle": "Adidas Samba Kaufen | Adidas Österreich | Adidas-Samba.AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0085",
+      "url": "https://www.adidas-samba.at/p/adidas-samba-classic-og-black-gum/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-samba.at/",
+      "host": "adidas-samba.at",
+      "discoveryTitle": "Adidas Samba Kaufen | Adidas Österreich | Adidas-Samba.AT",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0086",
+      "url": "https://www.jordans.com.mx/p/air-jordan-1-low-flyease-bio-hack/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://jordans.com.mx/t/jordan-40",
+      "host": "jordans.com.mx",
+      "discoveryTitle": "Comprar JORDAN 40 | 100% Original De Jordan Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0087",
+      "url": "https://www.jordans.com.mx/p/wmns-air-jordan-1-mid-coconut-milk/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://jordans.com.mx/t/jordan-40",
+      "host": "jordans.com.mx",
+      "discoveryTitle": "Comprar JORDAN 40 | 100% Original De Jordan Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0088",
+      "url": "https://www.jordans.com.mx/p/air-jordan-7-retro-raptor/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://jordans.com.mx/t/jordan-40",
+      "host": "jordans.com.mx",
+      "discoveryTitle": "Comprar JORDAN 40 | 100% Original De Jordan Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0089",
+      "url": "https://www.keensoutletcolombia.com/contact_us.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.keensoutletcolombia.com/",
+      "host": "keensoutletcolombia.com",
+      "discoveryTitle": "Zapatos Keen Outlet Colombia - Botas Keen Bogota - Sandalias Keen Colombia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0090",
+      "url": "https://www.keensoutletcolombia.com/shopping_cart.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.keensoutletcolombia.com/",
+      "host": "keensoutletcolombia.com",
+      "discoveryTitle": "Zapatos Keen Outlet Colombia - Botas Keen Bogota - Sandalias Keen Colombia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0091",
+      "url": "https://www.keensoutletcolombia.com/favourite.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.keensoutletcolombia.com/",
+      "host": "keensoutletcolombia.com",
+      "discoveryTitle": "Zapatos Keen Outlet Colombia - Botas Keen Bogota - Sandalias Keen Colombia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0092",
+      "url": "https://www.keensoutletcolombia.com/collections/sandalias-zapatos-crocs-c-1_15.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.keensoutletcolombia.com/",
+      "host": "keensoutletcolombia.com",
+      "discoveryTitle": "Zapatos Keen Outlet Colombia - Botas Keen Bogota - Sandalias Keen Colombia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0093",
+      "url": "https://www.keensoutletcolombia.com/collections/botas-c-3.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.keensoutletcolombia.com/",
+      "host": "keensoutletcolombia.com",
+      "discoveryTitle": "Zapatos Keen Outlet Colombia - Botas Keen Bogota - Sandalias Keen Colombia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0094",
+      "url": "https://katemarkerhome.shop/products/fluted-antique-brass-bowl",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "sourceSeedUrl": "https://www.katemarkerhome.shop/",
+      "host": "katemarkerhome.shop",
+      "discoveryTitle": "katemarkerhome.shop ",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0095",
+      "url": "https://katemarkerhome.shop/products/millie-easel",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "sourceSeedUrl": "https://www.katemarkerhome.shop/",
+      "host": "katemarkerhome.shop",
+      "discoveryTitle": "katemarkerhome.shop ",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0096",
+      "url": "https://katemarkerhome.shop/products/boucle-throw",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "sourceSeedUrl": "https://www.katemarkerhome.shop/",
+      "host": "katemarkerhome.shop",
+      "discoveryTitle": "katemarkerhome.shop ",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0097",
+      "url": "https://katemarkerhome.shop/products/brass-petal-dish",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "sourceSeedUrl": "https://www.katemarkerhome.shop/",
+      "host": "katemarkerhome.shop",
+      "discoveryTitle": "katemarkerhome.shop ",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0098",
+      "url": "https://katemarkerhome.shop/products/bottle-brush-tree-set",
+      "sourceIds": [
+        "SF-01"
+      ],
+      "sourceSeedUrl": "https://www.katemarkerhome.shop/",
+      "host": "katemarkerhome.shop",
+      "discoveryTitle": "katemarkerhome.shop ",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0099",
+      "url": "https://www.rcmotorsparts.com/product/used-muddslide-motorsports-spring-kit-and-other-pancar-parts/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.rcmotorsparts.com/",
+      "host": "rcmotorsparts.com",
+      "discoveryTitle": "Remote Control Car Parts: Motors, Batteries, ESC, Servos &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0100",
+      "url": "https://www.rcmotorsparts.com/product/used-traxxas-slash-tire-lot/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.rcmotorsparts.com/",
+      "host": "rcmotorsparts.com",
+      "discoveryTitle": "Remote Control Car Parts: Motors, Batteries, ESC, Servos &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0101",
+      "url": "https://www.rcmotorsparts.com/product/used-team-associated-rc10b6-parts-lot/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.rcmotorsparts.com/",
+      "host": "rcmotorsparts.com",
+      "discoveryTitle": "Remote Control Car Parts: Motors, Batteries, ESC, Servos &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0102",
+      "url": "https://www.rcmotorsparts.com/product/used-losi-1-12-asphalt-late-model-rc-race-car-dale-earnhardt-jr-no-8-2025-sun-drop/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.rcmotorsparts.com/",
+      "host": "rcmotorsparts.com",
+      "discoveryTitle": "Remote Control Car Parts: Motors, Batteries, ESC, Servos &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0103",
+      "url": "https://www.rcmotorsparts.com/product/ptk-1102-usahalo-protek-rc-universal-chassis-protective-sheet-holographic-usa-2-12-5x33-5cm/",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://www.rcmotorsparts.com/",
+      "host": "rcmotorsparts.com",
+      "discoveryTitle": "Remote Control Car Parts: Motors, Batteries, ESC, Servos &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0104",
+      "url": "https://vrouwelijkschoenen.com/product/sandalen-goud-248/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://vrouwelijkschoenen.com/",
+      "host": "vrouwelijkschoenen.com",
+      "discoveryTitle": "Uitverkoop Met Hoge Kortingen - Vrouwelijk Schoenen",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0105",
+      "url": "https://vrouwelijkschoenen.com/product/sneakers-zwart-323/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://vrouwelijkschoenen.com/",
+      "host": "vrouwelijkschoenen.com",
+      "discoveryTitle": "Uitverkoop Met Hoge Kortingen - Vrouwelijk Schoenen",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0106",
+      "url": "https://vrouwelijkschoenen.com/product/ballerinas-zwart-35/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://vrouwelijkschoenen.com/",
+      "host": "vrouwelijkschoenen.com",
+      "discoveryTitle": "Uitverkoop Met Hoge Kortingen - Vrouwelijk Schoenen",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0107",
+      "url": "https://vrouwelijkschoenen.com/product/mocassins-kastanjebruin-4/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://vrouwelijkschoenen.com/",
+      "host": "vrouwelijkschoenen.com",
+      "discoveryTitle": "Uitverkoop Met Hoge Kortingen - Vrouwelijk Schoenen",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0108",
+      "url": "https://vrouwelijkschoenen.com/product/slippers-zwart-59/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://vrouwelijkschoenen.com/",
+      "host": "vrouwelijkschoenen.com",
+      "discoveryTitle": "Uitverkoop Met Hoge Kortingen - Vrouwelijk Schoenen",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0109",
+      "url": "https://www.laneiges.com.mx/p/conjunto-de-piel-de-verano/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://laneiges.com.mx/",
+      "host": "laneiges.com.mx",
+      "discoveryTitle": "Laneige México | Lip Balm y Lip Sleeping Masks en Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0110",
+      "url": "https://www.laneiges.com.mx/p/duo-intensivo-con-acido-hialuronico-azul-water-bank-recarga/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://laneiges.com.mx/",
+      "host": "laneiges.com.mx",
+      "discoveryTitle": "Laneige México | Lip Balm y Lip Sleeping Masks en Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0111",
+      "url": "https://www.laneiges.com.mx/p/duo-de-crema-y-recambio-water-bank/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://laneiges.com.mx/",
+      "host": "laneiges.com.mx",
+      "discoveryTitle": "Laneige México | Lip Balm y Lip Sleeping Masks en Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0112",
+      "url": "https://www.laneiges.com.mx/p/gel-hialuronico-azul-water-bank-duo-de-recarga/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://laneiges.com.mx/",
+      "host": "laneiges.com.mx",
+      "discoveryTitle": "Laneige México | Lip Balm y Lip Sleeping Masks en Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0113",
+      "url": "https://www.laneiges.com.mx/p/crema-perfect-renew-3x-avanzada/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://laneiges.com.mx/",
+      "host": "laneiges.com.mx",
+      "discoveryTitle": "Laneige México | Lip Balm y Lip Sleeping Masks en Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0114",
+      "url": "https://www.jwpeis.com.mx/p/bolso-bria-con-asa-superior-estructurada-lona-marron/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.jwpeis.com.mx/",
+      "host": "jwpeis.com.mx",
+      "discoveryTitle": "JW PEI | Elegante Bolsos Sale en Outlet Oficial México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0115",
+      "url": "https://www.jwpeis.com.mx/p/bolso-clasico-tejido-con-asa-superior-lucia-blanco/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.jwpeis.com.mx/",
+      "host": "jwpeis.com.mx",
+      "discoveryTitle": "JW PEI | Elegante Bolsos Sale en Outlet Oficial México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0116",
+      "url": "https://www.jwpeis.com.mx/p/bolso-bria-con-asa-superior-estructurada-burdeos-intenso/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.jwpeis.com.mx/",
+      "host": "jwpeis.com.mx",
+      "discoveryTitle": "JW PEI | Elegante Bolsos Sale en Outlet Oficial México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0117",
+      "url": "https://www.jwpeis.com.mx/p/bolso-bria-con-asa-superior-estructurada-lona-negra/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.jwpeis.com.mx/",
+      "host": "jwpeis.com.mx",
+      "discoveryTitle": "JW PEI | Elegante Bolsos Sale en Outlet Oficial México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0118",
+      "url": "https://www.jwpeis.com.mx/p/blowfish-bolso-de-mano-verde/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.jwpeis.com.mx/",
+      "host": "jwpeis.com.mx",
+      "discoveryTitle": "JW PEI | Elegante Bolsos Sale en Outlet Oficial México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0119",
+      "url": "https://www.superdry.co.at/p/athletic-essentials-entspannter-kurzer-kapuzenpullover-mit-reissverschluss-in-eclipse-navy/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://superdry.co.at/",
+      "host": "superdry.co.at",
+      "discoveryTitle": "Superdry | Herren &amp; Damen Hoodies Online Shop in Wien Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0120",
+      "url": "https://www.superdry.co.at/p/athletic-essentials-lockeres-kurzes-rundhals-sweatshirt-in-eclipse-navy/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://superdry.co.at/",
+      "host": "superdry.co.at",
+      "discoveryTitle": "Superdry | Herren &amp; Damen Hoodies Online Shop in Wien Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0121",
+      "url": "https://www.superdry.co.at/p/athletic-essentials-laessiges-sweatshirt-mit-applikation-in-sattem-marineblau/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://superdry.co.at/",
+      "host": "superdry.co.at",
+      "discoveryTitle": "Superdry | Herren &amp; Damen Hoodies Online Shop in Wien Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0122",
+      "url": "https://www.superdry.co.at/p/athletic-essential-oversized-kapuzenpullover-mit-reissverschluss-in-grau-melange/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://superdry.co.at/",
+      "host": "superdry.co.at",
+      "discoveryTitle": "Superdry | Herren &amp; Damen Hoodies Online Shop in Wien Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0123",
+      "url": "https://www.superdry.co.at/p/active-fleece-mit-durchgehendem-reissverschluss-in-schwarz/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://superdry.co.at/",
+      "host": "superdry.co.at",
+      "discoveryTitle": "Superdry | Herren &amp; Damen Hoodies Online Shop in Wien Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0124",
+      "url": "https://www.specialized-gb.com/p/aethos-2-expert/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://specialized-gb.com/",
+      "host": "specialized-gb.com",
+      "discoveryTitle": "Specialized GB | Bikes and Gears Designed Specifically for Riders",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0125",
+      "url": "https://www.specialized-gb.com/p/aethos-2-frameset/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://specialized-gb.com/",
+      "host": "specialized-gb.com",
+      "discoveryTitle": "Specialized GB | Bikes and Gears Designed Specifically for Riders",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0126",
+      "url": "https://www.specialized-gb.com/p/allez/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://specialized-gb.com/",
+      "host": "specialized-gb.com",
+      "discoveryTitle": "Specialized GB | Bikes and Gears Designed Specifically for Riders",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0127",
+      "url": "https://www.specialized-gb.com/p/aethos-2-pro-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://specialized-gb.com/",
+      "host": "specialized-gb.com",
+      "discoveryTitle": "Specialized GB | Bikes and Gears Designed Specifically for Riders",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0128",
+      "url": "https://www.specialized-gb.com/p/aethos-pro/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://specialized-gb.com/",
+      "host": "specialized-gb.com",
+      "discoveryTitle": "Specialized GB | Bikes and Gears Designed Specifically for Riders",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0129",
+      "url": "https://www.champion.co.at/p/champion-big-tall-fleece-script-logo-kapuzenpullover-herren-schwarz-25983eyhx/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.champion.co.at/",
+      "host": "champion.co.at",
+      "discoveryTitle": "Champion | Kaufen Champion Kleidung, Schuhe In Österreich Offiziell",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0130",
+      "url": "https://www.champion.co.at/p/champion-everyday-comfort-knit-3-pairs-boxershorts-herren-blau-grau-73410uqcp/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.champion.co.at/",
+      "host": "champion.co.at",
+      "discoveryTitle": "Champion | Kaufen Champion Kleidung, Schuhe In Österreich Offiziell",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0131",
+      "url": "https://www.champion.co.at/p/champion-lightweight-breathable-3-pairs-boxershorts-herren-grau-gruen-dunkelblau-15709opjq/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.champion.co.at/",
+      "host": "champion.co.at",
+      "discoveryTitle": "Champion | Kaufen Champion Kleidung, Schuhe In Österreich Offiziell",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0132",
+      "url": "https://www.champion.co.at/p/champion-global-explorer-28-hose-herren-schwarz-18376wpjk/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.champion.co.at/",
+      "host": "champion.co.at",
+      "discoveryTitle": "Champion | Kaufen Champion Kleidung, Schuhe In Österreich Offiziell",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0133",
+      "url": "https://www.champion.co.at/p/champion-authentic-leggings-damen-dunkelblau-07654xqgf/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.champion.co.at/",
+      "host": "champion.co.at",
+      "discoveryTitle": "Champion | Kaufen Champion Kleidung, Schuhe In Österreich Offiziell",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0134",
+      "url": "https://favorieteaction.com/product/action-koffers-shopper-voorjaar/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://favorieteaction.com/",
+      "host": "favorieteaction.com",
+      "discoveryTitle": "Woonaccessoires &amp; Keukengerei, Bureau Accessoires... Sale - Favoriete Action",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0135",
+      "url": "https://favorieteaction.com/product/dash-afwas-wasmiddelenrefresh-textielverfrisser/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://favorieteaction.com/",
+      "host": "favorieteaction.com",
+      "discoveryTitle": "Woonaccessoires &amp; Keukengerei, Bureau Accessoires... Sale - Favoriete Action",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0136",
+      "url": "https://favorieteaction.com/product/curver-woonaccessoires-infinity-organisers/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://favorieteaction.com/",
+      "host": "favorieteaction.com",
+      "discoveryTitle": "Woonaccessoires &amp; Keukengerei, Bureau Accessoires... Sale - Favoriete Action",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0137",
+      "url": "https://favorieteaction.com/product/spargo-schoonmaakartikelen-microvezeldoek-4/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://favorieteaction.com/",
+      "host": "favorieteaction.com",
+      "discoveryTitle": "Woonaccessoires &amp; Keukengerei, Bureau Accessoires... Sale - Favoriete Action",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0138",
+      "url": "https://favorieteaction.com/product/adidas-lichaamsverzorging-3-in-1-douchegel-pure-game/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://favorieteaction.com/",
+      "host": "favorieteaction.com",
+      "discoveryTitle": "Woonaccessoires &amp; Keukengerei, Bureau Accessoires... Sale - Favoriete Action",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0139",
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-freska-2/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://ninewest.com.mx/",
+      "host": "ninewest.com.mx",
+      "discoveryTitle": "Nine West | Outlet de Bolsas, Botas, Relojes y Carteras en México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0140",
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-kalah/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://ninewest.com.mx/",
+      "host": "ninewest.com.mx",
+      "discoveryTitle": "Nine West | Outlet de Bolsas, Botas, Relojes y Carteras en México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0141",
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-nenya-6/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://ninewest.com.mx/",
+      "host": "ninewest.com.mx",
+      "discoveryTitle": "Nine West | Outlet de Bolsas, Botas, Relojes y Carteras en México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0142",
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-freska-3/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://ninewest.com.mx/",
+      "host": "ninewest.com.mx",
+      "discoveryTitle": "Nine West | Outlet de Bolsas, Botas, Relojes y Carteras en México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0143",
+      "url": "https://www.ninewest.com.mx/p/zapatillas-con-cordones-nenya-3/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://ninewest.com.mx/",
+      "host": "ninewest.com.mx",
+      "discoveryTitle": "Nine West | Outlet de Bolsas, Botas, Relojes y Carteras en México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0144",
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-x-bella-hadid-beanie-red/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "http://chromehearts-france.fr/",
+      "host": "chromehearts-france.fr",
+      "discoveryTitle": "Chrome Hearts France | Lunettes, Pulls Et Jewellery Vente Chaude",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0145",
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-printed-cross-trucker-hat/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "http://chromehearts-france.fr/",
+      "host": "chromehearts-france.fr",
+      "discoveryTitle": "Chrome Hearts France | Lunettes, Pulls Et Jewellery Vente Chaude",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0146",
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-hollywood-corduroy-trucker-hat-black-gold/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "http://chromehearts-france.fr/",
+      "host": "chromehearts-france.fr",
+      "discoveryTitle": "Chrome Hearts France | Lunettes, Pulls Et Jewellery Vente Chaude",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0147",
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-trucker-cap-king-taco/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "http://chromehearts-france.fr/",
+      "host": "chromehearts-france.fr",
+      "discoveryTitle": "Chrome Hearts France | Lunettes, Pulls Et Jewellery Vente Chaude",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0148",
+      "url": "https://www.chromehearts-france.fr/p/chrome-hearts-matty-boy-chomper-leather-hat/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "http://chromehearts-france.fr/",
+      "host": "chromehearts-france.fr",
+      "discoveryTitle": "Chrome Hearts France | Lunettes, Pulls Et Jewellery Vente Chaude",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0149",
+      "url": "https://www.bagsoutletonlineshop.com/products/pinko-mini-love-bag-icon-simply-jewel-crossbodytassen-dames-grijs-zilver-belgie24657019-p-1076.html",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://bagsoutletonlineshop.com/",
+      "host": "bagsoutletonlineshop.com",
+      "discoveryTitle": "Pinko Belgie - Pinko Handtas Outlet - Pinko Riem Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0150",
+      "url": "https://www.bagsoutletonlineshop.com/collections/kleding-sweatshirt-c-1_14.html",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://bagsoutletonlineshop.com/",
+      "host": "bagsoutletonlineshop.com",
+      "discoveryTitle": "Pinko Belgie - Pinko Handtas Outlet - Pinko Riem Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0151",
+      "url": "https://www.bagsoutletonlineshop.com/products/pinko-klassieke-love-bag-click-chevron-crossbodytassen-dames-zwart-belgie56274019-p-1003.html",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://bagsoutletonlineshop.com/",
+      "host": "bagsoutletonlineshop.com",
+      "discoveryTitle": "Pinko Belgie - Pinko Handtas Outlet - Pinko Riem Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0152",
+      "url": "https://www.bagsoutletonlineshop.com/products/pinko-galleria-laminated-reptile-mini-love-bag-one-crossbodytassen-dames-grijs-goud-belgie69452319-p-1185.html",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://bagsoutletonlineshop.com/",
+      "host": "bagsoutletonlineshop.com",
+      "discoveryTitle": "Pinko Belgie - Pinko Handtas Outlet - Pinko Riem Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0153",
+      "url": "https://www.bagsoutletonlineshop.com/collections/kleding-jurken-c-1_2.html",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://bagsoutletonlineshop.com/",
+      "host": "bagsoutletonlineshop.com",
+      "discoveryTitle": "Pinko Belgie - Pinko Handtas Outlet - Pinko Riem Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0154",
+      "url": "https://koolesports.com/product/wandelen-in-zeeuws-vlaanderen/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://koolesports.com/",
+      "host": "koolesports.com",
+      "discoveryTitle": "Nu Sale Met Kortingen - Koole Sport",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0155",
+      "url": "https://koolesports.com/product/asics-gt-2000-12-light-garnet-brisket-red/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://koolesports.com/",
+      "host": "koolesports.com",
+      "discoveryTitle": "Nu Sale Met Kortingen - Koole Sport",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0156",
+      "url": "https://koolesports.com/product/craft-lumen-wind-jack-heren-flumino/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://koolesports.com/",
+      "host": "koolesports.com",
+      "discoveryTitle": "Nu Sale Met Kortingen - Koole Sport",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0157",
+      "url": "https://koolesports.com/product/asics-gel-kayano-31-indigo-blue-gunmetal/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://koolesports.com/",
+      "host": "koolesports.com",
+      "discoveryTitle": "Nu Sale Met Kortingen - Koole Sport",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0158",
+      "url": "https://koolesports.com/product/hoka-one-one-clifton-9-frost-gold/",
+      "sourceIds": [
+        "SF-04"
+      ],
+      "sourceSeedUrl": "https://koolesports.com/",
+      "host": "koolesports.com",
+      "discoveryTitle": "Nu Sale Met Kortingen - Koole Sport",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0159",
+      "url": "https://tuketa1.com/products/plaid-platform-shoes",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "sourceSeedUrl": "https://tuketa1.com/",
+      "host": "tuketa1.com",
+      "discoveryTitle": "\n      tuketa\n",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0160",
+      "url": "https://tuketa1.com/products/long-shearling-boots",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "sourceSeedUrl": "https://tuketa1.com/",
+      "host": "tuketa1.com",
+      "discoveryTitle": "\n      tuketa\n",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0161",
+      "url": "https://tuketa1.com/products/new-platform-sneakers",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "sourceSeedUrl": "https://tuketa1.com/",
+      "host": "tuketa1.com",
+      "discoveryTitle": "\n      tuketa\n",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0162",
+      "url": "https://tuketa1.com/products/ladies-platform-sneakers-1",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "sourceSeedUrl": "https://tuketa1.com/",
+      "host": "tuketa1.com",
+      "discoveryTitle": "\n      tuketa\n",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0163",
+      "url": "https://tuketa1.com/products/genuine-leather-platform-sneakers",
+      "sourceIds": [
+        "SF-09"
+      ],
+      "sourceSeedUrl": "https://tuketa1.com/",
+      "host": "tuketa1.com",
+      "discoveryTitle": "\n      tuketa\n",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0164",
+      "url": "https://www.napapijris.de/p/ambra-kurzarm-t-shirt-5/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://napapijris.de/",
+      "host": "napapijris.de",
+      "discoveryTitle": "Napapijri | Winterjacke Damen &amp; Herren Sale im Deutschland Outlet",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0165",
+      "url": "https://www.napapijris.de/p/ambra-kurzarm-t-shirt-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://napapijris.de/",
+      "host": "napapijris.de",
+      "discoveryTitle": "Napapijri | Winterjacke Damen &amp; Herren Sale im Deutschland Outlet",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0166",
+      "url": "https://www.napapijris.de/p/amundsen-kurzarm-t-shirt-6/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://napapijris.de/",
+      "host": "napapijris.de",
+      "discoveryTitle": "Napapijri | Winterjacke Damen &amp; Herren Sale im Deutschland Outlet",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0167",
+      "url": "https://www.napapijris.de/p/amundsen-kurzarm-t-shirt-5/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://napapijris.de/",
+      "host": "napapijris.de",
+      "discoveryTitle": "Napapijri | Winterjacke Damen &amp; Herren Sale im Deutschland Outlet",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0168",
+      "url": "https://www.napapijris.de/p/amundsen-kurzarm-t-shirt-3/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://napapijris.de/",
+      "host": "napapijris.de",
+      "discoveryTitle": "Napapijri | Winterjacke Damen &amp; Herren Sale im Deutschland Outlet",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0169",
+      "url": "https://www.stellamccartneys.us/p/compact-knit-peplum-dress/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.stellamccartneys.us/",
+      "host": "stellamccartneys.us",
+      "discoveryTitle": "Stella Mccartney US Official Site | Bags, Dresses, Shoes &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0170",
+      "url": "https://www.stellamccartneys.us/p/come-together-slogan-t-shirt/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.stellamccartneys.us/",
+      "host": "stellamccartneys.us",
+      "discoveryTitle": "Stella Mccartney US Official Site | Bags, Dresses, Shoes &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0171",
+      "url": "https://www.stellamccartneys.us/p/canvas-lightweight-straight-trousers/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.stellamccartneys.us/",
+      "host": "stellamccartneys.us",
+      "discoveryTitle": "Stella Mccartney US Official Site | Bags, Dresses, Shoes &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0172",
+      "url": "https://www.stellamccartneys.us/p/blue-tits-graphic-tank-top/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.stellamccartneys.us/",
+      "host": "stellamccartneys.us",
+      "discoveryTitle": "Stella Mccartney US Official Site | Bags, Dresses, Shoes &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0173",
+      "url": "https://www.stellamccartneys.us/p/compact-knit-peplum-polo-top/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.stellamccartneys.us/",
+      "host": "stellamccartneys.us",
+      "discoveryTitle": "Stella Mccartney US Official Site | Bags, Dresses, Shoes &amp; More",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0174",
+      "url": "https://www.tiendafilaespana.es/collections/zapatos-sandalias-deslizantes-c-3_31.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.tiendafilaespana.es/",
+      "host": "tiendafilaespana.es",
+      "discoveryTitle": "Tienda Zapatillas Fila España - Ropa Fila Outlet Spain Online Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0175",
+      "url": "https://www.tiendafilaespana.es/collections/ropa-chaquetas-c-1_10.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.tiendafilaespana.es/",
+      "host": "tiendafilaespana.es",
+      "discoveryTitle": "Tienda Zapatillas Fila España - Ropa Fila Outlet Spain Online Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0176",
+      "url": "https://www.tiendafilaespana.es/collections/ropa-leggins-c-1_22.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.tiendafilaespana.es/",
+      "host": "tiendafilaespana.es",
+      "discoveryTitle": "Tienda Zapatillas Fila España - Ropa Fila Outlet Spain Online Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0177",
+      "url": "https://www.tiendafilaespana.es/collections/zapatos-zapatos-de-tenis-c-3_4.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.tiendafilaespana.es/",
+      "host": "tiendafilaespana.es",
+      "discoveryTitle": "Tienda Zapatillas Fila España - Ropa Fila Outlet Spain Online Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0178",
+      "url": "https://www.tiendafilaespana.es/collections/mujer-c-0.html",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.tiendafilaespana.es/",
+      "host": "tiendafilaespana.es",
+      "discoveryTitle": "Tienda Zapatillas Fila España - Ropa Fila Outlet Spain Online Rebajas",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0179",
+      "url": "https://www.cannondales.it/p/abitudine-ht-3-perla-nera/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.cannondales.it/",
+      "host": "cannondales.it",
+      "discoveryTitle": "Cannondale IT | Offerte Biciclette Nel Negozio Outlet Ufficiale In Italia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0180",
+      "url": "https://www.cannondales.it/p/abitudine-ltd-royal-purple/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.cannondales.it/",
+      "host": "cannondales.it",
+      "discoveryTitle": "Cannondale IT | Offerte Biciclette Nel Negozio Outlet Ufficiale In Italia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0181",
+      "url": "https://www.cannondales.it/p/abitudine-26-deep-teal/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.cannondales.it/",
+      "host": "cannondales.it",
+      "discoveryTitle": "Cannondale IT | Offerte Biciclette Nel Negozio Outlet Ufficiale In Italia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0182",
+      "url": "https://www.cannondales.it/p/abitudine-lt-ltd-meteor-gray/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.cannondales.it/",
+      "host": "cannondales.it",
+      "discoveryTitle": "Cannondale IT | Offerte Biciclette Nel Negozio Outlet Ufficiale In Italia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0183",
+      "url": "https://www.cannondales.it/p/abitudine-lt-2-il-fumo-nero/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.cannondales.it/",
+      "host": "cannondales.it",
+      "discoveryTitle": "Cannondale IT | Offerte Biciclette Nel Negozio Outlet Ufficiale In Italia",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0184",
+      "url": "https://www.barboursuk.com/p/ambleside-wax-jacket-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://barboursuk.com/",
+      "host": "barboursuk.com",
+      "discoveryTitle": "Barbour UK | Jackets, Coats &amp; Wellies Men &amp; Women Sale Outlet UK",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0185",
+      "url": "https://www.barboursuk.com/p/ashby-wax-jacket-with-crew-neck/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://barboursuk.com/",
+      "host": "barboursuk.com",
+      "discoveryTitle": "Barbour UK | Jackets, Coats &amp; Wellies Men &amp; Women Sale Outlet UK",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0186",
+      "url": "https://www.barboursuk.com/p/ambleside-wax-jacket/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://barboursuk.com/",
+      "host": "barboursuk.com",
+      "discoveryTitle": "Barbour UK | Jackets, Coats &amp; Wellies Men &amp; Women Sale Outlet UK",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0187",
+      "url": "https://www.barboursuk.com/p/ashbeck-wax-jacket-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://barboursuk.com/",
+      "host": "barboursuk.com",
+      "discoveryTitle": "Barbour UK | Jackets, Coats &amp; Wellies Men &amp; Women Sale Outlet UK",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0188",
+      "url": "https://www.barboursuk.com/p/ashby-wax-jacket-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://barboursuk.com/",
+      "host": "barboursuk.com",
+      "discoveryTitle": "Barbour UK | Jackets, Coats &amp; Wellies Men &amp; Women Sale Outlet UK",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0189",
+      "url": "https://bambiniattivi.com/product/pinko-kids-camicia-con-stampa-multicolor-e-ruches-per-bambine/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://bambiniattivi.com/",
+      "host": "bambiniattivi.com",
+      "discoveryTitle": "Abbigliamento &amp; Scarpe, Accessori Saldi - BambiniAttivi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0190",
+      "url": "https://bambiniattivi.com/product/le-coconne-scarpine-verdi-per-neonati/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://bambiniattivi.com/",
+      "host": "bambiniattivi.com",
+      "discoveryTitle": "Abbigliamento &amp; Scarpe, Accessori Saldi - BambiniAttivi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0191",
+      "url": "https://bambiniattivi.com/product/4giveness-camicia-fantasia-floreale-blu-per-bambini/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://bambiniattivi.com/",
+      "host": "bambiniattivi.com",
+      "discoveryTitle": "Abbigliamento &amp; Scarpe, Accessori Saldi - BambiniAttivi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0192",
+      "url": "https://bambiniattivi.com/product/hinnominate-kids-tuta-corallo-con-logo-per-bambine/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://bambiniattivi.com/",
+      "host": "bambiniattivi.com",
+      "discoveryTitle": "Abbigliamento &amp; Scarpe, Accessori Saldi - BambiniAttivi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0193",
+      "url": "https://bambiniattivi.com/product/moschino-kids-abito-rosa-chiaro-con-stampa-logo-per-bambine/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://bambiniattivi.com/",
+      "host": "bambiniattivi.com",
+      "discoveryTitle": "Abbigliamento &amp; Scarpe, Accessori Saldi - BambiniAttivi",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0194",
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-bottleopener-fridge-magnet-blind-box/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://labubu.co.at/",
+      "host": "labubu.co.at",
+      "discoveryTitle": "LABUBU | POP MART Österreich Offizieller | Exklusives Labubu-Figuren",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0195",
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-glass-cupblind-box/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://labubu.co.at/",
+      "host": "labubu.co.at",
+      "discoveryTitle": "LABUBU | POP MART Österreich Offizieller | Exklusives Labubu-Figuren",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0196",
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-longlanyard-blind-box/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://labubu.co.at/",
+      "host": "labubu.co.at",
+      "discoveryTitle": "LABUBU | POP MART Österreich Offizieller | Exklusives Labubu-Figuren",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0197",
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-football-shaped-mini-bag-blind-box/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://labubu.co.at/",
+      "host": "labubu.co.at",
+      "discoveryTitle": "LABUBU | POP MART Österreich Offizieller | Exklusives Labubu-Figuren",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0198",
+      "url": "https://www.labubu.co.at/p/the-monsters-x-fifa-series-vinyl-plushpendant/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "http://labubu.co.at/",
+      "host": "labubu.co.at",
+      "discoveryTitle": "LABUBU | POP MART Österreich Offizieller | Exklusives Labubu-Figuren",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0199",
+      "url": "https://www.adidas-campus.de/p/adidas-campus-collegiate-burgundy-2/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-campus.de/",
+      "host": "adidas-campus.de",
+      "discoveryTitle": "Adidas Campus 00s Schuhe Günstig Kaufen - Adidas offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0200",
+      "url": "https://www.adidas-campus.de/p/adidas-campus-black-metallic-silver/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-campus.de/",
+      "host": "adidas-campus.de",
+      "discoveryTitle": "Adidas Campus 00s Schuhe Günstig Kaufen - Adidas offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0201",
+      "url": "https://www.adidas-campus.de/p/adidas-campus-chinese-new-year/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-campus.de/",
+      "host": "adidas-campus.de",
+      "discoveryTitle": "Adidas Campus 00s Schuhe Günstig Kaufen - Adidas offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0202",
+      "url": "https://www.adidas-campus.de/p/adidas-campus-ash-blue/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-campus.de/",
+      "host": "adidas-campus.de",
+      "discoveryTitle": "Adidas Campus 00s Schuhe Günstig Kaufen - Adidas offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0203",
+      "url": "https://www.adidas-campus.de/p/adidas-032c-x-campus-prince-white/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.adidas-campus.de/",
+      "host": "adidas-campus.de",
+      "discoveryTitle": "Adidas Campus 00s Schuhe Günstig Kaufen - Adidas offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0204",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-boost-v2-td-slate-hp7871/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://yeezys.com.es/",
+      "host": "yeezys.com.es",
+      "discoveryTitle": "Yeezy | Comprar Yeezys en Adidas Yeezy España Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0205",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-boost-v2-cmpct-slate-carbon-hq6319/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://yeezys.com.es/",
+      "host": "yeezys.com.es",
+      "discoveryTitle": "Yeezy | Comprar Yeezys en Adidas Yeezy España Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0206",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-boost-350-infant-ash-pearl-gy7735/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://yeezys.com.es/",
+      "host": "yeezys.com.es",
+      "discoveryTitle": "Yeezy | Comprar Yeezys en Adidas Yeezy España Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0207",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-350-v2-dazzling-blue-gy7164/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://yeezys.com.es/",
+      "host": "yeezys.com.es",
+      "discoveryTitle": "Yeezy | Comprar Yeezys en Adidas Yeezy España Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0208",
+      "url": "https://www.yeezys.com.es/p/adidas-yeezy-boost-350-moonrock-aq2660/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "http://yeezys.com.es/",
+      "host": "yeezys.com.es",
+      "discoveryTitle": "Yeezy | Comprar Yeezys en Adidas Yeezy España Oficial",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0209",
+      "url": "https://www.nike-blazer.de/p/nike-blazer-mid-77-coming-to-america/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.nike-blazer.de/",
+      "host": "nike-blazer.de",
+      "discoveryTitle": "Nike Blazer Mid 77 Schuhe Günstig Kaufen - Nike offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0210",
+      "url": "https://www.nike-blazer.de/p/nike-blazer-mid-77-doernbecher-2022/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.nike-blazer.de/",
+      "host": "nike-blazer.de",
+      "discoveryTitle": "Nike Blazer Mid 77 Schuhe Günstig Kaufen - Nike offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0211",
+      "url": "https://www.nike-blazer.de/p/nike-blazer-mid-77-50-years-of-hip-hop/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.nike-blazer.de/",
+      "host": "nike-blazer.de",
+      "discoveryTitle": "Nike Blazer Mid 77 Schuhe Günstig Kaufen - Nike offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0212",
+      "url": "https://www.nike-blazer.de/p/nike-ben-simmons-x-blazer-mid-77-pregame-pack-motivation/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.nike-blazer.de/",
+      "host": "nike-blazer.de",
+      "discoveryTitle": "Nike Blazer Mid 77 Schuhe Günstig Kaufen - Nike offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0213",
+      "url": "https://www.nike-blazer.de/p/nike-blazer-mid-77-first-use-orange/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.nike-blazer.de/",
+      "host": "nike-blazer.de",
+      "discoveryTitle": "Nike Blazer Mid 77 Schuhe Günstig Kaufen - Nike offizielle Deutschland",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0214",
+      "url": "https://www.pokemoncenterca.com/p/aipom-sitting-cuties-plush-5-%c2%bc-in/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.pokemoncenterca.com/",
+      "host": "pokemoncenterca.com",
+      "discoveryTitle": "Pokémon Center CA | TCG, Trading Cards, Games &amp; Packs Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0215",
+      "url": "https://www.pokemoncenterca.com/p/alcremie-pokemon-winter-carnival-poke-plush-key-chain/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.pokemoncenterca.com/",
+      "host": "pokemoncenterca.com",
+      "discoveryTitle": "Pokémon Center CA | TCG, Trading Cards, Games &amp; Packs Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0216",
+      "url": "https://www.pokemoncenterca.com/p/alolan-exeggutor-poke-plush-13-in/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.pokemoncenterca.com/",
+      "host": "pokemoncenterca.com",
+      "discoveryTitle": "Pokémon Center CA | TCG, Trading Cards, Games &amp; Packs Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0217",
+      "url": "https://www.pokemoncenterca.com/p/aegislash-shield-forme-sitting-cuties-plush-7-%c2%bd-in/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.pokemoncenterca.com/",
+      "host": "pokemoncenterca.com",
+      "discoveryTitle": "Pokémon Center CA | TCG, Trading Cards, Games &amp; Packs Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0218",
+      "url": "https://www.pokemoncenterca.com/p/alakazam-sitting-cuties-plush-6-in/",
+      "sourceIds": [
+        "SF-05"
+      ],
+      "sourceSeedUrl": "https://www.pokemoncenterca.com/",
+      "host": "pokemoncenterca.com",
+      "discoveryTitle": "Pokémon Center CA | TCG, Trading Cards, Games &amp; Packs Sale",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0219",
+      "url": "https://www.happysocksmx.com.mx/p/calcetin-con-decoracion-navidena/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://happysocksmx.com.mx/",
+      "host": "happysocksmx.com.mx",
+      "discoveryTitle": "Happy Socks MX | Outlet Calcetines para Mujer y Hombre México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0220",
+      "url": "https://www.happysocksmx.com.mx/p/bolsa-de-patatas-fritas-calcetin/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://happysocksmx.com.mx/",
+      "host": "happysocksmx.com.mx",
+      "discoveryTitle": "Happy Socks MX | Outlet Calcetines para Mujer y Hombre México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0221",
+      "url": "https://www.happysocksmx.com.mx/p/1-paquete-de-boxer-corto-banana/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://happysocksmx.com.mx/",
+      "host": "happysocksmx.com.mx",
+      "discoveryTitle": "Happy Socks MX | Outlet Calcetines para Mujer y Hombre México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0222",
+      "url": "https://www.happysocksmx.com.mx/p/calcetin-bloody-mary/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://happysocksmx.com.mx/",
+      "host": "happysocksmx.com.mx",
+      "discoveryTitle": "Happy Socks MX | Outlet Calcetines para Mujer y Hombre México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0223",
+      "url": "https://www.happysocksmx.com.mx/p/cafe-con-leche-para-llevar-calcetines-bajos/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://happysocksmx.com.mx/",
+      "host": "happysocksmx.com.mx",
+      "discoveryTitle": "Happy Socks MX | Outlet Calcetines para Mujer y Hombre México",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0224",
+      "url": "https://www.bershka.co.it/p/pantaloni-fluidi-con-lacci-laterali/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.bershka.co.it/",
+      "host": "bershka.co.it",
+      "discoveryTitle": "Bershka IT | Outlet Online - Saldi su Vestiti Donna e Uomo, Moda alla",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0225",
+      "url": "https://www.bershka.co.it/p/pantaloni-a-gamba-larga-5/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.bershka.co.it/",
+      "host": "bershka.co.it",
+      "discoveryTitle": "Bershka IT | Outlet Online - Saldi su Vestiti Donna e Uomo, Moda alla",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0226",
+      "url": "https://www.bershka.co.it/p/custodia-iphone-floreale/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.bershka.co.it/",
+      "host": "bershka.co.it",
+      "discoveryTitle": "Bershka IT | Outlet Online - Saldi su Vestiti Donna e Uomo, Moda alla",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0227",
+      "url": "https://www.bershka.co.it/p/scarpe-da-ponte/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.bershka.co.it/",
+      "host": "bershka.co.it",
+      "discoveryTitle": "Bershka IT | Outlet Online - Saldi su Vestiti Donna e Uomo, Moda alla",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0228",
+      "url": "https://www.bershka.co.it/p/jeans-a-zampa-delefante/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.bershka.co.it/",
+      "host": "bershka.co.it",
+      "discoveryTitle": "Bershka IT | Outlet Online - Saldi su Vestiti Donna e Uomo, Moda alla",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0229",
+      "url": "https://www.teva-osterreich.at/contact_us.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "host": "teva-osterreich.at",
+      "discoveryTitle": "Teva Slip On Kinder Günstig Bestellen | Teva Schuhe Online Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0230",
+      "url": "https://www.teva-osterreich.at/teva-hurricane-xlt-2-slip-on-kinder-dunkelgrau-ybnj26839-p-590.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "host": "teva-osterreich.at",
+      "discoveryTitle": "Teva Slip On Kinder Günstig Bestellen | Teva Schuhe Online Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0231",
+      "url": "https://www.teva-osterreich.at/create_account.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "host": "teva-osterreich.at",
+      "discoveryTitle": "Teva Slip On Kinder Günstig Bestellen | Teva Schuhe Online Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0232",
+      "url": "https://www.teva-osterreich.at/shippinginfo.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "host": "teva-osterreich.at",
+      "discoveryTitle": "Teva Slip On Kinder Günstig Bestellen | Teva Schuhe Online Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0233",
+      "url": "https://www.teva-osterreich.at/schuhe-sandalen-c-1_6.html",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.teva-osterreich.at/schuhe-slip-on-c-1_7.html?&size=35&gender=Kinder",
+      "host": "teva-osterreich.at",
+      "discoveryTitle": "Teva Slip On Kinder Günstig Bestellen | Teva Schuhe Online Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0234",
+      "url": "https://tassenbrennerei.shop/products/tasse-lieblings-postbote-herzen",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://tassenbrennerei.shop/",
+      "host": "tassenbrennerei.shop",
+      "discoveryTitle": "Tassenbrennerei.shop",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0235",
+      "url": "https://tassenbrennerei.shop/products/baumwolltasche-ich-kam-sah-und-korigierte",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://tassenbrennerei.shop/",
+      "host": "tassenbrennerei.shop",
+      "discoveryTitle": "Tassenbrennerei.shop",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0236",
+      "url": "https://tassenbrennerei.shop/products/hoodie-ein-zocker-altert-nicht-er-levelt",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://tassenbrennerei.shop/",
+      "host": "tassenbrennerei.shop",
+      "discoveryTitle": "Tassenbrennerei.shop",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0237",
+      "url": "https://tassenbrennerei.shop/products/tasse-lieber-schwager-danke-dass-du-meine-schwester-nicht-an-den-zirkus-verkauft-hast-v2",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://tassenbrennerei.shop/",
+      "host": "tassenbrennerei.shop",
+      "discoveryTitle": "Tassenbrennerei.shop",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0238",
+      "url": "https://tassenbrennerei.shop/products/tasse-ich-bin-der-trainer-einer-absolut-geilen-mannschaft",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://tassenbrennerei.shop/",
+      "host": "tassenbrennerei.shop",
+      "discoveryTitle": "Tassenbrennerei.shop",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0239",
+      "url": "https://www.baggu-it.it/p/baby-baggu-7/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://baggu-it.it/",
+      "host": "baggu-it.it",
+      "discoveryTitle": "Baggu Italia | Borse Riutilizzabili Nuove di Zecca in Offerta",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0240",
+      "url": "https://www.baggu-it.it/p/baby-baggu-10/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://baggu-it.it/",
+      "host": "baggu-it.it",
+      "discoveryTitle": "Baggu Italia | Borse Riutilizzabili Nuove di Zecca in Offerta",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0241",
+      "url": "https://www.baggu-it.it/p/baby-baggu-8/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://baggu-it.it/",
+      "host": "baggu-it.it",
+      "discoveryTitle": "Baggu Italia | Borse Riutilizzabili Nuove di Zecca in Offerta",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0242",
+      "url": "https://www.baggu-it.it/p/baby-baggu-5/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://baggu-it.it/",
+      "host": "baggu-it.it",
+      "discoveryTitle": "Baggu Italia | Borse Riutilizzabili Nuove di Zecca in Offerta",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0243",
+      "url": "https://www.baggu-it.it/p/baby-baggu-11/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://baggu-it.it/",
+      "host": "baggu-it.it",
+      "discoveryTitle": "Baggu Italia | Borse Riutilizzabili Nuove di Zecca in Offerta",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0244",
+      "url": "https://www.happysocksfr.fr/p/boxers-courts-de-biere-en-paquet-de-3/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.happysocksfr.fr/",
+      "host": "happysocksfr.fr",
+      "discoveryTitle": "Happy Socks FR | Homme &amp; Femme Chaussettes Soldes Paris France",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0245",
+      "url": "https://www.happysocksfr.fr/p/chaussette-bloody-mary/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.happysocksfr.fr/",
+      "host": "happysocksfr.fr",
+      "discoveryTitle": "Happy Socks FR | Homme &amp; Femme Chaussettes Soldes Paris France",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0246",
+      "url": "https://www.happysocksfr.fr/p/boxer-court-kisses-1-paquet/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.happysocksfr.fr/",
+      "host": "happysocksfr.fr",
+      "discoveryTitle": "Happy Socks FR | Homme &amp; Femme Chaussettes Soldes Paris France",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0247",
+      "url": "https://www.happysocksfr.fr/p/chaussette-au-fromage/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.happysocksfr.fr/",
+      "host": "happysocksfr.fr",
+      "discoveryTitle": "Happy Socks FR | Homme &amp; Femme Chaussettes Soldes Paris France",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0248",
+      "url": "https://www.happysocksfr.fr/p/boxer-court-pickle-1-paquet/",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.happysocksfr.fr/",
+      "host": "happysocksfr.fr",
+      "discoveryTitle": "Happy Socks FR | Homme &amp; Femme Chaussettes Soldes Paris France",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0249",
+      "url": "https://pokemonmx.com.mx/",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://pokemonmx.com.mx/",
+      "host": "pokemonmx.com.mx",
+      "discoveryTitle": "OPPATOTO | Pusat Game Online Modern untuk Hiburan Setiap Hari",
+      "discoveryKind": "observed public commerce homepage"
+    },
+    {
+      "id": "AUDIT-0250",
+      "url": "https://www.kickers.co.at/p/kick-allure-schwarz/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://kickers.co.at/",
+      "host": "kickers.co.at",
+      "discoveryTitle": "Kickers | Damen Schuhe und Herren Sandalen im Outlet Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0251",
+      "url": "https://www.kickers.co.at/p/kick-allow-white/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://kickers.co.at/",
+      "host": "kickers.co.at",
+      "discoveryTitle": "Kickers | Damen Schuhe und Herren Sandalen im Outlet Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0252",
+      "url": "https://www.kickers.co.at/p/arveiler-schwarz-weiss/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://kickers.co.at/",
+      "host": "kickers.co.at",
+      "discoveryTitle": "Kickers | Damen Schuhe und Herren Sandalen im Outlet Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0253",
+      "url": "https://www.kickers.co.at/p/kick-allow-white-yellow/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://kickers.co.at/",
+      "host": "kickers.co.at",
+      "discoveryTitle": "Kickers | Damen Schuhe und Herren Sandalen im Outlet Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0254",
+      "url": "https://www.kickers.co.at/p/kick-allure-weiss/",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://kickers.co.at/",
+      "host": "kickers.co.at",
+      "discoveryTitle": "Kickers | Damen Schuhe und Herren Sandalen im Outlet Österreich",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0255",
+      "url": "https://www.jordan4.it/p/air-jordan-4-golf-bred-2021/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://jordan4.it/",
+      "host": "jordan4.it",
+      "discoveryTitle": "Air Jordan | Comprare Jordan 4 - 100% Garanzia Di Autenticità",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0256",
+      "url": "https://www.jordan4.it/p/air-jordan-4-what-the-2019/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://jordan4.it/",
+      "host": "jordan4.it",
+      "discoveryTitle": "Air Jordan | Comprare Jordan 4 - 100% Garanzia Di Autenticità",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0257",
+      "url": "https://www.jordan4.it/p/air-jordan-1-retro-high-tie-dye-ps-2020/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://jordan4.it/",
+      "host": "jordan4.it",
+      "discoveryTitle": "Air Jordan | Comprare Jordan 4 - 100% Garanzia Di Autenticità",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0258",
+      "url": "https://www.jordan4.it/p/air-jordan-4-flight-nostalgia-2019/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://jordan4.it/",
+      "host": "jordan4.it",
+      "discoveryTitle": "Air Jordan | Comprare Jordan 4 - 100% Garanzia Di Autenticità",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "AUDIT-0259",
+      "url": "https://www.jordan4.it/p/air-jordan-4-golf-black-cat-2021/",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "http://jordan4.it/",
+      "host": "jordan4.it",
+      "discoveryTitle": "Air Jordan | Comprare Jordan 4 - 100% Garanzia Di Autenticità",
+      "discoveryKind": "observed product link"
+    },
+    {
+      "id": "CONTROL-001",
+      "host": "salomon.com",
+      "url": "https://www.salomon.com/en-us/product/snowclog-og-li9280",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://www.salomon.com/en-us",
+      "sourceSha256": "7d00dc3d072b9db13331278addc83ec528949ac6ac6dbd22665277de4d12b8d0"
+    },
+    {
+      "id": "CONTROL-002",
+      "host": "ninewest.com",
+      "url": "https://ninewest.com/products/tatiana-pointy-toe-pumps-in-brown-leather",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://ninewest.com/",
+      "sourceSha256": "3ee304b6e5abc168f6bd4bc6b11135ebe739da771f6ba1feccaebf0e6a222c20"
+    },
+    {
+      "id": "CONTROL-003",
+      "host": "zippo.com",
+      "url": "https://zippo.com/products/cotton-felt-replacement-kit",
+      "label": "primary-brand-domain control",
+      "independentTruth": false,
+      "source": "https://zippo.com/",
+      "sourceSha256": "f7cb40c12bfde7ee1aa25eef6ffc0166856b8f0ef5672ddb8deb10b248586ed7"
+    },
+    {
+      "id": "CONTROL-004",
+      "host": "footlocker.com",
+      "url": "https://www.footlocker.com/product/giftcard/ECARD21.html",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.footlocker.com/",
+      "sourceSha256": "0309b213cacc7b31f0a2d8b8752e1455fae62d4a2785e1fa0e9c84338b5cc5d9"
+    },
+    {
+      "id": "CONTROL-005",
+      "host": "nordstrom.com",
+      "url": "https://www.nordstrom.com/",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.nordstrom.com/",
+      "sourceSha256": "53749a743716be59463922baf0f597b54bd33656f7251e5db438d8fbbe1449dc"
+    },
+    {
+      "id": "CONTROL-006",
+      "host": "target.com",
+      "url": "https://www.target.com/",
+      "label": "ordinary multi-brand retailer",
+      "independentTruth": false,
+      "source": "https://www.target.com/",
+      "sourceSha256": "6e0b7eada20e13af3a47b4ac6926703df833b3a444d92cb8d2cde5fa86ce3fdd"
+    },
+    {
+      "id": "CONTROL-007",
+      "host": "bestbuy.com",
+      "url": "https://www.bestbuy.com/site/outlet-refurbished-clearance/open-box-electronics/pcmcat748300666861.c",
+      "label": "ordinary retailer",
+      "independentTruth": false,
+      "source": "https://www.bestbuy.com/",
+      "sourceSha256": "7f46a7647836b2a7a514f479338d25b779fdd1cb402c814a60646b23da21462f"
+    },
+    {
+      "id": "CONTROL-008",
+      "host": "warmlydecor.com",
+      "url": "https://warmlydecor.com/products/wooden-lantern-nordic-hanging-wall-lamps",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "independentTruth": false,
+      "source": "https://warmlydecor.com/",
+      "sourceSha256": "9a303145fe77e2c9c84d92e59c4afe3db6da3186e5bf4dbb176b3446d0d7e147"
+    },
+    {
+      "id": "CONTROL-009",
+      "host": "harempants.com",
+      "url": "https://www.harempants.com/products/gift-card",
+      "label": "merchant logistics source lead; no externally accepted label",
+      "independentTruth": false,
+      "source": "https://www.harempants.com/",
+      "sourceSha256": "99570de497d1dbddbc133c08986cf3180aecd1a94791e3fd07f71aa86b85d3eb"
+    },
+    {
+      "id": "CONTROL-010",
+      "url": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable?variant=42382071529721",
+      "host": "shop.vivoglobal.ph",
+      "sourceIds": [
+        "DS-059-PUBLIC-CONTROL"
+      ],
+      "sourceSeedUrl": "https://shop.vivoglobal.ph/products/4a-type-c-usb-cable",
+      "discoveryTitle": "4A Type-C USB Cable",
+      "discoveryKind": "predeclared single explicit Offer variant control; merchant-authored identity, not independent product truth"
+    }
+  ],
+  "counts": {
+    "seeds": 1999,
+    "leads": 58,
+    "hosts": 53,
+    "pages": 259
+  },
+  "originalFrozenManifestSha256": "fadccdbd22b0c367aaee2b67a2207f432e4d3eb73bc1b2cfcd0021b22cff4d98",
+  "controlsFrozenAt": "2026-10-13T12:56:03.131108+00:00",
+  "original268ManifestSha256": "a27c4f08e6a8a08527af77939d266ceaca0d7fd335c787b0d16a57802fb76cd3",
+  "limits": [
+    "DS-059 adds one source-shaped public variant control; original268 remain separately comparable. Quote-only structured products can be tested without a selected price."
+  ]
+}

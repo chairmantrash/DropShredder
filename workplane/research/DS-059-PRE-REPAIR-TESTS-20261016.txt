@@ -1,0 +1,218 @@
+TAP version 13
+# Subtest: bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+not ok 1 - bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+  ---
+  duration_ms: 67.565435
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:1863'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'Acme'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Acme'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:25:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: variant local properties override parent and variesBy fields are not inherited
+ok 2 - variant local properties override parent and variesBy fields are not inherited
+  ---
+  duration_ms: 10.285498
+  type: 'test'
+  ...
+# Subtest: explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+not ok 3 - explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+  ---
+  duration_ms: 11.116647
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:2641'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'Acme'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Acme'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:33:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+ok 4 - ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+  ---
+  duration_ms: 9.440943
+  type: 'test'
+  ...
+# Subtest: unselected ProductGroup parent cannot borrow a variant brand or offer
+ok 5 - unselected ProductGroup parent cannot borrow a variant brand or offer
+  ---
+  duration_ms: 6.67098
+  type: 'test'
+  ...
+# Subtest: one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+not ok 6 - one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+  ---
+  duration_ms: 16.187992
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:3996'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'Acme'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Acme'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:47:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+ok 7 - Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+  ---
+  duration_ms: 8.201109
+  type: 'test'
+  ...
+# Subtest: Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+ok 8 - Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+  ---
+  duration_ms: 26.823693
+  type: 'test'
+  ...
+# Subtest: Microdata from private fields, hidden or unrelated nested products is never collected
+ok 9 - Microdata from private fields, hidden or unrelated nested products is never collected
+  ---
+  duration_ms: 48.560012
+  type: 'test'
+  ...
+# Subtest: multiple public product scopes must abstain when current identity is ambiguous
+ok 10 - multiple public product scopes must abstain when current identity is ambiguous
+  ---
+  duration_ms: 17.900969
+  type: 'test'
+  ...
+# Subtest: explicit countdown remains in the evidence so a later reset can be measured
+not ok 11 - explicit countdown remains in the evidence so a later reset can be measured
+  ---
+  duration_ms: 69.564501
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:6614'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /00:10:00/. Input:
+    
+    ''
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: ''
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:72:118)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: static low stock across real visits cannot become a strong time-limited-offer accusation
+not ok 12 - static low stock across real visits cannot become a strong time-limited-offer accusation
+  ---
+  duration_ms: 17.632287
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:6859'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:76:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+not ok 13 - elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+  ---
+  duration_ms: 321.050769
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:1:7244'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      test('elapsed countdown expiry that repeatedly moves later is recorded with observation provenance',()=>{
+      const r=report('2026-10-16T00:30:00Z','Offer ends in 00:10:00');const old=['2026-10-16T00:00:00Z','2026-10-16T00:15:00Z'].map(t=>stored(report(t,'Offer ends in 00:10:00')));
+      const e=analyzeHistory(r,old).find(e=>e.id==='REPEATED_SCARCITY_CLAIM');assert.ok(e);assert.ok(e.provenance?.observedAt);assert.match(e.observedValue??'',/deadline|expiry/i);
+      assert.equal(dedupeEvidence([...r.evidence,e]).filter(x=>x.family==='scarcity').length,1);assert.equal(calculateVerdict([...r.evidence,e]).severeWarningAllowed,false);
+      })
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/beta-failures.test.ts:80:81)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: normally decreasing countdown and a malformed clock cannot imply a reset
+ok 14 - normally decreasing countdown and a malformed clock cannot imply a reset
+  ---
+  duration_ms: 7.098958
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 8
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1877.134509

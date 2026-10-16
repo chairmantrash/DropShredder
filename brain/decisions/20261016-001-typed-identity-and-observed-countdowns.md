@@ -1,0 +1,13 @@
+# Typed identity and observed countdown evidence
+
+Date:2026-10-16. Task:DS-059. Owner requested research-driven beta failure/weakness improvements.
+
+Keep uncertain scores uncertain. A uniquely bound Product variant may inherit non-varying brand/material from one explicitly connected ProductGroup; parent identifiers/offers and transitive ancestry never propagate. Resolve unique local graph references without network requests. Explicit Microdata brand/MPN/checksum-valid GTIN declarations may fill missing identity only inside one current public Product scope. Related/nested products, forms, hidden/private regions and unresolved variants cannot supply values. Typed declaration and checksum correctness are not external authenticity verification.
+
+A strong historical countdown finding needs actual same-product observation timestamps and valid explicit countdown durations showing repeatedly later implied expiry, with a60-second drift tolerance. Repeated stock wording alone cannot satisfy this. Current and historical wording share observation lineage and count once. A renewed deadline may reflect a legitimate recurring promotion; it is a manipulation lead, not proof of fraud/dropshipping or severe provenance evidence.
+
+The test collector may exercise a named current public Product/ProductGroup without a displayed price. Its admission reason is recorded; executing a scan cannot establish a selected variant/offer, current scam truth or independent accuracy. Old failed/skipped observations remain immutable. Country/platform context, source navigation policy, privacy, $0 operation, severe-warning gates and main/Store promotion controls are preserved.
+
+Research: workplane/research/DS-059-FAILURES-AND-SOLUTIONS-20261016.md. Independent language/legal/photo/accuracy/publisher/elapsed-lifecycle acceptance remains open beta work.
+
+Architecture review by the implementing agent: the extractor is serialized by chrome.scripting.executeScript; imported closures are unavailable in the page. The new identity helpers remain lexically inside that injected function, with bounded graph/DOM work and no eval or shared page globals. This pushes its source over the generic40,000-byte maintainability threshold. A path-specific exception is documented here and capped at45,000 bytes; the audit still blocks growth beyond that cap and preserves the default for all other files. This is an engineering architecture exception, not independent product/privacy/accuracy approval. Splitting the injection boundary should be a separately characterized maintenance change, rather than mixed into these behavior fixes.
