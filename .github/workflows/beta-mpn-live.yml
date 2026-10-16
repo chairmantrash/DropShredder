@@ -1,0 +1,80 @@
+name: DropShredder manufacturer-code repair live verification
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta-mpn-live.yml', 'tools/beta/mpn/stage.py']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  native-live:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta-mpn-repair-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Require green source gates and stage frozen targets with predeclared controls
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACCEPTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,io,json,os,pathlib,subprocess,time,zipfile
+          def api(path):return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          for attempt in range(90):
+              runs=api('actions/runs?event=pull_request&head_sha='+os.environ['ACCEPTED_HEAD']+'&per_page=100')['workflow_runs']
+              latest={}
+              for g in runs:
+                  if g['name'] in ['DropShredder CI','CodeQL','DropShredder Chromium Runtime']:latest.setdefault(g['name'],g)
+              gates=list(latest.values())
+              if len(gates)<3:time.sleep(5);continue
+              if all(g['status']=='completed' for g in gates):
+                  assert all(g['conclusion']=='success' for g in gates),gates;break
+              time.sleep(5)
+          else:raise SystemExit('Accepted source gates incomplete; no live test')
+          old=api('actions/runs/38859403626');assert old['status']=='completed' and old['conclusion']=='success' and old['head_sha']=='1efffdc60ad5ecbc37427ba78fa2e836b352dd17'
+          changed=subprocess.check_output(['git','diff','--name-only','1efffdc60ad5ecbc37427ba78fa2e836b352dd17','HEAD'],text=True).splitlines()
+          assert all(p.startswith(('tests/','tools/beta/','tools/browser-smoke/','.github/workflows/')) for p in changed),changed
+          a=next(a for a in api('actions/runs/38859403626/artifacts')['artifacts'] if a['name']=='dropshredder-chrome-store')
+          pathlib.Path('ci-artifact.json').write_text(json.dumps(a))
+          b=pathlib.Path('tools/beta/reputation/public-beta4-targets.json').read_bytes()
+          assert hashlib.sha256(b).hexdigest()=='a27c4f08e6a8a08527af77939d266ceaca0d7fd335c787b0d16a57802fb76cd3'
+          assert len(json.loads(b)['targets'])==268
+          pathlib.Path('frozen-targets.json').write_bytes(b)
+          data=subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/artifacts/{a["id"]}/zip']);pathlib.Path('accepted-ci.zip').write_bytes(data)
+          PY
+          python3 tools/beta/mpn/stage.py accepted-ci.zip ci-artifact.json
+      - name: Install isolated genuine native browser tooling
+        run: |
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+          python3 tools/beta/audit150/make-runner.py
+      - name: Retest all frozen targets using actual native controls
+        env:
+          DS_NATIVE_HEADED: '1'
+          DS_OUTSIDE_LIVE: '1'
+          DS_MPN_VERIFY: '1'
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_MANIFEST: frozen-targets.json
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-audit-beta.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds058-live-${{ matrix.shard }}
+          path: |
+            browser-smoke-results/
+            frozen-targets.json
+            ci-artifact.json
+          if-no-files-found: error
+          retention-days: 90

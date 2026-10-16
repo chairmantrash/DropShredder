@@ -46,6 +46,15 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       // Public product pages can include a dormant login modal. Do not alter
       // its DOM or bypass the extension guard: observe the real Scan refusal.
       // Genuine private/account/payment URLs were refused before this point.
+      if(process.env.DS_MPN_VERIFY==='1'&&target.id==='AUDIT-0001'){
+        const code=page.locator('#tab-description li').filter({hasText:'Código del fabricante:'}).first();
+        const before=await code.isVisible();
+        if(!before&&await page.locator('#tab-title-description a').isVisible()){
+          await page.locator('#tab-title-description a').click({timeout:5000});await pause(200);
+          row.actions.push({action:'open-public-product-description',status:'OBSERVED',reason:'Expose the merchant-authored manufacturer-code row; no account or checkout action'});
+        }
+        row.manufacturerCodeObservation={rowVisible:await code.isVisible(),wasVisibleBefore:before,text:await code.isVisible()?(await code.textContent()).trim().slice(0,200):undefined};
+      }
       const scanStart=Date.now();row.nativeScanAttemptedAt=new Date().toISOString();
       await native.click('#scan');
       await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'actual native live scan',25000);
@@ -53,6 +62,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       const data=await read();
       if(!data||!row.scanStatus.startsWith('Scan complete')){row.status='NATIVE_SCAN_REFUSED_OR_FAILED';row.actions.push({action:'scan',status:'REFUSED_OR_FAILED',message:row.scanStatus});if(diagnosticIds)await native.screenshot(target.id+'-actual-refusal.png');continue;}
       checkIdentity(data);row.scanReport=data;
+      if(row.manufacturerCodeObservation){row.manufacturerCodeObservation.observedMpn=data.product.mpn;row.manufacturerCodeObservation.pass=row.manufacturerCodeObservation.rowVisible&&/GW3773/.test(row.manufacturerCodeObservation.text??'')&&data.product.mpn==='GW3773';}
+
       row.status='OBSERVED_SCAN';row.actions.push({action:'scan',status:'OBSERVED',elapsedMs:Date.now()-scanStart,message:row.scanStatus});
       row.stamp=await page.evaluate(()=>document.querySelector('#dropshredder-stamp-host')?.shadowRoot?.textContent?.slice(0,1800));
       for(const [action,selector,pending] of [['policy','#policy-check',/^Reading the return policy/i],['shipping','#fulfillment-check',/^Checking where/i]]){
