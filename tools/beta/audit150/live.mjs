@@ -97,10 +97,12 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       if(error.safetyStop){report.audit150.safetyStop={id:target.id,reason:String(error)};await native.screenshot(target.id+'-failure.png').catch(()=>{});break;}
       // A timed-out old navigation can otherwise redirect the next declared case.
       // Stop it and replace its document before continuing; preserve the original failure.
-      let resetSession;
-      try{resetSession=await context.newCDPSession(page);await resetSession.send('Page.stopLoading');await page.goto('about:blank',{waitUntil:'domcontentloaded',timeout:5000});row.navigationReset='Stopped failed navigation and replaced document with about:blank';}
-      catch(resetError){row.navigationResetFailure=String(resetError);report.audit150.safetyStop={id:target.id,reason:'Could not isolate failed navigation: '+String(resetError)};break;}
-      finally{await resetSession?.detach();}
+      let isolated=false;row.navigationResetAttempts=[];
+      for(let attempt=1;attempt<=2;attempt++){
+        try{await page.goto('about:blank',{waitUntil:'domcontentloaded',timeout:5000});row.navigationResetAttempts.push({attempt,status:'REPLACED_WITH_BLANK'});isolated=true;break;}
+        catch(resetError){row.navigationResetAttempts.push({attempt,status:'FAILED',error:String(resetError)});}
+      }
+      if(!isolated){report.audit150.safetyStop={id:target.id,reason:'Could not replace failed navigation after two bounded attempts'};break;}
 
     }finally{
       row.finishedAt=new Date().toISOString();console.log(JSON.stringify({id:row.id,status:row.status,url:row.finalUrl??row.url,risk:row.finalReport?.verdict?.riskLevel,evidence:row.finalReport?.evidence?.length}));await save();
