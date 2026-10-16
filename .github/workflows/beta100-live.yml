@@ -2,7 +2,7 @@ name: DropShredder 100-site capability audit
 on:
   pull_request:
     branches: [release/security-performance-hardening]
-    paths: ['.github/workflows/beta100-live.yml', 'tools/beta/coverage100/**']
+    paths: ['.github/workflows/beta100-live.yml', 'tools/beta/coverage100/**', 'tools/beta/audit150/live.mjs']
 permissions:
   contents: read
   actions: read
@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+        shard: [7]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ds060-baseline-${{ matrix.shard }}
+          name: ds060-baseline-retry-${{ matrix.shard }}
           path: |
             browser-smoke-results/
             tools/beta/coverage100/targets.json

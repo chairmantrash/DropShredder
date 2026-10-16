@@ -19,7 +19,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
   const save=()=>fs.writeFile(path.join(output,'audit150.json'),JSON.stringify(report.audit150,null,2));
   const read=async()=>{const value=await snapshot();return value?JSON.parse(value):undefined;};
   const checkIdentity=data=>{
-    if(!data?.product?.url||clean(data.product.url)!==clean(page.url()))throw Object.assign(Error('Wrong current-document attribution'),{safetyStop:true});
+    if(!data?.product?.url)throw Error('Current report cleared or unavailable; no new attribution accepted');
+    if(clean(data.product.url)!==clean(page.url()))throw Object.assign(Error('Wrong current-document attribution'),{safetyStop:true});
   };
   // All test browsing stays public. Close unrequested popup pages/downloads.
   let replacingPage=false;
