@@ -1,0 +1,91 @@
+{
+  "acceptedLiveProfiles": [
+    {
+      "shard": 0,
+      "id": 12028918881,
+      "name": "ds058-live-0",
+      "wrapperDigest": "sha256:cded5428fcb78ab95272f718992961ffb829a0a99161c73f5365f705d8d90a3c",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    },
+    {
+      "shard": 1,
+      "id": 12029364429,
+      "name": "ds058-live-1",
+      "wrapperDigest": "sha256:0b805503e11107c11a238bf8f8bb7f5ce2ea45f4c7856e17782782d539803790",
+      "run": 38862185416,
+      "harnessHead": "aa84acc6207340755ffb55b5c8d956995f57b504"
+    },
+    {
+      "shard": 2,
+      "id": 12028299367,
+      "name": "ds058-live-2",
+      "wrapperDigest": "sha256:a728c77927d7fe993073d1c4196245928b923a436d611a125a9bb93a5c89d240",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    },
+    {
+      "shard": 3,
+      "id": 12029112693,
+      "name": "ds058-live-3",
+      "wrapperDigest": "sha256:0f337768a6c1fcc4ede6792e62b9e9b74ee2890788517a2ff1279b9fad567af6",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    },
+    {
+      "shard": 4,
+      "id": 12030236785,
+      "name": "ds058-live-4",
+      "wrapperDigest": "sha256:fadde37865ce24437a78d703e1470efa170555c7c7da09293707472e359f6cf8",
+      "run": 38862185416,
+      "harnessHead": "aa84acc6207340755ffb55b5c8d956995f57b504"
+    },
+    {
+      "shard": 5,
+      "id": 12029365583,
+      "name": "ds058-live-5",
+      "wrapperDigest": "sha256:d03f73312e8a795d81692a3e15ffc671160ace6da622b9e7c30a1954c309aa12",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    },
+    {
+      "shard": 6,
+      "id": 12028819177,
+      "name": "ds058-live-6",
+      "wrapperDigest": "sha256:9ebde6659c1a503927920fb446b69ab9f2465dc625d05a7a0b4385eb24095448",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    },
+    {
+      "shard": 7,
+      "id": 12028089445,
+      "name": "ds058-live-7",
+      "wrapperDigest": "sha256:e13206c7753f3e1526969213bb093126b680dc14ff4e76cc0bef7450d2cc6ea8",
+      "run": 38859842663,
+      "harnessHead": "bbbed82e5027e26a9fae5fbf4c845732fde4e722"
+    }
+  ],
+  "initialFailedArtifacts": [
+    {
+      "id": 12028948301,
+      "name": "ds058-live-4",
+      "digest": "sha256:c05cc7b8c645e89e91cde249ea059e28f9b7cc8fc8b62dcf7e88fc87a6ce3b3c",
+      "run": 38859842663
+    },
+    {
+      "id": 12028513539,
+      "name": "ds058-live-1",
+      "digest": "sha256:c0506144b84669c7c817cbd577c89e1768002dce2017268ebf8938ff958d5bee",
+      "run": 38859842663
+    }
+  ],
+  "native": {
+    "artifact": 12030091197,
+    "wrapperDigest": "sha256:b751f7a2317fb209d91b6695cabed63aac48ce5f8d3113de7a66e5be484af7dc",
+    "run": 38862185464
+  },
+  "packageArtifact": 12028542454,
+  "packageZipSha256": "17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c",
+  "perProfileNativeJsonSha256": "DS-058-AUDIT-SUMMARY-20261016.json nativeProfiles[].sha256",
+  "scope": "Six original complete profiles plus two corrected profiles; exact identical 54-file compiled package. Original failures retained."
+}

@@ -1,8 +1,8 @@
-# Work queue — authoritative snapshot, October 13, 2026
+# Work queue — authoritative snapshot, October16,2026
 
 ## Capability testing and repair update
 
-- DS-058 CLAIMED / RUNNING: split-element manufacturer-code fallback, demonstrated by actual public label plus prior real scan. No production edit before all268 DS-057 outcomes finish. Task: workplane/tasks/DS-058.md.
+- DS-058 DONE — BETA5 OPEN, published2026-10-16T06:53:49Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5 . All7 unauthenticated public asset downloads/all54 package hashes verified. Exact accepted CI ZIP17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c reused without rebuild. All268 outcomes,230 successful scans/54 hosts,10 explicit MPN reports versus0,38 evidence-bearing pages,0 severe/privacy/panel errors/profile stops.440 core,87 native,all7 browser groups and finding-free CodeQL pass. Original failures preserved; unavailable/error counts retained. Receipts: DS-058-COMPLETION-20261016.json and DS-058-BETA5-OPEN-20261016.json.
 
 - DS-057 DONE: all268 current public-beta4 outcomes collected before repair;221 actual scans/50 hosts,36 evidence-bearing pages,0 severe/privacy/uncaught-panel errors.22 navigation/environment errors retained; interrupted-navigation cascade identified in collector. Exact public ZIP/all54 files verified in eight profiles. Receipt: DS-057-COMPLETION-20261016.json.
 
@@ -18,7 +18,7 @@
 
 These finite tasks preserve BETA OPEN. Independent external inputs remain beta validation/public-release-promotion work. DS-021 remains ongoing maintenance.
 
-Owner directive: keep beta open and test real capabilities. **DS-055 DONE — BETA3 OPEN**, published2026-10-13T07:46:34Z at https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3 . Exact accepted CI bytes and all7 public asset/all51 package hashes are verified. Current receipt: workplane/runs/DS-055-BETA3-OPEN-20261013.json. Public PR9 remains draft against unchanged main; PR23 carries release integration. Independent acceptance remains open beta validation/later public-release promotion under brain/decisions/20261012-002-beta-entry-and-promotion.md.
+Owner directive: keep beta open and test real capabilities. **DS-058 DONE — BETA5 OPEN**, with exact accepted runtime and all public downloads verified. PR24/25 integrate the implementation; PR26 records the release. Public PR9 remains draft against unchanged main. Independent acceptance remains open beta validation/later public-release promotion under brain/decisions/20261012-002-beta-entry-and-promotion.md.
 
 ## Completed engineering work
 

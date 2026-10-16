@@ -1,0 +1,12 @@
+{
+  "artifact": 12028542454,
+  "ciHead": "1efffdc60ad5ecbc37427ba78fa2e836b352dd17",
+  "sourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+  "sourceTree": "175ee8f1c2148fd774288bb5d1937731b71e3ff0",
+  "wrapperSha256": "defde4f159e3d8955d6433acf0250a4b5e7164dcbe750079363d1646c2793b85",
+  "zipBytes": 25986104,
+  "zipSha256": "17f5ae153b5c745e5488d4d81e12ad1864a3a4d4ffbb8f97da71e0b5df54ca3c",
+  "files": 54,
+  "unpackedBytes": 55539221,
+  "allPackageHashesMatch": true
+}

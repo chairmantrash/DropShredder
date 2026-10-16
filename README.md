@@ -1,6 +1,6 @@
 # DropShredder
 
-**Public beta:** [Download 0.2.0 beta 3](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.3). See [installation and feedback instructions](BETA-TESTING.md). The public-product privacy repair now scans227 accessible pages in the frozen259-target live corpus; active private surfaces remain refused. Independent accuracy and broader validation are ongoing beta work.
+**Public beta:** [Download 0.2.0 beta 5](https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.5). See [installation and feedback instructions](BETA-TESTING.md). The latest complete268-target live run produced230 successful public scans across54 hosts; the manufacturer-code repair captures10 explicit codes previously omitted. Outside historical/security results are displayed inside the panel with dates and scope. Independent detection accuracy and broader validation remain ongoing beta work.
 
 **Commerce forensics for shoppers. Don't guess. Build a case.**
 
