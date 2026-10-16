@@ -215,5 +215,11 @@
     "Positive-weight evidence can concern manipulation rather than dropshipping or deception",
     "UNKNOWN is abstention, never clean or a correct scam detection"
   ],
-  "beta4Publication": "Pending exact accepted artifact; beta3 remains open"
+  "beta4Publication": {
+    "publishedAt": "2026-10-16T05:49:10Z",
+    "url": "https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.4",
+    "all7PublicAssetsVerified": true,
+    "all54PackageFilesVerified": true,
+    "receipt": "workplane/runs/DS-056-BETA4-OPEN-20261016.json"
+  }
 }

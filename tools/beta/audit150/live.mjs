@@ -21,7 +21,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
     if(!data?.product?.url||clean(data.product.url)!==clean(page.url()))throw Object.assign(Error('Wrong current-document attribution'),{safetyStop:true});
   };
   // All test browsing stays public. Close unrequested popup pages/downloads.
-  context.on('page',p=>{if(p!==page)void p.close().catch(()=>{});});
+  let replacingPage=false;
+  context.on('page',p=>{if(p!==page&&!replacingPage)void p.close().catch(()=>{});});
   page.on('download',d=>void d.cancel().catch(()=>{}));
   page.on('dialog',d=>void d.dismiss().catch(()=>{}));
   for(let index=0;index<selected.length;index++){
@@ -46,6 +47,15 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       // Public product pages can include a dormant login modal. Do not alter
       // its DOM or bypass the extension guard: observe the real Scan refusal.
       // Genuine private/account/payment URLs were refused before this point.
+      if(process.env.DS_MPN_VERIFY==='1'&&target.id==='AUDIT-0001'){
+        const code=page.locator('#tab-description li').filter({hasText:'Código del fabricante:'}).first();
+        const before=await code.isVisible();
+        if(!before&&await page.locator('#tab-title-description a').isVisible()){
+          await page.locator('#tab-title-description a').click({timeout:5000});await pause(200);
+          row.actions.push({action:'open-public-product-description',status:'OBSERVED',reason:'Expose the merchant-authored manufacturer-code row; no account or checkout action'});
+        }
+        row.manufacturerCodeObservation={rowVisible:await code.isVisible(),wasVisibleBefore:before,text:await code.isVisible()?(await code.textContent()).trim().slice(0,200):undefined};
+      }
       const scanStart=Date.now();row.nativeScanAttemptedAt=new Date().toISOString();
       await native.click('#scan');
       await until(()=>native.evaluate("!document.querySelector('#scan').disabled"),'actual native live scan',25000);
@@ -53,6 +63,8 @@ export async function runAudit150({context,page,native,worker,until,pause,report
       const data=await read();
       if(!data||!row.scanStatus.startsWith('Scan complete')){row.status='NATIVE_SCAN_REFUSED_OR_FAILED';row.actions.push({action:'scan',status:'REFUSED_OR_FAILED',message:row.scanStatus});if(diagnosticIds)await native.screenshot(target.id+'-actual-refusal.png');continue;}
       checkIdentity(data);row.scanReport=data;
+      if(row.manufacturerCodeObservation){row.manufacturerCodeObservation.observedMpn=data.product.mpn;row.manufacturerCodeObservation.pass=row.manufacturerCodeObservation.rowVisible&&/GW3773/.test(row.manufacturerCodeObservation.text??'')&&data.product.mpn==='GW3773';}
+
       row.status='OBSERVED_SCAN';row.actions.push({action:'scan',status:'OBSERVED',elapsedMs:Date.now()-scanStart,message:row.scanStatus});
       row.stamp=await page.evaluate(()=>document.querySelector('#dropshredder-stamp-host')?.shadowRoot?.textContent?.slice(0,1800));
       for(const [action,selector,pending] of [['policy','#policy-check',/^Reading the return policy/i],['shipping','#fulfillment-check',/^Checking where/i]]){
@@ -84,6 +96,18 @@ export async function runAudit150({context,page,native,worker,until,pause,report
     }catch(error){
       row.error=String(error);row.status=error.safetyStop?'SAFETY_STOP':'ENVIRONMENT_OR_ACTION_ERROR';
       if(error.safetyStop){report.audit150.safetyStop={id:target.id,reason:String(error)};await native.screenshot(target.id+'-failure.png').catch(()=>{});break;}
+      // A timed-out old navigation can otherwise redirect the next declared case.
+      // Stop it and replace its document before continuing; preserve the original failure.
+      const failedPage=page;replacingPage=true;
+      try{
+        const replacement=await context.newPage();page=replacement;native.useProductPage(replacement);
+        await replacement.bringToFront();await failedPage.close({runBeforeUnload:false});
+        for(const extra of context.pages())if(extra!==replacement)await extra.close({runBeforeUnload:false});
+        row.navigationReset='Replaced failed browser tab; old loader and error renderer closed';
+        replacement.on('download',d=>void d.cancel().catch(()=>{}));replacement.on('dialog',d=>void d.dismiss().catch(()=>{}));
+      }catch(resetError){row.navigationResetFailure=String(resetError);report.audit150.safetyStop={id:target.id,reason:'Could not replace failed browser tab: '+String(resetError)};break;}
+      finally{replacingPage=false;}
+
     }finally{
       row.finishedAt=new Date().toISOString();console.log(JSON.stringify({id:row.id,status:row.status,url:row.finalUrl??row.url,risk:row.finalReport?.verdict?.riskLevel,evidence:row.finalReport?.evidence?.length}));await save();
     }

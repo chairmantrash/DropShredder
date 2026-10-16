@@ -142,6 +142,7 @@ async function attach(targetId, productPage = page) {
     await call('DOM.setFileInputFiles',{files,nodeId});
   };
   return { evaluate, click, key, screenshot, type, setFiles,
+    useProductPage:next=>{productPage=next;},
     metrics:async()=>{await call('Performance.enable');return Object.fromEntries((await call('Performance.getMetrics')).metrics.map(x=>[x.name,x.value]));},
     liveProviders:()=>call('Fetch.disable') };
 }

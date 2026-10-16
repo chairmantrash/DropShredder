@@ -1,0 +1,223 @@
+TAP version 13
+# Subtest: official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+ok 1 - official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+  ---
+  duration_ms: 4.609272
+  type: 'test'
+  ...
+# Subtest: official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+ok 2 - official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+  ---
+  duration_ms: 29.175234
+  type: 'test'
+  ...
+# Subtest: official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+ok 3 - official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+  ---
+  duration_ms: 0.975745
+  type: 'test'
+  ...
+# Subtest: supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+ok 4 - supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+  ---
+  duration_ms: 1.620043
+  type: 'test'
+  ...
+# Subtest: current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+ok 5 - current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+  ---
+  duration_ms: 21.047155
+  type: 'test'
+  ...
+# Subtest: fetched detached policy excludes script/hidden/credential text without inspecting field values
+ok 6 - fetched detached policy excludes script/hidden/credential text without inspecting field values
+  ---
+  duration_ms: 17.370196
+  type: 'test'
+  ...
+# Subtest: policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+ok 7 - policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+  ---
+  duration_ms: 0.797273
+  type: 'test'
+  ...
+# Subtest: published ScamFerret uses original strict output and source date, never its dataset folder label
+ok 8 - published ScamFerret uses original strict output and source date, never its dataset folder label
+  ---
+  duration_ms: 1.565063
+  type: 'test'
+  ...
+# Subtest: published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+ok 9 - published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+  ---
+  duration_ms: 2.1959
+  type: 'test'
+  ...
+# Subtest: security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+ok 10 - security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+  ---
+  duration_ms: 0.966602
+  type: 'test'
+  ...
+# Subtest: security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+ok 11 - security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+  ---
+  duration_ms: 0.427309
+  type: 'test'
+  ...
+# Subtest: security lookup has at most three credentialless bounded GETs, and query is domain-only
+ok 12 - security lookup has at most three credentialless bounded GETs, and query is domain-only
+  ---
+  duration_ms: 1.07435
+  type: 'test'
+  ...
+# Subtest: consumer navigation has only approved originals and rejects injected/private domains
+ok 13 - consumer navigation has only approved originals and rejects injected/private domains
+  ---
+  duration_ms: 0.305629
+  type: 'test'
+  ...
+# Subtest: native widget model never links to outside scam services or requests data after failed current-page guard
+ok 14 - native widget model never links to outside scam services or requests data after failed current-page guard
+  ---
+  duration_ms: 22.06952
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: Spanish span
+not ok 15 - split public manufacturer-code extraction: Spanish span
+  ---
+  duration_ms: 7.522087
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:1:14396'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'GW3773'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'GW3773'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:140:39)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: split public manufacturer-code extraction: English strong
+not ok 16 - split public manufacturer-code extraction: English strong
+  ---
+  duration_ms: 6.241813
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:1:14396'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'AB123'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'AB123'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:140:39)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: split public manufacturer-code extraction: table cells
+not ok 17 - split public manufacturer-code extraction: table cells
+  ---
+  duration_ms: 6.186112
+  type: 'test'
+  location: '/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:1:14396'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'ABC42'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ABC42'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/78a93086ddbd/DropShredder-DS056/tests/reputation-improvements.test.ts:140:39)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: split public manufacturer-code extraction: review exclusion
+ok 18 - split public manufacturer-code extraction: review exclusion
+  ---
+  duration_ms: 7.720127
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: related exclusion
+ok 19 - split public manufacturer-code extraction: related exclusion
+  ---
+  duration_ms: 4.256943
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: hidden value exclusion
+ok 20 - split public manufacturer-code extraction: hidden value exclusion
+  ---
+  duration_ms: 3.580658
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: field value exclusion
+ok 21 - split public manufacturer-code extraction: field value exclusion
+  ---
+  duration_ms: 9.046379
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: ambiguous codes
+ok 22 - split public manufacturer-code extraction: ambiguous codes
+  ---
+  duration_ms: 4.093111
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: no cross-row borrowing
+ok 23 - split public manufacturer-code extraction: no cross-row borrowing
+  ---
+  duration_ms: 3.136956
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: quote exclusion
+ok 24 - split public manufacturer-code extraction: quote exclusion
+  ---
+  duration_ms: 2.840229
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: private account exclusion
+ok 25 - split public manufacturer-code extraction: private account exclusion
+  ---
+  duration_ms: 5.415427
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 22
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 549.850655

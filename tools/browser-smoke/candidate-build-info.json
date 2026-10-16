@@ -51,9 +51,9 @@
       "sha256": "0d6e631b65bb64665d73c59fbb00b1e89e9afd01dc4b4252a460c31179e2ccd6"
     },
     {
-      "path": "chunks/scamferret-results-tmubbddU.js",
+      "path": "chunks/scamferret-results-Cyx8zXE5.js",
       "bytes": 478509,
-      "sha256": "c28f6c5bf403837f02108b9f6d797269dafb811b4556b250358eea4d661b9af2"
+      "sha256": "9d76ce918ea98ca5f6e5104fbd896364aafd3cc9dd67f418ca7826ebab89336f"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -66,14 +66,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-lAp8Phz7.js",
-      "bytes": 593499,
-      "sha256": "e04afe4a5011ac3ee62b98f94d2d1efd97404b26b839a4a7ea25dcc8ef3b2d00"
+      "path": "chunks/sidepanel-BHcZ_dQ0.js",
+      "bytes": 594500,
+      "sha256": "972aeb03030a70fa909677fcc4e9776290b613a2a93644cf29b30bf3297b61de"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 90213,
-      "sha256": "4f4ae87389f70d0478ba4c39ace119c7d82de1789cf8072f0a1a183c56b24d42"
+      "bytes": 91215,
+      "sha256": "e208d4eda1fa467bffe8be1ba40f8961ad94206f486e154d7bb61504aad4e8bd"
     },
     {
       "path": "icon/128.png",
@@ -263,7 +263,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 21845,
-      "sha256": "0def718de7f16217a5aee74591894622390a836de9b949e1698d70c9611f67b2"
+      "sha256": "6ebae8ef77ef4af66fe6e07cb796b818c3f8b5ab82deca15815bcb6280405eb8"
     },
     {
       "path": "THIRD-PARTY-NOTICES.txt",
@@ -271,8 +271,8 @@
       "sha256": "01380ed30834e56d6d41dc576337cf85c3ac499c45f9aedcddc70ba0ef5fc79d"
     }
   ],
-  "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
-  "sourceTree": "5956c9f997fd58ef24c360c1679af40a50bcc8a3",
+  "sourceCommit": "ae94718c310fdf253fcfbef156fc49b30bb4a8d9",
+  "sourceTree": "175ee8f1c2148fd774288bb5d1937731b71e3ff0",
   "version": "0.2.0",
-  "reviewedChange": "DS-056: explicit attributed historical/security outputs without scam-service links; bounded /p/ brand/MPN/site identity and private policy extraction, partial affiliation references, commerce language aliases and non-adverse dispatch disclosure. No permissions, dependencies or model changes; no independent fraud labels."
+  "reviewedChange": "DS-058: exact labeled manufacturer codes across bounded public split-element rows; 12 rows/32 descendant elements/300 characters; exclude private/hidden/form/review/related/quoted context and abstain on conflicting codes. No SKU/title inference, risk-weight, permission, dependency, language/model or provider-policy changes. Collector isolates failed navigation before next case; beta4 remains open."
 }

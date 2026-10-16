@@ -259,7 +259,19 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const skuRoot=visibleTitle && (Boolean(product)||/\/(?:products?|p)\//i.test(location.pathname))
           ? publicNode('h1')?.closest('main,[role="main"],[itemtype$="/Product"]') : undefined;
         const skuPieces:string[]=[];
-        const visibleBrands=new Set<string>(),visibleMpns=new Set<string>(),brandRows=new Set<Element>();
+        const visibleBrands=new Set<string>(),visibleMpns=new Set<string>(),brandRows=new Set<Element>(),mpnRows=new Set<Element>();
+        const mpnPattern=/(?:manufacturer(?:'s)?\s+(?:code|part\s+number)|mpn|c[oó]digo\s+del\s+fabricante|herstellercode|codice\s+produttore|code\s+fabricant)\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{1,59})(?=$|\s)/gi;
+        const publicMpnRow=(row:Element):boolean=>{
+          if(typeof row.getClientRects==='function'&&!row.getClientRects().length)return false;
+          const walker=document.createTreeWalker(row,NodeFilter.SHOW_ELEMENT);let element:Element|null=row,visited=0;
+          while(element&&visited++<32){
+            if(excluded(element)||element.matches('input,textarea,select,option,[contenteditable],[hidden],[aria-hidden="true"],script,style,form'))return false;
+            if(/display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)/i.test(element.getAttribute('style')??''))return false;
+            if(typeof getComputedStyle==='function'){const style=getComputedStyle(element);if(style.display==='none'||style.visibility==='hidden'||style.visibility==='collapse')return false;}
+            element=walker.nextNode() as Element|null;
+          }
+          return !element;
+        };
         let pageChars=0, visitedTextNodes=0;
         if(document.body){
           const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -274,6 +286,18 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
             pagePieces.push(clipped);
             if(skuRoot?.contains(parent) && !parent.closest('a[href],[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"],li[class*="product"]')) skuPieces.push(clipped);
+            if(skuRoot?.contains(parent)&&mpnRows.size<12&&/(?:manufacturer|mpn|fabricante|herstellercode|produttore|fabricant)/i.test(value)&&
+              !parent.closest('blockquote,q,a[href],[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"]')){
+              const row=parent.closest('tr,p,li')??parent;
+              if(row&&!mpnRows.has(row)){
+                mpnRows.add(row);
+                // Read only a narrow static product row, never borrow from another row or form field.
+                if(publicMpnRow(row)){
+                  const label=publicText(row,300).replace(/\s+/g,' ').trim();
+                  for(const hit of label.matchAll(mpnPattern))if(!/^(?:unknown|none|null|n\/a)$/i.test(hit[1]!))visibleMpns.add(hit[1]!);
+                }
+              }
+            }
             if(skuRoot?.contains(parent)&&brandRows.size<12&&!parent.closest('[class*="review"],[class*="recommend"],[class*="related"],[class*="product-card"],[class*="product_card"],[class*="product-item"],[class*="product_item"]')&&
               /(?:brand|marca|marke|marque|merk|μάρκα|ブランド|品牌|ब्रांड|ব্র্যান্ড|العلامة التجارية)\s*:/iu.test(value)){
               const row=parent.closest('tr,p,li');
@@ -286,7 +310,6 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
           }
         }
         const pageText=pagePieces.join(' ').slice(0,LIMITS.pageText);
-        for(const text of skuPieces.slice(0,200))for(const hit of text.matchAll(/(?:manufacturer(?:'s)?\s+(?:code|part\s+number)|mpn|c[oó]digo\s+del\s+fabricante|herstellercode|codice\s+produttore|code\s+fabricant)\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{1,59})(?=$|\s)/gi))visibleMpns.add(hit[1]!);
         const labeledSkus=[...skuPieces.join(' ').matchAll(/(?:^|\s)SKU\s*:\s*([A-Za-z0-9][A-Za-z0-9._\/-]{0,79})(?=$|\s)/gi)].map(m=>m[1]!);
         const uniqueSkus=[...new Set(labeledSkus)];
         const visibleSku=uniqueSkus.length===1 && !/^(?:n\/a|none|unknown|null)$/i.test(uniqueSkus[0]!) ? uniqueSkus[0] : undefined;

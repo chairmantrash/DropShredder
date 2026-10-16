@@ -1,0 +1,14 @@
+{
+  "sourceUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+  "httpStatus": 200,
+  "retrievedAt": "2026-10-16T05:53:59.829286+00:00",
+  "sha256": "09b56e0fab76fc0318696e90ba7950049599bc7d6688e6a81c44b0b709440e44",
+  "bytes": 193076,
+  "publicSnippet": "<li>Código del fabricante: <span>GW3773</span></li>",
+  "location": "#tab-description li",
+  "priorRealScan": "DS-056-PAGE-OUTCOMES-20261013.json / AUDIT-0001",
+  "priorSku": "GW3773",
+  "priorMpn": null,
+  "currentNativeRecheck": "DS-057 pending final profile; no current-native identity claim yet",
+  "scope": "Public merchant label; not independently verified manufacturer, supplier or fraud evidence."
+}
