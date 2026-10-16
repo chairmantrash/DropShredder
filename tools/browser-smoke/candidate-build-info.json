@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "5bdd16f282bae1aff9b2193f9c98b3fca1e89737",
-  "sourceTree": "ab126afcadd7c0b6015fc5e324ab45f33eadf569",
+  "sourceCommit": "ac30cadd3c415916e8c88d57de96193b90397420",
+  "sourceTree": "4491bb79a9bc1164ebc1cbf2b61f8bd4fe3ee2ae",
   "version": "0.2.0",
-  "reviewedChange": "DS-059: uniquely connected non-transitive ProductGroup brand/material and local Brand references; scoped public Microdata identifiers; one explicit current variant Offer; observed countdown deadline shifts with common lineage. No parent identifiers/ambiguous offers, privacy controls bypass, probability calibration, paid API, country/platform adverse weight or new scam-service links. Beta5 stays open during acceptance.",
+  "reviewedChange": "DS-060 scoped visible product reviews; bounded origin/destination/negation comparisons; neutral context-only stamps. Frozen233-site baseline completed before repairs. No changed severe gates, probabilities, new provider or permissions.",
   "buildFiles": [
     {
       "path": "SCAMFERRET-SOURCE-LICENSE.txt",
@@ -70,9 +70,9 @@
       "sha256": "0d6e631b65bb64665d73c59fbb00b1e89e9afd01dc4b4252a460c31179e2ccd6"
     },
     {
-      "path": "chunks/scamferret-results-CjiKMbVF.js",
+      "path": "chunks/scamferret-results-BNYXfACS.js",
       "bytes": 478509,
-      "sha256": "e85349e4210bece06631c8579f0a328c1e825946c365edec4351b0c0d85bf079"
+      "sha256": "9d2d9d6117f21d09697c797f36732713ad24e16a67cbc2c16c34f73dcb82b0a9"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -85,14 +85,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-CJrkB4G3.js",
-      "bytes": 599752,
-      "sha256": "e4437aba3f1a45605f46707cb7eab3b3c5b1c823c15e37e5b580e1f08d759d76"
+      "path": "chunks/sidepanel-B_dmBMuz.js",
+      "bytes": 602526,
+      "sha256": "e27f870086ad8f877fa157d1d152357162fa0120e93ae802d90d2ad81273ef99"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 95745,
-      "sha256": "7ac466bae4be255205efa5d480f14115925717512c59c8d6ee8adfa99c085417"
+      "bytes": 97857,
+      "sha256": "de35a2b70f7b5a4a0a1d7a58d4a8b8a9f2109db42c57419aeffb30b4fba377a0"
     },
     {
       "path": "icon/128.png",
@@ -272,7 +272,7 @@
     {
       "path": "sidepanel.html",
       "bytes": 21845,
-      "sha256": "d52414c8f991fe3321f65433c420c59d84a77525756fc2c71c51cb2a0641f52b"
+      "sha256": "d3f1b09d058edc85c16d315a3ae6d116529918924f93da74583fbc87c1f780ed"
     }
   ]
 }

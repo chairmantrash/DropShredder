@@ -7,14 +7,14 @@ permissions:
   contents: read
   actions: read
 jobs:
-  baseline:
-    if: false # Package identity preparation; renewed live workflow restored after inventory is recorded.
+  repaired:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
-        shard: [4]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,12 +23,35 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Stage exact published beta6 and frozen diverse targets
+      - name: Require exact-head gates and stage the existing CI package
         env:
           GH_TOKEN: ${{ github.token }}
+          ACCEPTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
-          gh release download v0.2.0-beta.6 --pattern 'DropShredder-0.2.0-beta.6-chrome.zip' --dir /tmp/ds060
-          python3 tools/beta/coverage100/stage.py /tmp/ds060/DropShredder-0.2.0-beta.6-chrome.zip
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,subprocess,time
+          def api(path):return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          head=os.environ['ACCEPTED_HEAD']
+          for attempt in range(150):
+              latest={}
+              for run in api('actions/runs?event=pull_request&head_sha='+head+'&per_page=100')['workflow_runs']:
+                  if run['name'] in ['DropShredder CI','CodeQL']:latest.setdefault(run['name'],run)
+              if len(latest)==2 and all(r['status']=='completed' for r in latest.values()):
+                  assert all(r['conclusion']=='success' for r in latest.values()),latest;break
+              time.sleep(5)
+          else:raise SystemExit('Exact source gates incomplete; no live test')
+          paths=subprocess.check_output(['git','diff','--name-only','ac30cadd3c415916e8c88d57de96193b90397420','HEAD'],text=True).splitlines()
+          assert all(p.startswith(('tools/','tests/','.github/workflows/','workplane/')) for p in paths),paths
+          ci=latest['DropShredder CI'];assert ci['head_sha']==head
+          artifact=next(a for a in api(f'actions/runs/{ci["id"]}/artifacts')['artifacts'] if a['name']=='dropshredder-chrome-store')
+          assert not artifact['expired'] and artifact['workflow_run']['head_sha']==head
+          pathlib.Path('ci-artifact.json').write_text(json.dumps(artifact))
+          b=pathlib.Path('tools/beta/coverage100/targets.json').read_bytes()
+          assert hashlib.sha256(b).hexdigest()=='38df85d3b7e6e19c273584eb9728334a1bab561570630eef6df8dd67cd9b6960'
+          assert len(json.loads(b)['targets'])==233
+          pathlib.Path('accepted-ci.zip').write_bytes(subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/artifacts/{artifact["id"]}/zip']))
+          PY
+          python3 tools/beta/coverage100/stage.py accepted-ci.zip ci-artifact.json
           node --test tools/beta/failures/classify.test.mjs
       - name: Install isolated genuine native browser tooling
         run: |
@@ -47,7 +70,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ds060-baseline-retry-${{ matrix.shard }}
+          name: ds060-repaired-${{ matrix.shard }}
           path: |
             browser-smoke-results/
             tools/beta/coverage100/targets.json
