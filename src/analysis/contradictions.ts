@@ -1,6 +1,6 @@
 import type { Contradiction, EvidenceSignal } from '../types/evidence';
 import type { ExtractedClaim } from './claims';
-import { sameJurisdiction } from './merchant-origin';
+import { sameJurisdiction, jurisdictionHits } from './merchant-origin';
 
 export interface DomainAgeObservation {
   registeredAt?:string;
@@ -42,6 +42,10 @@ export function fulfillmentContradictions(
 ):Contradiction[] {
   const claim=claims.find(c=>c.kind==='ships-from' && c.normalizedValue);
   if(!claim?.normalizedValue || !observation.origin) return [];
+
+  // Unequal arbitrary strings are not contradictory locations. A route with
+  // multiple jurisdictions or an unrecognized city/country must abstain.
+  if(jurisdictionHits(claim.normalizedValue).length!==1 || jurisdictionHits(observation.origin).length!==1) return [];
 
   if(sameJurisdiction(claim.normalizedValue,observation.origin)) return [];
 

@@ -7,8 +7,7 @@ export interface ParsedFulfillmentObservation {
 }
 
 const ORIGIN_PATTERNS=[
-  /(?:origin|ship(?:ped)? from|departed from|accepted at)[:\s-]+([a-z0-9 .,'-]{3,80})/i,
-  /(?:from)\s+([a-z][a-z .,'-]{2,50})\s+(?:to|→|->)\s+[a-z]/i,
+  /\b(?:origin|ship(?:ped|s)?\s+(?:directly\s+)?from|dispatch(?:ed)?\s+from|departed\s+from|accepted\s+at)[:\s-]+([^.;!?\n]{3,100})/gi,
 ];
 
 const CARRIER_PATTERNS=[
@@ -19,12 +18,22 @@ export function parseFulfillmentObservation(text:string):ParsedFulfillmentObserv
   const matching=commerceText(text,50000);
   const normalized=matching.text.replace(/\s/g,' ');
   let origin:string|undefined;
+  let routeText:string|undefined;
   for(const pattern of ORIGIN_PATTERNS){
-    const match=normalized.match(pattern);
+    for(const match of matching.text.matchAll(pattern)){
     if(match?.[1]){
-      origin=match[1].trim();
+      const before=matching.text.slice(Math.max(0,match.index-65),match.index).split(/[.;!?\n]/).at(-1)??'';
+      if(/\b(?:not|never|cannot|no)\b|["“”]|\b(?:customer|reviewer)\s+(?:said|says)/i.test(before))continue;
+      const candidate=match[1].split(/\s+(?:to|→|->|destination\b)|\s*→\s*/i)[0]!.trim().replace(/[,\s]+$/,'');
+      // Promotional dates are not dispatch locations. Generic "from X to Y"
+      // prose is deliberately not an origin observation.
+      if(!candidate || candidate.length>80 || /^(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+\d|\d{1,4}[-/]\d{1,2}/i.test(candidate))continue;
+      origin=candidate;
+      routeText=matching.original(match.index,Math.min(match[0].length,260)).replace(/\s+/g,' ');
       break;
     }
+    }
+    if(origin)break;
   }
 
   let carrier:string|undefined;
@@ -39,7 +48,7 @@ export function parseFulfillmentObservation(text:string):ParsedFulfillmentObserv
   return {
     origin,
     carrier,
-    routeText:origin ? text.replace(/\s+/g,' ').slice(0,260) : undefined,
+    routeText,
     confidence:origin ? .76 : carrier ? .45 : 0,
   };
 }

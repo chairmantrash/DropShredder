@@ -1,5 +1,6 @@
 import { tr } from '../i18n/index';
 import type { DropShredderReport } from '../types/report';
+import {warningSignalCount} from '../analysis/evidence-engine';
 
 const HOST_ID='dropshredder-stamp-host';
 
@@ -13,7 +14,7 @@ function label(report: DropShredderReport): {headline:string;detail:string} {
     headline:tr('⚠ SOMETHING SMELLS OFF'),
     detail:tr('Risk signals detected, but the evidence is not strong enough for a severe accusation.'),
   };
-  if (report.evidence.length) return {
+  if (warningSignalCount(report.evidence)) return {
     headline:tr('DROPSHREDDER • SIGNALS FOUND'),
     detail:tr('Weak or moderate indicators only. Treat this as a prompt to investigate, not a verdict.'),
   };
@@ -31,10 +32,11 @@ export function renderStamp(report: DropShredderReport): void {
   const shadow=host.attachShadow({mode:'open'});
   const state=label(report);
   const score=report.verdict.massResellLikelihood;
+  const count=warningSignalCount(report.evidence);
 
   const style=document.createElement('style');
   style.textContent=`
-    .box{position:relative;width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
+    .box{position:relative;width:310px;background:#0d0d0f;color:#fafafa;border:2px solid ${count?'#ff453a':'#65656d'};border-radius:10px;
       box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:Inter,system-ui,sans-serif;padding:14px}
     .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
     .headline{font-size:15px;font-weight:950;line-height:1.15}
@@ -62,7 +64,7 @@ export function renderStamp(report: DropShredderReport): void {
   detail.textContent=state.detail;
   const scoreNode=document.createElement('div');
   scoreNode.className='score';
-  scoreNode.textContent=`${score===null?tr('Mass-resell likelihood: UNKNOWN'):`Mass-resell likelihood: ${score}%`} • ${report.evidence.length} signal(s)`;
+  scoreNode.textContent=tr('Mass-resell evidence score: $1/100 • Signals: $2 • $3',score??tr('UNKNOWN'),count,tr(report.verdict.reason));
 
   box.append(close,brand,headline,detail,scoreNode);
   shadow.append(style,box);
