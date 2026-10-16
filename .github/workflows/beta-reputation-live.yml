@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   native-live:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/reputation-and-detection-20261013'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/reputation-and-detection-20261013' && github.event.pull_request.head.sha == 'ac52c91f4e082fafc5ba7358aecdd39742d48adb'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     strategy:

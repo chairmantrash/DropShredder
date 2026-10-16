@@ -1,0 +1,175 @@
+{
+  "profiles": [
+    {
+      "shard": 0,
+      "nativeProbeSha256": "2983c61a1386fa7530be616bfa0af3b58ee7c80c75bd49d558fbc37c7ab4296e",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 1,
+      "nativeProbeSha256": "b5ab42cf4469656c2090c1b67cada8753a9245c1bde5b738df0ed427625e9c43",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 2,
+      "nativeProbeSha256": "c86eb4f41024ed8c321c737c5b27c5930d7b1877b3f4293adf2fdba10df24969",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 3,
+      "nativeProbeSha256": "6231e394041a965af28f2108f9fedd8952ac0704525cdfa42516527f62b5bcbd",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 4,
+      "nativeProbeSha256": "2eb31dbdc13b484d1f5f6da75fe58f50a3aa815b9a5daf5e1f3c5793c3346ea9",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 5,
+      "nativeProbeSha256": "ca3537ac5ddaccab00b331e3d4f9243a31e648ec355bc680cb7390bdcd36b23a",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 6,
+      "nativeProbeSha256": "7806dbfc6e2938ec4e9d4fc27734e984b92d49359d22e837d01e098ef0826b25",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    },
+    {
+      "shard": 7,
+      "nativeProbeSha256": "fed014d389a79017b3fa8420896734230d9e5f0d2b1e3bb2d39f06be29acb748",
+      "package": {
+        "sourceCommit": "9aed11c9d26f79ba1f1824a92ccc1adec78905ce",
+        "artifact": 11815875609,
+        "artifactDigest": "sha256:e4ed1015a1e4b1dd7c385a3fa0f96bd0b5f2f633ae585e510d919052c326b031",
+        "zipSha256": "84edf93835f4daa490402630f1801fd2b49f64f81dd8dafb72ac4f1b8020c752",
+        "zipBytes": 25985652,
+        "allPackageHashesMatch": true,
+        "files": 54,
+        "rebuilt": false
+      }
+    }
+  ],
+  "originalFailedProfileRetained": true,
+  "acceptedArtifacts": [
+    {
+      "id": 11817250795,
+      "name": "ds056-live-0",
+      "digest": "sha256:174fa57939141a5ae414c5aeca846e26a8dd65d057d9a49188137ce70cbaf954",
+      "created_at": "2026-10-13T13:18:23Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11818300152,
+      "name": "ds056-live-1",
+      "digest": "sha256:cb0f88c39ddd9f5b7b6d0a75a27e25542b928b2612dc71bbab2efa01d2b723fa",
+      "created_at": "2026-10-13T13:21:47Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11816666372,
+      "name": "ds056-live-2",
+      "digest": "sha256:1284903a6fb90b0dc5e5c15b00998b9971e686f24443aa2d55b2ae7297989ebc",
+      "created_at": "2026-10-13T13:20:10Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11816837467,
+      "name": "ds056-live-3",
+      "digest": "sha256:7c9bac31c07546147ed62bd36bc43894a6bdf9344e0803eeb30109ea3609897f",
+      "created_at": "2026-10-13T13:26:07Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11815829892,
+      "name": "ds056-live-4",
+      "digest": "sha256:ffa799eea850dbef36bb941b0836891e2b099e2704fc898381db56729f62d3a4",
+      "created_at": "2026-10-13T13:20:37Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11816034709,
+      "name": "ds056-live-5",
+      "digest": "sha256:43b9937d27ec02900491acad7f855685234ee0ff8f232973793fa7630cf59aa8",
+      "created_at": "2026-10-13T13:19:43Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11816358512,
+      "name": "ds056-live-6",
+      "digest": "sha256:787826277c777740a6fe4d6feae2083f7435e722b44bb72f1744c3fc85369075",
+      "created_at": "2026-10-13T13:17:16Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    },
+    {
+      "id": 11815584365,
+      "name": "ds056-live-7",
+      "digest": "sha256:2910ebab198d8edcfc99c8ee558a376b10c0556d22c6411eec40aa581a68861d",
+      "created_at": "2026-10-13T13:17:19Z",
+      "head": "ac52c91f4e082fafc5ba7358aecdd39742d48adb"
+    }
+  ]
+}
