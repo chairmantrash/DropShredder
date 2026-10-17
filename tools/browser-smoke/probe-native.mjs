@@ -1,3 +1,4 @@
+import {runCoverageNativeSuite} from '../beta/coverage100/native.mjs';
 import {runReputationSuite} from './reputation.mjs';
 import {installMultilingualFixtures,runMultilingualSuite} from './multilingual.mjs';
 import {runWindowEdges, runContextMenus, runResourceEdges, runStorageRecovery, runOcrCancellation, observeLiveResources} from './remaining-edges.mjs';
@@ -578,6 +579,7 @@ try {
         return {scope:'Actual packaged OCR invocation on synthetic panel-local image; OCR accuracy on independent real photos remains untested',output:outputText.slice(0,250)};
       });
       await runOcrCancellation({page,native,test,until,pause,output,root});
+      await runCoverageNativeSuite({context,page,native,worker,test,until,pause});
       await runReputationSuite({context,page,native,test,until,pause,setMode:value=>{providerMode=value;}});
       await test('N24','Live no-key GLEIF request through native controls resolves an exact LEI without changing the product verdict',async()=>{
         const before=JSON.parse(await native.evaluate("document.querySelector('#raw').textContent")).verdict;await native.click('.entity-panel > summary');await native.type('#entity-lei','5493001KJTIIGC8Y1R12');await native.click('#entity-lookup');

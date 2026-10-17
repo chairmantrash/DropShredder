@@ -1,0 +1,58 @@
+name: DropShredder repaired package identity
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta100-inventory.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  identity:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Record exact existing CI package without rebuilding it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACCEPTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,io,json,os,pathlib,subprocess,time,zipfile
+          def api(path):return json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/'+path]))
+          head=os.environ['ACCEPTED_HEAD']
+          for attempt in range(150):
+              runs=[r for r in api('actions/runs?event=pull_request&head_sha='+head+'&per_page=100')['workflow_runs'] if r['name']=='DropShredder CI']
+              if runs and runs[0]['status']=='completed':
+                  assert runs[0]['conclusion']=='success',runs[0];break
+              time.sleep(5)
+          else:raise SystemExit('Exact source CI incomplete')
+          changed=subprocess.check_output(['git','diff','--name-only','ac30cadd3c415916e8c88d57de96193b90397420','HEAD'],text=True).splitlines()
+          assert all(p.startswith(('tools/','tests/','.github/workflows/','workplane/')) for p in changed),changed
+          artifact=next(a for a in api(f'actions/runs/{runs[0]["id"]}/artifacts')['artifacts'] if a['name']=='dropshredder-chrome-store')
+          wrapper=subprocess.check_output(['gh','api',f'repos/chairmantrash/DropShredder/actions/artifacts/{artifact["id"]}/zip'])
+          assert hashlib.sha256(wrapper).hexdigest()==artifact['digest'].removeprefix('sha256:')
+          with zipfile.ZipFile(io.BytesIO(wrapper)) as z:
+              assert z.namelist()==['dropshredder-0.2.0-chrome.zip'];payload=z.read(z.namelist()[0])
+          with zipfile.ZipFile(io.BytesIO(payload)) as z:
+              files=[{'path':name,'bytes':len(z.read(name)),'sha256':hashlib.sha256(z.read(name)).hexdigest()} for name in sorted(z.namelist())]
+          assert len(files)==54 and sum(f['bytes'] for f in files)==55553889
+          info={'sourceCommit':'ac30cadd3c415916e8c88d57de96193b90397420','sourceTree':'4491bb79a9bc1164ebc1cbf2b61f8bd4fe3ee2ae','version':'0.2.0','reviewedChange':'DS-060 scoped visible product reviews; bounded origin/destination/negation comparisons; neutral context-only stamps. Frozen233-site baseline completed before repairs. No changed severe gates, probabilities, new provider or permissions.','buildFiles':files}
+          pathlib.Path('C100-BUILD-INFO.json').write_text(json.dumps(info,indent=2)+'\n')
+          receipt={'head':head,'ciRun':runs[0]['id'],'artifact':artifact,'zipSha256':hashlib.sha256(payload).hexdigest(),'zipBytes':len(payload),'files':len(files),'bytes':sum(f['bytes'] for f in files),'rebuilt':False}
+          pathlib.Path('C100-PACKAGE-IDENTITY.json').write_text(json.dumps(receipt,indent=2)+'\n')
+          print('DS_C100_BUILD_INFO='+json.dumps(info))
+          print('DS_C100_PACKAGE_IDENTITY='+json.dumps(receipt))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds060-package-identity
+          path: |
+            C100-BUILD-INFO.json
+            C100-PACKAGE-IDENTITY.json
+          retention-days: 90

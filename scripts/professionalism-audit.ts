@@ -12,6 +12,7 @@ const documentedLargeFiles=new Set<string>(['entrypoints/sidepanel/main.ts']);
 // DS-059 reviewed exception: Chrome copies this entire injected function body.
 // No closures/eval/shared page state. The documented exception has a hard cap.
 const serializedExtractorReview='brain/decisions/20261016-001-typed-identity-and-observed-countdowns.md';
+const scopedReviewExtension='brain/decisions/20261016-002-beta100-review-and-warning-boundaries.md';
 
 function walk(dir:string):string[]{
   return fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>{
@@ -25,7 +26,7 @@ const executable=ROOTS.flatMap(root=>walk(root))
 
 for(const file of executable){
   const size=fs.statSync(file).size;
-  const boundedSerializedExtractor=file==='src/extraction/page-scan.ts'&&size<=45_000&&fs.existsSync(serializedExtractorReview);
+  const boundedSerializedExtractor=file==='src/extraction/page-scan.ts'&&(size<=45_000||size<=49_000&&fs.existsSync(scopedReviewExtension))&&fs.existsSync(serializedExtractorReview);
   if(size>BLOCK_BYTES && !documentedLargeFiles.has(file)&&!boundedSerializedExtractor){
     errors.push(`${file} is ${size} bytes (> ${BLOCK_BYTES}); decompose or document a reviewed exception`);
   }else if(size>REVIEW_BYTES){

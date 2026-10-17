@@ -3,7 +3,7 @@ import {COMMERCE_LANGUAGE_KIT} from '../../src/languages/commerce-kit';
 import { tr, localizeDocument, errorText, uiDirection } from '../../src/i18n/index';
 import { showSearchChooser } from '../../src/ui/search-chooser';
 import './style.css';
-import { calculateVerdict } from '../../src/analysis/evidence-engine';
+import { calculateVerdict, warningSignalCount } from '../../src/analysis/evidence-engine';
 import { runPassiveRules } from '../../src/analysis/passive-rules';
 import type { DropShredderReport } from '../../src/types/report';
 import type { ProductSnapshot } from '../../src/types/product';
@@ -475,9 +475,10 @@ async function scanActivePage(): Promise<void> {
       console.warn('DropShredder: local history write failed', storageError);
     }
 
+    const warningCount=warningSignalCount(report.evidence);
     await chrome.scripting.executeScript({
       target:documentTarget(page),
-      args:[report.verdict.massResellLikelihood,report.evidence.length,report.verdict.severeWarningAllowed,{...toneCopy(currentTone),noVerdict:tr('DROPSHREDDER • NO VERDICT'),dismiss:tr('Dismiss DropShredder warning'),direction:uiDirection(),detail:tr('Mass-resell evidence score: $1/100 • Signals: $2 • $3',report.verdict.massResellLikelihood??tr('UNKNOWN'),report.evidence.length,report.verdict.severeWarningAllowed?tr('Independent evidence gate satisfied.'):tr('Evidence gate not satisfied; this is not a severe accusation.'))},page.url],
+      args:[report.verdict.massResellLikelihood,warningCount,report.verdict.severeWarningAllowed,{...toneCopy(currentTone),noVerdict:tr('DROPSHREDDER • NO VERDICT'),dismiss:tr('Dismiss DropShredder warning'),direction:uiDirection(),detail:tr('Mass-resell evidence score: $1/100 • Signals: $2 • $3',report.verdict.massResellLikelihood??tr('UNKNOWN'),warningCount,warningCount?(report.verdict.severeWarningAllowed?tr('Independent evidence gate satisfied.'):tr('Evidence gate not satisfied; this is not a severe accusation.')):tr(report.verdict.reason))},page.url],
       func:(score:number|null,count:number,severe:boolean,copy:{signalsFound:string;severeWarning:string;noVerdict:string;dismiss:string;direction:string;detail:string},expectedUrl:string)=>{
         if(location.href!==expectedUrl) return false;
         document.getElementById('dropshredder-stamp-host')?.remove();
@@ -490,7 +491,7 @@ async function scanActivePage(): Promise<void> {
           : count>0 ? `⚠ ${copy.signalsFound}` : copy.noVerdict;
         const style=document.createElement('style');
         style.textContent=`
-          .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid #ff453a;border-radius:10px;
+          .box{width:310px;background:#0d0d0f;color:#fafafa;border:2px solid ${count?'#ff453a':'#65656d'};border-radius:10px;
             box-shadow:0 14px 44px rgba(0,0,0,.48);font-family:system-ui,sans-serif;padding:14px}
           .brand{font-size:11px;font-weight:900;letter-spacing:.16em;color:#ff453a;margin-bottom:8px}
           .headline{font-size:15px;font-weight:950;line-height:1.15}

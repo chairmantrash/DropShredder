@@ -1,0 +1,51 @@
+name: DropShredder 233-site measured results
+on:
+  pull_request:
+    branches: [release/security-performance-hardening]
+    paths: ['.github/workflows/beta100-summary.yml', 'tools/beta/coverage100/report.py']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  summarize:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feature/beta100-coverage-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --omit=dev --ignore-scripts
+      - name: Wait for the declared complete verification runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NATIVE_HEAD: '83ee4e0598a6605e0d1307d13c6d20a20cf3127f'
+        run: |
+          python3 - <<'PY'
+          import json,os,subprocess,time
+          for attempt in range(80):
+              live=json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/actions/runs/38983826714']))
+              native=[r for r in json.loads(subprocess.check_output(['gh','api','repos/chairmantrash/DropShredder/actions/runs?event=pull_request&head_sha='+os.environ['NATIVE_HEAD']+'&per_page=100']))['workflow_runs'] if r['name']=='DropShredder Chromium Runtime']
+              if not native:time.sleep(30);continue
+              runs=[live,native[0]]
+              if all(r['status']=='completed' for r in runs):break
+              time.sleep(30)
+          else:raise SystemExit('Declared verification has not completed; no acceptance inferred')
+          print(json.dumps([{'id':r['id'],'head':r['head_sha'],'conclusion':r['conclusion']} for r in runs]))
+          assert runs[0]['head_sha']=='c17ee9b683f3b40615b2761a864e8569809cf212' and runs[1]['head_sha']==os.environ['NATIVE_HEAD']
+          open('native-accepted-run.txt','w').write(str(runs[1]['id']))
+          PY
+      - name: Compile preserved original attempts and measured before-after results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/beta/coverage100/report.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds060-measured-results
+          path: coverage100-report/
+          if-no-files-found: warn
+          retention-days: 90

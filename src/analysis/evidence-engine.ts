@@ -35,6 +35,11 @@ export function dedupeEvidence(signals: EvidenceSignal[]): EvidenceSignal[] {
     signal=>effectiveWeight(signal)>0 ? severityRank[signal.severity]*100+Math.min(99,effectiveWeight(signal)) : 0);
 }
 
+/** Context notes and invalid/zero-confidence weights never become UI warnings. */
+export function warningSignalCount(signals:EvidenceSignal[]):number {
+  return dedupeEvidence(signals).filter(signal=>effectiveWeight(signal)>0).length;
+}
+
 export function fusionSummary(signals: EvidenceSignal[],coverageFamilies:string[]=[]): FusionResult {
   const unique=dedupeEvidence(signals);
   const fusionItems:FusionEvidence[]=unique

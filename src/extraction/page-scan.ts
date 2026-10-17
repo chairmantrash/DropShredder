@@ -462,6 +462,36 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const cards:HTMLElement[]=[];
         const amazonElements:HTMLElement[]=[];
         const reviewElements:HTMLElement[]=[];
+        const reviewVisibility=new WeakMap<Element,boolean>();
+        const publicReviewNode=(node:Element):boolean=>{
+          let cursor:Element|null=node,depth=0,visible=true;const visited:Element[]=[];
+          while(cursor&&depth++<32){
+            const cached=reviewVisibility.get(cursor);if(cached!==undefined){visible=cached;cursor=null;break;}
+            visited.push(cursor);
+            if(excluded(cursor)||cursor.matches('form,input,textarea,select,option,[contenteditable],dialog:not([open]),[hidden],[aria-hidden="true"],script,style,noscript')||/display\s*:\s*none|visibility\s*:\s*(?:hidden|collapse)/i.test(cursor.getAttribute('style')??'')){visible=false;break;}
+            if(typeof getComputedStyle==='function'){const style=getComputedStyle(cursor);if(style.display==='none'||style.visibility==='hidden'||style.visibility==='collapse'){visible=false;break;}}
+            cursor=cursor.parentElement;
+          }
+          visible=visible&&!cursor;
+          // A false result belongs to the requested subtree, not its public
+          // ancestors. True paths can safely share computed visibility.
+          if(visible)for(const item of visited)reviewVisibility.set(item,true);
+          else reviewVisibility.set(node,false);
+          return visible;
+        };
+        const currentJudgeReview=(element:Element):boolean=>{
+          if(!element.matches('.jdgm-rev')||!element.closest('.jdgm-review-widget')||element.closest('.jdgm-all-reviews-widget,.jdgm-carousel-wrapper,.jdgm-revs-tab'))return false;
+          const declared=element.getAttribute('data-product-url');if(!declared||declared.length>2048)return false;
+          try{
+            const u=new URL(declared,location.href),here=new URL(location.href);
+            if(u.origin!==here.origin||u.pathname!==here.pathname||u.username||u.password)return false;
+            // Parent product reviews can be displayed on a selected variant,
+            // but an explicitly different variant is never borrowed.
+            for(const key of ['variant','sku','color','colour','size'])if(u.searchParams.has(key)&&u.searchParams.get(key)!==here.searchParams.get(key))return false;
+          }catch{return false;}
+          return publicReviewNode(element);
+        };
+        const seenJudgeIds=new Set<string>();
         const priceElements:HTMLElement[]=[];
         if(document.body){
           const elementWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_ELEMENT);
@@ -476,6 +506,10 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             if(cards.length<LIMITS.cards && element.matches(cardSelector)) cards.push(element);
             if(amazonElements.length<LIMITS.amazonCards && element.matches('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')) amazonElements.push(element);
             if(reviewElements.length<LIMITS.reviews && element.matches('[data-hook="review"]')) reviewElements.push(element);
+            if(reviewElements.length<LIMITS.reviews && currentJudgeReview(element)){
+              const id=element.getAttribute('data-review-id');
+              if(id&&id.length<=160&&!seenJudgeIds.has(id)){seenJudgeIds.add(id);reviewElements.push(element);}
+            }
           }
         }
         const saleCards=cards.filter(card=>
@@ -507,8 +541,23 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const priceContent=priceNode?.getAttribute('content');
         const visiblePrice=priceNode?priceContent&&/^\d+(?:\.\d+)?$/.test(priceContent)?Number(priceContent):visibleNumber(priceNode.textContent??''):undefined;
         const boundVisiblePrice=explicitCurrency&&(product||products.length===0)&&currentPrices.length===1?visiblePrice:undefined;
-        const reviews=reviewElements
+        const reviews:ReviewSnapshot[]=reviewElements
           .map((review,index)=>{
+            if(review.matches('.jdgm-rev')){
+              const text=(selector:string,limit=4000):string=>{
+                const element=review.querySelector(selector);if(!element||!publicReviewNode(element))return '';
+                const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);let value='';
+                for(let i=0;i<160&&value.length<limit;i++){const node=walker.nextNode();if(!node)break;if(node.parentElement&&publicReviewNode(node.parentElement))value+=(node.nodeValue??'').slice(0,limit-value.length);}
+                return value.replace(/\s+/g,' ').trim();
+              };
+              const scoreNode=review.querySelector('.jdgm-rev__rating'),score=scoreNode&&publicReviewNode(scoreNode)?scoreNode.getAttribute('data-score'):null;
+              const rating=score&&/^[1-5](?:\.\d{1,2})?$/.test(score)?Number(score):undefined;
+              const verification=review.getAttribute('data-verified-buyer');
+              const dateNode=review.querySelector('.jdgm-rev__timestamp'),date=dateNode&&publicReviewNode(dateNode)?dateNode.getAttribute('data-content'):undefined;
+              return {id:review.getAttribute('data-review-id')!,platform:'judgeme',rating:rating!==undefined&&rating<=5?rating:undefined,
+                title:text('.jdgm-rev__title',500)||undefined,body:text('.jdgm-rev__body'),date:date?.slice(0,80)||undefined,
+                verified:verification==='true'?true:verification==='false'?false:undefined};
+            }
             const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim().slice(0,4000);
             const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
             const ratingMatch=normalizeDigits(ratingText).match(/([1-5](?:[.,٫]\d)?)/);
