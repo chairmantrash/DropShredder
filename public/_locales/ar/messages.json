@@ -2140,5 +2140,49 @@
   "m_9f1ish": {
     "message": "مباشرة من المصنع",
     "description": "Factory-direct"
+  },
+  "m_50u6j2": {
+    "message": "مقارنة صفحة منتج عامة",
+    "description": "Compare a public product page"
+  },
+  "m_1xhej1j": {
+    "message": "ألصق صفحة مرشحة من بحثك. يُطلب محتوى هذه الصفحة فقط، دون ملفات تعريف الارتباط.",
+    "description": "Paste a candidate from your search. Only this page is requested, without cookies."
+  },
+  "m_1ggr93q": {
+    "message": "رابط المنتج العام",
+    "description": "Public product URL"
+  },
+  "m_iqpcqb": {
+    "message": "مقارنة المنتج",
+    "description": "COMPARE PRODUCT"
+  },
+  "m_49higf": {
+    "message": "استخدم رابط HTTPS عامًا للمنتج دون معاملات استعلام أو جزء مرجعي.",
+    "description": "Use a public HTTPS product URL without a query or fragment."
+  },
+  "m_ke8jqv": {
+    "message": "اختر صفحة منتج من موقع آخر.",
+    "description": "Choose a product page from another website."
+  },
+  "m_1x0mofg": {
+    "message": "جارٍ طلب الوصول إلى موقع المقارنة.",
+    "description": "Requesting access to the comparison website."
+  },
+  "m_1qydrbe": {
+    "message": "أُضيفت المقارنة إلى الأدلة. هوية المنتج وسعره لا يثبتان الشحن المباشر من المورد.",
+    "description": "Comparison added to evidence. Product identity and price do not prove dropshipping."
+  },
+  "m_y8kzgc": {
+    "message": "تفاصيل المنتج متعارضة",
+    "description": "Product details conflict"
+  },
+  "m_1ri6zw1": {
+    "message": "عُثر على معرّفات منتج متطابقة",
+    "description": "Matching product identifiers found"
+  },
+  "m_gkcd8b": {
+    "message": "لا تزال هوية المنتج غير مؤكدة",
+    "description": "Product identity remains unconfirmed"
   }
 }

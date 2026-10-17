@@ -1,0 +1,6 @@
+{
+  "localSupportedNode22": "Official v22.18.0 archive passed SHA256 verification, but its binary segfaults in this execution environment. Local npm/core/build checks use the provided Node24.19.0; they are not supported-Node22 acceptance.",
+  "localChrome": "Chrome156 launches then fails socket() EPERM in process_singleton_posix.cc:297. R01 verifies baseline package bytes; R02 cannot execute extension behavior. No security/IPC bypass attempted.",
+  "independentMerchantTruth": false,
+  "detection59Accepted": false
+}

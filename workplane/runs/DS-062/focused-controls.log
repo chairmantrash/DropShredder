@@ -1,0 +1,28 @@
+✔ explicit comparison requests one exact host, clears field, then adds zero-weight evidence (71.015356ms)
+✔ denial, cancel, stale report and failed page guard send no comparison request (101.110278ms)
+✔ cancellation, revocation and navigation during response discard all findings (158.759439ms)
+✔ private/variant URL and same-site URL are refused before Chrome permission (1.441151ms)
+✔ DS062 shared store-local SKU must not become cross-store technical evidence (64.080687ms)
+✔ DS062 generic material must not become cross-store technical evidence (3.927465ms)
+✔ DS062 a GTIN copied into a fingerprint must not count as a second independent channel (2.844959ms)
+✔ public comparison rejects sensitive, private, insecure and query-selected destinations (2.061262ms)
+✔ public comparison binds typed identifiers and a numeric single-offer price (8.399779ms)
+✔ recommendations, unrelated singleton, duplicate bound products and variants abstain (2.888903ms)
+✔ exact Offer URL can bind a product without selecting unrelated variant prices (1.49681ms)
+✔ conflicting GTIN fields, excessive JSON work and oversized scripts are refused (10.167668ms)
+✔ raw JSON scripts inside comments, templates or other scripts never become products (2.124779ms)
+✔ negative/free-form prices cannot be mistaken for current selected offer prices (4.103185ms)
+✔ numeric specs corroborate a typed identity once; conflicting specs veto the match (18.16302ms)
+✔ public request sends no credentials, follows no redirects and refuses non-HTML (15.979715ms)
+✔ chunked overflow and pre-canceled requests cannot yield a comparison (9.259031ms)
+✔ an exact absolute Product @id binds identity without inventing an Offer URL (0.849525ms)
+✔ identical duplicate Product declarations consolidate; conflicting variants still abstain (2.076039ms)
+✔ a lightweight @id-only graph reference does not shadow a complete URL-bound Product (1.089288ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2815.142922

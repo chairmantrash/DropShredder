@@ -60,6 +60,15 @@
           <button id="policy-check" class="secondary" type="button">CHECK THE FINE PRINT</button>
           <button id="fulfillment-check" class="secondary wide" type="button">WHERE DOES IT REALLY SHIP FROM?</button>
         </div>
+        <details>
+          <summary>Compare a public product page</summary>
+          <p>Paste a candidate from your search. Only this page is requested, without cookies.</p>
+          <label for="compare-product-url">Public product URL</label>
+          <input id="compare-product-url" type="url" maxlength="4096" autocomplete="off" spellcheck="false" />
+          <button id="compare-product" class="secondary" type="button">COMPARE PRODUCT</button>
+          <button id="compare-product-cancel" class="secondary" type="button" disabled>CANCEL</button>
+          <p id="compare-product-status" class="status" role="status" aria-live="polite"></p>
+        </details>
       </section>
 
       <section class="evidence-section" aria-labelledby="evidence-heading">

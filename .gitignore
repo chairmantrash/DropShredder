@@ -35,3 +35,5 @@ beta3-packet/
 # Anonymous discovery/diagnostic merchant source bytes are local-only.
 /coverage100-discovery/
 /coverage100-diagnosis/
+
+/tools/browser-smoke/probe-native-comparison62.mjs

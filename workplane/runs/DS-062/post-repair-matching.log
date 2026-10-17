@@ -1,0 +1,11 @@
+✔ DS062 shared store-local SKU must not become cross-store technical evidence (70.862728ms)
+✔ DS062 generic material must not become cross-store technical evidence (3.365543ms)
+✔ DS062 a GTIN copied into a fingerprint must not count as a second independent channel (3.870639ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1626.339601

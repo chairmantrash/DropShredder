@@ -57,6 +57,7 @@ function obs(report:DropShredderReport):StoredObservation{
 test('single source characteristic stays moderate',()=>{
   const current=baseReport('store.example','fp-1');
   const source=baseReport('aliexpress.com','fp-1');
+  current.product.gtin=source.product.gtin='012345678905';
   const evidence=indexedSourceEvidence(current.product,[obs(source)]);
   assert.equal(evidence.length,1);
   assert.equal(evidence[0]?.severity,'moderate');
@@ -65,6 +66,7 @@ test('single source characteristic stays moderate',()=>{
 test('two independent source characteristics can become strong',()=>{
   const current=baseReport('store.example','fp-1','abc');
   const source=baseReport('aliexpress.com','fp-1','abc');
+  current.product.specifications=source.product.specifications={wattage:'10W',height:'20cm',weight:'100g'};
   const evidence=indexedSourceEvidence(current.product,[obs(source)]);
   assert.equal(evidence.length,1);
   assert.equal(evidence[0]?.severity,'strong');

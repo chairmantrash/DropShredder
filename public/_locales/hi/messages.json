@@ -2140,5 +2140,49 @@
   "m_9f1ish": {
     "message": "सीधे कारखाने से",
     "description": "Factory-direct"
+  },
+  "m_50u6j2": {
+    "message": "किसी सार्वजनिक उत्पाद पेज की तुलना करें",
+    "description": "Compare a public product page"
+  },
+  "m_1xhej1j": {
+    "message": "खोज से मिला संभावित पेज चिपकाएँ। बिना कुकी के केवल यही पेज मँगाया जाएगा।",
+    "description": "Paste a candidate from your search. Only this page is requested, without cookies."
+  },
+  "m_1ggr93q": {
+    "message": "सार्वजनिक उत्पाद URL",
+    "description": "Public product URL"
+  },
+  "m_iqpcqb": {
+    "message": "उत्पाद की तुलना करें",
+    "description": "COMPARE PRODUCT"
+  },
+  "m_49higf": {
+    "message": "बिना क्वेरी या फ़्रैगमेंट वाला सार्वजनिक HTTPS उत्पाद URL इस्तेमाल करें।",
+    "description": "Use a public HTTPS product URL without a query or fragment."
+  },
+  "m_ke8jqv": {
+    "message": "किसी दूसरी वेबसाइट का उत्पाद पेज चुनें।",
+    "description": "Choose a product page from another website."
+  },
+  "m_1x0mofg": {
+    "message": "तुलना वाली वेबसाइट तक पहुँच की अनुमति माँगी जा रही है।",
+    "description": "Requesting access to the comparison website."
+  },
+  "m_1qydrbe": {
+    "message": "तुलना साक्ष्य में जोड़ दी गई है। उत्पाद की पहचान और कीमत से ड्रॉपशिपिंग साबित नहीं होती।",
+    "description": "Comparison added to evidence. Product identity and price do not prove dropshipping."
+  },
+  "m_y8kzgc": {
+    "message": "उत्पाद के विवरण में विरोध है",
+    "description": "Product details conflict"
+  },
+  "m_1ri6zw1": {
+    "message": "मेल खाने वाले उत्पाद पहचानकर्ता मिले",
+    "description": "Matching product identifiers found"
+  },
+  "m_gkcd8b": {
+    "message": "उत्पाद की पहचान की पुष्टि नहीं हुई है",
+    "description": "Product identity remains unconfirmed"
   }
 }
