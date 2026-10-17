@@ -1,0 +1,27 @@
+# DS-060 — Failure research and measured repair scope
+
+The frozen corpus contains233 public product-page leads from341 documented seeds across11 groups: historical shopping-scam source leads, ordinary retailers/marketplaces, home, apparel, footwear, technology, beauty, pets, kitchen, print-on-demand and outdoor/craft commerce. Source labels are historical allegations, never independently established current fraud. All233 baseline outcomes preceded production repairs. Baseline:160 successful scans on160 registered domains;0 individual-review reports,126 alarming stamps on context-only reports,2 confirmed shipping-conflict false positives,157 numerical abstentions.
+
+## Visible review coverage
+
+The previous extractor selected only Amazon data-hook review elements. Current-product Judge.me reviews were recognized as platform context but never reached review analysis. Anonymous source diagnosis and actual native outcomes supported this gap. Primary sources opened October16: [product versus other widgets](https://judge.me/help/en/articles/8394958-platform-independent-widgets), [verification semantics](https://judge.me/help/en/articles/8376284-verified-reviews), [current widget generation](https://judge.me/help/en/articles/12460582-customizing-the-review-widget-new-version). Store-wide/carousel/floating widgets do not establish current-product scope. Merchant-hosted verification attributes are attributed widget states; missing state is unknown, not false and not proof of fake reviews.
+
+Repair stays inside the existing bounded element walk. Require recognized product widget, explicit matching same-origin product URL and no conflicting declared variant; exclude hidden/private forms and duplicate renderings of the same review ID. Read bounded visible body/title/date/rating/verification, keeping distinct IDs with repeated text for existing duplication checks. Hidden legacy/SSR copies are excluded; unsupported new/shadow/iframe shapes remain unresolved. No widget API, pagination, secret, permission, paid provider or remote upload was added. A short-lived visibility cache avoids repeated ancestor/style work. The narrow49k serialized-function source exception and all traversal/output limits are documented in the decision record.
+
+## Two real false shipping conflicts
+
+The Ordinary SITE-0112 and Round Lab SITE-0130 received strong fulfillment-conflict findings from temporal and marketing prose. Generic from/to matching interpreted phrases such as from time to time and From Kitchen to Skincare as geography; arbitrary unequal strings were then treated as conflicting locations. Actual native reports preserve the original erroneous observations.
+
+[OfferShippingDetails](https://schema.org/OfferShippingDetails) distinguishes origin from destination, and [ShippingDeliveryTime](https://schema.org/ShippingDeliveryTime) describes time separately. Original [FedEx tracking](https://www.fedex.com/en-us/tracking.html) and [UPS package guidance](https://www.ups.com/us/en/support/tracking-support/where-is-my-package) concern real shipments, not generic store prose. No customer tracking numbers/accounts were queried.
+
+The parser now requires explicit shipment wording, separates origin before destination, anchors the route excerpt at its observation, and refuses temporal/negated/quoted captures. Contradiction comparison needs one recognized jurisdiction per side; unknown or multiple-country prose abstains. Positive actual-location controls remain. Neither severity nor severe-warning thresholds were lowered.
+
+## Truthful warning presentation
+
+Manual stamps counted all evidence items, including zero-weight country/platform/payment/context notes. This produced alarming caught-something headlines on126 baseline scans without adverse evidence. The sidepanel injection and shared stamp renderer now use the engine's independent, finite, positive effective-weight count. Context-only results show NO VERDICT with neutral styling in all tones. Evidence scores remain uncalibrated scores, never measured fraud probabilities.
+
+## Preserved failures and current observations
+
+Original profile7 stopped after a cleared SPA report was misclassified as wrong attribution; absence is now a failed/invalidated action, while an actual mismatched URL still stops the profile. Original profile4 saved5 cases then stalled; its full affected-only repeat is retained. Both repeats used unchanged public beta6 bytes. Corrected detached ShadowRoot assertions reproduced the original source failures; all474 final core tests pass. A new native tone test initially used an invalid X11 ArrowDown keysym; captured logs prove the driver error. Down fixes only test input, leaving package bytes and assertions unchanged.
+
+Full repaired collection on sourceac30cadd3c415916e8c88d57de96193b90397420 completes all233 outcomes:158 successful scans,126 context-only scans with0 warning stamps,15 visible reviews across3 stores, both named false conflicts absent,0 severe warnings/panel errors/profile safety stops.157 numerical estimates remain UNKNOWN. The160-to158 availability/coverage change is preserved and is not a detection-accuracy claim. Independent current positive/negative adjudication and consumer satisfaction remain unestablished; do not claim a customer accuracy rating from these selected beta observations. Exact source, compiled-file inventory, original failures and artifact digests are retained in the task and measured-results receipts.

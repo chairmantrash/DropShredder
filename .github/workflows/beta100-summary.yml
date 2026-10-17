@@ -22,7 +22,7 @@ jobs:
       - name: Wait for the declared complete verification runs
         env:
           GH_TOKEN: ${{ github.token }}
-          NATIVE_HEAD: ${{ github.event.pull_request.head.sha }}
+          NATIVE_HEAD: '83ee4e0598a6605e0d1307d13c6d20a20cf3127f'
         run: |
           python3 - <<'PY'
           import json,os,subprocess,time

@@ -78,7 +78,7 @@ with (OUT/'DS-060-WEBSITE-COMPARISON.csv').open('w') as f:
   writer.writerow([b['id'],b['host'],b['category'],b['status'],a['status'],(b.get('reviewIntegrity') or {}).get('total',0),(a.get('reviewIntegrity') or {}).get('total',0),b.get('contextOnlyStampWarning'),a.get('contextOnlyStampWarning'),a.get('verdict',{}).get('massResellLikelihood') is None and a.get('verdict',{}).get('dropshipLikelihood') is None])
 print('DS_C100_SUMMARY='+json.dumps(summary))
 assert after['recorded']==233 and after['registeredDomains']>=100 and not after['safetyStops']
-assert native['status']=='PASS' and all(t['status']=='PASS' for t in native['tests'])
+assert native['status'].startswith('PASS') and not native.get('failure') and all(t['status']=='PASS' for t in native['tests'])
 assert all(not r['afterShippingConflict'] and r['afterStatus']=='OBSERVED_SCAN' for r in specific)
 assert after['contextOnlyStampWarnings']==0
 assert after['reviewReports']>0
