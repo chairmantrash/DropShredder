@@ -1,6 +1,7 @@
 """Preserve real N01-N09 Chrome Deny/Allow bootstrap, add owned regression suites."""
 import hashlib,json,pathlib
 root=pathlib.Path(__file__).resolve().parents[3]
+(root/'workplane/runs/DS-062').mkdir(parents=True,exist_ok=True)
 source=root/'tools/browser-smoke/probe-native.mjs';original=source.read_text()
 anchor="      await test('N34','Native operating-system file picker";assert original.count(anchor)==1
 text="import {runAudit59NativeSuite} from '../beta/audit59/native.mjs';\nimport {runComparison62} from '../beta/comparison62/native.mjs';\n"+original.split(anchor)[0]
