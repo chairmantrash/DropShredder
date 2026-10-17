@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 typecheck
+> tsc --noEmit
+
+tools/beta/audit59/summary.mts(15,13): error TS7060: This syntax is reserved in files with the .mts or .cts extension. Add a trailing comma or explicit constraint.

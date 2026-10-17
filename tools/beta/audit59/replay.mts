@@ -1,5 +1,5 @@
 /** Exact captured-source diagnostic replay, deliberately separate from Chrome acceptance. */
-import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';import {parseHTML} from 'linkedom';
+import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';import {execFileSync} from 'node:child_process';import {parseHTML} from 'linkedom';
 const [sourceRoot,sourceDirectory,output]=process.argv.slice(2);
 if(!sourceRoot||!sourceDirectory||!output)throw Error('Usage: replay.mts SOURCE_ROOT HTML_DIRECTORY OUTPUT');
 const load=(file:string)=>import(pathToFileURL(path.join(sourceRoot,file)).href);
@@ -16,5 +16,6 @@ for(const receipt of receipts){
  catch(error){records.push({id:receipt.id,status:'EXTRACTION_ERROR',error:String(error)});}
  finally{for(const key of Object.keys(v))if(old[key]===undefined)delete g[key];else g[key]=old[key];}
 }
-const outputData={scope:'Detached anonymous source diagnosis, no rendered CSS/script execution/native or independent accuracy inferred',receiptsSha256:createHash('sha256').update(receiptsInput).digest('hex'),records};
+const modulePaths=['src/extraction/page-scan.ts','src/analysis/passive-rules.ts','src/analysis/fulfillment-disclosure.ts','src/analysis/evidence-engine.ts','src/languages/commerce-kit-data.json'];
+const outputData={scope:'Detached anonymous source diagnosis, no rendered CSS/script execution/native or independent accuracy inferred',sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:sourceRoot,encoding:'utf8'}).trim(),moduleSha256:Object.fromEntries(modulePaths.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(sourceRoot,p))).digest('hex')])),receiptsSha256:createHash('sha256').update(receiptsInput).digest('hex'),records};
 fs.writeFileSync(output,JSON.stringify(outputData,null,2)+'\n');console.log(JSON.stringify({total:records.length,extracted:records.filter(r=>r.status==='DETACHED_SOURCE_ONLY').length,errors:records.filter(r=>r.status==='EXTRACTION_ERROR').length,reviews:records.reduce((n,r)=>n+(r.reviewCount??0),0),dispatch:records.filter(r=>r.dispatch).length}));

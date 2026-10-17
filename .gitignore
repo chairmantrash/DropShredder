@@ -7,6 +7,8 @@ browser-smoke-results/
 beta-packet/
 tools/beta/__pycache__/
 tools/browser-smoke/*-beta.mjs
+tools/browser-smoke/probe-native-audit59.mjs
+tools/beta/audit59/__pycache__/
 tools/browser-smoke/beta-collector-manifest.json
 
 # Hash-checked OCR resources generated at build time; never fetched at runtime.

@@ -1,0 +1,82 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 prebuild
+> node scripts/clean-build-output.mjs && node scripts/package-ocr-models.mjs
+
+Verified packaged OCR data: chi_sim 1722294 bytes
+Verified packaged OCR data: hin 920821 bytes
+Verified packaged OCR data: spa 1125535 bytes
+Verified packaged OCR data: ara 715721 bytes
+Verified packaged OCR data: fra 605839 bytes
+Verified packaged OCR data: ben 548295 bytes
+Verified packaged OCR data: por 998523 bytes
+OCR packaging environment: Node 22.18.0 / zlib 1.3.1-470d3a2
+
+> dropshredder@0.2.0 build
+> wxt build
+
+
+WXT 0.21.4
+ℹ Building chrome-mv3 for production with Vite 8.3.3
+[?25l⠋ Preparing...[K⠋ [1/3] auto[K⠙ [1/3] auto[K⠙ [2/3] background[K⠙ [3/3] search, sidepanel[K⠹ [3/3] search, sidepanel[K⠸ [3/3] search, sidepanel[K[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[K[?25h[K[?25h✔ Built extension in 462 ms
+  ├─ .output/chrome-mv3/manifest.json                                674 B    
+  ├─ .output/chrome-mv3/search.html                                  724 B    
+  ├─ .output/chrome-mv3/sidepanel.html                               21.84 kB 
+  ├─ .output/chrome-mv3/background.js                                51.90 kB 
+  ├─ .output/chrome-mv3/chunks/scamferret-results-kiYHxZ56.js        478.51 kB
+  ├─ .output/chrome-mv3/chunks/search-BSs1uToS.js                    445 B    
+  ├─ .output/chrome-mv3/chunks/search-chooser-DQ05wBu8.js            3.90 kB  
+  ├─ .output/chrome-mv3/chunks/sidepanel-DIJvy6LX.js                 603.79 kB
+  ├─ .output/chrome-mv3/content-scripts/auto.js                      99.28 kB 
+  ├─ .output/chrome-mv3/ocr/tesseract-core-lstm.wasm.js              3.90 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-relaxedsimd-lstm.wasm.js  3.91 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-relaxedsimd.wasm.js       4.70 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-simd-lstm.wasm.js         3.90 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-simd.wasm.js              4.69 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core.wasm.js                   4.69 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract.min.js                         62.95 kB 
+  ├─ .output/chrome-mv3/ocr/worker.min.js                            111.28 kB
+  ├─ .output/chrome-mv3/assets/sidepanel-CA7A_2G3.css                10.82 kB 
+  ├─ .output/chrome-mv3/_locales/ar/messages.json                    86.47 kB 
+  ├─ .output/chrome-mv3/_locales/bn/messages.json                    106.30 kB
+  ├─ .output/chrome-mv3/_locales/en/messages.json                    77.02 kB 
+  ├─ .output/chrome-mv3/_locales/es/messages.json                    79.02 kB 
+  ├─ .output/chrome-mv3/_locales/fr/messages.json                    80.52 kB 
+  ├─ .output/chrome-mv3/_locales/hi/messages.json                    106.18 kB
+  ├─ .output/chrome-mv3/_locales/pt_BR/messages.json                 79.03 kB 
+  ├─ .output/chrome-mv3/_locales/zh_CN/messages.json                 75.43 kB 
+  ├─ .output/chrome-mv3/icon/128.png                                 825 B    
+  ├─ .output/chrome-mv3/icon/16.png                                  186 B    
+  ├─ .output/chrome-mv3/icon/32.png                                  287 B    
+  ├─ .output/chrome-mv3/icon/48.png                                  380 B    
+  ├─ .output/chrome-mv3/ocr/ara.traineddata.gz                       715.72 kB
+  ├─ .output/chrome-mv3/ocr/ben.traineddata.gz                       548.29 kB
+  ├─ .output/chrome-mv3/ocr/chi_sim.traineddata.gz                   1.72 MB  
+  ├─ .output/chrome-mv3/ocr/eng.traineddata.gz                       1.98 MB  
+  ├─ .output/chrome-mv3/ocr/fra.traineddata.gz                       605.84 kB
+  ├─ .output/chrome-mv3/ocr/hin.traineddata.gz                       920.82 kB
+  ├─ .output/chrome-mv3/ocr/LANGUAGE-MODELS.json                     4.28 kB  
+  ├─ .output/chrome-mv3/ocr/LICENSE-TESSDATA-FAST.txt                11.36 kB 
+  ├─ .output/chrome-mv3/ocr/LICENSE-TESSERACT-CORE.txt               11.36 kB 
+  ├─ .output/chrome-mv3/ocr/LICENSE-TESSERACT-JS.txt                 11.36 kB 
+  ├─ .output/chrome-mv3/ocr/por.traineddata.gz                       998.52 kB
+  ├─ .output/chrome-mv3/ocr/PROVENANCE.txt                           1.15 kB  
+  ├─ .output/chrome-mv3/ocr/spa.traineddata.gz                       1.13 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-lstm.wasm                 2.86 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-relaxedsimd-lstm.wasm     2.86 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-relaxedsimd.wasm          3.46 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-simd-lstm.wasm            2.86 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core-simd.wasm                 3.45 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract-core.wasm                      3.45 MB  
+  ├─ .output/chrome-mv3/ocr/tesseract.min.js.LICENSE.txt             149 B    
+  ├─ .output/chrome-mv3/ocr/worker.min.js.LICENSE.txt                466 B    
+  ├─ .output/chrome-mv3/SCAMFERRET-SOURCE-LICENSE.txt                35.15 kB 
+  ├─ .output/chrome-mv3/SCAMFERRET-SOURCE-NOTICE.txt                 556 B    
+  └─ .output/chrome-mv3/THIRD-PARTY-NOTICES.txt                      19.97 kB 
+Σ Total size: 55.56 MB                                             
+✔ Finished in 568 ms

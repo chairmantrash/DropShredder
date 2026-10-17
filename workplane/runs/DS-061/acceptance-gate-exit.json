@@ -1,0 +1,5 @@
+{
+  "exitCode": 2,
+  "expected": "unmet59% acceptance must fail, not report a zero-denominator success",
+  "stdout": "{\"status\": \"NOT_ACCEPTED\", \"tasks\": {\"deceptive-provenance\": \"NOT_EVALUABLE\"}}\n"
+}

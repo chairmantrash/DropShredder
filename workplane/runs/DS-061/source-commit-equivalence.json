@@ -1,0 +1,7 @@
+{
+  "localBuildCommit": "1c32e3498af6ffb285b54ca6d5a5ef47ca914d49",
+  "remoteSourceCommit": "578d4603c4fb886acb0454ca6d089375bf0dbcb7",
+  "tree": "2dcea105f97e23e563c824b5b6256ea19fc09f34",
+  "proof": "GitHub create_tree returned exactly the local production tree SHA; same17 changed files on base8b801b5; runtime source identical",
+  "ci": "Explicit skip ci; no hosted validation claimed"
+}

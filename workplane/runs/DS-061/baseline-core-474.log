@@ -1,0 +1,2854 @@
+TAP version 13
+# Subtest: Amazon seller and ships-from disclosures remain informational
+ok 1 - Amazon seller and ships-from disclosures remain informational
+  ---
+  duration_ms: 23.714246
+  type: 'test'
+  ...
+# Subtest: Etsy handmade claim does not accuse without contradiction
+ok 2 - Etsy handmade claim does not accuse without contradiction
+  ---
+  duration_ms: 4.162187
+  type: 'test'
+  ...
+# Subtest: Walmart third-party seller status alone has no accusation weight
+ok 3 - Walmart third-party seller status alone has no accusation weight
+  ---
+  duration_ms: 1.460137
+  type: 'test'
+  ...
+# Subtest: normalizes full-width and spacing tricks
+ok 4 - normalizes full-width and spacing tricks
+  ---
+  duration_ms: 1.701886
+  type: 'test'
+  ...
+# Subtest: removes zero-width evasion characters
+ok 5 - removes zero-width evasion characters
+  ---
+  duration_ms: 0.189151
+  type: 'test'
+  ...
+# Subtest: normalizes dash variants
+ok 6 - normalizes dash variants
+  ---
+  duration_ms: 0.174088
+  type: 'test'
+  ...
+# Subtest: normalizes identifiers across punctuation and spaces
+ok 7 - normalizes identifiers across punctuation and spaces
+  ---
+  duration_ms: 0.24954
+  type: 'test'
+  ...
+# Subtest: normalizes Amazon image transformations to one family
+ok 8 - normalizes Amazon image transformations to one family
+  ---
+  duration_ms: 1.303375
+  type: 'test'
+  ...
+# Subtest: clusters distinct ASINs that reuse one primary image identity
+ok 9 - clusters distinct ASINs that reuse one primary image identity
+  ---
+  duration_ms: 1.238108
+  type: 'test'
+  ...
+# Subtest: large cross-brand family becomes strong evidence
+ok 10 - large cross-brand family becomes strong evidence
+  ---
+  duration_ms: 0.410229
+  type: 'test'
+  ...
+# Subtest: same ASIN repeated does not create clone cluster
+ok 11 - same ASIN repeated does not create clone cluster
+  ---
+  duration_ms: 0.247888
+  type: 'test'
+  ...
+# Subtest: automatic scanning registration has no manifest content-script or permanent host permission requirement
+ok 12 - automatic scanning registration has no manifest content-script or permanent host permission requirement
+  ---
+  duration_ms: 0.846847
+  type: 'test'
+  ...
+# Subtest: enabled registration is isolated, top-frame only, persistent, and idempotent
+ok 13 - enabled registration is isolated, top-frame only, persistent, and idempotent
+  ---
+  duration_ms: 2.861608
+  type: 'test'
+  ...
+# Subtest: revocation is idempotent if the worker already removed the same registration
+ok 14 - revocation is idempotent if the worker already removed the same registration
+  ---
+  duration_ms: 1.130098
+  type: 'test'
+  ...
+# Subtest: concurrent registration treats a proven duplicate as already enabled
+ok 15 - concurrent registration treats a proven duplicate as already enabled
+  ---
+  duration_ms: 0.192265
+  type: 'test'
+  ...
+# Subtest: registration cleanup errors still propagate if the script remains installed
+ok 16 - registration cleanup errors still propagate if the script remains installed
+  ---
+  duration_ms: 0.421235
+  type: 'test'
+  ...
+# Subtest: failed registration cannot be reported as enabled if no script exists
+ok 17 - failed registration cannot be reported as enabled if no script exists
+  ---
+  duration_ms: 0.338513
+  type: 'test'
+  ...
+# Subtest: bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+ok 18 - bound ProductGroup variant inherits common brand/material but no parent identifiers or offer
+  ---
+  duration_ms: 29.733761
+  type: 'test'
+  ...
+# Subtest: variant local properties override parent and variesBy fields are not inherited
+ok 19 - variant local properties override parent and variesBy fields are not inherited
+  ---
+  duration_ms: 4.59513
+  type: 'test'
+  ...
+# Subtest: explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+ok 20 - explicit local isVariantOf and brand @id references resolve without network or transitive inheritance
+  ---
+  duration_ms: 3.44255
+  type: 'test'
+  ...
+# Subtest: ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+ok 21 - ambiguous group ancestry or duplicate brand IDs cannot lend product identity
+  ---
+  duration_ms: 12.43765
+  type: 'test'
+  ...
+# Subtest: unselected ProductGroup parent cannot borrow a variant brand or offer
+ok 22 - unselected ProductGroup parent cannot borrow a variant brand or offer
+  ---
+  duration_ms: 3.473015
+  type: 'test'
+  ...
+# Subtest: DefinedTerm variesBy and unknown dimensions cannot lend a variable material
+ok 23 - DefinedTerm variesBy and unknown dimensions cannot lend a variable material
+  ---
+  duration_ms: 6.590462
+  type: 'test'
+  ...
+# Subtest: one explicitly current variant Offer URL binds its parent-named Product without guessing a variant
+ok 24 - one explicitly current variant Offer URL binds its parent-named Product without guessing a variant
+  ---
+  duration_ms: 3.293889
+  type: 'test'
+  ...
+# Subtest: an unrelated or multiple variant offer cannot choose canonical parent identity
+ok 25 - an unrelated or multiple variant offer cannot choose canonical parent identity
+  ---
+  duration_ms: 15.028474
+  type: 'test'
+  ...
+# Subtest: one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+ok 26 - one current Product Microdata scope supplies explicitly typed brand MPN and valid GTIN
+  ---
+  duration_ms: 8.357584
+  type: 'test'
+  ...
+# Subtest: Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+ok 27 - Microdata ignores conflicting codes, invalid checksums and store-local model/SKU for global identity
+  ---
+  duration_ms: 9.833996
+  type: 'test'
+  ...
+# Subtest: Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+ok 28 - Microdata cannot choose an unresolved variant or replace already bound JSON-LD identity
+  ---
+  duration_ms: 8.838398
+  type: 'test'
+  ...
+# Subtest: Microdata from private fields, hidden or unrelated nested products is never collected
+ok 29 - Microdata from private fields, hidden or unrelated nested products is never collected
+  ---
+  duration_ms: 49.327823
+  type: 'test'
+  ...
+# Subtest: multiple public product scopes must abstain when current identity is ambiguous
+ok 30 - multiple public product scopes must abstain when current identity is ambiguous
+  ---
+  duration_ms: 5.6801
+  type: 'test'
+  ...
+# Subtest: typed text excludes CSS-hidden descendants and nested recommendation strings
+ok 31 - typed text excludes CSS-hidden descendants and nested recommendation strings
+  ---
+  duration_ms: 4.963937
+  type: 'test'
+  ...
+# Subtest: typed identifier fallback is recorded in the extraction method without resolving an offer
+ok 32 - typed identifier fallback is recorded in the extraction method without resolving an offer
+  ---
+  duration_ms: 8.503582
+  type: 'test'
+  ...
+# Subtest: explicit countdown remains in the evidence so a later reset can be measured
+ok 33 - explicit countdown remains in the evidence so a later reset can be measured
+  ---
+  duration_ms: 21.400222
+  type: 'test'
+  ...
+# Subtest: static low stock across real visits cannot become a strong time-limited-offer accusation
+ok 34 - static low stock across real visits cannot become a strong time-limited-offer accusation
+  ---
+  duration_ms: 3.98913
+  type: 'test'
+  ...
+# Subtest: elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+ok 35 - elapsed countdown expiry that repeatedly moves later is recorded with observation provenance
+  ---
+  duration_ms: 2.215719
+  type: 'test'
+  ...
+# Subtest: normally decreasing countdown and a malformed clock cannot imply a reset
+ok 36 - normally decreasing countdown and a malformed clock cannot imply a reset
+  ---
+  duration_ms: 2.994915
+  type: 'test'
+  ...
+# Subtest: current-product visible Judge.me reviews reach the existing review detectors
+ok 37 - current-product visible Judge.me reviews reach the existing review detectors
+  ---
+  duration_ms: 50.35752
+  type: 'test'
+  ...
+# Subtest: missing verification state remains unknown and invalid ratings are not accepted
+ok 38 - missing verification state remains unknown and invalid ratings are not accepted
+  ---
+  duration_ms: 16.523835
+  type: 'test'
+  ...
+# Subtest: explicit nonverified status stays distinct from a missing badge
+ok 39 - explicit nonverified status stays distinct from a missing badge
+  ---
+  duration_ms: 7.703714
+  type: 'test'
+  ...
+# Subtest: different-product and store-wide/carousel review widgets cannot contaminate current-product checks
+ok 40 - different-product and store-wide/carousel review widgets cannot contaminate current-product checks
+  ---
+  duration_ms: 19.196452
+  type: 'test'
+  ...
+# Subtest: hidden legacy copies, private review forms and duplicate review IDs are excluded
+ok 41 - hidden legacy copies, private review forms and duplicate review IDs are excluded
+  ---
+  duration_ms: 24.958654
+  type: 'test'
+  ...
+# Subtest: review body extraction omits private, hidden and editable descendant text
+ok 42 - review body extraction omits private, hidden and editable descendant text
+  ---
+  duration_ms: 23.129017
+  type: 'test'
+  ...
+# Subtest: a widget without product attribution is not assumed to concern the current listing
+ok 43 - a widget without product attribution is not assumed to concern the current listing
+  ---
+  duration_ms: 11.002631
+  type: 'test'
+  ...
+# Subtest: review extraction remains bounded when the widget contains hundreds of reviews
+ok 44 - review extraction remains bounded when the widget contains hundreds of reviews
+  ---
+  duration_ms: 149.384976
+  type: 'test'
+  ...
+# Subtest: cross-origin and explicitly different-variant review declarations stay out
+ok 45 - cross-origin and explicitly different-variant review declarations stay out
+  ---
+  duration_ms: 6.921763
+  type: 'test'
+  ...
+# Subtest: informational-only stamps do not claim a warning or a detection
+ok 46 - informational-only stamps do not claim a warning or a detection
+  ---
+  duration_ms: 3.252427
+  type: 'test'
+  ...
+# Subtest: invalid or zero-confidence evidence does not create a warning stamp
+ok 47 - invalid or zero-confidence evidence does not create a warning stamp
+  ---
+  duration_ms: 0.891513
+  type: 'test'
+  ...
+# Subtest: retail promotional dates and brand slogans never become shipment origins
+ok 48 - retail promotional dates and brand slogans never become shipment origins
+  ---
+  duration_ms: 31.989278
+  type: 'test'
+  ...
+# Subtest: real tracking origin stops before destination and keeps an anchored route excerpt
+ok 49 - real tracking origin stops before destination and keeps an anchored route excerpt
+  ---
+  duration_ms: 1.735366
+  type: 'test'
+  ...
+# Subtest: unknown prose cannot contradict a recognized shipping jurisdiction
+ok 50 - unknown prose cannot contradict a recognized shipping jurisdiction
+  ---
+  duration_ms: 9.163381
+  type: 'test'
+  ...
+# Subtest: negated and quoted shipping statements cannot supply an observed origin
+ok 51 - negated and quoted shipping statements cannot supply an observed origin
+  ---
+  duration_ms: 2.541652
+  type: 'test'
+  ...
+# Subtest: native selector payload crosses CDP only as a value and cannot change executable source
+ok 52 - native selector payload crosses CDP only as a value and cannot change executable source
+  ---
+  duration_ms: 6.141154
+  type: 'test'
+  ...
+# Subtest: native browser exceptions fail the operation and release the document handle
+ok 53 - native browser exceptions fail the operation and release the document handle
+  ---
+  duration_ms: 0.616545
+  type: 'test'
+  ...
+# Subtest: fresh install ships with broad supplier/source coverage
+ok 54 - fresh install ships with broad supplier/source coverage
+  ---
+  duration_ms: 0.681481
+  type: 'test'
+  ...
+# Subtest: source hunt uses bundled registry without local history
+ok 55 - source hunt uses bundled registry without local history
+  ---
+  duration_ms: 0.412933
+  type: 'test'
+  ...
+# Subtest: standing sources have exact categories, publisher families, freshness and link-only restrictions
+ok 56 - standing sources have exact categories, publisher families, freshness and link-only restrictions
+  ---
+  duration_ms: 2.982847
+  type: 'test'
+  ...
+# Subtest: a JSON verified/rating flag cannot bypass human review
+ok 57 - a JSON verified/rating flag cannot bypass human review
+  ---
+  duration_ms: 1.371936
+  type: 'test'
+  ...
+# Subtest: no record, no accreditation and NR never become adverse findings
+ok 58 - no record, no accreditation and NR never become adverse findings
+  ---
+  duration_ms: 0.671296
+  type: 'test'
+  ...
+# Subtest: a favorable grade needs separately published current legal identity
+ok 59 - a favorable grade needs separately published current legal identity
+  ---
+  duration_ms: 0.472311
+  type: 'test'
+  ...
+# Subtest: dissimilar subject, domain, role and exact listing cannot inherit standing
+ok 60 - dissimilar subject, domain, role and exact listing cannot inherit standing
+  ---
+  duration_ms: 0.431992
+  type: 'test'
+  ...
+# Subtest: future observations/events, stale sources and duplicate records cannot inflate coverage
+ok 61 - future observations/events, stale sources and duplicate records cannot inflate coverage
+  ---
+  duration_ms: 0.351922
+  type: 'test'
+  ...
+# Subtest: warnings and allegations stay unresolved rather than final adverse labels
+ok 62 - warnings and allegations stay unresolved rather than final adverse labels
+  ---
+  duration_ms: 0.259495
+  type: 'test'
+  ...
+# Subtest: a reviewed final order is adverse and a positive source cannot erase it
+ok 63 - a reviewed final order is adverse and a positive source cannot erase it
+  ---
+  duration_ms: 0.269991
+  type: 'test'
+  ...
+# Subtest: later resolved/modified snapshots supersede the same older case without erasing different cases
+ok 64 - later resolved/modified snapshots supersede the same older case without erasing different cases
+  ---
+  duration_ms: 0.647692
+  type: 'test'
+  ...
+# Subtest: equal-date contradictory grades or outcomes are unresolved
+ok 65 - equal-date contradictory grades or outcomes are unresolved
+  ---
+  duration_ms: 0.415477
+  type: 'test'
+  ...
+# Subtest: trade, sustainability and product records cannot establish consumer trust or regional origin
+ok 66 - trade, sustainability and product records cannot establish consumer trust or regional origin
+  ---
+  duration_ms: 0.301067
+  type: 'test'
+  ...
+# Subtest: imports refuse spoofed publisher hosts, source-scope laundering, restricted PROFECO data and secret-bearing URLs
+ok 67 - imports refuse spoofed publisher hosts, source-scope laundering, restricted PROFECO data and secret-bearing URLs
+  ---
+  duration_ms: 0.645868
+  type: 'test'
+  ...
+# Subtest: standing file preview requires explicit review and matching user-entered entity
+ok 68 - standing file preview requires explicit review and matching user-entered entity
+  ---
+  duration_ms: 59.093085
+  type: 'test'
+  ...
+# Subtest: standing reset discards pending file/review/result and stale async file completions
+ok 69 - standing reset discards pending file/review/result and stale async file completions
+  ---
+  duration_ms: 22.805538
+  type: 'test'
+  ...
+# Subtest: source category filtering is local and displays reuse limits
+ok 70 - source category filtering is local and displays reuse limits
+  ---
+  duration_ms: 9.525277
+  type: 'test'
+  ...
+# Subtest: pending and appealed litigation informs review but is not an adverse finding
+ok 71 - pending and appealed litigation informs review but is not an adverse finding
+  ---
+  duration_ms: 0.467284
+  type: 'test'
+  ...
+# Subtest: dismissed, settled, vacated and closed cases do not imply guilt or favorable standing
+ok 72 - dismissed, settled, vacated and closed cases do not imply guilt or favorable standing
+  ---
+  duration_ms: 0.311372
+  type: 'test'
+  ...
+# Subtest: plaintiff roles and unrelated litigation cannot create adverse or pending standing
+ok 73 - plaintiff roles and unrelated litigation cannot create adverse or pending standing
+  ---
+  duration_ms: 0.598809
+  type: 'test'
+  ...
+# Subtest: litigation requires court, jurisdiction, party role and relevant category, and refuses discovery-feed imports
+ok 74 - litigation requires court, jurisdiction, party role and relevant category, and refuses discovery-feed imports
+  ---
+  duration_ms: 0.521694
+  type: 'test'
+  ...
+# Subtest: litigation observations expire after seven days and later appeal/vacatur supersedes judgment
+ok 75 - litigation observations expire after seven days and later appeal/vacatur supersedes judgment
+  ---
+  duration_ms: 0.602984
+  type: 'test'
+  ...
+# Subtest: shipper entity role remains exactly bound and litigation metadata is explicitly copied
+ok 76 - shipper entity role remains exactly bound and litigation metadata is explicitly copied
+  ---
+  duration_ms: 1.055216
+  type: 'test'
+  ...
+# Subtest: original-court and GovInfo copies of the same docket cannot preserve a superseded adverse judgment
+ok 77 - original-court and GovInfo copies of the same docket cannot preserve a superseded adverse judgment
+  ---
+  duration_ms: 0.468846
+  type: 'test'
+  ...
+# Subtest: catalog-wide sale prevalence becomes moderate at extreme share
+ok 78 - catalog-wide sale prevalence becomes moderate at extreme share
+  ---
+  duration_ms: 1.007255
+  type: 'test'
+  ...
+# Subtest: ordinary sale subset does not trigger
+ok 79 - ordinary sale subset does not trigger
+  ---
+  duration_ms: 0.137654
+  type: 'test'
+  ...
+# Subtest: uses the last focused browser window and does not require tab.url to identify a tab
+ok 80 - uses the last focused browser window and does not require tab.url to identify a tab
+  ---
+  duration_ms: 1.26016
+  type: 'test'
+  ...
+# Subtest: only authorized script execution yields a page/document; denied injection adds Chrome native host request
+ok 81 - only authorized script execution yields a page/document; denied injection adds Chrome native host request
+  ---
+  duration_ms: 0.311572
+  type: 'test'
+  ...
+# Subtest: successful probe pins the real document without relying on tab URL metadata
+ok 82 - successful probe pins the real document without relying on tab URL metadata
+  ---
+  duration_ms: 0.199596
+  type: 'test'
+  ...
+# Subtest: current-page check rejects tab switches, SPA navigation, document changes and sensitive forms
+ok 83 - current-page check rejects tab switches, SPA navigation, document changes and sensitive forms
+  ---
+  duration_ms: 0.483277
+  type: 'test'
+  ...
+# Subtest: RDAP asks permission before any async cache lookup and does not fetch after denial
+ok 84 - RDAP asks permission before any async cache lookup and does not fetch after denial
+  ---
+  duration_ms: 1.393578
+  type: 'test'
+  ...
+# Subtest: image acquisition starts exact-host access request without async preflight
+ok 85 - image acquisition starts exact-host access request without async preflight
+  ---
+  duration_ms: 0.364671
+  type: 'test'
+  ...
+# Subtest: explicit pressed option swatches invalidate same-URL product selection stamps without reading unrelated form fields
+ok 86 - explicit pressed option swatches invalidate same-URL product selection stamps without reading unrelated form fields
+  ---
+  duration_ms: 8.837457
+  type: 'test'
+  ...
+# Subtest: successful CodeQL execution with warning, unchanged or suppressed findings still blocks acceptance
+ok 87 - successful CodeQL execution with warning, unchanged or suppressed findings still blocks acceptance
+  ---
+  duration_ms: 1.287741
+  type: 'test'
+  ...
+# Subtest: missing, malformed or unsuccessful security analysis cannot masquerade as no findings
+ok 88 - missing, malformed or unsuccessful security analysis cannot masquerade as no findings
+  ---
+  duration_ms: 0.425431
+  type: 'test'
+  ...
+# Subtest: detects SHOPLINE from CDN without treating it as accusation
+ok 89 - detects SHOPLINE from CDN without treating it as accusation
+  ---
+  duration_ms: 3.433065
+  type: 'test'
+  ...
+# Subtest: detects Shoplazza and ShopBase from bundled signatures
+ok 90 - detects Shoplazza and ShopBase from bundled signatures
+  ---
+  duration_ms: 0.321898
+  type: 'test'
+  ...
+# Subtest: detects Wix and Ecwid common public assets
+ok 91 - detects Wix and Ecwid common public assets
+  ---
+  duration_ms: 0.192897
+  type: 'test'
+  ...
+# Subtest: asset domains cannot be spoofed with URL paths, queries, credentials or suffix hosts
+ok 92 - asset domains cannot be spoofed with URL paths, queries, credentials or suffix hosts
+  ---
+  duration_ms: 0.838224
+  type: 'test'
+  ...
+# Subtest: real subdomains and public asset paths remain recognized with cache queries
+ok 93 - real subdomains and public asset paths remain recognized with cache queries
+  ---
+  duration_ms: 0.393444
+  type: 'test'
+  ...
+# Subtest: old canceled permission prompt cannot overwrite a newer supplier search
+ok 94 - old canceled permission prompt cannot overwrite a newer supplier search
+  ---
+  duration_ms: 31.795912
+  type: 'test'
+  ...
+# Subtest: broad site revocation aborts supplier fetch and clears key/results
+ok 95 - broad site revocation aborts supplier fetch and clears key/results
+  ---
+  duration_ms: 2.517777
+  type: 'test'
+  ...
+# Subtest: remove-access control cancels pending supplier consent before any fetch
+ok 96 - remove-access control cancels pending supplier consent before any fetch
+  ---
+  duration_ms: 1.612654
+  type: 'test'
+  ...
+# Subtest: duplicate burst reviews emit expected anomaly signals
+ok 97 - duplicate burst reviews emit expected anomaly signals
+  ---
+  duration_ms: 83.714368
+  type: 'test'
+  ...
+# Subtest: weak signals alone cannot unlock severe warning
+ok 98 - weak signals alone cannot unlock severe warning
+  ---
+  duration_ms: 0.454654
+  type: 'test'
+  ...
+# Subtest: review anomalies cannot corroborate a severe dropshipping accusation
+ok 99 - review anomalies cannot corroborate a severe dropshipping accusation
+  ---
+  duration_ms: 0.160428
+  type: 'test'
+  ...
+# Subtest: technical fingerprints retain invariant overlap after marketing rewrite
+ok 100 - technical fingerprints retain invariant overlap after marketing rewrite
+  ---
+  duration_ms: 12.953676
+  type: 'test'
+  ...
+# Subtest: merchant complaints alone do not establish mass resale or dropshipping
+ok 101 - merchant complaints alone do not establish mass resale or dropshipping
+  ---
+  duration_ms: 0.45772
+  type: 'test'
+  ...
+# Subtest: two independent strong provenance and fulfillment families can pass the gate
+ok 102 - two independent strong provenance and fulfillment families can pass the gate
+  ---
+  duration_ms: 0.193387
+  type: 'test'
+  ...
+# Subtest: merchant complaints affect merchant risk but not deception or provenance
+ok 103 - merchant complaints affect merchant risk but not deception or provenance
+  ---
+  duration_ms: 0.224964
+  type: 'test'
+  ...
+# Subtest: scarcity and review anomalies affect manipulation risk without proving dropshipping
+ok 104 - scarcity and review anomalies affect manipulation risk without proving dropshipping
+  ---
+  duration_ms: 0.295439
+  type: 'test'
+  ...
+# Subtest: fulfillment contradiction is visible separately from product provenance
+ok 105 - fulfillment contradiction is visible separately from product provenance
+  ---
+  duration_ms: 0.340876
+  type: 'test'
+  ...
+# Subtest: countdown that resets later is strong evidence
+ok 106 - countdown that resets later is strong evidence
+  ---
+  duration_ms: 0.92952
+  type: 'test'
+  ...
+# Subtest: normally decreasing countdown is not flagged
+ok 107 - normally decreasing countdown is not flagged
+  ---
+  duration_ms: 0.111376
+  type: 'test'
+  ...
+# Subtest: same low stock needs repeated separated observations
+ok 108 - same low stock needs repeated separated observations
+  ---
+  duration_ms: 0.144224
+  type: 'test'
+  ...
+# Subtest: subscription disclosure alone has zero accusation weight
+ok 109 - subscription disclosure alone has zero accusation weight
+  ---
+  duration_ms: 14.13537
+  type: 'test'
+  ...
+# Subtest: product source hunt stays bounded while covering built-in sources
+ok 110 - product source hunt stays bounded while covering built-in sources
+  ---
+  duration_ms: 1.074935
+  type: 'test'
+  ...
+# Subtest: image hunts never transmit signed or private image links to third-party search destinations
+ok 111 - image hunts never transmit signed or private image links to third-party search destinations
+  ---
+  duration_ms: 2.961856
+  type: 'test'
+  ...
+# Subtest: requires the same defect on more than one source
+ok 112 - requires the same defect on more than one source
+  ---
+  duration_ms: 43.516747
+  type: 'test'
+  ...
+# Subtest: detects repeated concrete defects across independent sources
+ok 113 - detects repeated concrete defects across independent sources
+  ---
+  duration_ms: 7.55989
+  type: 'test'
+  ...
+# Subtest: escalates persistent cross-source defect consensus
+ok 114 - escalates persistent cross-source defect consensus
+  ---
+  duration_ms: 11.227744
+  type: 'test'
+  ...
+# Subtest: treats repeated overheating as a safety family
+ok 115 - treats repeated overheating as a safety family
+  ---
+  duration_ms: 6.200863
+  type: 'test'
+  ...
+# Subtest: generic negative sentiment is not a defect consensus
+ok 116 - generic negative sentiment is not a defect consensus
+  ---
+  duration_ms: 11.521771
+  type: 'test'
+  ...
+# Subtest: metrics count abstained positives as missed warnings and bound unresolved warning precision
+ok 117 - metrics count abstained positives as missed warnings and bound unresolved warning precision
+  ---
+  duration_ms: 1.606494
+  type: 'test'
+  ...
+# Subtest: zero observed errors do not produce zero uncertainty and empty denominators remain unknown
+ok 118 - zero observed errors do not produce zero uncertainty and empty denominators remain unknown
+  ---
+  duration_ms: 0.147449
+  type: 'test'
+  ...
+# Subtest: missing language strata fail even when overall observations look perfect
+ok 119 - missing language strata fail even when overall observations look perfect
+  ---
+  duration_ms: 0.35018
+  type: 'test'
+  ...
+# Subtest: merchant or product leakage into calibration blocks corpus acceptance
+ok 120 - merchant or product leakage into calibration blocks corpus acceptance
+  ---
+  duration_ms: 0.335639
+  type: 'test'
+  ...
+# Subtest: reused old artifacts, duplicate samples and unsupported labels are refused
+ok 121 - reused old artifacts, duplicate samples and unsupported labels are refused
+  ---
+  duration_ms: 5.823814
+  type: 'test'
+  ...
+# Subtest: independence, rights and threshold approval cannot be replaced by good fixture metrics
+ok 122 - independence, rights and threshold approval cannot be replaced by good fixture metrics
+  ---
+  duration_ms: 0.206486
+  type: 'test'
+  ...
+# Subtest: empty data and missing thresholds fail while the scoped approved corpus gate can pass
+ok 123 - empty data and missing thresholds fail while the scoped approved corpus gate can pass
+  ---
+  duration_ms: 0.321688
+  type: 'test'
+  ...
+# Subtest: missing evidence is unknown rather than clean
+ok 124 - missing evidence is unknown rather than clean
+  ---
+  duration_ms: 0.790363
+  type: 'test'
+  ...
+# Subtest: many correlated clues in one family do not create a strong verdict
+ok 125 - many correlated clues in one family do not create a strong verdict
+  ---
+  duration_ms: 0.423529
+  type: 'test'
+  ...
+# Subtest: independent strong evidence families can escalate
+ok 126 - independent strong evidence families can escalate
+  ---
+  duration_ms: 0.126337
+  type: 'test'
+  ...
+# Subtest: one source repeated across families cannot satisfy source independence
+ok 127 - one source repeated across families cannot satisfy source independence
+  ---
+  duration_ms: 0.106168
+  type: 'test'
+  ...
+# Subtest: canonical verdict bridge dedupes repeated observations before fusion
+ok 128 - canonical verdict bridge dedupes repeated observations before fusion
+  ---
+  duration_ms: 0.296149
+  type: 'test'
+  ...
+# Subtest: extracts explicit shipment origin and carrier
+ok 129 - extracts explicit shipment origin and carrier
+  ---
+  duration_ms: 31.640251
+  type: 'test'
+  ...
+# Subtest: carrier alone stays low confidence
+ok 130 - carrier alone stays low confidence
+  ---
+  duration_ms: 3.748533
+  type: 'test'
+  ...
+# Subtest: does not invent an origin from generic shipping copy
+ok 131 - does not invent an origin from generic shipping copy
+  ---
+  duration_ms: 0.874708
+  type: 'test'
+  ...
+# Subtest: explicit origin wording is bounded and does not require a carrier
+ok 132 - explicit origin wording is bounded and does not require a carrier
+  ---
+  duration_ms: 1.850326
+  type: 'test'
+  ...
+# Subtest: refund processing time and delivery time are not return deadlines
+ok 133 - refund processing time and delivery time are not return deadlines
+  ---
+  duration_ms: 38.701631
+  type: 'test'
+  ...
+# Subtest: explicit short return deadlines remain detectable
+ok 134 - explicit short return deadlines remain detectable
+  ---
+  duration_ms: 3.24116
+  type: 'test'
+  ...
+# Subtest: negated and zero return charges do not create warnings
+ok 135 - negated and zero return charges do not create warnings
+  ---
+  duration_ms: 1.303695
+  type: 'test'
+  ...
+# Subtest: contact/RMA and warehouse inspection alone are informational
+ok 136 - contact/RMA and warehouse inspection alone are informational
+  ---
+  duration_ms: 0.913706
+  type: 'test'
+  ...
+# Subtest: one return-policy observation cannot masquerade as several sources
+ok 137 - one return-policy observation cannot masquerade as several sources
+  ---
+  duration_ms: 0.58625
+  type: 'test'
+  ...
+# Subtest: a younger domain is not proof an older business-age claim is deceptive
+ok 138 - a younger domain is not proof an older business-age claim is deceptive
+  ---
+  duration_ms: 0.384861
+  type: 'test'
+  ...
+# Subtest: supply-chain pronouns and incidental policy geography do not establish roles
+ok 139 - supply-chain pronouns and incidental policy geography do not establish roles
+  ---
+  duration_ms: 2.45268
+  type: 'test'
+  ...
+# Subtest: conflicting role jurisdictions abstain and unobserved chain stays unknown
+ok 140 - conflicting role jurisdictions abstain and unobserved chain stays unknown
+  ---
+  duration_ms: 5.708372
+  type: 'test'
+  ...
+# Subtest: numeric poison and duplicate snippets cannot establish public complaint volume
+ok 141 - numeric poison and duplicate snippets cannot establish public complaint volume
+  ---
+  duration_ms: 1.077169
+  type: 'test'
+  ...
+# Subtest: the same provider URL with different labels does not create source independence
+ok 142 - the same provider URL with different labels does not create source independence
+  ---
+  duration_ms: 1.157037
+  type: 'test'
+  ...
+# Subtest: quality complaints need volume from their own source and no negation
+ok 143 - quality complaints need volume from their own source and no negation
+  ---
+  duration_ms: 1.162015
+  type: 'test'
+  ...
+# Subtest: independent sources can corroborate a quality concern, with shared complaint ancestry
+ok 144 - independent sources can corroborate a quality concern, with shared complaint ancestry
+  ---
+  duration_ms: 2.441203
+  type: 'test'
+  ...
+# Subtest: rating gaps require matching subject and scope before scoring
+ok 145 - rating gaps require matching subject and scope before scoring
+  ---
+  duration_ms: 0.400845
+  type: 'test'
+  ...
+# Subtest: display preference validation is bounded and independent of evidence thresholds
+ok 146 - display preference validation is bounded and independent of evidence thresholds
+  ---
+  duration_ms: 0.796662
+  type: 'test'
+  ...
+# Subtest: public source links reject credentials, local/private destinations and executable schemes
+ok 147 - public source links reject credentials, local/private destinations and executable schemes
+  ---
+  duration_ms: 0.292644
+  type: 'test'
+  ...
+# Subtest: scan export excludes raw contacts/images and redacts URL/text secrets
+ok 148 - scan export excludes raw contacts/images and redacts URL/text secrets
+  ---
+  duration_ms: 2.121679
+  type: 'test'
+  ...
+# Subtest: renderer labels direct evidence correctly and safely exposes source/method
+ok 149 - renderer labels direct evidence correctly and safely exposes source/method
+  ---
+  duration_ms: 22.741102
+  type: 'test'
+  ...
+# Subtest: renderer bounds evidence work and does not claim missing source details
+ok 150 - renderer bounds evidence work and does not claim missing source details
+  ---
+  duration_ms: 45.401975
+  type: 'test'
+  ...
+# Subtest: panel filters report hidden counts and invalidate export after report removal
+ok 151 - panel filters report hidden counts and invalidate export after report removal
+  ---
+  duration_ms: 38.246805
+  type: 'test'
+  ...
+# Subtest: panel customization persists validated appearance and reset restores display only
+ok 152 - panel customization persists validated appearance and reset restores display only
+  ---
+  duration_ms: 6.75092
+  type: 'test'
+  ...
+# Subtest: recall query uses only documented nonempty bounded parameters
+ok 153 - recall query uses only documented nonempty bounded parameters
+  ---
+  duration_ms: 1.215314
+  type: 'test'
+  ...
+# Subtest: recall parser returns candidate scope, discards hostile links and caps results
+ok 154 - recall parser returns candidate scope, discards hostile links and caps results
+  ---
+  duration_ms: 7.893305
+  type: 'test'
+  ...
+# Subtest: recall denied permission makes no request and permission starts synchronously
+ok 155 - recall denied permission makes no request and permission starts synchronously
+  ---
+  duration_ms: 2.216289
+  type: 'test'
+  ...
+# Subtest: recall cancellation after consent makes no network request
+ok 156 - recall cancellation after consent makes no network request
+  ---
+  duration_ms: 0.392923
+  type: 'test'
+  ...
+# Subtest: recall network work omits credentials, refuses redirects and returns inert candidates
+ok 157 - recall network work omits credentials, refuses redirects and returns inert candidates
+  ---
+  duration_ms: 25.088477
+  type: 'test'
+  ...
+# Subtest: recall bounds chunked responses and rejects invalid content or HTTP failures
+ok 158 - recall bounds chunked responses and rejects invalid content or HTTP failures
+  ---
+  duration_ms: 7.785365
+  type: 'test'
+  ...
+# Subtest: base themes meet tested normal-text and badge contrast pairs
+ok 159 - base themes meet tested normal-text and badge contrast pairs
+  ---
+  duration_ms: 0.575204
+  type: 'test'
+  ...
+# Subtest: export controls prepare a local bounded file without a third-party request
+ok 160 - export controls prepare a local bounded file without a third-party request
+  ---
+  duration_ms: 10.855341
+  type: 'test'
+  ...
+# Subtest: cancel and stale-report UI prevent a consent-delayed recall request
+ok 161 - cancel and stale-report UI prevent a consent-delayed recall request
+  ---
+  duration_ms: 14.935247
+  type: 'test'
+  ...
+# Subtest: invalid or sensitive report payloads cannot enable export/recall utilities
+ok 162 - invalid or sensitive report payloads cannot enable export/recall utilities
+  ---
+  duration_ms: 0.463868
+  type: 'test'
+  ...
+# Subtest: repeated countdown wording across days becomes a strong longitudinal warning
+ok 163 - repeated countdown wording across days becomes a strong longitudinal warning
+  ---
+  duration_ms: 29.900858
+  type: 'test'
+  ...
+# Subtest: one repeated scarcity observation is not enough to accuse the store
+ok 164 - one repeated scarcity observation is not enough to accuse the store
+  ---
+  duration_ms: 0.514614
+  type: 'test'
+  ...
+# Subtest: joint review count and rating jump is surfaced for investigation
+ok 165 - joint review count and rating jump is surfaced for investigation
+  ---
+  duration_ms: 0.851093
+  type: 'test'
+  ...
+# Subtest: ordinary review growth without a large rating jump is not flagged
+ok 166 - ordinary review growth without a large rating jump is not flagged
+  ---
+  duration_ms: 0.623736
+  type: 'test'
+  ...
+# Subtest: identical image hashes compare as identical
+ok 167 - identical image hashes compare as identical
+  ---
+  duration_ms: 1.476111
+  type: 'test'
+  ...
+# Subtest: different hash kinds never create similarity evidence
+ok 168 - different hash kinds never create similarity evidence
+  ---
+  duration_ms: 0.271072
+  type: 'test'
+  ...
+# Subtest: local shape detector output is bounded, checksum-filtered and unscored
+ok 169 - local shape detector output is bounded, checksum-filtered and unscored
+  ---
+  duration_ms: 1.234252
+  type: 'test'
+  ...
+# Subtest: label parser never invents OCR when unavailable
+ok 170 - label parser never invents OCR when unavailable
+  ---
+  duration_ms: 0.665017
+  type: 'test'
+  ...
+# Subtest: unsupported OCR model cannot decode or fetch an image
+ok 171 - unsupported OCR model cannot decode or fetch an image
+  ---
+  duration_ms: 1.584341
+  type: 'test'
+  ...
+# Subtest: explicit Arabic OCR preserves the native detector budget and caps enlarged input; cancellation terminates its worker
+ok 172 - explicit Arabic OCR preserves the native detector budget and caps enlarged input; cancellation terminates its worker
+  ---
+  duration_ms: 3.229994
+  type: 'test'
+  ...
+# Subtest: local feature hashes are deterministic, normalized and bounded with no external services
+ok 173 - local feature hashes are deterministic, normalized and bounded with no external services
+  ---
+  duration_ms: 21.32481
+  type: 'test'
+  ...
+# Subtest: false-positive safety: short generic names abstain and unrelated titles do not match
+ok 174 - false-positive safety: short generic names abstain and unrelated titles do not match
+  ---
+  duration_ms: 1.741805
+  type: 'test'
+  ...
+# Subtest: all eight catalogs cover static UI and explicit authored calls, preserving native substitutions
+ok 175 - all eight catalogs cover static UI and explicit authored calls, preserving native substitutions
+  ---
+  duration_ms: 144.083768
+  type: 'test'
+  ...
+# Subtest: language pack zh_CN localizes text and ARIA without changing control values
+ok 176 - language pack zh_CN localizes text and ARIA without changing control values
+  ---
+  duration_ms: 17.732629
+  type: 'test'
+  ...
+# Subtest: language pack hi localizes text and ARIA without changing control values
+ok 177 - language pack hi localizes text and ARIA without changing control values
+  ---
+  duration_ms: 11.67592
+  type: 'test'
+  ...
+# Subtest: language pack es localizes text and ARIA without changing control values
+ok 178 - language pack es localizes text and ARIA without changing control values
+  ---
+  duration_ms: 7.785615
+  type: 'test'
+  ...
+# Subtest: language pack ar localizes text and ARIA without changing control values
+ok 179 - language pack ar localizes text and ARIA without changing control values
+  ---
+  duration_ms: 7.213396
+  type: 'test'
+  ...
+# Subtest: language pack fr localizes text and ARIA without changing control values
+ok 180 - language pack fr localizes text and ARIA without changing control values
+  ---
+  duration_ms: 5.718016
+  type: 'test'
+  ...
+# Subtest: language pack bn localizes text and ARIA without changing control values
+ok 181 - language pack bn localizes text and ARIA without changing control values
+  ---
+  duration_ms: 6.688467
+  type: 'test'
+  ...
+# Subtest: language pack pt_BR localizes text and ARIA without changing control values
+ok 182 - language pack pt_BR localizes text and ARIA without changing control values
+  ---
+  duration_ms: 6.96017
+  type: 'test'
+  ...
+# Subtest: Arabic placeholders isolate exact foreign-script values and keep text as text
+ok 183 - Arabic placeholders isolate exact foreign-script values and keep text as text
+  ---
+  duration_ms: 1.767433
+  type: 'test'
+  ...
+# Subtest: unsupported/missing APIs and unknown technical failures remain readable
+ok 184 - unsupported/missing APIs and unknown technical failures remain readable
+  ---
+  duration_ms: 1.653895
+  type: 'test'
+  ...
+# Subtest: localized report preserves source evidence, exact score and raw report bytes
+ok 185 - localized report preserves source evidence, exact score and raw report bytes
+  ---
+  duration_ms: 3.610348
+  type: 'test'
+  ...
+# Subtest: marketplace badges are limited to actual search result pages, not browsing or checkout
+ok 186 - marketplace badges are limited to actual search result pages, not browsing or checkout
+  ---
+  duration_ms: 1.06454
+  type: 'test'
+  ...
+# Subtest: badges are inert, bounded, idempotent and only navigate to marketplace products
+ok 187 - badges are inert, bounded, idempotent and only navigate to marketplace products
+  ---
+  duration_ms: 5.044326
+  type: 'test'
+  ...
+# Subtest: Etsy and Walmart require individual listing paths inside a product card
+ok 188 - Etsy and Walmart require individual listing paths inside a product card
+  ---
+  duration_ms: 1.66473
+  type: 'test'
+  ...
+# Subtest: Canadian and Mexican badges remain neutral on scoped regional results
+ok 189 - Canadian and Mexican badges remain neutral on scoped regional results
+  ---
+  duration_ms: 1.89326
+  type: 'test'
+  ...
+# Subtest: regional marketplace suffix spoofs and unrelated localized paths abstain
+ok 190 - regional marketplace suffix spoofs and unrelated localized paths abstain
+  ---
+  duration_ms: 0.126498
+  type: 'test'
+  ...
+# Subtest: ships known HaremPants / Sure Design network out of box
+ok 191 - ships known HaremPants / Sure Design network out of box
+  ---
+  duration_ms: 1.267832
+  type: 'test'
+  ...
+# Subtest: store-local SKU across domains cannot establish a merchant network
+ok 192 - store-local SKU across domains cannot establish a merchant network
+  ---
+  duration_ms: 28.27172
+  type: 'test'
+  ...
+# Subtest: explicit cross-domain merchant reference is moderate evidence
+ok 193 - explicit cross-domain merchant reference is moderate evidence
+  ---
+  duration_ms: 0.248209
+  type: 'test'
+  ...
+# Subtest: seed registry recognizes current active networks
+ok 194 - seed registry recognizes current active networks
+  ---
+  duration_ms: 0.237462
+  type: 'test'
+  ...
+# Subtest: stale network records automatically downgrade
+ok 195 - stale network records automatically downgrade
+  ---
+  duration_ms: 0.396047
+  type: 'test'
+  ...
+# Subtest: GearLaunch stays informational/watch-level instead of inheriting platform complaints
+ok 196 - GearLaunch stays informational/watch-level instead of inheriting platform complaints
+  ---
+  duration_ms: 0.143943
+  type: 'test'
+  ...
+# Subtest: large seed corpus ships dozens of consumer-facing domains
+ok 197 - large seed corpus ships dozens of consumer-facing domains
+  ---
+  duration_ms: 6.686975
+  type: 'test'
+  ...
+# Subtest: transparent corporate groups do not get sister-store strong weighting
+ok 198 - transparent corporate groups do not get sister-store strong weighting
+  ---
+  duration_ms: 0.631227
+  type: 'test'
+  ...
+# Subtest: foreign geography alone is informational when plainly disclosed
+ok 199 - foreign geography alone is informational when plainly disclosed
+  ---
+  duration_ms: 38.699728
+  type: 'test'
+  ...
+# Subtest: secondary-page-only jurisdiction becomes transparency signal
+ok 200 - secondary-page-only jurisdiction becomes transparency signal
+  ---
+  duration_ms: 3.779769
+  type: 'test'
+  ...
+# Subtest: different return jurisdiction becomes friction signal
+ok 201 - different return jurisdiction becomes friction signal
+  ---
+  duration_ms: 2.271141
+  type: 'test'
+  ...
+# Subtest: business, manufacture and shipping claims stay separate
+ok 202 - business, manufacture and shipping claims stay separate
+  ---
+  duration_ms: 7.704225
+  type: 'test'
+  ...
+# Subtest: en: purchasable original-language page preserves identity and equivalent evidence
+ok 203 - en: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 96.67222
+  type: 'test'
+  ...
+# Subtest: en: schema-free local price and hero recognition works with explicit currency
+ok 204 - en: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 7.266795
+  type: 'test'
+  ...
+# Subtest: en: sensitive, collection and editorial pages stay quiet
+ok 205 - en: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 4.819033
+  type: 'test'
+  ...
+# Subtest: en: return-policy positives match English without treating negation as a fee
+ok 206 - en: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 17.769714
+  type: 'test'
+  ...
+# Subtest: en: original-script reviews, incentives and technical material fingerprints are retained
+ok 207 - en: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 9.373291
+  type: 'test'
+  ...
+# Subtest: zh: purchasable original-language page preserves identity and equivalent evidence
+ok 208 - zh: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 10.832618
+  type: 'test'
+  ...
+# Subtest: zh: schema-free local price and hero recognition works with explicit currency
+ok 209 - zh: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 7.929669
+  type: 'test'
+  ...
+# Subtest: zh: sensitive, collection and editorial pages stay quiet
+ok 210 - zh: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 5.259726
+  type: 'test'
+  ...
+# Subtest: zh: return-policy positives match English without treating negation as a fee
+ok 211 - zh: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 2.342466
+  type: 'test'
+  ...
+# Subtest: zh: original-script reviews, incentives and technical material fingerprints are retained
+ok 212 - zh: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 1.87328
+  type: 'test'
+  ...
+# Subtest: hi: purchasable original-language page preserves identity and equivalent evidence
+ok 213 - hi: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 15.039672
+  type: 'test'
+  ...
+# Subtest: hi: schema-free local price and hero recognition works with explicit currency
+ok 214 - hi: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 11.564674
+  type: 'test'
+  ...
+# Subtest: hi: sensitive, collection and editorial pages stay quiet
+ok 215 - hi: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 2.198773
+  type: 'test'
+  ...
+# Subtest: hi: return-policy positives match English without treating negation as a fee
+ok 216 - hi: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 0.912204
+  type: 'test'
+  ...
+# Subtest: hi: original-script reviews, incentives and technical material fingerprints are retained
+ok 217 - hi: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.629344
+  type: 'test'
+  ...
+# Subtest: es: purchasable original-language page preserves identity and equivalent evidence
+ok 218 - es: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 5.451531
+  type: 'test'
+  ...
+# Subtest: es: schema-free local price and hero recognition works with explicit currency
+ok 219 - es: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 2.999792
+  type: 'test'
+  ...
+# Subtest: es: sensitive, collection and editorial pages stay quiet
+ok 220 - es: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 1.668296
+  type: 'test'
+  ...
+# Subtest: es: return-policy positives match English without treating negation as a fee
+ok 221 - es: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 3.320859
+  type: 'test'
+  ...
+# Subtest: es: original-script reviews, incentives and technical material fingerprints are retained
+ok 222 - es: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.980074
+  type: 'test'
+  ...
+# Subtest: ar: purchasable original-language page preserves identity and equivalent evidence
+ok 223 - ar: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 13.029989
+  type: 'test'
+  ...
+# Subtest: ar: schema-free local price and hero recognition works with explicit currency
+ok 224 - ar: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 3.468679
+  type: 'test'
+  ...
+# Subtest: ar: sensitive, collection and editorial pages stay quiet
+ok 225 - ar: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 3.286067
+  type: 'test'
+  ...
+# Subtest: ar: return-policy positives match English without treating negation as a fee
+ok 226 - ar: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 0.709963
+  type: 'test'
+  ...
+# Subtest: ar: original-script reviews, incentives and technical material fingerprints are retained
+ok 227 - ar: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.707801
+  type: 'test'
+  ...
+# Subtest: fr: purchasable original-language page preserves identity and equivalent evidence
+ok 228 - fr: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 4.562592
+  type: 'test'
+  ...
+# Subtest: fr: schema-free local price and hero recognition works with explicit currency
+ok 229 - fr: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 3.223013
+  type: 'test'
+  ...
+# Subtest: fr: sensitive, collection and editorial pages stay quiet
+ok 230 - fr: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 1.572314
+  type: 'test'
+  ...
+# Subtest: fr: return-policy positives match English without treating negation as a fee
+ok 231 - fr: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 0.802631
+  type: 'test'
+  ...
+# Subtest: fr: original-script reviews, incentives and technical material fingerprints are retained
+ok 232 - fr: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.571468
+  type: 'test'
+  ...
+# Subtest: bn: purchasable original-language page preserves identity and equivalent evidence
+ok 233 - bn: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 11.845957
+  type: 'test'
+  ...
+# Subtest: bn: schema-free local price and hero recognition works with explicit currency
+ok 234 - bn: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 3.954659
+  type: 'test'
+  ...
+# Subtest: bn: sensitive, collection and editorial pages stay quiet
+ok 235 - bn: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 2.561832
+  type: 'test'
+  ...
+# Subtest: bn: return-policy positives match English without treating negation as a fee
+ok 236 - bn: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 0.697685
+  type: 'test'
+  ...
+# Subtest: bn: original-script reviews, incentives and technical material fingerprints are retained
+ok 237 - bn: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.655532
+  type: 'test'
+  ...
+# Subtest: pt-BR: purchasable original-language page preserves identity and equivalent evidence
+ok 238 - pt-BR: purchasable original-language page preserves identity and equivalent evidence
+  ---
+  duration_ms: 4.715359
+  type: 'test'
+  ...
+# Subtest: pt-BR: schema-free local price and hero recognition works with explicit currency
+ok 239 - pt-BR: schema-free local price and hero recognition works with explicit currency
+  ---
+  duration_ms: 2.756351
+  type: 'test'
+  ...
+# Subtest: pt-BR: sensitive, collection and editorial pages stay quiet
+ok 240 - pt-BR: sensitive, collection and editorial pages stay quiet
+  ---
+  duration_ms: 1.397585
+  type: 'test'
+  ...
+# Subtest: pt-BR: return-policy positives match English without treating negation as a fee
+ok 241 - pt-BR: return-policy positives match English without treating negation as a fee
+  ---
+  duration_ms: 0.495816
+  type: 'test'
+  ...
+# Subtest: pt-BR: original-script reviews, incentives and technical material fingerprints are retained
+ok 242 - pt-BR: original-script reviews, incentives and technical material fingerprints are retained
+  ---
+  duration_ms: 0.541824
+  type: 'test'
+  ...
+# Subtest: native scripts are bounded, source-mapped and never fabricate new observed wording
+ok 243 - native scripts are bounded, source-mapped and never fabricate new observed wording
+  ---
+  duration_ms: 104.920472
+  type: 'test'
+  ...
+# Subtest: translated selected variant names invalidate stamps without examining arbitrary input values
+ok 244 - translated selected variant names invalidate stamps without examining arbitrary input values
+  ---
+  duration_ms: 1.865869
+  type: 'test'
+  ...
+# Subtest: browser-translated heading keeps original schema identity with independently matching original metadata
+ok 245 - browser-translated heading keeps original schema identity with independently matching original metadata
+  ---
+  duration_ms: 4.994983
+  type: 'test'
+  ...
+# Subtest: regional display ambiguity and invalid language tags cannot invent a resolved amount
+ok 246 - regional display ambiguity and invalid language tags cannot invent a resolved amount
+  ---
+  duration_ms: 12.641131
+  type: 'test'
+  ...
+# Subtest: localized private form actions block before content extraction, including percent-encoded paths
+ok 247 - localized private form actions block before content extraction, including percent-encoded paths
+  ---
+  duration_ms: 25.616209
+  type: 'test'
+  ...
+# Subtest: decomposed accents and repeated CJK urgency cues stay source-mapped and work-bounded
+ok 248 - decomposed accents and repeated CJK urgency cues stay source-mapped and work-bounded
+  ---
+  duration_ms: 101.180532
+  type: 'test'
+  ...
+# Subtest: disabled or hidden translated purchase controls cannot qualify a page as purchasable
+ok 249 - disabled or hidden translated purchase controls cannot qualify a page as purchasable
+  ---
+  duration_ms: 15.871246
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: 2026年10月9日
+ok 250 - Gregorian review date: 2026年10月9日
+  ---
+  duration_ms: 1.316143
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: ९ अक्टूबर २०२६
+ok 251 - Gregorian review date: ९ अक्टूबर २०२६
+  ---
+  duration_ms: 0.888119
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: 9 octubre 2026
+ok 252 - Gregorian review date: 9 octubre 2026
+  ---
+  duration_ms: 1.002788
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: ٩ أكتوبر ٢٠٢٦
+ok 253 - Gregorian review date: ٩ أكتوبر ٢٠٢٦
+  ---
+  duration_ms: 0.426904
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: 9 octobre 2026
+ok 254 - Gregorian review date: 9 octobre 2026
+  ---
+  duration_ms: 0.879745
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: ৯ অক্টোবর ২০২৬
+ok 255 - Gregorian review date: ৯ অক্টোবর ২০২৬
+  ---
+  duration_ms: 0.15464
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: 9 outubro 2026
+ok 256 - Gregorian review date: 9 outubro 2026
+  ---
+  duration_ms: 0.13494
+  type: 'test'
+  ...
+# Subtest: Gregorian review date: October 9, 2026
+ok 257 - Gregorian review date: October 9, 2026
+  ---
+  duration_ms: 0.198785
+  type: 'test'
+  ...
+# Subtest: ambiguous numeric and other-calendar/invalid dates remain unknown
+ok 258 - ambiguous numeric and other-calendar/invalid dates remain unknown
+  ---
+  duration_ms: 1.73868
+  type: 'test'
+  ...
+# Subtest: all seven selected offline models are pinned, licensed and byte-identical after decompression
+ok 259 - all seven selected offline models are pinned, licensed and byte-identical after decompression
+  ---
+  duration_ms: 73.350366
+  type: 'test'
+  ...
+# Subtest: OCR selector values match the finite model allowlist and model requests remain packaged
+ok 260 - OCR selector values match the finite model allowlist and model requests remain packaged
+  ---
+  duration_ms: 0.299685
+  type: 'test'
+  ...
+# Subtest: empty evidence, country domain and a domestic barcode cannot establish regional origin
+ok 261 - empty evidence, country domain and a domestic barcode cannot establish regional origin
+  ---
+  duration_ms: 2.213755
+  type: 'test'
+  ...
+# Subtest: EN/ES/FR origin claims retain qualifiers and exact original wording without verification
+ok 262 - EN/ES/FR origin claims retain qualifiers and exact original wording without verification
+  ---
+  duration_ms: 1.58334
+  type: 'test'
+  ...
+# Subtest: generic store claims are separately attributed and cannot grant product origin
+ok 263 - generic store claims are separately attributed and cannot grant product origin
+  ---
+  duration_ms: 0.333185
+  type: 'test'
+  ...
+# Subtest: complete cross-border regional documentation requires deliberate user review
+ok 264 - complete cross-border regional documentation requires deliberate user review
+  ---
+  duration_ms: 1.571362
+  type: 'test'
+  ...
+# Subtest: omitting materials defeats the all-regional announcement
+ok 265 - omitting materials defeats the all-regional announcement
+  ---
+  duration_ms: 0.230623
+  type: 'test'
+  ...
+# Subtest: omitting components defeats the all-regional announcement
+ok 266 - omitting components defeats the all-regional announcement
+  ---
+  duration_ms: 0.1351
+  type: 'test'
+  ...
+# Subtest: omitting processing defeats the all-regional announcement
+ok 267 - omitting processing defeats the all-regional announcement
+  ---
+  duration_ms: 0.098717
+  type: 'test'
+  ...
+# Subtest: omitting assembly defeats the all-regional announcement
+ok 268 - omitting assembly defeats the all-regional announcement
+  ---
+  duration_ms: 0.124424
+  type: 'test'
+  ...
+# Subtest: omitting packaging defeats the all-regional announcement
+ok 269 - omitting packaging defeats the all-regional announcement
+  ---
+  duration_ms: 0.341457
+  type: 'test'
+  ...
+# Subtest: omitting seller defeats the all-regional announcement
+ok 270 - omitting seller defeats the all-regional announcement
+  ---
+  duration_ms: 0.319554
+  type: 'test'
+  ...
+# Subtest: omitting dispatch defeats the all-regional announcement
+ok 271 - omitting dispatch defeats the all-regional announcement
+  ---
+  duration_ms: 0.151475
+  type: 'test'
+  ...
+# Subtest: omitting destination defeats the all-regional announcement
+ok 272 - omitting destination defeats the all-regional announcement
+  ---
+  duration_ms: 0.094871
+  type: 'test'
+  ...
+# Subtest: country-of-origin labels, trade certificates and marketing cannot fill upstream proof
+ok 273 - country-of-origin labels, trade certificates and marketing cannot fill upstream proof
+  ---
+  duration_ms: 0.189261
+  type: 'test'
+  ...
+# Subtest: invalid dates, future evidence, stale records and excessive validity never qualify
+ok 274 - invalid dates, future evidence, stale records and excessive validity never qualify
+  ---
+  duration_ms: 0.196832
+  type: 'test'
+  ...
+# Subtest: foreign material even in a partial document prevents an all-regional finding
+ok 275 - foreign material even in a partial document prevents an all-regional finding
+  ---
+  duration_ms: 0.11448
+  type: 'test'
+  ...
+# Subtest: mixed country sourcing is distinct from contradictory complete records
+ok 276 - mixed country sourcing is distinct from contradictory complete records
+  ---
+  duration_ms: 0.142271
+  type: 'test'
+  ...
+# Subtest: exact listing, seller, variant and all known specifications must match
+ok 277 - exact listing, seller, variant and all known specifications must match
+  ---
+  duration_ms: 0.207789
+  type: 'test'
+  ...
+# Subtest: valid GTINs identify products but contradictory brand/model/variant evidence defeats matching
+ok 278 - valid GTINs identify products but contradictory brand/model/variant evidence defeats matching
+  ---
+  duration_ms: 0.237021
+  type: 'test'
+  ...
+# Subtest: malformed, oversized and secret-bearing dossier input is refused
+ok 279 - malformed, oversized and secret-bearing dossier input is refused
+  ---
+  duration_ms: 0.483828
+  type: 'test'
+  ...
+# Subtest: punctuation-distinct model and seller names cannot inherit an origin dossier
+ok 280 - punctuation-distinct model and seller names cannot inherit an origin dossier
+  ---
+  duration_ms: 0.216521
+  type: 'test'
+  ...
+# Subtest: region references have bounded freshness, supported edges and zero risk weights
+ok 281 - region references have bounded freshness, supported edges and zero risk weights
+  ---
+  duration_ms: 0.465931
+  type: 'test'
+  ...
+# Subtest: assessment export cannot change seller verdict and rejects malformed raw origin profiles
+ok 282 - assessment export cannot change seller verdict and rejects malformed raw origin profiles
+  ---
+  duration_ms: 1.033574
+  type: 'test'
+  ...
+# Subtest: documented report displays scope/review limitation and source URLs as text-safe links
+ok 283 - documented report displays scope/review limitation and source URLs as text-safe links
+  ---
+  duration_ms: 6.231559
+  type: 'test'
+  ...
+# Subtest: origin controls preview files without network, require review, and clear on reset
+ok 284 - origin controls preview files without network, require review, and clear on reset
+  ---
+  duration_ms: 41.930043
+  type: 'test'
+  ...
+# Subtest: navigation during asynchronous origin apply prevents stale results
+ok 285 - navigation during asynchronous origin apply prevents stale results
+  ---
+  duration_ms: 21.339442
+  type: 'test'
+  ...
+# Subtest: optional API query refuses malformed inputs without key disclosure
+ok 286 - optional API query refuses malformed inputs without key disclosure
+  ---
+  duration_ms: 0.810603
+  type: 'test'
+  ...
+# Subtest: provider results are bounded, remove tracker URLs and remain informational
+ok 287 - provider results are bounded, remove tracker URLs and remain informational
+  ---
+  duration_ms: 0.246305
+  type: 'test'
+  ...
+# Subtest: removes query strings and fragments before local persistence
+ok 288 - removes query strings and fragments before local persistence
+  ---
+  duration_ms: 0.840488
+  type: 'test'
+  ...
+# Subtest: rejects checkout and account surfaces
+ok 289 - rejects checkout and account surfaces
+  ---
+  duration_ms: 0.708832
+  type: 'test'
+  ...
+# Subtest: permits ordinary product and collection pages
+ok 290 - permits ordinary product and collection pages
+  ---
+  duration_ms: 0.156632
+  type: 'test'
+  ...
+# Subtest: rejects browser/internal schemes
+ok 291 - rejects browser/internal schemes
+  ---
+  duration_ms: 0.084896
+  type: 'test'
+  ...
+# Subtest: page scanner is packaged outside the sidepanel controller
+ok 292 - page scanner is packaged outside the sidepanel controller
+  ---
+  duration_ms: 5.405097
+  type: 'test'
+  ...
+# Subtest: scan aborts if navigation changes the document during authorization and extraction
+ok 293 - scan aborts if navigation changes the document during authorization and extraction
+  ---
+  duration_ms: 0.960265
+  type: 'test'
+  ...
+# Subtest: scanner centralizes bounded expensive collection budgets
+ok 294 - scanner centralizes bounded expensive collection budgets
+  ---
+  duration_ms: 1.754194
+  type: 'test'
+  ...
+# Subtest: catches a price increase introduced as a discount
+ok 295 - catches a price increase introduced as a discount
+  ---
+  duration_ms: 1.899869
+  type: 'test'
+  ...
+# Subtest: does not condemn an ordinary price drop
+ok 296 - does not condemn an ordinary price drop
+  ---
+  duration_ms: 0.119427
+  type: 'test'
+  ...
+# Subtest: detects a persistent sale state only with enough history
+ok 297 - detects a persistent sale state only with enough history
+  ---
+  duration_ms: 0.147449
+  type: 'test'
+  ...
+# Subtest: detects a sale state that repeatedly disappears and returns
+ok 298 - detects a sale state that repeatedly disappears and returns
+  ---
+  duration_ms: 0.216491
+  type: 'test'
+  ...
+# Subtest: does not call one normal promotion a repeated sale reset
+ok 299 - does not call one normal promotion a repeated sale reset
+  ---
+  duration_ms: 0.156683
+  type: 'test'
+  ...
+# Subtest: exact GTIN establishes exact identity
+ok 300 - exact GTIN establishes exact identity
+  ---
+  duration_ms: 14.707309
+  type: 'test'
+  ...
+# Subtest: similar titles alone stay weak
+ok 301 - similar titles alone stay weak
+  ---
+  duration_ms: 0.272044
+  type: 'test'
+  ...
+# Subtest: brand model images and specs combine without claiming exact GTIN identity
+ok 302 - brand model images and specs combine without claiming exact GTIN identity
+  ---
+  duration_ms: 27.263264
+  type: 'test'
+  ...
+# Subtest: one changed dimension does not trigger listing mutation
+ok 303 - one changed dimension does not trigger listing mutation
+  ---
+  duration_ms: 23.472273
+  type: 'test'
+  ...
+# Subtest: multiple identity changes trigger listing mutation evidence
+ok 304 - multiple identity changes trigger listing mutation evidence
+  ---
+  duration_ms: 1.641327
+  type: 'test'
+  ...
+# Subtest: same-domain image history stays informational
+ok 305 - same-domain image history stays informational
+  ---
+  duration_ms: 1.013905
+  type: 'test'
+  ...
+# Subtest: cross-domain exact image history is moderate, not automatic proof
+ok 306 - cross-domain exact image history is moderate, not automatic proof
+  ---
+  duration_ms: 0.264543
+  type: 'test'
+  ...
+# Subtest: older upstream listing needs independent corroboration for strong evidence
+ok 307 - older upstream listing needs independent corroboration for strong evidence
+  ---
+  duration_ms: 0.220037
+  type: 'test'
+  ...
+# Subtest: later related listing cannot establish upstream provenance
+ok 308 - later related listing cannot establish upstream provenance
+  ---
+  duration_ms: 0.103344
+  type: 'test'
+  ...
+# Subtest: dormant credential forms do not block public products; opening the same form blocks again
+ok 309 - dormant credential forms do not block public products; opening the same form blocks again
+  ---
+  duration_ms: 10.970131
+  type: 'test'
+  ...
+# Subtest: active password/card fields and payment forms still block without reading values
+ok 310 - active password/card fields and payment forms still block without reading values
+  ---
+  duration_ms: 4.606346
+  type: 'test'
+  ...
+# Subtest: closed credential dialog stays dormant and activation is refused
+ok 311 - closed credential dialog stays dormant and activation is refused
+  ---
+  duration_ms: 0.845245
+  type: 'test'
+  ...
+# Subtest: private-region limit fails closed rather than skipping late credential fields
+ok 312 - private-region limit fails closed rather than skipping late credential fields
+  ---
+  duration_ms: 5.390391
+  type: 'test'
+  ...
+# Subtest: a public snapshot excludes private text, JSON-LD, resources and malicious option values
+ok 313 - a public snapshot excludes private text, JSON-LD, resources and malicious option values
+  ---
+  duration_ms: 29.964493
+  type: 'test'
+  ...
+# Subtest: inline head scripts are not serialized into technology fingerprints
+ok 314 - inline head scripts are not serialized into technology fingerprints
+  ---
+  duration_ms: 4.671163
+  type: 'test'
+  ...
+# Subtest: one review source remains moderate despite several quality complaints
+ok 315 - one review source remains moderate despite several quality complaints
+  ---
+  duration_ms: 27.92758
+  type: 'test'
+  ...
+# Subtest: quality complaints without merchant quality claim do not create contradiction
+ok 316 - quality complaints without merchant quality claim do not create contradiction
+  ---
+  duration_ms: 0.56576
+  type: 'test'
+  ...
+# Subtest: commerce platform registry has unique IDs and auditable sources
+ok 317 - commerce platform registry has unique IDs and auditable sources
+  ---
+  duration_ms: 0.814929
+  type: 'test'
+  ...
+# Subtest: source registry is unique and queryable out of the box
+ok 318 - source registry is unique and queryable out of the box
+  ---
+  duration_ms: 0.219876
+  type: 'test'
+  ...
+# Subtest: merchant networks carry freshness and source provenance
+ok 319 - merchant networks carry freshness and source provenance
+  ---
+  duration_ms: 0.265053
+  type: 'test'
+  ...
+# Subtest: maintenance manifest covers every shipped intelligence family
+ok 320 - maintenance manifest covers every shipped intelligence family
+  ---
+  duration_ms: 10.952937
+  type: 'test'
+  ...
+# Subtest: exact GTIN is actionable regulatory evidence
+ok 321 - exact GTIN is actionable regulatory evidence
+  ---
+  duration_ms: 1.318577
+  type: 'test'
+  ...
+# Subtest: brand and model can corroborate an actionable match
+ok 322 - brand and model can corroborate an actionable match
+  ---
+  duration_ms: 0.185034
+  type: 'test'
+  ...
+# Subtest: title similarity is candidate-only and cannot become a recall accusation
+ok 323 - title similarity is candidate-only and cannot become a recall accusation
+  ---
+  duration_ms: 14.186796
+  type: 'test'
+  ...
+# Subtest: generic similar category does not match
+ok 324 - generic similar category does not match
+  ---
+  duration_ms: 0.205525
+  type: 'test'
+  ...
+# Subtest: regulated lots are strict, fixed-width and require both available lot and serial scope
+ok 325 - regulated lots are strict, fixed-width and require both available lot and serial scope
+  ---
+  duration_ms: 0.423679
+  type: 'test'
+  ...
+# Subtest: a precise lot match cannot override an excluded model, differing brand or official serial requirement
+ok 326 - a precise lot match cannot override an excluded model, differing brand or official serial requirement
+  ---
+  duration_ms: 0.248168
+  type: 'test'
+  ...
+# Subtest: official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+ok 327 - official-store claim is a dated partial-directory notice, never proof of fraud or dropshipping
+  ---
+  duration_ms: 10.203138
+  type: 'test'
+  ...
+# Subtest: official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+ok 328 - official host, ordinary reseller, negated affiliation and licensed-product language do not generate adverse notices
+  ---
+  duration_ms: 40.552468
+  type: 'test'
+  ...
+# Subtest: official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+ok 329 - official-domain lookalike is not trusted, and stale/future/invalid reference chronology abstains
+  ---
+  duration_ms: 0.971763
+  type: 'test'
+  ...
+# Subtest: supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+ok 330 - supplier/factory dispatch is a model disclosure with zero adverse weight; denials and review quotes abstain
+  ---
+  duration_ms: 1.377134
+  type: 'test'
+  ...
+# Subtest: current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+ok 331 - current /p/ page retains labeled brand/SKU and merchant site suffix, excluding related and dormant-private values
+  ---
+  duration_ms: 20.342072
+  type: 'test'
+  ...
+# Subtest: fetched detached policy excludes script/hidden/credential text without inspecting field values
+ok 332 - fetched detached policy excludes script/hidden/credential text without inspecting field values
+  ---
+  duration_ms: 18.213112
+  type: 'test'
+  ...
+# Subtest: policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+ok 333 - policy HTTP failures remain data; private/unrelated/query-token destinations never fetch
+  ---
+  duration_ms: 1.097239
+  type: 'test'
+  ...
+# Subtest: published ScamFerret uses original strict output and source date, never its dataset folder label
+ok 334 - published ScamFerret uses original strict output and source date, never its dataset folder label
+  ---
+  duration_ms: 1.280511
+  type: 'test'
+  ...
+# Subtest: published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+ok 335 - published lookup performs no request for an unknown domain and only pinned source GETs for a known one
+  ---
+  duration_ms: 5.73368
+  type: 'test'
+  ...
+# Subtest: security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+ok 336 - security search ignores mismatches, invalid dates and stale rows; provider redirect URLs cannot select endpoints
+  ---
+  duration_ms: 0.738286
+  type: 'test'
+  ...
+# Subtest: security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+ok 337 - security verdict is scoped to an archived matching page; empty/mismatched records are not merchant clearance
+  ---
+  duration_ms: 0.277041
+  type: 'test'
+  ...
+# Subtest: security lookup has at most three credentialless bounded GETs, and query is domain-only
+ok 338 - security lookup has at most three credentialless bounded GETs, and query is domain-only
+  ---
+  duration_ms: 0.797243
+  type: 'test'
+  ...
+# Subtest: consumer navigation has only approved originals and rejects injected/private domains
+ok 339 - consumer navigation has only approved originals and rejects injected/private domains
+  ---
+  duration_ms: 0.359524
+  type: 'test'
+  ...
+# Subtest: native widget model never links to outside scam services or requests data after failed current-page guard
+ok 340 - native widget model never links to outside scam services or requests data after failed current-page guard
+  ---
+  duration_ms: 24.718266
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: Spanish span
+ok 341 - split public manufacturer-code extraction: Spanish span
+  ---
+  duration_ms: 6.012234
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: English strong
+ok 342 - split public manufacturer-code extraction: English strong
+  ---
+  duration_ms: 8.811538
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: table cells
+ok 343 - split public manufacturer-code extraction: table cells
+  ---
+  duration_ms: 8.166481
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: review exclusion
+ok 344 - split public manufacturer-code extraction: review exclusion
+  ---
+  duration_ms: 2.588352
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: related exclusion
+ok 345 - split public manufacturer-code extraction: related exclusion
+  ---
+  duration_ms: 2.79624
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: hidden value exclusion
+ok 346 - split public manufacturer-code extraction: hidden value exclusion
+  ---
+  duration_ms: 2.542853
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: CSS-hidden value exclusion
+ok 347 - split public manufacturer-code extraction: CSS-hidden value exclusion
+  ---
+  duration_ms: 2.375426
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: field value exclusion
+ok 348 - split public manufacturer-code extraction: field value exclusion
+  ---
+  duration_ms: 2.393443
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: ambiguous codes
+ok 349 - split public manufacturer-code extraction: ambiguous codes
+  ---
+  duration_ms: 2.419231
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: no cross-row borrowing
+ok 350 - split public manufacturer-code extraction: no cross-row borrowing
+  ---
+  duration_ms: 4.669461
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: quote exclusion
+ok 351 - split public manufacturer-code extraction: quote exclusion
+  ---
+  duration_ms: 1.995792
+  type: 'test'
+  ...
+# Subtest: split public manufacturer-code extraction: private account exclusion
+ok 352 - split public manufacturer-code extraction: private account exclusion
+  ---
+  duration_ms: 1.892008
+  type: 'test'
+  ...
+# Subtest: GTIN formatting/padding validates check digit without erasing packaging indicator
+ok 353 - GTIN formatting/padding validates check digit without erasing packaging indicator
+  ---
+  duration_ms: 1.638672
+  type: 'test'
+  ...
+# Subtest: identifier normalization preserves distinct punctuation and non-Latin brands
+ok 354 - identifier normalization preserves distinct punctuation and non-Latin brands
+  ---
+  duration_ms: 0.291433
+  type: 'test'
+  ...
+# Subtest: store SKU/model namespace collisions do not establish product identity
+ok 355 - store SKU/model namespace collisions do not establish product identity
+  ---
+  duration_ms: 22.005891
+  type: 'test'
+  ...
+# Subtest: explicit GTIN and variant conflicts defeat identical stock photos
+ok 356 - explicit GTIN and variant conflicts defeat identical stock photos
+  ---
+  duration_ms: 1.599153
+  type: 'test'
+  ...
+# Subtest: bad identical GTIN strings cannot create exact identity
+ok 357 - bad identical GTIN strings cannot create exact identity
+  ---
+  duration_ms: 0.275299
+  type: 'test'
+  ...
+# Subtest: indexed source rejects cross-type identifiers and contradictory variants
+ok 358 - indexed source rejects cross-type identifiers and contradictory variants
+  ---
+  duration_ms: 1.319509
+  type: 'test'
+  ...
+# Subtest: source ranking selects evidence by strength and redacts URL queries
+ok 359 - source ranking selects evidence by strength and redacts URL queries
+  ---
+  duration_ms: 1.667896
+  type: 'test'
+  ...
+# Subtest: future or unknown local source timestamps remain unscored
+ok 360 - future or unknown local source timestamps remain unscored
+  ---
+  duration_ms: 0.995337
+  type: 'test'
+  ...
+# Subtest: same image via source matching and image history counts once
+ok 361 - same image via source matching and image history counts once
+  ---
+  duration_ms: 1.077679
+  type: 'test'
+  ...
+# Subtest: image history retains the strongest relationship without gallery-pair inflation
+ok 362 - image history retains the strongest relationship without gallery-pair inflation
+  ---
+  duration_ms: 0.508805
+  type: 'test'
+  ...
+# Subtest: image history places unresolved dates after valid observations
+ok 363 - image history places unresolved dates after valid observations
+  ---
+  duration_ms: 0.277662
+  type: 'test'
+  ...
+# Subtest: shared or transitive ancestry cannot unlock a severe verdict across families
+ok 364 - shared or transitive ancestry cannot unlock a severe verdict across families
+  ---
+  duration_ms: 0.393534
+  type: 'test'
+  ...
+# Subtest: malformed confidence/weight cannot poison scores or unlock accusations
+ok 365 - malformed confidence/weight cannot poison scores or unlock accusations
+  ---
+  duration_ms: 0.163743
+  type: 'test'
+  ...
+# Subtest: fusion dedupes across families and refuses trust from empty coverage
+ok 366 - fusion dedupes across families and refuses trust from empty coverage
+  ---
+  duration_ms: 0.464089
+  type: 'test'
+  ...
+# Subtest: all marketplace contexts are informational and cannot establish dropshipping
+ok 367 - all marketplace contexts are informational and cannot establish dropshipping
+  ---
+  duration_ms: 8.761744
+  type: 'test'
+  ...
+# Subtest: certificates preserve case and component scope without a verified-product claim
+ok 368 - certificates preserve case and component scope without a verified-product claim
+  ---
+  duration_ms: 1.561257
+  type: 'test'
+  ...
+# Subtest: cosmetic registration certificate is distinguished from export certificates and non-cosmetics
+ok 369 - cosmetic registration certificate is distinguished from export certificates and non-cosmetics
+  ---
+  duration_ms: 0.869771
+  type: 'test'
+  ...
+# Subtest: regulatory scope is unresolved without serial/variant and excludes unaffected units
+ok 370 - regulatory scope is unresolved without serial/variant and excludes unaffected units
+  ---
+  duration_ms: 0.634582
+  type: 'test'
+  ...
+# Subtest: exact GTIN does not bypass known model or scope conflicts
+ok 371 - exact GTIN does not bypass known model or scope conflicts
+  ---
+  duration_ms: 0.149021
+  type: 'test'
+  ...
+# Subtest: focused notices require exact product subject and preserve unknown unit coverage
+ok 372 - focused notices require exact product subject and preserve unknown unit coverage
+  ---
+  duration_ms: 1.991986
+  type: 'test'
+  ...
+# Subtest: main-page origin claims and aliases stay separate from manufacture
+ok 373 - main-page origin claims and aliases stay separate from manufacture
+  ---
+  duration_ms: 4.830429
+  type: 'test'
+  ...
+# Subtest: ordinary policy placement and incidental country mentions are not concealment or return friction
+ok 374 - ordinary policy placement and incidental country mentions are not concealment or return friction
+  ---
+  duration_ms: 2.114788
+  type: 'test'
+  ...
+# Subtest: a shared product identifier is informational merchant context, not ownership
+ok 375 - a shared product identifier is informational merchant context, not ownership
+  ---
+  duration_ms: 0.548935
+  type: 'test'
+  ...
+# Subtest: selected variants on the same page do not become listing mutation
+ok 376 - selected variants on the same page do not become listing mutation
+  ---
+  duration_ms: 0.688232
+  type: 'test'
+  ...
+# Subtest: historical price warnings require same offer, currency, chronology and compatible variant
+ok 377 - historical price warnings require same offer, currency, chronology and compatible variant
+  ---
+  duration_ms: 5.190624
+  type: 'test'
+  ...
+# Subtest: flat perceptual hashes and future image timestamps cannot supply weighted chronology
+ok 378 - flat perceptual hashes and future image timestamps cannot supply weighted chronology
+  ---
+  duration_ms: 0.228419
+  type: 'test'
+  ...
+# Subtest: customer-paid international return is moderate merchant-risk evidence
+ok 379 - customer-paid international return is moderate merchant-risk evidence
+  ---
+  duration_ms: 16.647117
+  type: 'test'
+  ...
+# Subtest: small restocking fee stays weak
+ok 380 - small restocking fee stays weak
+  ---
+  duration_ms: 3.594245
+  type: 'test'
+  ...
+# Subtest: large restocking fee escalates to moderate
+ok 381 - large restocking fee escalates to moderate
+  ---
+  duration_ms: 3.060923
+  type: 'test'
+  ...
+# Subtest: ordinary 30-day return policy does not trigger short-window rule
+ok 382 - ordinary 30-day return policy does not trigger short-window rule
+  ---
+  duration_ms: 0.252975
+  type: 'test'
+  ...
+# Subtest: large hosted-vs-independent rating gap is surfaced
+ok 383 - large hosted-vs-independent rating gap is surfaced
+  ---
+  duration_ms: 1.079172
+  type: 'test'
+  ...
+# Subtest: small samples do not create discrepancy warning
+ok 384 - small samples do not create discrepancy warning
+  ---
+  duration_ms: 0.328687
+  type: 'test'
+  ...
+# Subtest: verified purchase does not override copied-review evidence
+ok 385 - verified purchase does not override copied-review evidence
+  ---
+  duration_ms: 40.287323
+  type: 'test'
+  ...
+# Subtest: rich-looking long reviews can still be flagged when their wording is copied
+ok 386 - rich-looking long reviews can still be flagged when their wording is copied
+  ---
+  duration_ms: 3.242783
+  type: 'test'
+  ...
+# Subtest: strong rating-text conflict contributes suspicion without alone condemning review
+ok 387 - strong rating-text conflict contributes suspicion without alone condemning review
+  ---
+  duration_ms: 1.592464
+  type: 'test'
+  ...
+# Subtest: keeps ordinary varied reviews
+ok 388 - keeps ordinary varied reviews
+  ---
+  duration_ms: 32.948031
+  type: 'test'
+  ...
+# Subtest: flags copied review wording and recalculates rating
+ok 389 - flags copied review wording and recalculates rating
+  ---
+  duration_ms: 8.092471
+  type: 'test'
+  ...
+# Subtest: one unverified review is not automatically called fake
+ok 390 - one unverified review is not automatically called fake
+  ---
+  duration_ms: 0.82904
+  type: 'test'
+  ...
+# Subtest: wrong-product review is a strong flag
+ok 391 - wrong-product review is a strong flag
+  ---
+  duration_ms: 1.149285
+  type: 'test'
+  ...
+# Subtest: normalizes review text without changing meaning
+ok 392 - normalizes review text without changing meaning
+  ---
+  duration_ms: 32.626794
+  type: 'test'
+  ...
+# Subtest: copied review wording stays detectable after punctuation changes
+ok 393 - copied review wording stays detectable after punctuation changes
+  ---
+  duration_ms: 1.377525
+  type: 'test'
+  ...
+# Subtest: ordinary unrelated reviews do not look copied
+ok 394 - ordinary unrelated reviews do not look copied
+  ---
+  duration_ms: 0.217894
+  type: 'test'
+  ...
+# Subtest: incentive language is detected but ordinary praise is not
+ok 395 - incentive language is detected but ordinary praise is not
+  ---
+  duration_ms: 14.264832
+  type: 'test'
+  ...
+# Subtest: wrong-product category requires a mismatch with the listing title
+ok 396 - wrong-product category requires a mismatch with the listing title
+  ---
+  duration_ms: 1.115877
+  type: 'test'
+  ...
+# Subtest: platform and provider signatures reject lookalike hosts, credentials, paths, query and fragments
+ok 397 - platform and provider signatures reject lookalike hosts, credentials, paths, query and fragments
+  ---
+  duration_ms: 24.756673
+  type: 'test'
+  ...
+# Subtest: real provider hosts and exact script paths still yield neutral resource signals
+ok 398 - real provider hosts and exact script paths still yield neutral resource signals
+  ---
+  duration_ms: 3.455819
+  type: 'test'
+  ...
+# Subtest: platform stylesheet hosts and path signatures stay separate from unrelated query tokens
+ok 399 - platform stylesheet hosts and path signatures stay separate from unrelated query tokens
+  ---
+  duration_ms: 11.452668
+  type: 'test'
+  ...
+# Subtest: Amazon product title takes precedence over an unrelated first heading and stays host-scoped
+ok 400 - Amazon product title takes precedence over an unrelated first heading and stays host-scoped
+  ---
+  duration_ms: 11.960722
+  type: 'test'
+  ...
+# Subtest: recommendations before the target cannot supply price, ratings, images or identity
+ok 401 - recommendations before the target cannot supply price, ratings, images or identity
+  ---
+  duration_ms: 4.202467
+  type: 'test'
+  ...
+# Subtest: ProductGroup selects the current variant URL and abstains at ambiguous parent
+ok 402 - ProductGroup selects the current variant URL and abstains at ambiguous parent
+  ---
+  duration_ms: 13.592393
+  type: 'test'
+  ...
+# Subtest: explicit current-product SKU survives unresolved variants without selecting their offer or global identity
+ok 403 - explicit current-product SKU survives unresolved variants without selecting their offer or global identity
+  ---
+  duration_ms: 4.956035
+  type: 'test'
+  ...
+# Subtest: conflicting, hidden, review and recommendation SKU labels cannot resolve the current product
+ok 404 - conflicting, hidden, review and recommendation SKU labels cannot resolve the current product
+  ---
+  duration_ms: 13.96002
+  type: 'test'
+  ...
+# Subtest: visible SKU fallback does not replace the bound structured SKU or infer common ownership
+ok 405 - visible SKU fallback does not replace the bound structured SKU or infer common ownership
+  ---
+  duration_ms: 7.936019
+  type: 'test'
+  ...
+# Subtest: same-URL ProductGroup uses explicit selected variant attributes and abstains when ambiguous
+ok 406 - same-URL ProductGroup uses explicit selected variant attributes and abstains when ambiguous
+  ---
+  duration_ms: 9.29781
+  type: 'test'
+  ...
+# Subtest: named pressed swatch controls identify one same-URL ProductGroup variant, never a generic CTA
+ok 407 - named pressed swatch controls identify one same-URL ProductGroup variant, never a generic CTA
+  ---
+  duration_ms: 6.991367
+  type: 'test'
+  ...
+# Subtest: RDAP cancellation before consent prevents cache reads and network work
+ok 408 - RDAP cancellation before consent prevents cache reads and network work
+  ---
+  duration_ms: 1.478124
+  type: 'test'
+  ...
+# Subtest: unresolved offers and unrelated aggregate ratings remain unknown
+ok 409 - unresolved offers and unrelated aggregate ratings remain unknown
+  ---
+  duration_ms: 2.218602
+  type: 'test'
+  ...
+# Subtest: URL-less metadata requires matching visible identity and no unresolved variant selection
+ok 410 - URL-less metadata requires matching visible identity and no unresolved variant selection
+  ---
+  duration_ms: 5.394216
+  type: 'test'
+  ...
+# Subtest: schema-free visible currency prices are detected without mistaking arbitrary text for prices
+ok 411 - schema-free visible currency prices are detected without mistaking arbitrary text for prices
+  ---
+  duration_ms: 15.607044
+  type: 'test'
+  ...
+# Subtest: malformed persisted settings cannot enable monitoring
+ok 412 - malformed persisted settings cannot enable monitoring
+  ---
+  duration_ms: 0.239525
+  type: 'test'
+  ...
+# Subtest: concurrent setting patches preserve unrelated changes and recover after a failed write
+ok 413 - concurrent setting patches preserve unrelated changes and recover after a failed write
+  ---
+  duration_ms: 17.438302
+  type: 'test'
+  ...
+# Subtest: RDAP resolves registered domains and uses the published HTTPS registry endpoint
+ok 414 - RDAP resolves registered domains and uses the published HTTPS registry endpoint
+  ---
+  duration_ms: 0.556696
+  type: 'test'
+  ...
+# Subtest: cached RDAP results wait for consent, and denied consent performs no cache read or fetch
+ok 415 - cached RDAP results wait for consent, and denied consent performs no cache read or fetch
+  ---
+  duration_ms: 0.530417
+  type: 'test'
+  ...
+# Subtest: RDAP rejects another domain response and never follows redirects or sends credentials
+ok 416 - RDAP rejects another domain response and never follows redirects or sends credentials
+  ---
+  duration_ms: 13.128245
+  type: 'test'
+  ...
+# Subtest: search picker exposes all sources and opens only explicit bounded batches
+ok 417 - search picker exposes all sources and opens only explicit bounded batches
+  ---
+  duration_ms: 5.55253
+  type: 'test'
+  ...
+# Subtest: Etsy routing accepts real subdomains and rejects hostname lookalikes
+ok 418 - Etsy routing accepts real subdomains and rejects hostname lookalikes
+  ---
+  duration_ms: 0.222871
+  type: 'test'
+  ...
+# Subtest: a recommendation fragment identifier cannot override its different product URL
+ok 419 - a recommendation fragment identifier cannot override its different product URL
+  ---
+  duration_ms: 3.218497
+  type: 'test'
+  ...
+# Subtest: blank and null price values are not interpreted as free products
+ok 420 - blank and null price values are not interpreted as free products
+  ---
+  duration_ms: 7.690064
+  type: 'test'
+  ...
+# Subtest: revoking RDAP permission during fetch suppresses the result
+ok 421 - revoking RDAP permission during fetch suppresses the result
+  ---
+  duration_ms: 0.78832
+  type: 'test'
+  ...
+# Subtest: manifest keeps required permissions narrow and hosts optional
+ok 422 - manifest keeps required permissions narrow and hosts optional
+  ---
+  duration_ms: 7.606579
+  type: 'test'
+  ...
+# Subtest: runtime source contains no remote-code or credential-access primitives
+ok 423 - runtime source contains no remote-code or credential-access primitives
+  ---
+  duration_ms: 149.080474
+  type: 'test'
+  ...
+# Subtest: runtime domain parser is pinned and limited to its reviewed dependency
+ok 424 - runtime domain parser is pinned and limited to its reviewed dependency
+  ---
+  duration_ms: 1.371726
+  type: 'test'
+  ...
+# Subtest: privacy policy discloses local history and no credential collection
+ok 425 - privacy policy discloses local history and no credential collection
+  ---
+  duration_ms: 4.003752
+  type: 'test'
+  ...
+# Subtest: real product listing patterns qualify across common storefronts
+ok 426 - real product listing patterns qualify across common storefronts
+  ---
+  duration_ms: 6.312769
+  type: 'test'
+  ...
+# Subtest: ignore listing grids, search results, store homepages, and ordinary browsing
+ok 427 - ignore listing grids, search results, store homepages, and ordinary browsing
+  ---
+  duration_ms: 0.462847
+  type: 'test'
+  ...
+# Subtest: product structured data, price, or commerce platform alone never triggers
+ok 428 - product structured data, price, or commerce platform alone never triggers
+  ---
+  duration_ms: 0.420765
+  type: 'test'
+  ...
+# Subtest: block all sensitive paths and embedded credential/payment fields
+ok 429 - block all sensitive paths and embedded credential/payment fields
+  ---
+  duration_ms: 0.186877
+  type: 'test'
+  ...
+# Subtest: insufficient independent evidence must abstain
+ok 430 - insufficient independent evidence must abstain
+  ---
+  duration_ms: 0.192496
+  type: 'test'
+  ...
+# Subtest: artificial schema markup on articles cannot force a shopping toast
+ok 431 - artificial schema markup on articles cannot force a shopping toast
+  ---
+  duration_ms: 0.123203
+  type: 'test'
+  ...
+# Subtest: high-density merchandising grids do not trigger a verdict from stray Product JSON-LD
+ok 432 - high-density merchandising grids do not trigger a verdict from stray Product JSON-LD
+  ---
+  duration_ms: 0.11461
+  type: 'test'
+  ...
+# Subtest: an article with affiliate purchase links stays quiet
+ok 433 - an article with affiliate purchase links stays quiet
+  ---
+  duration_ms: 0.138966
+  type: 'test'
+  ...
+# Subtest: account-service domains and store homepages do not trigger even with product-like markup
+ok 434 - account-service domains and store homepages do not trigger even with product-like markup
+  ---
+  duration_ms: 0.37748
+  type: 'test'
+  ...
+# Subtest: a generic page with a buy button and a price is not enough to interrupt
+ok 435 - a generic page with a buy button and a price is not enough to interrupt
+  ---
+  duration_ms: 4.342205
+  type: 'test'
+  ...
+# Subtest: a schema-free manufacturer detail can qualify with a matching product hero
+ok 436 - a schema-free manufacturer detail can qualify with a matching product hero
+  ---
+  duration_ms: 0.161229
+  type: 'test'
+  ...
+# Subtest: sales landing pages without an individual product remain quiet
+ok 437 - sales landing pages without an individual product remain quiet
+  ---
+  duration_ms: 0.143163
+  type: 'test'
+  ...
+# Subtest: Chrome page runtime resolves tab identity without privileged browsing metadata
+ok 438 - Chrome page runtime resolves tab identity without privileged browsing metadata
+  ---
+  duration_ms: 10.366346
+  type: 'test'
+  ...
+# Subtest: page authority is proven by isolated scripting and missing access creates a tab-scoped request
+ok 439 - page authority is proven by isolated scripting and missing access creates a tab-scoped request
+  ---
+  duration_ms: 3.560525
+  type: 'test'
+  ...
+# Subtest: manifest uses modern host request support without browsing-history permission
+ok 440 - manifest uses modern host request support without browsing-history permission
+  ---
+  duration_ms: 2.170822
+  type: 'test'
+  ...
+# Subtest: page-reading sidepanel actions share the authorized Chrome page transaction
+ok 441 - page-reading sidepanel actions share the authorized Chrome page transaction
+  ---
+  duration_ms: 2.933033
+  type: 'test'
+  ...
+# Subtest: toast open works for both newly opened and already persistent side panels
+ok 442 - toast open works for both newly opened and already persistent side panels
+  ---
+  duration_ms: 1.270636
+  type: 'test'
+  ...
+# Subtest: single source characteristic stays moderate
+ok 443 - single source characteristic stays moderate
+  ---
+  duration_ms: 18.729929
+  type: 'test'
+  ...
+# Subtest: two independent source characteristics can become strong
+ok 444 - two independent source characteristics can become strong
+  ---
+  duration_ms: 0.6339
+  type: 'test'
+  ...
+# Subtest: one complaint source is moderate only
+ok 445 - one complaint source is moderate only
+  ---
+  duration_ms: 0.591028
+  type: 'test'
+  ...
+# Subtest: multiple independent complaint sources can become strong
+ok 446 - multiple independent complaint sources can become strong
+  ---
+  duration_ms: 0.232815
+  type: 'test'
+  ...
+# Subtest: small review samples do not trigger rating warning
+ok 447 - small review samples do not trigger rating warning
+  ---
+  duration_ms: 0.163212
+  type: 'test'
+  ...
+# Subtest: duplicate pages from one review platform do not count as independent sources
+ok 448 - duplicate pages from one review platform do not count as independent sources
+  ---
+  duration_ms: 0.254848
+  type: 'test'
+  ...
+# Subtest: one snippet containing multiple keywords is not treated as substantial complaints
+ok 449 - one snippet containing multiple keywords is not treated as substantial complaints
+  ---
+  duration_ms: 0.66051
+  type: 'test'
+  ...
+# Subtest: explicit cross-border returns and pervasive-sale pattern remain visible without scoring policy placement
+ok 450 - explicit cross-border returns and pervasive-sale pattern remain visible without scoring policy placement
+  ---
+  duration_ms: 47.220825
+  type: 'test'
+  ...
+# Subtest: HaremPants-like explicit origin + independent quality complaints raises manipulation risk without nationality penalty
+ok 451 - HaremPants-like explicit origin + independent quality complaints raises manipulation risk without nationality penalty
+  ---
+  duration_ms: 9.624595
+  type: 'test'
+  ...
+# Subtest: legitimate domestic manufacturer control stays low risk
+ok 452 - legitimate domestic manufacturer control stays low risk
+  ---
+  duration_ms: 3.614565
+  type: 'test'
+  ...
+# Subtest: plainly disclosed overseas reseller control is not treated as deception
+ok 453 - plainly disclosed overseas reseller control is not treated as deception
+  ---
+  duration_ms: 4.325771
+  type: 'test'
+  ...
+# Subtest: foreign manufacture plus US fulfillment is mixed, not Made in USA
+ok 454 - foreign manufacture plus US fulfillment is mixed, not Made in USA
+  ---
+  duration_ms: 28.496054
+  type: 'test'
+  ...
+# Subtest: known material chain outside US can be entirely international
+ok 455 - known material chain outside US can be entirely international
+  ---
+  duration_ms: 2.269979
+  type: 'test'
+  ...
+# Subtest: Made in USA remains a claim unless independently verified
+ok 456 - Made in USA remains a claim unless independently verified
+  ---
+  duration_ms: 1.237156
+  type: 'test'
+  ...
+# Subtest: tone modes change wording only
+ok 457 - tone modes change wording only
+  ---
+  duration_ms: 0.889751
+  type: 'test'
+  ...
+# Subtest: script/style content with spaced, attributed or missing end tags cannot fabricate complaints
+ok 458 - script/style content with spaced, attributed or missing end tags cannot fabricate complaints
+  ---
+  duration_ms: 2.332733
+  type: 'test'
+  ...
+# Subtest: HTML entities are decoded once and escaped complaint-like markup stays literal text
+ok 459 - HTML entities are decoded once and escaped complaint-like markup stays literal text
+  ---
+  duration_ms: 0.210022
+  type: 'test'
+  ...
+# Subtest: parses Trustpilot score, volume, one-star share and complaints
+ok 460 - parses Trustpilot score, volume, one-star share and complaints
+  ---
+  duration_ms: 0.176052
+  type: 'test'
+  ...
+# Subtest: 20 percent one-star share at meaningful volume is elevated
+ok 461 - 20 percent one-star share at meaningful volume is elevated
+  ---
+  duration_ms: 0.412262
+  type: 'test'
+  ...
+# Subtest: inert import rejects rule injection, duplicate records, oversized arrays and invalid identity
+ok 462 - inert import rejects rule injection, duplicate records, oversized arrays and invalid identity
+  ---
+  duration_ms: 2.425399
+  type: 'test'
+  ...
+# Subtest: feed and record URLs reject credentials, fragments, queries and private origins
+ok 463 - feed and record URLs reject credentials, fragments, queries and private origins
+  ---
+  duration_ms: 0.26337
+  type: 'test'
+  ...
+# Subtest: date windows expose stale lists and forbid future publication or indefinite expiry
+ok 464 - date windows expose stale lists and forbid future publication or indefinite expiry
+  ---
+  duration_ms: 1.21333
+  type: 'test'
+  ...
+# Subtest: Ed25519 verifies exact pretty-printed payload bytes against a source-pinned key; tampering and unknown keys fail
+ok 465 - Ed25519 verifies exact pretty-printed payload bytes against a source-pinned key; tampering and unknown keys fail
+  ---
+  duration_ms: 7.124434
+  type: 'test'
+  ...
+# Subtest: local storage corruption cannot grant trust or enable arbitrary imported rules
+ok 466 - local storage corruption cannot grant trust or enable arbitrary imported rules
+  ---
+  duration_ms: 0.80144
+  type: 'test'
+  ...
+# Subtest: one writer serializes list imports, preserves rollback floor and resets all user list state
+ok 467 - one writer serializes list imports, preserves rollback floor and resets all user list state
+  ---
+  duration_ms: 1.882434
+  type: 'test'
+  ...
+# Subtest: exact imported leads keep entity roles and source dates separate, never raise a verdict
+ok 468 - exact imported leads keep entity roles and source dates separate, never raise a verdict
+  ---
+  duration_ms: 19.830452
+  type: 'test'
+  ...
+# Subtest: variant colour aliases and material conflicts cannot silently merge products
+ok 469 - variant colour aliases and material conflicts cannot silently merge products
+  ---
+  duration_ms: 0.883031
+  type: 'test'
+  ...
+# Subtest: denied feed consent starts synchronously and performs no request
+ok 470 - denied feed consent starts synchronously and performs no request
+  ---
+  duration_ms: 0.434835
+  type: 'test'
+  ...
+# Subtest: bounded public JSON refuses chunked overflow, redirects, credentials and non-JSON
+ok 471 - bounded public JSON refuses chunked overflow, redirects, credentials and non-JSON
+  ---
+  duration_ms: 19.068601
+  type: 'test'
+  ...
+# Subtest: LEI checks digits, pins exact response identity and excludes addresses/relationships
+ok 472 - LEI checks digits, pins exact response identity and excludes addresses/relationships
+  ---
+  duration_ms: 0.459552
+  type: 'test'
+  ...
+# Subtest: legal entity denial and invalid identifiers send no network request; revoked permission suppresses result
+ok 473 - legal entity denial and invalid identifiers send no network request; revoked permission suppresses result
+  ---
+  duration_ms: 0.770894
+  type: 'test'
+  ...
+# Subtest: CPSC permission revoked during a response suppresses candidates
+ok 474 - CPSC permission revoked during a response suppresses candidates
+  ---
+  duration_ms: 1.389973
+  type: 'test'
+  ...
+1..474
+# tests 474
+# suites 0
+# pass 474
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3469.385919

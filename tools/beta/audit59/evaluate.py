@@ -1,5 +1,16 @@
 """Independent holdout acceptance. Unknown truth/abstention never manufacture success."""
 import argparse, collections, hashlib, json, math, pathlib, urllib.parse
+from datetime import datetime, timezone
+
+
+def observed_date(value):
+    try:
+        at = datetime.fromisoformat(value.replace('Z', '+00:00'))
+        if at.tzinfo is None:
+            at = at.replace(tzinfo=timezone.utc)
+        return at <= datetime.now(timezone.utc)
+    except (ValueError, TypeError, AttributeError):
+        return False
 
 
 def ratio(a, b):
@@ -38,12 +49,14 @@ def evaluate(data):
             label = c.get('label', 'unlabeled')
             proof = c.get('proof', {})
             source = urllib.parse.urlsplit(proof.get('sourceUrl', ''))
-            if label not in ('positive', 'negative') or proof.get('adjudication') != 'independently-reviewed' or not proof.get('observedAt') or not proof.get('binding') or source.scheme != 'https' or not source.hostname or source.username or not c.get('merchantGroup') or not c.get('productLineage'):
+            if label not in ('positive', 'negative') or proof.get('adjudication') != 'independently-reviewed' or not observed_date(proof.get('observedAt')) or not proof.get('binding') or source.scheme != 'https' or not source.hostname or source.username or not c.get('merchantGroup') or not c.get('productLineage'):
                 rejected.append(c['id'])
             else:
                 eligible.append(c)
         groups = [c['merchantGroup'] for c in eligible]
         task_errors = list(errors)
+        if rejected:
+            task_errors.append('UNADJUDICATED_HOLDOUT_CASES')
         if len(groups) != len(set(groups)):
             task_errors.append('DUPLICATE_HOLDOUT_MERCHANT')
         tp = fp = tn = fn = abstain = missing = 0

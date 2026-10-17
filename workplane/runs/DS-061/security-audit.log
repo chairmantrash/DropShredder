@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 audit:security
+> node scripts/security-audit.mjs
+
+Security audit passed: 111 runtime files, reviewed permission baseline, pinned reviewed local domain parser.

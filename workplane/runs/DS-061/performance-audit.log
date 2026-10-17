@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 audit:performance
+> node scripts/performance-audit.mjs
+
+Built size 52.98 MiB; largest asset .output/chrome-mv3/ocr/tesseract-core-relaxedsimd.wasm.js 4587.1 KiB
+Performance audit passed.

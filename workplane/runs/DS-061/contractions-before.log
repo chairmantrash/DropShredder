@@ -1,0 +1,282 @@
+TAP version 13
+# Subtest: supplier subject
+ok 1 - supplier subject
+  ---
+  duration_ms: 5.751644
+  type: 'test'
+  ...
+# Subtest: manufacturer subject
+ok 2 - manufacturer subject
+  ---
+  duration_ms: 1.96788
+  type: 'test'
+  ...
+# Subtest: vendor origin
+ok 3 - vendor origin
+  ---
+  duration_ms: 0.547672
+  type: 'test'
+  ...
+# Subtest: separate negation
+ok 4 - separate negation
+  ---
+  duration_ms: 0.113148
+  type: 'test'
+  ...
+# Subtest: trailing unrelated negation
+ok 5 - trailing unrelated negation
+  ---
+  duration_ms: 0.099969
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 6 - inbound warehouse abstains
+  ---
+  duration_ms: 0.481004
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+ok 7 - inbound origin abstains
+  ---
+  duration_ms: 0.164414
+  type: 'test'
+  ...
+# Subtest: negated abstains
+ok 8 - negated abstains
+  ---
+  duration_ms: 0.093268
+  type: 'test'
+  ...
+# Subtest: question abstains
+ok 9 - question abstains
+  ---
+  duration_ms: 0.231714
+  type: 'test'
+  ...
+# Subtest: reported customer claim abstains
+ok 10 - reported customer claim abstains
+  ---
+  duration_ms: 0.394445
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+ok 11 - single quoted claim abstains
+  ---
+  duration_ms: 0.103343
+  type: 'test'
+  ...
+# Subtest: general definition abstains
+ok 12 - general definition abstains
+  ---
+  duration_ms: 0.072768
+  type: 'test'
+  ...
+# Subtest: hypothetical abstains
+ok 13 - hypothetical abstains
+  ---
+  duration_ms: 0.064807
+  type: 'test'
+  ...
+# Subtest: future intention abstains
+ok 14 - future intention abstains
+  ---
+  duration_ms: 0.064285
+  type: 'test'
+  ...
+# Subtest: denial after verb abstains
+ok 15 - denial after verb abstains
+  ---
+  duration_ms: 0.064546
+  type: 'test'
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+ok 16 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.177504
+  type: 'test'
+  ...
+# Subtest: disclosed logistics remains unscored
+ok 17 - disclosed logistics remains unscored
+  ---
+  duration_ms: 1.133732
+  type: 'test'
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+ok 18 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 31.339936
+  type: 'test'
+  ...
+# Subtest: negated urgency: We never say hurry.
+ok 19 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 1.241162
+  type: 'test'
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+ok 20 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 0.820798
+  type: 'test'
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 21 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.759247
+  type: 'test'
+  ...
+# Subtest: affiliation alone never creates a shopper warning or merchant-risk score
+ok 22 - affiliation alone never creates a shopper warning or merchant-risk score
+  ---
+  duration_ms: 4.03668
+  type: 'test'
+  ...
+# Subtest: a genuine cross-brand reference is retained as unscored identity context
+ok 23 - a genuine cross-brand reference is retained as unscored identity context
+  ---
+  duration_ms: 0.372713
+  type: 'test'
+  ...
+# Subtest: lookalike hostname substrings cannot create a cross-brand reference
+ok 24 - lookalike hostname substrings cannot create a cross-brand reference
+  ---
+  duration_ms: 0.961867
+  type: 'test'
+  ...
+# Subtest: review opinions are not merchant-authored shipping or scarcity claims
+ok 25 - review opinions are not merchant-authored shipping or scarcity claims
+  ---
+  duration_ms: 15.774977
+  type: 'test'
+  ...
+# Subtest: missing Amazon verification badge stays unknown
+ok 26 - missing Amazon verification badge stays unknown
+  ---
+  duration_ms: 4.420269
+  type: 'test'
+  ...
+# Subtest: Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+ok 27 - Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+  ---
+  duration_ms: 5.203211
+  type: 'test'
+  ...
+# Subtest: present visible Amazon verification badge stays true
+ok 28 - present visible Amazon verification badge stays true
+  ---
+  duration_ms: 3.351463
+  type: 'test'
+  ...
+# Subtest: contracted dispatch denial: We don't ship directly from suppliers.
+not ok 29 - contracted dispatch denial: We don't ship directly from suppliers.
+  ---
+  duration_ms: 2.434162
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:6549'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'ship directly from suppliers',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'ship directly from suppliers'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:81:171)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: contracted dispatch denial: Our suppliers won’t ship orders directly to your door.
+not ok 30 - contracted dispatch denial: Our suppliers won’t ship orders directly to your door.
+  ---
+  duration_ms: 2.187256
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:6549'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'Our suppliers won’t ship orders directly',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'Our suppliers won’t ship orders directly'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:81:171)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: contracted urgency denial does not become a warning
+not ok 31 - contracted urgency denial does not become a warning
+  ---
+  duration_ms: 0.97022
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:6655'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:82:71)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: reassurance does not erase affirmative urgency
+ok 32 - reassurance does not erase affirmative urgency
+  ---
+  duration_ms: 5.363438
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 29
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 450.308141

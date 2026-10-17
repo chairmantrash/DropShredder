@@ -1,0 +1,7 @@
+{
+  "basePath": "tools/browser-smoke/probe-native.mjs",
+  "baseSha256": "985fe68abe780ed7664510c664deaae787b73cefc8250bccf7b29887dd6d5650",
+  "runnerPath": "tools/browser-smoke/probe-native-audit59.mjs",
+  "runnerSha256": "a2290375a4325b48307650637fcfab47d1382a3adf41a02e84011371c6e276b4",
+  "scope": "Test harness only; native bootstrap/permission assertions unchanged; existing compiled production package"
+}

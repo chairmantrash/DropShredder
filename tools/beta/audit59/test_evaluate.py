@@ -38,4 +38,11 @@ class EvaluationContracts(unittest.TestCase):
     def test_missing_source_binding_is_not_independent_truth(self):
         a=case(1);a['proof'].pop('binding');self.assertEqual(self.metrics([a])['eligible'],0)
 
+    def test_invalid_observation_date_cannot_authenticate_truth(self):
+        a=case(1);a['proof']['observedAt']='not-a-date';self.assertEqual(self.metrics([a])['eligible'],0)
+
+    def test_unadjudicated_holdout_cannot_be_silently_dropped_to_pass(self):
+        rows=[case(i) for i in range(50)]+[case(i,'negative','negative') for i in range(50,100)]+[case(100,'unlabeled','unavailable')]
+        self.assertNotEqual(self.metrics(rows)['status'],'PASS')
+
 if __name__=='__main__':unittest.main()

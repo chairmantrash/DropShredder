@@ -1,0 +1,238 @@
+TAP version 13
+# Subtest: supplier subject
+ok 1 - supplier subject
+  ---
+  duration_ms: 4.490685
+  type: 'test'
+  ...
+# Subtest: manufacturer subject
+ok 2 - manufacturer subject
+  ---
+  duration_ms: 1.157698
+  type: 'test'
+  ...
+# Subtest: vendor origin
+ok 3 - vendor origin
+  ---
+  duration_ms: 0.224954
+  type: 'test'
+  ...
+# Subtest: separate negation
+ok 4 - separate negation
+  ---
+  duration_ms: 0.109182
+  type: 'test'
+  ...
+# Subtest: trailing unrelated negation
+ok 5 - trailing unrelated negation
+  ---
+  duration_ms: 0.090414
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 6 - inbound warehouse abstains
+  ---
+  duration_ms: 0.208129
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+ok 7 - inbound origin abstains
+  ---
+  duration_ms: 0.123704
+  type: 'test'
+  ...
+# Subtest: negated abstains
+ok 8 - negated abstains
+  ---
+  duration_ms: 0.077085
+  type: 'test'
+  ...
+# Subtest: question abstains
+ok 9 - question abstains
+  ---
+  duration_ms: 0.310721
+  type: 'test'
+  ...
+# Subtest: reported customer claim abstains
+ok 10 - reported customer claim abstains
+  ---
+  duration_ms: 0.277562
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+ok 11 - single quoted claim abstains
+  ---
+  duration_ms: 0.090745
+  type: 'test'
+  ...
+# Subtest: general definition abstains
+ok 12 - general definition abstains
+  ---
+  duration_ms: 0.066949
+  type: 'test'
+  ...
+# Subtest: hypothetical abstains
+ok 13 - hypothetical abstains
+  ---
+  duration_ms: 0.062112
+  type: 'test'
+  ...
+# Subtest: future intention abstains
+ok 14 - future intention abstains
+  ---
+  duration_ms: 0.054792
+  type: 'test'
+  ...
+# Subtest: denial after verb abstains
+ok 15 - denial after verb abstains
+  ---
+  duration_ms: 0.062903
+  type: 'test'
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+ok 16 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.205085
+  type: 'test'
+  ...
+# Subtest: disclosed logistics remains unscored
+ok 17 - disclosed logistics remains unscored
+  ---
+  duration_ms: 0.574333
+  type: 'test'
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+ok 18 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 26.176314
+  type: 'test'
+  ...
+# Subtest: negated urgency: We never say hurry.
+ok 19 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 0.866356
+  type: 'test'
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+ok 20 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 0.603055
+  type: 'test'
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 21 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.588904
+  type: 'test'
+  ...
+# Subtest: affiliation alone never creates a shopper warning or merchant-risk score
+not ok 22 - affiliation alone never creates a shopper warning or merchant-risk score
+  ---
+  duration_ms: 1.905248
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:3316'
+  failureType: 'testCodeFailure'
+  error: |-
+    harempants.com
+    
+    'strong' !== 'info'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'info'
+  actual: 'strong'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:45:37)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: a genuine cross-brand reference is retained as unscored identity context
+not ok 23 - a genuine cross-brand reference is retained as unscored identity context
+  ---
+  duration_ms: 0.339403
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:3699'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    12 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 12
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:51:34)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: lookalike hostname substrings cannot create a cross-brand reference
+not ok 24 - lookalike hostname substrings cannot create a cross-brand reference
+  ---
+  duration_ms: 1.136477
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:4005'
+  failureType: 'testCodeFailure'
+  error: |-
+    not-harempants.com
+    + actual - expected
+    
+    + [
+    +   {
+    +     confidence: 0.9,
+    +     explanation: 'The store’s own page mentions another seller’s website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
+    +     family: 'identity',
+    +     id: 'CROSS_DOMAIN_MERCHANT_REFERENCE',
+    +     independentKey: 'merchant-network:cross-domain-reference',
+    +     observedValue: 'harempants.com',
+    +     severity: 'moderate',
+    +     title: 'This store points directly to another seller’s website',
+    +     weight: 12
+    +   }
+    + ]
+    - []
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+    0:
+      id: 'CROSS_DOMAIN_MERCHANT_REFERENCE'
+      family: 'identity'
+      severity: 'moderate'
+      confidence: 0.9
+      weight: 12
+      title: 'This store points directly to another seller’s website'
+      explanation: 'The store’s own page mentions another seller’s website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.'
+      observedValue: 'harempants.com'
+      independentKey: 'merchant-network:cross-domain-reference'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:54:119)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 21
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 245.231275

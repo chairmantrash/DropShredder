@@ -1,0 +1,17 @@
+test_all_abstaining_is_not_perfect_precision (test_evaluate.EvaluationContracts.test_all_abstaining_is_not_perfect_precision) ... ok
+test_duplicate_merchant_does_not_inflate_acceptance (test_evaluate.EvaluationContracts.test_duplicate_merchant_does_not_inflate_acceptance) ... ok
+test_false_positive_penalizes_both_precision_and_fpr (test_evaluate.EvaluationContracts.test_false_positive_penalizes_both_precision_and_fpr) ... ok
+test_invalid_observation_date_cannot_authenticate_truth (test_evaluate.EvaluationContracts.test_invalid_observation_date_cannot_authenticate_truth) ... ok
+test_missing_source_binding_is_not_independent_truth (test_evaluate.EvaluationContracts.test_missing_source_binding_is_not_independent_truth) ... ok
+test_negative_abstention_is_not_a_true_negative (test_evaluate.EvaluationContracts.test_negative_abstention_is_not_a_true_negative) ... ok
+test_sample_target_enforces_false_positives_as_well_as_recall (test_evaluate.EvaluationContracts.test_sample_target_enforces_false_positives_as_well_as_recall) ... ok
+test_shared_product_lineage_invalidates_holdout (test_evaluate.EvaluationContracts.test_shared_product_lineage_invalidates_holdout) ... ok
+test_small_perfect_sample_does_not_certify_target (test_evaluate.EvaluationContracts.test_small_perfect_sample_does_not_certify_target) ... ok
+test_unadjudicated_holdout_cannot_be_silently_dropped_to_pass (test_evaluate.EvaluationContracts.test_unadjudicated_holdout_cannot_be_silently_dropped_to_pass) ... ok
+test_unavailable_positive_stays_in_recall_denominator (test_evaluate.EvaluationContracts.test_unavailable_positive_stays_in_recall_denominator) ... ok
+test_unknown_truth_never_counts_as_benign (test_evaluate.EvaluationContracts.test_unknown_truth_never_counts_as_benign) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK

@@ -1,0 +1,4 @@
+Both first before/after detached replays failed closed at SITE-0010:
+Error: Frozen capture changed: SITE-0010
+Expected receipt hash did not match current local HTML. No output metrics were accepted.
+The replay now quarantines mismatched captures in both phases, records expected/actual hashes, and continues only on byte-verified captures. No receipt is rewritten.

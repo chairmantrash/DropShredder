@@ -1,0 +1,36 @@
+{
+  "protocol": "DS-061-59",
+  "target": {
+    "recall": 0.59,
+    "precision": 0.95,
+    "falsePositiveRate": 0.05,
+    "minimumPositiveMerchantGroups": 50,
+    "minimumNegativeMerchantGroups": 50
+  },
+  "status": "NOT_ACCEPTED",
+  "totalCases": 233,
+  "tasks": {
+    "deceptive-provenance": {
+      "status": "NOT_EVALUABLE",
+      "eligible": 0,
+      "rejectedHoldoutIds": [],
+      "positiveGroups": 0,
+      "negativeGroups": 0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "abstained": 0,
+      "unavailable": 0,
+      "recall": null,
+      "precision": null,
+      "falsePositiveRate": null,
+      "coverage": null,
+      "recall95": null,
+      "precision95": null,
+      "fpr95": null,
+      "errors": []
+    }
+  },
+  "manifestSha256": "e5b26c04743b75d2e9f39c6edd9812ac053d0fb0f72b9c57f9f36a6dc42ef3ef"
+}

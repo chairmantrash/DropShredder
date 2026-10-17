@@ -1,3 +1,7 @@
+# October17,2026 — DS-061 detection audit;59% NOT_ACCEPTED
+
+68 detection-related modules inventoried,233 retained outcomes reviewed.32 new regression controls cover25 reproduced failures;506 core and12 evaluator tests plus local gates pass. Dispatch, review/merchant attribution, urgency and affiliation rules replaced. Fresh native verification is blocked by Chrome socket() EPERM after an official byte-verified browser download. No independently adjudicated holdout labels exist;59% remains NOT_EVALUABLE. See workplane/research/DS-061-FULL-DETECTION-AUDIT-20261017.md and workplane/tasks/DS-061.md. No public beta/main/Store change or hosted Actions minutes.
+
 # Current state — October17,2026: DS-060 233-website beta audit verified
 
 DS-060 DONE for the scoped repair/testing round. All233 frozen website targets completed before/after; repaired package has158 successful native scans on158 registered domains across11 groups. Context-only warning stamps126→0; The Ordinary/Round Lab shipping false positives2→0; individual-review analysis0→15 visible reviews across3 stores.474 core/97 native/all7 browser groups, CI and CodeQL pass.157 numerical estimates remain UNKNOWN; independent fraud/dropshipping accuracy and customer satisfaction are not established.

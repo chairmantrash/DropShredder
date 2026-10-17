@@ -1,0 +1,540 @@
+TAP version 13
+# Subtest: supplier subject
+not ok 1 - supplier subject
+  ---
+  duration_ms: 3.150958
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:941'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'supplier-direct'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'supplier-direct'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:13:33)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: manufacturer subject
+not ok 2 - manufacturer subject
+  ---
+  duration_ms: 0.876501
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:941'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'factory-direct'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'factory-direct'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:13:33)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: vendor origin
+not ok 3 - vendor origin
+  ---
+  duration_ms: 0.258073
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:941'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'supplier-direct'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'supplier-direct'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:13:33)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: separate negation
+not ok 4 - separate negation
+  ---
+  duration_ms: 0.35035
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:941'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + undefined
+    - 'supplier-direct'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'supplier-direct'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:13:33)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: trailing unrelated negation
+ok 5 - trailing unrelated negation
+  ---
+  duration_ms: 0.22937
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 6 - inbound warehouse abstains
+  ---
+  duration_ms: 0.199897
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+not ok 7 - inbound origin abstains
+  ---
+  duration_ms: 0.634271
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'factory-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'We ship directly from the manufacturer',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'factory-direct'
+    quote: 'We ship directly from the manufacturer'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: negated abstains
+ok 8 - negated abstains
+  ---
+  duration_ms: 0.080359
+  type: 'test'
+  ...
+# Subtest: question abstains
+not ok 9 - question abstains
+  ---
+  duration_ms: 0.447284
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'factory-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'this item ship directly from the manufacturer',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'factory-direct'
+    quote: 'this item ship directly from the manufacturer'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: reported customer claim abstains
+ok 10 - reported customer claim abstains
+  ---
+  duration_ms: 0.246315
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+not ok 11 - single quoted claim abstains
+  ---
+  duration_ms: 0.399904
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'ships directly from the supplier',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'ships directly from the supplier'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: general definition abstains
+not ok 12 - general definition abstains
+  ---
+  duration_ms: 0.161931
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'ship directly from suppliers',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'ship directly from suppliers'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: hypothetical abstains
+not ok 13 - hypothetical abstains
+  ---
+  duration_ms: 0.273706
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'we shipped directly from suppliers',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'we shipped directly from suppliers'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: future intention abstains
+not ok 14 - future intention abstains
+  ---
+  duration_ms: 0.364371
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'factory-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'We plan to ship directly from the manufacturer',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'factory-direct'
+    quote: 'We plan to ship directly from the manufacturer'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: denial after verb abstains
+not ok 15 - denial after verb abstains
+  ---
+  duration_ms: 0.305784
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1854'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'supplier-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'ship directly from our suppliers',
+    +   sourceUrl: 'https://merchant.example/products/lamp'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'supplier-direct'
+    quote: 'ship directly from our suppliers'
+    sourceUrl: 'https://merchant.example/products/lamp'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:25:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+not ok 16 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.292154
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:1941'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   model: 'factory-direct',
+    +   observedAt: '2026-10-17T08:45:00Z',
+    +   quote: 'Ships directly from the factory',
+    +   sourceUrl: 'http://127.0.0.1/private'
+    + }
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+    model: 'factory-direct'
+    quote: 'Ships directly from the factory'
+    sourceUrl: 'http://127.0.0.1/private'
+    observedAt: '2026-10-17T08:45:00Z'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:27:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: disclosed logistics remains unscored
+not ok 17 - disclosed logistics remains unscored
+  ---
+  duration_ms: 20.109002
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:2249'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      test('disclosed logistics remains unscored',()=>{
+      const d=fulfillmentDisclosure([{text:'Our suppliers ship your orders directly to your door.',url}],at);
+      assert.ok(d);const e=fulfillmentDisclosureEvidence(d);assert.equal(e[0]?.weight,0);assert.equal(calculateVerdict(e).dropshipLikelihood,null);assert.equal(calculateVerdict(e).severeWarningAllowed,false);
+      })
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:32:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+not ok 18 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 28.308735
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:2873'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:36:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: negated urgency: We never say hurry.
+not ok 19 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 1.173923
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:2873'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:36:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+not ok 20 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 1.357616
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:2873'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:36:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 21 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.409808
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 5
+# fail 16
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 278.860683
