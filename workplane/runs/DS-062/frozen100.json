@@ -1,0 +1,1308 @@
+{
+  "frozenAt": "2026-10-17T10:42:18.785948+00:00",
+  "sourceManifestSha256": "38df85d3b7e6e19c273584eb9728334a1bab561570630eef6df8dd67cd9b6960",
+  "selection": "First100 unique hosts, round robin across original categories; original category labels unadjudicated. No replacement after outcomes.",
+  "scope": "Anonymous public comparison acquisition; not fraud truth, not a native extension scan",
+  "targets": [
+    {
+      "id": "SITE-0001",
+      "url": "https://warmlydecor.com/products/modern-nordic-art-spider-chandelier",
+      "host": "warmlydecor.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://warmlydecor.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  Warmly - Home Decor &amp; More\n  ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0015",
+      "url": "https://www.harempants.com/products/womens-thai-smocked-waist-cotton-pants-in-solid-black",
+      "host": "harempants.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://harempants.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Harem Pants Your #1 Source for Bohemian Harem Pants made in Thailand",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0047",
+      "url": "https://www.adidas.com/us/BAD-BUNNY-GAZELLE-INDOOR-Sneakers/KI2592.html",
+      "host": "adidas.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://adidas.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Sneakers and Activewear | adidas US",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0060",
+      "url": "https://www.anker.com/products/a2688-anker-prime-charger-100w-3-ports-gan?variant=43931966079126",
+      "host": "anker.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://anker.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Anker | Live Charged. - Anker US",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0089",
+      "url": "https://www.target.com/p/apple-homeview/-/A-1014583024",
+      "host": "target.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://target.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Target : Expect More. Pay Less.",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0112",
+      "url": "https://theordinary.com/en-us/glucoside-foaming-face-cleanser-100616.html",
+      "host": "theordinary.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://theordinary.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n    The Ordinary | Clinical Formulations with Integrity\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0131",
+      "url": "https://www.chewy.com/chewy-egift-card/dp/226306",
+      "host": "chewy.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://chewy.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Pet Food, Products and Supplies at Low Prices - Free Shipping",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0140",
+      "url": "https://www.lodgecastiron.com/products/enamel-dutch-oven-starter-set",
+      "host": "lodgecastiron.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://lodgecastiron.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Lodge Cast Iron | USA Made Cookware, Bakeware, Pans &amp; More",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0156",
+      "url": "https://www.redbubble.com/p/398-affiliate-program",
+      "host": "redbubble.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://redbubble.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Awesome products designed by independent artists | Redbubble",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0161",
+      "url": "https://www.decathlon.com/products/women-s-lightweight-down-trekking-jacket-3-c-xplore-purple?variant=43182125088830",
+      "host": "decathlon.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://decathlon.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  Decathlon America | Outdoor Sports Clothing &amp; Gear\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0176",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0002",
+      "url": "https://www.wayfair.com/brand/bnd/delta-children-b815.html",
+      "host": "wayfair.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wayfair.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Wayfair.com - Online Home Store for Furniture, Decor, Outdoors &amp; More",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0016",
+      "url": "https://www.suredesigntshirts.com/products/mens-buddha-blossom-t-shirt-in-white",
+      "host": "suredesigntshirts.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://suredesigntshirts.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Sure Design T-Shirts &amp; Clothing - Official Online Store\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0048",
+      "url": "https://www.newbalance.com/counterfeit_landing_page.html",
+      "host": "newbalance.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://newbalance.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Shoes, Sneakers, &amp; Athletic Wear - New Balance",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0061",
+      "url": "https://www.ugreen.com/products/us-85185",
+      "host": "ugreen.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://ugreen.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  UGREEN Official Site\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0090",
+      "url": "https://www.newegg.com/promotions/nepro/23-1322/index.html",
+      "host": "newegg.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://newegg.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "PC Parts, Computers, Workstations &amp; AI PCs | Newegg",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0113",
+      "url": "https://www.laroche-posay.us/notice-at-collection.html",
+      "host": "laroche-posay.us",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://laroche-posay.us/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "La Roche-Posay Skincare, Sunscreen, Body Lotion Official Site",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0132",
+      "url": "https://wildone.com/products/cushioned-harness-waterproof-leash-dog-walk-kit",
+      "host": "wildone.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wildone.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      Dog &amp; Cat Harnesses, Collars, Leashes, Toys &amp; Essentials | Wild One\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0141",
+      "url": "https://stargazercastiron.com/products/chain-mail-scrubber",
+      "host": "stargazercastiron.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://stargazercastiron.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Stargazer | Cast Iron Cookware Made in USA &ndash; Stargazer Cast Iron",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0157",
+      "url": "https://society6.com/products/colorful-coastal-chinoiserie_iphone-case",
+      "host": "society6.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://society6.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Artist-Designed Wall Art &amp; Home Decor | Society6\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0162",
+      "url": "https://www.gregory.com/care-and-cleaning.html",
+      "host": "gregory.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://gregory.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Gregory Mountain Products  - Premium Backpacks For Hiking, Backpacking &amp; Travel",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0177",
+      "url": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "host": "ninewest.com.de",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Comiele Plateau-Sandalen | Nine West Deutschland",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0003",
+      "url": "https://www.overstock.com/Home-Hosting-Sale,/link,/results.html",
+      "host": "overstock.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://overstock.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Shop Overstock for Furniture, Rugs &amp; Stylish Outdoor Living.",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0017",
+      "url": "https://www.patagonia.com/returns.html",
+      "host": "patagonia.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://patagonia.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\nPatagonia Outdoor Clothing & Gear\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0049",
+      "url": "https://www.asics.com/us/en-us/gel-nimbus-28/p/ANA_1013A228-001.html",
+      "host": "asics.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://asics.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "ASICS | Official U.S. Site | Running Shoes and Activewear | ASICS",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0062",
+      "url": "https://www.baseus.com/products/security-x1-pro-outdoor-dual-camera",
+      "host": "baseus.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://baseus.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n        Baseus Official | Practical. Reliable. Base on User.\n      ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0091",
+      "url": "https://www.vinted.com/items/10405594072-burgundy-long-sleeve-shirt",
+      "host": "vinted.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://vinted.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Vinted | Sell and buy clothes, shoes and accessories",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0114",
+      "url": "https://naturium.com/products/the-glow-all-out-body-bundle",
+      "host": "naturium.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://naturium.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Clinically-Effective, Luxurious Skincare &amp; Bodycare | Naturium",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0133",
+      "url": "https://ruffwear.com/products/lumenglow-high-vis-vest",
+      "host": "ruffwear.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://ruffwear.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n        \n          Performance Dog Gear\n        \n        |\n        Ruffwear\n      ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0142",
+      "url": "https://fieldcompany.com/products/no-6-cast-iron-skillet",
+      "host": "fieldcompany.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fieldcompany.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Field Company - Smoother, Lighter Cast Iron Skillets",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0158",
+      "url": "https://www.gelato.com/products/mugs",
+      "host": "gelato.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://gelato.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Global Print On Demand Platform | Gelato",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0163",
+      "url": "https://blackdiamondequipment.com/products/mens-solution-3-0-hoody",
+      "host": "blackdiamondequipment.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://blackdiamondequipment.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      Black Diamond\u00ae Equipment | Climb. Ski. Run. Hike.\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0178",
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "host": "happysocksit.it",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Berretto con pompon di montagna | Happy Socks Outlet Italia",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0004",
+      "url": "https://www.westelm.com/about-us/privacy-policy.html",
+      "host": "westelm.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://westelm.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "West Elm: Modern Furniture, Home Decor, Lighting &amp; More ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0018",
+      "url": "https://www.rei.com/learn/expert-advice/leaf-peeping-essentials.html",
+      "host": "rei.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://rei.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "REI: A Life Outdoors is a Life Well Lived | REI Co-op",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0050",
+      "url": "https://www.brooksrunning.com/en_us/blog/advice-tips/trail-running-tips.html",
+      "host": "brooksrunning.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://brooksrunning.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n    Brooks Running Shoes, Gear, and Apparel for Men &amp; Women | Brooks Running\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0063",
+      "url": "https://www.belkin.com/p/displayport-1.4-cable-8k/AVZ001-2M.html",
+      "host": "belkin.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://belkin.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "iPhone Chargers, Power Banks &amp; Docking Stations | Belkin",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0092",
+      "url": "https://www.alibaba.com/factory/index.html",
+      "host": "alibaba.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://alibaba.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Alibaba.com: Manufacturers, Suppliers, Exporters & Importers from the world's largest online B2B marketplace",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0115",
+      "url": "https://www.elfcosmetics.com/products/glow-reviver-melting-lip-balm",
+      "host": "elfcosmetics.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://elfcosmetics.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "e.l.f. Cosmetics: Affordable Makeup &amp; Skincare - Cruelty Free | e.l.f. Cosmetics",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0134",
+      "url": "https://www.maxbone.com/products/maxbone-x-bridgerton-go-with-ease-bundle",
+      "host": "maxbone.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://maxbone.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  \n    maxbone | Modern Dog Carriers, Beds &amp; Apparel\n  \n  \n  \n  \n\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0143",
+      "url": "https://www.finexusa.com/products/cast-iron-grill-pan?variant=42212208836744",
+      "host": "finexusa.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://finexusa.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      FINEX Cast Iron Cookware Co.\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0159",
+      "url": "https://printify.com/app/products/womens-clothing/sweatshirts",
+      "host": "printify.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://printify.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Printify: Build your eCommerce business in minutes.",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0164",
+      "url": "https://www.nitecore.com/product/hc65mct",
+      "host": "nitecore.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://nitecore.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "NITECORE - EDC Flashlight&amp;Headlamp, Power Solution, Mosquito Repeller, Fan",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0179",
+      "url": "https://www.vionic.es/p/sabina-wedge/",
+      "host": "vionic.es",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/p/sabina-wedge/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Sabina Wedge | Vionic Espa\u00f1a",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0005",
+      "url": "https://www.potterybarn.com/customer-service/shipping-info.html",
+      "host": "potterybarn.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://potterybarn.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Home Furniture, Home Decor &amp; Outdoor Furniture | Pottery Barn ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0019",
+      "url": "https://www.cotopaxi.com/products/cotopaxi-gift-card",
+      "host": "cotopaxi.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://cotopaxi.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n\t\tCotopaxi - Gear For Good | Free shipping on orders $99+\n\t\t   ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0051",
+      "url": "https://www.on.com/en-us/products/digital-gift-card-907644gc",
+      "host": "on.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://on.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "On | Swiss Performance Running Shoes &amp; Clothing",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0064",
+      "url": "https://satechi.com/products/dotdisk-80gbps-ssd-enclosure/",
+      "host": "satechi.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://satechi.net/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      Satechi\u00ae | Apple and PC Electronic Accessories\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0093",
+      "url": "https://www.banggood.com/vip-birthdaygift.html",
+      "host": "banggood.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://banggood.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Banggood : Global Leading Online Shop for Gadgets and Fashion",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0116",
+      "url": "https://colourpop.com/products/leaf-fall-bundle",
+      "host": "colourpop.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://colourpop.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "ColourPop\u00ae Cosmetics",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0135",
+      "url": "https://fablepets.com/products/magic-link",
+      "host": "fablepets.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fablepets.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      Fable |\n      Fable Pets | Innovative Pet Gear That Solves Real Problems\n    ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0144",
+      "url": "https://madeincookware.com/products/saucier/3-quart-brushed-copper",
+      "host": "madeincookware.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://madeincookware.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Professional-Quality Cookware, Non Stick, Carbon Steel, and Knives - Made In",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0160",
+      "url": "https://teefury.com/products/tee-mens-basic-i-need-to-relaxalotl",
+      "host": "teefury.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://teefury.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "The Daily Exclusive | TeeFury",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0165",
+      "url": "https://www.fenixlighting.com/products/fenix-tk21r-tactical-flashlight",
+      "host": "fenixlighting.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fenixlighting.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Fenix Flashlights | World Leader in Fenix\u00ae Sales | Fenix Lighting USA",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0180",
+      "url": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "host": "salomonoutletbarcelona.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Mochilas Salomon Ofertas Y Rebajas - Salomon Tienda Barcelona",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0006",
+      "url": "https://floydhome.com/products/the-floyd-underbed-storage",
+      "host": "floydhome.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://floydhome.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Floyd Home",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0020",
+      "url": "https://www.tentree.com/products/dunes-overshirt-mauve-stone",
+      "host": "tentree.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://tentree.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Tentree | Sustainable Clothing\u2014Every Item Plants 10 Trees",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0052",
+      "url": "https://xeroshoes.com/products/prio-neo-men?variant=47331444752562",
+      "host": "xeroshoes.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://xeroshoes.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Barefoot Shoes | Minimalist Footwear | Xero Shoes",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0065",
+      "url": "https://nomadgoods.com/products/stratos-band-black-hardware-ultra-orange",
+      "host": "nomadgoods.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://nomadgoods.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "iPhone 18 Cases and Accessories | NOMAD",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0094",
+      "url": "https://www.geekbuying.com/item/QIDI-TECH-Q2-3D-Printer-530249.html",
+      "host": "geekbuying.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://geekbuying.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Geekbuying: Online Shopping for Smart and Comfortable Life",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0117",
+      "url": "https://www.rarebeauty.com/products/fragrance-layering-balm-fruity-pear",
+      "host": "rarebeauty.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://rarebeauty.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n    Rare Beauty by Selena Gomez | Vegan &amp; Cruelty Free Makeup\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0136",
+      "url": "https://www.westpaw.com/products/beef-dog-food-topper",
+      "host": "westpaw.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://westpaw.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  Dogs Toys and Treats | Dogs Beds | West Paw, Inc.\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0145",
+      "url": "https://carawayhome.com/products/coffee-maker",
+      "host": "carawayhome.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://carawayhome.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Caraway | Non-Stick Ceramic Cookware, Bakeware and Home Goods | Caraway",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0166",
+      "url": "https://www.sofirnlight.com/products/sofirn-sc33-edc-flashlight-5200lm",
+      "host": "sofirnlight.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://sofirnlight.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Sofirn | LED Flashlights & Headlamps - EDC, Tactical, Diving",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0181",
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "host": "uggat.at",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Madhappy x UGG Classic Ultra Mini Boot Chestnut Schuhe 70% Off",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0007",
+      "url": "https://www.thuma.co/products/nest-credenza",
+      "host": "thuma.co",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://thuma.co/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Thuma | High Quality Furniture for Modern Living",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0021",
+      "url": "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
+      "host": "allbirds.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://allbirds.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Allbirds: Comfortable, Sustainable Shoes &amp; Apparel",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0053",
+      "url": "https://www.crocs.com/p/abstract-icons-shoe-tattoos/215807.html",
+      "host": "crocs.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://crocs.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Crocs",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0066",
+      "url": "https://www.peakdesign.com/products/gift-card",
+      "host": "peakdesign.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://peakdesign.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Bags + Camera Gear | Peak Design",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0095",
+      "url": "https://untilgone.com/products/women-s-cozy-polar-fleece-sweater-jogger-lounge-set.html",
+      "host": "untilgone.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://untilgone.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "UntilGone.com",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0118",
+      "url": "https://fentybeauty.com/products/the-water-boi-reparative-leave-in-conditioner-spray",
+      "host": "fentybeauty.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fentybeauty.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Fenty Beauty by Rihanna | Beauty for All",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0137",
+      "url": "https://www.earthrated.com/products/bags-on-a-large-single-roll",
+      "host": "earthrated.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://earthrated.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Earth Rated | Making life with dogs simpler and better.\n    ",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0146",
+      "url": "https://fromourplace.com/products/wonder-oven-pro",
+      "host": "fromourplace.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fromourplace.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Our Place | The Best Non-Toxic Cookware &amp; Kitchen Essentials",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0167",
+      "url": "https://wurkkos.com/products/ts11-v2-edc-pocket-thrower-light",
+      "host": "wurkkos.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wurkkos.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Wurkkos\u00ae Official Store: EDC, Tactical, Headlamps & Diving Flashlights",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0182",
+      "url": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "host": "pokemon-center.es",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Abomasnow Sitting Cuties Peluche - 8 \u00be pulgadas | Pok\u00e9mon Center Oficial Espa\u00f1a",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0008",
+      "url": "https://sabai.design/products/the-side-table",
+      "host": "sabai.design",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://sabai.design/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n  Sabai Design: Affordable, Sustainable &amp; Convenient Furniture\n\n  \n\n  \n\n  \n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0022",
+      "url": "https://www.everlane.com/products/f-btm-fic-blln-pnt-blk",
+      "host": "everlane.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://everlane.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      Everlane\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0054",
+      "url": "https://www.keenfootwear.com/products/giftcard",
+      "host": "keenfootwear.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://keenfootwear.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Official KEEN\u00ae Site \u2013 Consciously Created Footwear for a Better Planet | KEEN Footwear",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0067",
+      "url": "https://www.shopmoment.com/products/stick-on-smartalign-mount-for-iphone-18-pro-t-series",
+      "host": "shopmoment.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://shopmoment.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Moment | Mobile Filmmaking &amp; Photography Gear",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0096",
+      "url": "https://meh.com/amazon.com/Eitech-Construction-C92-Race-Quad/dp/B0039ACV7S/ref=ast_sto_dp_puis",
+      "host": "meh.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://meh.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Meh: A Daily Deal &amp; Community for the Cynical Consumer",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0119",
+      "url": "https://www.cocokind.com/products/texture-smoothing-cream",
+      "host": "cocokind.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://cocokind.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      cocokind.com - powerful results for sensitive skin\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0138",
+      "url": "https://www.honestpaws.com/products/calm-tincture",
+      "host": "honestpaws.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://honestpaws.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "#1 Rated CBD For Dogs | Honest Paws\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0147",
+      "url": "https://hexclad.com/products/gordon-ramsays-ramsay-in-10-cookbook",
+      "host": "hexclad.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://hexclad.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "HexClad Cookware | The Hybrid Revolution",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0168",
+      "url": "https://convoylight.com/products/convoy-t3-copper-head-titanium-stonewash-aa-14500-flashlight",
+      "host": "convoylight.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://convoylight.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "convoy flashlight",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0183",
+      "url": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "host": "akufrance.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Chaussures D'approche AKU Magasin France - Promotion AKU",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0009",
+      "url": "https://insideweather.com/products/modular-bondi-storage-table-in-latte",
+      "host": "insideweather.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://insideweather.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Inside Weather: Shop the Best-Selling Cloud-like Bondi Sofa.",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0023",
+      "url": "https://pact.com/products/club-timer-iii",
+      "host": "pact.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://pact.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "PACT - Start Training Here",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0055",
+      "url": "https://www.merrell.com/US/en/speedarc-trek/62365W.html",
+      "host": "merrell.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://merrell.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Merrell Official: Top Rated Hiking Footwear &amp; Outdoor Gear",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0068",
+      "url": "https://www.logitech.com/en-gb/shop/p/mx-keypad",
+      "host": "logitech.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://logitech.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Logitech United Kingdom",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0097",
+      "url": "https://www.qvc.com/c/shoes/womens/flats/-/kbry47/c.html",
+      "host": "qvc.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://qvc.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "QVC | Shop QVC\u00ae For Today\u2019s Special Value &amp; Top Brands At The Official Site",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0120",
+      "url": "https://byoma.com/products/the-barrier-boosting-lab-kit",
+      "host": "byoma.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://byoma.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      BYOMA\u00ae Skin Barrier Boosting Skin Care Products | BYOMA\u00ae\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0139",
+      "url": "https://www.thefoggydog.com/collections/dog-toys/products/o-christmas-tree-interactive-snuffle-dog-toy",
+      "host": "thefoggydog.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://thefoggydog.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "\n      The Foggy Dog - Your Best Friend Deserves the Best\n",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0148",
+      "url": "https://www.all-clad.com/bakeware/collections/pro-release-bakeware.html",
+      "host": "all-clad.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://all-clad.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Premium Cookware for Performance &amp; Durability | All-Clad",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0169",
+      "url": "https://www.leatherman.com/collections/bestsellers/products/wave",
+      "host": "leatherman.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://leatherman.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Leatherman Home | Multitools, Knives and Pocket Tools",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0184",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "host": "orderumbrella.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "scope": "Historical third-party lead only; current fraud not established",
+      "discoveryTitle": "Custom Golf Umbrella Manufacturer-www.orderumbrella.com",
+      "discoveryKind": "previous real product target"
+    },
+    {
+      "id": "SITE-0010",
+      "url": "https://www.litfad.com/kitchen-sinks-faucet-components_132c.html",
+      "host": "litfad.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://litfad.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Litfad\u00ae - Official Site | Online Furniture Store",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0024",
+      "url": "https://organicbasics.com/products/womens-core-thong-steel-blue",
+      "host": "organicbasics.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://organicbasics.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Cotton Underwear &amp; Everyday Essentials &ndash; Organic Basics EU",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0056",
+      "url": "https://www.redwingshoes.com/policy/do-not-sell-my-personal-information.html",
+      "host": "redwingshoes.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://redwingshoes.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "Red Wing Shoes | Durable Work Boots & Lifestyle Heritage Footwear for Men and Women",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0069",
+      "url": "https://www.corsair.com/configurator/p/ch-91cea1x-de/makr75-custom-lab-edition",
+      "host": "corsair.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://corsair.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "CORSAIR | PC Components | Gaming Gear",
+      "discoveryKind": "observed same-site product link"
+    },
+    {
+      "id": "SITE-0098",
+      "url": "https://www.hsn.com/products/perlier-17l-bath-cream/23919097",
+      "host": "hsn.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://hsn.com/",
+      "scope": "Public merchant surface, category control; no truth or safety certification",
+      "discoveryTitle": "HSN | Shop HSN \u00ae For Daily Deals &amp; Top Brands At The Official Site | HSN",
+      "discoveryKind": "observed same-site product link"
+    }
+  ]
+}

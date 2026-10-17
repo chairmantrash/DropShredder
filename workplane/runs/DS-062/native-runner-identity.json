@@ -1,0 +1,5 @@
+{
+  "baseSha256": "985fe68abe780ed7664510c664deaae787b73cefc8250bccf7b29887dd6d5650",
+  "runnerSha256": "e924a7eaa570d1a7ad811308a80f09d7a615e006fb3e3dba21de787b646a4896",
+  "scope": "Test fixture transport and targeted controls; original native permission assertions unchanged"
+}

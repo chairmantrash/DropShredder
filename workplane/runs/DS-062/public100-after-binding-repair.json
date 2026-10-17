@@ -1,0 +1,2539 @@
+{
+  "summary": {
+    "frozenCases": 100,
+    "eligibleHtml": 63,
+    "boundBefore": 27,
+    "boundAfter": 28,
+    "nativeTests": false,
+    "independentTruth": false
+  },
+  "outcomes": [
+    {
+      "id": "SITE-0001",
+      "url": "https://warmlydecor.com/products/modern-nordic-art-spider-chandelier",
+      "host": "warmlydecor.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://warmlydecor.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  Warmly - Home Decor &amp; More\n  ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.579Z",
+      "httpStatus": 200,
+      "bytes": 344637,
+      "sha256": "b86dad496a15b0a491501018ad24d3a396e0ef5c5efe59e8a097e05aa8bbd8e5",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:25.623Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0002",
+      "url": "https://www.wayfair.com/brand/bnd/delta-children-b815.html",
+      "host": "wayfair.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wayfair.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Wayfair.com - Online Home Store for Furniture, Decor, Outdoors &amp; More",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:26.725Z",
+      "httpStatus": 200,
+      "bytes": 775493,
+      "sha256": "208f2f609ccb2b25b2cb730c3dffc036b1f46571bef46127a964276595084c84",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:29.916Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0003",
+      "url": "https://www.overstock.com/Home-Hosting-Sale,/link,/results.html",
+      "host": "overstock.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://overstock.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Shop Overstock for Furniture, Rugs &amp; Stylish Outdoor Living.",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:31.884Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0003.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0003.html -w %{http_code} https://www.overstock.co",
+      "finishedAt": "2026-10-17T10:42:35.276Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0004",
+      "url": "https://www.westelm.com/about-us/privacy-policy.html",
+      "host": "westelm.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://westelm.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "West Elm: Modern Furniture, Home Decor, Lighting &amp; More ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:38.873Z",
+      "httpStatus": 301,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 301",
+      "finishedAt": "2026-10-17T10:42:42.264Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0005",
+      "url": "https://www.potterybarn.com/customer-service/shipping-info.html",
+      "host": "potterybarn.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://potterybarn.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Home Furniture, Home Decor &amp; Outdoor Furniture | Pottery Barn ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:44.283Z",
+      "status": "URL_REFUSED",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0006",
+      "url": "https://floydhome.com/products/the-floyd-underbed-storage",
+      "host": "floydhome.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://floydhome.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Floyd Home",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:50.672Z",
+      "httpStatus": 200,
+      "bytes": 428658,
+      "sha256": "c308a3cca2207e2ecaeeaac3fb9f7dd879d3da0fac413e95e10ae72c9b584ade",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:54.046Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0007",
+      "url": "https://www.thuma.co/products/nest-credenza",
+      "host": "thuma.co",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://thuma.co/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Thuma | High Quality Furniture for Modern Living",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:56.329Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0007.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0007.html -w %{http_code} https://www.thuma.co/pro",
+      "finishedAt": "2026-10-17T10:42:59.495Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0008",
+      "url": "https://sabai.design/products/the-side-table",
+      "host": "sabai.design",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://sabai.design/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  Sabai Design: Affordable, Sustainable &amp; Convenient Furniture\n\n  \n\n  \n\n  \n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:04.428Z",
+      "httpStatus": 200,
+      "bytes": 805019,
+      "sha256": "53dd1bae58d97a1781b6814895c1bdb810c89e722439f40f7849461e3d5477c5",
+      "product": {
+        "url": "https://sabai.design/products/the-side-table",
+        "domain": "sabai.design",
+        "title": "The Semi Side Table",
+        "brand": "Sabai Design",
+        "sku": "ST01 - O-HO",
+        "price": 495,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:10.486Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:10.486Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0009",
+      "url": "https://insideweather.com/products/modular-bondi-storage-table-in-latte",
+      "host": "insideweather.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://insideweather.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Inside Weather: Shop the Best-Selling Cloud-like Bondi Sofa.",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:10.790Z",
+      "httpStatus": 200,
+      "bytes": 986302,
+      "sha256": "7388f7417695fcd264242e8f164f7b549bfea773b0f9ad48bc6c7035042ee147",
+      "product": {
+        "url": "https://insideweather.com/products/modular-bondi-storage-table-in-latte",
+        "domain": "insideweather.com",
+        "title": "Modular Bondi Storage Table in Latte",
+        "brand": "Inside Weather",
+        "sku": "CAT-IW-021",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:15.003Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:15.003Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0010",
+      "url": "https://www.litfad.com/kitchen-sinks-faucet-components_132c.html",
+      "host": "litfad.com",
+      "category": "home",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://litfad.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Litfad® - Official Site | Online Furniture Store",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:16.575Z",
+      "httpStatus": 200,
+      "bytes": 303892,
+      "sha256": "b6eeb0a9504e82409c3bc2e0c8b6a32347dda52da4c370d0b28da25ff0ea390e",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:19.110Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0015",
+      "url": "https://www.harempants.com/products/womens-thai-smocked-waist-cotton-pants-in-solid-black",
+      "host": "harempants.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://harempants.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Harem Pants Your #1 Source for Bohemian Harem Pants made in Thailand",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.605Z",
+      "httpStatus": 200,
+      "bytes": 789876,
+      "sha256": "bf39cf809f440305b8598ef31adc3a7ed331ee65ec6fdaed00a0f7b2f06e6e87",
+      "product": {
+        "url": "https://www.harempants.com/products/womens-thai-smocked-waist-cotton-pants-in-solid-black",
+        "domain": "www.harempants.com",
+        "title": "Women's Thai Smocked Waist Cotton Pants in Black",
+        "brand": "HaremPants",
+        "sku": "SLP04-Black",
+        "price": 29.95,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 3,
+        "capturedAt": "2026-10-17T10:42:24.893Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {
+          "color": "black",
+          "material": "cotton"
+        },
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:24.893Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0016",
+      "url": "https://www.suredesigntshirts.com/products/mens-buddha-blossom-t-shirt-in-white",
+      "host": "suredesigntshirts.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://suredesigntshirts.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Sure Design T-Shirts &amp; Clothing - Official Online Store\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:26.752Z",
+      "httpStatus": 200,
+      "bytes": 212330,
+      "sha256": "0921382a5d732828c57633073e68b0e8fc29a64f6a0885fd0d6a1346ce606538",
+      "product": {
+        "url": "https://www.suredesigntshirts.com/products/mens-buddha-blossom-t-shirt-in-white",
+        "domain": "www.suredesigntshirts.com",
+        "title": "Mens Buddha Blossom T-Shirt in White",
+        "brand": "Sure Design Classic",
+        "sku": "MT039-White--M",
+        "price": 25.95,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:30.309Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:30.309Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0017",
+      "url": "https://www.patagonia.com/returns.html",
+      "host": "patagonia.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://patagonia.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\nPatagonia Outdoor Clothing & Gear\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:32.796Z",
+      "httpStatus": 200,
+      "bytes": 246147,
+      "sha256": "32f14f83161d1e3711d4200470754168af3ed56e60cabb56e66e4c2d09a56496",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:35.938Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0018",
+      "url": "https://www.rei.com/learn/expert-advice/leaf-peeping-essentials.html",
+      "host": "rei.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://rei.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "REI: A Life Outdoors is a Life Well Lived | REI Co-op",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:38.961Z",
+      "httpStatus": 200,
+      "bytes": 406660,
+      "sha256": "a44df8d11bc0cfda1f80f47f33cfcd2b8bab85f0731120a4446c0be581f0762d",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:42.530Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0019",
+      "url": "https://www.cotopaxi.com/products/cotopaxi-gift-card",
+      "host": "cotopaxi.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://cotopaxi.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n\t\tCotopaxi - Gear For Good | Free shipping on orders $99+\n\t\t   ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:44.285Z",
+      "httpStatus": 200,
+      "bytes": 399743,
+      "sha256": "6f1a13d8cd00ba0c7c90eb8285d4ec6c1359f19e53f61c2bd9a55042a430f329",
+      "product": {
+        "url": "https://www.cotopaxi.com/products/cotopaxi-gift-card",
+        "domain": "www.cotopaxi.com",
+        "title": "Digital Gift Card",
+        "brand": "Cotopaxi-Excl",
+        "sku": "GC25-E",
+        "price": 25,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:49.291Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:49.291Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0020",
+      "url": "https://www.tentree.com/products/dunes-overshirt-mauve-stone",
+      "host": "tentree.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://tentree.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Tentree | Sustainable Clothing—Every Item Plants 10 Trees",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:51.446Z",
+      "httpStatus": 200,
+      "bytes": 616394,
+      "sha256": "3bcb7b0187bdd471cfbfb2edb1e8f1add4020ab655a59c26291735e6afc6a693",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:54.575Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0021",
+      "url": "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
+      "host": "allbirds.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://allbirds.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Allbirds: Comfortable, Sustainable Shoes &amp; Apparel",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:56.599Z",
+      "httpStatus": 200,
+      "bytes": 780166,
+      "sha256": "6d6bbd7732ca7ef4e0aaf73e2076850585f7d77145fe03fe3a9fa5ef4500f6b4",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:00.235Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0022",
+      "url": "https://www.everlane.com/products/f-btm-fic-blln-pnt-blk",
+      "host": "everlane.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://everlane.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      Everlane\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:04.550Z",
+      "httpStatus": 200,
+      "bytes": 918024,
+      "sha256": "b6103877a9fdfec0bad8d1a5c3e39ed8af8d0bd9369ecd3714425849eb3901a2",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:07.946Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0023",
+      "url": "https://pact.com/products/club-timer-iii",
+      "host": "pact.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://pact.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "PACT - Start Training Here",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:11.270Z",
+      "httpStatus": 200,
+      "bytes": 665845,
+      "sha256": "d66d8c09516c40b6e7b5330fd226e613846e00817dd0488d962a25999595a3fc",
+      "product": {
+        "url": "https://pact.com/products/club-timer-iii",
+        "domain": "pact.com",
+        "title": "Club Timer III - Shot Timer",
+        "brand": "PACT Inc.",
+        "sku": "CT3",
+        "gtin": "891028000055",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:14.284Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:14.284Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0024",
+      "url": "https://organicbasics.com/products/womens-core-thong-steel-blue",
+      "host": "organicbasics.com",
+      "category": "apparel",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://organicbasics.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Cotton Underwear &amp; Everyday Essentials &ndash; Organic Basics EU",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:17.146Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0024.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0024.html -w %{http_code} https://organicbasics.co",
+      "finishedAt": "2026-10-17T10:43:21.344Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0047",
+      "url": "https://www.adidas.com/us/BAD-BUNNY-GAZELLE-INDOOR-Sneakers/KI2592.html",
+      "host": "adidas.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://adidas.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Sneakers and Activewear | adidas US",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.657Z",
+      "httpStatus": 301,
+      "bytes": 40,
+      "sha256": "ba2a16a98e8db7e7de4ccd3d2a2f2b95f620fc660c6552153d6e2b9a0ef45b41",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 301",
+      "finishedAt": "2026-10-17T10:42:26.724Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0048",
+      "url": "https://www.newbalance.com/counterfeit_landing_page.html",
+      "host": "newbalance.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://newbalance.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Shoes, Sneakers, &amp; Athletic Wear - New Balance",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:27.288Z",
+      "httpStatus": 403,
+      "bytes": 413,
+      "sha256": "2dce22478c4a38ad24660de5be2be6f17f090dc3cd7d23641d8e9973fb10b12a",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:30.095Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0049",
+      "url": "https://www.asics.com/us/en-us/gel-nimbus-28/p/ANA_1013A228-001.html",
+      "host": "asics.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://asics.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "ASICS | Official U.S. Site | Running Shoes and Activewear | ASICS",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:33.331Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0049.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0049.html -w %{http_code} https://www.asics.com/us",
+      "finishedAt": "2026-10-17T10:42:37.254Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0050",
+      "url": "https://www.brooksrunning.com/en_us/blog/advice-tips/trail-running-tips.html",
+      "host": "brooksrunning.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://brooksrunning.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n    Brooks Running Shoes, Gear, and Apparel for Men &amp; Women | Brooks Running\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:39.686Z",
+      "httpStatus": 200,
+      "bytes": 676079,
+      "sha256": "3ec39ce5710f4fc795158005b442a53ff3d8009a3ad9844b14b0524cbf74b77f",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:43.399Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0051",
+      "url": "https://www.on.com/en-us/products/digital-gift-card-907644gc",
+      "host": "on.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://on.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "On | Swiss Performance Running Shoes &amp; Clothing",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:45.337Z",
+      "httpStatus": 200,
+      "bytes": 494835,
+      "sha256": "aa6584d79143009a90b77d77f45856999954b38287e5ba3fc4616a14e5f67f6e",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:50.666Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0052",
+      "url": "https://xeroshoes.com/products/prio-neo-men?variant=47331444752562",
+      "host": "xeroshoes.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://xeroshoes.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Barefoot Shoes | Minimalist Footwear | Xero Shoes",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:52.340Z",
+      "status": "URL_REFUSED",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0053",
+      "url": "https://www.crocs.com/p/abstract-icons-shoe-tattoos/215807.html",
+      "host": "crocs.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://crocs.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Crocs",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:58.475Z",
+      "httpStatus": 200,
+      "bytes": 738937,
+      "sha256": "bc00d03863ebdd8cf9c0ac6a7aa9231df813e2f4114fb2d89b7609b5a096865c",
+      "product": {
+        "url": "https://www.crocs.com/p/abstract-icons-shoe-tattoos/215807.html",
+        "domain": "www.crocs.com",
+        "title": "Abstract Icons Shoe Tattoos",
+        "brand": "Crocs",
+        "sku": "215807",
+        "price": 9.99,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:02.115Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:02.115Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0054",
+      "url": "https://www.keenfootwear.com/products/giftcard",
+      "host": "keenfootwear.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://keenfootwear.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Official KEEN® Site – Consciously Created Footwear for a Better Planet | KEEN Footwear",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:05.373Z",
+      "httpStatus": 200,
+      "bytes": 302503,
+      "sha256": "09d598a7eff5aadfbbb0b0f3cdaa9a8791b037c2a82f017e3203b3992fa9d50f",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:08.017Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0055",
+      "url": "https://www.merrell.com/US/en/speedarc-trek/62365W.html",
+      "host": "merrell.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://merrell.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Merrell Official: Top Rated Hiking Footwear &amp; Outdoor Gear",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:11.621Z",
+      "httpStatus": 200,
+      "bytes": 508281,
+      "sha256": "e26b2aa2c63b586901ef4f6f634024461f1aa015de075084b040f84d467db797",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:14.142Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0056",
+      "url": "https://www.redwingshoes.com/policy/do-not-sell-my-personal-information.html",
+      "host": "redwingshoes.com",
+      "category": "footwear",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://redwingshoes.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Red Wing Shoes | Durable Work Boots & Lifestyle Heritage Footwear for Men and Women",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:17.748Z",
+      "httpStatus": 200,
+      "bytes": 101287,
+      "sha256": "5c76fc2e1f8bb1b4a5fdf5b03f8690ab1004e28c73fc8d92db5ddccfb618cae0",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:20.518Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0060",
+      "url": "https://www.anker.com/products/a2688-anker-prime-charger-100w-3-ports-gan?variant=43931966079126",
+      "host": "anker.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://anker.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Anker | Live Charged. - Anker US",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.690Z",
+      "status": "URL_REFUSED",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0061",
+      "url": "https://www.ugreen.com/products/us-85185",
+      "host": "ugreen.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://ugreen.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  UGREEN Official Site\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:27.955Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0061.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0061.html -w %{http_code} https://www.ugreen.com/p",
+      "finishedAt": "2026-10-17T10:42:31.405Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0062",
+      "url": "https://www.baseus.com/products/security-x1-pro-outdoor-dual-camera",
+      "host": "baseus.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://baseus.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n        Baseus Official | Practical. Reliable. Base on User.\n      ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:33.603Z",
+      "httpStatus": 200,
+      "bytes": 658409,
+      "sha256": "f8f3fbf028e3504d427c7b2747d3199d57e7ea90af559b3c4af49d0b9c433b9e",
+      "product": {
+        "url": "https://www.baseus.com/products/security-x1-pro-outdoor-dual-camera",
+        "domain": "www.baseus.com",
+        "title": "Baseus Security X1 Pro Outdoor Dual Camera",
+        "brand": "Baseus",
+        "sku": "S0003502",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:39.684Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:39.684Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0063",
+      "url": "https://www.belkin.com/p/displayport-1.4-cable-8k/AVZ001-2M.html",
+      "host": "belkin.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://belkin.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "iPhone Chargers, Power Banks &amp; Docking Stations | Belkin",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:40.897Z",
+      "httpStatus": 200,
+      "bytes": 750920,
+      "sha256": "a93526721f1f05f7bbecac4517ba25870f7d3d7a847b9f9bada588721c1c6288",
+      "product": {
+        "url": "https://www.belkin.com/p/displayport-1.4-cable-8k/AVZ001-2M.html",
+        "domain": "www.belkin.com",
+        "title": "DisplayPort 1.4 Cable (8K)",
+        "brand": "Belkin",
+        "sku": "AVZ001-2M",
+        "mpn": "AVZ001",
+        "gtin": "745883975556",
+        "price": 15.99,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:43.874Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:43.874Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0064",
+      "url": "https://satechi.com/products/dotdisk-80gbps-ssd-enclosure/",
+      "host": "satechi.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://satechi.net/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      Satechi® | Apple and PC Electronic Accessories\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:45.441Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0064.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0064.html -w %{http_code} https://satechi.com/prod",
+      "finishedAt": "2026-10-17T10:42:50.115Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0065",
+      "url": "https://nomadgoods.com/products/stratos-band-black-hardware-ultra-orange",
+      "host": "nomadgoods.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://nomadgoods.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "iPhone 18 Cases and Accessories | NOMAD",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:52.341Z",
+      "httpStatus": 200,
+      "bytes": 437788,
+      "sha256": "61f5b73b1b35cf6305d498286bb62c1a0a5f1f98ae9b482f708a2fcf5666d2f6",
+      "product": {
+        "url": "https://nomadgoods.com/products/stratos-band-black-hardware-ultra-orange",
+        "domain": "nomadgoods.com",
+        "title": "Stratos Band",
+        "brand": "Nomad Goods",
+        "sku": "194479119F9F",
+        "mpn": "194479119F9F",
+        "gtin": "856504011116",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:54.999Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {
+          "color": "Black, Ultra Orange",
+          "material": "FKM"
+        },
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:54.999Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0066",
+      "url": "https://www.peakdesign.com/products/gift-card",
+      "host": "peakdesign.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://peakdesign.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Bags + Camera Gear | Peak Design",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:58.521Z",
+      "httpStatus": 200,
+      "bytes": 182528,
+      "sha256": "86274b1ac2617626ddf1f812c4cef5c686ebc58beb947cc3a1365b50606ff752",
+      "product": {
+        "url": "https://www.peakdesign.com/products/gift-card",
+        "domain": "www.peakdesign.com",
+        "title": "Gift Card",
+        "brand": "Peak Design",
+        "sku": "GC-50",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:03.761Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:03.761Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0067",
+      "url": "https://www.shopmoment.com/products/stick-on-smartalign-mount-for-iphone-18-pro-t-series",
+      "host": "shopmoment.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://shopmoment.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Moment | Mobile Filmmaking &amp; Photography Gear",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:07.358Z",
+      "httpStatus": 200,
+      "bytes": 739712,
+      "sha256": "48564c4c88e8e723801c72c03a3fbb1f4e2be3fcf9921bf497909f132e6c8a91",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:10.786Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0068",
+      "url": "https://www.logitech.com/en-gb/shop/p/mx-keypad",
+      "host": "logitech.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://logitech.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Logitech United Kingdom",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:11.980Z",
+      "httpStatus": 200,
+      "bytes": 408242,
+      "sha256": "d01c5bebd0c2b97d9ee042a4f095514412e0656ad1d5239784dade46d5ef3287",
+      "product": {
+        "url": "https://www.logitech.com/en-gb/shop/p/mx-keypad",
+        "domain": "www.logitech.com",
+        "title": "MX Keypad",
+        "brand": "Logitech",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:14.638Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:14.638Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0069",
+      "url": "https://www.corsair.com/configurator/p/ch-91cea1x-de/makr75-custom-lab-edition",
+      "host": "corsair.com",
+      "category": "technology",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://corsair.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "CORSAIR | PC Components | Gaming Gear",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:17.812Z",
+      "httpStatus": 302,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 302",
+      "finishedAt": "2026-10-17T10:43:20.523Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0089",
+      "url": "https://www.target.com/p/apple-homeview/-/A-1014583024",
+      "host": "target.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://target.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Target : Expect More. Pay Less.",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.690Z",
+      "httpStatus": 200,
+      "bytes": 417896,
+      "sha256": "2dbc45f621e750b3e78698cc261d9442a7e1a7a61c31021c4e574a93b8699775",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:26.752Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0090",
+      "url": "https://www.newegg.com/promotions/nepro/23-1322/index.html",
+      "host": "newegg.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://newegg.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "PC Parts, Computers, Workstations &amp; AI PCs | Newegg",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:28.849Z",
+      "httpStatus": 200,
+      "bytes": 57455,
+      "sha256": "9d8401d97d487492f9ae04ea2a41cc91c7c27f136826eda3701c5105da038963",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:31.193Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0091",
+      "url": "https://www.vinted.com/items/10405594072-burgundy-long-sleeve-shirt",
+      "host": "vinted.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://vinted.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Vinted | Sell and buy clothes, shoes and accessories",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:34.561Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0091.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0091.html -w %{http_code} https://www.vinted.com/i",
+      "finishedAt": "2026-10-17T10:42:38.514Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0092",
+      "url": "https://www.alibaba.com/factory/index.html",
+      "host": "alibaba.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://alibaba.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Alibaba.com: Manufacturers, Suppliers, Exporters & Importers from the world's largest online B2B marketplace",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:41.761Z",
+      "httpStatus": 200,
+      "bytes": 70093,
+      "sha256": "2d8c70257bd950e46e00ca612f63cd00e2c503f554a4f7bf1ef144daa7d16723",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:44.281Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0093",
+      "url": "https://www.banggood.com/vip-birthdaygift.html",
+      "host": "banggood.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://banggood.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Banggood : Global Leading Online Shop for Gadgets and Fashion",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:45.515Z",
+      "httpStatus": 200,
+      "bytes": 83,
+      "sha256": "9d6eea5f18c1df4a84396e34b3a9bb08cf1102105b37e458bacb3475557dc376",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:50.278Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0094",
+      "url": "https://www.geekbuying.com/item/QIDI-TECH-Q2-3D-Printer-530249.html",
+      "host": "geekbuying.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://geekbuying.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Geekbuying: Online Shopping for Smart and Comfortable Life",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:53.294Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0094.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0094.html -w %{http_code} https://www.geekbuying.c",
+      "finishedAt": "2026-10-17T10:43:09.315Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0095",
+      "url": "https://untilgone.com/products/women-s-cozy-polar-fleece-sweater-jogger-lounge-set.html",
+      "host": "untilgone.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://untilgone.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "UntilGone.com",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:59.498Z",
+      "httpStatus": 200,
+      "bytes": 250230,
+      "sha256": "0aeb0ce07a84c9b8af7f6236a6ec96c81f5ab6bc111d930e678197fb9e2c77cb",
+      "product": {
+        "url": "https://untilgone.com/products/women-s-cozy-polar-fleece-sweater-jogger-lounge-set.html",
+        "domain": "untilgone.com",
+        "title": "Women’s Cozy Polar Fleece Sweater & Jogger Lounge Set",
+        "brand": "Private Label",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:04.017Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:04.017Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0096",
+      "url": "https://meh.com/amazon.com/Eitech-Construction-C92-Race-Quad/dp/B0039ACV7S/ref=ast_sto_dp_puis",
+      "host": "meh.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://meh.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Meh: A Daily Deal &amp; Community for the Cynical Consumer",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:07.517Z",
+      "httpStatus": 404,
+      "bytes": 1694,
+      "sha256": "65002636313afde1bcff26e1f86435c47e1cdafea523bfb964dbf71ff4a869da",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 404",
+      "finishedAt": "2026-10-17T10:43:10.043Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0097",
+      "url": "https://www.qvc.com/c/shoes/womens/flats/-/kbry47/c.html",
+      "host": "qvc.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://qvc.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "QVC | Shop QVC® For Today’s Special Value &amp; Top Brands At The Official Site",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:12.824Z",
+      "httpStatus": 200,
+      "bytes": 752252,
+      "sha256": "05da40059864f415a8fb069e606f021a202939d22fa1d38217aa98c0c87a1cb7",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:16.565Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0098",
+      "url": "https://www.hsn.com/products/perlier-17l-bath-cream/23919097",
+      "host": "hsn.com",
+      "category": "marketplace-retail",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://hsn.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "HSN | Shop HSN ® For Daily Deals &amp; Top Brands At The Official Site | HSN",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:18.063Z",
+      "httpStatus": 301,
+      "bytes": 169,
+      "sha256": "b191bdfdc59b16842ad0972b593ddf5a296dfc093cc3598702b1288dd7768fb1",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 301",
+      "finishedAt": "2026-10-17T10:43:20.939Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0112",
+      "url": "https://theordinary.com/en-us/glucoside-foaming-face-cleanser-100616.html",
+      "host": "theordinary.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://theordinary.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n    The Ordinary | Clinical Formulations with Integrity\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.696Z",
+      "httpStatus": 200,
+      "bytes": 413002,
+      "sha256": "5d583129427a69bece07bfc2d59f43ba7aa325af3239c5186ed7787efac31283",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:25.353Z",
+      "product": {
+        "url": "https://theordinary.com/en-us/glucoside-foaming-face-cleanser-100616.html",
+        "domain": "theordinary.com",
+        "title": "Glucoside Foaming Cleanser",
+        "brand": "The Ordinary",
+        "sku": "769915232059",
+        "mpn": "769915232059",
+        "price": 6.6,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:25.353Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0113",
+      "url": "https://www.laroche-posay.us/notice-at-collection.html",
+      "host": "laroche-posay.us",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://laroche-posay.us/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "La Roche-Posay Skincare, Sunscreen, Body Lotion Official Site",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:28.878Z",
+      "httpStatus": 200,
+      "bytes": 346949,
+      "sha256": "0848db200801fadfbe05e3c3895a5a7577e8b52e0c66c341d9e0dd51a18c0f9c",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:31.883Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0114",
+      "url": "https://naturium.com/products/the-glow-all-out-body-bundle",
+      "host": "naturium.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://naturium.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Clinically-Effective, Luxurious Skincare &amp; Bodycare | Naturium",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:34.784Z",
+      "httpStatus": 200,
+      "bytes": 417453,
+      "sha256": "261ac6060248d6526c30f8db1412dc220aa11ba868cd6d04d1031297cd40158d",
+      "product": {
+        "url": "https://naturium.com/products/the-glow-all-out-body-bundle",
+        "domain": "naturium.com",
+        "title": "The Glow All Out Body Bundle",
+        "brand": "Naturium",
+        "sku": "NATR-GAOBB",
+        "gtin": "810120261348",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:38.220Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:38.220Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0115",
+      "url": "https://www.elfcosmetics.com/products/glow-reviver-melting-lip-balm",
+      "host": "elfcosmetics.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://elfcosmetics.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "e.l.f. Cosmetics: Affordable Makeup &amp; Skincare - Cruelty Free | e.l.f. Cosmetics",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:41.943Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0115.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0115.html -w %{http_code} https://www.elfcosmetics",
+      "finishedAt": "2026-10-17T10:42:45.335Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0116",
+      "url": "https://colourpop.com/products/leaf-fall-bundle",
+      "host": "colourpop.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://colourpop.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "ColourPop® Cosmetics",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:46.587Z",
+      "httpStatus": 200,
+      "bytes": 995187,
+      "sha256": "9d2ad1abd14698ba30b0e668beb2f6134439cd6633378f9c5818f272445de505",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:51.444Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0117",
+      "url": "https://www.rarebeauty.com/products/fragrance-layering-balm-fruity-pear",
+      "host": "rarebeauty.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://rarebeauty.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n    Rare Beauty by Selena Gomez | Vegan &amp; Cruelty Free Makeup\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:53.404Z",
+      "httpStatus": 200,
+      "bytes": 445266,
+      "sha256": "82be375dd6482257e06fbae58cda5c2aa3c56cf1a47566afb0d0106d912a8f35",
+      "product": {
+        "url": "https://www.rarebeauty.com/products/fragrance-layering-balm-fruity-pear",
+        "domain": "www.rarebeauty.com",
+        "title": "Fragrance Layering Balm – Fruity Pear",
+        "brand": "Rare Beauty",
+        "sku": "FGPFA50059F1",
+        "mpn": "FGPFA50059F1",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:56.328Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:56.328Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0118",
+      "url": "https://fentybeauty.com/products/the-water-boi-reparative-leave-in-conditioner-spray",
+      "host": "fentybeauty.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fentybeauty.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Fenty Beauty by Rihanna | Beauty for All",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:00.239Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0118.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0118.html -w %{http_code} https://fentybeauty.com/",
+      "finishedAt": "2026-10-17T10:43:04.424Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0119",
+      "url": "https://www.cocokind.com/products/texture-smoothing-cream",
+      "host": "cocokind.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://cocokind.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      cocokind.com - powerful results for sensitive skin\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:07.949Z",
+      "httpStatus": 200,
+      "bytes": 445324,
+      "sha256": "f349c9ef708dd2ca4a1aa184fb2f6ea4a60164c6bdfcd85af591632ca600a87a",
+      "product": {
+        "url": "https://www.cocokind.com/products/texture-smoothing-cream",
+        "domain": "www.cocokind.com",
+        "title": "texture smoothing cream",
+        "brand": "cocokind",
+        "sku": "FG05900",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:11.618Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:11.618Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0120",
+      "url": "https://byoma.com/products/the-barrier-boosting-lab-kit",
+      "host": "byoma.com",
+      "category": "beauty",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://byoma.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      BYOMA® Skin Barrier Boosting Skin Care Products | BYOMA®\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:14.144Z",
+      "httpStatus": 200,
+      "bytes": 378141,
+      "sha256": "71d6ef782f94d352737d0a58940cf9b4608eee1966ba60d8c7691dfa50187ed4",
+      "product": {
+        "url": "https://byoma.com/products/the-barrier-boosting-lab-kit",
+        "domain": "byoma.com",
+        "title": "The Barrier Boosting Lab Kit",
+        "brand": "BYOMA",
+        "sku": "610244D",
+        "gtin": "5061078391860",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:17.144Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:17.144Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0131",
+      "url": "https://www.chewy.com/chewy-egift-card/dp/226306",
+      "host": "chewy.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://chewy.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Pet Food, Products and Supplies at Low Prices - Free Shipping",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:20.706Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0131.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0131.html -w %{http_code} https://www.chewy.com/ch",
+      "finishedAt": "2026-10-17T10:42:27.286Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0132",
+      "url": "https://wildone.com/products/cushioned-harness-waterproof-leash-dog-walk-kit",
+      "host": "wildone.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wildone.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      Dog &amp; Cat Harnesses, Collars, Leashes, Toys &amp; Essentials | Wild One\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:29.916Z",
+      "httpStatus": 200,
+      "bytes": 979816,
+      "sha256": "c3f1b3711ad1140f0baee2145003253c065757d7fba2e47e615208fba48070cf",
+      "product": {
+        "url": "https://wildone.com/products/cushioned-harness-waterproof-leash-dog-walk-kit",
+        "domain": "wildone.com",
+        "title": "Cushioned Harness + Waterproof Leash Walk Kit",
+        "brand": "Wild One",
+        "sku": "WO-MIX-HWK",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:33.602Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:33.602Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0133",
+      "url": "https://ruffwear.com/products/lumenglow-high-vis-vest",
+      "host": "ruffwear.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://ruffwear.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n        \n          Performance Dog Gear\n        \n        |\n        Ruffwear\n      ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:35.277Z",
+      "httpStatus": 200,
+      "bytes": 715288,
+      "sha256": "79ba405596daa33ca2fe80264e4753231b6038c33a0f794ae524ef3aac81a353",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:38.958Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0134",
+      "url": "https://www.maxbone.com/products/maxbone-x-bridgerton-go-with-ease-bundle",
+      "host": "maxbone.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://maxbone.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  \n    maxbone | Modern Dog Carriers, Beds &amp; Apparel\n  \n  \n  \n  \n\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:42.268Z",
+      "httpStatus": 200,
+      "bytes": 577469,
+      "sha256": "c561b04f1bb54ead763ce4d1a5fbc5c54ca62391a9c5abacdcbcb14352c58c66",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:45.514Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0135",
+      "url": "https://fablepets.com/products/magic-link",
+      "host": "fablepets.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fablepets.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      Fable |\n      Fable Pets | Innovative Pet Gear That Solves Real Problems\n    ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:47.163Z",
+      "httpStatus": 200,
+      "bytes": 436354,
+      "sha256": "ed1be15073f142123c2141e08ea08e3f84d0fa8fa1b8a488280158d5e91f36f2",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:50.183Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0136",
+      "url": "https://www.westpaw.com/products/beef-dog-food-topper",
+      "host": "westpaw.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://westpaw.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  Dogs Toys and Treats | Dogs Beds | West Paw, Inc.\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:53.970Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0136.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0136.html -w %{http_code} https://www.westpaw.com/",
+      "finishedAt": "2026-10-17T10:43:00.258Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0137",
+      "url": "https://www.earthrated.com/products/bags-on-a-large-single-roll",
+      "host": "earthrated.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://earthrated.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Earth Rated | Making life with dogs simpler and better.\n    ",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:00.260Z",
+      "httpStatus": 200,
+      "bytes": 616025,
+      "sha256": "87f9d5825b57f8dda7024db166b27ad5b8b4ebae789a525a4da7dc1a0bf051cb",
+      "product": {
+        "url": "https://www.earthrated.com/products/bags-on-a-large-single-roll",
+        "domain": "www.earthrated.com",
+        "title": "Grab & Go Poop Bags",
+        "brand": "91994467 Quebec Inc.",
+        "sku": "10US10BG0003",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:04.547Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:04.547Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0138",
+      "url": "https://www.honestpaws.com/products/calm-tincture",
+      "host": "honestpaws.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://honestpaws.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "#1 Rated CBD For Dogs | Honest Paws\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:08.019Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0138.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0138.html -w %{http_code} https://www.honestpaws.c",
+      "finishedAt": "2026-10-17T10:43:11.267Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0139",
+      "url": "https://www.thefoggydog.com/collections/dog-toys/products/o-christmas-tree-interactive-snuffle-dog-toy",
+      "host": "thefoggydog.com",
+      "category": "pets",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://thefoggydog.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      The Foggy Dog - Your Best Friend Deserves the Best\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:14.287Z",
+      "httpStatus": 200,
+      "bytes": 853612,
+      "sha256": "ba09ede20d1690cd3d7cd317626deb519906385e7308e058eead9c3f400915fa",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:17.805Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0140",
+      "url": "https://www.lodgecastiron.com/products/enamel-dutch-oven-starter-set",
+      "host": "lodgecastiron.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://lodgecastiron.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Lodge Cast Iron | USA Made Cookware, Bakeware, Pans &amp; More",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:24.905Z",
+      "httpStatus": 200,
+      "bytes": 396683,
+      "sha256": "09e4949d90a79c69a0d3cac6f07929030d699d6c47774f0f62ae06d2f8c1ab20",
+      "product": {
+        "url": "https://www.lodgecastiron.com/products/enamel-dutch-oven-starter-set",
+        "domain": "www.lodgecastiron.com",
+        "title": "Enamel Dutch Oven Starter Set",
+        "brand": "Lodge Cast Iron",
+        "sku": "LEISSETA",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:27.953Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:27.953Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0141",
+      "url": "https://stargazercastiron.com/products/chain-mail-scrubber",
+      "host": "stargazercastiron.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://stargazercastiron.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Stargazer | Cast Iron Cookware Made in USA &ndash; Stargazer Cast Iron",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:30.095Z",
+      "httpStatus": 200,
+      "bytes": 280876,
+      "sha256": "efde1f2bc2274b4836650be20ff20add732c933faf3e0f0c0c38be0e8f597377",
+      "product": {
+        "url": "https://stargazercastiron.com/products/chain-mail-scrubber",
+        "domain": "stargazercastiron.com",
+        "title": "Chain Mail Scrubber",
+        "brand": "Stargazer Cast Iron",
+        "sku": "STR-ACC-CMS",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:32.795Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:32.795Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0142",
+      "url": "https://fieldcompany.com/products/no-6-cast-iron-skillet",
+      "host": "fieldcompany.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fieldcompany.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Field Company - Smoother, Lighter Cast Iron Skillets",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:35.939Z",
+      "httpStatus": 200,
+      "bytes": 707383,
+      "sha256": "b9156517e1e904c6a876f3d80f921fd22a74bd40a27df12cd88afdc0699166e0",
+      "product": {
+        "url": "https://fieldcompany.com/products/no-6-cast-iron-skillet",
+        "domain": "fieldcompany.com",
+        "title": "No.6 Cast Iron Skillet",
+        "brand": "Field Company",
+        "mpn": "7121085792410",
+        "price": 135,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:38.873Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:38.873Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0143",
+      "url": "https://www.finexusa.com/products/cast-iron-grill-pan?variant=42212208836744",
+      "host": "finexusa.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://finexusa.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      FINEX Cast Iron Cookware Co.\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:42.533Z",
+      "status": "URL_REFUSED",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0144",
+      "url": "https://madeincookware.com/products/saucier/3-quart-brushed-copper",
+      "host": "madeincookware.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://madeincookware.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Professional-Quality Cookware, Non Stick, Carbon Steel, and Knives - Made In",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:49.292Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0144.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0144.html -w %{http_code} https://madeincookware.c",
+      "finishedAt": "2026-10-17T10:42:52.339Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0145",
+      "url": "https://carawayhome.com/products/coffee-maker",
+      "host": "carawayhome.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://carawayhome.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Caraway | Non-Stick Ceramic Cookware, Bakeware and Home Goods | Caraway",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:54.047Z",
+      "httpStatus": 200,
+      "bytes": 736030,
+      "sha256": "5e36b30ffc3c73817c81d710d78e2c3a553b77f9c91992f88d70d06be2a315a8",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:56.598Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0146",
+      "url": "https://fromourplace.com/products/wonder-oven-pro",
+      "host": "fromourplace.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fromourplace.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Our Place | The Best Non-Toxic Cookware &amp; Kitchen Essentials",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:02.117Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0146.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0146.html -w %{http_code} https://fromourplace.com",
+      "finishedAt": "2026-10-17T10:43:05.369Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0147",
+      "url": "https://hexclad.com/products/gordon-ramsays-ramsay-in-10-cookbook",
+      "host": "hexclad.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://hexclad.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "HexClad Cookware | The Hybrid Revolution",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:09.317Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0147.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0147.html -w %{http_code} https://hexclad.com/prod",
+      "finishedAt": "2026-10-17T10:43:11.975Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0148",
+      "url": "https://www.all-clad.com/bakeware/collections/pro-release-bakeware.html",
+      "host": "all-clad.com",
+      "category": "kitchen",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://all-clad.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Premium Cookware for Performance &amp; Durability | All-Clad",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:14.642Z",
+      "httpStatus": 200,
+      "bytes": 559830,
+      "sha256": "371706a44264c409bea5ea1f4900eb321257a7b326b49bcc1bf95a959d03d264",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:23.164Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0156",
+      "url": "https://www.redbubble.com/p/398-affiliate-program",
+      "host": "redbubble.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://redbubble.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Awesome products designed by independent artists | Redbubble",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:25.353Z",
+      "httpStatus": 200,
+      "bytes": 73735,
+      "sha256": "2ae7247aa4b92ed7f79a6edd671b0db136614e45833d770ec446603605ad45bc",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:28.875Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0157",
+      "url": "https://society6.com/products/colorful-coastal-chinoiserie_iphone-case",
+      "host": "society6.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://society6.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Artist-Designed Wall Art &amp; Home Decor | Society6\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:30.310Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0157.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0157.html -w %{http_code} https://society6.com/pro",
+      "finishedAt": "2026-10-17T10:42:33.330Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0158",
+      "url": "https://www.gelato.com/products/mugs",
+      "host": "gelato.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://gelato.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Global Print On Demand Platform | Gelato",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:37.255Z",
+      "httpStatus": 200,
+      "bytes": 628833,
+      "sha256": "d3ac22e1f754ccca90021367375ee03f54d78a143a19d5db1830697d1f21f6ac",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:41.758Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0159",
+      "url": "https://printify.com/app/products/womens-clothing/sweatshirts",
+      "host": "printify.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://printify.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Printify: Build your eCommerce business in minutes.",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:42.534Z",
+      "httpStatus": 200,
+      "bytes": 18212,
+      "sha256": "727a127c2934477ca10a85614c453f5e9bc29ca0f345f54fa0a4ce24ea20be2a",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:45.440Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0160",
+      "url": "https://teefury.com/products/tee-mens-basic-i-need-to-relaxalotl",
+      "host": "teefury.com",
+      "category": "print-on-demand",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://teefury.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "The Daily Exclusive | TeeFury",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:50.122Z",
+      "httpStatus": 200,
+      "bytes": 845986,
+      "sha256": "366babdb2512cfa11eff2034a96d0608cc2163e8caaeb52fb9ecf29237687489",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:53.404Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0161",
+      "url": "https://www.decathlon.com/products/women-s-lightweight-down-trekking-jacket-3-c-xplore-purple?variant=43182125088830",
+      "host": "decathlon.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://decathlon.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n  Decathlon America | Outdoor Sports Clothing &amp; Gear\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:25.624Z",
+      "status": "URL_REFUSED",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0162",
+      "url": "https://www.gregory.com/care-and-cleaning.html",
+      "host": "gregory.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://gregory.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Gregory Mountain Products  - Premium Backpacks For Hiking, Backpacking &amp; Travel",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:31.194Z",
+      "httpStatus": 307,
+      "bytes": 5669,
+      "sha256": "0d6a7eae963a475e62f249e2981716892bccde2a52b3857b732956ee33a45b7d",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 307",
+      "finishedAt": "2026-10-17T10:42:34.560Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0163",
+      "url": "https://blackdiamondequipment.com/products/mens-solution-3-0-hoody",
+      "host": "blackdiamondequipment.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://blackdiamondequipment.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "\n      Black Diamond® Equipment | Climb. Ski. Run. Hike.\n",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:38.221Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0163.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0163.html -w %{http_code} https://blackdiamondequi",
+      "finishedAt": "2026-10-17T10:42:40.895Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0164",
+      "url": "https://www.nitecore.com/product/hc65mct",
+      "host": "nitecore.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://nitecore.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "NITECORE - EDC Flashlight&amp;Headlamp, Power Solution, Mosquito Repeller, Fan",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:43.401Z",
+      "httpStatus": 200,
+      "bytes": 233761,
+      "sha256": "224068fff9ab23d06fbd2d526054a30f493a27656dd4850ffa3272abe8e8d6c7",
+      "product": {
+        "url": "https://www.nitecore.com/product/hc65mct",
+        "domain": "www.nitecore.com",
+        "title": "HC65 MCT",
+        "brand": "NITECORE",
+        "sku": "HC65 MCT",
+        "mpn": "HC65 MCT",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:42:46.587Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:46.587Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0165",
+      "url": "https://www.fenixlighting.com/products/fenix-tk21r-tactical-flashlight",
+      "host": "fenixlighting.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://fenixlighting.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Fenix Flashlights | World Leader in Fenix® Sales | Fenix Lighting USA",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:50.187Z",
+      "httpStatus": 200,
+      "bytes": 434957,
+      "sha256": "93086c4425d20cbd8d61ec5dc2195e0a55846a8acfdbf607b5e5665265f5b9ba",
+      "product": {
+        "url": "https://www.fenixlighting.com/products/fenix-tk21r-tactical-flashlight",
+        "domain": "www.fenixlighting.com",
+        "title": "Fenix TK21R Rechargeable Tac Flashlight",
+        "brand": "Fenix",
+        "sku": "TK21RSFBK-T5",
+        "mpn": "6942870315942",
+        "price": 134.95,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 2,
+        "capturedAt": "2026-10-17T10:42:53.293Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:42:53.293Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0166",
+      "url": "https://www.sofirnlight.com/products/sofirn-sc33-edc-flashlight-5200lm",
+      "host": "sofirnlight.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://sofirnlight.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Sofirn | LED Flashlights & Headlamps - EDC, Tactical, Diving",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:42:54.576Z",
+      "httpStatus": 200,
+      "bytes": 888840,
+      "sha256": "62e634dfcd83ddb07bdce74d8bff16f963bf6a21a3c0205c7878f995de89427a",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:58.519Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0167",
+      "url": "https://wurkkos.com/products/ts11-v2-edc-pocket-thrower-light",
+      "host": "wurkkos.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://wurkkos.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Wurkkos® Official Store: EDC, Tactical, Headlamps & Diving Flashlights",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:03.763Z",
+      "httpStatus": 200,
+      "bytes": 318095,
+      "sha256": "bd059effed9a70cc0ff19e34250fa3b6c827716466015abed1130f196c6a909d",
+      "product": {
+        "url": "https://wurkkos.com/products/ts11-v2-edc-pocket-thrower-light",
+        "domain": "wurkkos.com",
+        "title": "【New Release】WURKKOS TS11 V2 Powerful Pocket Thrower Light, 1600LM 500M, Anduril 2 UI ＆ Constant-Current Buck Driver",
+        "brand": "Wurkkos official website",
+        "sku": "TS11 V2- SFT40-GY-6K-2",
+        "price": 34.99,
+        "currency": "USD",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:07.356Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": true
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:07.356Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0168",
+      "url": "https://convoylight.com/products/convoy-t3-copper-head-titanium-stonewash-aa-14500-flashlight",
+      "host": "convoylight.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://convoylight.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "convoy flashlight",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:10.048Z",
+      "httpStatus": 200,
+      "bytes": 860764,
+      "sha256": "35d9c91b94402e245243b514c7c15d2cd132d6111418f13e0b3e82dd46e78ada",
+      "product": {
+        "url": "https://convoylight.com/products/convoy-t3-copper-head-titanium-stonewash-aa-14500-flashlight",
+        "domain": "convoylight.com",
+        "title": "Convoy T3 copper head titanium stonewash AA 14500 flashlight",
+        "mpn": "T3铜头 石洗钛合金",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:12.820Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:12.820Z",
+      "replayStatus": "PRODUCT_BOUND"
+    },
+    {
+      "id": "SITE-0169",
+      "url": "https://www.leatherman.com/collections/bestsellers/products/wave",
+      "host": "leatherman.com",
+      "category": "outdoor-crafts",
+      "sourceIds": [
+        "MERCHANT-PUBLIC"
+      ],
+      "sourceSeedUrl": "https://leatherman.com/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Leatherman Home | Multitools, Knives and Pocket Tools",
+      "discoveryKind": "observed same-site product link",
+      "startedAt": "2026-10-17T10:43:14.679Z",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Command failed: curl --proto =https --max-redirs 0 --connect-timeout 6 --max-time 16 --max-filesize 1000000 -sS -H Accept: text/html -H Cookie: -H Referer: -D /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0169.headers -o /workspace/scratch/21a17dd91973/comparison62-captures/SITE-0169.html -w %{http_code} https://www.leatherman.c",
+      "finishedAt": "2026-10-17T10:43:18.060Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0176",
+      "url": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "host": "yeezys.com.mx",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.yeezys.com.mx/p/adidas-yeezy-boost-350-v2-mx-oat-gw3773/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Adidas Yeezy Boost 350 V2 &quot;MX Oat&quot; - GW3773 | Yeezy Mexico Oficial",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:25.625Z",
+      "httpStatus": 403,
+      "bytes": 267,
+      "sha256": "e1a77560cac97f14510ea8b6b1d49f618b081a88a3b4c046eb26963080fdb3b2",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:28.846Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0177",
+      "url": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "host": "ninewest.com.de",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.ninewest.com.de/p/comiele-plateau-sandalen-5/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Comiele Plateau-Sandalen | Nine West Deutschland",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:31.411Z",
+      "httpStatus": 403,
+      "bytes": 269,
+      "sha256": "c786e3f2506bf989572669fc3233b6b10dce0d832ea364cfca81d5aae2840610",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:34.784Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0178",
+      "url": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "host": "happysocksit.it",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-08"
+      ],
+      "sourceSeedUrl": "https://www.happysocksit.it/p/berretto-con-pompon-di-montagna-3/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Berretto con pompon di montagna | Happy Socks Outlet Italia",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:38.515Z",
+      "httpStatus": 403,
+      "bytes": 269,
+      "sha256": "7ca8caba39cf019bc94319e455eeb16f025531d09d131f548e7e8fcecce6be65",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:41.941Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0179",
+      "url": "https://www.vionic.es/p/sabina-wedge/",
+      "host": "vionic.es",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.vionic.es/p/sabina-wedge/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Sabina Wedge | Vionic España",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:43.877Z",
+      "httpStatus": 403,
+      "bytes": 263,
+      "sha256": "919d4c11a7bebb36aba2aed8fede59c2dc41369cc71e221e0e9ca6097a1c276d",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:47.161Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0180",
+      "url": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "host": "salomonoutletbarcelona.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.salomonoutletbarcelona.com/collections/bolsas-mochilas-mochilas-c-20_21.html",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Mochilas Salomon Ofertas Y Rebajas - Salomon Tienda Barcelona",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:50.279Z",
+      "httpStatus": 200,
+      "bytes": 97266,
+      "sha256": "70a8aa9b0bca9ee5c4be72dc60ef4d8dfdaa2b1b7dea691a2efc6b3673b58f1e",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:42:53.969Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0181",
+      "url": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "host": "uggat.at",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-07"
+      ],
+      "sourceSeedUrl": "https://www.uggat.at/p/madhappy-x-ugg-classic-ultra-mini-boot-chestnut/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Madhappy x UGG Classic Ultra Mini Boot Chestnut Schuhe 70% Off",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:42:55.001Z",
+      "httpStatus": 403,
+      "bytes": 262,
+      "sha256": "e291dc433709843f7edf678b5d12edee80cd39bc2d933ed3d2fe563aa1848235",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:42:58.473Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0182",
+      "url": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "host": "pokemon-center.es",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-10"
+      ],
+      "sourceSeedUrl": "https://www.pokemon-center.es/p/abomasnow-sitting-cuties-peluche-8-%c2%be-pulgadas/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Abomasnow Sitting Cuties Peluche - 8 ¾ pulgadas | Pokémon Center Oficial España",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:43:04.019Z",
+      "httpStatus": 403,
+      "bytes": 271,
+      "sha256": "68f7d26b09748ecc33353f9ba04526d6792acb6f300155a00a53ab67f0057a97",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: Public product request failed: HTTP 403",
+      "finishedAt": "2026-10-17T10:43:07.513Z",
+      "replayStatus": "NOT_ELIGIBLE"
+    },
+    {
+      "id": "SITE-0183",
+      "url": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "host": "akufrance.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-06"
+      ],
+      "sourceSeedUrl": "https://www.akufrance.com/chaussures-dapproche-c-1.html",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Chaussures D'approche AKU Magasin France - Promotion AKU",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:43:10.490Z",
+      "httpStatus": 200,
+      "bytes": 36387,
+      "sha256": "3a74670122fe0ba3ba74db03e0fdebcb33feffcc74c5b8aba4d0b6acf696ed97",
+      "status": "UNAVAILABLE_OR_UNRESOLVED",
+      "error": "Error: No unambiguous product bound to this URL.",
+      "finishedAt": "2026-10-17T10:43:14.677Z",
+      "replayStatus": "UNRESOLVED"
+    },
+    {
+      "id": "SITE-0184",
+      "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "host": "orderumbrella.com",
+      "category": "historical-source-lead",
+      "sourceIds": [
+        "SF-02"
+      ],
+      "sourceSeedUrl": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+      "scope": "Public JSON-LD acquisition only; no merchant truth or native Chrome acceptance",
+      "discoveryTitle": "Custom Golf Umbrella Manufacturer-www.orderumbrella.com",
+      "discoveryKind": "previous real product target",
+      "startedAt": "2026-10-17T10:43:15.006Z",
+      "httpStatus": 200,
+      "bytes": 308469,
+      "sha256": "9801a688eb3df60a161227d00bd9915a16bdde21795b2421a7ae9d2a1c97df02",
+      "product": {
+        "url": "https://orderumbrella.com/product/custom-golf-umbrella-manufacturer/",
+        "domain": "orderumbrella.com",
+        "title": "Custom Golf Umbrella Manufacturer",
+        "imageUrls": [],
+        "jsonLdProductCount": 1,
+        "capturedAt": "2026-10-17T10:43:17.744Z",
+        "claims": [],
+        "pageSignals": [],
+        "specifications": {},
+        "extraction": {
+          "method": "jsonld",
+          "structuredIdentityResolved": true,
+          "offerResolved": false
+        }
+      },
+      "status": "PRODUCT_BOUND",
+      "finishedAt": "2026-10-17T10:43:17.744Z",
+      "replayStatus": "PRODUCT_BOUND"
+    }
+  ]
+}

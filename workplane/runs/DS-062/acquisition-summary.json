@@ -1,0 +1,243 @@
+{
+  "frozenHosts": 100,
+  "categories": {
+    "home": 10,
+    "apparel": 10,
+    "footwear": 10,
+    "technology": 10,
+    "marketplace-retail": 10,
+    "beauty": 9,
+    "pets": 9,
+    "kitchen": 9,
+    "print-on-demand": 5,
+    "outdoor-crafts": 9,
+    "historical-source-lead": 9
+  },
+  "http200": 63,
+  "boundBefore": 27,
+  "boundAfter": 28,
+  "unresolvedHtml": {
+    "No main Product JSON-LD": 23,
+    "Unselected ProductGroup/variants": 10,
+    "Product URL/duplicate binding unresolved": 2
+  },
+  "unresolvedHtmlDetails": [
+    {
+      "id": "SITE-0001",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0002",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0006",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 2,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0010",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0017",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0018",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0020",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 0,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0021",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 52,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0022",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 10,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0050",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0051",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 5,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0054",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0055",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0056",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0067",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 10,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0089",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0090",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0092",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0093",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0097",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0113",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0116",
+      "reason": "Product URL/duplicate binding unresolved",
+      "products": 2,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0133",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 0,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0134",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 0,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0135",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 14,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0139",
+      "reason": "Product URL/duplicate binding unresolved",
+      "products": 2,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0145",
+      "reason": "Unselected ProductGroup/variants",
+      "products": 4,
+      "groups": 1
+    },
+    {
+      "id": "SITE-0148",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0156",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0158",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0159",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0160",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0166",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0180",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    },
+    {
+      "id": "SITE-0183",
+      "reason": "No main Product JSON-LD",
+      "products": 0,
+      "groups": 0
+    }
+  ],
+  "refusedUrls": 5,
+  "sizeLimit": 19,
+  "http403": 7,
+  "redirects": 5,
+  "http404": 1,
+  "trueDetectionRate": null,
+  "independentLabels": 0
+}
