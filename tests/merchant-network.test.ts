@@ -21,7 +21,8 @@ function obs(r:DropShredderReport):StoredObservation{
 test('ships known HaremPants / Sure Design network out of box',()=>{
   assert.equal(merchantNetworkForDomain('harempants.com')?.id,'harempants-suredesign');
   assert.equal(merchantNetworkForDomain('suredesigntshirts.com')?.id,'harempants-suredesign');
-  assert.equal(merchantNetworkEvidence('harempants.com')[0]?.severity,'strong');
+  assert.equal(merchantNetworkEvidence('harempants.com')[0]?.severity,'info');
+  assert.equal(merchantNetworkEvidence('harempants.com')[0]?.weight,0);
 });
 
 test('store-local SKU across domains cannot establish a merchant network',()=>{
@@ -31,13 +32,14 @@ test('store-local SKU across domains cannot establish a merchant network',()=>{
   assert.equal(evidence.length,0);
 });
 
-test('explicit cross-domain merchant reference is moderate evidence',()=>{
+test('explicit cross-domain merchant reference is informational identity evidence',()=>{
   const evidence=crossDomainReferenceEvidence(
     'suredesigntshirts.com',
     'Free International Shipping at HaremPants.com',
     ['harempants.com','suredesigntshirts.com']
   );
-  assert.equal(evidence[0]?.severity,'moderate');
+  assert.equal(evidence[0]?.severity,'info');
+  assert.equal(evidence[0]?.weight,0);
 });
 
 
@@ -74,11 +76,11 @@ test('large seed corpus ships dozens of consumer-facing domains',async()=>{
   assert.ok(domains.size>=60,`expected >=60 domains, got ${domains.size}`);
 });
 
-test('transparent corporate groups do not get sister-store strong weighting',()=>{
+test('corporate and sister-store affiliation both remain unscored',()=>{
   const wayfair=merchantNetworkEvidence('wayfair.com',new Date('2026-10-06T00:00:00Z'));
-  assert.equal(wayfair[0]?.severity,'moderate');
+  assert.equal(wayfair[0]?.severity,'info');
   assert.match(wayfair[0]?.title ?? '',/Related commerce network/);
   const chicv=merchantNetworkEvidence('noracora.com',new Date('2026-10-06T00:00:00Z'));
-  assert.equal(chicv[0]?.severity,'strong');
+  assert.equal(chicv[0]?.severity,'info');
   assert.match(chicv[0]?.title ?? '',/sister-store/i);
 });
