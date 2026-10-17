@@ -2,7 +2,7 @@ import type { EvidenceSignal } from '../types/evidence';
 import type { ProductSnapshot } from '../types/product';
 import type { StoredObservation } from '../storage/history';
 import { indexedSourceForDomain } from '../intelligence/source-index';
-import { compareProductIdentity } from './product-identity';
+import { compareProductListings } from './product-comparison';
 
 export interface SourceMatch {
   domain:string;
@@ -23,15 +23,9 @@ export function findIndexedSourceMatches(current:ProductSnapshot,history:StoredO
     const source=indexedSourceForDomain(obs.domain);
     if(!source || obs.domain===current.domain) continue;
     const other=obs.report.product;
-    const identity=compareProductIdentity(current,other);
-    if(!identity.compatible) continue;
-    const identifierMatch=identity.matches.length>0;
-    const technicalFingerprintMatch=Boolean(current.technicalFingerprint && other.technicalFingerprint &&
-      current.technicalFingerprint===other.technicalFingerprint);
-    const hashes=new Set((other.imageFingerprints??[]).slice(0,30).map(x=>x.sha256).filter(Boolean));
-    const matchingHashes=(current.imageFingerprints??[]).slice(0,30).map(x=>x.sha256).filter(x=>Boolean(x)&&hashes.has(x));
-    const imageMatch=matchingHashes.length>0;
-    if(!identifierMatch && !technicalFingerprintMatch && !imageMatch) continue;
+    const match=compareProductListings(current,other);
+    if(!match.matched) continue;
+    const {identifierMatch,technicalFingerprintMatch,imageMatch}=match;
     let sourceUrl:string;
     try{
       const url=new URL(other.url);
@@ -41,8 +35,8 @@ export function findIndexedSourceMatches(current:ProductSnapshot,history:StoredO
     out.push({
       domain:obs.domain,sourceName:source.name,sourceClass:source.sourceClass,sourceUrl,
       capturedAt:obs.capturedAt,technicalFingerprintMatch,identifierMatch,
-      matchedIdentifiers:identity.matches,imageMatch,
-      correlationKeys:matchingHashes.map(hash=>'image:'+hash),
+      matchedIdentifiers:match.matchedIdentifiers,imageMatch,
+      correlationKeys:match.matchingHashes.map(hash=>'image:'+hash),
     });
   }
   // Input history order must not decide which evidence is shown.
@@ -66,6 +60,6 @@ export function indexedSourceEvidence(current:ProductSnapshot,history:StoredObse
     independentKey:'indexed-source-match',
     correlationKeys:strongest.correlationKeys,
     sourceKey:`history:${strongest.sourceUrl}:${strongest.capturedAt}`,
-    provenance:{sourceUrl:strongest.sourceUrl,observedAt:strongest.capturedAt,method:'typed identifier / local fingerprint comparison'},
+    provenance:{sourceUrl:strongest.sourceUrl,observedAt:strongest.capturedAt,method:'typed identifier / bounded numeric specification / image comparison'},
   }];
 }

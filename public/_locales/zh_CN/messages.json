@@ -2140,5 +2140,49 @@
   "m_9f1ish": {
     "message": "工厂直发",
     "description": "Factory-direct"
+  },
+  "m_50u6j2": {
+    "message": "比较公开商品页面",
+    "description": "Compare a public product page"
+  },
+  "m_1xhej1j": {
+    "message": "粘贴搜索找到的候选页面。仅请求该页面，不发送 Cookie。",
+    "description": "Paste a candidate from your search. Only this page is requested, without cookies."
+  },
+  "m_1ggr93q": {
+    "message": "公开商品网址",
+    "description": "Public product URL"
+  },
+  "m_iqpcqb": {
+    "message": "比较商品",
+    "description": "COMPARE PRODUCT"
+  },
+  "m_49higf": {
+    "message": "请使用不含查询参数或片段的公开 HTTPS 商品网址。",
+    "description": "Use a public HTTPS product URL without a query or fragment."
+  },
+  "m_ke8jqv": {
+    "message": "请选择其他网站的商品页面。",
+    "description": "Choose a product page from another website."
+  },
+  "m_1x0mofg": {
+    "message": "正在请求访问比较网站。",
+    "description": "Requesting access to the comparison website."
+  },
+  "m_1qydrbe": {
+    "message": "比较结果已添加至证据。商品身份和价格不能证明一件代发。",
+    "description": "Comparison added to evidence. Product identity and price do not prove dropshipping."
+  },
+  "m_y8kzgc": {
+    "message": "商品详情存在冲突",
+    "description": "Product details conflict"
+  },
+  "m_1ri6zw1": {
+    "message": "找到匹配的商品标识符",
+    "description": "Matching product identifiers found"
+  },
+  "m_gkcd8b": {
+    "message": "商品身份仍未确认",
+    "description": "Product identity remains unconfirmed"
   }
 }

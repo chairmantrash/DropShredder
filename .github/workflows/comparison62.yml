@@ -1,0 +1,58 @@
+name: DropShredder comparison62 targeted beta verification
+on:
+  push:
+    branches: [feature/beta62-comparison-20261017]
+    paths:
+      - 'src/**'
+      - 'entrypoints/**'
+      - 'public/_locales/**'
+      - 'tests/**'
+      - 'tools/beta/comparison62/**'
+      - '.github/workflows/comparison62.yml'
+permissions:
+  contents: read
+jobs:
+  verify-native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Source gates on the required Node22 runtime
+        run: |
+          npm test
+          npm run typecheck
+          npm run audit:security
+          npm run audit:chrome-runtime
+          npm run lint:data
+          npm run audit:localization
+          npm run audit:professional
+          npm audit
+          npm audit --prefix tools/browser-smoke
+          npm run build
+          npm run release:audit
+          npm run audit:performance
+      - name: Pin actual compiled package and prepare genuine native tests
+        run: |
+          python3 tools/beta/comparison62/build-info.py
+          python3 tools/beta/comparison62/make-runner.py
+          npm ci --prefix tools/browser-smoke
+          node tools/browser-smoke/node_modules/playwright/cli.js install --with-deps chromium
+          sudo apt-get install -y scrot xdotool fonts-noto-core fonts-noto-cjk
+      - name: Native permission and comparison controls
+        env:
+          DS_NATIVE_HEADED: '1'
+        run: xvfb-run -a -s '-screen 0 1920x1080x24' node tools/browser-smoke/probe-native-comparison62.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ds062-targeted-evidence
+          path: |
+            browser-smoke-results/
+            workplane/runs/DS-062/candidate-build-info.json
+            workplane/runs/DS-062/native-runner-identity.json
+          if-no-files-found: warn
+          retention-days: 30

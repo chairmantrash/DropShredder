@@ -54,6 +54,7 @@ import {mountOutsideResultControls} from '../../src/ui/outside-result-controls';
 import {consumerRecordLinks} from '../../src/reputation/consumer-links';
 import {fetchPublicStorePages,type PublicStorePage} from '../../src/osint/public-store-pages';
 import {fulfillmentDisclosure,fulfillmentDisclosureEvidence} from '../../src/analysis/fulfillment-disclosure';
+import {mountProductComparison} from '../../src/ui/product-comparison-controls';
 
 localizeDocument();
 const scanButton=document.querySelector<HTMLButtonElement>('#scan');
@@ -86,6 +87,7 @@ let domainRequest:AbortController|undefined;
 const originControls=mountNorthAmericaControls(()=>lastReport,assessment=>{if(lastReport){lastReport={...lastReport,northAmerica:assessment};renderReport(lastReport);}},currentReportAllowed);
 const standingControls=mountStandingControls(()=>lastReport?.product.url,currentReportAllowed);
 const outsideControls=mountOutsideResultControls(()=>lastReport,r=>renderReport(r),currentReportAllowed);
+const comparisonControls=mountProductComparison(()=>lastReport,r=>{renderReport(r);void saveObservation(r).catch(()=>{});},currentReportAllowed);
 const cancelDomain=document.querySelector<HTMLButtonElement>('#cancel-domain');
 function stopDomainLookup():void{domainRequest?.abort();domainRequest=undefined;if(checkDomain) checkDomain.disabled=false;if(cancelDomain) cancelDomain.disabled=true;}
 cancelDomain?.addEventListener('click',()=>{stopDomainLookup();if(status) status.textContent=tr('Domain lookup canceled.');});
@@ -95,6 +97,7 @@ function invalidatePageReport(message=tr('The page changed. Check this product a
   originControls.reset();
   standingControls.reset();
   outsideControls.reset();
+  comparisonControls.reset();
   stopDomainLookup();
   document.querySelector('#ds-search-chooser')?.remove();
   scanEpoch++;
@@ -229,6 +232,7 @@ async function scanActivePage(): Promise<void> {
   if (!scanButton || !status) return;
   standingControls.reset();
   outsideControls.reset();
+  comparisonControls.reset();
   const epoch=++scanEpoch;
   scanButton.disabled=true;
   lastReport=undefined;

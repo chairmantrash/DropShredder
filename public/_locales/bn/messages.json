@@ -2140,5 +2140,49 @@
   "m_9f1ish": {
     "message": "সরাসরি কারখানা থেকে",
     "description": "Factory-direct"
+  },
+  "m_50u6j2": {
+    "message": "একটি প্রকাশ্য পণ্য পৃষ্ঠা তুলনা করুন",
+    "description": "Compare a public product page"
+  },
+  "m_1xhej1j": {
+    "message": "আপনার অনুসন্ধান থেকে একটি সম্ভাব্য পৃষ্ঠা পেস্ট করুন। কুকি ছাড়াই শুধু এই পৃষ্ঠাটি আনা হবে।",
+    "description": "Paste a candidate from your search. Only this page is requested, without cookies."
+  },
+  "m_1ggr93q": {
+    "message": "প্রকাশ্য পণ্যের URL",
+    "description": "Public product URL"
+  },
+  "m_iqpcqb": {
+    "message": "পণ্য তুলনা করুন",
+    "description": "COMPARE PRODUCT"
+  },
+  "m_49higf": {
+    "message": "কোয়েরি বা ফ্র্যাগমেন্ট ছাড়া একটি প্রকাশ্য HTTPS পণ্যের URL ব্যবহার করুন।",
+    "description": "Use a public HTTPS product URL without a query or fragment."
+  },
+  "m_ke8jqv": {
+    "message": "অন্য ওয়েবসাইটের একটি পণ্য পৃষ্ঠা বেছে নিন।",
+    "description": "Choose a product page from another website."
+  },
+  "m_1x0mofg": {
+    "message": "তুলনার ওয়েবসাইটে প্রবেশের অনুমতি চাওয়া হচ্ছে।",
+    "description": "Requesting access to the comparison website."
+  },
+  "m_1qydrbe": {
+    "message": "প্রমাণে তুলনা যোগ করা হয়েছে। পণ্যের পরিচয় ও দাম ড্রপশিপিং প্রমাণ করে না।",
+    "description": "Comparison added to evidence. Product identity and price do not prove dropshipping."
+  },
+  "m_y8kzgc": {
+    "message": "পণ্যের বিবরণে বিরোধ রয়েছে",
+    "description": "Product details conflict"
+  },
+  "m_1ri6zw1": {
+    "message": "মিলে যাওয়া পণ্যের শনাক্তকারী পাওয়া গেছে",
+    "description": "Matching product identifiers found"
+  },
+  "m_gkcd8b": {
+    "message": "পণ্যের পরিচয় এখনও নিশ্চিত নয়",
+    "description": "Product identity remains unconfirmed"
   }
 }

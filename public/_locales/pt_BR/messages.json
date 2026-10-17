@@ -2140,5 +2140,49 @@
   "m_9f1ish": {
     "message": "Direto da fábrica",
     "description": "Factory-direct"
+  },
+  "m_50u6j2": {
+    "message": "Comparar uma página pública de produto",
+    "description": "Compare a public product page"
+  },
+  "m_1xhej1j": {
+    "message": "Cole uma opção da sua pesquisa. Só essa página será solicitada, sem cookies.",
+    "description": "Paste a candidate from your search. Only this page is requested, without cookies."
+  },
+  "m_1ggr93q": {
+    "message": "URL pública do produto",
+    "description": "Public product URL"
+  },
+  "m_iqpcqb": {
+    "message": "COMPARAR PRODUTO",
+    "description": "COMPARE PRODUCT"
+  },
+  "m_49higf": {
+    "message": "Use uma URL HTTPS pública do produto sem consulta nem fragmento.",
+    "description": "Use a public HTTPS product URL without a query or fragment."
+  },
+  "m_ke8jqv": {
+    "message": "Escolha uma página de produto de outro site.",
+    "description": "Choose a product page from another website."
+  },
+  "m_1x0mofg": {
+    "message": "Solicitando acesso ao site de comparação.",
+    "description": "Requesting access to the comparison website."
+  },
+  "m_1qydrbe": {
+    "message": "Comparação adicionada às evidências. A identidade e o preço do produto não comprovam dropshipping.",
+    "description": "Comparison added to evidence. Product identity and price do not prove dropshipping."
+  },
+  "m_y8kzgc": {
+    "message": "Os detalhes do produto são conflitantes",
+    "description": "Product details conflict"
+  },
+  "m_1ri6zw1": {
+    "message": "Identificadores de produto correspondentes encontrados",
+    "description": "Matching product identifiers found"
+  },
+  "m_gkcd8b": {
+    "message": "A identidade do produto continua sem confirmação",
+    "description": "Product identity remains unconfirmed"
   }
 }
