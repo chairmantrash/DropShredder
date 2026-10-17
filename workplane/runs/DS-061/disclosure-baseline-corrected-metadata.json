@@ -1,0 +1,102 @@
+{
+  "scope": "Primary-source dispatch-statement extraction challenge; not merchant fraud ground truth, not blinded or representative; selected by explicit disclosure searches",
+  "manifestSha256": "3daf607de4c294a387fff2fc5ad28bd80fe648591260dcd5eeb9ff6567af179c",
+  "positives": 12,
+  "correct": 9,
+  "rows": [
+    {
+      "id": "D01",
+      "group": "bhphotovideo.com",
+      "expected": "factory-direct",
+      "actual": null,
+      "matched": false
+    },
+    {
+      "id": "D02",
+      "group": "athome.com",
+      "expected": "supplier-direct",
+      "actual": "supplier-direct",
+      "matched": true,
+      "quote": "ship directly from our supplier"
+    },
+    {
+      "id": "D03",
+      "group": "vikingdirect.ie",
+      "expected": "supplier-direct",
+      "actual": "supplier-direct",
+      "matched": true,
+      "quote": "orders are packaged and shipped directly by the supplier"
+    },
+    {
+      "id": "D04",
+      "group": "acdirect.com",
+      "expected": "factory-direct",
+      "actual": "factory-direct",
+      "matched": true,
+      "quote": "we ship every order directly from the manufacturer"
+    },
+    {
+      "id": "D05",
+      "group": "thecoop.com",
+      "expected": "supplier-direct",
+      "actual": null,
+      "matched": false
+    },
+    {
+      "id": "D06",
+      "group": "groworganic.com",
+      "expected": "factory-direct",
+      "actual": "factory-direct",
+      "matched": true,
+      "quote": "Ships directly from the manufacturer"
+    },
+    {
+      "id": "D07",
+      "group": "cshardware.com",
+      "expected": "factory-direct",
+      "actual": "factory-direct",
+      "matched": true,
+      "quote": "This product ships directly from the manufacturer"
+    },
+    {
+      "id": "D08",
+      "group": "leapfrogoutdoor.com",
+      "expected": "supplier-direct",
+      "actual": "supplier-direct",
+      "matched": true,
+      "quote": "shipped directly to you by the supplier"
+    },
+    {
+      "id": "D09",
+      "group": "montanadecor.com",
+      "expected": "supplier-direct",
+      "actual": "supplier-direct",
+      "matched": true,
+      "quote": "Shipped directly to you from our supplier"
+    },
+    {
+      "id": "D10",
+      "group": "vintageking.com",
+      "expected": "factory-direct",
+      "actual": "factory-direct",
+      "matched": true,
+      "quote": "This item ships directly to you from the manufacturer"
+    },
+    {
+      "id": "D11",
+      "group": "backtothefuture.store",
+      "expected": "factory-direct",
+      "actual": "factory-direct",
+      "matched": true,
+      "quote": "SHIPS DIRECTLY FROM MANUFACTURER"
+    },
+    {
+      "id": "D12",
+      "group": "wayfair.com",
+      "expected": "supplier-direct",
+      "actual": null,
+      "matched": false
+    }
+  ],
+  "overall59Target": "NOT_EVALUABLE — no independent fraud/deceptive-resale labels; positive statement challenge has no representative negative sample"
+}

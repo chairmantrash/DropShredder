@@ -393,7 +393,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             if(!node) break;
             visitedTextNodes++;
             const parent=node.parentElement;
-            if(!parent || excluded(parent)||parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"]')) continue;
+            if(!parent || excluded(parent)||parent.closest('script,style,noscript,textarea,input,select,option,[contenteditable="true"],[hidden],[aria-hidden="true"],[data-hook="review"],.jdgm-rev,.yotpo-review,.loox-review,.stamped-review,blockquote,q')) continue;
             const value=(node.nodeValue||'').replace(/\s+/g,' ').trim();
             if(!value) continue;
             const clipped=value.slice(0,Math.min(1500,LIMITS.pageText-pageChars));
@@ -505,7 +505,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
             if(priceElements.length<4&&element.matches('[itemprop="price"],.product-price,[data-product-price]')&&element.closest('main')) priceElements.push(element);
             if(cards.length<LIMITS.cards && element.matches(cardSelector)) cards.push(element);
             if(amazonElements.length<LIMITS.amazonCards && element.matches('[data-component-type="s-search-result"][data-asin], [data-asin].s-result-item')) amazonElements.push(element);
-            if(reviewElements.length<LIMITS.reviews && element.matches('[data-hook="review"]')) reviewElements.push(element);
+            if(reviewElements.length<LIMITS.reviews && element.matches('[data-hook="review"]')&&publicReviewNode(element)) reviewElements.push(element);
             if(reviewElements.length<LIMITS.reviews && currentJudgeReview(element)){
               const id=element.getAttribute('data-review-id');
               if(id&&id.length<=160&&!seenJudgeIds.has(id)){seenJudgeIds.add(id);reviewElements.push(element);}
@@ -543,13 +543,13 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
         const boundVisiblePrice=explicitCurrency&&(product||products.length===0)&&currentPrices.length===1?visiblePrice:undefined;
         const reviews:ReviewSnapshot[]=reviewElements
           .map((review,index)=>{
-            if(review.matches('.jdgm-rev')){
-              const text=(selector:string,limit=4000):string=>{
+            const text=(selector:string,limit=4000):string=>{
                 const element=review.querySelector(selector);if(!element||!publicReviewNode(element))return '';
                 const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);let value='';
                 for(let i=0;i<160&&value.length<limit;i++){const node=walker.nextNode();if(!node)break;if(node.parentElement&&publicReviewNode(node.parentElement))value+=(node.nodeValue??'').slice(0,limit-value.length);}
                 return value.replace(/\s+/g,' ').trim();
               };
+            if(review.matches('.jdgm-rev')){
               const scoreNode=review.querySelector('.jdgm-rev__rating'),score=scoreNode&&publicReviewNode(scoreNode)?scoreNode.getAttribute('data-score'):null;
               const rating=score&&/^[1-5](?:\.\d{1,2})?$/.test(score)?Number(score):undefined;
               const verification=review.getAttribute('data-verified-buyer');
@@ -558,7 +558,6 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
                 title:text('.jdgm-rev__title',500)||undefined,body:text('.jdgm-rev__body'),date:date?.slice(0,80)||undefined,
                 verified:verification==='true'?true:verification==='false'?false:undefined};
             }
-            const text=(selector:string)=>(review.querySelector<HTMLElement>(selector)?.innerText || '').replace(/\s+/g,' ').trim().slice(0,4000);
             const ratingText=text('[data-hook="review-star-rating"], [data-hook="cmps-review-star-rating"]');
             const ratingMatch=normalizeDigits(ratingText).match(/([1-5](?:[.,٫]\d)?)/);
             return {
@@ -568,7 +567,7 @@ export function extractPageScan(kit:CommerceLanguageKit):PageScanResult {
               title:text('[data-hook="review-title"]'),
               body:text('[data-hook="review-body"], [data-hook="reviewText"], [data-hook="reviewRichContentContainer"]'),
               date:text('[data-hook="review-date"]') || undefined,
-              verified:Boolean(review.querySelector('[data-hook="avp-badge"]')),
+              verified:text('[data-hook="avp-badge"]')?true:undefined,
               helpfulCount:Number((normalizeDigits(text('[data-hook="helpful-vote-statement"]')).match(/\d+/)?.[0])) || undefined,
               reviewerName:text('.a-profile-name') || undefined,
             };

@@ -40,16 +40,16 @@ export function crossDomainReferenceEvidence(
   const current=currentDomain.toLowerCase().replace(/^www\./,'');
   const refs=knownDomains
     .map(d=>d.toLowerCase().replace(/^www\./,''))
-    .filter(d=>d!==current && text.toLowerCase().includes(d));
+    .filter(d=>d!==current && new RegExp('(?:^|[^a-z0-9_.-])(?:www\\.)?'+d.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![a-z0-9_-]|\\.[a-z0-9])','i').test(text.slice(0,500_000)));
 
   if(!refs.length) return [];
 
   return [{
     id:'CROSS_DOMAIN_MERCHANT_REFERENCE',
     family:'identity',
-    severity:'moderate',
+    severity:'info',
     confidence:.9,
-    weight:12,
+    weight:0,
     title:'This store points directly to another seller’s website',
     explanation:'The store’s own page mentions another seller’s website. That can happen with sister brands, shared support or copied content, so the connection is worth a closer look.',
     observedValue:[...new Set(refs)].join(', '),

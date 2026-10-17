@@ -1,0 +1,664 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 typecheck
+> tsc --noEmit
+
+error TS5083: Cannot read file '/workspace/scratch/21a17dd91973/DropShredder-audit59/.wxt/tsconfig.json'.
+entrypoints/auto.content.ts(96,16): error TS2304: Cannot find name 'defineContentScript'.
+entrypoints/background.ts(25,16): error TS2304: Cannot find name 'defineBackground'.
+entrypoints/sidepanel/main.ts(281,23): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+entrypoints/sidepanel/main.ts(298,18): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+entrypoints/sidepanel/main.ts(362,73): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+scripts/data-lint.ts(1,8): error TS1192: Module '"node:fs"' has no default export.
+scripts/enhancement-benchmark.ts(8,25): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+scripts/enhancement-benchmark.ts(9,31): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+scripts/enhancement-benchmark.ts(10,30): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+scripts/enhancement-benchmark.ts(11,26): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+scripts/localization-audit.ts(1,8): error TS1192: Module '"node:fs"' has no default export.
+scripts/localization-audit.ts(2,8): error TS1259: Module '"node:path"' can only be default-imported using the 'esModuleInterop' flag
+scripts/localization-audit.ts(3,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+scripts/localization-audit.ts(4,8): error TS1259: Module '"/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/typescript/lib/typescript"' can only be default-imported using the 'esModuleInterop' flag
+scripts/localization-audit.ts(13,34): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+scripts/localization-audit.ts(25,53): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+scripts/localization-audit.ts(35,26): error TS2495: Type 'NodeListOf<ChildNode>' is not an array type or a string type.
+scripts/professionalism-audit.ts(1,8): error TS1192: Module '"node:fs"' has no default export.
+scripts/professionalism-audit.ts(2,8): error TS1259: Module '"node:path"' can only be default-imported using the 'esModuleInterop' flag
+scripts/professionalism-audit.ts(18,59): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/analysis/adversarial-normalization.ts(15,39): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/amazon-clone-clusters.ts(37,67): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/amazon-clone-clusters.ts(54,34): error TS2802: Type 'Map<string, AmazonSearchCard[]>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/amazon-clone-clusters.ts(55,21): error TS2802: Type 'Set<unknown>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/amazon-clone-clusters.ts(55,39): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(57,22): error TS2802: Type 'Set<unknown>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/amazon-clone-clusters.ts(57,40): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(57,69): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(57,101): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(58,22): error TS2802: Type 'Set<unknown>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/amazon-clone-clusters.ts(58,40): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(59,28): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/analysis/amazon-clone-clusters.ts(59,48): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/analysis/brand-affiliation.ts(1,24): error TS2732: Cannot find module '../../intelligence/brand-references.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/analysis/brand-affiliation.ts(6,96): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/brand-affiliation.ts(7,131): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/brand-affiliation.ts(8,131): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/brand-affiliation.ts(14,35): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+src/analysis/brand-affiliation.ts(14,57): error TS7006: Parameter 'alias' implicitly has an 'any' type.
+src/analysis/brand-affiliation.ts(23,50): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/analysis/brand-affiliation.ts(29,38): error TS7006: Parameter 'k' implicitly has an 'any' type.
+src/analysis/defect-consensus.ts(42,23): error TS2802: Type 'MapIterator<DefectObservation>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/evidence-engine.ts(96,9): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/evidence-fusion.ts(35,20): error TS2802: Type 'MapIterator<number>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/evidence-fusion.ts(37,33): error TS2802: Type 'MapIterator<[string, Set<string>]>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/evidence-independence.ts(20,14): error TS2802: Type 'MapIterator<T>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/fulfillment-disclosure.ts(22,52): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/fulfillment-observation.ts(23,24): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/local-vectors.ts(9,98): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/local-vectors.ts(12,72): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/local-vectors.ts(13,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/local-vectors.ts(22,34): error TS2802: Type 'Float32Array<ArrayBuffer>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/local-vectors.ts(36,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/merchant-network.ts(21,21): error TS2802: Type 'MapIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/merchant-network.ts(55,23): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/merchant-origin.ts(36,90): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/merchant-origin.ts(51,26): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/merchant-origin.ts(83,30): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/north-america-origin.ts(32,17): error TS2802: Type 'Set<"label" | "bill-of-materials" | "audit" | "manufacturing-record" | "entity-record" | "carrier-pickup" | "delivery-record" | "claim" | "trade-certificate">' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/north-america-origin.ts(52,56): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/north-america-origin.ts(67,18): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/north-america-origin.ts(74,167): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/north-america-origin.ts(75,130): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/north-america-origin.ts(76,151): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/north-america-origin.ts(96,25): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/north-america-origin.ts(99,48): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/passive-rules.ts(75,22): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/product-leads.ts(72,22): error TS2802: Type 'MapIterator<{ role: "seller" | "manufacturer" | "importer"; name: string; identifier?: string | undefined; sourceUrl: string; observedAt: string; count: number; }>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/product-mutation.ts(36,51): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/quality-claims.ts(46,31): error TS2802: Type 'MapIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/review-integrity.ts(90,55): error TS2802: Type 'Set<ReviewFlag>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/review-primitives.ts(17,88): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/review-primitives.ts(21,86): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/analysis/review-primitives.ts(28,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/analysis/review-provenance.ts(12,17): error TS2802: Type 'MapIterator<[string, number]>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/deep-hunt/search-urls.ts(17,23): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/detection/shopping-page.ts(64,100): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/basic-page.ts(10,34): error TS2461: Type 'NodeListOf<HTMLScriptElement>' is not an array type.
+src/extraction/basic-page.ts(25,25): error TS2461: Type 'HTMLCollectionOf<HTMLImageElement>' is not an array type.
+src/extraction/basic-page.ts(38,20): error TS2802: Type 'Set<any>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(32,22): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+src/extraction/page-scan.ts(41,64): error TS2802: Type 'Set<Element>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(56,113): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(58,38): error TS2802: Type 'MapIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(60,25): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(60,56): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(60,104): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(132,34): error TS2802: Type 'URLSearchParamsIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(169,34): error TS2461: Type 'NodeListOf<HTMLElement>' is not an array type.
+src/extraction/page-scan.ts(225,72): error TS2550: Property 'hasOwn' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/extraction/page-scan.ts(237,37): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(354,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(363,34): error TS2802: Type 'URLSearchParamsIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(373,33): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+src/extraction/page-scan.ts(379,44): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(410,36): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(415,103): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(418,201): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/extraction/page-scan.ts(426,31): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(427,30): error TS2802: Type 'Set<any>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(586,76): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(590,74): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(592,27): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/page-scan.ts(599,34): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/extraction/structured-product.ts(33,19): error TS2461: Type 'NodeListOf<HTMLScriptElement>' is not an array type.
+src/extraction/structured-product.ts(48,19): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/image-hash.ts(65,14): error TS2802: Type 'Uint8Array<ArrayBuffer>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/local-label-reader.ts(77,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/local-label-reader.ts(78,23): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/local-label-reader.ts(79,19): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/product-fingerprint.ts(23,42): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/forensics/product-fingerprint.ts(29,14): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/product-fingerprint.ts(80,22): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/product-fingerprint.ts(108,72): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/forensics/product-fingerprint.ts(112,25): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/forensics/product-fingerprint.ts(112,112): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/forensics/product-fingerprint.ts(126,21): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/i18n/index.ts(50,28): error TS2461: Type 'NodeListOf<ChildNode>' is not an array type.
+src/intelligence/north-america-directory.ts(1,18): error TS2732: Cannot find module '../../intelligence/north-america-commerce-20261010.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/intelligence/north-america-directory.ts(10,49): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/intelligence/north-america-directory.ts(11,83): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/intelligence/north-america-directory.ts(12,69): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/intelligence/north-america-directory.ts(13,41): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/intelligence/regulatory-match.ts(28,112): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/intelligence/regulatory-match.ts(30,26): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/intelligence/tool-signatures.ts(55,27): error TS2461: Type 'HTMLCollectionOf<HTMLScriptElement>' is not an array type.
+src/languages/commerce-date.ts(29,20): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-date.ts(29,58): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-kit.ts(1,18): error TS2732: Cannot find module './commerce-kit-data.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/languages/commerce-text.ts(12,39): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-text.ts(16,36): error TS2802: Type 'MapIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/languages/commerce-text.ts(17,43): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-text.ts(28,53): error TS2339: Property 'Segmenter' does not exist on type 'typeof Intl'.
+src/languages/commerce-text.ts(45,22): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/languages/commerce-text.ts(47,25): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-text.ts(61,22): error TS2802: Type 'RegExpStringIterator<RegExpExecArray>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/languages/commerce-text.ts(83,28): error TS2339: Property 'Segmenter' does not exist on type 'typeof Intl'.
+src/languages/commerce-text.ts(85,42): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/languages/commerce-text.ts(99,228): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/osint/cpsc.ts(9,113): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/osint/public-store-pages.ts(13,13): error TS2802: Type 'URLSearchParamsIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/osint/public-store-pages.ts(34,22): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+src/osint/public-store-pages.ts(42,23): error TS2802: Type 'Set<Element>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/osint/rdap.ts(2,23): error TS2732: Cannot find module '../../intelligence/rdap-bootstrap.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/osint/rdap.ts(53,43): error TS7031: Binding element 'suffixes' implicitly has an 'any' type.
+src/osint/rdap.ts(54,37): error TS7006: Parameter 'url' implicitly has an 'any' type.
+src/osint/scamferret-results.ts(1,19): error TS2732: Cannot find module '../../intelligence/scamferret-result-index.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/osint/scamferret-results.ts(10,31): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/osint/scamferret-results.ts(10,66): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/reputation/business-standing.ts(1,21): error TS2732: Cannot find module '../../intelligence/standing-sources-20261010.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.
+src/reputation/business-standing.ts(21,124): error TS1501: This regular expression flag is only available when targeting 'es6' or later.
+src/reputation/business-standing.ts(30,67): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/reputation/business-standing.ts(36,22): error TS7006: Parameter 'h' implicitly has an 'any' type.
+src/reputation/business-standing.ts(77,41): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/reputation/business-standing.ts(78,68): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/reputation/business-standing.ts(78,243): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/reputation/complaint-analysis.ts(46,20): error TS2802: Type 'MapIterator<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/reputation/complaint-analysis.ts(51,14): error TS2802: Type 'MapIterator<ReputationObservation>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/runtime/chrome-page.ts(22,28): error TS2461: Type 'NodeListOf<HTMLElement>' is not an array type.
+src/runtime/chrome-page.ts(34,27): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+src/security/sensitive-surface.ts(27,22): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+src/security/sensitive-surface.ts(53,22): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+src/security/sensitive-surface.ts(61,14): error TS2802: Type 'Set<Element>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/storage/history.ts(62,21): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/ui/business-standing-controls.ts(45,88): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/ui/intelligence-controls.ts(75,64): error TS2802: Type 'Uint8Array<ArrayBuffer>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/ui/marketplace-badges.ts(25,25): error TS2461: Type 'NodeListOf<HTMLElement>' is not an array type.
+src/ui/marketplace-badges.ts(35,21): error TS2461: Type 'NodeListOf<HTMLAnchorElement>' is not an array type.
+src/ui/north-america-controls.ts(35,51): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/ui/north-america-controls.ts(41,57): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/ui/north-america-controls.ts(41,171): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/ui/panel-controls.ts(21,24): error TS2461: Type 'never[] | NodeListOf<HTMLOptionElement>' is not an array type.
+src/ui/panel-controls.ts(39,20): error TS2461: Type 'NodeListOf<HTMLElement> | never[]' is not an array type.
+src/ui/search-chooser.ts(25,25): error TS2461: Type 'NodeListOf<HTMLInputElement | HTMLButtonElement>' is not an array type.
+tests/adapters.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/adapters.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/adversarial-normalization.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/adversarial-normalization.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/amazon-clone-clusters.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/amazon-clone-clusters.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/auto-protection-registration.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/auto-protection-registration.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/auto-registration-race.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/auto-registration-race.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/beta-failures.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/beta-failures.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/beta-failures.test.ts(15,92): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tests/beta-failures.test.ts(18,25): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+tests/beta-failures.test.ts(102,97): error TS18048: 'e' is possibly 'undefined'.
+tests/beta-failures.test.ts(102,136): error TS18048: 'e' is possibly 'undefined'.
+tests/beta-failures.test.ts(103,31): error TS2322: Type 'EvidenceSignal | undefined' is not assignable to type 'EvidenceSignal'.
+  Type 'undefined' is not assignable to type 'EvidenceSignal'.
+tests/beta-failures.test.ts(103,45): error TS2322: Type 'EvidenceSignal | undefined' is not assignable to type 'EvidenceSignal'.
+  Type 'undefined' is not assignable to type 'EvidenceSignal'.
+tests/beta-failures.test.ts(103,123): error TS2322: Type 'EvidenceSignal | undefined' is not assignable to type 'EvidenceSignal'.
+  Type 'undefined' is not assignable to type 'EvidenceSignal'.
+tests/beta-failures.test.ts(103,137): error TS2322: Type 'EvidenceSignal | undefined' is not assignable to type 'EvidenceSignal'.
+  Type 'undefined' is not assignable to type 'EvidenceSignal'.
+tests/beta100-detection-gaps.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/beta100-detection-gaps.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/beta100-detection-gaps.test.ts(14,92): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tests/beta100-detection-gaps.test.ts(17,25): error TS2495: Type 'NodeListOf<Element>' is not an array type or a string type.
+tests/browser-control-arguments.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/browser-control-arguments.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/builtin-source-registry.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/builtin-source-registry.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/business-standing.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/business-standing.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/business-standing.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/business-standing.test.ts(13,122): error TS7006: Parameter 's' implicitly has an 'any' type.
+tests/business-standing.test.ts(13,159): error TS7006: Parameter 's' implicitly has an 'any' type.
+tests/catalog-signals.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/catalog-signals.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/chrome-page-runtime.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/chrome-page-runtime.test.ts(3,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/chrome-page-runtime.test.ts(107,26): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+tests/codeql-acceptance.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/codeql-acceptance.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/commerce-platforms.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/commerce-platforms.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/completion-controls.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/completion-controls.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/core.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/core.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/dark-patterns.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/dark-patterns.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/deep-hunt-bounds.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/deep-hunt-bounds.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/defect-consensus.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/defect-consensus.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/detection-audit59.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/detection-audit59.test.ts(1,37): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/detection-audit59.test.ts(62,92): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tests/evaluation-metrics.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/evaluation-metrics.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/evidence-fusion.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/evidence-fusion.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/fulfillment-observation.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/fulfillment-observation.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/gap-audit.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/gap-audit.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/gap-audit.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/gap-audit.test.ts(31,17): error TS2495: Type 'NodeListOf<HTMLSelectElement>' is not an array type or a string type.
+tests/gap-audit.test.ts(34,66): error TS2461: Type 'NodeListOf<HTMLOptionElement>' is not an array type.
+tests/history-signals.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/history-signals.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/image-hash.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/image-hash.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/local-label-reader.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/local-label-reader.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/local-label-reader.test.ts(52,32): error TS2802: Type 'Map<string, PropertyDescriptor | undefined>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+tests/local-vectors.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/local-vectors.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/local-vectors.test.ts(8,24): error TS2802: Type 'Float32Array<ArrayBufferLike>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+tests/local-vectors.test.ts(8,31): error TS2802: Type 'Float32Array<ArrayBufferLike>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+tests/localization.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/localization.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/localization.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/localization.test.ts(23,20): error TS2461: Type 'NodeListOf<HTMLOptionElement>' is not an array type.
+tests/localization.test.ts(24,17): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+tests/localization.test.ts(30,24): error TS2461: Type 'NodeListOf<HTMLOptionElement>' is not an array type.
+tests/localization.test.ts(31,24): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+tests/marketplace-badges.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/marketplace-badges.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/merchant-network.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/merchant-network.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/merchant-origin.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/merchant-origin.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-commerce.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-commerce.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-commerce.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/multilingual-commerce.test.ts(23,99): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tests/multilingual-commerce.test.ts(24,17): error TS2495: Type 'NodeListOf<HTMLAnchorElement>' is not an array type or a string type.
+tests/multilingual-date.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-date.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-ocr.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-ocr.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/multilingual-ocr.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/north-america-origin.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/north-america-origin.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/north-america-origin.test.ts(3,8): error TS1192: Module '"node:fs"' has no default export.
+tests/north-america-origin.test.ts(77,41): error TS7006: Parameter 'r' implicitly has an 'any' type.
+tests/north-america-origin.test.ts(78,46): error TS7006: Parameter 'e' implicitly has an 'any' type.
+tests/optional-brave.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/optional-brave.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/page-safety.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/page-safety.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/page-scan-architecture.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/page-scan-architecture.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/price-manipulation.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/price-manipulation.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/product-fingerprint.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/product-fingerprint.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/product-mutation.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/product-mutation.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/provenance.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/provenance.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/public-product-privacy.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/public-product-privacy.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/public-product-privacy.test.ts(30,24): error TS2495: Type 'NodeListOf<HTMLInputElement>' is not an array type or a string type.
+tests/public-product-privacy.test.ts(46,24): error TS2495: Type 'NodeListOf<HTMLInputElement>' is not an array type or a string type.
+tests/quality-claims.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/quality-claims.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/registry-integrity.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/registry-integrity.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/regulatory-match.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/regulatory-match.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/reputation-improvements.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/reputation-improvements.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/reputation-improvements.test.ts(49,91): error TS2461: Type 'HTMLCollectionOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tests/reputation-improvements.test.ts(57,25): error TS2495: Type 'NodeListOf<HTMLInputElement>' is not an array type or a string type.
+tests/reputation-improvements.test.ts(140,25): error TS2495: Type 'NodeListOf<HTMLInputElement>' is not an array type or a string type.
+tests/research-enhancement.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/research-enhancement.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/return-policy.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/return-policy.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-discrepancy.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-discrepancy.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-integrity-adversarial.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-integrity-adversarial.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-integrity.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-integrity.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-primitives.test.ts(1,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/review-primitives.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/runtime-reconciliation.test.ts(2,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/runtime-reconciliation.test.ts(3,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/security-baseline.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/security-baseline.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/security-baseline.test.ts(4,8): error TS1259: Module '"node:path"' can only be default-imported using the 'esModuleInterop' flag
+tests/shopping-page-classification.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/shopping-page-classification.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/sidepanel-tab-resolution.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/sidepanel-tab-resolution.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/source-reputation.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/source-reputation.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/storefront-risk-fixtures.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/storefront-risk-fixtures.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/supply-chain-profile.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/supply-chain-profile.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/tone.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/tone.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/trustpilot.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/trustpilot.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tests/user-intelligence.test.ts(1,8): error TS1259: Module '"node:assert/strict"' can only be default-imported using the 'esModuleInterop' flag
+tests/user-intelligence.test.ts(2,8): error TS1259: Module '"node:test"' can only be default-imported using the 'esModuleInterop' flag
+tools/beta/audit59/disclosure.mts(1,8): error TS1192: Module '"node:fs"' has no default export.
+tools/beta/audit59/replay.mts(2,8): error TS1192: Module '"node:fs"' has no default export.
+tools/beta/audit59/replay.mts(2,33): error TS1259: Module '"node:path"' can only be default-imported using the 'esModuleInterop' flag
+tools/beta/audit59/replay.mts(6,25): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+tools/beta/audit59/replay.mts(6,91): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+tools/beta/audit59/replay.mts(6,153): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+tools/beta/audit59/replay.mts(6,218): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+tools/beta/audit59/replay.mts(13,96): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tools/beta/failures/diagnose.mts(2,8): error TS1192: Module '"node:fs"' has no default export.
+tools/beta/failures/diagnose.mts(10,30): error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'node20', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+tools/beta/failures/diagnose.mts(15,96): error TS2461: Type 'NodeListOf<HTMLImageElement | HTMLScriptElement>' is not an array type.
+tools/beta/failures/diagnose.mts(21,16): error TS2461: Type 'NodeListOf<Element>' is not an array type.
+../../78a93086ddbd/DropShredder-DS056/node_modules/@aklinker1/rollup-plugin-visualizer/dist/plugin/index.d.ts(1,39): error TS2307: Cannot find module 'rollup' or its corresponding type declarations.
+../../78a93086ddbd/DropShredder-DS056/node_modules/@aklinker1/rollup-plugin-visualizer/dist/plugin/index.d.ts(2,8): error TS1259: Module '"/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/open/index"' can only be default-imported using the 'esModuleInterop' flag
+../../78a93086ddbd/DropShredder-DS056/node_modules/@types/chrome/har-format/index.d.ts(4,17): error TS2300: Duplicate identifier 'HARFormatEntry'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/@types/chrome/har-format/index.d.ts(5,17): error TS2300: Duplicate identifier 'HARFormatLog'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/@wxt-dev/browser/src/gen/har-format/index.d.ts(6,10): error TS2300: Duplicate identifier 'HARFormatEntry'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/@wxt-dev/browser/src/gen/har-format/index.d.ts(7,10): error TS2300: Duplicate identifier 'HARFormatLog'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/c12/dist/index.d.mts(1,10): error TS2305: Module '"jiti"' has no exported member 'Jiti'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/c12/dist/index.d.mts(1,16): error TS2305: Module '"jiti"' has no exported member 'JitiOptions'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/c12/dist/index.d.mts(4,22): error TS2307: Cannot find module 'ohash/utils' or its corresponding type declarations.
+  There are types at '/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/ohash/dist/utils/index.d.mts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/dom/parser.d.ts(12,5): error TS2416: Property 'parseFromString' in type 'DOMParser' is not assignable to the same property in base type 'DOMParser'.
+  Type '<MIME extends keyof { "text/html": HTMLDocument; "image/svg+xml": SVGDocument; "text/xml": XMLDocument; }>(markupLanguage: string, mimeType: MIME) => { ...; }[MIME]' is not assignable to type '(string: string, type: DOMParserSupportedType) => Document'.
+    Type 'HTMLDocument | SVGDocument | XMLDocument' is not assignable to type 'Document'.
+      Type 'HTMLDocument' is missing the following properties from type 'Document': URL, alinkColor, anchors, applets, and 192 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/anchor-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/anchor-element").HTMLAnchorElement' incorrectly implements interface 'HTMLAnchorElement'.
+  Type 'HTMLAnchorElement' is missing the following properties from type 'HTMLAnchorElement': charset, coords, hreflang, name, and 166 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/area-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/area-element").HTMLAreaElement' incorrectly implements interface 'HTMLAreaElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLAreaElement': alt, coords, download, noHref, and 166 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/audio-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/audio-element").HTMLAudioElement' incorrectly implements interface 'HTMLAudioElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLAudioElement': autoplay, buffered, controls, crossOrigin, and 194 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/base-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/base-element").HTMLBaseElement' incorrectly implements interface 'HTMLBaseElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLBaseElement': href, target, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/body-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/body-element").HTMLBodyElement' incorrectly implements interface 'HTMLBodyElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLBodyElement': aLink, background, bgColor, link, and 171 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/br-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/br-element").HTMLBRElement' incorrectly implements interface 'HTMLBRElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLBRElement': clear, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/button-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/button-element").HTMLButtonElement' incorrectly implements interface 'HTMLButtonElement'.
+  Type 'HTMLButtonElement' is missing the following properties from type 'HTMLButtonElement': form, formAction, formEnctype, formMethod, and 161 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/canvas-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/canvas-element").HTMLCanvasElement' incorrectly implements interface 'HTMLCanvasElement'.
+  Type 'HTMLCanvasElement' is missing the following properties from type 'HTMLCanvasElement': captureStream, toBlob, transferControlToOffscreen, autocapitalize, and 148 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/d-list-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/d-list-element").HTMLDListElement' incorrectly implements interface 'HTMLDListElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDListElement': compact, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/data-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/data-element").HTMLDataElement' incorrectly implements interface 'HTMLDataElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDataElement': value, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/data-list-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/data-list-element").HTMLDataListElement' incorrectly implements interface 'HTMLDataListElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDataListElement': options, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/details-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/details-element").HTMLDetailsElement' incorrectly implements interface 'HTMLDetailsElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDetailsElement': name, open, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/directory-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/directory-element").HTMLDirectoryElement' incorrectly implements interface 'HTMLDirectoryElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDirectoryElement': compact, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/div-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/div-element").HTMLDivElement' incorrectly implements interface 'HTMLDivElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLDivElement': align, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/document.d.ts(6,9): error TS2416: Property 'all' in type 'HTMLDocument' is not assignable to the same property in base type 'HTMLDocument'.
+  Property 'namedItem' is missing in type 'NodeList' but required in type 'HTMLAllCollection'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/document.d.ts(15,9): error TS2416: Property 'title' in type 'HTMLDocument' is not assignable to the same property in base type 'HTMLDocument'.
+  Type 'HTMLTitleElement' is not assignable to type 'string'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/document.d.ts(19,9): error TS2416: Property 'title' in type 'HTMLDocument' is not assignable to the same property in base type 'HTMLDocument'.
+  Type 'HTMLTitleElement' is not assignable to type 'string'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/element").HTMLElement' incorrectly implements interface 'HTMLElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLElement': autocapitalize, autocorrect, inert, offsetHeight, and 145 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/embed-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/embed-element").HTMLEmbedElement' incorrectly implements interface 'HTMLEmbedElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLEmbedElement': align, height, name, src, and 152 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/field-set-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/field-set-element").HTMLFieldSetElement' incorrectly implements interface 'HTMLFieldSetElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLFieldSetElement': disabled, elements, form, name, and 156 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/font-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/font-element").HTMLFontElement' incorrectly implements interface 'HTMLFontElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLFontElement': color, face, size, autocapitalize, and 148 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/form-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/form-element").HTMLFormElement' incorrectly implements interface 'HTMLFormElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLFormElement': acceptCharset, action, autocomplete, elements, and 163 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/frame-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/frame-element").HTMLFrameElement' incorrectly implements interface 'HTMLFrameElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLFrameElement': contentDocument, contentWindow, frameBorder, longDesc, and 155 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/frame-set-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/frame-set-element").HTMLFrameSetElement' incorrectly implements interface 'HTMLFrameSetElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLFrameSetElement': cols, rows, autocapitalize, autocorrect, and 167 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/head-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/head-element").HTMLHeadElement' incorrectly implements interface 'HTMLHeadElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLHeadElement': autocapitalize, autocorrect, inert, offsetHeight, and 145 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/heading-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/heading-element").HTMLHeadingElement' incorrectly implements interface 'HTMLHeadingElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLHeadingElement': align, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/hr-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/hr-element").HTMLHRElement' incorrectly implements interface 'HTMLHRElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLHRElement': align, color, noShade, size, and 150 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/html-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/html-element").HTMLHtmlElement' incorrectly implements interface 'HTMLHtmlElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLHtmlElement': version, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/i-frame-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/i-frame-element").HTMLIFrameElement' incorrectly implements interface 'HTMLIFrameElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLIFrameElement': align, allow, allowFullscreen, contentDocument, and 164 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/image-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/image-element").HTMLImageElement' incorrectly implements interface 'HTMLImageElement'.
+  Type 'HTMLImageElement' is missing the following properties from type 'HTMLImageElement': align, border, complete, crossOrigin, and 166 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/input-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/input-element").HTMLInputElement' incorrectly implements interface 'HTMLInputElement'.
+  Type 'HTMLInputElement' is missing the following properties from type 'HTMLInputElement': accept, align, alt, autocomplete, and 199 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/label-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/label-element").HTMLLabelElement' incorrectly implements interface 'HTMLLabelElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLLabelElement': control, form, htmlFor, autocapitalize, and 148 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/legend-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/legend-element").HTMLLegendElement' incorrectly implements interface 'HTMLLegendElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLLegendElement': align, form, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/li-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/li-element").HTMLLIElement' incorrectly implements interface 'HTMLLIElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLLIElement': type, value, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/link-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/link-element").HTMLLinkElement' incorrectly implements interface 'HTMLLinkElement'.
+  Type 'HTMLLinkElement' is missing the following properties from type 'HTMLLinkElement': as, blocking, charset, crossOrigin, and 159 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/map-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/map-element").HTMLMapElement' incorrectly implements interface 'HTMLMapElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMapElement': areas, name, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/marquee-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/marquee-element").HTMLMarqueeElement' incorrectly implements interface 'HTMLMarqueeElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMarqueeElement': behavior, bgColor, direction, height, and 158 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/media-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/media-element").HTMLMediaElement' incorrectly implements interface 'HTMLMediaElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMediaElement': autoplay, buffered, controls, crossOrigin, and 194 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/menu-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/menu-element").HTMLMenuElement' incorrectly implements interface 'HTMLMenuElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMenuElement': compact, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/meta-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/meta-element").HTMLMetaElement' incorrectly implements interface 'HTMLMetaElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMetaElement': content, httpEquiv, media, name, and 150 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/meter-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/meter-element").HTMLMeterElement' incorrectly implements interface 'HTMLMeterElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLMeterElement': high, labels, low, max, and 152 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/mod-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/mod-element").HTMLModElement' incorrectly implements interface 'HTMLModElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLModElement': cite, dateTime, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/o-list-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/o-list-element").HTMLOListElement' incorrectly implements interface 'HTMLOListElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLOListElement': compact, reversed, start, type, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/object-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/object-element").HTMLObjectElement' incorrectly implements interface 'HTMLObjectElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLObjectElement': align, archive, border, code, and 171 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/opt-group-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/opt-group-element").HTMLOptGroupElement' incorrectly implements interface 'HTMLOptGroupElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLOptGroupElement': disabled, label, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/option-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/option-element").HTMLOptionElement' incorrectly implements interface 'HTMLOptionElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLOptionElement': defaultSelected, disabled, form, index, and 153 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/output-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/output-element").HTMLOutputElement' incorrectly implements interface 'HTMLOutputElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLOutputElement': defaultValue, form, htmlFor, labels, and 158 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/paragraph-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/paragraph-element").HTMLParagraphElement' incorrectly implements interface 'HTMLParagraphElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLParagraphElement': align, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/param-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/param-element").HTMLParamElement' incorrectly implements interface 'HTMLParamElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLParamElement': name, type, value, valueType, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/picture-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/picture-element").HTMLPictureElement' incorrectly implements interface 'HTMLPictureElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLPictureElement': autocapitalize, autocorrect, inert, offsetHeight, and 145 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/pre-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/pre-element").HTMLPreElement' incorrectly implements interface 'HTMLPreElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLPreElement': width, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/progress-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/progress-element").HTMLProgressElement' incorrectly implements interface 'HTMLProgressElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLProgressElement': labels, max, position, value, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/quote-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/quote-element").HTMLQuoteElement' incorrectly implements interface 'HTMLQuoteElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLQuoteElement': cite, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/script-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/script-element").HTMLScriptElement' incorrectly implements interface 'HTMLScriptElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLScriptElement': async, blocking, charset, crossOrigin, and 159 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/select-element.d.ts(5,9): error TS2416: Property 'options' in type 'HTMLSelectElement' is not assignable to the same property in base type 'HTMLSelectElement'.
+  Type 'NodeList' is missing the following properties from type 'HTMLOptionsCollection': selectedIndex, add, remove, namedItem
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/slot-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/slot-element").HTMLSlotElement' incorrectly implements interface 'HTMLSlotElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLSlotElement': name, assign, assignedElements, assignedNodes, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/source-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/source-element").HTMLSourceElement' incorrectly implements interface 'HTMLSourceElement'.
+  Type 'HTMLSourceElement' is missing the following properties from type 'HTMLSourceElement': height, media, width, autocapitalize, and 148 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/span-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/span-element").HTMLSpanElement' incorrectly implements interface 'HTMLSpanElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLSpanElement': autocapitalize, autocorrect, inert, offsetHeight, and 145 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/style-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/style-element").HTMLStyleElement' incorrectly implements interface 'HTMLStyleElement'.
+  Type 'HTMLStyleElement' is missing the following properties from type 'HTMLStyleElement': blocking, disabled, media, type, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-caption-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-caption-element").HTMLTableCaptionElement' incorrectly implements interface 'HTMLTableCaptionElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTableCaptionElement': align, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-cell-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-cell-element").HTMLTableCellElement' incorrectly implements interface 'HTMLTableCellElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTableCellElement': abbr, align, axis, bgColor, and 160 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-element").HTMLTableElement' incorrectly implements interface 'HTMLTableElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTableElement': align, bgColor, border, caption, and 168 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-row-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/table-row-element").HTMLTableRowElement' incorrectly implements interface 'HTMLTableRowElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTableRowElement': align, bgColor, cells, ch, and 155 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/template-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/template-element").HTMLTemplateElement' incorrectly implements interface 'HTMLTemplateElement'.
+  Type 'HTMLTemplateElement' is missing the following properties from type 'HTMLTemplateElement': shadowRootClonable, shadowRootDelegatesFocus, shadowRootMode, shadowRootSerializable, and 149 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/text-area-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/text-area-element").HTMLTextAreaElement' incorrectly implements interface 'HTMLTextAreaElement'.
+  Type 'HTMLTextAreaElement' is missing the following properties from type 'HTMLTextAreaElement': autocomplete, cols, defaultValue, dirName, and 170 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/time-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/time-element").HTMLTimeElement' incorrectly implements interface 'HTMLTimeElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTimeElement': dateTime, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/title-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/title-element").HTMLTitleElement' incorrectly implements interface 'HTMLTitleElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTitleElement': text, autocapitalize, autocorrect, inert, and 146 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/track-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/track-element").HTMLTrackElement' incorrectly implements interface 'HTMLTrackElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLTrackElement': default, kind, label, readyState, and 156 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/u-list-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/u-list-element").HTMLUListElement' incorrectly implements interface 'HTMLUListElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLUListElement': compact, type, autocapitalize, autocorrect, and 147 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/unknown-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/unknown-element").HTMLUnknownElement' incorrectly implements interface 'HTMLUnknownElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLUnknownElement': autocapitalize, autocorrect, inert, offsetHeight, and 145 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/video-element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/html/video-element").HTMLVideoElement' incorrectly implements interface 'HTMLVideoElement'.
+  Type 'HTMLElement' is missing the following properties from type 'HTMLVideoElement': disablePictureInPicture, height, onenterpictureinpicture, onleavepictureinpicture, and 207 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/attr.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/attr").Attr' incorrectly implements interface 'Attr'.
+  Type 'Attr' is missing the following properties from type 'Attr': namespaceURI, prefix, specified, baseURI, and 14 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/character-data.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/character-data").CharacterData' incorrectly implements interface 'CharacterData'.
+  Type 'CharacterData' is missing the following properties from type 'CharacterData': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 11 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/comment.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/comment").Comment' incorrectly implements interface 'Comment'.
+  Type 'Comment' is missing the following properties from type 'CharacterData': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 11 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document-fragment.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document-fragment").DocumentFragment' incorrectly implements interface 'DocumentFragment'.
+  Type 'DocumentFragment' is missing the following properties from type 'DocumentFragment': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 11 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document-type.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document-type").DocumentType' incorrectly implements interface 'DocumentType'.
+  Type 'DocumentType' is missing the following properties from type 'DocumentType': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 15 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(13,5): error TS2416: Property 'createAttribute' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(name: any) => Attr' is not assignable to type '(localName: string) => Attr'.
+    Type 'Attr' is missing the following properties from type 'Attr': namespaceURI, prefix, specified, baseURI, and 14 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(14,5): error TS2416: Property 'createComment' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(textContent: any) => Comment' is not assignable to type '(data: string) => Comment'.
+    Type 'Comment' is missing the following properties from type 'CharacterData': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 11 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(15,5): error TS2416: Property 'createDocumentFragment' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '() => import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document-fragment").DocumentFragment' is not assignable to type '() => DocumentFragment'.
+    Type 'DocumentFragment' is missing the following properties from type 'DocumentFragment': baseURI, isDefaultNamespace, lookupNamespaceURI, lookupPrefix, and 11 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(17,5): error TS2416: Property 'createElement' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(localName: any) => Element' is not assignable to type '{ <K extends keyof HTMLElementTagNameMap>(tagName: K, options?: ElementCreationOptions | undefined): HTMLElementTagNameMap[K]; <K extends keyof HTMLElementDeprecatedTagNameMap>(tagName: K, options?: ElementCreationOptions | undefined): HTMLElementDeprecatedTagNameMap[K]; (tagName: string, options?: ElementCreationOp...'.
+    Type 'Element' is missing the following properties from type 'HTMLElement': accessKey, accessKeyLabel, autocapitalize, autocorrect, and 225 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(18,5): error TS2416: Property 'createRange' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '() => import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/range").Range' is not assignable to type '() => Range'.
+    Type 'Range' is missing the following properties from type 'Range': collapse, compareBoundaryPoints, comparePoint, detach, and 16 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(19,5): error TS2416: Property 'createTextNode' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(textContent: any) => Text' is not assignable to type '(data: string) => Text'.
+    Type 'Text' is missing the following properties from type 'Text': splitText, baseURI, isDefaultNamespace, lookupNamespaceURI, and 13 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(20,5): error TS2416: Property 'createTreeWalker' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(root: any, whatToShow?: number | undefined) => TreeWalker' is not assignable to type '(root: Node, whatToShow?: number | undefined, filter?: NodeFilter | null | undefined) => TreeWalker'.
+    Type 'TreeWalker' is missing the following properties from type 'TreeWalker': filter, firstChild, lastChild, nextSibling, and 3 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(21,5): error TS2416: Property 'createNodeIterator' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(root: any, whatToShow?: number | undefined) => TreeWalker' is not assignable to type '(root: Node, whatToShow?: number | undefined, filter?: NodeFilter | null | undefined) => NodeIterator'.
+    Type 'TreeWalker' is missing the following properties from type 'NodeIterator': filter, pointerBeforeReferenceNode, referenceNode, detach, previousNode
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(24,5): error TS2416: Property 'getElementsByTagNameNS' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(_: any, name: any) => NodeList' is not assignable to type '{ (namespaceURI: "http://www.w3.org/1999/xhtml", localName: string): HTMLCollectionOf<HTMLElement>; (namespaceURI: "http://www.w3.org/2000/svg", localName: string): HTMLCollectionOf<...>; (namespaceURI: "http://www.w3.org/1998/Math/MathML", localName: string): HTMLCollectionOf<...>; (namespace: string | null, localN...'.
+    Property 'namedItem' is missing in type 'NodeList' but required in type 'HTMLCollectionOf<HTMLElement>'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(25,5): error TS2416: Property 'createAttributeNS' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(_: any, name: any) => Attr' is not assignable to type '(namespace: string | null, qualifiedName: string) => Attr'.
+    Type 'Attr' is missing the following properties from type 'Attr': namespaceURI, prefix, specified, baseURI, and 14 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/document.d.ts(26,5): error TS2416: Property 'createElementNS' in type 'Document' is not assignable to the same property in base type 'Document'.
+  Type '(nsp: any, localName: any, options: any) => Element | SVGElement' is not assignable to type '{ (namespaceURI: "http://www.w3.org/1999/xhtml", qualifiedName: string): HTMLElement; <K extends keyof SVGElementTagNameMap>(namespaceURI: "http://www.w3.org/2000/svg", qualifiedName: K): SVGElementTagNameMap[K]; (namespaceURI: "http://www.w3.org/2000/svg", qualifiedName: string): SVGElement; <K extends keyof MathML...'.
+    Target signature provides too few arguments. Expected 3 or more, but got 2.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(30,5): error TS2416: Property 'getAttributeNode' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(name: any) => NodeStruct' is not assignable to type '(qualifiedName: string) => Attr | null'.
+    Type 'NodeStruct' is not assignable to type 'Attr | null'.
+      Type 'Element & { nodeType: 2 | 1 | 3 | 8 | 11 | -1; ownerDocument: Document; parentNode: ParentNode; }' is missing the following properties from type 'Attr': name, namespaceURI, ownerElement, prefix, and 17 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(32,5): error TS2416: Property 'getBoundingClientRect' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '() => { x: number; y: number; bottom: number; height: number; left: number; right: number; top: number; width: number; }' is not assignable to type '() => DOMRect'.
+    Property 'toJSON' is missing in type '{ x: number; y: number; bottom: number; height: number; left: number; right: number; top: number; width: number; }' but required in type 'DOMRect'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(45,5): error TS2416: Property 'removeAttributeNode' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(attribute: any) => void' is not assignable to type '(attr: Attr) => Attr'.
+    Type 'void' is not assignable to type 'Attr'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(47,5): error TS2416: Property 'setAttributeNode' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(attribute: any) => NodeStruct' is not assignable to type '(attr: Attr) => Attr | null'.
+    Type 'NodeStruct' is not assignable to type 'Attr | null'.
+      Type 'Element & { nodeType: 2 | 1 | 3 | 8 | 11 | -1; ownerDocument: Document; parentNode: ParentNode; }' is missing the following properties from type 'Attr': name, namespaceURI, ownerElement, prefix, and 17 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(50,5): error TS2416: Property 'attachShadow' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(init: any) => ShadowRoot' is not assignable to type '(init: ShadowRootInit) => ShadowRoot'.
+    Type 'ShadowRoot' is missing the following properties from type 'ShadowRoot': clonable, delegatesFocus, host, mode, and 29 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(58,5): error TS2416: Property 'getElementsByTagNameNS' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(_: any, name: any) => NodeList' is not assignable to type '{ (namespaceURI: "http://www.w3.org/1999/xhtml", localName: string): HTMLCollectionOf<HTMLElement>; (namespaceURI: "http://www.w3.org/2000/svg", localName: string): HTMLCollectionOf<...>; (namespaceURI: "http://www.w3.org/1998/Math/MathML", localName: string): HTMLCollectionOf<...>; (namespace: string | null, localN...'.
+    Property 'namedItem' is missing in type 'NodeList' but required in type 'HTMLCollectionOf<HTMLElement>'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/element.d.ts(62,5): error TS2416: Property 'setAttributeNodeNS' in type 'Element' is not assignable to the same property in base type 'Element'.
+  Type '(attr: any) => NodeStruct' is not assignable to type '(attr: Attr) => Attr | null'.
+    Type 'NodeStruct' is not assignable to type 'Attr | null'.
+      Type 'Element & { nodeType: 2 | 1 | 3 | 8 | 11 | -1; ownerDocument: Document; parentNode: ParentNode; }' is missing the following properties from type 'Attr': name, namespaceURI, ownerElement, prefix, and 17 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/event.d.ts(24,9): error TS2416: Property 'BUBBLING_PHASE' in type 'GlobalEvent' is not assignable to the same property in base type 'Event'.
+  Type 'number' is not assignable to type '3'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/event.d.ts(25,9): error TS2416: Property 'AT_TARGET' in type 'GlobalEvent' is not assignable to the same property in base type 'Event'.
+  Type 'number' is not assignable to type '2'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/event.d.ts(26,9): error TS2416: Property 'CAPTURING_PHASE' in type 'GlobalEvent' is not assignable to the same property in base type 'Event'.
+  Type 'number' is not assignable to type '1'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/event.d.ts(27,9): error TS2416: Property 'NONE' in type 'GlobalEvent' is not assignable to the same property in base type 'Event'.
+  Type 'number' is not assignable to type '0'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/input-event.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/input-event").InputEvent' incorrectly implements interface 'InputEvent'.
+  Type 'InputEvent' is missing the following properties from type 'InputEvent': getTargetRanges, detail, view, which, and 5 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node-list.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node-list").NodeList' incorrectly implements interface 'NodeList'.
+  Types of property 'forEach' are incompatible.
+    Type '(callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void' is not assignable to type '(callbackfn: (value: Node, key: number, parent: NodeList) => void, thisArg?: any) => void'.
+      Types of parameters 'callbackfn' and 'callbackfn' are incompatible.
+        Types of parameters 'parent' and 'array' are incompatible.
+          Type 'any[]' is not assignable to type 'NodeList'.
+            Property 'item' is missing in type 'any[]' but required in type 'NodeList'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(17,9): error TS2416: Property 'ELEMENT_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '1'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(18,9): error TS2416: Property 'ATTRIBUTE_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '2'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(19,9): error TS2416: Property 'TEXT_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '3'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(20,9): error TS2416: Property 'COMMENT_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '8'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(21,9): error TS2416: Property 'DOCUMENT_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '9'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(22,9): error TS2416: Property 'DOCUMENT_FRAGMENT_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '11'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(23,9): error TS2416: Property 'DOCUMENT_TYPE_NODE' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'number' is not assignable to type '10'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(31,9): error TS2416: Property 'childNodes' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type 'NodeList' is not assignable to type 'NodeListOf<ChildNode>'.
+    Types of property 'forEach' are incompatible.
+      Type '(callbackfn: (value: any, index: number, array: any[]) => void, thisArg?: any) => void' is not assignable to type '(callbackfn: (value: ChildNode, key: number, parent: NodeListOf<ChildNode>) => void, thisArg?: any) => void'.
+        Types of parameters 'callbackfn' and 'callbackfn' are incompatible.
+          Types of parameters 'parent' and 'array' are incompatible.
+            Property 'item' is missing in type 'any[]' but required in type 'NodeListOf<ChildNode>'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(47,5): error TS2416: Property 'insertBefore' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type '(newNode: Node, referenceNode: Node) => Node' is not assignable to type '<T extends Node>(node: T, child: Node | null) => T'.
+    Types of parameters 'newNode' and 'node' are incompatible.
+      Type 'T' is not assignable to type 'Node'.
+        Type 'Node' is missing the following properties from type 'Node': localName, previousElementSibling, nextElementSibling, [NEXT], and 2 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(53,5): error TS2416: Property 'appendChild' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type '(child: Node) => Node' is not assignable to type '<T extends Node>(node: T) => T'.
+    Types of parameters 'child' and 'node' are incompatible.
+      Type 'T' is not assignable to type 'Node'.
+        Type 'Node' is missing the following properties from type 'Node': localName, previousElementSibling, nextElementSibling, [NEXT], and 2 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(60,5): error TS2416: Property 'replaceChild' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type '(newChild: Node, oldChild: Node) => Node' is not assignable to type '<T extends Node>(node: Node, child: T) => T'.
+    Types of parameters 'newChild' and 'node' are incompatible.
+      Type 'Node' is missing the following properties from type 'Node': localName, previousElementSibling, nextElementSibling, [NEXT], and 2 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/node.d.ts(66,5): error TS2416: Property 'removeChild' in type 'Node' is not assignable to the same property in base type 'Node'.
+  Type '(child: Node) => Node' is not assignable to type '<T extends Node>(child: T) => T'.
+    Types of parameters 'child' and 'child' are incompatible.
+      Type 'T' is not assignable to type 'Node'.
+        Type 'Node' is missing the following properties from type 'Node': localName, previousElementSibling, nextElementSibling, [NEXT], and 2 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/range.d.ts(17,5): error TS2416: Property 'cloneRange' in type 'Range' is not assignable to the same property in base type 'Range'.
+  Type '() => import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/range").Range' is not assignable to type '() => Range'.
+    Type 'Range' is missing the following properties from type 'Range': collapse, compareBoundaryPoints, comparePoint, detach, and 16 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/shadow-root.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/shadow-root").ShadowRoot' incorrectly implements interface 'ShadowRoot'.
+  Type 'ShadowRoot' is missing the following properties from type 'ShadowRoot': clonable, delegatesFocus, host, mode, and 29 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/text.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/text").Text' incorrectly implements interface 'Text'.
+  Type 'Text' is missing the following properties from type 'Text': splitText, baseURI, isDefaultNamespace, lookupNamespaceURI, and 13 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/tree-walker.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/interface/tree-walker").TreeWalker' incorrectly implements interface 'TreeWalker'.
+  Type 'TreeWalker' is missing the following properties from type 'TreeWalker': filter, firstChild, lastChild, nextSibling, and 3 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/mixin/parent-node.d.ts(28,5): error TS1170: A computed property name in a type literal must refer to an expression whose type is a literal type or a 'unique symbol' type.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/mixin/parent-node.d.ts(29,5): error TS1170: A computed property name in a type literal must refer to an expression whose type is a literal type or a 'unique symbol' type.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/mixin/parent-node.d.ts(30,5): error TS1170: A computed property name in a type literal must refer to an expression whose type is a literal type or a 'unique symbol' type.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/svg/document.d.ts(4,14): error TS2420: Class 'SVGDocument' incorrectly implements interface 'Document'.
+  Type 'SVGDocument' is missing the following properties from type 'Document': URL, alinkColor, all, anchors, and 196 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/svg/element.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/svg/element").SVGElement' incorrectly implements interface 'SVGElement'.
+  Type 'SVGElement' is missing the following properties from type 'SVGElement': viewportElement, clientHeight, clientLeft, clientTop, and 197 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/xml/document.d.ts(4,14): error TS2420: Class 'import("/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/linkedom/types/xml/document").XMLDocument' incorrectly implements interface 'XMLDocument'.
+  Type 'XMLDocument' is missing the following properties from type 'XMLDocument': URL, alinkColor, all, anchors, and 196 more.
+../../78a93086ddbd/DropShredder-DS056/node_modules/magic-string/dist/index.d.mts(325,42): error TS2304: Cannot find name 'ErrorOptions'.
+../../78a93086ddbd/DropShredder-DS056/node_modules/wxt/dist/types.d.mts(30,23): error TS2307: Cannot find module 'vite' or its corresponding type declarations.
+  There are types at '/workspace/scratch/78a93086ddbd/DropShredder-DS056/node_modules/vite/dist/node/index.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.

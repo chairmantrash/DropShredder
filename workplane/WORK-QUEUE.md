@@ -1,5 +1,9 @@
 # Work queue — authoritative snapshot, October16,2026
 
+## Detection audit update
+
+- DS-061 BLOCKED — architecture/data audit and concrete repairs recorded;506 core/12 evaluator tests and local gates pass. Independent59% acceptance NOT_EVALUABLE; genuine Chrome startup denied by environment sockets. Full report: workplane/research/DS-061-FULL-DETECTION-AUDIT-20261017.md. Continue with independent labels, permitted native execution and candidate acquisition; no invented detection rate.
+
 ## Capability testing and repair update
 
 - DS-060 DONE — all233 website outcomes repeated;158 successful scans/registered domains. Context-only warnings126→0, two confirmed shipping false positives removed,15 live reviews across3 stores.474 core/97 native/all7 browser groups and source checks pass. Independent accuracy/customer satisfaction unestablished;157 numerical abstentions. PR29 and workplane/evals/DS-060-BETA100-RESULTS-20261017.md. Beta6 remains open; candidate not yet published.

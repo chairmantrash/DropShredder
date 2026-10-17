@@ -1,0 +1,268 @@
+TAP version 13
+# Subtest: current-product visible Judge.me reviews reach the existing review detectors
+ok 1 - current-product visible Judge.me reviews reach the existing review detectors
+  ---
+  duration_ms: 20.110668
+  type: 'test'
+  ...
+# Subtest: missing verification state remains unknown and invalid ratings are not accepted
+ok 2 - missing verification state remains unknown and invalid ratings are not accepted
+  ---
+  duration_ms: 5.236251
+  type: 'test'
+  ...
+# Subtest: explicit nonverified status stays distinct from a missing badge
+ok 3 - explicit nonverified status stays distinct from a missing badge
+  ---
+  duration_ms: 3.205707
+  type: 'test'
+  ...
+# Subtest: different-product and store-wide/carousel review widgets cannot contaminate current-product checks
+ok 4 - different-product and store-wide/carousel review widgets cannot contaminate current-product checks
+  ---
+  duration_ms: 6.538785
+  type: 'test'
+  ...
+# Subtest: hidden legacy copies, private review forms and duplicate review IDs are excluded
+ok 5 - hidden legacy copies, private review forms and duplicate review IDs are excluded
+  ---
+  duration_ms: 6.127144
+  type: 'test'
+  ...
+# Subtest: review body extraction omits private, hidden and editable descendant text
+ok 6 - review body extraction omits private, hidden and editable descendant text
+  ---
+  duration_ms: 3.474376
+  type: 'test'
+  ...
+# Subtest: a widget without product attribution is not assumed to concern the current listing
+ok 7 - a widget without product attribution is not assumed to concern the current listing
+  ---
+  duration_ms: 2.720087
+  type: 'test'
+  ...
+# Subtest: review extraction remains bounded when the widget contains hundreds of reviews
+ok 8 - review extraction remains bounded when the widget contains hundreds of reviews
+  ---
+  duration_ms: 57.590833
+  type: 'test'
+  ...
+# Subtest: cross-origin and explicitly different-variant review declarations stay out
+ok 9 - cross-origin and explicitly different-variant review declarations stay out
+  ---
+  duration_ms: 3.125528
+  type: 'test'
+  ...
+# Subtest: informational-only stamps do not claim a warning or a detection
+ok 10 - informational-only stamps do not claim a warning or a detection
+  ---
+  duration_ms: 2.505759
+  type: 'test'
+  ...
+# Subtest: invalid or zero-confidence evidence does not create a warning stamp
+ok 11 - invalid or zero-confidence evidence does not create a warning stamp
+  ---
+  duration_ms: 0.587402
+  type: 'test'
+  ...
+# Subtest: retail promotional dates and brand slogans never become shipment origins
+ok 12 - retail promotional dates and brand slogans never become shipment origins
+  ---
+  duration_ms: 18.840803
+  type: 'test'
+  ...
+# Subtest: real tracking origin stops before destination and keeps an anchored route excerpt
+ok 13 - real tracking origin stops before destination and keeps an anchored route excerpt
+  ---
+  duration_ms: 1.379808
+  type: 'test'
+  ...
+# Subtest: unknown prose cannot contradict a recognized shipping jurisdiction
+ok 14 - unknown prose cannot contradict a recognized shipping jurisdiction
+  ---
+  duration_ms: 6.773102
+  type: 'test'
+  ...
+# Subtest: negated and quoted shipping statements cannot supply an observed origin
+ok 15 - negated and quoted shipping statements cannot supply an observed origin
+  ---
+  duration_ms: 2.45297
+  type: 'test'
+  ...
+# Subtest: supplier subject
+ok 16 - supplier subject
+  ---
+  duration_ms: 4.417656
+  type: 'test'
+  ...
+# Subtest: manufacturer subject
+ok 17 - manufacturer subject
+  ---
+  duration_ms: 1.304587
+  type: 'test'
+  ...
+# Subtest: vendor origin
+ok 18 - vendor origin
+  ---
+  duration_ms: 0.163563
+  type: 'test'
+  ...
+# Subtest: separate negation
+ok 19 - separate negation
+  ---
+  duration_ms: 0.144214
+  type: 'test'
+  ...
+# Subtest: trailing unrelated negation
+ok 20 - trailing unrelated negation
+  ---
+  duration_ms: 0.143904
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 21 - inbound warehouse abstains
+  ---
+  duration_ms: 0.293165
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+ok 22 - inbound origin abstains
+  ---
+  duration_ms: 0.18228
+  type: 'test'
+  ...
+# Subtest: negated abstains
+ok 23 - negated abstains
+  ---
+  duration_ms: 0.151805
+  type: 'test'
+  ...
+# Subtest: question abstains
+ok 24 - question abstains
+  ---
+  duration_ms: 0.312294
+  type: 'test'
+  ...
+# Subtest: reported customer claim abstains
+ok 25 - reported customer claim abstains
+  ---
+  duration_ms: 0.485541
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+ok 26 - single quoted claim abstains
+  ---
+  duration_ms: 0.18184
+  type: 'test'
+  ...
+# Subtest: general definition abstains
+ok 27 - general definition abstains
+  ---
+  duration_ms: 0.082303
+  type: 'test'
+  ...
+# Subtest: hypothetical abstains
+ok 28 - hypothetical abstains
+  ---
+  duration_ms: 0.068763
+  type: 'test'
+  ...
+# Subtest: future intention abstains
+ok 29 - future intention abstains
+  ---
+  duration_ms: 0.068031
+  type: 'test'
+  ...
+# Subtest: denial after verb abstains
+ok 30 - denial after verb abstains
+  ---
+  duration_ms: 0.069453
+  type: 'test'
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+ok 31 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.085998
+  type: 'test'
+  ...
+# Subtest: disclosed logistics remains unscored
+ok 32 - disclosed logistics remains unscored
+  ---
+  duration_ms: 0.51831
+  type: 'test'
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+ok 33 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 24.86987
+  type: 'test'
+  ...
+# Subtest: negated urgency: We never say hurry.
+ok 34 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 1.034955
+  type: 'test'
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+ok 35 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 0.502806
+  type: 'test'
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 36 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.668322
+  type: 'test'
+  ...
+# Subtest: affiliation alone never creates a shopper warning or merchant-risk score
+ok 37 - affiliation alone never creates a shopper warning or merchant-risk score
+  ---
+  duration_ms: 2.2374
+  type: 'test'
+  ...
+# Subtest: a genuine cross-brand reference is retained as unscored identity context
+ok 38 - a genuine cross-brand reference is retained as unscored identity context
+  ---
+  duration_ms: 0.264933
+  type: 'test'
+  ...
+# Subtest: lookalike hostname substrings cannot create a cross-brand reference
+ok 39 - lookalike hostname substrings cannot create a cross-brand reference
+  ---
+  duration_ms: 0.591037
+  type: 'test'
+  ...
+# Subtest: review opinions are not merchant-authored shipping or scarcity claims
+ok 40 - review opinions are not merchant-authored shipping or scarcity claims
+  ---
+  duration_ms: 12.67385
+  type: 'test'
+  ...
+# Subtest: missing Amazon verification badge stays unknown
+ok 41 - missing Amazon verification badge stays unknown
+  ---
+  duration_ms: 5.608323
+  type: 'test'
+  ...
+# Subtest: Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+ok 42 - Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+  ---
+  duration_ms: 2.963668
+  type: 'test'
+  ...
+# Subtest: present visible Amazon verification badge stays true
+ok 43 - present visible Amazon verification badge stays true
+  ---
+  duration_ms: 3.348489
+  type: 'test'
+  ...
+1..43
+# tests 43
+# suites 0
+# pass 43
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 428.099763

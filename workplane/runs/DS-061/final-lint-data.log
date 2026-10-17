@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 lint:data
+> node --import tsx scripts/data-lint.ts
+
+Data lint passed: 47 sources, 14 platforms, 18 merchant networks, 5 technology signatures, 8 public APIs.

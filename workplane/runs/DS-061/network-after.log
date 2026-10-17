@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: supplier subject
+ok 1 - supplier subject
+  ---
+  duration_ms: 3.480877
+  type: 'test'
+  ...
+# Subtest: manufacturer subject
+ok 2 - manufacturer subject
+  ---
+  duration_ms: 0.916701
+  type: 'test'
+  ...
+# Subtest: vendor origin
+ok 3 - vendor origin
+  ---
+  duration_ms: 0.117835
+  type: 'test'
+  ...
+# Subtest: separate negation
+ok 4 - separate negation
+  ---
+  duration_ms: 0.085507
+  type: 'test'
+  ...
+# Subtest: trailing unrelated negation
+ok 5 - trailing unrelated negation
+  ---
+  duration_ms: 0.084145
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 6 - inbound warehouse abstains
+  ---
+  duration_ms: 0.239015
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+ok 7 - inbound origin abstains
+  ---
+  duration_ms: 0.113399
+  type: 'test'
+  ...
+# Subtest: negated abstains
+ok 8 - negated abstains
+  ---
+  duration_ms: 0.078367
+  type: 'test'
+  ...
+# Subtest: question abstains
+ok 9 - question abstains
+  ---
+  duration_ms: 0.210081
+  type: 'test'
+  ...
+# Subtest: reported customer claim abstains
+ok 10 - reported customer claim abstains
+  ---
+  duration_ms: 0.459943
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+ok 11 - single quoted claim abstains
+  ---
+  duration_ms: 0.112928
+  type: 'test'
+  ...
+# Subtest: general definition abstains
+ok 12 - general definition abstains
+  ---
+  duration_ms: 0.14171
+  type: 'test'
+  ...
+# Subtest: hypothetical abstains
+ok 13 - hypothetical abstains
+  ---
+  duration_ms: 0.071015
+  type: 'test'
+  ...
+# Subtest: future intention abstains
+ok 14 - future intention abstains
+  ---
+  duration_ms: 0.065296
+  type: 'test'
+  ...
+# Subtest: denial after verb abstains
+ok 15 - denial after verb abstains
+  ---
+  duration_ms: 0.06718
+  type: 'test'
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+ok 16 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.083164
+  type: 'test'
+  ...
+# Subtest: disclosed logistics remains unscored
+ok 17 - disclosed logistics remains unscored
+  ---
+  duration_ms: 0.466442
+  type: 'test'
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+ok 18 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 28.244234
+  type: 'test'
+  ...
+# Subtest: negated urgency: We never say hurry.
+ok 19 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 1.501519
+  type: 'test'
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+ok 20 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 0.730815
+  type: 'test'
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 21 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.622624
+  type: 'test'
+  ...
+# Subtest: affiliation alone never creates a shopper warning or merchant-risk score
+ok 22 - affiliation alone never creates a shopper warning or merchant-risk score
+  ---
+  duration_ms: 1.51535
+  type: 'test'
+  ...
+# Subtest: a genuine cross-brand reference is retained as unscored identity context
+ok 23 - a genuine cross-brand reference is retained as unscored identity context
+  ---
+  duration_ms: 0.357371
+  type: 'test'
+  ...
+# Subtest: lookalike hostname substrings cannot create a cross-brand reference
+ok 24 - lookalike hostname substrings cannot create a cross-brand reference
+  ---
+  duration_ms: 0.804794
+  type: 'test'
+  ...
+# Subtest: ships known HaremPants / Sure Design network out of box
+ok 25 - ships known HaremPants / Sure Design network out of box
+  ---
+  duration_ms: 1.121234
+  type: 'test'
+  ...
+# Subtest: store-local SKU across domains cannot establish a merchant network
+ok 26 - store-local SKU across domains cannot establish a merchant network
+  ---
+  duration_ms: 17.508088
+  type: 'test'
+  ...
+# Subtest: explicit cross-domain merchant reference is informational identity evidence
+ok 27 - explicit cross-domain merchant reference is informational identity evidence
+  ---
+  duration_ms: 0.437319
+  type: 'test'
+  ...
+# Subtest: seed registry recognizes current active networks
+ok 28 - seed registry recognizes current active networks
+  ---
+  duration_ms: 0.217403
+  type: 'test'
+  ...
+# Subtest: stale network records automatically downgrade
+ok 29 - stale network records automatically downgrade
+  ---
+  duration_ms: 0.372292
+  type: 'test'
+  ...
+# Subtest: GearLaunch stays informational/watch-level instead of inheriting platform complaints
+ok 30 - GearLaunch stays informational/watch-level instead of inheriting platform complaints
+  ---
+  duration_ms: 0.158155
+  type: 'test'
+  ...
+# Subtest: large seed corpus ships dozens of consumer-facing domains
+ok 31 - large seed corpus ships dozens of consumer-facing domains
+  ---
+  duration_ms: 5.602676
+  type: 'test'
+  ...
+# Subtest: corporate and sister-store affiliation both remain unscored
+ok 32 - corporate and sister-store affiliation both remain unscored
+  ---
+  duration_ms: 0.288609
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 255.509062

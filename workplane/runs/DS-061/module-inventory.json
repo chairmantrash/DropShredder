@@ -1,0 +1,941 @@
+{
+  "base": "8b801b53c5f7170ecfc7ee0c0324a7345d23eb55",
+  "method": "TypeScript AST relative value-import graph rooted at extension entrypoints; all exported functions listed; import reachability overstates execution when imports unused",
+  "total": 68,
+  "unreachable": 11,
+  "modules": [
+    {
+      "file": "src/analysis/adversarial-normalization.ts",
+      "importReachable": false,
+      "exports": [
+        "normalizeAdversarialText",
+        "normalizeIdentifier"
+      ],
+      "noProductionNamedImport": [
+        "normalizeAdversarialText",
+        "normalizeIdentifier"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/analysis/amazon-clone-clusters.ts",
+      "importReachable": true,
+      "exports": [
+        "normalizeAmazonImageFamily",
+        "clusterAmazonSearchCards",
+        "amazonCloneClusterEvidence"
+      ],
+      "noProductionNamedImport": [
+        "normalizeAmazonImageFamily",
+        "clusterAmazonSearchCards"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/brand-affiliation.ts",
+      "importReachable": true,
+      "exports": [
+        "brandAffiliationEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/passive-rules.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/catalog-signals.ts",
+      "importReachable": true,
+      "exports": [
+        "catalogEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/certification-claims.ts",
+      "importReachable": true,
+      "exports": [
+        "extractCertificationClaims",
+        "certificationClaimEvidence"
+      ],
+      "noProductionNamedImport": [
+        "extractCertificationClaims"
+      ],
+      "importedBy": [
+        "src/analysis/passive-rules.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/claims.ts",
+      "importReachable": true,
+      "exports": [
+        "extractClaims"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/contradictions.ts",
+      "importReachable": true,
+      "exports": [
+        "businessAgeContradictions",
+        "fulfillmentContradictions",
+        "contradictionEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/dark-patterns.ts",
+      "importReachable": false,
+      "exports": [
+        "darkPatternHistoryEvidence"
+      ],
+      "noProductionNamedImport": [
+        "darkPatternHistoryEvidence"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/analysis/defect-consensus.ts",
+      "importReachable": false,
+      "exports": [
+        "defectConsensusEvidence"
+      ],
+      "noProductionNamedImport": [
+        "defectConsensusEvidence"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/analysis/evidence-engine.ts",
+      "importReachable": true,
+      "exports": [
+        "dedupeEvidence",
+        "warningSignalCount",
+        "fusionSummary",
+        "calculateVerdict"
+      ],
+      "noProductionNamedImport": [
+        "dedupeEvidence",
+        "fusionSummary"
+      ],
+      "importedBy": [
+        "src/reporting/build-report.ts",
+        "src/ui/stamp.ts",
+        "entrypoints/auto.content.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/evidence-fusion.ts",
+      "importReachable": true,
+      "exports": [
+        "fuseEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/evidence-engine.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/evidence-independence.ts",
+      "importReachable": true,
+      "exports": [
+        "selectIndependent"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/evidence-engine.ts",
+        "src/analysis/evidence-fusion.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/fulfillment-disclosure.ts",
+      "importReachable": true,
+      "exports": [
+        "validFulfillmentDisclosure",
+        "fulfillmentDisclosure",
+        "fulfillmentDisclosureEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/passive-rules.ts",
+        "src/reporting/export-report.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/fulfillment-observation.ts",
+      "importReachable": true,
+      "exports": [
+        "parseFulfillmentObservation"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/history-signals.ts",
+      "importReachable": true,
+      "exports": [
+        "analyzeHistory"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/local-vectors.ts",
+      "importReachable": true,
+      "exports": [
+        "localTextVector",
+        "localVectorSimilarity",
+        "lexicalOverlap"
+      ],
+      "noProductionNamedImport": [
+        "localTextVector"
+      ],
+      "importedBy": [
+        "src/analysis/product-leads.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/marketplace-policy.ts",
+      "importReachable": true,
+      "exports": [
+        "marketplacePolicyEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/passive-rules.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/merchant-network.ts",
+      "importReachable": true,
+      "exports": [
+        "localMerchantNetworkEvidence",
+        "crossDomainReferenceEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/merchant-origin.ts",
+      "importReachable": true,
+      "exports": [
+        "jurisdictionHits",
+        "sameJurisdiction",
+        "analyzeMerchantOrigin"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/contradictions.ts",
+        "src/analysis/supply-chain-profile.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/north-america-origin.ts",
+      "importReachable": true,
+      "exports": [
+        "parseOriginDossier",
+        "originDossierMatches",
+        "listingOriginClaims",
+        "assessNorthAmerica",
+        "validOriginAssessment"
+      ],
+      "noProductionNamedImport": [
+        "originDossierMatches"
+      ],
+      "importedBy": [
+        "src/reporting/export-report.ts",
+        "src/ui/north-america-controls.ts",
+        "src/ui/report-renderer.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/passive-rules.ts",
+      "importReachable": true,
+      "exports": [
+        "runPassiveRules"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/reporting/build-report.ts",
+        "entrypoints/auto.content.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/price-manipulation.ts",
+      "importReachable": false,
+      "exports": [
+        "analyzePriceHistory"
+      ],
+      "noProductionNamedImport": [
+        "analyzePriceHistory"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/analysis/product-identity.ts",
+      "importReachable": true,
+      "exports": [
+        "normalizeProductIdentifier",
+        "normalizeGtin",
+        "normalizeAsin",
+        "compareProductIdentity"
+      ],
+      "noProductionNamedImport": [
+        "normalizeAsin"
+      ],
+      "importedBy": [
+        "src/analysis/history-signals.ts",
+        "src/analysis/merchant-network.ts",
+        "src/analysis/north-america-origin.ts",
+        "src/analysis/product-leads.ts",
+        "src/analysis/product-mutation.ts",
+        "src/analysis/source-match.ts",
+        "src/forensics/local-label-reader.ts",
+        "src/forensics/product-fingerprint.ts",
+        "src/intelligence/regulatory-match.ts",
+        "src/intelligence/user-lists.ts",
+        "src/osint/cpsc.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/product-leads.ts",
+      "importReachable": true,
+      "exports": [
+        "importedProductLeads",
+        "approximateImportedProductLeads",
+        "importedEntityRoleGraph"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/product-mutation.ts",
+      "importReachable": true,
+      "exports": [
+        "productMutationEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/quality-claims.ts",
+      "importReachable": true,
+      "exports": [
+        "qualityClaimEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/return-policy.ts",
+      "importReachable": true,
+      "exports": [
+        "analyzeReturnPolicy"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/review-integrity.ts",
+      "importReachable": true,
+      "exports": [
+        "reviewIntegrity"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/review-primitives.ts",
+      "importReachable": true,
+      "exports": [
+        "normalizeReviewText",
+        "reviewTokenSet",
+        "reviewTextSimilarity",
+        "reviewMentionsMismatchedCategory",
+        "reviewHasIncentiveLanguage",
+        "reviewDuplicatePairs",
+        "reviewMaxWindowShare"
+      ],
+      "noProductionNamedImport": [
+        "reviewTokenSet"
+      ],
+      "importedBy": [
+        "src/analysis/review-integrity.ts",
+        "src/analysis/review-provenance.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/review-provenance.ts",
+      "importReachable": true,
+      "exports": [
+        "analyzeReviewProvenance"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/source-match.ts",
+      "importReachable": true,
+      "exports": [
+        "findIndexedSourceMatches",
+        "indexedSourceEvidence"
+      ],
+      "noProductionNamedImport": [
+        "findIndexedSourceMatches"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/supply-chain-profile.ts",
+      "importReachable": true,
+      "exports": [
+        "detectPaymentProcessors",
+        "buildSupplyChainProfile"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/analysis/upstream-candidate.ts",
+      "importReachable": false,
+      "exports": [
+        "upstreamCandidateEvidence"
+      ],
+      "noProductionNamedImport": [
+        "upstreamCandidateEvidence"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/detection/page-facts.ts",
+      "importReachable": true,
+      "exports": [
+        "collectShoppingPageFacts",
+        "detectShoppingPage"
+      ],
+      "noProductionNamedImport": [
+        "collectShoppingPageFacts"
+      ],
+      "importedBy": [
+        "entrypoints/auto.content.ts"
+      ]
+    },
+    {
+      "file": "src/detection/shopping-page.ts",
+      "importReachable": true,
+      "exports": [
+        "classifyShoppingPage"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/detection/page-facts.ts"
+      ]
+    },
+    {
+      "file": "src/extraction/basic-page.ts",
+      "importReachable": false,
+      "exports": [
+        "extractBasicPageSnapshot"
+      ],
+      "noProductionNamedImport": [
+        "extractBasicPageSnapshot"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/extraction/page-scan.ts",
+      "importReachable": true,
+      "exports": [
+        "extractPageScan"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/auto.content.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/extraction/structured-product.ts",
+      "importReachable": false,
+      "exports": [
+        "extractStructuredProduct"
+      ],
+      "noProductionNamedImport": [
+        "extractStructuredProduct"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/forensics/image-acquisition.ts",
+      "importReachable": true,
+      "exports": [
+        "captureImageFingerprint"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/forensics/image-hash.ts",
+      "importReachable": true,
+      "exports": [
+        "averageHash",
+        "differenceHash",
+        "hammingDistance",
+        "hashSimilarity",
+        "sha256Hex"
+      ],
+      "noProductionNamedImport": [
+        "hammingDistance",
+        "hashSimilarity"
+      ],
+      "importedBy": [
+        "src/forensics/image-acquisition.ts"
+      ]
+    },
+    {
+      "file": "src/forensics/image-history.ts",
+      "importReachable": true,
+      "exports": [
+        "findImageHistoryMatches",
+        "imageHistoryEvidence"
+      ],
+      "noProductionNamedImport": [
+        "findImageHistoryMatches"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/forensics/local-label-reader.ts",
+      "importReachable": true,
+      "exports": [
+        "collectLocalLabelResults",
+        "readLocalLabel"
+      ],
+      "noProductionNamedImport": [
+        "collectLocalLabelResults"
+      ],
+      "importedBy": [
+        "src/ui/local-label-controls.ts"
+      ]
+    },
+    {
+      "file": "src/forensics/product-fingerprint.ts",
+      "importReachable": true,
+      "exports": [
+        "buildProductFingerprint",
+        "fingerprintSimilarity",
+        "buildExactProductFingerprint",
+        "compareExactProductFingerprints"
+      ],
+      "noProductionNamedImport": [
+        "fingerprintSimilarity",
+        "buildExactProductFingerprint",
+        "compareExactProductFingerprints"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/auto-refresh.ts",
+      "importReachable": true,
+      "exports": [
+        "ensureIntelligenceAlarm",
+        "checkDueSignedFeeds"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/background.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/commerce-platforms.ts",
+      "importReachable": true,
+      "exports": [
+        "detectCommercePlatforms"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/focused-safety.ts",
+      "importReachable": true,
+      "exports": [
+        "focusedSafetyEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/passive-rules.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/merchant-networks.ts",
+      "importReachable": true,
+      "exports": [
+        "merchantNetworkForDomain",
+        "merchantNetworkIsFresh",
+        "merchantNetworkEvidence"
+      ],
+      "noProductionNamedImport": [
+        "merchantNetworkIsFresh"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/north-america-directory.ts",
+      "importReachable": true,
+      "exports": [
+        "regionalRecordFresh",
+        "validateRegionalDirectory"
+      ],
+      "noProductionNamedImport": [
+        "validateRegionalDirectory"
+      ],
+      "importedBy": [
+        "src/ui/business-standing-controls.ts",
+        "src/ui/north-america-controls.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/regulatory-match.ts",
+      "importReachable": true,
+      "exports": [
+        "matchRegulatoryRecord"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/intelligence/focused-safety.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/signature-registry.ts",
+      "importReachable": false,
+      "exports": [
+        "signatureAgeDays",
+        "effectiveSignatureStatus",
+        "activeSignatures",
+        "validateRegistry"
+      ],
+      "noProductionNamedImport": [
+        "signatureAgeDays",
+        "effectiveSignatureStatus",
+        "activeSignatures",
+        "validateRegistry"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/intelligence/source-index.ts",
+      "importReachable": true,
+      "exports": [
+        "indexedSourceForDomain",
+        "sourceSearchUrls"
+      ],
+      "noProductionNamedImport": [
+        "sourceSearchUrls"
+      ],
+      "importedBy": [
+        "src/analysis/source-match.ts",
+        "src/deep-hunt/search-urls.ts"
+      ]
+    },
+    {
+      "file": "src/intelligence/tool-signatures.ts",
+      "importReachable": false,
+      "exports": [
+        "detectToolSignatures"
+      ],
+      "noProductionNamedImport": [
+        "detectToolSignatures"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/intelligence/user-lists.ts",
+      "importReachable": true,
+      "exports": [
+        "feedUrl",
+        "validateUserList",
+        "validatePublisherKey",
+        "previewList",
+        "fetchListPreview",
+        "normalizeListStore",
+        "loadUserLists",
+        "applyListMutation",
+        "mutateUserLists"
+      ],
+      "noProductionNamedImport": [
+        "feedUrl",
+        "validateUserList",
+        "normalizeListStore"
+      ],
+      "importedBy": [
+        "src/intelligence/auto-refresh.ts",
+        "src/ui/intelligence-controls.ts",
+        "entrypoints/background.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/osint/bounded-json.ts",
+      "importReachable": true,
+      "exports": [
+        "fetchBoundedJson"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/intelligence/auto-refresh.ts",
+        "src/intelligence/user-lists.ts",
+        "src/osint/gleif.ts",
+        "src/osint/scamferret-results.ts",
+        "src/osint/urlscan.ts"
+      ]
+    },
+    {
+      "file": "src/osint/cpsc.ts",
+      "importReachable": true,
+      "exports": [
+        "recallQueryUrl",
+        "parseRecallCandidates",
+        "lookupRecallCandidates"
+      ],
+      "noProductionNamedImport": [
+        "recallQueryUrl",
+        "parseRecallCandidates"
+      ],
+      "importedBy": [
+        "src/ui/panel-controls.ts"
+      ]
+    },
+    {
+      "file": "src/osint/gleif.ts",
+      "importReachable": true,
+      "exports": [
+        "validLei",
+        "parseGleif",
+        "lookupLegalEntity"
+      ],
+      "noProductionNamedImport": [
+        "validLei",
+        "parseGleif"
+      ],
+      "importedBy": [
+        "src/ui/intelligence-controls.ts"
+      ]
+    },
+    {
+      "file": "src/osint/optional-brave.ts",
+      "importReachable": true,
+      "exports": [
+        "boundedBraveQuery",
+        "parseSupplierSearchResults",
+        "supplierSearchWithKey"
+      ],
+      "noProductionNamedImport": [
+        "boundedBraveQuery",
+        "parseSupplierSearchResults"
+      ],
+      "importedBy": [
+        "src/ui/optional-web-search.ts"
+      ]
+    },
+    {
+      "file": "src/osint/public-store-pages.ts",
+      "importReachable": true,
+      "exports": [
+        "fetchPublicStorePages"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/osint/rdap.ts",
+      "importReachable": true,
+      "exports": [
+        "registeredDomain",
+        "rdapEndpoint",
+        "lookupDomainRdap"
+      ],
+      "noProductionNamedImport": [
+        "registeredDomain",
+        "rdapEndpoint"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/osint/scamferret-results.ts",
+      "importReachable": false,
+      "exports": [
+        "publishedScamferretPaths",
+        "parsePublishedScamferret",
+        "lookupPublishedScamferret"
+      ],
+      "noProductionNamedImport": [
+        "publishedScamferretPaths",
+        "parsePublishedScamferret",
+        "lookupPublishedScamferret"
+      ],
+      "importedBy": []
+    },
+    {
+      "file": "src/osint/urlscan.ts",
+      "importReachable": true,
+      "exports": [
+        "urlscanCandidates",
+        "parseUrlscanResult",
+        "lookupUrlscan"
+      ],
+      "noProductionNamedImport": [
+        "urlscanCandidates",
+        "parseUrlscanResult"
+      ],
+      "importedBy": [
+        "src/ui/outside-result-controls.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/business-standing.ts",
+      "importReachable": true,
+      "exports": [
+        "parseStandingDossier",
+        "assessBusinessStanding",
+        "validateStandingSources"
+      ],
+      "noProductionNamedImport": [
+        "validateStandingSources"
+      ],
+      "importedBy": [
+        "src/ui/business-standing-controls.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/complaint-analysis.ts",
+      "importReachable": true,
+      "exports": [
+        "reputationSourceKey",
+        "complaintPhraseHit",
+        "validatedReputationObservations",
+        "analyzeReputationObservations"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/analysis/quality-claims.ts",
+        "src/reputation/review-discrepancy.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/consumer-links.ts",
+      "importReachable": true,
+      "exports": [
+        "consumerRecordLinks"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/ui/outside-result-controls.ts",
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/outside-results.ts",
+      "importReachable": true,
+      "exports": [
+        "lookupDomain",
+        "validOutsideResult"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "src/osint/scamferret-results.ts",
+        "src/osint/urlscan.ts",
+        "src/reporting/export-report.ts",
+        "src/reputation/consumer-links.ts",
+        "src/ui/outside-result-controls.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/reputation-search.ts",
+      "importReachable": true,
+      "exports": [
+        "reputationSearchUrls",
+        "providerReputationSearchUrls"
+      ],
+      "noProductionNamedImport": [
+        "providerReputationSearchUrls"
+      ],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/review-discrepancy.ts",
+      "importReachable": true,
+      "exports": [
+        "reviewDiscrepancyEvidence"
+      ],
+      "noProductionNamedImport": [],
+      "importedBy": [
+        "entrypoints/sidepanel/main.ts"
+      ]
+    },
+    {
+      "file": "src/reputation/trustpilot.ts",
+      "importReachable": false,
+      "exports": [
+        "parseTrustpilotHtml"
+      ],
+      "noProductionNamedImport": [
+        "parseTrustpilotHtml"
+      ],
+      "importedBy": []
+    }
+  ]
+}

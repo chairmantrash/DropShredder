@@ -1,0 +1,3463 @@
+{
+  "scope": "Detached anonymous source diagnosis, no rendered CSS/script execution/native or independent accuracy inferred",
+  "receiptsSha256": "ddf445d59b410c08fc46828942d09438fee47cd58c5178431c1d2721f2c8dae4",
+  "records": [
+    {
+      "id": "SITE-0001",
+      "host": "warmlydecor.com",
+      "sourceSha256": "15c836d8d506f86ddfc012dcd27da23f4a87685ca2d33526a04217101eb8842e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 8,
+      "verificationKnown": 8,
+      "reviewBodyHashes": [
+        "4c53c380d76e1ad9af3ddb619b7406d59b3ba3b10279394fb4b6f36cc77c154b",
+        "70dc5e1c2bdd730d30ad66bdd4e69cf0b342f87c944e171557ea174f6ba3e832",
+        "db28024aa6267d67b4bf56755ee3a58ceb374e388be8cda0007fada84129f76c",
+        "68b3832245f8195316fdc2e548e6bf1a6e5b43be0a152bc3d3293cd6a26a4b31",
+        "5c591fd6a8aba8f8ee99685b4357a9281320ebda131f09288d288712912358d3",
+        "9d87e3bbd9c8ef63be39edd7e235df1d33aa82d3a4eca6fc851cc3400f8cf919",
+        "4c53c380d76e1ad9af3ddb619b7406d59b3ba3b10279394fb4b6f36cc77c154b",
+        "ce4a6bdde6494f7ab199c2d49df2359d884bc4fb4f90108e60e1ae74cb835d7d"
+      ],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "7d24c4206de805f396fd37a501213d33050f1ffb14faa09075d959b8fbba3035"
+    },
+    {
+      "id": "SITE-0002",
+      "host": "wayfair.com",
+      "sourceSha256": "9433e3cae6d50da19ba5ac6d59d14e68c4d7954f679650f1be1b76038b47ad8d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "MARKETPLACE_POLICY_CONTEXT"
+      ],
+      "pageTextHash": "298f89704df14d4d6ba4f8df46e1f2f7c5e4f9b7ae6117829b4d7032c31e4140"
+    },
+    {
+      "id": "SITE-0003",
+      "host": "overstock.com",
+      "sourceSha256": "35b787ac430e69b8686fd96a05967e6c96f374b5a825e04a303db21c701faed9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "415fc6998c9ecbd9150009ab4324431705d76cc1de12989d467e057a0bfbbdeb"
+    },
+    {
+      "id": "SITE-0004",
+      "host": "westelm.com",
+      "sourceSha256": "1479cb097ea7172a9dde4840aa1b9d793503736b5bb8c6f6819d4f8ea31d6180",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1cdf82f4e27c4bbceef0f713511fa8b84dff05885a62bbb9c4e47dba6554aa41"
+    },
+    {
+      "id": "SITE-0005",
+      "host": "potterybarn.com",
+      "sourceSha256": "365ce151cdd60550b0e58aa7db997999de22f317105b2cee6a66691f398cece9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "ef670552fe58da22d434fd2a06a2b51af47548401deb370315db1bfd971bf8be"
+    },
+    {
+      "id": "SITE-0006",
+      "host": "floydhome.com",
+      "sourceSha256": "715fa91c6b16336da37d11c16d572f91e4979b4c7710b3ac24aa616dc1037fcc",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "4a2539e6798a8032da25e95a0516d45fc1cf40c8c3471c395e9ceeb20c757b33"
+    },
+    {
+      "id": "SITE-0007",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0008",
+      "host": "sabai.design",
+      "sourceSha256": "f28690b97697dc57e6f6e5b4bfcbfbb614d2c5e7259f3a717a575fe3fa4b2353",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "ba0720659fea0d2523866dc9d55b34d3863c061f751697327cc8e2098d858ab6"
+    },
+    {
+      "id": "SITE-0009",
+      "host": "insideweather.com",
+      "sourceSha256": "59e68df41eb6d2df574f39a57195ea5960e801999c46dcae3fd7e4968e8d46f2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "1681d066a0646f6a42ae1371ba15acf33278bb3d58d2c3fdd4ee165e21529776"
+    },
+    {
+      "id": "SITE-0010",
+      "status": "SOURCE_HASH_MISMATCH_QUARANTINED",
+      "expectedSha256": "88be5453146e34e141467bbb732a4ed70dc844604450b3f1cbf6cb0d1922a33c",
+      "actualSha256": "f0294bf2d7b3bc26ca3adcea0f063750e9d8c781036595524cdd7d32d2ec08bd"
+    },
+    {
+      "id": "SITE-0011",
+      "host": "homary.com",
+      "sourceSha256": "2aab96165f63d33ba63c23bcf18051a62c980af3522e8babe04ac434633456a4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "f63de965fbf42b2eeb6be6ad9ef7ec75960030318404f5759304f0f15b987fa2"
+    },
+    {
+      "id": "SITE-0012",
+      "host": "lumens.com",
+      "sourceSha256": "b42b58790383d139e85182d57051a30fc6d294d84f4ad7766e4dd8b5a2691726",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e796fdb3b8d17caf0cceac6bf2e7c2f4a2a62d9c4051cd88dc87d62a6c089aa0"
+    },
+    {
+      "id": "SITE-0013",
+      "host": "schoolhouse.com",
+      "sourceSha256": "ab7d46e2c2641da8b32d1c501af54c8625fdf571c73a2ddfeb182c93317cbcad",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "48b5a50b7fc7aeef523682fc517b95d3bebc6dd64e06ef26ff59d40faef587a8"
+    },
+    {
+      "id": "SITE-0014",
+      "status": "SOURCE_HASH_MISMATCH_QUARANTINED",
+      "expectedSha256": "38720f2540edbad270a68c0d1bf268f5e94a5330c7e79ea7e02e5915e4c036ff",
+      "actualSha256": "b4dbb20bab4235399953e435e7d0de8bb2f94341ee4ded0e1b07cd9f41373548"
+    },
+    {
+      "id": "SITE-0015",
+      "host": "harempants.com",
+      "sourceSha256": "685d3d3db843bdf99da7cd76d7d5f4388bc466c82347dd871944dd30e7a38b0c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 30,
+      "verificationKnown": 30,
+      "reviewBodyHashes": [
+        "4b71605257919c98d22055d583676b32ef41c89c6ef177573f36d7a998827927",
+        "e864f05807fd6554acd4868fb2e5ba947f7675e513bf60b157d4a17f07230ab5",
+        "c2e30c60e823dada7b6a8f8bc9fca6eb8dc91078f0d2c6478f406c0efd5e500f",
+        "fdc96ffbf256523aec8846ae56321053c7ab751c99eb766e6bb4a7d362a4f060",
+        "2ed5ea74962b784bf23b5ddf0c9e7002a7f8e285550fa9fc033fc9688e9cfd3f",
+        "082fecc8dc4d4c9881c367fe6ee448a841fa93db4d60d5459c9d9c4c97a3d528",
+        "65aff629cd5adfd811befbbc4e3b83c4427d9606fa7418f1f5de954bbef08489",
+        "d291663bcf280de7f8a6bfa18e38fd8c085b254be11f3a78ffbcf6f0631750be",
+        "f4030835a4596b34135b9cf293f34196e4863b5e53a780e94661ee1bf32e6fbc",
+        "3ccbf15d43649a66035c0da174b15d4941751b4535accf7c093d8280e478e608",
+        "01c12ccd711fb9f8e28ad64eba60cc9c352ba6350a859dad3a6fd37f9a51ffbc",
+        "06a1100b788b46d6310fd458aa1bbd4b85386b0249a8444a31aa2af029c68dbd",
+        "d9d40ecf629924e241e00dae877451886ba76ca4eacb16ef41d3d38cf1afdbdf",
+        "4ad107b18a5c7771ad1b7d848e7f20c60b1afd89fcf1f69fdabb991dbd7afad7",
+        "1d7c705a47619084dd24cb63b07a5c4629627de2b6c7dc993e3e3a939d071f24",
+        "e4cc5cc2c2529ccedb2097352d733f46ab0ac4f00b9a0f2c46a77f1472726bb2",
+        "8cbfd302fde53badf9c9a8c8e9f1485677c5916aa4a9ba2f9bced2d3d3b00ecd",
+        "9cbb687a2081228b893306242448417155d87231e89ec0b7c53b564f23a04b65",
+        "e1409d592c9da6bdc8cf3f2beea519a6f52f03153dafcaeab27035b7f227fea4",
+        "4516eda740a935f21c29cfca4f29ea2a00e1a192f99a2556df503c214cef8417",
+        "0a1f5d3377211657ac47a3c5b24e1d1373a630091a9a1b26789266a7a88ffad4",
+        "0161b2377409fc783eb153a880e329a6222dd2625bd66ed1de9d9f2cc451ce9d",
+        "7f34ee41a4d3609b03d9788ac21b6224c59d0f2cc46bd4e9dbb8b6537f24090d",
+        "521f7670f454b064171851e9b15a416a72353154a003153cd3ff3419b40548c7",
+        "c13186f5425ee34776c6f475e86015b21ddbd0fcf00d2d8fb6881ef8befa971a",
+        "c59149688e439def80013372eae4425c3b06e7bd7229fdc97546f049ac6ff64e",
+        "b4de607536b0472f62aa3448645809d278ba117e498084ece5e77439f09aab03",
+        "136232d712334d34bbca4a3fe86af0e46856379e86804886b9af93ae77f5fd24",
+        "3905416f6778a563ba1f335dd61202e53e9ce6aa94aba6038bc2b33696bb1e34",
+        "3905416f6778a563ba1f335dd61202e53e9ce6aa94aba6038bc2b33696bb1e34"
+      ],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "0a9b34460584f25bfdd1516ad9b9cc1e43dfbded2196887e8907fc80ffc2050f"
+    },
+    {
+      "id": "SITE-0016",
+      "host": "suredesigntshirts.com",
+      "sourceSha256": "9cfbc31e925ddbcdadf7807d40b1ccc0d549a3531e03362767d5a87c1678ffaf",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "f4b6da3f516a4841d3f9801bb6581b5e62c1f7ecff6366fd4b22b8f6fa9def65"
+    },
+    {
+      "id": "SITE-0017",
+      "host": "patagonia.com",
+      "sourceSha256": "b682f77b77c24d1d69f7a2063833c923a5c3347493fadb8de7d20628ad6b44bd",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "5493785757417dbe6b153d025b391f03edec0bd93a2e7a2a8ae341ae628998cc"
+    },
+    {
+      "id": "SITE-0018",
+      "host": "rei.com",
+      "sourceSha256": "dbecf0de69edf09382fbb2eea2063800cbffa144381d52484557d3eed3d31362",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "a0726f145f012fc052204a2d49662de546ed54b652640dfd53f6b372d5ba29d3"
+    },
+    {
+      "id": "SITE-0019",
+      "host": "cotopaxi.com",
+      "sourceSha256": "fe2dea3323db6389efc13807995bafca6938a22eb70f9b04bccbfcda82bc2ec3",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cbf505fd21dc4ba9e13b989bc29562836b97fa776a11f4359d88b5aef538e46b"
+    },
+    {
+      "id": "SITE-0020",
+      "host": "tentree.com",
+      "sourceSha256": "374a72b2dc6178f17f075fcf54ddf6c18823c30973aa9f846f5526e81d0a8ac2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cf5ae8612cb678ef58b1590d02a1132ee737f6a2e4a1b772f5bd95c57efaae5d"
+    },
+    {
+      "id": "SITE-0021",
+      "host": "allbirds.com",
+      "sourceSha256": "c5e7f1f83e0c8ab455985cfa690962b39a44276492dacc97a138d40f996f36d4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "495e1fc0a87aaf165c84690450863e70ea83c4dcbceb634e058bfb0be89bccbf"
+    },
+    {
+      "id": "SITE-0022",
+      "host": "everlane.com",
+      "sourceSha256": "23ab3d8e65e6bd9b14c0bb99e0dccb63a8f2fd4dbed27feb758990e1bb143dd9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "370c4dc0e2f57c8feac49774fb8666eb30cfefbefab19627e47bdd165bb4ac4b"
+    },
+    {
+      "id": "SITE-0023",
+      "host": "pact.com",
+      "sourceSha256": "2376131e7d096070d84102f0e21426748577ede9b9ac5b52bc234949fd26bf7f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "393739051d83128f7ca5195c80e70f92f79e5d20476a7e2fa0744ae81e1bcc52"
+    },
+    {
+      "id": "SITE-0024",
+      "host": "organicbasics.com",
+      "sourceSha256": "5e2c0fde1e231ce56fdfb36f41d0e163c28fb656dece1b7ef3cac727b0180c94",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "9f2a19013750d2d6b882fa481b32a93b4a7bbf4a4c91e615678384a15be040e2"
+    },
+    {
+      "id": "SITE-0025",
+      "host": "girlfriend.com",
+      "sourceSha256": "ed382eb818b2a708fff95b089b6adca4e6c2d833ecdac38c8e21840a5a1a9bd6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "aec2da0b07c34b6e5650055a19f155ebfd888db719611758ec1ff649df1ccaf8"
+    },
+    {
+      "id": "SITE-0026",
+      "host": "boody.com",
+      "sourceSha256": "66cd5dd5c43b8bc24281c69438d0c3e158e538f3b9fb24e8bb61d2f104d74288",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "858c19a4cd033fd55c3c6aa5e6728df142301dd5c32cf81298910e904f30f695"
+    },
+    {
+      "id": "SITE-0027",
+      "host": "bombas.com",
+      "sourceSha256": "12a75dc6565862f1fd63b3533a606d834a36bd8c091fd4189a22a0cc0530d53c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "461a0084e08c9780e793ac270a0efb6f823fe0d933dcb8bfe51d27065a77af8d"
+    },
+    {
+      "id": "SITE-0028",
+      "host": "darntough.com",
+      "sourceSha256": "adca2b4e33605ff477b3701b8e18d3491f198b9da8dc0fcd7361a810d5d12610",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cd77a2cbc18b97b81a8de91c3da068f2bfca6adea0e2672ca5458bf400750521"
+    },
+    {
+      "id": "SITE-0029",
+      "host": "american-giant.com",
+      "sourceSha256": "d286642d40d9cb4cfa458b0146e5a8d6b45959ec793ebbc5bde4ce2bed9acb19",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "4dc2dae817d6fc81e7f5fd01b442ac2299ac4f4d9f60a96fd74eab9369b388a0"
+    },
+    {
+      "id": "SITE-0030",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0031",
+      "host": "goodamerican.com",
+      "sourceSha256": "f6bdf4ab552464997b4d6329900fab9af524f972b01bccab2bbbef4a7b164130",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "bc84fc1241133e5bd5908245c5188339e17d566efae194a1918c1ee031bebd45"
+    },
+    {
+      "id": "SITE-0032",
+      "host": "universalstandard.com",
+      "sourceSha256": "d9924b136bb3ccd27958f572f96716ed30da27122f8491d1692b747937d6cdfb",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "39c9f7e9aa3bfd69cf431595d65a7e5422b652bbe461d49eaad846428ffb00de"
+    },
+    {
+      "id": "SITE-0033",
+      "host": "vuoriclothing.com",
+      "sourceSha256": "96e70cccea25a99625d3fa20245725532f5fc2e1bbc22b7ebe7ab8349d4eaf48",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "902e1475a9fa84f05792af170c9e5a613c35891ba03a951f1e233d95284fe91e"
+    },
+    {
+      "id": "SITE-0034",
+      "host": "shop.lululemon.com",
+      "sourceSha256": "aa04d3ab1114b3af619acbfd821071a824bde347e317c1251c83702a919bd9bc",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "8f566ae4b199146fcc35a2d533a97540dfd78bacab7846f20b8b94ba3f56fc74"
+    },
+    {
+      "id": "SITE-0035",
+      "host": "outdoorvoices.com",
+      "sourceSha256": "dbd00abd0ef9a28833c86aee3ab92b69ed703fb6a9f57dee8a49c6399a93f514",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "59894d4db5b1d99edcbd913bb07f2bc56933e4c5d059a2b485180009177353e6"
+    },
+    {
+      "id": "SITE-0036",
+      "host": "popflexactive.com",
+      "sourceSha256": "be621368d3d02979e34f1b9586589d360c6e95013319975dbb2e0a1de0de7712",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 2,
+      "verificationKnown": 2,
+      "reviewBodyHashes": [
+        "a8cc5d3c6f24e68bb7eb4e387b8ec8681836f2d9e01d4feab2120030547ff90c",
+        "c098324604115c0ed01e6969df06b5f7fd18679a312e628852db828bb310993f"
+      ],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "e05329093978cc4f2272f76e67b61a0ae4413f123fec8dfd6ed1ba50308d55ec"
+    },
+    {
+      "id": "SITE-0037",
+      "host": "fashionnova.com",
+      "sourceSha256": "d56cee27230e6282d6fcdb95aad237084548619aa7991cb1a94fd3d812f4c4e6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "0f2db2ec1f8b3875e5a48ea38755b31ec0a79e638e8ed7619000201d48704f73"
+    },
+    {
+      "id": "SITE-0038",
+      "host": "prettylittlething.com",
+      "sourceSha256": "e04a58101f93961546b0ac811e927a062cd7b058d634daf1367a6d98a701c48a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "4af517e26b926bee13db8ff826b4c828e7ebbb350dce9e8c37448333cd18896b"
+    },
+    {
+      "id": "SITE-0039",
+      "host": "us.shein.com",
+      "sourceSha256": "e1b1c6c4a1e65bb34a38004ac0fcbd9410aeb4a66aaf12363503cbfc078b89e8",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "4f32e3dfda62b199cb330e542168ed825ec8d271d6603b81ba02bf909b15f708"
+    },
+    {
+      "id": "SITE-0040",
+      "host": "us.romwe.com",
+      "sourceSha256": "188e33fcce690caac82e8b00a38ff7e9b893a8a11755294ca60cd3a6a8804485",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "dd161d1fc6ac3596bdb61fae908605a419e31bb3347735f169a7c033efaa6df9"
+    },
+    {
+      "id": "SITE-0041",
+      "host": "zaful.com",
+      "sourceSha256": "f9fbd6c1ec31640933c415ead9f26a79bc1a982026085194d20442df25adf168",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "523fa1672682d6f20a1e09afe4f7603e11333230e16a27716c3236f3963d79c1"
+    },
+    {
+      "id": "SITE-0042",
+      "status": "EXTRACTION_ERROR",
+      "error": "Error: Too many private form regions to safely isolate."
+    },
+    {
+      "id": "SITE-0043",
+      "host": "modlily.com",
+      "sourceSha256": "f4095adae1e9c0587f3b4a6cd601e28557914e792cf1244462e49cede6eb5045",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "d298fdfc70415af971d391e67d9c786335e05fda06b4a60f4a75cd05a7b90023"
+    },
+    {
+      "id": "SITE-0044",
+      "host": "bellelily.com",
+      "sourceSha256": "e95a2de79b8f35d05d544dd271411b0b7aea73ab64daa0e8080cb57270206cf6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "5fbdaeba4fc2744d401ed50eb227af34f0c3a7d6a27b91b49e0bb0ac3e85a2c4"
+    },
+    {
+      "id": "SITE-0045",
+      "host": "rosewe.com",
+      "sourceSha256": "944aa6df40c9a6e082d537e2fa58b4d632b672aba7a0d1eebc684b17538d87da",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e7d7a98318f2694d775b36653d3083becc7180d355ddc5ee2caa006fd82778e3"
+    },
+    {
+      "id": "SITE-0046",
+      "host": "lightinthebox.com",
+      "sourceSha256": "ddebc0087455c1864cab8d846ce965759afc442b983f37aa55d54cd7e7a0b63d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0047",
+      "host": "adidas.com",
+      "sourceSha256": "c509f87c11180e4f73bb7a152aaa2a2a2b767393c450f46e4d8a1c796b78ef8f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "REVIEWED_BRAND_DOMAIN_MATCH"
+      ],
+      "pageTextHash": "9787a22749cd3680b0de6b13d7a9f8187b02b4f254155ab20c1618f4e5fcae00"
+    },
+    {
+      "id": "SITE-0048",
+      "host": "newbalance.com",
+      "sourceSha256": "ae9119eba4f4b7e6dfcd0cecd1d0eb4f67656df9fbaae5e15c91708aa1b47cf0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "66d51581e934917ee053f980b5e98e17b2ec239a8c4bf1d41f86e60ce7b576fd"
+    },
+    {
+      "id": "SITE-0049",
+      "host": "asics.com",
+      "sourceSha256": "c18ca236ebfca3cd58d328bfa7b962aa3f0c990e4751d3c42c569dcda8bfc2e8",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "c762c6fcdccaef592e2f04e98f86a6bd470dab35899a959d0bf33bee54c10a52"
+    },
+    {
+      "id": "SITE-0050",
+      "host": "brooksrunning.com",
+      "sourceSha256": "5eaa4803662179dfbad238fae961c26ff47d0c3e3e302a441da876deb67ae864",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "b643484121d8cd931616c9249c8aa049ee6b9b9070716daa463b4fba1c5a9ba4"
+    },
+    {
+      "id": "SITE-0051",
+      "host": "on.com",
+      "sourceSha256": "10d64789749e63c604136b29dde22573ea91b6bb0de846597ab4aceb723e4595",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "b5f1fb25d3447ddb20224dddf0d53f704baee7142220346b26b432e986d3319e"
+    },
+    {
+      "id": "SITE-0052",
+      "host": "xeroshoes.com",
+      "sourceSha256": "e221e820fd931586b01b90ea4a6d8de9821f03d43c4c351d0384724d126353bc",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "1730dc031e022bbd5fcb3b4f9585d46bbe8f11136b1d4963a328c30042c9469f"
+    },
+    {
+      "id": "SITE-0053",
+      "host": "crocs.com",
+      "sourceSha256": "d450cc93e7f825e6d21256bd7ba3121a603ebbc474a759ab803842dbf229191c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "d0248a476de248608d5616db923c81a3059df583f4783d0600681db71c65e601"
+    },
+    {
+      "id": "SITE-0054",
+      "host": "keenfootwear.com",
+      "sourceSha256": "043530b93edfa7f288e328fd9eaaa141c2a86ce29ffdfb898b7947e907751b66",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "ae5ec325692fd1bce3b9b4891da6d0ca3ffa8e03c846d5b57838930ea0cee2e3"
+    },
+    {
+      "id": "SITE-0055",
+      "host": "merrell.com",
+      "sourceSha256": "66487b685cae134801131773f0e3ae66dd71d2e79ad339460d8ce10fcc6e25d9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "9c69d8658a6e32baee98354faa1b14c53bd23c6a0886171091b8a05e030bcfb0"
+    },
+    {
+      "id": "SITE-0056",
+      "host": "redwingshoes.com",
+      "sourceSha256": "eadc8e482564fc307c9542173e3c36e80ad46dff8461b042658e7f2f0c548fc0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "bc3c7382e47a61e691d084310744babbadcbb97780f6aa1dedfd1267a3cb5831"
+    },
+    {
+      "id": "SITE-0057",
+      "host": "thursdayboots.com",
+      "sourceSha256": "f11b48c88a93a9935aa286bcd4c6fe81a19013f3e5891b445b06066e5c3856e4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "1c3db32d99f26c5a8da96d0813bf48449c2019aad593a3c44e6feb5f8226c086"
+    },
+    {
+      "id": "SITE-0058",
+      "host": "blundstone.com",
+      "sourceSha256": "4e9cf45e263c16dee335af8a077a3cfe1580054205758d8d2dbd54b4ebf6d574",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "007137829e6badf64a72e4d9512027f9950a031dfc426a82dd70534c97007c48"
+    },
+    {
+      "id": "SITE-0059",
+      "host": "vessi.com",
+      "sourceSha256": "9f73ceb3383044f4930dfb55d137dfb69a8bc9cc7894f1ec08ebfd33ad021ea5",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "e17663b925170eded0d04f0b0f3aa4668a7b9caf5dbff374e553c0b98b2398b8"
+    },
+    {
+      "id": "SITE-0060",
+      "host": "anker.com",
+      "sourceSha256": "7200be84142745fecaad8fe8ef2bd5b3767eaafd6b766e2975dedd11be34e184",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "0dbd76a075a423a0373c955f1de79a4d099b17a9a09b71efbacf438f792f6fcd"
+    },
+    {
+      "id": "SITE-0061",
+      "host": "ugreen.com",
+      "sourceSha256": "e372325810d716fb76dff57aa1db2280c9a756d183c9850b524a7aa7d513f575",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "bb78fcd3d8de7622e54695c3f1ef5ccc7b0d346230e34e5daf9949b0ff3acf38"
+    },
+    {
+      "id": "SITE-0062",
+      "host": "baseus.com",
+      "sourceSha256": "6c24f14b6dffbc0f14382c7dcbcef658a592c5f747cebf6d5120357ff914c22d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "da30dcd318aa1772b62bf872c8f0f43dc784302b2b473cade0dfc17bf49ae538"
+    },
+    {
+      "id": "SITE-0063",
+      "host": "belkin.com",
+      "sourceSha256": "6463b49e6ecf783e3c24cac24778e0f5b674a845144882082f2d0bc75d513ab9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "cc170d2c862c2ddf9e5f7132604285192c8a063367d804a37dfbe814802bf5d0"
+    },
+    {
+      "id": "SITE-0064",
+      "host": "satechi.com",
+      "sourceSha256": "c513ab827ce4e02e527c5c67f419992dfb74c601ed715197172308bdaf96f8b4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "e185e98c6840ae4276c2aea0ba2f16823bff93ab6ef90e53513af052412653ac"
+    },
+    {
+      "id": "SITE-0065",
+      "host": "nomadgoods.com",
+      "sourceSha256": "61f5b73b1b35cf6305d498286bb62c1a0a5f1f98ae9b482f708a2fcf5666d2f6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "3219cef7f88e8cb334e8ce75871a8c2cecb4562a983a642d5aa031595a7aa0f7"
+    },
+    {
+      "id": "SITE-0066",
+      "host": "peakdesign.com",
+      "sourceSha256": "75d957c8b31e4b3c650f03d8e9b16553c2d05bf06142f5849567882d5e1dd713",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "61d23b62fe8740c6823168bc9aec97a60a30f2825725211b601b11493a86c336"
+    },
+    {
+      "id": "SITE-0067",
+      "host": "shopmoment.com",
+      "sourceSha256": "b53aeb489784ab043711ffc061237cfac967a345a78b5a5ae3495bec99eb751d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "3110e193631e71ce7764c6ede74469915db91b8c6a2cc6994108533fc8f7640b"
+    },
+    {
+      "id": "SITE-0068",
+      "host": "logitech.com",
+      "sourceSha256": "ce16557ac4bf4566c4ab2868c2a3154e55d2b147aeffa5178340e593a358f060",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "d32095bfb1a65795927c8fa9dd940149a239e4f297b3088f352e3e36aeae8d53"
+    },
+    {
+      "id": "SITE-0069",
+      "host": "corsair.com",
+      "sourceSha256": "83d52d626cbb4ae4caf768acd5ef9242f27e2cad241c26cfe6a99fa625290c9e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0070",
+      "host": "hyperx.com",
+      "sourceSha256": "c3611b9442e0a15f7042033ae8ed27928eea5dff2b22a857032ce00b1bb3ddcd",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "LONG_SHIPPING_WINDOW"
+      ],
+      "pageTextHash": "5e7804c649665af01210c9c4868f2dc5016c125ef1c35474e8e91a5957d8382e"
+    },
+    {
+      "id": "SITE-0071",
+      "host": "keychron.com",
+      "sourceSha256": "93bccfd0e1e938f8573c1418c7eef8126dee6a49155032c92a444acde98ceb6d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "5586779a5ee8eb06706901c649fe3328da576141ad6f78a1ad2b7b453f85c53c"
+    },
+    {
+      "id": "SITE-0072",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0073",
+      "host": "ducky.global",
+      "sourceSha256": "d87664017b33260f0228d875d37c201c3c25c248a004019ac1e41e5249dd902e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "006683771509baafe7333d6dc275f94e0d8c1f70d40e883a17d79ef563d3914e"
+    },
+    {
+      "id": "SITE-0074",
+      "host": "epomaker.com",
+      "sourceSha256": "bf184914b7c2cfc72e4fc4b8d7e298d576d9764a1b12135d93e6ff170022b79f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "18834be9545581d5c72bbc1371b7449684df1fd9c40b886183aa63bddbd4d4e9"
+    },
+    {
+      "id": "SITE-0075",
+      "host": "noctua.at",
+      "sourceSha256": "2bf39bffc4a3c7af561c561039a3a108646a1f5877fb3a634a00ec089e85c4ff",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "efee10eab72bb9a6d3b62455d63d3a9d1d801c5bdadeca253f2977f58f46df2d"
+    },
+    {
+      "id": "SITE-0076",
+      "host": "fractal-design.com",
+      "sourceSha256": "cae0cb0bdc6c40a24feb1eb7c900e2092728583f72ce3a3037e8e44c18175f65",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "26631e7aa285d9955169c6eb2ebb7c178fa4bea277d9c8177eecb6f3776a7242"
+    },
+    {
+      "id": "SITE-0077",
+      "host": "nzxt.com",
+      "sourceSha256": "5bb553b7b222a42287545494499753074af8b0b3deb391bee082c5f615552529",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "b6bf86bd00e75eae9d983204622d6e547ab00a11afc06af21a9cdf2dd197fb37"
+    },
+    {
+      "id": "SITE-0078",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0079",
+      "host": "thermalright.com",
+      "sourceSha256": "eee161713e5e69149f7966b3af42cbc7f5f5d424c1315bda5b4087db3808a407",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "313844bb883477804d2bebac7f21faa220f408a34eb4759691e1c15eb99223da"
+    },
+    {
+      "id": "SITE-0080",
+      "host": "lian-li.com",
+      "sourceSha256": "b8a6cad35d9c2256a8e659d8c85a8e786705a814e868191d862cc2e9683dfeff",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "eb2018305d246914e2feec71256737ada79ed64093397b760f3f9cf8f9169276"
+    },
+    {
+      "id": "SITE-0081",
+      "host": "ifixit.com",
+      "sourceSha256": "5e4d26e8fc3479aa5b322dba6f1e5ff6b8946275f5b3656b61a8fa6300d40812",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "45bea3b64da76fe1e9adeb4a795fa4e20dade05061fee33c810069e18bbbbdbe"
+    },
+    {
+      "id": "SITE-0082",
+      "host": "raspberrypi.com",
+      "sourceSha256": "ccc73c097bff3d545bcbcf46436cad840113e647e4907f9f0c183233eb5b2f8f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "0c9f8f97c5fc1df7a0c71a904809e2f51b8998a7879e3d4d62bfa7dd0aee1e1a"
+    },
+    {
+      "id": "SITE-0083",
+      "host": "adafruit.com",
+      "sourceSha256": "14b52c724647903ef0ab20ca8c06e6a8aea8cc0502769d205f17e0aa8cacb81c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "72f98d682d3641492679314df79e9da9db97bcb254c584438297e4eb2dfa9c4e"
+    },
+    {
+      "id": "SITE-0084",
+      "status": "EXTRACTION_ERROR",
+      "error": "Error: Too many private form regions to safely isolate."
+    },
+    {
+      "id": "SITE-0085",
+      "host": "seeedstudio.com",
+      "sourceSha256": "e4ca862cf1a3fdaaa6a1cab3ac1ee88cced77429331566129e22454c9cccc96e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "a86716a63193d2555a9e4c86971148290b6fa002b979e5675a8f77ba17dd2af2"
+    },
+    {
+      "id": "SITE-0086",
+      "host": "waveshare.com",
+      "sourceSha256": "c794e3301ad8d321547888a3b6232647c6c307672d17b81637ae11c16d257db7",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "00a13b1687f0a1d8be4f9979f13dc2142cb2e387eb97f166c270c3d9cf1355f9"
+    },
+    {
+      "id": "SITE-0087",
+      "host": "dfrobot.com",
+      "sourceSha256": "12dded1518f124793408355df2deca0b09ff9e0d344b7a29c985e499938ee967",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1ac1daf487c3ad6ef2c2fafd3dce1cfe849e9640f69f611bc566984f961edfa3"
+    },
+    {
+      "id": "SITE-0088",
+      "host": "elecrow.com",
+      "sourceSha256": "38d2da97f77f4b9beebb707cbea27ee2e8afba9c8b0c64786f682507bb7bad9a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "a1b29c563cbf3b89d8209753928741c85b2c2d7737a74c44f7918359d7f0e50b"
+    },
+    {
+      "id": "SITE-0089",
+      "host": "target.com",
+      "sourceSha256": "27f946541dd258c63b470026df0ad1b68ec64836af2a35c366e4a561f46fa402",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "7fa97e983daf2aaf369fde17324bcd68131b005e8cfe6b3b36ec9929ed9c10e0"
+    },
+    {
+      "id": "SITE-0090",
+      "host": "newegg.com",
+      "sourceSha256": "468ea82e74f2f656a14a1d7ab64eebfd6caee57532d58ef64e70bd8a5a934447",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1ddb6a2a09d7adce7b5e7a63459fd8528a1d6921247bd799413b70b583df53c6"
+    },
+    {
+      "id": "SITE-0091",
+      "host": "vinted.com",
+      "sourceSha256": "7ea0d1efafe0cbdb42e2397ea08f85376e160ed4f2295ce33f636bcef2eecd57",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "6857b102dde9bd81525cee630354d8c9b3438f3d43b501b296e1b2df73872c3b"
+    },
+    {
+      "id": "SITE-0092",
+      "host": "alibaba.com",
+      "sourceSha256": "6140bf737f2a7576ca6d013e1487a220ffcdadccf00f203996f42ce354849419",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "9ec9816be61814f64a3dae676334458d11e9d0ffb2c6ed670247b605f3be8972"
+    },
+    {
+      "id": "SITE-0093",
+      "host": "banggood.com",
+      "sourceSha256": "9d6eea5f18c1df4a84396e34b3a9bb08cf1102105b37e458bacb3475557dc376",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0094",
+      "host": "geekbuying.com",
+      "sourceSha256": "fab382734e1fe0b1cf00549c2c24997ef183fc699f060eb32cfc0f3b0ac2459f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "f5418e36122432d05846c1f061721b2c6ba7ae1a7f5a413e7c08077a7ba0d290"
+    },
+    {
+      "id": "SITE-0095",
+      "host": "untilgone.com",
+      "sourceSha256": "a140555398ad230ca7f5fb7129ed0c1b9f2ec7cee90016180f4a78531b965a14",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "d4e2ac5909756ca3573657ba5be2fc12c964bbce04288d34480c7e864c354bf7"
+    },
+    {
+      "id": "SITE-0096",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 404
+    },
+    {
+      "id": "SITE-0097",
+      "host": "qvc.com",
+      "sourceSha256": "31cc9497d4ee7613d1e3b640da65dd1bca091d80eba4d2fc4e2248abf8529cda",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "debd6e716a36bbc7e1876fd6af81f5c35611b4f45b3d289c0905097b6617c410"
+    },
+    {
+      "id": "SITE-0098",
+      "host": "hsn.com",
+      "sourceSha256": "f5fd5c173a5482c9d644c9c6a80413418a432ece60bf9d92e034ac3466259f55",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "777340d7a905024afb57f651edd1a5eee02a200e1eb2109f5b11e438c588192d"
+    },
+    {
+      "id": "SITE-0099",
+      "host": "costco.com",
+      "sourceSha256": "fcd20035cc6d9605ad893b222441b6f4ee1ae904f9655cff839f488ab486b3b4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "8c9efa88c659d3169101d1e1c6a655a0fce4593a11c9bfcc04748f6cc545d443"
+    },
+    {
+      "id": "SITE-0100",
+      "host": "samsclub.com",
+      "sourceSha256": "d1abf382a3a8368b06decdbf6838f910ddbd61a38ded04188ed8e5236b242c66",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1d1e98604df4bb060e787be18131d344502e99a28cd8330376ae5a3658b6eb02"
+    },
+    {
+      "id": "SITE-0101",
+      "host": "homedepot.com",
+      "sourceSha256": "93716ecd01eeaf99e810da8776057c56b9cc1ec872c404e6609f45241f694b83",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "93691a551bfeb56e1bf8d996d63b5ea4e5abbb477490f208db81cc56c6dfc179"
+    },
+    {
+      "id": "SITE-0102",
+      "host": "acehardware.com",
+      "sourceSha256": "4d3b4ae87e6ba7ca89b36f38949ee5573974e2876d7a0956948eed8c9c6e05e4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e4a0530b7a4b1b4f1c6632984ed8da28c4facc0cf750203b95d487d8f124a5e9"
+    },
+    {
+      "id": "SITE-0103",
+      "host": "microcenter.com",
+      "sourceSha256": "a4e107dffc31b1fe70e4e7fa236453a311f5a0d5376d18bc27cef0ec28d9a8fa",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "246ef0131d365afbb4e8db466a3dae1a88292ba15133155da4217389ba4551b3"
+    },
+    {
+      "id": "SITE-0104",
+      "host": "currys.co.uk",
+      "sourceSha256": "6e980d3e209debe10697a03aaccd736623da4602b035d4d896d6c5df4bac4831",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0105",
+      "host": "bol.com",
+      "sourceSha256": "8e4ad449b8406c8157ea68b7b42f93c3606789235d6ab87bc2b37c78d6127ae2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "4f6bfdc895b6cf30cea9f05ab273d6e92df71932caa49f3a6847af4c6e1d3812"
+    },
+    {
+      "id": "SITE-0106",
+      "host": "coolblue.nl",
+      "sourceSha256": "c04a7eb6547952cfcde27857cebe2595f21b13aa9da1c98a7b7ebcb6c7125ffa",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "70e7323c3bf0b2abfcbd2dc1b8d8e6b0a439c789c24455bd75d368def89ba5a0"
+    },
+    {
+      "id": "SITE-0107",
+      "host": "galaxus.de",
+      "sourceSha256": "377d8d4f0b4ff377d7185ac7bf8e02642fb05fe705d1af45925bb897604466b4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "349c6ddd21a404e76cfe9858ca97d047e5a933d4cd557861564fe8c8d1e63bdb"
+    },
+    {
+      "id": "SITE-0108",
+      "host": "digitec.ch",
+      "sourceSha256": "70f4cf58f554adcae211ad0cf17cf19dde293b6a30c3ccd901908592e7923cf1",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "5ac355418f564d3f97cbdcb6b1cbe43b95380d884c797e769d8f07dff3e4e41c"
+    },
+    {
+      "id": "SITE-0109",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 404
+    },
+    {
+      "id": "SITE-0110",
+      "status": "EXTRACTION_ERROR",
+      "error": "Error: Too many private form regions to safely isolate."
+    },
+    {
+      "id": "SITE-0111",
+      "host": "liverpool.com.mx",
+      "sourceSha256": "93a5022d6426d1e329e7f05c56a5eb9436cfafbf4f7beeeeffbc69da01b4d8b4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "f144bac30d22d9ef07c843349e2f6555bf509d26c82f22e80aeb993dae073eba"
+    },
+    {
+      "id": "SITE-0112",
+      "host": "theordinary.com",
+      "sourceSha256": "3505aecea7c0c3b4efa742ca02349d6618785a565d49c4e1aaf8a4f5750549b4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "4d1c363f0aa9f59fdb693ecdcceb6180b4fb2c0d6cf684e20ef2a72530d50d29"
+    },
+    {
+      "id": "SITE-0113",
+      "host": "laroche-posay.us",
+      "sourceSha256": "31fbe031039b5de4ece5bdd3610bf2154c83c3e58abdb45a897d962357d6d43c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1b678dd5c1c6cb198794d900b0dd6314abffd2bf27f9916a1c7220adc2e5344c"
+    },
+    {
+      "id": "SITE-0114",
+      "host": "naturium.com",
+      "sourceSha256": "aa87a795a3688c7f937fda12f10e2c4a4470c6a3ee1a6dd41a72e8ff5b7f8efa",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "abb363695b57b44abce25e0afcf59439ea20cdff06c0c52ff84220b3b489b600"
+    },
+    {
+      "id": "SITE-0115",
+      "host": "elfcosmetics.com",
+      "sourceSha256": "90229942bb4c38d5b4aa9287540222ab147115610e432d3c53e48b49fd581dab",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "338d0f1a0771512d04ca6537c2ccc23409d5fced740ceaf0355aa033767e471c"
+    },
+    {
+      "id": "SITE-0116",
+      "status": "EXTRACTION_ERROR",
+      "error": "Error: Too many private form regions to safely isolate."
+    },
+    {
+      "id": "SITE-0117",
+      "host": "rarebeauty.com",
+      "sourceSha256": "feb956ea58c81e64a2dca4977a3155885ba1bf2d9e5f5fd36a78924eba898573",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "756547e7a7470a335c2fb7e382e15522cf86ff69b73243e4a633c92d8ebf1cc2"
+    },
+    {
+      "id": "SITE-0118",
+      "host": "fentybeauty.com",
+      "sourceSha256": "f278937bc84573e12bc248504c52aeab68659fb94a33ce626432565ec0263dec",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "708295095486d39cab42867e66499c50c29b3e84fb27fc76b8d95a4aa3b603cd"
+    },
+    {
+      "id": "SITE-0119",
+      "host": "cocokind.com",
+      "sourceSha256": "efaa1ab2d1af81d74bdb42c45b26fec5b4267f1d3d8b4ed8985405e9b1e4e4a2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "1639fd4d294e8f15e999507033e7585870376b24792f16e0e261ac2c91282b69"
+    },
+    {
+      "id": "SITE-0120",
+      "host": "byoma.com",
+      "sourceSha256": "776516a24ede216ae31b1c6f065b16a6ad8d97a8701ff914905ac984411ffe82",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "b8154695aa58044b2a2ed7bbee472cfc7f1234657cb3cce756a97411b3aacad7"
+    },
+    {
+      "id": "SITE-0121",
+      "host": "hellobubble.com",
+      "sourceSha256": "645d574bd3a83ad547df3efaa44e021a0ba4684319a7b5843317158b42d32bb0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cacaa47fe76bbb3592a42e81c85b59c875720ec1d39a17a4cdf7bc384f257e0d"
+    },
+    {
+      "id": "SITE-0122",
+      "host": "peachandlily.com",
+      "sourceSha256": "989e638b0d7278b11d23c1bb628284615a2c26b8a824dfe300b8a607a90631d0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "d37d7bc8e1ee2cd7afb10f91f5c6fedba9f3d8bb5670c72ef80143cf6dbceb1f"
+    },
+    {
+      "id": "SITE-0123",
+      "host": "yesstyle.com",
+      "sourceSha256": "7591b3dbc9f742ef6728f74c43c578b2522aa90ccc661f6f345bd0b6f8913aee",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "169e9c82c72de9bc3dfaeada971331a428f9bd8957739fde94f8fc6f7b0afc8b"
+    },
+    {
+      "id": "SITE-0124",
+      "host": "stylevana.com",
+      "sourceSha256": "ee6f471a61b3c2f05575d675c79e2d5e84a336634e3267f6af8e5ad1cc60b8a2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "a5b6b7e854ba5feaa395b59844180920c19a6c194da6c76f31f94762fe95cbed"
+    },
+    {
+      "id": "SITE-0125",
+      "host": "jolse.com",
+      "sourceSha256": "42df79e2d554abdd936c65d688a06e1904b67b21db4de60e64a2235acef98cb7",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "c7777fe5f288ec7d1e181e9e4b59abf2d48910930b2aa229f3a6026c9229ee27"
+    },
+    {
+      "id": "SITE-0126",
+      "host": "wishtrend.com",
+      "sourceSha256": "dc19227bab0e7a1d5e9d6a49e234bbdf1d489c8806a718682865e2eead89b8f3",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_LOOX"
+      ],
+      "pageTextHash": "6ee66c0b76c0afec1dc90cdcff3046b39724fc270ca59cdd0f33b031ecbde209"
+    },
+    {
+      "id": "SITE-0127",
+      "host": "cosrx.com",
+      "sourceSha256": "11991bff08bbf2dda06d6e771ec9f10d47f3a1b2f13531c08982e5d4b949d278",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "c46b784321e01b8ea3cd272337e8ddaed6c4d04a259646c63c5ac7d1936f8e3d"
+    },
+    {
+      "id": "SITE-0128",
+      "host": "beautyofjoseon.com",
+      "sourceSha256": "e3ceb2f6406d6f6f5da1b3caafaee39642ed91135f9680af1ff4d5fccae8acae",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cd75acdbff58113b5443644b96fe62c4df7ba45100ef12e868946576b07a63e9"
+    },
+    {
+      "id": "SITE-0129",
+      "status": "SOURCE_HASH_MISMATCH_QUARANTINED",
+      "expectedSha256": "117f37aac06a05c2fad4f8fa49efffc845de695cf91a7f0ae6e6bce6691cf284",
+      "actualSha256": "4ec21a34e3c064f664802fd04274320e4e76c9955f14997f6683037c36bcc584"
+    },
+    {
+      "id": "SITE-0130",
+      "host": "roundlab.com",
+      "sourceSha256": "bdcc9a1475631ad246493cae0d23f66e8bb31870d74ac2d037e3b4b57caaa21c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "34372dd43d3b07393a1c2eaf3f216c473f2d43089bfb99fbb689d5137c4e520e"
+    },
+    {
+      "id": "SITE-0131",
+      "host": "chewy.com",
+      "sourceSha256": "09cf9b4118909e7ebc7f2bf2a6444c2eb2b694b45fc506225b2ddce9d6fbd546",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "6ca05ff0841ccd47c8a862559b76cd4f637829f359d7c85fe68faeda816d7b86"
+    },
+    {
+      "id": "SITE-0132",
+      "host": "wildone.com",
+      "sourceSha256": "56affe1e8513475f1c80fb321a455053ae2f65352f98dc0f55b55a8a61a4d90f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "bc7f0a8dc7787ef2a0118a99b0426b418f5c464e4ea741186875ee6fb135e246"
+    },
+    {
+      "id": "SITE-0133",
+      "host": "ruffwear.com",
+      "sourceSha256": "65bed01474ebe193d07b791da4b0719a6e906fd82e9fb376ed675640425653be",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "e90907c46dfdd9cfe213de40836adf9d4f03d0bd329d69d8fa25cffde5b3f153"
+    },
+    {
+      "id": "SITE-0134",
+      "host": "maxbone.com",
+      "sourceSha256": "b9b250afcf95436a7a981872ea0f22fd662d6b153248a4af31c942aa30866a06",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_LOOX"
+      ],
+      "pageTextHash": "fbbf1dc5a300c439aa895ec9e63053e17ad334ea6bdc220070901da730c1b6c6"
+    },
+    {
+      "id": "SITE-0135",
+      "host": "fablepets.com",
+      "sourceSha256": "c5d0cee53c129d4b383ae627b156951106dc02ffdce22fac8182423259c9eb44",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "ddf900421d63eae1664e3ca41b4cd1a273a3d81d7c2a1ef97445b5dcaf047869"
+    },
+    {
+      "id": "SITE-0136",
+      "host": "westpaw.com",
+      "sourceSha256": "52a63aafb7a815ac6dd5c44baf7712479af67ec8c4bd39851c93eaa571f8b237",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "9a1a693b0f4a994d98ad645c867ad03a7de8b5dd32a6a673c57b3d2d340deb1e"
+    },
+    {
+      "id": "SITE-0137",
+      "host": "earthrated.com",
+      "sourceSha256": "987379e1079b464166e05dddd72f720dcfd8036cd996d685ed7e12b5ac4dee6a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "cb796f6e284d47718f7562f1849ee9677ae00aff9aa34e3584f6e8f8d898c56a"
+    },
+    {
+      "id": "SITE-0138",
+      "host": "honestpaws.com",
+      "sourceSha256": "2bcd369af8cc72e8e3e08b2ad41fbd53fd18fcc6febe7cd278dc44b60b7672c4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "b805303407badd735e6460e4395db5a96b6ed6c298d3f8d368456e81fa98d8d8"
+    },
+    {
+      "id": "SITE-0139",
+      "host": "thefoggydog.com",
+      "sourceSha256": "11109f4b488d7f2f885142ac1263a99984a41c344a989ac1fb6c6bd5f1d87bdd",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "bd03595885a8a346a8600b953865946529881c8aca5870624090851cb208edaf"
+    },
+    {
+      "id": "SITE-0140",
+      "host": "lodgecastiron.com",
+      "sourceSha256": "dc57e509b76fb082414caf06210e87b923365897772b4490f3b3c0e654d092f6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "8a2f0e0d8183672a14455b2c9dfb10fd4caf50d012d3a98c0592ac5e73cd7b59"
+    },
+    {
+      "id": "SITE-0141",
+      "host": "stargazercastiron.com",
+      "sourceSha256": "d127b4b8ed3cd6c25fbdb19dfec69a1246049eb01f2c3e70fd2cd217cb5f65b9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 19,
+      "verificationKnown": 19,
+      "reviewBodyHashes": [
+        "a2c3e9da5c89a3eceff721a25e40b9964b90505699eb7b272592a0ca8a597a69",
+        "6e7e37b6f114e90c294f0579a7b5b2fdb4db5fe01a068e37b373e3feede26524",
+        "81d200b88cfef6bf3e9304255d2f8a1968efa1f212d4583144bdf97858382fe9",
+        "5a4fa58877dbe064cf372ce4ae5722186b7ecc3bfb4f11ea97f75645265f80cd",
+        "7a912aca69383af90338e27c2070440be260596c9a70f465149a1765ab1d2475",
+        "f736392dfed38372ca0120dcbd7d8b834ed5259e6a8d18b7f114a7d4f6f6a7de",
+        "82805f09f60a0267f571cb1b22e21425378ee6273231604b51573054929d3b41",
+        "133dde0efc08d276ed0bf049873011ee4f7e52b33b2472bd4d78570e91938cd4",
+        "f414a05a41c3096cf9f062d4f8bbd42f5b96fcadd696c09feaba63c1cf7dd4f1",
+        "7f8ad6f223ff0b5c77393ac500bad752afa8205337d283b5a9c0708678ffd5b2",
+        "0a46c9877d7d43b2626da0987ff6e2155e3f02f9b1cdbae84699e54cb9ad4cee",
+        "67ae170e05b1186cdce89326e1f958acd23652d2b423bb91983eb0262dfde8b1",
+        "714a9dc7a837b814f19d0646eecedce9a0fc52d5830d543925f2d0933054bca6",
+        "6eecc5cdc3f88a2d4246deed439046c3b1d7b22e5502e9acd219f82c15cdd44f",
+        "1c79bb68323823a98c95f52a2c881b4a0edb395f8df1bbdb9a418bab496abcca",
+        "0d7498af296668ca7b765f838666e74bf3e263c636b38e0fd5c482ba71a00c47",
+        "6e20034e71a6cb87a68aad0b3b832fba4226e5f5c50ce63df7372a932615af42",
+        "125e8c7a979ebd54309feabf56341e8fa9e1b2fb3d5e24dca8170bf4773b6b62",
+        "565325a48efd1cd24a3fcfbef1d14197665baa8372cffa6bc31aac981acbc80d"
+      ],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "dc85f24f6736ab389b2c55bf40d2e71d33c7c473d9aa7319377a3bae5f0b3369"
+    },
+    {
+      "id": "SITE-0142",
+      "host": "fieldcompany.com",
+      "sourceSha256": "1defecfc061c669df8b6f552ee236f7f3fcacc7b211099fada8fcb4f5a45feed",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "9b074aa8886eea0032006a62506033834727147eae8bc40acde287d2aa4076bf"
+    },
+    {
+      "id": "SITE-0143",
+      "host": "finexusa.com",
+      "sourceSha256": "18985f76b41d92eb0aacdde0300e7f95d43de01a9fd8a3e603e856cd47516d09",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "REVIEW_PLATFORM_JUDGEME"
+      ],
+      "pageTextHash": "cadd37adbb0f73bcf4c92ba9df27e285eda2a10d7183c58bca238fa50c7ec792"
+    },
+    {
+      "id": "SITE-0144",
+      "host": "madeincookware.com",
+      "sourceSha256": "af09f78d20aabead3377f9c1adcf6b8cea52ea3c1cbfd23f6997ae37f097b4e3",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "8cafdca16d5166b8187e51d993396e0a25167e24745eeacfc4bac5d493afcc95"
+    },
+    {
+      "id": "SITE-0145",
+      "host": "carawayhome.com",
+      "sourceSha256": "ad1618091414528c2df2a85993cb9ee52fda943bc87e37f70c3f84c59fe73bbe",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "27f824d8f43225bd531f836798d733d67991389eb56a89e788ea992eb85e353a"
+    },
+    {
+      "id": "SITE-0146",
+      "host": "fromourplace.com",
+      "sourceSha256": "701ddfa952e43d86c03d918ed7a1e602f7637054a1cde58c826ca48debecb372",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "ed397b458dfac0eb25bb5f0f9960f86a1ab544a550a5c3a779bd39d7e7ccf421"
+    },
+    {
+      "id": "SITE-0147",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0148",
+      "host": "all-clad.com",
+      "sourceSha256": "06050350568ba864704fa0291f851c6794bcb5b511421800184da62a4242b8eb",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "ca05c3c77b05db5aa057a03a4be890fe7033feb01682f53af163e6df5f2d671f"
+    },
+    {
+      "id": "SITE-0149",
+      "host": "tramontina.com",
+      "sourceSha256": "0780deb6986ecccd5b049a4a74fa00d0d28b486793ff6325a1f5c8077f479ab9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "380fa77f6ae2e5e5c1d405fb919909873b660c97420550ea43e81d848538b55f"
+    },
+    {
+      "id": "SITE-0150",
+      "host": "oxo.com",
+      "sourceSha256": "b9f0977da4749eec55b063580ef79441886488030f8836be7b7e222864074269",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "c0fc3f8b5a080d3681f8bdb0b4f5974edd91a8018384a265d70446a71c1808e1"
+    },
+    {
+      "id": "SITE-0151",
+      "host": "fullcirclehome.com",
+      "sourceSha256": "e34b5a4948fe70a4b8d004ae96681140af98a2c89459648a0b19e24c3d2b97d9",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "27790fda2517138fbca5fffb0def1244daf77bc4586e834d83d479acd100fb03"
+    },
+    {
+      "id": "SITE-0152",
+      "host": "simplehuman.com",
+      "sourceSha256": "f04e785e769486fe628ca1a3940f09e5bba403fe805586a94d7f5fdeb6f06b4c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "6ca9560e57389900737f583505e397b7a0fe740032feffc434df39f12e3928f4"
+    },
+    {
+      "id": "SITE-0153",
+      "host": "blendtec.com",
+      "sourceSha256": "f197c3806e135ccf8e8ade4941c80fc558006811488ae9bcace81d2b12d8fdf5",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0154",
+      "host": "kitchenaid.com",
+      "sourceSha256": "70f2a10930d81f3586f5c5a45706cfd430fc04550bb7c4b9a8dc9b92b893b832",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "bd04b6beb9141bb6246532830ac278235f3ea4f5cca6a7709d04ec516e2c91a1"
+    },
+    {
+      "id": "SITE-0155",
+      "host": "zwilling.com",
+      "sourceSha256": "7f65c6aef62eba59a1ebae8626d43f655f6341c92cc7be5313033d23041c171c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "ebade7dfb682239af487aa3bc069f117c5e1b0c3d96f7c0e62cbd68937f702fe"
+    },
+    {
+      "id": "SITE-0156",
+      "host": "redbubble.com",
+      "sourceSha256": "c0e6fb92f4b58001457443e04de89a91096945ba6779545315191dc5f24692bf",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "a90c9585879d53b7dedccc08c0c16062c9b28a27e16cdc4e16190ade02da1fb0"
+    },
+    {
+      "id": "SITE-0157",
+      "host": "society6.com",
+      "sourceSha256": "f8d0b0f81e74b3ab6a8615dd3dd8fd60205f397cd6570b0ba9f9c6a25c00472c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "700db87f0fc42a960a576cc79e4b674c7ee70a69e6efc1deeb86adf9c749d037"
+    },
+    {
+      "id": "SITE-0158",
+      "host": "gelato.com",
+      "sourceSha256": "4aeeea6c519be953e738cdf89437317aa8858d57fdfa4e35d527e378031d09d7",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "01c39371c17db4e2f4903d471177efb8cdc10a42e5dfe6d07a14da2fd09cebab"
+    },
+    {
+      "id": "SITE-0159",
+      "host": "printify.com",
+      "sourceSha256": "727a127c2934477ca10a85614c453f5e9bc29ca0f345f54fa0a4ce24ea20be2a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "47d2a515ef2f05b87d688656286a61e4f743da4b878684c7654969db17711c40"
+    },
+    {
+      "id": "SITE-0160",
+      "host": "teefury.com",
+      "sourceSha256": "d3a9c94e1cd950f2119cc38dc28f2db90d74da12d7bb1aa84f74eadca75b3ef3",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "62b7cb01e1e2a84858498218ac467dad04dcb35c371a175bfdba877c33c2842b"
+    },
+    {
+      "id": "SITE-0161",
+      "host": "decathlon.com",
+      "sourceSha256": "6d5e8f418c5e57dae4ec32e9a603d7d65c6af4f7c2ba3210484067db88383f83",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "7bc27a136e928309208fd0beac03361bdd457f6aa373a188928d670881dad040"
+    },
+    {
+      "id": "SITE-0162",
+      "host": "gregory.com",
+      "sourceSha256": "0a1c8e53324697939dfd2f5e4bbffec0c7ac5f064f2ff871807b79e40d021701",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "86f66a8a687a92be10d267b70305cde10901a019e8ed8b18b4f8288b9521b278"
+    },
+    {
+      "id": "SITE-0163",
+      "host": "blackdiamondequipment.com",
+      "sourceSha256": "309c186f1afe9106beec7d477acab294171f15593a55bcafb99f139cb6b2360f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "067cc335059999f1d77c747c3c7d8ba4a2b0372778d72e0c5922ccb211fef60c"
+    },
+    {
+      "id": "SITE-0164",
+      "host": "nitecore.com",
+      "sourceSha256": "7fac31e690f743d402c1721217f0173a2eebed144b466c94e328218e89fb38a4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "0f274891776e1ce7e3186d9415c46a70e383ac3cb008f7e8a15cb2d2139462eb"
+    },
+    {
+      "id": "SITE-0165",
+      "host": "fenixlighting.com",
+      "sourceSha256": "28c89d08138d5a9d8235469d6d0b39163f8076b6182d9e0686c06566a0b8229c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "e6c232a5a8d0442d0801f9ee35aa57dbc6286135b68d256c03b39ac7a9e0cb86"
+    },
+    {
+      "id": "SITE-0166",
+      "host": "sofirnlight.com",
+      "sourceSha256": "791602915bb0bed374cad4505f2eaadc691c70138cf4e1b297999629be794a47",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "691e9d9a1e64cdfe2328ca7b9dc43c1efac836122c50977f55aba89cd3d7d9af"
+    },
+    {
+      "id": "SITE-0167",
+      "host": "wurkkos.com",
+      "sourceSha256": "f8bab837728a6ca0fe06d5193d9a9a91e868d059b53df6e74bda9ce8d26d46c8",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "5644a89b4e634d062b05be7eb40431eb818efdbca0e664651e2a9b1aabf35246"
+    },
+    {
+      "id": "SITE-0168",
+      "host": "convoylight.com",
+      "sourceSha256": "839492bed6b83fd058d091cb687e5722b6f6e5e7b504444c857fc92ce96d630e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "0c26f397436f25c614e5075fbb1b1533e8dcfb41fd3a265b45b4795eb0fa413a"
+    },
+    {
+      "id": "SITE-0169",
+      "host": "leatherman.com",
+      "sourceSha256": "f5e94e9a2b0740c89ae32348ea3af2a5b9c625c2d11ef4fd707b8bec3cd00759",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "de1879adb087042cef8837a709d3c4d356a693e154d15f67121de86a2db5ebc6"
+    },
+    {
+      "id": "SITE-0170",
+      "host": "gerbergear.com",
+      "sourceSha256": "897f6f73e421f0602277e0767ed6f7bc91f8b339e9a8fa2df422ede21a021d0c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "7e37ace5fbe70387795ff4cb31b2d0625b249bc5aa4da77dca4e8627e68f6749"
+    },
+    {
+      "id": "SITE-0171",
+      "host": "victorinox.com",
+      "sourceSha256": "6cc4defd1b466a6078329435ad4a590ddbd291188ad751b451edb2c346032f7b",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "7733dc5f470ad8560a63ef8343b4b4e4bef60d6c601271e83348ab8755958a66"
+    },
+    {
+      "id": "SITE-0172",
+      "status": "EXTRACTION_ERROR",
+      "error": "Error: Too many private form regions to safely isolate."
+    },
+    {
+      "id": "SITE-0173",
+      "host": "harborfreight.com",
+      "sourceSha256": "0516133543a5f1e680adf24ba0513536eb46462e8e481e8a4b3aabf6c5b551fb",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "d3b06b7280abc22f30579a1ecb8737d8467afa402d0d5d97aa13da49da453ed7"
+    },
+    {
+      "id": "SITE-0174",
+      "host": "woodcraft.com",
+      "sourceSha256": "56b4964f51861f4ef7535e798f417f4eb29d6b7a4064b444feb5eba73ea322d5",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0175",
+      "host": "michaels.com",
+      "sourceSha256": "b94114db9c34343f980c089a07a215451fc28e294961e17425e639c42c0b331a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e09f9824005f23db2d4b1c67ad8144c5b4ba69dd054fc240f194d6cb05a0c7ed"
+    },
+    {
+      "id": "SITE-0176",
+      "host": "yeezys.com.mx",
+      "sourceSha256": "f4d01bd390e3dde6990dd5cfa84e41415d960c710a8907ddf220365bc304626a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "810bcd4519c6cd79d1e783ed35d66f8b9a80f03adf8fb9406cea4fe871d72a8d"
+    },
+    {
+      "id": "SITE-0177",
+      "host": "ninewest.com.de",
+      "sourceSha256": "6a0a3f92a612f0844c6107f752a7c396ef8313299a5ffb2587beb9c1a1c528fa",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "8a46257d2178b866062697265d55c6ea2bd954e2a5693d77f7c9b0e8c550b493"
+    },
+    {
+      "id": "SITE-0178",
+      "host": "happysocksit.it",
+      "sourceSha256": "fddf7b8adf6653cefbda991ba53ec2588837bf89ba5d9a0cc6fc539e4f0cbf89",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "2f4f7602eb6084a30bfdbfb373088f17132ad707fffac290267dedacc35787c6"
+    },
+    {
+      "id": "SITE-0179",
+      "host": "vionic.es",
+      "sourceSha256": "77c0aa63cd0c04fee1348904377a6674e657f38f67661692c80ced8b88738591",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "224e1ed61c994f7eb9119cb22ff1d572d80bf31ad502a19b41bbda9d91fb045d"
+    },
+    {
+      "id": "SITE-0180",
+      "host": "salomonoutletbarcelona.com",
+      "sourceSha256": "70a8aa9b0bca9ee5c4be72dc60ef4d8dfdaa2b1b7dea691a2efc6b3673b58f1e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "1ec01679adbea6cac66a7dcb369c6ddd5b9bd24b0c9dcccfc3dd2588542e922c"
+    },
+    {
+      "id": "SITE-0181",
+      "host": "uggat.at",
+      "sourceSha256": "e2e06309b7caa592b99e8a78b0a8e12937f783523c481b16e20ec4dd709af213",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "caacf94348f7ccd974962df253ad0808a324a719835130c1b3b09eba4670213c"
+    },
+    {
+      "id": "SITE-0182",
+      "host": "pokemon-center.es",
+      "sourceSha256": "13b802d545d8febbc8bcf856f08196129bc836ed03ee3e408b2f38e44b8702d1",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "OFFICIAL_STORE_CLAIM_UNVERIFIED",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "7fdfd61d670a3057fceed2beac3b2e1d59be6652ddd133a5770c84e0dd68c454"
+    },
+    {
+      "id": "SITE-0183",
+      "host": "akufrance.com",
+      "sourceSha256": "183377dd14e5359bbf1e2d98628c14cf013fecd4b2676da09d1653c179e63983",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "f6b7ef1cb5ac13bc6240780bb68ddc54fb019695ddedddcd07894a5b703fa583"
+    },
+    {
+      "id": "SITE-0184",
+      "host": "orderumbrella.com",
+      "sourceSha256": "9801a688eb3df60a161227d00bd9915a16bdde21795b2421a7ae9d2a1c97df02",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "a90ace05fd4c5fd865a3a19385cf3986b944a5a280adfa4dbf6862b92fcfb8bd"
+    },
+    {
+      "id": "SITE-0185",
+      "host": "lowa.co.it",
+      "sourceSha256": "a1d07bd5ea599587067d09f049d2b2c99fb0b51d88cc464d6b09f9dc2005e2d7",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "c21a84806b5ebab4123bd4a5b28c965e2950d06eb01b9e5d962c2bb72054aa3a"
+    },
+    {
+      "id": "SITE-0186",
+      "host": "pokemoncenter.co.it",
+      "sourceSha256": "603da68f88712004a8535c444367e772098cf917746c51a27e910690e6020235",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "OFFICIAL_STORE_CLAIM_UNVERIFIED",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "0d3eb9f304ffca91d5fa480ad62e9f418389bbed8222e8bf91c4373b9f0ef5d9"
+    },
+    {
+      "id": "SITE-0187",
+      "host": "beringhorloges.com",
+      "sourceSha256": "0871042e1620494453423e1ef0cb058d7595bc2780ebd69d4993caee93fa17a0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "55d8e2269edd0f697849bf7f1a9bf1ceed2ceab8fd36b4f908a3ee5386ea8094"
+    },
+    {
+      "id": "SITE-0188",
+      "host": "owalasale.de",
+      "sourceSha256": "4acf30c94646e499a031b2c4200add0bfeecd72fb76469f1689c04973524bef2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "a97212f2a0173b63dd9667e9216c2be9f3c1a97ee3a7148575e6dee067248757"
+    },
+    {
+      "id": "SITE-0189",
+      "host": "salomons.gr",
+      "sourceSha256": "0bf03254f4e8282c6858af5065772755098b68c71b041208f78b411d25bc730f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "75d04585dc4c58ac5b6e11fc5126e6b381fbc85787b7279d8a74fb5b1b2f4c87"
+    },
+    {
+      "id": "SITE-0190",
+      "host": "pokemoncenter.co.at",
+      "sourceSha256": "c10073861aef5f2ce4b618b73d1b7cdc1a4b02400d6b703eac7d3a328fc25b80",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "df73c4f00e6fe85d80fdbb1255b898938711a8e0e7014c7a1d5a2a6de387d0e3"
+    },
+    {
+      "id": "SITE-0191",
+      "host": "zippoes.es",
+      "sourceSha256": "d7e80b35e543f3a476fab6045158301265e1763afbe8cbf36f8485780ce0b2ce",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "OFFICIAL_STORE_CLAIM_UNVERIFIED",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "03caa2cf29b296b300d311e44cc6e7ff1c406e29d87272afd225e6b7b0b80701"
+    },
+    {
+      "id": "SITE-0192",
+      "host": "adidas-samba.at",
+      "sourceSha256": "ca10960c396321ccc865325695c9d587b81b82fc92da045d492a7fbc09863251",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "346a7957d636e4ecb4401f7518a1347d3cb06457adc9cf0f02aeed8cb030671a"
+    },
+    {
+      "id": "SITE-0193",
+      "host": "jordans.com.mx",
+      "sourceSha256": "9a3a0424d68fcfa3ec3759d85f851cb7acf4e4ade315320242f454113eaa3c56",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "OFFICIAL_STORE_CLAIM_UNVERIFIED",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "b8498d69e8c881cd55dbf6e150ea0851d71373892fbe50a0a3673ee343d513c3"
+    },
+    {
+      "id": "SITE-0194",
+      "host": "keensoutletcolombia.com",
+      "sourceSha256": "64dbd1fbc5fa7628df18b126058c1c0d8edbeba9743881eaf03bee44aaf395f2",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "4136c56f6c0d67b8211e7b95c84ff8d7071092855d916602cda47a3b8d94733f"
+    },
+    {
+      "id": "SITE-0195",
+      "host": "katemarkerhome.shop",
+      "sourceSha256": "75f9277a4460ec4a00d3c00324fc8869cb4be8c1a9c39a2ffead4bcaa212d255",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "0422f675f2251bc6331f9e13789cfc0e95f568b777e1bfdfb11f7ccdd0f5d5a8"
+    },
+    {
+      "id": "SITE-0196",
+      "host": "rcmotorsparts.com",
+      "sourceSha256": "86fe769cadbc378f692200c735f1559c4f5b2699376864061a1a7756b1270c0c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "74e94958eb337a9cf8501da2e64ed99cf6246808c720d7c0a5fe9ce44c9bedb6"
+    },
+    {
+      "id": "SITE-0197",
+      "host": "vrouwelijkschoenen.com",
+      "sourceSha256": "e42c1b1ca42cfb75bfb34c21ad6abc1e72a806e272c9a11b4551ee48dd0b5eaf",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "d3f2a51c07d347fae121d63a9bc88165a4d8e86f5beecd5c9e139308c5dc6343"
+    },
+    {
+      "id": "SITE-0198",
+      "host": "laneiges.com.mx",
+      "sourceSha256": "9c42d8265dc552411654c6fe0491110e765ea8848f07974319d27e5b8d999a3a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "6df00149867c6cb7b87719dc98578770da6304865d2d21fbf4f5cfe5bdebc25d"
+    },
+    {
+      "id": "SITE-0199",
+      "host": "jwpeis.com.mx",
+      "sourceSha256": "b01af4b7fbe8d9b909f4e8671b8e00b5890e8c3338ddf8ec865784030e2f6435",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "7bec0f0dc491a2d342146f64bd3501d8399a849e5a6f6c60ba23a7daa058800a"
+    },
+    {
+      "id": "SITE-0200",
+      "host": "superdry.co.at",
+      "sourceSha256": "762760ae0958ab163691d5e3b1d47adb27f5f3357dddf7e41aad64e542ed61c4",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "82fbe0830949b76ee6f255ee90d874956b8b3daebd573eab7dc4ce3f9cb3633a"
+    },
+    {
+      "id": "SITE-0201",
+      "host": "specialized-gb.com",
+      "sourceSha256": "00e0601931e75a2088c63b36cf5e9060f564079c522a952a67a0d9ceb2125949",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "9ddd1d24747855c236e279e5bbca4214954349ec2bdd6e9649dbac7d25afc175"
+    },
+    {
+      "id": "SITE-0202",
+      "host": "champion.co.at",
+      "sourceSha256": "da07c179c55c6f5d284ef357402f2ee36beb4fbd50818d5a5b31e1c81d759a4c",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "35a2bab8b3348fd631c4c03bf8cc5b022a993e83fcec67175080e344fabc83f3"
+    },
+    {
+      "id": "SITE-0203",
+      "host": "favorieteaction.com",
+      "sourceSha256": "7f7c0b8324b8f3041153abc24fd5e8049efe8f21bd0975dcbc4dc632cc80740f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "32cf7fe01070a003094349c45cc83a3667332670cecc89c49af77f95a315444d"
+    },
+    {
+      "id": "SITE-0204",
+      "host": "ninewest.com.mx",
+      "sourceSha256": "db1648e2f0aafb90b51ab1523c6d71a0b2bce6978e8f80fc12eb177134c9ac97",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "21e5c786ea9e550c56646f2848b60340a108eae73c965a046c95f17511501b43"
+    },
+    {
+      "id": "SITE-0205",
+      "host": "chromehearts-france.fr",
+      "sourceSha256": "a9be7d5e00c85831717c68a111a3d65e25381ec885aab0669bc2c9b4b728b025",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "a93b9ffe53ccc5299ef952af34d07f85e9d49284737ed5fbc485e70abf6f9f5c"
+    },
+    {
+      "id": "SITE-0206",
+      "host": "bagsoutletonlineshop.com",
+      "sourceSha256": "db1c469b184b7389b089e26921c8e1587eb03d8eee926a981ec0da0771b95c16",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "5901b415d6dc47f63af03fb48b441fc9a43091246f21c267d55ad995943c8c91"
+    },
+    {
+      "id": "SITE-0207",
+      "host": "koolesports.com",
+      "sourceSha256": "58a84a15f4afb1ab5ba3b7662764244f1bf569226c31202c23cb50bdf4ebd794",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "f0c45a0c578fe61e6e656ddba796d1f8c8815ae79ab1fad2200431beec59d3f5"
+    },
+    {
+      "id": "SITE-0208",
+      "host": "tuketa1.com",
+      "sourceSha256": "d309887a6546e7d407e92c1ae88dc42c54745cbcb8ddf7afe5298fd670c9b7fd",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "b91340b8bde4d6f5cae524c7e48797a03b3d07a2797d6185f928ccbdcd7724ed"
+    },
+    {
+      "id": "SITE-0209",
+      "status": "SOURCE_HASH_MISMATCH_QUARANTINED",
+      "expectedSha256": "98fc8c3ecfc32627387a33121132a1513dc7a892f545dd5e3def401a6df02e1a",
+      "actualSha256": "513922429bc9d9364eb8a1eb81ee84d26bc8231c4408752d3bc101fd014c13d1"
+    },
+    {
+      "id": "SITE-0210",
+      "host": "stellamccartneys.us",
+      "sourceSha256": "38dd176ce6fbf0067959d1465af69055113b22b9b51527d676604095db06b101",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "695a3fb60fe3862e20868ab8c3ccf8cfa041578522ba644708a529d494bc2297"
+    },
+    {
+      "id": "SITE-0211",
+      "status": "SOURCE_HASH_MISMATCH_QUARANTINED",
+      "expectedSha256": "621412c8272d1e38701721d9e11cec27dc6459c24ee54c0cfb486f6d1d5e1336",
+      "actualSha256": "7114a85b8f137d24cd40cc29971892988267df0b408589832a16d635516ee0e3"
+    },
+    {
+      "id": "SITE-0212",
+      "host": "cannondales.it",
+      "sourceSha256": "36df23183531e98fd301a72e516c8afa7fd5d1bf180ba08d4a5df53f5597af2a",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "bdd2733523746bb27db02ca3a4709eb44dbab247d5f7815ac53a098d1961d9f7"
+    },
+    {
+      "id": "SITE-0213",
+      "host": "bambiniattivi.com",
+      "sourceSha256": "25c91e90a8528b825bf0b82717f733a4758266f070b2e6004b33d88cdd318737",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "7fbc65afdd7659374c751dc2cf7902e946b6756fc124b01279d16655edf28e8b"
+    },
+    {
+      "id": "SITE-0214",
+      "host": "labubu.co.at",
+      "sourceSha256": "fec42ca5a5a6309eb72940e14d4ecc8eff00b0360e644e1c3fb58ec180c80d56",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "dd10766e651dc02d2c1e63440a96dc91543fd9185b7a3097f3d6fdaa2b788355"
+    },
+    {
+      "id": "SITE-0215",
+      "host": "adidas-campus.de",
+      "sourceSha256": "b0a1ea24ad9be3d37585074f6216734235ba86ebe746d81aa54d8c83e1779db6",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "c9b109b728c2e88bb1f93ab92711396ef45ca7766c606c9c11853880bd2b7684"
+    },
+    {
+      "id": "SITE-0216",
+      "host": "yeezys.com.es",
+      "sourceSha256": "04f068b03742c76aec914d6922198af88b2cb31d76536c8ec211bd5eed75f8d0",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "135a45b0929c5a70d1d46e782047b72a6353a79dfaa8a9508a8f6828b46c885c"
+    },
+    {
+      "id": "SITE-0217",
+      "host": "nike-blazer.de",
+      "sourceSha256": "3015e51bde804261b80465dbe03804d780794bb5460f8100e096c1a83f619fc5",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "4a9634d077e1b54139714ebdef3a749804e409e61df972c131db2b5e5e0bd868"
+    },
+    {
+      "id": "SITE-0218",
+      "host": "pokemoncenterca.com",
+      "sourceSha256": "4a5fa6326447a36b1857ce43d25b8a688c8148eb81ab51e878ffa9fe982022c8",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "3401db3f8313330fb823a1d58634e09f7af570e1b7913c60ae44a98bf7e20c0b"
+    },
+    {
+      "id": "SITE-0219",
+      "host": "happysocksmx.com.mx",
+      "sourceSha256": "6304d347b0b895ec3f15dd709294f6da67e189edbdab710fd1abf9e5002bd795",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "b583e0e0fb16e51b5f539499a66cd02dd7886348eb7a528c96c7093a07e00fbd"
+    },
+    {
+      "id": "SITE-0220",
+      "host": "bershka.co.it",
+      "sourceSha256": "0f52346a885df3e67b77d6fd9af0c385f98fc95c4f0ae0b42834120f83ed3af8",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "24087f1852590b8e7b83dcfdd6b74556514dd91f40bc386240e2a5963023c6a3"
+    },
+    {
+      "id": "SITE-0221",
+      "host": "teva-osterreich.at",
+      "sourceSha256": "790ad20337a48ca1e5ee57cc20072450250b52106d0a1e0af53f445fe969cb8e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "0b3d466858d2c9f945135ca5702d390527f405145c20acb69345b237be317f22"
+    },
+    {
+      "id": "SITE-0222",
+      "host": "tassenbrennerei.shop",
+      "sourceSha256": "a9ddb65ce51e9cb5c3b9f7f70577e08c59e25092a3ca449ab93b4bfaec9a7c63",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "b0b2cc2485ed28a9949c2cfb617600f6caab14de07e720ae06df767d94200fa7"
+    },
+    {
+      "id": "SITE-0223",
+      "status": "SOURCE_UNAVAILABLE",
+      "sourceStatus": 0
+    },
+    {
+      "id": "SITE-0224",
+      "host": "happysocksfr.fr",
+      "sourceSha256": "88ca8becad49b5951adba8d1c1166f47c604e10769fd9cef4f24bfc8fdfca076",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "f29d4b9cd26b36a7edb750a60c019251cb017f604a26b76eddbce553fd254436"
+    },
+    {
+      "id": "SITE-0225",
+      "host": "pokemonmx.com.mx",
+      "sourceSha256": "37294e00ade30120aa82f8e7cc45b28fb5ded3b74be0a6b574fed8789a171b7f",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e7292c21644e610ca27ffa9303054536192372b8fa9a73e72ff3079c89041b3c"
+    },
+    {
+      "id": "SITE-0226",
+      "host": "kickers.co.at",
+      "sourceSha256": "202997c549658a4cce48bb91799757d8b676ce94cc72339bb8838c13f92303cd",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "52b91cb073386ab9343c62e8934cc082ed8c29f866cc10c97ef5b8fda620e040"
+    },
+    {
+      "id": "SITE-0227",
+      "host": "jordan4.it",
+      "sourceSha256": "d39526a5fd6e51c8918e4d5788661cfbdaf8d7821905c6e6098689696f7ffdb1",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "1007adb5915cb22dffaef84a30abe28f0aac09934c99887cab8d0354b05a8c11"
+    },
+    {
+      "id": "SITE-0228",
+      "host": "salomon.com",
+      "sourceSha256": "5792a98927b71ddaef76642fb2663942e96938b9267fbca7283df255a7669e30",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "REVIEWED_BRAND_DOMAIN_MATCH"
+      ],
+      "pageTextHash": "8a517319c4ce35c7cd343f66c2925094f3f68c2d86f13c01e9c2fb148cd1a62b"
+    },
+    {
+      "id": "SITE-0229",
+      "host": "ninewest.com",
+      "sourceSha256": "cfda722c5e339ce105c117875babe9062df44977a319c174a9340ebe94db84ae",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "REVIEWED_BRAND_DOMAIN_MATCH",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "893d5d305328cd0b0fb272a27adeaadac969b3df9ff15ff2595e61ad2faf9c56"
+    },
+    {
+      "id": "SITE-0230",
+      "host": "zippo.com",
+      "sourceSha256": "af09ec64b94461aec5be9bfb34987f226b7542adc80fbfcc209d7b56edec329b",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [
+        "REVIEWED_BRAND_DOMAIN_MATCH",
+        "COMMERCE_PLATFORM_DETECTED"
+      ],
+      "pageTextHash": "9d46240c2db2dcefc35c995850d8f74cd94e9db21d8a3bb5d3f122d82671fd85"
+    },
+    {
+      "id": "SITE-0231",
+      "host": "footlocker.com",
+      "sourceSha256": "4ee5173ef20a6781c723e33d1549be392260c3ca8c72b995b5ae285ea844716e",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "db5a9a4d2a9ddb21dd03540a6add838873c05c562bc17a63659cf3f2ee614e18"
+    },
+    {
+      "id": "SITE-0232",
+      "host": "nordstrom.com",
+      "sourceSha256": "e3922a735f67489b2d739016c230cda38a73518d1f4914d495951e8b64090d04",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": false,
+      "offerResolved": false,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 0,
+      "signalIds": [],
+      "pageTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "SITE-0233",
+      "host": "shop.vivoglobal.ph",
+      "sourceSha256": "5d3d327805da1c74aaea2c7ec741bd2d4bbcfe3325267edaf470e93be75d272d",
+      "status": "DETACHED_SOURCE_ONLY",
+      "structuredIdentity": true,
+      "offerResolved": true,
+      "reviewCount": 0,
+      "verificationKnown": 0,
+      "reviewBodyHashes": [],
+      "warningCount": 1,
+      "signalIds": [
+        "COMMERCE_PLATFORM_DETECTED",
+        "SCARCITY_LANGUAGE"
+      ],
+      "pageTextHash": "a9beb0bb507d23b60c4697f82311a37445c902dc18157e873ad2961129ff24e4"
+    }
+  ]
+}

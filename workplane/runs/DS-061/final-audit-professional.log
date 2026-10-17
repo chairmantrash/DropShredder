@@ -1,0 +1,10 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 audit:professional
+> node --import tsx scripts/professionalism-audit.ts
+
+WARNING: src/extraction/page-scan.ts is 48145 bytes (> 20000); architecture review recommended
+WARNING: src/intelligence/merchant-networks.ts is 22446 bytes (> 20000); architecture review recommended
+WARNING: entrypoints/sidepanel/main.ts is 44324 bytes (> 20000); architecture review recommended
+WARNING: Runtime dependencies exist; verify provenance, necessity, license and vulnerability status
+Professionalism audit passed: 109 executable source files checked.

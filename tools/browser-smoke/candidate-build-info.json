@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "ac30cadd3c415916e8c88d57de96193b90397420",
-  "sourceTree": "4491bb79a9bc1164ebc1cbf2b61f8bd4fe3ee2ae",
+  "sourceCommit": "578d4603c4fb886acb0454ca6d089375bf0dbcb7",
+  "sourceTree": "2dcea105f97e23e563c824b5b6256ea19fc09f34",
   "version": "0.2.0",
-  "reviewedChange": "DS-060 scoped visible product reviews; bounded origin/destination/negation comparisons; neutral context-only stamps. Frozen233-site baseline completed before repairs. No changed severe gates, probabilities, new provider or permissions.",
+  "reviewedChange": "DS-061 local test candidate: bounded dispatch clauses; review/merchant attribution; neutral affiliation context. Independent59% acceptance unresolved.",
   "buildFiles": [
     {
       "path": "SCAMFERRET-SOURCE-LICENSE.txt",
@@ -70,9 +70,9 @@
       "sha256": "0d6e631b65bb64665d73c59fbb00b1e89e9afd01dc4b4252a460c31179e2ccd6"
     },
     {
-      "path": "chunks/scamferret-results-BNYXfACS.js",
+      "path": "chunks/scamferret-results-kiYHxZ56.js",
       "bytes": 478509,
-      "sha256": "9d2d9d6117f21d09697c797f36732713ad24e16a67cbc2c16c34f73dcb82b0a9"
+      "sha256": "b881596b82752df3d9bc1cfa6414d49eb78cbf5edaf5279b587ebbd45c9fa162"
     },
     {
       "path": "chunks/search-BSs1uToS.js",
@@ -85,14 +85,14 @@
       "sha256": "36aef01712668d969cafa36fe6267fff6fa6be896f0b1829dc4678366bfc05df"
     },
     {
-      "path": "chunks/sidepanel-B_dmBMuz.js",
-      "bytes": 602526,
-      "sha256": "e27f870086ad8f877fa157d1d152357162fa0120e93ae802d90d2ad81273ef99"
+      "path": "chunks/sidepanel-DIJvy6LX.js",
+      "bytes": 603794,
+      "sha256": "8ac8f3d9848e9039c8eb0a04fe296284dc7efe9c4e28feca185f632080ea1391"
     },
     {
       "path": "content-scripts/auto.js",
-      "bytes": 97857,
-      "sha256": "de35a2b70f7b5a4a0a1d7a58d4a8b8a9f2109db42c57419aeffb30b4fba377a0"
+      "bytes": 99275,
+      "sha256": "541105f17e4d8cd57c19ca8625ef6becd1b2be4a526429fbef0f674375f6a21a"
     },
     {
       "path": "icon/128.png",
@@ -272,7 +272,8 @@
     {
       "path": "sidepanel.html",
       "bytes": 21845,
-      "sha256": "d3f1b09d058edc85c16d315a3ae6d116529918924f93da74583fbc87c1f780ed"
+      "sha256": "1b17d42d20566f5cbf029e271db058940c2221b36bbbd49226fe91a0c8462326"
     }
-  ]
+  ],
+  "builtFromLocalCommit": "1c32e3498af6ffb285b54ca6d5a5ef47ca914d49"
 }

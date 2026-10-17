@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 audit:chrome-runtime
+> node scripts/chrome-runtime-audit.mjs
+
+Chrome runtime audit passed: side panel, tab targeting, optional permissions, scripting, menus, searches, image acquisition and RDAP conform to reviewed runtime invariants.

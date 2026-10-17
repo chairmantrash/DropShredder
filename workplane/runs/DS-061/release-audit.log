@@ -1,0 +1,21 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> dropshredder@0.2.0 release:audit
+> node scripts/release-audit.mjs
+
+{
+  "manifestVersion": 3,
+  "requiredPermissions": [
+    "alarms",
+    "contextMenus",
+    "scripting",
+    "sidePanel",
+    "storage"
+  ],
+  "optionalHosts": [
+    "https://*/*"
+  ],
+  "packagedFiles": 54,
+  "unpackedBytes": 55556141,
+  "budgetBytes": 62914560
+}

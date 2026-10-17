@@ -351,7 +351,8 @@ export function merchantNetworkForDomain(domain:string):MerchantNetworkDefinitio
 export function merchantNetworkIsFresh(network:MerchantNetworkDefinition,now=new Date()):boolean{
   const reviewed=Date.parse(network.reviewedAt+'T00:00:00Z');
   if(!Number.isFinite(reviewed)) return false;
-  return now.getTime()-reviewed <= network.freshnessDays*86_400_000;
+  const age=now.getTime()-reviewed;
+  return Number.isFinite(age)&&age>=0&&age<=network.freshnessDays*86_400_000;
 }
 
 export function merchantNetworkEvidence(domain:string,now=new Date()):EvidenceSignal[]{
@@ -359,20 +360,20 @@ export function merchantNetworkEvidence(domain:string,now=new Date()):EvidenceSi
   if(!network) return [];
   const fresh=merchantNetworkIsFresh(network,now);
   const hiddenLike=network.networkType==='sister-store';
-  const activeAndFresh=network.status==='active' && fresh;
-  const strongIdentity=hiddenLike && activeAndFresh;
 
   return [{
     id:'KNOWN_AFFILIATED_MERCHANT_NETWORK',
     family:'identity',
-    severity:strongIdentity?'strong':activeAndFresh?'moderate':'info',
-    confidence:strongIdentity?.95:activeAndFresh?.86:.72,
-    weight:strongIdentity?24:activeAndFresh?10:0,
+    severity:'info',
+    confidence:fresh?.86:.6,
+    weight:0,
     title:hiddenLike?'Affiliated sister-store network detected':'Related commerce network detected',
     explanation:fresh
       ? 'DropShredder has multiple independent public linkage families connecting this storefront to other merchant domains. Affiliation itself is not fraud, and complaint evidence from one network member is never inherited by another without its own corroboration.'
       : 'This merchant-network record has exceeded its freshness window and requires re-verification. It is shown as historical/contextual identity evidence only until refreshed.',
     observedValue:`${network.name} • type: ${network.networkType} • ${network.domains.join(', ')} • status: ${network.status} • reviewed ${network.reviewedAt} • evidence: ${network.evidenceFamilies.join(', ')}`,
     independentKey:`merchant-network:${network.id}`,
+    referenceUrls:network.sources.slice(0,5),
+    provenance:{sourceUrl:network.sources[0]!,observedAt:network.reviewedAt,method:'Dated packaged affiliation reference; not a store-specific adverse finding'},
   }];
 }

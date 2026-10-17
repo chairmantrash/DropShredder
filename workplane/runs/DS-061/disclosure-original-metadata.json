@@ -1,0 +1,18 @@
+{
+  "scope": "Primary-source dispatch-statement extraction challenge; not merchant fraud ground truth, not blinded or representative; selected by explicit disclosure searches",
+  "observedAt": "2026-10-17T08:50:00Z",
+  "cases": [
+    {"id":"D01","url":"https://www.bhphotovideo.com/c/find/HelpCenter/Shipping.jsp","text":"The manufacturer will ship these items to you directly.","expected":"factory-direct","group":"bhphotovideo.com"},
+    {"id":"D02","url":"https://help.athome.com/hc/en-us/articles/47260880918797-Products-Shipped-Directly-from-Supplier","text":"items are products that ship directly from our supplier to you instead of shipping from our local stores.","expected":"supplier-direct","group":"athome.com"},
+    {"id":"D03","url":"https://www.vikingdirect.ie/en/shipped-directly-from-supplier","text":"the orders are packaged and shipped directly by the supplier.","expected":"supplier-direct","group":"vikingdirect.ie"},
+    {"id":"D04","url":"https://www.acdirect.com/knowledge-base/how-does-gas-furnace-work/info-hvac-ordering-purchasing-pick-up-order","text":"we ship every order directly from the manufacturer to the address you provide at checkout.","expected":"factory-direct","group":"acdirect.com"},
+    {"id":"D05","url":"https://thecoop.com/products/mit-columbia-hikebound-rain-jacket","text":"This is a special order item that ships directly from the vendor.","expected":"supplier-direct","group":"thecoop.com"},
+    {"id":"D06","url":"https://www.groworganic.com/products/platform-feet","text":"Ships directly from the manufacturer (tracking emails will not be sent", "expected":"factory-direct","group":"groworganic.com"},
+    {"id":"D07","url":"https://cshardware.com/wr-wmld5808res","text":"This product ships directly from the manufacturer.","expected":"factory-direct","group":"cshardware.com"},
+    {"id":"D08","url":"https://leapfrogoutdoor.com/pages/online-orders-only-policy","text":"Some products in our online store are shipped directly to you by the supplier or manufacturer.","expected":"supplier-direct","group":"leapfrogoutdoor.com"},
+    {"id":"D09","url":"https://montanadecor.com/pages/shipping-policy","text":"Shipped directly to you from our supplier’s warehouse", "expected":"supplier-direct","group":"montanadecor.com"},
+    {"id":"D10","url":"https://vintageking.com/aviom-mt-1a","text":"This item ships directly to you from the manufacturer.","expected":"factory-direct","group":"vintageking.com"},
+    {"id":"D11","url":"https://www.backtothefuture.store/products/back-to-the-future-1-1-scale-flux-capacitor-christopher-lloyd-signature-edition","text":"PRE-ORDER: SHIPS DIRECTLY FROM MANUFACTURER WITHIN TWO WEEKS", "expected":"factory-direct","group":"backtothefuture.store"},
+    {"id":"D12","url":"https://sell.wayfair.com/start-beginners-guide","text":"Drop-shipping is Wayfair’s primary method of fulfillment.", "expected":"supplier-direct","group":"wayfair.com"}
+  ]
+}

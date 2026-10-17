@@ -1,0 +1,246 @@
+TAP version 13
+# Subtest: supplier subject
+ok 1 - supplier subject
+  ---
+  duration_ms: 3.498292
+  type: 'test'
+  ...
+# Subtest: manufacturer subject
+ok 2 - manufacturer subject
+  ---
+  duration_ms: 0.861349
+  type: 'test'
+  ...
+# Subtest: vendor origin
+ok 3 - vendor origin
+  ---
+  duration_ms: 0.116092
+  type: 'test'
+  ...
+# Subtest: separate negation
+ok 4 - separate negation
+  ---
+  duration_ms: 0.090684
+  type: 'test'
+  ...
+# Subtest: trailing unrelated negation
+ok 5 - trailing unrelated negation
+  ---
+  duration_ms: 0.088892
+  type: 'test'
+  ...
+# Subtest: inbound warehouse abstains
+ok 6 - inbound warehouse abstains
+  ---
+  duration_ms: 0.205485
+  type: 'test'
+  ...
+# Subtest: inbound origin abstains
+ok 7 - inbound origin abstains
+  ---
+  duration_ms: 0.149542
+  type: 'test'
+  ...
+# Subtest: negated abstains
+ok 8 - negated abstains
+  ---
+  duration_ms: 0.090915
+  type: 'test'
+  ...
+# Subtest: question abstains
+ok 9 - question abstains
+  ---
+  duration_ms: 0.295459
+  type: 'test'
+  ...
+# Subtest: reported customer claim abstains
+ok 10 - reported customer claim abstains
+  ---
+  duration_ms: 0.272926
+  type: 'test'
+  ...
+# Subtest: single quoted claim abstains
+ok 11 - single quoted claim abstains
+  ---
+  duration_ms: 0.12813
+  type: 'test'
+  ...
+# Subtest: general definition abstains
+ok 12 - general definition abstains
+  ---
+  duration_ms: 0.07438
+  type: 'test'
+  ...
+# Subtest: hypothetical abstains
+ok 13 - hypothetical abstains
+  ---
+  duration_ms: 0.063084
+  type: 'test'
+  ...
+# Subtest: future intention abstains
+ok 14 - future intention abstains
+  ---
+  duration_ms: 0.061341
+  type: 'test'
+  ...
+# Subtest: denial after verb abstains
+ok 15 - denial after verb abstains
+  ---
+  duration_ms: 0.064135
+  type: 'test'
+  ...
+# Subtest: only public sources and valid observation dates become disclosures
+ok 16 - only public sources and valid observation dates become disclosures
+  ---
+  duration_ms: 0.090184
+  type: 'test'
+  ...
+# Subtest: disclosed logistics remains unscored
+ok 17 - disclosed logistics remains unscored
+  ---
+  duration_ms: 0.491339
+  type: 'test'
+  ...
+# Subtest: negated urgency: Not limited time; this is our regular price.
+ok 18 - negated urgency: Not limited time; this is our regular price.
+  ---
+  duration_ms: 22.819768
+  type: 'test'
+  ...
+# Subtest: negated urgency: We never say hurry.
+ok 19 - negated urgency: We never say hurry.
+  ---
+  duration_ms: 0.904492
+  type: 'test'
+  ...
+# Subtest: negated urgency: Our policy prohibits advertising only 2 left.
+ok 20 - negated urgency: Our policy prohibits advertising only 2 left.
+  ---
+  duration_ms: 0.595694
+  type: 'test'
+  ...
+# Subtest: affirmative urgency remains detectable
+ok 21 - affirmative urgency remains detectable
+  ---
+  duration_ms: 0.713899
+  type: 'test'
+  ...
+# Subtest: affiliation alone never creates a shopper warning or merchant-risk score
+ok 22 - affiliation alone never creates a shopper warning or merchant-risk score
+  ---
+  duration_ms: 1.47518
+  type: 'test'
+  ...
+# Subtest: a genuine cross-brand reference is retained as unscored identity context
+ok 23 - a genuine cross-brand reference is retained as unscored identity context
+  ---
+  duration_ms: 0.24916
+  type: 'test'
+  ...
+# Subtest: lookalike hostname substrings cannot create a cross-brand reference
+ok 24 - lookalike hostname substrings cannot create a cross-brand reference
+  ---
+  duration_ms: 0.57886
+  type: 'test'
+  ...
+# Subtest: review opinions are not merchant-authored shipping or scarcity claims
+not ok 25 - review opinions are not merchant-authored shipping or scarcity claims
+  ---
+  duration_ms: 14.625326
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:5422'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input was expected to not match the regular expression /supplier|Only 2/. Input:
+    
+    'Lamp Ships directly from the supplier. Only 2 left.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Lamp Ships directly from the supplier. Only 2 left.'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:69:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: missing Amazon verification badge stays unknown
+not ok 26 - missing Amazon verification badge stays unknown
+  ---
+  duration_ms: 3.70617
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:5671'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + false
+    - undefined
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:72:58)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+not ok 27 - Amazon-shaped extraction omits hidden reviews and private/hidden descendants
+  ---
+  duration_ms: 5.363841
+  type: 'test'
+  location: '/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:1:5826'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   'hidden',
+        'visible'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'visible'
+  actual:
+    0: 'hidden'
+    1: 'visible'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/workspace/scratch/21a17dd91973/DropShredder-audit59/tests/detection-audit59.test.ts:76:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: present visible Amazon verification badge stays true
+ok 28 - present visible Amazon verification badge stays true
+  ---
+  duration_ms: 2.417448
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 25
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 401.855773

@@ -70,9 +70,16 @@ export function runPassiveRules(product: ProductSnapshot, pageText: string): Evi
   }
 
   const matching=commerceText(pageText);
-  const scarcity=scarcityPatterns
-    .map(pattern=>matching.match(pattern)?.original)
-    .find((value):value is string=>Boolean(value));
+  let scarcity:string|undefined;
+  for(const pattern of scarcityPatterns){
+    for(const hit of matching.text.matchAll(new RegExp(pattern.source,pattern.flags+'g'))){
+      const before=matching.text.slice(Math.max(0,hit.index-90),hit.index).split(/[.;!?。！？]/).at(-1)!;
+      const clause=before+hit[0];
+      if(localizedNegation(clause)||/\b(?:don|doesn|didn|can|won|shouldn)['’]t\s*$/i.test(before)||/\b(?:prohibits?|avoid|example|quote|reviews?)\b|["“”]/i.test(clause))continue;
+      scarcity=matching.original(hit.index,hit[0].length);break;
+    }
+    if(scarcity)break;
+  }
   if (scarcity) {
     out.push({
       id:'SCARCITY_LANGUAGE', family:'scarcity', severity:'weak', confidence:.55, weight:4,

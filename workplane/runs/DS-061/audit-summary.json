@@ -1,0 +1,157 @@
+{
+  "sourceCommit": "578d4603c4fb886acb0454ca6d089375bf0dbcb7",
+  "priorNative": {
+    "total": 233,
+    "successful": 158,
+    "statusCounts": {
+      "OBSERVED_SCAN": 158,
+      "CURRENT_COMMERCE_UNCONFIRMED": 32,
+      "UNAVAILABLE_CHALLENGE_PARKED_OR_EMPTY": 19,
+      "NATIVE_SCAN_REFUSED_OR_FAILED": 20,
+      "REDIRECT_OR_PRIVATE_SURFACE_REFUSED": 1,
+      "ENVIRONMENT_OR_ACTION_ERROR": 3
+    },
+    "independentAccuracyLabels": 0
+  },
+  "affiliationReplay": {
+    "scope": "Only affiliation rules are replayed on retained evidence; not detector-wide or fresh website performance",
+    "pages": 158,
+    "warningPagesBefore": 32,
+    "warningPagesAfter": 27,
+    "changed": [
+      {
+        "id": "SITE-0015",
+        "host": "harempants.com",
+        "beforeWarnings": 1,
+        "afterWarnings": 0,
+        "beforeMerchantRisk": "moderate",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      },
+      {
+        "id": "SITE-0016",
+        "host": "suredesigntshirts.com",
+        "beforeWarnings": 1,
+        "afterWarnings": 0,
+        "beforeMerchantRisk": "moderate",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      },
+      {
+        "id": "SITE-0038",
+        "host": "prettylittlething.com",
+        "beforeWarnings": 2,
+        "afterWarnings": 0,
+        "beforeMerchantRisk": "moderate",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      },
+      {
+        "id": "SITE-0043",
+        "host": "modlily.com",
+        "beforeWarnings": 2,
+        "afterWarnings": 1,
+        "beforeMerchantRisk": "moderate",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      },
+      {
+        "id": "SITE-0045",
+        "host": "rosewe.com",
+        "beforeWarnings": 1,
+        "afterWarnings": 0,
+        "beforeMerchantRisk": "moderate",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      },
+      {
+        "id": "SITE-0046",
+        "host": "lightinthebox.com",
+        "beforeWarnings": 1,
+        "afterWarnings": 0,
+        "beforeMerchantRisk": "low",
+        "afterMerchantRisk": "unknown",
+        "scope": "Stored-evidence affiliation rule replay only, not a fresh live scan"
+      }
+    ]
+  },
+  "staticReplay": {
+    "scope": "Detached anonymous source diagnosis, no rendered CSS/script execution/native or independent accuracy inferred",
+    "before": {
+      "DETACHED_SOURCE_ONLY": 215,
+      "SOURCE_UNAVAILABLE": 8,
+      "SOURCE_HASH_MISMATCH_QUARANTINED": 5,
+      "EXTRACTION_ERROR": 5
+    },
+    "after": {
+      "DETACHED_SOURCE_ONLY": 215,
+      "SOURCE_UNAVAILABLE": 8,
+      "SOURCE_HASH_MISMATCH_QUARANTINED": 5,
+      "EXTRACTION_ERROR": 5
+    },
+    "reviewsBefore": 59,
+    "reviewsAfter": 59,
+    "changed": [
+      "SITE-0001",
+      "SITE-0015",
+      "SITE-0023",
+      "SITE-0024",
+      "SITE-0026",
+      "SITE-0028",
+      "SITE-0032",
+      "SITE-0036",
+      "SITE-0118",
+      "SITE-0121",
+      "SITE-0127",
+      "SITE-0141",
+      "SITE-0143",
+      "SITE-0144",
+      "SITE-0145",
+      "SITE-0163",
+      "SITE-0165",
+      "SITE-0169"
+    ]
+  },
+  "disclosureChallenge": {
+    "scope": "Primary-source dispatch-statement extraction challenge; not merchant fraud ground truth, not blinded or representative; selected by explicit disclosure searches",
+    "before": 9,
+    "after": 11,
+    "total": 12
+  },
+  "accuracy": {
+    "protocol": "DS-061-59",
+    "target": {
+      "recall": 0.59,
+      "precision": 0.95,
+      "falsePositiveRate": 0.05,
+      "minimumPositiveMerchantGroups": 50,
+      "minimumNegativeMerchantGroups": 50
+    },
+    "status": "NOT_ACCEPTED",
+    "totalCases": 233,
+    "tasks": {
+      "deceptive-provenance": {
+        "status": "NOT_EVALUABLE",
+        "eligible": 0,
+        "rejectedHoldoutIds": [],
+        "positiveGroups": 0,
+        "negativeGroups": 0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 0,
+        "fn": 0,
+        "abstained": 0,
+        "unavailable": 0,
+        "recall": null,
+        "precision": null,
+        "falsePositiveRate": null,
+        "coverage": null,
+        "recall95": null,
+        "precision95": null,
+        "fpr95": null,
+        "errors": []
+      }
+    },
+    "manifestSha256": "e5b26c04743b75d2e9f39c6edd9812ac053d0fb0f72b9c57f9f36a6dc42ef3ef"
+  }
+}
