@@ -2,7 +2,7 @@
 
 ## Capability testing and repair update
 
-- DS-060 RUNNING — distinct-website coverage audit, baseline before repairs, source-backed failure research and renewed capability tests. Task: workplane/tasks/DS-060.md. Beta6 remains open.
+- DS-060 DONE — all233 website outcomes repeated;158 successful scans/registered domains. Context-only warnings126→0, two confirmed shipping false positives removed,15 live reviews across3 stores.474 core/97 native/all7 browser groups and source checks pass. Independent accuracy/customer satisfaction unestablished;157 numerical abstentions. PR29 and workplane/evals/DS-060-BETA100-RESULTS-20261017.md. Beta6 remains open; candidate not yet published.
 
 - DS-059 DONE — BETA6 OPEN, published 2026-10-16T15:06:09Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6. Four research-backed identity/countdown repairs; 459 core, 94 native, seven browser groups, finding-free CodeQL/zero-advisory inventories. All 269 outcomes: 236 scans/56 hosts, 39 evidence-bearing pages, zero severe/privacy/panel errors/profile stops. All numerical estimates UNKNOWN. Original 268 alone: 235 scans/55 hosts versus 230/54; real added vivo variant passes. Exact accepted CI ZIP 83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b reused without rebuild; all seven anonymous public assets/all 54 package hashes independently verified. PR27 runtime and PR28 publication/evidence. Task: workplane/tasks/DS-059.md; receipts: DS-059-COMPLETION-20261016.json and DS-059-BETA6-OPEN-20261016.json.
 

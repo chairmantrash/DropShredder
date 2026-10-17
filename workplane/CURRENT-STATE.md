@@ -1,3 +1,13 @@
+# Current state — October17,2026: DS-060 233-website beta audit verified
+
+DS-060 DONE for the scoped repair/testing round. All233 frozen website targets completed before/after; repaired package has158 successful native scans on158 registered domains across11 groups. Context-only warning stamps126→0; The Ordinary/Round Lab shipping false positives2→0; individual-review analysis0→15 visible reviews across3 stores.474 core/97 native/all7 browser groups, CI and CodeQL pass.157 numerical estimates remain UNKNOWN; independent fraud/dropshipping accuracy and customer satisfaction are not established.
+
+Productionac30cadd3c415916e8c88d57de96193b90397420/tree4491bb79a9bc1164ebc1cbf2b61f8bd4fe3ee2ae; live harnessc17ee9b683f3b40615b2761a864e8569809cf212; corrected native harness83ee4e0598a6605e0d1307d13c6d20a20cf3127f. Exact54-file CI package SHA256af739c520464354d29cd054d97d56c332a07ce7ed839fde1a6d5202094b47c0e,25,990,276 bytes. Native driver/collector failures and affected-only unchanged-package repeats are retained.
+
+Reviewable work:PR29; continuation branchfeature/beta100-coverage-20261016. Reportworkplane/evals/DS-060-BETA100-RESULTS-20261017.md; receiptworkplane/runs/DS-060-COMPLETION-20261017.json; permanent all233 baseline/repaired outcome JSONs adjacent. Measured-results run38984650285 succeeds. Public beta6 remains open; this new candidate has not been published as a new beta release. Main/Store unchanged. Workspace execution disconnected during harness assembly; later work/evidence was preserved through GitHub. Preserve untracked local evidence and fetch this remote branch before reconciling a stale local checkout.
+
+---
+
 # Current state — October 16, 2026: beta6 OPEN; researched repairs verified
 
 DS-059 DONE — BETA6 OPEN, published 2026-10-16T15:06:09Z: https://github.com/chairmantrash/DropShredder/releases/tag/v0.2.0-beta.6. All seven public assets independently downloaded without authentication and byte/hash verified; all 54 package files match accepted inventory. Exact existing CI ZIP 25,988,814 bytes / SHA256 83d3a687f02de89bfa57ddbf5113d81cc919852c9dba568b44c1e502e400d43b reused without rebuilding. Production/tag source 5bdd16f282bae1aff9b2193f9c98b3fca1e89737; accepted native/live harness 0167f5b8a9beae6d87deed65c42593aaa043c690.
