@@ -1,0 +1,977 @@
+{
+  "version": 2,
+  "date": "2026-10-19",
+  "baseline": "13570bb43647f0ae4e43d0103d9d9e19c1a322e2",
+  "policy": {
+    "runtimeImport": false,
+    "automaticRiskWeight": 0,
+    "privateDossiersInspected": 0,
+    "fullDocketCoverage": false,
+    "terms": "Authored public facts and reference links; no bundled proprietary score, restricted monitoring results or full document bodies",
+    "freshness": "Rechecks expire at 00:00 UTC on refreshDueAt, at most seven days after observation. Failed body attempts and excerpts do not refresh inaccessible bodies or prove complete current dockets.",
+    "noAffiliateTransfer": true,
+    "noMissingResultInference": true
+  },
+  "observations": [
+    {
+      "id": "ftc-touchtunes",
+      "kind": "court-document",
+      "subjects": [
+        {
+          "name": "TouchTunes Music Company, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "consumer-sale",
+      "court": "US District Court, Southern District of New York",
+      "docket": "1:26-cv-03015",
+      "eventDate": "2026-04-15",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "entered-consent-order",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/TouchTunes-StipulatedOrder.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/252-3159-touchtunes-music-company-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "sourceHeaderStatus": "Pending",
+      "agencyTimelineDate": "2026-05-05",
+      "admission": "neither-admits-nor-denies; jurisdiction exception",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Electronic dartboard origin claims; consent injunction and monetary relief. Not a present all-product origin finding.",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-public-document-only",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "ftc-americana",
+      "kind": "court-document",
+      "subjects": [
+        {
+          "name": "Americana Liberty LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Three Nations Capital LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Maximiliano Ojeda",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Virginia Hilfiger",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Julian Groves",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "consumer-sale",
+      "court": "US District Court, Southern District of Florida",
+      "docket": "0:26-cv-61085",
+      "eventDate": "2026-04-30",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "entered-consent-order",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/AmericanaLiberty-AmendedStipulatedOrder.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/252-3127-americana-liberty-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "sourceHeaderStatus": "Pending",
+      "agencyTimelineDate": "2026-05-05",
+      "admission": "neither-admits-nor-denies; jurisdiction exception",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Origin/textile representations concerning specified patriotic products. Caption identifies Three Nations Capital LLC, not an inferred similarly named affiliate.",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-public-document-only",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "ftc-oak-street",
+      "kind": "court-document",
+      "subjects": [
+        {
+          "name": "Oak Street Manufacturing Company, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "consumer-sale",
+      "court": "US District Court, Northern District of Illinois, Eastern Division",
+      "docket": "1:26-cv-04132",
+      "eventDate": "2026-04-29",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "entered-consent-order",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/OakStreet-StipulatedOrder.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/252-3149-oak-street-manufacturing-company-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "sourceHeaderStatus": "Pending",
+      "agencyTimelineDate": "2026-05-05",
+      "admission": "neither-admits-nor-denies; jurisdiction exception",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Footwear origin/material representations; DBA Oak Street Bootmakers. No blanket manufacturing-country inference.",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-public-document-only",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "ftc-greenway",
+      "kind": "court-document",
+      "subjects": [
+        {
+          "name": "Greenway Automotive, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Greenway Automotive Management, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Jacksonville Phillips Hwy Auto Acquisitions, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Longwood Auto Acquisitions I, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Semoran Auto Acquisitions, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "West Colonial Auto, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "West Colonial Hyundai, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "consumer-sale",
+      "court": "US District Court, Middle District of Florida, Orlando Division",
+      "docket": "6:26-cv-02337",
+      "eventDate": "2026-10-08",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "filed-proposed-consent-order",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/Greenway-Complaint.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/Greenway-StipOrder_0.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/greenway-auto",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "sourceHeaderStatus": "Pending",
+      "judgeEntryVerified": false,
+      "admission": "filed agreement neither admits nor denies allegations; entry not established",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Vehicle advertised-price allegations; filed order judge/date line blank. Complaint caption controls over agency-page Reenway typo.",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "judicial-entry-unverified",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "ftc-amazon-prime",
+      "kind": "court-document",
+      "subjects": [
+        {
+          "name": "Amazon.com, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Neil Lindsay",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Jamil Ghani",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "consumer-sale",
+      "court": "US District Court, Western District of Washington, Seattle",
+      "docket": "2:23-cv-00932-JHC",
+      "eventDate": "2026-09-14",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "entered-redress-modification",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/2123050amazonprimeredressfundorder.pdf",
+          "scope": "document",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/09/ftc-announces-additional-payments-consumers-stemming-ftcs-amazon-prime-settlement",
+          "scope": "agency-explanation",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-assessed-from-this-redress-document",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Prime subscription redress only; new eligibility starts October 1. No product-seller, third-party marketplace, Canadian/Mexican entity or manufacturing inference.",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-public-document-only",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "canada-amazon-review-investigation",
+      "kind": "regulator-case-lead",
+      "subjects": [
+        {
+          "name": "Amazon",
+          "role": "investigated-source-label",
+          "captionIdentityChecked": false
+        }
+      ],
+      "category": "consumer-sale",
+      "court": null,
+      "docket": null,
+      "eventDate": "2024-06-12",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "ongoing-investigation-source-label",
+      "sources": [
+        {
+          "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/cases-and-outcomes",
+          "scope": "agency-overview",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-applicable",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Review/rating-related information gathering. Exact corporate defendant and docket not matched; no finding or clearance. Separate from US Prime case.",
+      "jurisdiction": "CA",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "agency-overview-only-no-current-docket",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "canada-scc-42425",
+      "kind": "court-file",
+      "subjects": [
+        {
+          "name": "Pranav Parikh",
+          "role": "applicant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Amazon Canada Fulfillment Services, ULC",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Amazon.com Inc",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Amazon.com.ca, Inc",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Canwest Logistics Ltd.",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "The Appeals Commission for Alberta (WCB AC)",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Workers’ Compensation Board (WCB)",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Alberta Justice",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "other",
+      "court": "Supreme Court of Canada",
+      "docket": "42425",
+      "eventDate": "2026-09-29",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "withdrawn-leave-application-file-closed",
+      "sources": [
+        {
+          "url": "https://www.scc-csc.ca/fr/cases-dossiers/search-recherche/42425/",
+          "scope": "court-page-body-and-search-result",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-assessed",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Public register now displays July 27 withdrawal and September 29 leave-file closure. Historical Active party labels do not mean an open proceeding. No consumer-sale merits ruling established.",
+      "jurisdiction": "CA",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "public-register-closure-confirmed",
+      "freshnessState": "fresh-public-observation",
+      "withdrawalDate": "2026-07-27",
+      "correction": "October 12 body/search conflict resolved by refreshed register body. Procedural closure is not merits vindication or liability."
+    },
+    {
+      "id": "mexico-amazon-trademark",
+      "kind": "court-notice",
+      "subjects": [
+        {
+          "name": "Amazon Technologies, Inc.",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "MUV Today Technologies, Inc.",
+          "role": "third-party-interest",
+          "captionIdentityChecked": true
+        }
+      ],
+      "category": "other",
+      "court": "Tribunal Federal de Justicia Administrativa, Sala Especializada en Materia de Propiedad Intelectual",
+      "docket": "393/26-EPI-01-1",
+      "eventDate": "2026-05-07",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "historical-service-notice",
+      "sources": [
+        {
+          "url": "https://sidof.segob.gob.mx/notas/docFuente/5795878",
+          "scope": "official-gazette-notice",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-applicable",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Trademark-registration challenge, not seller fulfillment wrongdoing. Current docket not retrieved; QA mirror not used as publication authority.",
+      "jurisdiction": "MX",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-service-only-current-lifecycle-unverified",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "us-msc-environmental",
+      "kind": "regulator-case-report",
+      "subjects": [
+        {
+          "name": "MSC Shipmanagement Limited",
+          "role": "defendant-as-reported",
+          "captionIdentityChecked": false
+        },
+        {
+          "name": "Hong Kong Spirit Shipping and Trading Limited",
+          "role": "defendant-as-reported",
+          "captionIdentityChecked": false
+        }
+      ],
+      "category": "other",
+      "court": "US District Court, Eastern District of Pennsylvania",
+      "docket": "2:26-CR-00403",
+      "eventDate": "2026-08-28",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "agency-reported-guilty-plea-and-sentence",
+      "sources": [
+        {
+          "url": "https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-august-2026",
+          "scope": "prosecutor-report-published-2026-10-07",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "guilty-plea-reported-by-DOJ",
+      "meritsMisconductAdjudicationEstablished": true,
+      "scope": "Ship pollution-record offenses; original judgment not retrieved. No consumer fulfillment finding or guilt transfer to carrier affiliates, retail customers or shared logistics users.",
+      "adjudicationBasis": "DOJ reports guilty pleas and sentencing; original judgment uninspected",
+      "jurisdiction": "US",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "historical-public-document-only",
+      "freshnessState": "fresh-public-observation"
+    },
+    {
+      "id": "us-ca-dr-power-recall",
+      "kind": "regulator-recall",
+      "subjects": [
+        {
+          "name": "Generac Power Systems Inc.",
+          "role": "US-importer",
+          "captionIdentityChecked": false
+        },
+        {
+          "name": "Generac Power Systems",
+          "role": "CA-manufacturer",
+          "captionIdentityChecked": false
+        },
+        {
+          "name": "Rato Tech Singapore PTE",
+          "role": "CA-manufacturer",
+          "captionIdentityChecked": false
+        }
+      ],
+      "category": "product-safety",
+      "court": null,
+      "docket": "CPSC 27-016 / Health Canada RA-82694",
+      "eventDate": "2026-10-08",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "documentStage": "joint-product-recall",
+      "sources": [
+        {
+          "url": "https://www.cpsc.gov/Recalls/2027/DR-Power-Equipment-Recalls-Pilot-and-Premier-Trimmer-Mowers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+          "scope": "recall-notice",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://recalls-rappels.canada.ca/en/alert-recall/dr-power-pilot-and-premier-trimmers-recalled-due-fire-and-burn-hazards",
+          "scope": "joint-recall-notice",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-applicable",
+      "meritsMisconductAdjudicationEstablished": false,
+      "sharedEventFamily": "dr-power-trimmers-20261008",
+      "models": [
+        "T4X1076DMN",
+        "T4X1176DMN",
+        "TR43076DMN"
+      ],
+      "scope": "One joint recall event. CPSC: eight exact model variants, all serial numbers. Canada: three base models, sold November 2022–July 2026. Previous flat models array is Canadian scope only. Origin fields do not establish an entirely North American bill of materials.",
+      "jurisdiction": "US/CA",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "current-public-recall-notices-only",
+      "freshnessState": "fresh-public-observation",
+      "modelsByJurisdiction": {
+        "US": [
+          "T4X1076DMN",
+          "T4X1076DMNR",
+          "T4X1076DMNSD",
+          "T4X1176DMN",
+          "T4X1176DMN-1",
+          "T4X1176DMNR",
+          "TR43076DMN",
+          "TR43076DMNR"
+        ],
+        "CA": [
+          "T4X1076DMN",
+          "T4X1176DMN",
+          "TR43076DMN"
+        ]
+      }
+    },
+    {
+      "id": "mexico-ford-recall-lead",
+      "kind": "press-release-lead",
+      "subjects": [
+        {
+          "name": "Ford Motor Company",
+          "role": "source-label",
+          "captionIdentityChecked": false
+        }
+      ],
+      "category": "product-safety",
+      "court": null,
+      "docket": null,
+      "eventDate": "2026-10-09",
+      "sourceCheckedAt": "2026-10-12",
+      "refreshDueAt": "2026-10-19",
+      "documentStage": "unverified-full-body-alert-lead",
+      "sources": [
+        {
+          "url": "https://www.gob.mx/profeco/prensa/profeco-y-ford-motor-company-comparten-alerta-para-mas-de-dos-mil-vehiculos",
+          "scope": "official-search-result",
+          "retrieval": "body-403-search-excerpt-only",
+          "checkedAt": "2026-10-12",
+          "lastAttemptAt": "2026-10-19",
+          "previousCheckedAt": "2026-10-12",
+          "searchCheckedAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": null
+        }
+      ],
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "admission": "not-applicable",
+      "meritsMisconductAdjudicationEstablished": false,
+      "scope": "Official recall announcement discovered; body inaccessible. Exact Mexican legal entity/product eligibility not confirmed. Link-only, not lawsuit or rating evidence.",
+      "jurisdiction": "MX",
+      "previousObservationDate": "2026-10-12",
+      "lastAttemptAt": "2026-10-19",
+      "currentStatusConfidence": "uncertain-body-inaccessible",
+      "freshnessState": "stale-inaccessible",
+      "searchCheckedAt": "2026-10-19"
+    },
+    {
+      "kind": "court-document",
+      "category": "consumer-sale",
+      "jurisdiction": "US",
+      "court": "US District Court, Southern District of California",
+      "docket": "3:26-cv-05895-CAB-BJW",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "lastAttemptAt": "2026-10-19",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "not-established",
+      "id": "us-reps-bots-complaint",
+      "subjects": [
+        {
+          "name": "United States of America",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "REPS & Company, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Ryan Pancheri",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Brian Archibald",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Nicholas Totagrande",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "eventDate": "2026-10-15",
+      "documentStage": "filed-complaint-pending-allegations",
+      "sourceHeaderStatus": "Pending",
+      "currentStatusConfidence": "complaint-and-agency-timeline-only",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/252-3105-reps-company-inc-us-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/repscomplaintfinal.pdf",
+          "scope": "filed-complaint",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "scope": "BOTS Act ticket-purchase circumvention allegations; DOJ plaintiff on FTC referral. No adjudication, injunction entry or admissions established; not a physical-goods dropshipping or affiliate finding."
+    },
+    {
+      "kind": "agency-report",
+      "category": "other",
+      "jurisdiction": "US",
+      "court": "US District Court, Northern District of Illinois, Eastern Division",
+      "docket": "1:22-cv-03372",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "lastAttemptAt": "2026-10-19",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "neither-admits-nor-denies; jurisdiction exception",
+      "id": "us-walmart-money-transfer-redress",
+      "subjects": [
+        {
+          "name": "Federal Trade Commission",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Walmart Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "eventDate": "2026-10-15",
+      "originalDocumentDate": "2025-06-20",
+      "documentStage": "agency-reported-settlement-redress",
+      "judgeEntryVerified": false,
+      "currentStatusConfidence": "redress-reported-signed-entry-unverified",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/182-3012-walmart-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-sends-more-98-million-consumers-harmed-walmarts-failure-stop-scammers-used-its-wire-transfer",
+          "scope": "redress-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/WalmartStipulatedOrderforInjunctionandMonetaryJudgment.pdf",
+          "scope": "filed-stipulation-document-102-1",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "scope": "October 15 payments implement older wire-transfer settlement, not a new product/fulfillment judgment. Retrieved attachment has blank judicial date/signature. Three-year termination runs from actual entry, not attachment filing or redress date; entry date unverified. No affiliate allegations transferred."
+    },
+    {
+      "kind": "agency-report",
+      "category": "consumer-sale",
+      "jurisdiction": "US",
+      "court": "US District Court, Central District of California",
+      "docket": "2:24-cv-10329",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "lastAttemptAt": "2026-10-19",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "neither-admits-nor-denies; jurisdiction exception in proposed stipulation",
+      "id": "us-goat-shipping-redress",
+      "subjects": [
+        {
+          "name": "Federal Trade Commission",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "1661, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "aliases": [
+        "GOAT (dba only)"
+      ],
+      "eventDate": "2026-10-06",
+      "originalDocumentDate": "2024-12-02",
+      "documentStage": "agency-reported-settlement-redress",
+      "judgeEntryVerified": false,
+      "currentStatusConfidence": "redress-reported-proposed-document-only",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/222-3016-goat-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-issues-redress-payments-consumers-impacted-goats-deceptive-shipping-refund-policies",
+          "scope": "redress-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/GOATProposedOrderreJudgment.pdf",
+          "scope": "proposed-stipulation-document-4-1",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "scope": "Newly researched older action: shipping timing, delay/cancellation options and buyer-protection refunds. October 6 redress is not a new October 19 lawsuit. Agency reports settlement implementation; proposed document does not prove signed entry. No automatic third-party seller misconduct or product inauthenticity finding."
+    },
+    {
+      "kind": "agency-report",
+      "category": "other",
+      "jurisdiction": "US",
+      "court": null,
+      "docket": "FTC File 2610116 (letter; not a court docket)",
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "lastAttemptAt": "2026-10-19",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "letter expressly disclaims liability or wrongdoing admission",
+      "id": "us-gildan-ss-closed-inquiry",
+      "subjects": [
+        {
+          "name": "Gildan Activewear SRL",
+          "role": "agency-announcement-label",
+          "captionIdentityChecked": false
+        },
+        {
+          "name": "S&S Holdings LLC",
+          "role": "agency-announcement-label",
+          "captionIdentityChecked": false
+        },
+        {
+          "name": "Gildan Activewear Inc.",
+          "role": "letter-author-label",
+          "captionIdentityChecked": false
+        }
+      ],
+      "eventDate": "2026-10-08",
+      "originalDocumentDate": "2026-10-07",
+      "documentStage": "investigation-closed-after-contract-amendment",
+      "currentStatusConfidence": "agency-closure-confirmed-entity-labels-unreconciled",
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-secures-fair-pricing-protections-taking-action-against-major-wholesale-t-shirt-distributors",
+          "scope": "agency-closure-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/Gildan-Letter-FTC.pdf",
+          "scope": "company-letter-posted-by-regulator",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-19"
+        }
+      ],
+      "scope": "Wholesale pricing inquiry closed after contract amendment. FTC uses SRL; letter uses Inc. Keep distinct unresolved labels, not interchangeable parties. No court case or adverse merits judgment established; no regional-origin, trade-compliance or network trust conclusion."
+    },
+    {
+      "kind": "press-release-lead",
+      "category": "product-safety",
+      "jurisdiction": "MX",
+      "court": null,
+      "docket": null,
+      "sourceCheckedAt": "2026-10-19",
+      "refreshDueAt": "2026-10-26",
+      "lastAttemptAt": "2026-10-19",
+      "freshnessState": "unverified-body",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "not-applicable",
+      "id": "mexico-ford-camera-recall-lead",
+      "subjects": [
+        {
+          "name": "Ford Motor Company",
+          "role": "source-label",
+          "captionIdentityChecked": false
+        }
+      ],
+      "eventDate": "2026-10-13",
+      "documentStage": "unverified-full-body-alert-lead",
+      "currentStatusConfidence": "official-search-excerpt-only",
+      "sources": [
+        {
+          "url": "https://www.gob.mx/profeco/prensa/profeco-difunde-llamado-a-revision-de-ford-motor-company-para-mas-de-17-mil-automoviles",
+          "scope": "official-search-result",
+          "retrieval": "body-fetch-error-search-excerpt-only",
+          "checkedAt": "2026-10-19",
+          "lastAttemptAt": "2026-10-19",
+          "lastSuccessfulBodyRetrievalAt": null
+        }
+      ],
+      "scope": "Official excerpt reports Ford/Lincoln camera or screen recall. Full body unavailable; exact Mexican legal entity, complete model/VIN eligibility and campaign identifiers unverified. Separate lead from October 9 seat alert; do not merge/supersede or infer litigation."
+    }
+  ],
+  "previousSnapshot": "intelligence/legal-observations-20261012.json",
+  "sourceCoverageChecks": [
+    {
+      "url": "https://www.ftc.gov/news-events/news/press-releases",
+      "attemptedAt": "2026-10-19",
+      "retrieval": "page-retrieved",
+      "scope": "Recent announcements screened; REPS and Walmart October 15 included. Older GOAT and Gildan newly researched, not new-week cases. No comprehensive US court search."
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/en/how-we-foster-competition/education-and-outreach/news-releases",
+      "attemptedAt": "2026-10-19",
+      "retrieval": "page-retrieved",
+      "scope": "October 15 Centris real-estate data announcement excluded from product/fulfillment findings. No all-Canada court/regulator coverage."
+    },
+    {
+      "url": "https://burocomercial.profeco.gob.mx/",
+      "attemptedAt": "2026-10-19",
+      "retrieval": "page-retrieved",
+      "publishedCoverageStart": "2019-01-01",
+      "publishedCoverageEnd": "2026-09-30",
+      "scope": "Landing-page coverage advanced from August 31 in October 12 report to September 30. No company query or restricted complaint data imported; missing hits neutral and individual names withheld."
+    },
+    {
+      "url": "https://www.gob.mx/profeco/documentos/alerta-rapida-profeco-2026",
+      "attemptedAt": "2026-10-19",
+      "retrieval": "fetch-error",
+      "scope": "No body retrieved. Search excerpts do not establish full current alert catalogue."
+    },
+    {
+      "url": "https://sise.cjf.gob.mx/consultasvp/default.aspx",
+      "attemptedAt": "2026-10-19",
+      "retrieval": "fetch-error",
+      "scope": "No completed Mexican party query or current court coverage; no authentication or restriction bypass."
+    }
+  ]
+}
