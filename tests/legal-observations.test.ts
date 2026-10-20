@@ -61,3 +61,54 @@ test('cross-border recall retains one event family and jurisdiction-specific mod
   assert.equal(recall.modelsByJurisdiction.CA.length, 3);
   assert.ok(!recall.modelsByJurisdiction.CA.includes('T4X1076DMNR'));
 });
+
+test('oldest successful source expires even when record summary was redated', () => {
+  const record = find('us-reps-bots-complaint');
+  Object.assign(record.sources[0], {checkedAt: '2026-10-18', lastSuccessfulBodyRetrievalAt: '2026-10-18'});
+  assert.equal(publicObservationState(record, '2026-10-24'), 'fresh-public-observation');
+  assert.equal(publicObservationState(record, '2026-10-25'), 'stale');
+  const ledger = load(); ledger.observations = [record];
+  assert.ok(auditLegalObservations(ledger).some((error: string) => error.includes('oldest retrieved source')));
+});
+test('invalid success dates and failed retrieval strings cannot authenticate a source body', () => {
+  for (const date of ['2026-02-31', '2026-10-21', 'not-a-date']) {
+    const record = find('us-reps-bots-complaint');
+    record.sources[0].lastSuccessfulBodyRetrievalAt = date;
+    assert.equal(publicObservationState(record, '2026-10-20'), 'uncertain');
+  }
+  const record = find('us-reps-bots-complaint');
+  record.sources[0].retrieval = 'body-fetch-error-search-excerpt-only';
+  assert.equal(publicObservationState(record, '2026-10-20'), 'unverified-body');
+  const ledger = load(); ledger.observations = [record];
+  assert.ok(auditLegalObservations(ledger).length > 0);
+});
+test('proposed settlement and closure metadata cannot become adverse merits findings', () => {
+  for (const id of ['ftc-greenway', 'us-goat-shipping-redress', 'us-gildan-ss-closed-inquiry', 'canada-scc-42425']) {
+    const ledger = load();
+    ledger.observations.find((record: {id: string}) => record.id === id).meritsMisconductAdjudicationEstablished = true;
+    assert.ok(auditLegalObservations(ledger).length > 0);
+  }
+});
+test('database publication cutoff is separate from its retrieval date', () => {
+  const ledger = load();
+  ledger.sourceCoverageChecks.find((source: {publishedCoverageEnd?: string}) => source.publishedCoverageEnd).publishedCoverageEnd = '2026-10-20';
+  assert.ok(auditLegalObservations(ledger).length > 0);
+});
+test('additive supplement validates without refreshing or duplicating earlier observations', () => {
+  const supplement = JSON.parse(readFileSync('intelligence/legal-observations-20261020.json', 'utf8'));
+  assert.deepEqual(auditLegalObservations(supplement), []);
+  assert.equal(supplement.previousSnapshot, 'intelligence/legal-observations-20261019.json');
+  const previousIds = new Set(load().observations.map((record: {id: string}) => record.id));
+  assert.ok(supplement.observations.every((record: {id: string}) => !previousIds.has(record.id)));
+  assert.equal(publicObservationState(find('us-reps-bots-complaint'), '2026-10-26'), 'stale');
+});
+test('manufacturing antitrust complaints and scheduled hearings stay outside adverse merits findings', () => {
+  const supplement = JSON.parse(readFileSync('intelligence/legal-observations-20261020.json', 'utf8'));
+  const playpower = supplement.observations.find((record: {id: string}) => record.id === 'us-playpower-burke-merger-complaint');
+  assert.equal(playpower.category, 'other');
+  assert.equal(playpower.subjects.filter((subject: {role: string}) => subject.role === 'defendant').length, 10);
+  for (const record of supplement.observations) {
+    const modified = {...supplement, observations: [{...record, meritsMisconductAdjudicationEstablished: true}]};
+    assert.ok(auditLegalObservations(modified).length > 0);
+  }
+});

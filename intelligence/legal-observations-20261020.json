@@ -1,0 +1,387 @@
+{
+  "version": 2,
+  "date": "2026-10-20",
+  "baseline": "2193ddca9fe127087dde9f9b7f36543e1c11bfb0",
+  "previousSnapshot": "intelligence/legal-observations-20261019.json",
+  "snapshotType": "additive-supplement",
+  "policy": {
+    "runtimeImport": false,
+    "automaticRiskWeight": 0,
+    "privateDossiersInspected": 0,
+    "fullDocketCoverage": false,
+    "noAffiliateTransfer": true,
+    "noMissingResultInference": true,
+    "freshness": "At most seven days per source body; no refresh of prior observations implied by this supplement.",
+    "terms": "Authored public facts and references only; no full bodies or restricted data."
+  },
+  "observations": [
+    {
+      "kind": "court-document",
+      "category": "other",
+      "jurisdiction": "US",
+      "sourceCheckedAt": "2026-10-20",
+      "refreshDueAt": "2026-10-27",
+      "lastAttemptAt": "2026-10-20",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "not-established",
+      "id": "us-playpower-burke-merger-complaint",
+      "court": "US District Court, Northern District of California",
+      "docket": "3:26-cv-12072",
+      "eventDate": "2026-10-19",
+      "documentStage": "filed-complaint-pending-allegations",
+      "judgeEntryVerified": false,
+      "currentStatusConfidence": "filed-complaint-only-no-entered-injunction-verified",
+      "subjects": [
+        {
+          "name": "Federal Trade Commission",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Arizona",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of California",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Colorado",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Illinois",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Nevada",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of North Carolina",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Ohio",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Commonwealth of Pennsylvania",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Tennessee",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Texas",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Washington",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Wisconsin",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "PlayPower, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "PlayPower Holdings, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Platinum Equity Advisors, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Platinum Equity Capital Partners VI, L.P.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Advance Holdings II, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "BCI Acquisitions, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "BCI Burke Company, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Bertram Growth Capital IV, L.P.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Bertram Growth Capital IV-A, L.P.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Bertram Capital Management, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/playpower-burkecomplaintredacted.pdf",
+          "scope": "filed-complaint-document-1",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        },
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-sues-block-playpowers-acquisition-rival-playground-manufacturer-burke",
+          "scope": "agency-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        }
+      ],
+      "scope": "Merger challenge involving commercial playground manufacturers, not a product-safety or dropshipping finding. Complaint references stipulated temporary restraint; no signed order inspected. Corporate brand references are not independently named defendants and inherit no allegations."
+    },
+    {
+      "kind": "court-document",
+      "category": "consumer-sale",
+      "jurisdiction": "US",
+      "sourceCheckedAt": "2026-10-20",
+      "refreshDueAt": "2026-10-27",
+      "lastAttemptAt": "2026-10-20",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "not-established",
+      "id": "us-lenscom-pricing-complaint",
+      "court": "US District Court, District of Nevada",
+      "docket": "2:26-cv-03232",
+      "eventDate": "2026-10-02",
+      "documentStage": "filed-complaint-pending-allegations",
+      "currentStatusConfidence": "filed-complaint-only-current-docket-unverified",
+      "subjects": [
+        {
+          "name": "Federal Trade Commission",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "State of Nevada, Bureau of Consumer Protection",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Utah Division of Consumer Protection",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Lens.com, Inc.",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Speed Commerce, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Cary Samourkachian",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/Lens.com-Complaint.pdf",
+          "scope": "filed-complaint-document-1",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        },
+        {
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-states-sue-lenscom-misrepresenting-price-contact-lenses-search-ads-its-website",
+          "scope": "agency-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        }
+      ],
+      "scope": "Newly researched October 2 allegations concerning mandatory pricing fees and AutoRefill disclosures. Not new October 20 litigation, counterfeit-product proof or adjudicated misconduct. Named Speed Commerce entity only; no transfer to similar names, platforms or affiliates."
+    },
+    {
+      "kind": "court-document",
+      "category": "other",
+      "jurisdiction": "US",
+      "sourceCheckedAt": "2026-10-20",
+      "refreshDueAt": "2026-10-27",
+      "lastAttemptAt": "2026-10-20",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "defendant denies complaint allegations; proposed settlement without trial or final adjudication",
+      "id": "us-southern-glazers-proposed-pricing-decree",
+      "court": "US District Court, Central District of California",
+      "docket": "8:24-cv-02684-FWS-ADS",
+      "eventDate": "2026-10-02",
+      "documentStage": "filed-proposed-consent-order",
+      "judgeEntryVerified": false,
+      "currentStatusConfidence": "proposed-decree-only-current-entry-unverified",
+      "subjects": [
+        {
+          "name": "Federal Trade Commission",
+          "role": "plaintiff",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Southern Glazer’s Wine and Spirits, LLC",
+          "role": "defendant",
+          "captionIdentityChecked": true
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/2110155-southern-glazers-wine-spirits-llc-ftc-v",
+          "scope": "agency-timeline",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/SGWS-ProposedStipulatedConsentDecreeandOrder.pdf",
+          "scope": "proposed-stipulation-document-231-1",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        },
+        {
+          "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/SGWS-JointStipulationtoEnterConsentOrder.pdf",
+          "scope": "joint-request-for-entry",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        }
+      ],
+      "scope": "Wholesale wine/spirits price-discrimination allegations and proposed resolution, not product safety or fulfillment misconduct. Agency link title omits Proposed, but document and judicial date line do not establish entry. Six-year term depends on actual entry; expiration date unverified. No brand-name or customer guilt transfer."
+    },
+    {
+      "kind": "court-schedule",
+      "category": "consumer-sale",
+      "jurisdiction": "CA",
+      "sourceCheckedAt": "2026-10-20",
+      "refreshDueAt": "2026-10-27",
+      "lastAttemptAt": "2026-10-20",
+      "freshnessState": "fresh-public-observation",
+      "currentFullDocketVerified": false,
+      "automaticRiskWeight": 0,
+      "meritsMisconductAdjudicationEstablished": false,
+      "admission": "not-established",
+      "id": "canada-doordash-drip-pricing-hearing",
+      "court": "Competition Tribunal of Canada",
+      "docket": "CT-2025-002",
+      "eventDate": "2025-06-09",
+      "scheduleObservedAt": "2026-10-20",
+      "scheduledHearingDates": [
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-11-02",
+        "2026-11-03"
+      ],
+      "documentStage": "application-pending-hearing-scheduled",
+      "currentStatusConfidence": "public-schedule-only-no-attendance-or-outcome-verification",
+      "subjects": [
+        {
+          "name": "Commissioner of Competition",
+          "role": "applicant",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Doordash Inc.",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        },
+        {
+          "name": "Doordash Technologies Canada, Inc.",
+          "role": "respondent",
+          "captionIdentityChecked": true
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ct-tc.gc.ca/en/cases/upcoming-hearings.html",
+          "scope": "tribunal-public-hearing-schedule",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        },
+        {
+          "url": "https://www.canada.ca/en/competition-bureau/news/2025/06/competition-bureau-sues-doordash-for-allegedly-advertising-misleading-prices-and-discounts.html",
+          "scope": "agency-filing-announcement",
+          "retrieval": "page-retrieved",
+          "checkedAt": "2026-10-20",
+          "lastAttemptAt": "2026-10-20",
+          "lastSuccessfulBodyRetrievalAt": "2026-10-20"
+        }
+      ],
+      "scope": "June 2025 application alleges delivery-pricing and discount misrepresentations. Tribunal schedule lists October/November 2026 hearing dates; scheduled does not prove a session occurred or any decision issued. No adverse merits finding or transfer to merchants, couriers or unrelated proceedings."
+    }
+  ],
+  "sourceCoverageChecks": [
+    {
+      "url": "https://www.ftc.gov/news-events/news/press-releases",
+      "attemptedAt": "2026-10-20",
+      "retrieval": "page-retrieved",
+      "scope": "October 19 playground-manufacturer merger complaint added. Publicis/LiveRamp ad-tech merger and older-adult annual report excluded from merchant/product misconduct findings."
+    },
+    {
+      "url": "https://www.gob.mx/profeco/prensa/profeco-difunde-llamado-a-revision-de-ford-motor-company-para-mas-de-17-mil-automoviles",
+      "attemptedAt": "2026-10-20",
+      "retrieval": "fetch-error",
+      "scope": "Body retry failed. Neither October 19 lead nor older inaccessible recall redated; exact entity and unit eligibility remain unverified."
+    }
+  ]
+}

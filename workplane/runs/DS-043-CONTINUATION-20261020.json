@@ -1,0 +1,51 @@
+{
+  "task": "DS-043-CONTINUATION-20261020",
+  "date": "2026-10-20",
+  "baseline": "2193ddca9fe127087dde9f9b7f36543e1c11bfb0",
+  "canonicalRelease": "13570bb43647f0ae4e43d0103d9d9e19c1a322e2",
+  "releaseAuthority": "BETA6 OPEN; no integration or promotion",
+  "branch": "research/legal-refresh-20261019",
+  "pullRequest": "https://github.com/chairmantrash/DropShredder/pull/32",
+  "status": "COMPLETE-REVIEWABLE-CHANGES",
+  "research": {
+    "newObservations": 4,
+    "newObservationSources": 9,
+    "combinedDistinctObservations": 20,
+    "priorObservationsBlanketRedated": false,
+    "fullDocketCoverage": false,
+    "privateDossiersInspected": 0,
+    "previousSuccessfulObservationDeadline": "2026-10-26",
+    "supplementDeadline": "2026-10-27",
+    "mexicanFordBodyRetry": "fetch-error; prior clock unchanged"
+  },
+  "validation": {
+    "node": "22.23.3",
+    "nodeSelection": "npm exec --yes --package=node@22.23.3 -- node",
+    "dependencyInstall": "npm ci --ignore-scripts; pinned lockfile unchanged",
+    "ocrPreparation": "PASS: existing package-ocr-models.mjs verified all seven immutable source hashes/lengths; generated assets ignored",
+    "wxtTypeGeneration": "PASS: existing wxt prepare",
+    "projectTypecheck": "PASS: tsc --noEmit",
+    "coreTests": {"passed": 472, "failed": 0, "skipped": 0, "cancelled": 0},
+    "legalAndStandingTestsWithinCoreSuite": 35,
+    "additionalRegressionTests": 6,
+    "october19MetadataAudit": "PASS",
+    "october20MetadataAudit": "PASS",
+    "stagedWhitespace": "PASS",
+    "previousFailure": "Original October19 464-pass/1-module-load-failure receipt preserved; supported-engine prepared run now passes both OCR tests",
+    "browserOrReleaseAcceptance": "NOT RUN; no runtime changes or release requalification claim"
+  },
+  "implementation": [
+    "Oldest successful source controls research freshness; record summary dates cannot extend source expiry",
+    "Invalid/future body dates and failed retrieval strings cannot authenticate bodies",
+    "Procedures/settlements/closure/schedules cannot assert established adverse merits adjudication",
+    "Publication cutoff date validation and additive-ledger continuity regressions"
+  ],
+  "runtimeChanges": false,
+  "automaticRiskWeight": 0,
+  "limitations": [
+    "Public sources may be cached; no complete current dockets or intervening appellate history authenticated",
+    "Southern Glazer proposed entry and restriction expiry unverified; scheduled DoorDash hearing does not establish occurrence or result",
+    "Mexican inaccessible body remains downgraded; no new exact entity or VIN eligibility claim",
+    "No paid/restricted source access, private dossiers, backend, telemetry, permissions or automatic entity ratings added"
+  ]
+}

@@ -4,7 +4,7 @@ import {pathToFileURL} from 'node:url';
 const DAY = 86_400_000;
 const hosts = new Set(['www.ftc.gov', 'www.cpsc.gov', 'recalls-rappels.canada.ca',
   'competition-bureau.canada.ca', 'www.scc-csc.ca', 'sidof.segob.gob.mx',
-  'www.justice.gov', 'www.gob.mx']);
+  'www.justice.gov', 'www.gob.mx', 'www.canada.ca', 'ct-tc.gc.ca']);
 const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
   && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 
@@ -12,8 +12,26 @@ const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.te
 export function publicObservationState(record, asOf) {
   if (!validDate(asOf) || !validDate(record.refreshDueAt) || !validDate(record.sourceCheckedAt)) return 'uncertain';
   if (asOf < record.sourceCheckedAt) return 'uncertain';
+  const interval = Date.parse(record.refreshDueAt) - Date.parse(record.sourceCheckedAt);
+  if (!(interval > 0 && interval <= 7 * DAY)) return 'uncertain';
   if (asOf >= record.refreshDueAt) return 'stale';
-  if (!record.sources?.length || record.sources.some(source => !source.lastSuccessfulBodyRetrievalAt)) return 'unverified-body';
+  if (!Array.isArray(record.sources) || !record.sources.length) return 'unverified-body';
+  // A new summary date must never launder an older or failed source lookup.
+  let unverified = false;
+  let stale = false;
+  for (const source of record.sources) {
+    if (!source || !validDate(source.checkedAt) || !validDate(source.lastAttemptAt)
+      || source.checkedAt > source.lastAttemptAt || source.lastAttemptAt > asOf) return 'uncertain';
+    if (source.retrieval !== 'page-retrieved' || source.lastSuccessfulBodyRetrievalAt === null) {
+      unverified = true;
+      continue;
+    }
+    if (!validDate(source.lastSuccessfulBodyRetrievalAt)
+      || source.lastSuccessfulBodyRetrievalAt !== source.checkedAt) return 'uncertain';
+    if (Date.parse(asOf) - Date.parse(source.lastSuccessfulBodyRetrievalAt) >= 7 * DAY) stale = true;
+  }
+  if (stale) return 'stale';
+  if (unverified) return 'unverified-body';
   return 'fresh-public-observation';
 }
 
@@ -41,8 +59,8 @@ export function auditLegalObservations(ledger) {
     check(interval > 0 && interval <= 7 * DAY, fail('seven-day maximum'));
     check(record.sourceCheckedAt <= ledger.date && record.lastAttemptAt <= ledger.date
       && record.eventDate <= ledger.date, fail('no future observation/event'));
-    check(record.documentStage !== 'filed-complaint-pending-allegations'
-      || record.meritsMisconductAdjudicationEstablished === false, fail('allegation is not adjudication'));
+    check(!/pending-allegations|proposed|redress|investigation-closed|withdrawn|hearing-scheduled/.test(record.documentStage)
+      || record.meritsMisconductAdjudicationEstablished === false, fail('procedure or agreement is not adverse adjudication'));
     check(!record.documentStage?.startsWith('entered-') || record.judgeEntryVerified !== false, fail('entry distinction'));
     const state = publicObservationState(record, ledger.date);
     check(record.freshnessState === state || (record.freshnessState === 'stale-inaccessible' && state === 'stale'), fail('freshness downgrade'));
@@ -56,10 +74,20 @@ export function auditLegalObservations(ledger) {
       check(validDate(source.checkedAt) && validDate(source.lastAttemptAt)
         && source.checkedAt <= source.lastAttemptAt && source.lastAttemptAt <= ledger.date, fail('source dates'));
       if (source.retrieval === 'page-retrieved') {
-        check(source.lastSuccessfulBodyRetrievalAt === source.checkedAt, fail('successful retrieval date'));
+        check(validDate(source.lastSuccessfulBodyRetrievalAt)
+          && source.lastSuccessfulBodyRetrievalAt === source.checkedAt, fail('successful retrieval date'));
+        check(Date.parse(record.refreshDueAt) <= Date.parse(source.checkedAt) + 7 * DAY,
+          fail('record expiry cannot outlive oldest retrieved source'));
       } else {
         check(source.lastSuccessfulBodyRetrievalAt === null, fail('failed attempt cannot authenticate body'));
       }
+    }
+  }
+  for (const source of ledger.sourceCoverageChecks ?? []) {
+    check(validDate(source.attemptedAt) && source.attemptedAt <= ledger.date, 'coverage attempt date');
+    if (source.publishedCoverageEnd) {
+      check(validDate(source.publishedCoverageEnd) && source.publishedCoverageEnd <= source.attemptedAt,
+        'published coverage cutoff cannot be a future access date');
     }
   }
   check(ids.size > 0, 'observations required');
