@@ -3,10 +3,33 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 // Repository tooling is JavaScript; no production import is added.
 // @ts-expect-error no declaration file for research-only audit script
-import {auditLegalObservations, publicObservationState} from '../scripts/audit-legal-observations.mjs';
+import {auditLegalObservations, publicObservationState, summarizeFreshness} from '../scripts/audit-legal-observations.mjs';
 
 const load = () => JSON.parse(readFileSync('intelligence/legal-observations-20261019.json', 'utf8'));
 const find = (id: string) => load().observations.find((record: {id: string}) => record.id === id);
+
+test('current refresh validates and failed Mexican body attempts keep original clocks', () => {
+  const ledger = JSON.parse(readFileSync('intelligence/legal-observations-20261026.json', 'utf8'));
+  assert.deepEqual(auditLegalObservations(ledger), []);
+  assert.deepEqual(summarizeFreshness(ledger, '2026-10-26'), {asOf: '2026-10-26', fresh: 20, stale: 2, unverified: 0, uncertain: 0});
+  for (const record of ledger.observations.filter((r: {id: string}) => r.id.startsWith('mexico-ford'))) {
+    assert.ok(record.sourceCheckedAt < '2026-10-26');
+    assert.equal(record.lastAttemptAt, '2026-10-26');
+  }
+});
+test('historical metadata success cannot hide current expiry', () => {
+  assert.equal(summarizeFreshness(load(), '2026-10-26').fresh, 0);
+  assert.throws(() => summarizeFreshness(load(), '2026-02-31'));
+});
+test('identifier-less recall stays product scoped and new complaint remains allegations', () => {
+  const ledger = JSON.parse(readFileSync('intelligence/legal-observations-20261026.json', 'utf8'));
+  const recall = ledger.observations.find((r: {id: string}) => r.id === 'us-costway-convertible-highchair-recall');
+  assert.deepEqual(recall.models, []);
+  assert.equal(recall.subjects[0].role, 'retailer-dba-Costway');
+  const complaint = ledger.observations.find((r: {id: string}) => r.id === 'us-govassist-passport-complaint');
+  assert.equal(complaint.meritsMisconductAdjudicationEstablished, false);
+  assert.equal(complaint.documentStage, 'filed-complaint-pending-allegations');
+});
 
 test('dated legal ledger passes public-source, identity, date, scope and neutral-weight checks', () => {
   assert.deepEqual(auditLegalObservations(load()), []);

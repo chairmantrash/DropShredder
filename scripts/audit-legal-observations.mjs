@@ -94,9 +94,26 @@ export function auditLegalObservations(ledger) {
   return errors;
 }
 
+export function summarizeFreshness(ledger, asOf) {
+  if (!validDate(asOf)) throw new Error('A valid YYYY-MM-DD observation date is required');
+  const counts = {asOf, fresh: 0, stale: 0, unverified: 0, uncertain: 0};
+  for (const record of ledger.observations) {
+    const state = publicObservationState(record, asOf);
+    if (state === 'fresh-public-observation') counts.fresh++;
+    else if (state === 'stale') counts.stale++;
+    else if (state === 'unverified-body') counts.unverified++;
+    else counts.uncertain++;
+  }
+  return counts;
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const ledger = JSON.parse(readFileSync(process.argv[2] ?? 'intelligence/legal-observations-20261019.json', 'utf8'));
   const errors = auditLegalObservations(ledger);
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
-  else console.log(`PASS: ${ledger.observations.length} research observations; no runtime import or automatic risk weight`);
+  else {
+    console.log(`Metadata PASS: ${ledger.observations.length} research observations; snapshot ${ledger.date}; no runtime import or automatic risk weight`);
+    // An explicit assessment date exposes expiration without rewriting historical receipts.
+    console.log(JSON.stringify(summarizeFreshness(ledger, process.argv[3] ?? ledger.date)));
+  }
 }
