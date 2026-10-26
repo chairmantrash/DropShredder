@@ -1,0 +1,43 @@
+{
+  "task": "DS-043-REFRESH-20261026",
+  "date": "2026-10-26",
+  "researchBaseline": "3e59ac867a83b871fd355d4fe5dd3aab2f5c6b02",
+  "canonicalRelease": "13570bb43647f0ae4e43d0103d9d9e19c1a322e2",
+  "status": "COMPLETE-REVIEWABLE-RESEARCH",
+  "releaseAuthority": "BETA6 OPEN; no canonical/main merge or publication",
+  "priorObservationsRechecked": 20,
+  "priorSourceUrlsAttempted": 38,
+  "priorSourceBodiesRetrieved": 36,
+  "priorBodyFailures403": 2,
+  "newObservations": 2,
+  "newObservationSources": 3,
+  "totalObservations": 22,
+  "totalObservationSources": 41,
+  "freshPublicObservations": 20,
+  "staleInaccessibleLeads": 2,
+  "nextSuccessfulRefreshDueAt": "2026-11-02",
+  "privateDossiersInspected": 0,
+  "fullDocketCoverage": false,
+  "runtimeChanges": false,
+  "automaticRiskWeight": 0,
+  "validation": {
+    "node": "22.23.3",
+    "install": "npm ci --ignore-scripts; lockfile unchanged",
+    "pinnedOcrPreparation": "PASS: seven immutable resources verified using existing script; ignored generated assets only",
+    "wxtPrepare": "PASS",
+    "projectTypecheck": "PASS: tsc --noEmit",
+    "coreTests": {"passed": 475, "failed": 0, "skipped": 0, "cancelled": 0},
+    "newRegressions": 3,
+    "metadataAudit": "PASS: 22 observations, explicit October26 assessment20 fresh/2 stale",
+    "stagedWhitespace": "PASS",
+    "browserBuildReleaseAcceptance": "NOT RUN; no runtime/release changes"
+  },
+  "limits": [
+    "All currentFullDocketVerified flags false; no exhaustive appellate/vacatur/entry/expiry coverage",
+    "Two Mexican Ford bodies403; failed attempts do not advance original clocks",
+    "PROFECO cutoff remains September30 and pending/confidential complaints omitted; no dataset import",
+    "Scheduled Canadian hearing dates are not verified occurrence or outcome",
+    "No paid/restricted/authenticated court access, subscriptions or private dossiers"
+  ],
+  "publicationScope": "Existing draft PR32 research branch only; no integration or release"
+}

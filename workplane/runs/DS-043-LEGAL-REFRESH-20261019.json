@@ -1,0 +1,42 @@
+{
+  "task": "DS-043-REFRESH-20261019",
+  "date": "2026-10-19",
+  "baseline": "13570bb43647f0ae4e43d0103d9d9e19c1a322e2",
+  "status": "RESEARCH-AND-REVIEWABLE-CHANGES-COMPLETE",
+  "releaseAuthority": "BETA6 OPEN; main/Store promotion remains separately gated",
+  "observations": 16,
+  "uniqueObservationSources": 29,
+  "sourceCoverageChecks": 5,
+  "priorSourceRechecks": {"attempted": 18, "retrievedBodies": 17, "body403": 1},
+  "freshPublicBodyObservations": 14,
+  "staleOrBodyUnverifiedObservations": 2,
+  "privateInspectedDossiers": 0,
+  "fullDocketSearch": false,
+  "nextObservationRefreshDueAt": "2026-10-26",
+  "inaccessiblePriorLeadStillDueAt": "2026-10-19",
+  "environment": {
+    "node": "24.19.0",
+    "requiredReleaseEngine": ">=22 <23",
+    "dependencyInstall": "npm ci --ignore-scripts; no lifecycle scripts or lockfile changes"
+  },
+  "validation": {
+    "metadataAudit": "PASS: node scripts/audit-legal-observations.mjs",
+    "focusedTests": {"passed": 29, "failed": 0, "skipped": 0, "newMetadataRegressions": 7, "existingStandingRegressions": 22},
+    "standaloneNewTestTypecheck": "PASS: npx tsc --noEmit --strict --module nodenext --moduleResolution nodenext --target es2022 --esModuleInterop tests/legal-observations.test.ts",
+    "broaderSuite": {"passed": 464, "failed": 1, "skipped": 0, "failure": "tests/multilingual-ocr.test.ts module-load ENOENT: generated public/ocr/LANGUAGE-MODELS.json missing; independently reproduced"},
+    "whitespace": "PASS: git diff --check",
+    "releaseAcceptance": "NOT RUN; supporting checks only, no build or browser/release requalification"
+  },
+  "runtimeChanges": false,
+  "automaticRiskWeight": 0,
+  "limitations": [
+    "Cached public sources and historical documents cannot authenticate complete current dockets or absence of intervening appeals/vacatur",
+    "PROFECO October9 body403; October13 lead body fetch error; exact Mexican entity and full unit eligibility unverified",
+    "Mexican CJF form and rapid-alert catalogue body retrieval failed; no completed party queries",
+    "PROFECO landing-page dataset cutoff September30 is distinct from October19 observation date; no complaint data imported",
+    "Gildan SRL agency label vs Inc letter label unresolved; no entity or allegation transfer",
+    "No paid PACER, subscription, authenticated court API, restricted scraping, private dossiers or comprehensive tri-national court coverage",
+    "Untracked pre-existing partial OCR file excluded; generated OCR assets not rebuilt in this research-only task"
+  ],
+  "publicationScope": "Isolated research branch and draft PR to release/security-performance-hardening; no integration/main merge/tag/Store publication"
+}
